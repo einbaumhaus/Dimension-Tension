@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbcej13nk3h01"]
+
+[ext_resource type="Texture2D" uid="uid://berotu85844je" path="res://2D_levels/Player2D/skin/images.jpeg" id="1_ctby5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tia48"]
+size = Vector2(68, 68)
+
+[node name="Player" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_tia48")
+
+[node name="WIP skin" type="Sprite2D" parent="."]
+position = Vector2(7.62939e-06, 0)
+scale = Vector2(0.292373, 0.326291)
+texture = ExtResource("1_ctby5")

@@ -1,0 +1,54 @@
+[gd_scene load_steps=2 format=3 uid="uid://cp6g64mlf8kpi"]
+
+[ext_resource type="Script" uid="uid://b33eav60o2uqn" path="res://menus/mode_select.gd" id="1_5ovjn"]
+
+[node name="mode_select" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5ovjn")
+
+[node name="BoxContainer" type="BoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -199.5
+offset_top = -87.0
+offset_right = 199.5
+offset_bottom = 87.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="storymode_b" type="Button" parent="BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Storymode"
+
+[node name="level_select_b" type="Button" parent="BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Level select"
+
+[node name="back_b" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -116.0
+offset_top = -81.0
+offset_right = 116.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Back"
+
+[connection signal="pressed" from="BoxContainer/level_select_b" to="." method="_on_level_select_b_pressed"]
+[connection signal="pressed" from="back_b" to="." method="_on_back_b_pressed"]

@@ -18,6 +18,7 @@ config/icon="uid://dxstby5d2i434"
 [display]
 
 window/stretch/mode="canvas_items"
+window/vsync/vsync_mode=0
 
 [editor_plugins]
 

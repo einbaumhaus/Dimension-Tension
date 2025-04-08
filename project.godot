@@ -11,8 +11,17 @@ config_version=5
 [application]
 
 config/name="Dimension Tension"
+run/main_scene="uid://bcs8aqgp6fvs6"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="uid://dxstby5d2i434"
+
+[display]
+
+window/stretch/mode="canvas_items"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg")
 
 [rendering]
 

@@ -1,27 +1,54 @@
-[gd_scene load_steps=5 format=3 uid="uid://bfqm7gkurwapv"]
+[gd_scene load_steps=4 format=4 uid="uid://bfqm7gkurwapv"]
 
-[ext_resource type="PackedScene" uid="uid://dbcej13nk3h01" path="res://2D_levels/Player2D/player.tscn" id="1_p0t6m"]
-[ext_resource type="Script" uid="uid://c7w8pvr0wlgml" path="res://2D_levels/Player2D/player.gd" id="2_i3l12"]
-[ext_resource type="Texture2D" uid="uid://dxstby5d2i434" path="res://assets/images/logo/sheldon.png" id="3_s13xa"]
+[ext_resource type="PackedScene" uid="uid://c7b3wf077ipnc" path="res://2D_levels/Player2D/player.tscn" id="1_p0t6m"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_s13xa"]
+_data = PackedByteArray("AAADAAUAAAABAAAAjAAAAFAAAAAyAQAAUklGRioBAABXRUJQVlA4TB0BAAAvi8ATABcgFkz8WXdFkIZYMPHH3B1EAoHEIX/DIZ7/+CsBkGvbjds8j0W4GpZgJ4EWLEHVZOxAHqgyJQCEpl0WEf1X5LZto4xDuuu8ot+kNSJSRaSMZPnTsQO0y12T4XfkRCoD7RhwVze6ak6o/TL6lAuKz4EzlJGWwTp1D1It7aAbuZi7qhsVv9zqbfWtSXpbOmfZJIytjtAUx8yyyEYeRo+AZDUy15DwNZN7pH3mM7lPJ3OdzgnuEQJCLYxVOc2Fbcf7RGQHXP8mlTPKUpnCGQKdKXI3esRTA9eiVY2Xd+Yxcu/ry+TPHDJBrIZ091JQ6B1cvXJcRYqzbBLT7Ezs6VnKdM5009nxWS+HUp1Qua6HYxNUnYbpjf+H1gMA")
+size_override = Vector2(140, 80)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p0t6m"]
-size = Vector2(1115, 53)
+size = Vector2(1053, 67.5)
 
 [node name="level_1" type="Node2D"]
 
+[node name="forest_env" type="Node2D" parent="."]
+
+[node name="sky" type="Parallax2D" parent="forest_env"]
+scroll_scale = Vector2(0.1, 0.1)
+repeat_size = Vector2(1152, 648)
+
+[node name="Sky" type="Sprite2D" parent="forest_env/sky"]
+texture_filter = 1
+position = Vector2(576, 324)
+scale = Vector2(8.22857, 8.1)
+texture = SubResource("PortableCompressedTexture2D_s13xa")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"output_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["sky"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"slice": "",
+"source": "res://2D_levels/level_1/assets/sky.aseprite"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "b574fa74ed93f5b2bf34ec1b088066e7"
+
 [node name="Player" parent="." instance=ExtResource("1_p0t6m")]
 position = Vector2(257, 280)
-script = ExtResource("2_i3l12")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(572, 589)
+position = Vector2(587, 560)
 shape = SubResource("RectangleShape2D_p0t6m")
-
-[node name="TileMapLayer" type="TileMapLayer" parent="StaticBody2D"]
-
-[node name="Sheldon" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(572, 588.75)
-scale = Vector2(1.33493, 0.0626491)
-texture = ExtResource("3_s13xa")

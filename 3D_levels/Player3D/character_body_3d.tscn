@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://cj7d18ek4ria6"]
+
+[ext_resource type="Script" uid="uid://bcgnt5ssu3drk" path="res://3D_levels/Player3D/character_body_3d.gd" id="1_a7qx7"]
+[ext_resource type="Script" uid="uid://bb1wjhu534dq3" path="res://2D_levels/Player2D/fps.gd" id="2_wrout"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_b1m74"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_a7qx7"]
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+script = ExtResource("1_a7qx7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_b1m74")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_a7qx7")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.756173, 0)
+
+[node name="fps" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -570.0
+offset_top = -321.0
+offset_right = -354.0
+offset_bottom = -264.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 41
+script = ExtResource("2_wrout")

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bcs8aqgp6fvs6"]
+[gd_scene load_steps=3 format=3 uid="uid://bcs8aqgp6fvs6"]
 
 [ext_resource type="Script" uid="uid://nvghij2p6sow" path="res://menus/main_menu.gd" id="1_8gy84"]
+[ext_resource type="Texture2D" uid="uid://7w3wqmyb4i8s" path="res://menus/assets/title1.png" id="2_ij7vn"]
 
 [node name="main_menu" type="Control"]
 layout_mode = 3
@@ -10,6 +11,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8gy84")
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -45,20 +48,19 @@ layout_mode = 2
 size_flags_vertical = 3
 text = "credits"
 
-[node name="Label" type="Label" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -297.5
-offset_top = 38.0
-offset_right = 297.5
-offset_bottom = 124.0
+offset_left = -428.0
+offset_top = 19.0
+offset_right = 429.0
+offset_bottom = 138.0
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 56
-text = "Dimension Tension"
-horizontal_alignment = 1
-vertical_alignment = 1
+texture = ExtResource("2_ij7vn")
+stretch_mode = 5
 
 [node name="future rotating background" type="Node3D" parent="."]
 visible = false

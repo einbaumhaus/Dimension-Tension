@@ -1,21 +1,22 @@
 [gd_scene load_steps=4 format=3 uid="uid://c7b3wf077ipnc"]
 
-[ext_resource type="Texture2D" uid="uid://berotu85844je" path="res://2D_levels/Player2D/skin/images.jpeg" id="1_ctby5"]
 [ext_resource type="Script" uid="uid://c7w8pvr0wlgml" path="res://2D_levels/Player2D/player.gd" id="1_tia48"]
+[ext_resource type="Texture2D" uid="uid://dg76crss4sty7" path="res://2D_levels/Player2D/skin/tempplayer.png" id="2_tia48"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tia48"]
-size = Vector2(68, 68)
+[sub_resource type="CircleShape2D" id="CircleShape2D_p44oq"]
+radius = 35.0
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_tia48")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_tia48")
-
 [node name="WIP skin" type="Sprite2D" parent="."]
+texture_filter = 1
 position = Vector2(7.62939e-06, 0)
-scale = Vector2(0.292373, 0.326291)
-texture = ExtResource("1_ctby5")
+scale = Vector2(8.88, 8.88)
+texture = ExtResource("2_tia48")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_p44oq")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = -50

@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dlb7qukr5wfbb"]
+[gd_scene load_steps=9 format=3 uid="uid://dlb7qukr5wfbb"]
 
 [ext_resource type="PackedScene" uid="uid://cj7d18ek4ria6" path="res://3D_levels/Player3D/character_body_3d.tscn" id="1_oq417"]
 [ext_resource type="Texture2D" uid="uid://bxup4fqdsm4x5" path="res://3D_levels/level_1/assets/9439-normal.jpg" id="2_giu1j"]
 [ext_resource type="Script" uid="uid://bpticts5gv1sk" path="res://3D_levels/level_1/bridfge.gd" id="3_i53j8"]
+[ext_resource type="PackedScene" uid="uid://bnp7vdu3nrbe8" path="res://menus/pause_menu.tscn" id="4_3dv5j"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_oq417"]
 sky_top_color = Color(0.241369, 0.489475, 0.545472, 1)
@@ -155,3 +156,7 @@ size = Vector3(10.9566, 0.900391, 105.209)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.27384, -53.2275, -170.401)
 use_collision = true
 size = Vector3(434.385, 0.900391, 204.233)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("4_3dv5j")]

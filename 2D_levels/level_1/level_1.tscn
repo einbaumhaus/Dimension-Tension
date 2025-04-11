@@ -13,6 +13,21 @@
 _data = PackedByteArray("AAADAAUAAAABAAAAjAAAAFAAAAAyAQAAUklGRioBAABXRUJQVlA4TB0BAAAvi8ATABcgFkz8WXdFkIZYMPHH3B1EAoHEIX/DIZ7/+CsBkGvbjds8j0W4GpZgJ4EWLEHVZOxAHqgyJQCEpl0WEf1X5LZto4xDuuu8ot+kNSJSRaSMZPnTsQO0y12T4XfkRCoD7RhwVze6ak6o/TL6lAuKz4EzlJGWwTp1D1It7aAbuZi7qhsVv9zqbfWtSXpbOmfZJIytjtAUx8yyyEYeRo+AZDUy15DwNZN7pH3mM7lPJ3OdzgnuEQJCLYxVOc2Fbcf7RGQHXP8mlTPKUpnCGQKdKXI3esRTA9eiVY2Xd+Yxcu/ry+TPHDJBrIZ091JQ6B1cvXJcRYqzbBLT7Ezs6VnKdM5009nxWS+HUp1Qua6HYxNUnYbpjf+H1gMA")
 size_override = Vector2(140, 80)
 
+[sub_resource type="Animation" id="Animation_5i37e"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("elements/Rbsnext:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1634, 186)]
+}
+
 [sub_resource type="Animation" id="Animation_oehl0"]
 resource_name = "rbs_drive"
 length = 13.0
@@ -27,21 +42,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(-233, 186), Vector2(2000, 186)]
-}
-
-[sub_resource type="Animation" id="Animation_5i37e"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("elements/Rbsnext:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1634, 186)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dnc0p"]

@@ -1,2 +1,4 @@
 # Dimensional Tension
-Game about comapring 2D and 3D perspectives currently in development for my MA
+Game about comparing 2D and 3D perspectives
+Currently in development for my MA
+feel free to play one of the pre-releases to get a taste of what's coming (づ ◕‿◕ )づ

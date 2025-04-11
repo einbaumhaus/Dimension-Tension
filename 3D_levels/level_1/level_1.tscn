@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dlb7qukr5wfbb"]
+[gd_scene load_steps=8 format=3 uid="uid://dlb7qukr5wfbb"]
 
 [ext_resource type="PackedScene" uid="uid://cj7d18ek4ria6" path="res://3D_levels/Player3D/character_body_3d.tscn" id="1_oq417"]
 [ext_resource type="Texture2D" uid="uid://cjllvahxg6keb" path="res://3D_levels/level_1/assets/overcast_soil_puresky_4k.hdr" id="2_i53j8"]
@@ -14,6 +14,10 @@ sky_material = SubResource("PanoramaSkyMaterial_3dv5j")
 background_mode = 2
 sky = SubResource("Sky_giu1j")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3dv5j"]
+transparency = 1
+albedo_color = Color(0.568586, 0.163503, 0.497197, 1)
+
 [node name="level_1" type="Node3D"]
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("1_oq417")]
@@ -26,7 +30,236 @@ transform = Transform3D(1, 0, 0, 0, 0.0802861, 0.996772, 0, -0.996772, 0.0802861
 environment = SubResource("Environment_i53j8")
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+material_override = SubResource("StandardMaterial3D_3dv5j")
 use_collision = true
+
+[node name="rail_right" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.9058, 0.584507, 1.0787)
+size = Vector3(8.00513, 0.222656, 0.138672)
+
+[node name="rail_left" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.9062, 0.584507, -1.06705)
+size = Vector3(7.99584, 0.222656, 0.138672)
+
+[node name="bridge platform" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.908, 0, 0)
+size = Vector3(8, 1, 7.93726)
+
+[node name="rail_right2" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.1827, 0.584507, 1.0787)
+size = Vector3(8.00513, 0.222656, 0.138672)
+
+[node name="rail_left2" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.1831, 0.584507, -1.06705)
+size = Vector3(7.99584, 0.222656, 0.138672)
+
+[node name="bridge platform2" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.7421, 0, 0)
+size = Vector3(8.88574, 1, 7.93726)
+
+[node name="rail_right3" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.3386, 0.584507, 1.0787)
+size = Vector3(8.00513, 0.222656, 0.138672)
+
+[node name="rail_left3" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.339, 0.584507, -1.06705)
+size = Vector3(7.99584, 0.222656, 0.138672)
+
+[node name="bridge platform3" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.3408, 0, 0)
+size = Vector3(8, 1, 7.93726)
+
+[node name="bridge platform10" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.2711, 0, 3.18085)
+size = Vector3(6.42444, 1, 1.57556)
+
+[node name="bridge platform14" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.244, 0, 3.09402)
+size = Vector3(21.2884, 1, 1.74921)
+
+[node name="bridge platform11" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 0.955926, -0.293607, 0, 0.293607, 0.955926, 59.9442, -4.21019, -1.1908)
+size = Vector3(5.07837, 1, 5.22711)
+
+[node name="rail_right4" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.8451, 0.584507, 1.0787)
+size = Vector3(8.00513, 0.222656, 0.138672)
+
+[node name="rail_left4" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.8455, 0.584507, -1.06705)
+size = Vector3(7.99584, 0.222656, 0.138672)
+
+[node name="rail_right10" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 0.945496, -0.325634, 0, 0.325634, 0.945496, 60.0501, -4.29757, 1.02022)
+size = Vector3(8.00513, 0.222656, 0.138672)
+
+[node name="rail_left10" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 0.945496, -0.325634, 0, 0.325634, 0.945496, 60.0505, -3.59884, -1.00858)
+size = Vector3(7.99584, 0.222656, 0.138672)
+
+[node name="bridge platform4" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.8473, 0, 0)
+size = Vector3(8, 1, 7.93726)
+
+[node name="rail_right11" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.498921, -0.234643, 0, 0.10829, 1.08107, 0, 0, 0, 1, 79.567, -5.99876, 1.0787)
+size = Vector3(8.00513, 0.222656, 0.138672)
+
+[node name="rail_left11" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.498921, -0.234643, 0, 0.10829, 1.08107, 0, 0, 0, 1, 79.5672, -5.99868, -1.06705)
+size = Vector3(7.99584, 0.222656, 0.138672)
+
+[node name="bridge platform12" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.498921, -0.234643, 0, 0.10829, 1.08107, 0, 0, 0, 1, 79.63, -6.56949, 0)
+size = Vector3(8, 1, 7.93726)
+
+[node name="rail_right8" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 142.863, 0.584507, 1.0787)
+size = Vector3(10.8791, 0.222656, 0.138672)
+
+[node name="rail_right14" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.99474, -0.100205, -0.0212363, 0.100183, 0.994967, -0.00213876, 0.0213438, -5.82077e-11, 0.999772, 134.376, 0.261901, 1.03822)
+size = Vector3(6.26786, 0.222656, 0.138672)
+
+[node name="rail_right15" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.990637, -0.136382, -0.00619543, 0.136384, 0.990656, -6.79453e-05, 0.00614681, -0.000777647, 0.999981, 134.771, 0.164623, -1.1158)
+size = Vector3(6.20905, 0.222656, 0.138672)
+
+[node name="rail_left8" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 143.057, 0.584507, -1.06705)
+size = Vector3(10.4828, 0.222656, 0.138672)
+
+[node name="bridge platform8" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 144.303, 0, 0)
+size = Vector3(8, 1, 7.93726)
+
+[node name="rail_right9" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 162.975, 0.584507, 1.0787)
+size = Vector3(8.00513, 0.222656, 0.138672)
+
+[node name="rail_left9" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 162.975, 0.584507, -1.06705)
+size = Vector3(7.99584, 0.222656, 0.138672)
+
+[node name="bridge platform9" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 162.977, 0, 0)
+size = Vector3(8, 1, 7.93726)
+
+[node name="rail_right7" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.669246, -0.193635, 0, 0.131117, 0.973848, 0.121142, -0.0160015, -0.118849, 0.992635, 125.983, -1.11428, 1.14272)
+size = Vector3(16.1871, 0.222656, 0.138672)
+
+[node name="rail_left7" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.669246, -0.193635, 0, 0.131117, 0.973848, 0.121142, -0.0160015, -0.118849, 0.992635, 126.116, -1.34824, -0.990404)
+size = Vector3(16.8469, 0.222656, 0.138672)
+
+[node name="rail_left13" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.937282, -0.348572, 0, 0.346047, 0.930494, 0.120137, -0.0418763, -0.112602, 0.992757, 117.444, -3.61064, -0.692389)
+size = Vector3(6.79188, 0.222656, 0.138672)
+
+[node name="rail_left15" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.937282, -0.348572, 0, 0.346047, 0.930494, 0.120137, -0.0418763, -0.112602, 0.992757, 117.472, -3.34581, 1.41096)
+size = Vector3(6.85053, 0.222656, 0.138672)
+
+[node name="rail_left14" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.972529, -0.229046, 0.0415314, 0.222181, 0.966576, 0.127934, -0.069446, -0.115192, 0.990913, 112.166, -5.27041, -0.387638)
+size = Vector3(4.70226, 0.222656, 0.138672)
+
+[node name="rail_left16" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.972529, -0.229046, 0.0415314, 0.222181, 0.966576, 0.127934, -0.069446, -0.115192, 0.990913, 112.161, -4.97516, 1.67173)
+size = Vector3(4.68618, 0.222656, 0.138672)
+
+[node name="bridge platform7" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.669246, -0.193635, 0, 0.131117, 0.973848, 0.121142, -0.0160015, -0.118849, 0.992635, 127.367, -1.56518, 0.11104)
+size = Vector3(9.47314, 1, 7.93726)
+
+[node name="bridge platform15" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.981074, -0.193635, 0, 0.192209, 0.973848, 0.121142, -0.0234573, -0.118849, 0.992635, 122.435, -2.09534, 0.175742)
+size = Vector3(0.612579, 0.137817, 3.66016)
+
+[node name="bridge platform22" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.981074, -0.193635, -0.00046976, 0.192209, 0.973551, 0.123504, -0.0234573, -0.121257, 0.992344, 131.654, -0.261409, -0.0481388)
+size = Vector3(0.612579, 0.137817, 3.66016)
+
+[node name="bridge platform23" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.981074, -0.193435, 0.00880412, 0.192209, 0.978349, 0.0767379, -0.0234573, -0.0735933, 0.997012, 133.355, -0.0290865, -0.0810392)
+size = Vector3(0.612579, 0.137817, 3.66016)
+
+[node name="bridge platform24" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.981074, -0.193243, 0.0123102, 0.192209, 0.97958, 0.0589849, -0.0234573, -0.0555024, 0.998183, 135.156, 0.151504, -0.111342)
+size = Vector3(0.612579, 0.137817, 3.66016)
+
+[node name="bridge platform25" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.984758, -0.172846, 0.0193999, 0.172394, 0.98476, 0.0229642, -0.0230736, -0.0192698, 0.999548, 137.152, 0.397616, -0.15244)
+size = Vector3(0.612579, 0.137817, 3.66016)
+
+[node name="bridge platform26" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.999773, 0.00887052, 0.0193874, -0.00928805, 0.999725, 0.0215509, -0.0191909, -0.0217261, 0.99958, 139.135, 0.463635, -0.192427)
+size = Vector3(0.612579, 0.137817, 3.66016)
+
+[node name="bridge platform16" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.940371, -0.34015, 0, 0.337645, 0.933446, 0.121142, -0.0412063, -0.113918, 0.992635, 119.968, -2.67919, 0.246996)
+size = Vector3(0.612579, 0.137817, 3.66016)
+
+[node name="bridge platform17" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.940371, -0.34015, 0, 0.337645, 0.933446, 0.121142, -0.0412063, -0.113918, 0.992635, 117.832, -3.44639, 0.340624)
+size = Vector3(0.612579, 0.137817, 3.66016)
+
+[node name="bridge platform18" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.940371, -0.34015, 0, 0.337645, 0.933446, 0.121142, -0.0412063, -0.113918, 0.992635, 115.449, -4.3018, 0.445019)
+size = Vector3(0.612579, 0.137817, 3.66016)
+
+[node name="bridge platform19" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.973303, -0.229481, -0.00439424, 0.227833, 0.963639, 0.139616, -0.0278048, -0.13689, 0.990196, 113.609, -4.9652, 0.526032)
+size = Vector3(0.612579, 0.137817, 3.66016)
+
+[node name="bridge platform20" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.973303, -0.229481, -0.00439424, 0.227833, 0.963639, 0.139616, -0.0278048, -0.13689, 0.990196, 110.956, -5.58631, 0.601832)
+size = Vector3(0.612579, 0.137817, 3.66016)
+
+[node name="bridge platform21" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.998597, -0.0525903, 0.00618207, 0.0521846, 0.997196, 0.0536387, -0.00898561, -0.0532408, 0.998541, 109.009, -5.88098, 0.661188)
+size = Vector3(0.612579, 0.137817, 3.66016)
+
+[node name="rail_right5" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.534394, 0.362, 0, -0.194155, 0.996372, 0, 0, 0, 1, 85.7271, 0.752676, 1.0787)
+size = Vector3(8.00513, 0.222656, 0.138672)
+
+[node name="rail_left5" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.534394, 0.362, 0, -0.194155, 0.996372, 0, 0, 0, 1, 85.7276, 0.752676, -1.06705)
+size = Vector3(7.99584, 0.222656, 0.138672)
+
+[node name="bridge platform5" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.534394, 0.362, 0, -0.194155, 0.996372, 0, 0, 0, 1, 85.7298, 0.168169, 0)
+size = Vector3(8, 1, 7.93726)
+
+[node name="rail_right12" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.630571, 0.0230364, -0.042037, -0.0131658, 0.858336, 0.131648, 0.0285142, -0.113115, 0.990404, 90.2454, -5.56479, 1.08847)
+size = Vector3(8.00513, 0.222656, 0.138672)
+
+[node name="rail_left12" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.630571, 0.0230364, -0.042037, -0.0131658, 0.858336, 0.131648, 0.0285142, -0.113115, 0.990404, 90.2355, -5.68904, -1.05366)
+size = Vector3(7.99584, 0.222656, 0.138672)
+
+[node name="bridge platform13" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.630571, 0.0230364, -0.042037, -0.0131658, 0.858336, 0.131648, 0.0285142, -0.113115, 0.990404, 90.3874, -6.19207, 0.0436726)
+size = Vector3(8, 1, 7.93726)
+
+[node name="rail_right6" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.716026, 0, 0, 0, 0.943171, -0.246678, 0, 0.240078, 0.969098, 102.134, -6.30272, 1.81807)
+size = Vector3(8.44006, 0.222656, 0.138672)
+
+[node name="rail_right13" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.705853, -0.158269, 0.0420581, 0.120268, 0.930616, -0.239736, -0.000880707, 0.236882, 0.969927, 107.473, -5.9003, 1.83512)
+size = Vector3(7.10477, 0.222656, 0.138672)
+
+[node name="rail_left6" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.716026, 0, 0, 0, 0.943171, -0.246678, 0, 0.240078, 0.969098, 104.576, -5.77329, -0.261339)
+size = Vector3(15.2498, 0.222656, 0.138672)
+
+[node name="bridge platform6" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.716026, 0, 0, 0, 0.943171, -0.246678, 0, 0.240078, 0.969098, 102.135, -6.34951, -0.241768)
+size = Vector3(8, 1, 6.12537)
 
 [node name="forest path" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.39747, 0, 0)
@@ -36,392 +269,160 @@ size = Vector3(27.223, 1, 4.21899)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 180.438, 0, 0)
 size = Vector3(27.223, 1, 4.21899)
 
-[node name="bridge" type="CSGCombiner3D" parent="CSGCombiner3D"]
-
-[node name="rail_platform" type="CSGCombiner3D" parent="CSGCombiner3D/bridge"]
-
-[node name="rail_right" type="CSGBox3D" parent="CSGCombiner3D/bridge/rail_platform"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.9058, 0.584507, 1.0787)
-size = Vector3(8.00513, 0.222656, 0.138672)
-
-[node name="rail_left" type="CSGBox3D" parent="CSGCombiner3D/bridge/rail_platform"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.9062, 0.584507, -1.06705)
-size = Vector3(7.99584, 0.222656, 0.138672)
-
-[node name="bridge platform" type="CSGBox3D" parent="CSGCombiner3D/bridge/rail_platform"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.908, 0, 0)
-size = Vector3(8, 1, 7.93726)
-
-[node name="rail_right2" type="CSGBox3D" parent="CSGCombiner3D/bridge/rail_platform"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.1827, 0.584507, 1.0787)
-size = Vector3(8.00513, 0.222656, 0.138672)
-
-[node name="rail_left2" type="CSGBox3D" parent="CSGCombiner3D/bridge/rail_platform"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.1831, 0.584507, -1.06705)
-size = Vector3(7.99584, 0.222656, 0.138672)
-
-[node name="bridge platform2" type="CSGBox3D" parent="CSGCombiner3D/bridge/rail_platform"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.7421, 0, 0)
-size = Vector3(8.88574, 1, 7.93726)
-
-[node name="rail_right3" type="CSGBox3D" parent="CSGCombiner3D/bridge/rail_platform"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.3386, 0.584507, 1.0787)
-size = Vector3(8.00513, 0.222656, 0.138672)
-
-[node name="rail_left3" type="CSGBox3D" parent="CSGCombiner3D/bridge/rail_platform"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.339, 0.584507, -1.06705)
-size = Vector3(7.99584, 0.222656, 0.138672)
-
-[node name="bridge platform3" type="CSGBox3D" parent="CSGCombiner3D/bridge/rail_platform"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.3408, 0, 0)
-size = Vector3(8, 1, 7.93726)
-
-[node name="bridge platform10" type="CSGBox3D" parent="CSGCombiner3D/bridge/rail_platform"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.2711, 0, 3.18085)
-size = Vector3(6.42444, 1, 1.57556)
-
-[node name="bridge platform14" type="CSGBox3D" parent="CSGCombiner3D/bridge/rail_platform"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.244, 0, 3.09402)
-size = Vector3(21.2884, 1, 1.74921)
-
-[node name="bridge platform11" type="CSGBox3D" parent="CSGCombiner3D/bridge/rail_platform"]
-transform = Transform3D(1, 0, 0, 0, 0.955926, -0.293607, 0, 0.293607, 0.955926, 59.9442, -4.21019, -1.1908)
-size = Vector3(5.07837, 1, 5.22711)
-
-[node name="rail_right4" type="CSGBox3D" parent="CSGCombiner3D/bridge/rail_platform"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.8451, 0.584507, 1.0787)
-size = Vector3(8.00513, 0.222656, 0.138672)
-
-[node name="rail_left4" type="CSGBox3D" parent="CSGCombiner3D/bridge/rail_platform"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.8455, 0.584507, -1.06705)
-size = Vector3(7.99584, 0.222656, 0.138672)
-
-[node name="rail_right10" type="CSGBox3D" parent="CSGCombiner3D/bridge/rail_platform"]
-transform = Transform3D(1, 0, 0, 0, 0.945496, -0.325634, 0, 0.325634, 0.945496, 60.0501, -4.29757, 1.02022)
-size = Vector3(8.00513, 0.222656, 0.138672)
-
-[node name="rail_left10" type="CSGBox3D" parent="CSGCombiner3D/bridge/rail_platform"]
-transform = Transform3D(1, 0, 0, 0, 0.945496, -0.325634, 0, 0.325634, 0.945496, 60.0505, -3.59884, -1.00858)
-size = Vector3(7.99584, 0.222656, 0.138672)
-
-[node name="bridge platform4" type="CSGBox3D" parent="CSGCombiner3D/bridge/rail_platform"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.8473, 0, 0)
-size = Vector3(8, 1, 7.93726)
-
-[node name="rail_right11" type="CSGBox3D" parent="CSGCombiner3D/bridge/rail_platform"]
-transform = Transform3D(0.498921, -0.234643, 0, 0.10829, 1.08107, 0, 0, 0, 1, 79.567, -5.99876, 1.0787)
-size = Vector3(8.00513, 0.222656, 0.138672)
-
-[node name="rail_left11" type="CSGBox3D" parent="CSGCombiner3D/bridge/rail_platform"]
-transform = Transform3D(0.498921, -0.234643, 0, 0.10829, 1.08107, 0, 0, 0, 1, 79.5672, -5.99868, -1.06705)
-size = Vector3(7.99584, 0.222656, 0.138672)
-
-[node name="bridge platform12" type="CSGBox3D" parent="CSGCombiner3D/bridge/rail_platform"]
-transform = Transform3D(0.498921, -0.234643, 0, 0.10829, 1.08107, 0, 0, 0, 1, 79.63, -6.56949, 0)
-size = Vector3(8, 1, 7.93726)
-
-[node name="rail_right8" type="CSGBox3D" parent="CSGCombiner3D/bridge/rail_platform"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 142.863, 0.584507, 1.0787)
-size = Vector3(10.8791, 0.222656, 0.138672)
-
-[node name="rail_right14" type="CSGBox3D" parent="CSGCombiner3D/bridge/rail_platform"]
-transform = Transform3D(0.99474, -0.100205, -0.0212363, 0.100183, 0.994967, -0.00213876, 0.0213438, -5.82077e-11, 0.999772, 134.376, 0.261901, 1.03822)
-size = Vector3(6.26786, 0.222656, 0.138672)
-
-[node name="rail_right15" type="CSGBox3D" parent="CSGCombiner3D/bridge/rail_platform"]
-transform = Transform3D(0.990637, -0.136382, -0.00619543, 0.136384, 0.990656, -6.79453e-05, 0.00614681, -0.000777647, 0.999981, 134.771, 0.164623, -1.1158)
-size = Vector3(6.20905, 0.222656, 0.138672)
-
-[node name="rail_left8" type="CSGBox3D" parent="CSGCombiner3D/bridge/rail_platform"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 143.057, 0.584507, -1.06705)
-size = Vector3(10.4828, 0.222656, 0.138672)
-
-[node name="bridge platform8" type="CSGBox3D" parent="CSGCombiner3D/bridge/rail_platform"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 144.303, 0, 0)
-size = Vector3(8, 1, 7.93726)
-
-[node name="rail_right9" type="CSGBox3D" parent="CSGCombiner3D/bridge/rail_platform"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 162.975, 0.584507, 1.0787)
-size = Vector3(8.00513, 0.222656, 0.138672)
-
-[node name="rail_left9" type="CSGBox3D" parent="CSGCombiner3D/bridge/rail_platform"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 162.975, 0.584507, -1.06705)
-size = Vector3(7.99584, 0.222656, 0.138672)
-
-[node name="bridge platform9" type="CSGBox3D" parent="CSGCombiner3D/bridge/rail_platform"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 162.977, 0, 0)
-size = Vector3(8, 1, 7.93726)
-
-[node name="rail_right7" type="CSGBox3D" parent="CSGCombiner3D/bridge/rail_platform"]
-transform = Transform3D(0.669246, -0.193635, 0, 0.131117, 0.973848, 0.121142, -0.0160015, -0.118849, 0.992635, 125.983, -1.11428, 1.14272)
-size = Vector3(16.1871, 0.222656, 0.138672)
-
-[node name="rail_left7" type="CSGBox3D" parent="CSGCombiner3D/bridge/rail_platform"]
-transform = Transform3D(0.669246, -0.193635, 0, 0.131117, 0.973848, 0.121142, -0.0160015, -0.118849, 0.992635, 126.116, -1.34824, -0.990404)
-size = Vector3(16.8469, 0.222656, 0.138672)
-
-[node name="rail_left13" type="CSGBox3D" parent="CSGCombiner3D/bridge/rail_platform"]
-transform = Transform3D(0.937282, -0.348572, 0, 0.346047, 0.930494, 0.120137, -0.0418763, -0.112602, 0.992757, 117.444, -3.61064, -0.692389)
-size = Vector3(6.79188, 0.222656, 0.138672)
-
-[node name="rail_left15" type="CSGBox3D" parent="CSGCombiner3D/bridge/rail_platform"]
-transform = Transform3D(0.937282, -0.348572, 0, 0.346047, 0.930494, 0.120137, -0.0418763, -0.112602, 0.992757, 117.472, -3.34581, 1.41096)
-size = Vector3(6.85053, 0.222656, 0.138672)
-
-[node name="rail_left14" type="CSGBox3D" parent="CSGCombiner3D/bridge/rail_platform"]
-transform = Transform3D(0.972529, -0.229046, 0.0415314, 0.222181, 0.966576, 0.127934, -0.069446, -0.115192, 0.990913, 112.166, -5.27041, -0.387638)
-size = Vector3(4.70226, 0.222656, 0.138672)
-
-[node name="rail_left16" type="CSGBox3D" parent="CSGCombiner3D/bridge/rail_platform"]
-transform = Transform3D(0.972529, -0.229046, 0.0415314, 0.222181, 0.966576, 0.127934, -0.069446, -0.115192, 0.990913, 112.161, -4.97516, 1.67173)
-size = Vector3(4.68618, 0.222656, 0.138672)
-
-[node name="bridge platform7" type="CSGBox3D" parent="CSGCombiner3D/bridge/rail_platform"]
-transform = Transform3D(0.669246, -0.193635, 0, 0.131117, 0.973848, 0.121142, -0.0160015, -0.118849, 0.992635, 127.367, -1.56518, 0.11104)
-size = Vector3(9.47314, 1, 7.93726)
-
-[node name="bridge platform15" type="CSGBox3D" parent="CSGCombiner3D/bridge/rail_platform"]
-transform = Transform3D(0.981074, -0.193635, 0, 0.192209, 0.973848, 0.121142, -0.0234573, -0.118849, 0.992635, 122.435, -2.09534, 0.175742)
-size = Vector3(0.612579, 0.137817, 3.66016)
-
-[node name="bridge platform22" type="CSGBox3D" parent="CSGCombiner3D/bridge/rail_platform"]
-transform = Transform3D(0.981074, -0.193635, -0.00046976, 0.192209, 0.973551, 0.123504, -0.0234573, -0.121257, 0.992344, 131.654, -0.261409, -0.0481388)
-size = Vector3(0.612579, 0.137817, 3.66016)
-
-[node name="bridge platform23" type="CSGBox3D" parent="CSGCombiner3D/bridge/rail_platform"]
-transform = Transform3D(0.981074, -0.193435, 0.00880412, 0.192209, 0.978349, 0.0767379, -0.0234573, -0.0735933, 0.997012, 133.355, -0.0290865, -0.0810392)
-size = Vector3(0.612579, 0.137817, 3.66016)
-
-[node name="bridge platform24" type="CSGBox3D" parent="CSGCombiner3D/bridge/rail_platform"]
-transform = Transform3D(0.981074, -0.193243, 0.0123102, 0.192209, 0.97958, 0.0589849, -0.0234573, -0.0555024, 0.998183, 135.156, 0.151504, -0.111342)
-size = Vector3(0.612579, 0.137817, 3.66016)
-
-[node name="bridge platform25" type="CSGBox3D" parent="CSGCombiner3D/bridge/rail_platform"]
-transform = Transform3D(0.984758, -0.172846, 0.0193999, 0.172394, 0.98476, 0.0229642, -0.0230736, -0.0192698, 0.999548, 137.152, 0.397616, -0.15244)
-size = Vector3(0.612579, 0.137817, 3.66016)
-
-[node name="bridge platform26" type="CSGBox3D" parent="CSGCombiner3D/bridge/rail_platform"]
-transform = Transform3D(0.999773, 0.00887052, 0.0193874, -0.00928805, 0.999725, 0.0215509, -0.0191909, -0.0217261, 0.99958, 139.135, 0.463635, -0.192427)
-size = Vector3(0.612579, 0.137817, 3.66016)
-
-[node name="bridge platform16" type="CSGBox3D" parent="CSGCombiner3D/bridge/rail_platform"]
-transform = Transform3D(0.940371, -0.34015, 0, 0.337645, 0.933446, 0.121142, -0.0412063, -0.113918, 0.992635, 119.968, -2.67919, 0.246996)
-size = Vector3(0.612579, 0.137817, 3.66016)
-
-[node name="bridge platform17" type="CSGBox3D" parent="CSGCombiner3D/bridge/rail_platform"]
-transform = Transform3D(0.940371, -0.34015, 0, 0.337645, 0.933446, 0.121142, -0.0412063, -0.113918, 0.992635, 117.832, -3.44639, 0.340624)
-size = Vector3(0.612579, 0.137817, 3.66016)
-
-[node name="bridge platform18" type="CSGBox3D" parent="CSGCombiner3D/bridge/rail_platform"]
-transform = Transform3D(0.940371, -0.34015, 0, 0.337645, 0.933446, 0.121142, -0.0412063, -0.113918, 0.992635, 115.449, -4.3018, 0.445019)
-size = Vector3(0.612579, 0.137817, 3.66016)
-
-[node name="bridge platform19" type="CSGBox3D" parent="CSGCombiner3D/bridge/rail_platform"]
-transform = Transform3D(0.973303, -0.229481, -0.00439424, 0.227833, 0.963639, 0.139616, -0.0278048, -0.13689, 0.990196, 113.609, -4.9652, 0.526032)
-size = Vector3(0.612579, 0.137817, 3.66016)
-
-[node name="bridge platform20" type="CSGBox3D" parent="CSGCombiner3D/bridge/rail_platform"]
-transform = Transform3D(0.973303, -0.229481, -0.00439424, 0.227833, 0.963639, 0.139616, -0.0278048, -0.13689, 0.990196, 110.956, -5.58631, 0.601832)
-size = Vector3(0.612579, 0.137817, 3.66016)
-
-[node name="bridge platform21" type="CSGBox3D" parent="CSGCombiner3D/bridge/rail_platform"]
-transform = Transform3D(0.998597, -0.0525903, 0.00618207, 0.0521846, 0.997196, 0.0536387, -0.00898561, -0.0532408, 0.998541, 109.009, -5.88098, 0.661188)
-size = Vector3(0.612579, 0.137817, 3.66016)
-
-[node name="rail_right5" type="CSGBox3D" parent="CSGCombiner3D/bridge/rail_platform"]
-transform = Transform3D(0.534394, 0.362, 0, -0.194155, 0.996372, 0, 0, 0, 1, 85.7271, 0.752676, 1.0787)
-size = Vector3(8.00513, 0.222656, 0.138672)
-
-[node name="rail_left5" type="CSGBox3D" parent="CSGCombiner3D/bridge/rail_platform"]
-transform = Transform3D(0.534394, 0.362, 0, -0.194155, 0.996372, 0, 0, 0, 1, 85.7276, 0.752676, -1.06705)
-size = Vector3(7.99584, 0.222656, 0.138672)
-
-[node name="bridge platform5" type="CSGBox3D" parent="CSGCombiner3D/bridge/rail_platform"]
-transform = Transform3D(0.534394, 0.362, 0, -0.194155, 0.996372, 0, 0, 0, 1, 85.7298, 0.168169, 0)
-size = Vector3(8, 1, 7.93726)
-
-[node name="rail_right12" type="CSGBox3D" parent="CSGCombiner3D/bridge/rail_platform"]
-transform = Transform3D(0.630571, 0.0230364, -0.042037, -0.0131658, 0.858336, 0.131648, 0.0285142, -0.113115, 0.990404, 90.2454, -5.56479, 1.08847)
-size = Vector3(8.00513, 0.222656, 0.138672)
-
-[node name="rail_left12" type="CSGBox3D" parent="CSGCombiner3D/bridge/rail_platform"]
-transform = Transform3D(0.630571, 0.0230364, -0.042037, -0.0131658, 0.858336, 0.131648, 0.0285142, -0.113115, 0.990404, 90.2355, -5.68904, -1.05366)
-size = Vector3(7.99584, 0.222656, 0.138672)
-
-[node name="bridge platform13" type="CSGBox3D" parent="CSGCombiner3D/bridge/rail_platform"]
-transform = Transform3D(0.630571, 0.0230364, -0.042037, -0.0131658, 0.858336, 0.131648, 0.0285142, -0.113115, 0.990404, 90.3874, -6.19207, 0.0436726)
-size = Vector3(8, 1, 7.93726)
-
-[node name="rail_right6" type="CSGBox3D" parent="CSGCombiner3D/bridge/rail_platform"]
-transform = Transform3D(0.716026, 0, 0, 0, 0.943171, -0.246678, 0, 0.240078, 0.969098, 102.134, -6.30272, 1.81807)
-size = Vector3(8.44006, 0.222656, 0.138672)
-
-[node name="rail_right13" type="CSGBox3D" parent="CSGCombiner3D/bridge/rail_platform"]
-transform = Transform3D(0.705853, -0.158269, 0.0420581, 0.120268, 0.930616, -0.239736, -0.000880707, 0.236882, 0.969927, 107.473, -5.9003, 1.83512)
-size = Vector3(7.10477, 0.222656, 0.138672)
-
-[node name="rail_left6" type="CSGBox3D" parent="CSGCombiner3D/bridge/rail_platform"]
-transform = Transform3D(0.716026, 0, 0, 0, 0.943171, -0.246678, 0, 0.240078, 0.969098, 104.576, -5.77329, -0.261339)
-size = Vector3(15.2498, 0.222656, 0.138672)
-
-[node name="bridge platform6" type="CSGBox3D" parent="CSGCombiner3D/bridge/rail_platform"]
-transform = Transform3D(0.716026, 0, 0, 0, 0.943171, -0.246678, 0, 0.240078, 0.969098, 102.135, -6.34951, -0.241768)
-size = Vector3(8, 1, 6.12537)
-
-[node name="support_beams" type="CSGCombiner3D" parent="CSGCombiner3D/bridge"]
-
-[node name="beamvertical" type="CSGBox3D" parent="CSGCombiner3D/bridge/support_beams"]
+[node name="beamvertical" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.3096, -15.3806, -3.3965)
 size = Vector3(1.07764, 31.7612, 1)
 
-[node name="beamvertical3" type="CSGBox3D" parent="CSGCombiner3D/bridge/support_beams"]
+[node name="beamvertical3" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.3608, -5.11847, -3.3965)
 size = Vector3(1.07764, 11.2369, 1)
 
-[node name="beamvertical5" type="CSGBox3D" parent="CSGCombiner3D/bridge/support_beams"]
+[node name="beamvertical5" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 73.2436, -4.47476, -3.3965)
 size = Vector3(1.07764, 9.94952, 1)
 
-[node name="beamvertical6" type="CSGBox3D" parent="CSGCombiner3D/bridge/support_beams"]
+[node name="beamvertical6" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 96.4172, -6.61719, -0.080595)
 size = Vector3(1.07764, 7.92213, 1)
 
-[node name="beamvertical8" type="CSGBox3D" parent="CSGCombiner3D/bridge/support_beams"]
+[node name="beamvertical8" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 107.519, -6.61719, -0.080595)
 size = Vector3(1.07764, 7.92213, 1)
 
-[node name="beamvertical7" type="CSGBox3D" parent="CSGCombiner3D/bridge/support_beams"]
+[node name="beamvertical7" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 84.7657, -6.61719, 0.00967216)
 size = Vector3(1.07764, 7.71321, 1)
 
-[node name="beamvertical4" type="CSGBox3D" parent="CSGCombiner3D/bridge/support_beams"]
+[node name="beamvertical4" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.9295, -7.02586, -3.33999)
 size = Vector3(1.07764, 7.13736, 1)
 
-[node name="beam2v" type="CSGBox3D" parent="CSGCombiner3D/bridge/support_beams"]
+[node name="beam2v" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.3096, -15.2529, 3.39653)
 size = Vector3(1.07764, 31.5059, 1)
 
-[node name="beam2v3" type="CSGBox3D" parent="CSGCombiner3D/bridge/support_beams"]
+[node name="beam2v3" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.3098, -5.12701, 3.39653)
 size = Vector3(1.07764, 11.254, 1)
 
-[node name="beam2v4" type="CSGBox3D" parent="CSGCombiner3D/bridge/support_beams"]
+[node name="beam2v4" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.9612, -5.58037, 3.39653)
 size = Vector3(1.07764, 10.3473, 1)
 
-[node name="beam2v5" type="CSGBox3D" parent="CSGCombiner3D/bridge/support_beams"]
+[node name="beam2v5" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 73.2773, -4.86219, 3.39653)
 size = Vector3(1.07764, 8.91096, 1)
 
-[node name="beam2v6" type="CSGBox3D" parent="CSGCombiner3D/bridge/support_beams"]
+[node name="beam2v6" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.6206, -3.411, 3.39653)
 size = Vector3(1.07764, 7.34664, 1)
 
-[node name="beam2v11" type="CSGBox3D" parent="CSGCombiner3D/bridge/support_beams"]
+[node name="beam2v11" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(0.983309, -0.143405, -0.111976, -7.12754e-09, 0.615441, -0.788183, 0.181944, 0.775027, 0.605169, 84.9477, -2.63758, 0.000948042)
 size = Vector3(1.07764, 8.53517, 1)
 
-[node name="beam2v8" type="CSGBox3D" parent="CSGCombiner3D/bridge/support_beams"]
+[node name="beam2v8" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96.1937, -3.411, 3.39653)
 size = Vector3(1.07764, 7.34664, 1)
 
-[node name="beam2v9" type="CSGBox3D" parent="CSGCombiner3D/bridge/support_beams"]
+[node name="beam2v9" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 107.475, -3.411, 3.39653)
 size = Vector3(1.07764, 7.34664, 1)
 
-[node name="beam2v10" type="CSGBox3D" parent="CSGCombiner3D/bridge/support_beams"]
+[node name="beam2v10" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 116.291, -3.411, 3.39653)
 size = Vector3(1.07764, 7.34664, 1)
 
-[node name="beam2v12" type="CSGBox3D" parent="CSGCombiner3D/bridge/support_beams"]
+[node name="beam2v12" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 154.032, -5.04529, 3.39653)
 size = Vector3(1.07764, 10.6152, 1)
 
-[node name="beam2v15" type="CSGBox3D" parent="CSGCombiner3D/bridge/support_beams"]
+[node name="beam2v15" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 154.032, -5.04529, -3.36933)
 size = Vector3(1.07764, 10.6152, 1)
 
-[node name="beam2v16" type="CSGBox3D" parent="CSGCombiner3D/bridge/support_beams"]
+[node name="beam2v16" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 143.383, -5.04529, -3.36933)
 size = Vector3(1.07764, 10.6152, 1)
 
-[node name="beam2v13" type="CSGBox3D" parent="CSGCombiner3D/bridge/support_beams"]
+[node name="beam2v13" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 143.329, -5.04529, 3.39653)
 size = Vector3(1.07764, 10.6152, 1)
 
-[node name="beam2v14" type="CSGBox3D" parent="CSGCombiner3D/bridge/support_beams"]
+[node name="beam2v14" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 128.142, -5.30566, 3.39653)
 size = Vector3(1.07764, 8.42358, 1)
 
-[node name="beam2v17" type="CSGBox3D" parent="CSGCombiner3D/bridge/support_beams"]
+[node name="beam2v17" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(0.976856, -0.2139, 0, 0.2139, 0.976856, 0, 0, 0, 1, 127.423, -6.83965, -3.37841)
 size = Vector3(1.07764, 8.42358, 1)
 
-[node name="beam2v7" type="CSGBox3D" parent="CSGCombiner3D/bridge/support_beams"]
+[node name="beam2v7" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(0.949945, 0.312418, 0, -0.312418, 0.949945, 0, 0, 0, 1, 85.6347, -3.68143, -3.52019)
 size = Vector3(1.07764, 7.34664, 1)
 
-[node name="beamvertical2" type="CSGBox3D" parent="CSGCombiner3D/bridge/support_beams"]
+[node name="beamvertical2" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 165.215, -15.4006, -3.3965)
 size = Vector3(1.07764, 31.8013, 1)
 
-[node name="beam2v2" type="CSGBox3D" parent="CSGCombiner3D/bridge/support_beams"]
+[node name="beam2v2" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 165.215, -15.1675, 3.39653)
 size = Vector3(1.07764, 31.335, 1)
 
-[node name="beamhorizontal" type="CSGBox3D" parent="CSGCombiner3D/bridge/support_beams"]
+[node name="beamhorizontal" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 51.0659, -10.2278, 3.39653)
 size = Vector3(1.07764, 32.5814, 1)
 
-[node name="beamhorizontal2" type="CSGBox3D" parent="CSGCombiner3D/bridge/support_beams"]
+[node name="beamhorizontal2" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 149.437, -10.2278, 3.39653)
 size = Vector3(1.07764, 32.5814, 1)
 
-[node name="beamhorizontal3" type="CSGBox3D" parent="CSGCombiner3D/bridge/support_beams"]
+[node name="beamhorizontal3" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 149.437, -10.2278, -3.37583)
 size = Vector3(1.07764, 32.5814, 1)
 
-[node name="beamhorizontal4" type="CSGBox3D" parent="CSGCombiner3D/bridge/support_beams"]
+[node name="beamhorizontal4" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 51.1485, -10.2278, -3.37583)
 size = Vector3(1.07764, 32.5814, 1)
 
-[node name="beamincline" type="CSGBox3D" parent="CSGCombiner3D/bridge/support_beams"]
+[node name="beamincline" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(0.396747, 0.917928, 0, -0.917928, 0.396747, 0, 0, 0, 1, 50.8995, -17.2215, -3.37583)
 size = Vector3(1.07764, 35.3561, 1)
 
-[node name="beamincline2" type="CSGBox3D" parent="CSGCombiner3D/bridge/support_beams"]
+[node name="beamincline2" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(0.396747, 0.917928, 0, -0.917928, 0.396747, 0, 0, 0, 1, 50.8995, -17.2215, 3.36596)
 size = Vector3(1.07764, 35.3561, 1)
 
-[node name="beamincline3" type="CSGBox3D" parent="CSGCombiner3D/bridge/support_beams"]
+[node name="beamincline3" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(0.204735, 0.978817, 0, -0.978817, 0.204735, 0, 0, 0, 1, 75.5333, -8.54784, 3.35202)
 size = Vector3(1.07764, 18.2507, 1)
 
-[node name="beamincline5" type="CSGBox3D" parent="CSGCombiner3D/bridge/support_beams"]
+[node name="beamincline5" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(0.000994768, 1, 0, -1, 0.000994768, 0, 0, 0, 1, 100.129, -6.70756, 3.35202)
 size = Vector3(1.07764, 32.011, 1)
 
-[node name="beamincline9" type="CSGBox3D" parent="CSGCombiner3D/bridge/support_beams"]
+[node name="beamincline9" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(0.000994768, 1, 0, -1, 0.000994768, 0, 0, 0, 1, 101.97, -6.70573, -3.53286)
 size = Vector3(1.07764, 12.1109, 1)
 
-[node name="beamincline8" type="CSGBox3D" parent="CSGCombiner3D/bridge/support_beams"]
+[node name="beamincline8" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(-0.251073, 0.967968, 0, -0.967968, -0.251073, 0, 0, 0, 1, 89.3217, -7.96352, -3.40172)
 size = Vector3(1.07764, 10.3967, 1)
 
-[node name="beamincline4" type="CSGBox3D" parent="CSGCombiner3D/bridge/support_beams"]
+[node name="beamincline4" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(0.204735, 0.978817, 0, -0.978817, 0.204735, 0, 0, 0, 1, 75.5333, -8.54784, -3.37662)
 size = Vector3(1.07764, 18.2507, 1)
 
-[node name="beamincline6" type="CSGBox3D" parent="CSGCombiner3D/bridge/support_beams"]
+[node name="beamincline6" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(-0.204735, -0.978817, 8.74228e-08, -0.978817, 0.204735, 0, -1.78985e-08, -8.55709e-08, -1, 124.977, -8.54784, 3.35202)
 size = Vector3(1.07764, 18.2507, 1)
 
-[node name="beamincline7" type="CSGBox3D" parent="CSGCombiner3D/bridge/support_beams"]
+[node name="beamincline7" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(0.206682, -0.978408, 8.0024e-08, -0.978408, -0.206682, 3.51981e-08, -1.78985e-08, -8.55709e-08, -1, 124.977, -12.0154, -3.37662)
 size = Vector3(1.07764, 18.2507, 1)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("4_3dv5j")]
+
+[node name="assets" type="Node3D" parent="."]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://obn6pfnmqfn1"
-path="res://.godot/imported/track1.png-73b3857fc3b9b0098f5ef0a13df8d0e6.ctex"
+uid="uid://dleupj1lna3ib"
+path="res://.godot/imported/tilesettrain.png-dbc290e1540105d76d9ece1c2dd9744a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://2D_levels/level_1/assets/track1.png"
-dest_files=["res://.godot/imported/track1.png-73b3857fc3b9b0098f5ef0a13df8d0e6.ctex"]
+source_file="res://2D_levels/level_1/assets/tilesettrain.png"
+dest_files=["res://.godot/imported/tilesettrain.png-dbc290e1540105d76d9ece1c2dd9744a.ctex"]
 
 [params]
 

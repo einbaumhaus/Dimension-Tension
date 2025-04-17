@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://rlxxlqipr1u3"]
+
+[ext_resource type="Script" uid="uid://b7x2f7dxuq4f" path="res://menus/settings.gd" id="1_urrvo"]
+
+[node name="settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_urrvo")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="mouse_sens" type="HSlider" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/mouse_sens" to="." method="_on_mouse_sens_value_changed"]

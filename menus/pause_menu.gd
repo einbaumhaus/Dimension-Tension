@@ -39,3 +39,9 @@ func _on_quit_pressed() -> void:
 
 func _process(delta: float) -> void:
 	testEsc()
+
+
+func _on_settings_pressed() -> void:
+	hide()
+	resume()
+	get_tree().change_scene_to_file("res://menus/settings.tscn")

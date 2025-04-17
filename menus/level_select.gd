@@ -16,8 +16,8 @@ func _on_back_b_pressed() -> void:
 
 
 func _on_lvl_1_2d_pressed() -> void:
-	get_tree().change_scene_to_file("res://2D_levels/level_1/level_1.tscn")
+	get_tree().change_scene_to_file("res://2D_levels/level_1/level_1_2d.tscn")
 
 
 func _on_lvl_1_3d_pressed() -> void:
-	get_tree().change_scene_to_file("res://3D_levels/level_1/level_1.tscn")
+	get_tree().change_scene_to_file("res://3D_levels/level_1/level_1_3d.tscn")

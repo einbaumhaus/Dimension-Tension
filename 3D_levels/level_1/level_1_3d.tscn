@@ -1,11 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://dlb7qukr5wfbb"]
+[gd_scene load_steps=15 format=3 uid="uid://dlb7qukr5wfbb"]
 
-[ext_resource type="PackedScene" uid="uid://cj7d18ek4ria6" path="res://3D_levels/Player3D/character_body_3d.tscn" id="1_oq417"]
-[ext_resource type="Texture2D" uid="uid://cjllvahxg6keb" path="res://3D_levels/level_1/assets/overcast_soil_puresky_4k.hdr" id="2_i53j8"]
-[ext_resource type="PackedScene" uid="uid://bnp7vdu3nrbe8" path="res://menus/pause_menu.tscn" id="4_3dv5j"]
+[ext_resource type="PackedScene" uid="uid://cj7d18ek4ria6" path="res://3D_levels/Player3D/character_body_3d.tscn" id="1_y7tgq"]
+[ext_resource type="Texture2D" uid="uid://cjllvahxg6keb" path="res://3D_levels/level_1/assets/overcast_soil_puresky_4k.hdr" id="2_irmad"]
+[ext_resource type="PackedScene" uid="uid://bnp7vdu3nrbe8" path="res://menus/pause_menu.tscn" id="3_grgy5"]
+[ext_resource type="PackedScene" uid="uid://mfyy5n532t1p" path="res://3D_levels/level_1/assets/train.glb" id="4_mbj4m"]
+[ext_resource type="Script" uid="uid://cwmdpvjr3jcop" path="res://3D_levels/level_1/animation_player.gd" id="5_grgy5"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_3dv5j"]
-panorama = ExtResource("2_i53j8")
+panorama = ExtResource("2_irmad")
 
 [sub_resource type="Sky" id="Sky_giu1j"]
 sky_material = SubResource("PanoramaSkyMaterial_3dv5j")
@@ -14,14 +16,56 @@ sky_material = SubResource("PanoramaSkyMaterial_3dv5j")
 background_mode = 2
 sky = SubResource("Sky_giu1j")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3dv5j"]
-transparency = 1
-albedo_color = Color(0.568586, 0.163503, 0.497197, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_grgy5"]
+albedo_color = Color(0.494345, 0.547775, 0.570348, 1)
 
-[node name="level_1" type="Node3D"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_irmad"]
+albedo_color = Color(0.637196, 0.413858, 0.170647, 1)
 
-[node name="CharacterBody3D" parent="." instance=ExtResource("1_oq417")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.88918, 3.32109, -0.0765931)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mbj4m"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_joxi0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("train:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-24.5006, 0.667439, -33.803)]
+}
+
+[sub_resource type="Animation" id="Animation_mbj4m"]
+resource_name = "drive"
+length = 12.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("train:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 12),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-24.5006, 0.667439, -33.803), Vector3(264.235, 0.667439, -33.803)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_erloq"]
+_data = {
+&"RESET": SubResource("Animation_joxi0"),
+&"drive": SubResource("Animation_mbj4m")
+}
+
+[node name="level_2" type="Node3D"]
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("1_y7tgq")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7.731, 3.32109, -0.0765856)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.0802861, 0.996772, 0, -0.996772, 0.0802861, 54.8478, 22.2257, 46.3193)
@@ -30,7 +74,6 @@ transform = Transform3D(1, 0, 0, 0, 0.0802861, 0.996772, 0, -0.996772, 0.0802861
 environment = SubResource("Environment_i53j8")
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
-material_override = SubResource("StandardMaterial3D_3dv5j")
 use_collision = true
 
 [node name="rail_right" type="CSGBox3D" parent="CSGCombiner3D"]
@@ -43,6 +86,18 @@ size = Vector3(7.99584, 0.222656, 0.138672)
 
 [node name="bridge platform" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.908, 0, 0)
+size = Vector3(8, 1, 7.93726)
+
+[node name="rail_right16" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(41.999, 0, 0, 0, 1, 0, 0, 0, 1, 116.957, 0.584507, -32.7735)
+size = Vector3(8.00513, 0.222656, 0.138672)
+
+[node name="rail_left17" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(41.999, 0, 0, 0, 1, 0, 0, 0, 1, 116.958, 0.584507, -34.9193)
+size = Vector3(7.99584, 0.222656, 0.138672)
+
+[node name="bridge platform27" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(41.999, 0, 0, 0, 1, 0, 0, 0, 1, 119.581, 0, -33.8522)
 size = Vector3(8, 1, 7.93726)
 
 [node name="rail_right2" type="CSGBox3D" parent="CSGCombiner3D"]
@@ -266,8 +321,91 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.39747, 0, 0)
 size = Vector3(27.223, 1, 4.21899)
 
 [node name="forest path2" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 180.438, 0, 0)
-size = Vector3(27.223, 1, 4.21899)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 203.052, 0, 9.05243)
+size = Vector3(72.4518, 1, 55.5844)
+
+[node name="forest path4" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 207.199, 14.5692, -35.1995)
+size = Vector3(27.223, 1, 31.5435)
+
+[node name="forest path20" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 276.654, 47.8725, -43.7971)
+size = Vector3(41.5939, 1, 76.3882)
+
+[node name="forest path15" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 0.897035, -0.44196, 0, 0.44196, 0.897035, 207.199, 21.4676, -64.417)
+size = Vector3(27.223, 1, 31.5435)
+
+[node name="forest path5" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 207.199, 6.95675, -19.3251)
+size = Vector3(27.223, 1, 16.3185)
+
+[node name="forest path16" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(-4.06204e-08, -0.929287, -0.369357, 1.61451e-08, 0.369357, -0.929287, 1, -4.37114e-08, 1.61213e-15, 225.178, 28.7603, -43.8934)
+size = Vector3(76.3595, 1, 29.0738)
+material = SubResource("StandardMaterial3D_grgy5")
+
+[node name="forest path19" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(-9.46013e-09, -0.216423, -0.9763, 4.26754e-08, 0.9763, -0.216423, 1, -4.37114e-08, 1.61213e-15, 243.218, 44.6956, -43.8934)
+size = Vector3(76.3595, 1, 27.3809)
+material = SubResource("StandardMaterial3D_grgy5")
+
+[node name="forest path14" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 207.199, 6.95675, -50.5197)
+size = Vector3(27.223, 1, 16.3185)
+
+[node name="forest path3" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 190.085, 1.38344, 0.949432)
+size = Vector3(3.6001, 1.91632, 2.56683)
+
+[node name="forest path8" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 194.832, 2.43164, 0.949432)
+size = Vector3(2.35657, 4.01273, 2.56683)
+
+[node name="forest path9" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 199.096, 2.60552, -2.89014)
+size = Vector3(3.6001, 4.36048, 2.56683)
+
+[node name="forest path10" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 202.993, 3.17767, -7.33239)
+size = Vector3(3.6001, 5.50477, 2.56683)
+
+[node name="forest path12" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 209.811, 3.78731, -4.7576)
+size = Vector3(3.6001, 6.72406, 2.56683)
+
+[node name="forest path13" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 215.772, 4.13991, -7.7342)
+size = Vector3(3.6001, 7.42926, 2.56683)
+
+[node name="forest path11" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 0.681168, 0.732127, 0, -0.732127, 0.681168, 218.93, 11.1793, -15.9728)
+size = Vector3(3.6001, 9.24115, 2.56683)
+
+[node name="forest path6" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 223.015, 8.09646, 1.36518)
+size = Vector3(3.90625, 15.3423, 43.3958)
+material = SubResource("StandardMaterial3D_irmad")
+
+[node name="forest path21" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 274.471, 57.1642, -48.8866)
+size = Vector3(3.90625, 21.5091, 60.8287)
+material = SubResource("StandardMaterial3D_mbj4m")
+
+[node name="forest path17" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 0.88592, -0.463837, 0, 0.463837, 0.88592, 196.655, 23.8678, -63.8284)
+size = Vector3(0.943848, 6.05997, 26.2682)
+material = SubResource("StandardMaterial3D_irmad")
+
+[node name="forest path18" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 0.88592, -0.463837, 0, 0.463837, 0.88592, 216.086, 23.8678, -63.8284)
+size = Vector3(0.943848, 6.05997, 26.2682)
+material = SubResource("StandardMaterial3D_irmad")
+
+[node name="forest path7" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.0173128, 0, -0.99985, 0, 1, 0, 0.99985, 0, 0.0173128, 196.771, 8.09646, 22.0828)
+size = Vector3(3.90625, 15.3423, 55.7142)
+material = SubResource("StandardMaterial3D_irmad")
 
 [node name="beamvertical" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.3096, -15.3806, -3.3965)
@@ -423,6 +561,21 @@ size = Vector3(1.07764, 18.2507, 1)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("4_3dv5j")]
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("3_grgy5")]
 
 [node name="assets" type="Node3D" parent="."]
+
+[node name="train" type="Node3D" parent="assets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.5006, 0.667439, -33.803)
+
+[node name="train" parent="assets/train" instance=ExtResource("4_mbj4m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.04707, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="assets"]
+libraries = {
+&"": SubResource("AnimationLibrary_erloq")
+}
+script = ExtResource("5_grgy5")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.0308874, 0, -0.999523, 0, 1, 0, 0.999523, 0, 0.0308874, 0, 2.28964, 0)

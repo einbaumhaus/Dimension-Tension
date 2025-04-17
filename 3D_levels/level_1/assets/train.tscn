@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgnmns87reyps"]
+
+[ext_resource type="PackedScene" uid="uid://mfyy5n532t1p" path="res://3D_levels/level_1/assets/train.glb" id="1_skuw4"]
+[ext_resource type="Texture2D" uid="uid://cftp3nj4qyvsf" path="res://3D_levels/level_1/assets/image.png" id="2_6hu8r"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="train" parent="." instance=ExtResource("1_skuw4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.04707, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.13528, 0)
+texture = ExtResource("2_6hu8r")

@@ -8,7 +8,7 @@ var acceleration = 30
 var _gravity := -30.0
 var _camera_input_direction := Vector2.ZERO
 var _last_movement_direction := Vector3.BACK
-var mouse_sensitivity := 0.25
+@export var mouse_sensitivity := 0.25
 @onready var _camera: Camera3D = $Camera3D
 
 func _ready() -> void:
@@ -31,7 +31,7 @@ func _unhandled_input(event: InputEvent) -> void:
 func _physics_process(delta: float) -> void:
 	_camera.rotation.x -= _camera_input_direction.y * delta
 	_camera.rotation.y -= _camera_input_direction.x * delta
-	_camera.rotation.x = clamp(_camera.rotation.x, -PI / 3.0, PI / 6.0)
+	_camera.rotation.x = clamp(_camera.rotation.x, -PI / 3.0, PI / 3.5)
 	_camera_input_direction = Vector2.ZERO
 	# Add the gravity.
 	if not is_on_floor():

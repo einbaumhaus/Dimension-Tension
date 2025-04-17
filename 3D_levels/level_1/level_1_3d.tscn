@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dlb7qukr5wfbb"]
+[gd_scene load_steps=38 format=4 uid="uid://dlb7qukr5wfbb"]
 
 [ext_resource type="PackedScene" uid="uid://cj7d18ek4ria6" path="res://3D_levels/Player3D/character_body_3d.tscn" id="1_y7tgq"]
 [ext_resource type="Texture2D" uid="uid://cjllvahxg6keb" path="res://3D_levels/level_1/assets/overcast_soil_puresky_4k.hdr" id="2_irmad"]
@@ -7,6 +7,13 @@
 [ext_resource type="PackedScene" uid="uid://mfyy5n532t1p" path="res://3D_levels/level_1/assets/train.glb" id="4_mbj4m"]
 [ext_resource type="Script" uid="uid://cwmdpvjr3jcop" path="res://3D_levels/level_1/animation_player.gd" id="5_grgy5"]
 [ext_resource type="PackedScene" uid="uid://d3tva3v3fe2vx" path="res://3D_levels/level_1/assets/bridge/platform.tscn" id="5_mbj4m"]
+[ext_resource type="Texture2D" uid="uid://bfdt00b1204ce" path="res://3D_levels/level_1/assets/bridge/materials/forrest_ground_01_diff_1k.jpg" id="8_joxi0"]
+[ext_resource type="Texture2D" uid="uid://dcjfetld4q5y7" path="res://3D_levels/level_1/assets/bridge/materials/Ice002_1K-JPG_Color.jpg" id="9_3al1x"]
+[ext_resource type="Texture2D" uid="uid://bn18yxl6dcmmu" path="res://3D_levels/level_1/assets/bridge/materials/rocky_terrain_diff_1k.jpg" id="9_erloq"]
+[ext_resource type="PackedScene" uid="uid://cfh3tu8tfnl3a" path="res://3D_levels/level_1/assets/bridge/rail.tscn" id="10_76hjp"]
+[ext_resource type="Script" uid="uid://bwo2cr7ysf7j1" path="res://3D_levels/level_1/water.gd" id="10_xx4wa"]
+[ext_resource type="Texture2D" uid="uid://lxud5fbogolq" path="res://3D_levels/level_1/assets/bridge/materials/rusty_metal_04_diff_1k.jpg" id="11_76hjp"]
+[ext_resource type="Material" uid="uid://ci77x44h1n1ho" path="res://3D_levels/level_1/assets/bridge/materials/clean_rail.material" id="12_1gpri"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_3dv5j"]
 panorama = ExtResource("2_irmad")
@@ -17,6 +24,8 @@ sky_material = SubResource("PanoramaSkyMaterial_3dv5j")
 [sub_resource type="Environment" id="Environment_i53j8"]
 background_mode = 2
 sky = SubResource("Sky_giu1j")
+ambient_light_source = 3
+reflected_light_source = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_erloq"]
 transparency = 1
@@ -33,6 +42,70 @@ albedo_color = Color(0.637196, 0.413858, 0.170647, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mbj4m"]
 albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_erloq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cfip6"]
+albedo_color = Color(0.728822, 0.728822, 0.728822, 1)
+albedo_texture = ExtResource("8_joxi0")
+uv1_scale = Vector3(18.165, 34.97, 18.09)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_76hjp"]
+albedo_color = Color(0.728822, 0.728822, 0.728822, 1)
+albedo_texture = ExtResource("9_3al1x")
+uv1_scale = Vector3(4.66, 18.09, 18.09)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3al1x"]
+albedo_texture = ExtResource("9_erloq")
+uv1_scale = Vector3(6.375, 17.24, 6.375)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_erloq"]
+points = PackedVector3Array(-1, 0, -1, -1, 0, 1, 1, 0, -1, 1, 0, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_cfip6"]
+points = PackedVector3Array(-1, 0, -1, -1, 0, 1, 1, 0, -1, 1, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nfjby"]
+resource_name = "Material"
+cull_mode = 2
+albedo_texture = ExtResource("11_76hjp")
+roughness = 0.360656
+uv1_scale = Vector3(0.25, 11.4, 1)
+uv1_offset = Vector3(1.805, 1.535, 0)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_c6qml"]
+_surfaces = [{
+"aabb": AABB(-0.250271, -0.34226, -5.02749, 0.500543, 0.406562, 10.0552),
+"format": 34359742465,
+"index_count": 60,
+"index_data": PackedByteArray("CAABAAIAAgABAAUAAgAFAAYACQAFAAEACAAJAAEACgAGAAUACQAKAAUACwACAAYACwAIAAIACgALAAYACAADAAkACgAEAAsACwAAAAgACAAAAAMACwAEAAAACQADAAcACQAHAAoABwADAAAACgAHAAQABwAAAAQA"),
+"lods": [0.111637, PackedByteArray("AAABAAIAAAADAAEABAAAAAIAAwAFAAEAAgABAAUABAACAAYAAgAFAAYABwAAAAQABwADAAAABwAEAAYAAwAHAAUABwAGAAUA")],
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("lSOAvr48r77U4qBAM0LLPX+wgz3U4qBAM0LLvX+wgz3U4qBAlSOAPr48r77U4qBAlSOAvr48r7424aDAM0LLPX+wgz024aDAM0LLvX+wgz024aDAlSOAPr48r7424aDAM0LLvUbigL7U4qBAM0LLPUbigL7U4qBAM0LLPUbigL424aDAM0LLvUbigL424aDA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_88a0w"]
+resource_name = "rail_Cube"
+_surfaces = [{
+"aabb": AABB(-0.250271, -0.34226, -5.02749, 0.500543, 0.406562, 10.0552),
+"attribute_data": PackedByteArray("AADAPgAAgD4AACA/AAAAAAAAID8AAIA+AADAPgAAAAAAAMA+AACAPwAAID8AAEA/AAAgPwAAgD8AAMA+AABAPwAAwD4AAAA/AAAgPwAAgD4AACA/AAAAPwAAwD4AAIA+AADAPgAAQD8AACA/AAAAPwAAID8AAEA/AADAPgAAAD8AAAA+AAAAPwAAwD4AAIA+AADAPgAAAD8AAAA+AACAPgAAID8AAIA+AAAgPwAAQD8AACA/AAAAPwAAID8AAIA/AADAPgAAgD4AAMA+AAAAAAAAwD4AAIA/AADAPgAAQD8AAMA+AACAPwAAwD4AAEA/AADAPgAAAD8AAMA+AACAPgAAwD4AAEA/AADAPgAAAD8AAMA+AAAAPwAAwD4AAIA+"),
+"format": 34359742487,
+"index_count": 60,
+"index_data": PackedByteArray("GAABAAIAGAAZAAEAGAADABkAGAAAAAMAGgAFAAYAGgAbAAUAHAAHAB0AHAAEAAcAHgAJAAoAHgAfAAkAIAANAA4AIAAhAA0AIAAPACEAIAAMAA8AEAARABIAEAATABEAIgALACMAIgAIAAsAFAAVABYAFAAXABUA"),
+"lods": [0.111637, PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA")],
+"material": SubResource("StandardMaterial3D_nfjby"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 36,
+"vertex_data": PackedByteArray("lSOAvr48r77U4qBAM0LLPX+wgz3U4qBAM0LLvX+wgz3U4qBAlSOAPr48r77U4qBAlSOAPr48r77U4qBAM0LLPX+wgz024aDAM0LLPX+wgz3U4qBAlSOAPr48r7424aDAlSOAvr48r7424aDAM0LLvX+wgz3U4qBAM0LLvX+wgz024aDAlSOAvr48r77U4qBAlSOAPr48r7424aDAM0LLvX+wgz024aDAM0LLPX+wgz024aDAlSOAvr48r7424aDAlSOAPr48r7424aDAlSOAvr48r77U4qBAlSOAvr48r7424aDAlSOAPr48r77U4qBAM0LLvX+wgz3U4qBAM0LLPX+wgz024aDAM0LLvX+wgz024aDAM0LLPX+wgz3U4qBAM0LLvUbigL7U4qBAM0LLPUbigL7U4qBAM0LLPUbigL7U4qBAM0LLPUbigL424aDAM0LLPUbigL7U4qBAM0LLPUbigL424aDAM0LLvUbigL424aDAM0LLvUbigL7U4qBAM0LLPUbigL424aDAM0LLvUbigL424aDAM0LLvUbigL424aDAM0LLvUbigL7U4qBA/////////7///////3//////////f////////////78FUPkv////vwAA/3//f///AAD/f/9///8FUPkv////v/mv+S////+/////f/9///////9//3////mv+S////+//3//f////z//f/9//3////9//3//f////3//f////z//f///AAD/v/9///8AAP+//3///wAA/7//f///AAD/v/9/AAD///+//38AAP///7//fwAA////v/9/AAD///+///////9//////////3///wAA/3//f///AAD/f/9///8FUPkv////vwVQ+S////+/////f/9///////9//3////9//3//f////3//f/9////5r/kv////v/mv+S////+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_c6qml")
 
 [sub_resource type="Animation" id="Animation_joxi0"]
 length = 0.001
@@ -95,18 +168,27 @@ _data = {
 &"drive": SubResource("Animation_mbj4m")
 }
 
+[sub_resource type="BoxMesh" id="BoxMesh_3al1x"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xx4wa"]
+albedo_color = Color(0.340339, 0.340339, 0.340339, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1gpri"]
+albedo_color = Color(0.341176, 0.341176, 0.341176, 1)
+
 [node name="level_2" type="Node3D"]
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("1_y7tgq")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 33.4178, 3.32109, -0.0765915)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.0802861, 0.996772, 0, -0.996772, 0.0802861, 54.8478, 22.2257, 46.3193)
+transform = Transform3D(1, 0, 0, 0, 0.0802861, 0.996772, 0, -0.996772, 0.0802861, 2675.55, 278.05, 1901.11)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_i53j8")
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+visible = false
 material_override = SubResource("StandardMaterial3D_erloq")
 
 [node name="rail_right" type="CSGBox3D" parent="CSGCombiner3D"]
@@ -123,26 +205,32 @@ size = Vector3(8, 1, 7.93726)
 
 [node name="rail_right16" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(41.999, 0, 0, 0, 1, 0, 0, 0, 1, 116.957, 0.584507, -37.7318)
+visible = false
 size = Vector3(8.00513, 0.222656, 0.138672)
 
 [node name="rail_left17" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(41.999, 0, 0, 0, 1, 0, 0, 0, 1, 116.958, 0.584507, -39.8776)
+visible = false
 size = Vector3(7.99584, 0.222656, 0.138672)
 
 [node name="bridge platform27" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(41.999, 0, 0, 0, 1, 0, 0, 0, 1, 119.581, 0, -38.8105)
+visible = false
 size = Vector3(8, 1, 7.93726)
 
 [node name="rail_right17" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(41.999, 0, 0, 0, 1, 0, 0, 0, 1, 116.957, 0.584507, -25.5229)
+visible = false
 size = Vector3(8.00513, 0.222656, 0.138672)
 
 [node name="rail_left18" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(41.999, 0, 0, 0, 1, 0, 0, 0, 1, 116.958, 0.584507, -27.6687)
+visible = false
 size = Vector3(7.99584, 0.222656, 0.138672)
 
 [node name="bridge platform28" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(41.999, 0, 0, 0, 1, 0, 0, 0, 1, 119.581, 0, -26.6016)
+visible = false
 size = Vector3(8, 1, 7.93726)
 
 [node name="rail_right2" type="CSGBox3D" parent="CSGCombiner3D"]
@@ -155,6 +243,7 @@ size = Vector3(7.99584, 0.222656, 0.138672)
 
 [node name="bridge platform2" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.7421, 0, 0)
+visible = false
 size = Vector3(8.88574, 1, 7.93726)
 
 [node name="rail_right3" type="CSGBox3D" parent="CSGCombiner3D"]
@@ -167,18 +256,22 @@ size = Vector3(7.99584, 0.222656, 0.138672)
 
 [node name="bridge platform3" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.3408, 0, 0)
+visible = false
 size = Vector3(8, 1, 7.93726)
 
 [node name="bridge platform10" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.2711, 0, 3.18085)
+visible = false
 size = Vector3(6.42444, 1, 1.57556)
 
 [node name="bridge platform14" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.244, 0, 3.09402)
+visible = false
 size = Vector3(21.2884, 1, 1.74921)
 
 [node name="bridge platform11" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 0.955926, -0.293607, 0, 0.293607, 0.955926, 59.9442, -4.21019, -1.1908)
+visible = false
 size = Vector3(5.07837, 1, 5.22711)
 
 [node name="rail_right4" type="CSGBox3D" parent="CSGCombiner3D"]
@@ -199,6 +292,7 @@ size = Vector3(7.99584, 0.222656, 0.138672)
 
 [node name="bridge platform4" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.8473, 0, 0)
+visible = false
 size = Vector3(8, 1, 7.93726)
 
 [node name="rail_right11" type="CSGBox3D" parent="CSGCombiner3D"]
@@ -211,6 +305,7 @@ size = Vector3(7.99584, 0.222656, 0.138672)
 
 [node name="bridge platform12" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(0.498921, -0.234643, 0, 0.10829, 1.08107, 0, 0, 0, 1, 79.63, -6.56949, 0)
+visible = false
 size = Vector3(8, 1, 7.93726)
 
 [node name="rail_right8" type="CSGBox3D" parent="CSGCombiner3D"]
@@ -231,6 +326,7 @@ size = Vector3(10.4828, 0.222656, 0.138672)
 
 [node name="bridge platform8" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 144.303, 0, 0)
+visible = false
 size = Vector3(8, 1, 7.93726)
 
 [node name="rail_right9" type="CSGBox3D" parent="CSGCombiner3D"]
@@ -243,6 +339,7 @@ size = Vector3(7.99584, 0.222656, 0.138672)
 
 [node name="bridge platform9" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 162.977, 0, 0)
+visible = false
 size = Vector3(8, 1, 7.93726)
 
 [node name="rail_right7" type="CSGBox3D" parent="CSGCombiner3D"]
@@ -271,6 +368,7 @@ size = Vector3(4.68618, 0.222656, 0.138672)
 
 [node name="bridge platform7" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(0.669246, -0.193635, 0, 0.131117, 0.973848, 0.121142, -0.0160015, -0.118849, 0.992635, 127.367, -1.56518, 0.11104)
+visible = false
 size = Vector3(9.47314, 1, 7.93726)
 
 [node name="bridge platform15" type="CSGBox3D" parent="CSGCombiner3D"]
@@ -359,6 +457,7 @@ size = Vector3(15.2498, 0.222656, 0.138672)
 
 [node name="bridge platform6" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(0.716026, 0, 0, 0, 0.943171, -0.246678, 0, 0.240078, 0.969098, 102.135, -6.34951, -0.241768)
+visible = false
 size = Vector3(8, 1, 6.12537)
 
 [node name="forest path" type="CSGBox3D" parent="CSGCombiner3D"]
@@ -540,154 +639,192 @@ material = SubResource("StandardMaterial3D_irmad")
 
 [node name="beamvertical" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.3096, -15.3806, -3.3965)
+visible = false
 size = Vector3(1.07764, 31.7612, 1)
 
 [node name="beamvertical3" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.3608, -5.11847, -3.3965)
+visible = false
 size = Vector3(1.07764, 11.2369, 1)
 
 [node name="beamvertical5" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 73.2436, -4.47476, -3.3965)
+visible = false
 size = Vector3(1.07764, 9.94952, 1)
 
 [node name="beamvertical6" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 96.4172, -6.61719, -0.080595)
+visible = false
 size = Vector3(1.07764, 7.92213, 1)
 
 [node name="beamvertical8" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 107.519, -6.61719, -0.080595)
+visible = false
 size = Vector3(1.07764, 7.92213, 1)
 
 [node name="beamvertical7" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 84.7657, -6.61719, 0.00967216)
+visible = false
 size = Vector3(1.07764, 7.71321, 1)
 
 [node name="beamvertical4" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.9295, -7.02586, -3.33999)
+visible = false
 size = Vector3(1.07764, 7.13736, 1)
 
 [node name="beam2v" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.3096, -15.2529, 3.39653)
+visible = false
 size = Vector3(1.07764, 31.5059, 1)
 
 [node name="beam2v3" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.3098, -5.12701, 3.39653)
+visible = false
 size = Vector3(1.07764, 11.254, 1)
 
 [node name="beam2v4" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.9612, -5.58037, 3.39653)
+visible = false
 size = Vector3(1.07764, 10.3473, 1)
 
 [node name="beam2v5" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 73.2773, -4.86219, 3.39653)
+visible = false
 size = Vector3(1.07764, 8.91096, 1)
 
 [node name="beam2v6" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.6206, -3.411, 3.39653)
+visible = false
 size = Vector3(1.07764, 7.34664, 1)
 
 [node name="beam2v11" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(0.983309, -0.143405, -0.111976, -7.12754e-09, 0.615441, -0.788183, 0.181944, 0.775027, 0.605169, 84.9477, -2.63758, 0.000948042)
+visible = false
 size = Vector3(1.07764, 8.53517, 1)
 
 [node name="beam2v8" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96.1937, -3.411, 3.39653)
+visible = false
 size = Vector3(1.07764, 7.34664, 1)
 
 [node name="beam2v9" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 107.475, -3.411, 3.39653)
+visible = false
 size = Vector3(1.07764, 7.34664, 1)
 
 [node name="beam2v10" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 116.291, -3.411, 3.39653)
+visible = false
 size = Vector3(1.07764, 7.34664, 1)
 
 [node name="beam2v12" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 154.032, -5.04529, 3.39653)
+visible = false
 size = Vector3(1.07764, 10.6152, 1)
 
 [node name="beam2v15" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 154.032, -5.04529, -3.36933)
+visible = false
 size = Vector3(1.07764, 10.6152, 1)
 
 [node name="beam2v16" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 143.383, -5.04529, -3.36933)
+visible = false
 size = Vector3(1.07764, 10.6152, 1)
 
 [node name="beam2v13" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 143.329, -5.04529, 3.39653)
+visible = false
 size = Vector3(1.07764, 10.6152, 1)
 
 [node name="beam2v14" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 128.142, -5.30566, 3.39653)
+visible = false
 size = Vector3(1.07764, 8.42358, 1)
 
 [node name="beam2v17" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(0.976856, -0.2139, 0, 0.2139, 0.976856, 0, 0, 0, 1, 127.423, -6.83965, -3.37841)
+visible = false
 size = Vector3(1.07764, 8.42358, 1)
 
 [node name="beam2v7" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(0.949945, 0.312418, 0, -0.312418, 0.949945, 0, 0, 0, 1, 85.6347, -3.68143, -3.52019)
+visible = false
 size = Vector3(1.07764, 7.34664, 1)
 
 [node name="beamvertical2" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 165.215, -15.4006, -3.3965)
+visible = false
 size = Vector3(1.07764, 31.8013, 1)
 
 [node name="beam2v2" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 165.215, -15.1675, 3.39653)
+visible = false
 size = Vector3(1.07764, 31.335, 1)
 
 [node name="beamhorizontal" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 51.0659, -10.2278, 3.39653)
+visible = false
 size = Vector3(1.07764, 32.5814, 1)
 
 [node name="beamhorizontal2" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 149.437, -10.2278, 3.39653)
+visible = false
 size = Vector3(1.07764, 32.5814, 1)
 
 [node name="beamhorizontal3" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 149.437, -10.2278, -3.37583)
+visible = false
 size = Vector3(1.07764, 32.5814, 1)
 
 [node name="beamhorizontal4" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 51.1485, -10.2278, -3.37583)
+visible = false
 size = Vector3(1.07764, 32.5814, 1)
 
 [node name="beamincline" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(0.396747, 0.917928, 0, -0.917928, 0.396747, 0, 0, 0, 1, 50.8995, -17.2215, -3.37583)
+visible = false
 size = Vector3(1.07764, 35.3561, 1)
 
 [node name="beamincline2" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(0.396747, 0.917928, 0, -0.917928, 0.396747, 0, 0, 0, 1, 50.8995, -17.2215, 3.36596)
+visible = false
 size = Vector3(1.07764, 35.3561, 1)
 
 [node name="beamincline3" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(0.204735, 0.978817, 0, -0.978817, 0.204735, 0, 0, 0, 1, 75.5333, -8.54784, 3.35202)
+visible = false
 size = Vector3(1.07764, 18.2507, 1)
 
 [node name="beamincline5" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(0.000994768, 1, 0, -1, 0.000994768, 0, 0, 0, 1, 100.129, -6.70756, 3.35202)
+visible = false
 size = Vector3(1.07764, 32.011, 1)
 
 [node name="beamincline9" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(0.000994768, 1, 0, -1, 0.000994768, 0, 0, 0, 1, 101.97, -6.70573, -3.53286)
+visible = false
 size = Vector3(1.07764, 12.1109, 1)
 
 [node name="beamincline8" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(-0.251073, 0.967968, 0, -0.967968, -0.251073, 0, 0, 0, 1, 89.3217, -7.96352, -3.40172)
+visible = false
 size = Vector3(1.07764, 10.3967, 1)
 
 [node name="beamincline4" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(0.204735, 0.978817, 0, -0.978817, 0.204735, 0, 0, 0, 1, 75.5333, -8.54784, -3.37662)
+visible = false
 size = Vector3(1.07764, 18.2507, 1)
 
 [node name="beamincline6" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(-0.204735, -0.978817, 8.74228e-08, -0.978817, 0.204735, 0, -1.78985e-08, -8.55709e-08, -1, 124.977, -8.54784, 3.35202)
+visible = false
 size = Vector3(1.07764, 18.2507, 1)
 
 [node name="beamincline7" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(0.206682, -0.978408, 8.0024e-08, -0.978408, -0.206682, 3.51981e-08, -1.78985e-08, -8.55709e-08, -1, 124.977, -12.0154, -3.37662)
+visible = false
 size = Vector3(1.07764, 18.2507, 1)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -695,6 +832,68 @@ size = Vector3(1.07764, 18.2507, 1)
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("3_grgy5")]
 
 [node name="assets" type="Node3D" parent="."]
+
+[node name="env" type="Node3D" parent="assets"]
+
+[node name="mountains" type="Node3D" parent="assets/env"]
+
+[node name="forest" type="Node3D" parent="assets/env"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="assets/env/forest"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="assets/env/forest/StaticBody3D"]
+transform = Transform3D(24.6204, 0, 0, 0, 1, 0, 0, 0, 115.274, 9.8002, 0, 0)
+mesh = SubResource("PlaneMesh_erloq")
+surface_material_override/0 = SubResource("StandardMaterial3D_cfip6")
+
+[node name="water" type="MeshInstance3D" parent="assets/env/forest/StaticBody3D"]
+transform = Transform3D(91.5236, 0, 0, 0, 1, 0, 0, 0, 492.585, 95.9985, -41.5195, 0)
+mesh = SubResource("PlaneMesh_erloq")
+surface_material_override/0 = SubResource("StandardMaterial3D_76hjp")
+script = ExtResource("10_xx4wa")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="assets/env/forest/StaticBody3D"]
+transform = Transform3D(24.6204, 0, 0, 0, 1, 0, 0, 0, 48.6877, 191.567, 0, 0)
+mesh = SubResource("PlaneMesh_erloq")
+surface_material_override/0 = SubResource("StandardMaterial3D_cfip6")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="assets/env/forest/StaticBody3D"]
+transform = Transform3D(-9.65948, -0.919822, 1.37426e-05, -22.6463, 0.392337, 0, -8.44458e-07, -8.04134e-08, -157.197, 157.357, -22.6965, 0)
+mesh = SubResource("PlaneMesh_erloq")
+surface_material_override/0 = SubResource("StandardMaterial3D_3al1x")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="assets/env/forest/StaticBody3D"]
+transform = Transform3D(9.65948, 0.919822, 0, -22.6463, 0.392337, 0, 0, 0, 116.316, 43.9742, -22.6965, 0)
+mesh = SubResource("PlaneMesh_erloq")
+surface_material_override/0 = SubResource("StandardMaterial3D_3al1x")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="assets/env/forest/StaticBody3D"]
+transform = Transform3D(9.60403, 0.914542, -16.819, -22.6463, 0.392337, 0, 1.0335, 0.0984144, 156.295, 26.7696, -22.6965, 271.241)
+mesh = SubResource("PlaneMesh_erloq")
+surface_material_override/0 = SubResource("StandardMaterial3D_3al1x")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="assets/env/forest/StaticBody3D"]
+transform = Transform3D(9.53689, 0.908148, 24.965, -22.6463, 0.392337, -5.01245e-07, -1.53405, -0.14608, 155.202, 19.1978, -22.6965, -269.536)
+mesh = SubResource("PlaneMesh_erloq")
+surface_material_override/0 = SubResource("StandardMaterial3D_3al1x")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="assets/env/forest/StaticBody3D"]
+transform = Transform3D(-9.34382, -0.889763, -39.8582, -22.6463, 0.392337, 4.09562e-13, 2.44921, 0.233226, -152.06, 125.296, -22.6965, -236.487)
+mesh = SubResource("PlaneMesh_erloq")
+surface_material_override/0 = SubResource("StandardMaterial3D_3al1x")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="assets/env/forest/StaticBody3D"]
+transform = Transform3D(-9.27889, -0.883581, 43.6907, -22.6463, 0.392337, 8.19124e-13, -2.68471, -0.255651, -151.004, 125.296, -22.6965, 248.515)
+mesh = SubResource("PlaneMesh_erloq")
+surface_material_override/0 = SubResource("StandardMaterial3D_3al1x")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="assets/env/forest/StaticBody3D"]
+transform = Transform3D(24.6204, 0, 0, 0, 1, 0, 0, 0, 48.6877, 9.8002, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_erloq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="assets/env/forest/StaticBody3D"]
+transform = Transform3D(9.64841, 0.920013, 0, -22.651, 0.391888, 0, 0, 0, 48.6877, 43.4776, -23.0079, 0)
+shape = SubResource("ConvexPolygonShape3D_cfip6")
 
 [node name="bridge" type="Node3D" parent="assets"]
 
@@ -838,6 +1037,9 @@ transform = Transform3D(4.10887e-08, 0.94, 5.78891e-08, 0.94, -4.10887e-08, 0, 3
 [node name="wood_beam67" parent="assets/bridge/beams" instance=ExtResource("4_grgy5")]
 transform = Transform3D(4.10887e-08, 0.94, 5.78891e-08, 0.94, -4.10887e-08, 0, 3.59209e-15, 8.21774e-08, -0.662174, 143.22, -1.01287, 0.0636369)
 
+[node name="wood_beam75" parent="assets/bridge/beams" instance=ExtResource("4_grgy5")]
+transform = Transform3D(-0.0880075, 0.877916, -0.228393, 0.912607, 0.00834731, -0.158583, -0.207372, -0.335847, -0.600968, 126.785, -2.26711, 0.0636369)
+
 [node name="wood_beam44" parent="assets/bridge/beams" instance=ExtResource("4_grgy5")]
 transform = Transform3D(9.09027e-08, 0.94, 9.40108e-09, 0.686599, -5.72827e-08, -0.45226, -0.642014, 7.18338e-08, -0.483668, 116.253, -8.78502, 0.571411)
 
@@ -845,7 +1047,7 @@ transform = Transform3D(9.09027e-08, 0.94, 9.40108e-09, 0.686599, -5.72827e-08, 
 transform = Transform3D(9.09027e-08, 0.94, 9.40108e-09, 0.400678, -2.66752e-08, -0.599005, -0.850328, 8.79195e-08, -0.282254, 116.253, -4.45286, 1.35822)
 
 [node name="wood_beam9" parent="assets/bridge/beams" instance=ExtResource("4_grgy5")]
-transform = Transform3D(-4.19629e-08, 0.96, 3.28736e-08, 0, -4.19629e-08, 0.752059, 0.96, 4.19629e-08, 1.43695e-15, 60.0695, -5.20115, 3.42155)
+transform = Transform3D(-4.19629e-08, 0.96, 3.28736e-08, 0, -4.19629e-08, 0.752059, 0.96, 4.19629e-08, 1.43695e-15, 60.0695, -5.20115, 3.4377)
 
 [node name="wood_beam22" parent="assets/bridge/beams" instance=ExtResource("4_grgy5")]
 transform = Transform3D(-4.19629e-08, 0.96, 3.00392e-08, 0, -4.19629e-08, 0.687218, 0.96, 4.19629e-08, 1.31306e-15, 73.2825, -4.77804, 3.42155)
@@ -913,6 +1115,12 @@ transform = Transform3D(-4.19629e-08, 0.96, 9.55651e-08, 0, -4.19629e-08, 2.1862
 [node name="wood_beam4" parent="assets/bridge/beams" instance=ExtResource("4_grgy5")]
 transform = Transform3D(-4.18121e-08, 0.398837, 2.34158, 3.55443e-09, -0.873229, 1.06949, 0.96, 2.06042e-08, 9.80259e-08, 49.9486, -17.5759, 3.42155)
 
+[node name="wood_beam73" parent="assets/bridge/beams" instance=ExtResource("4_grgy5")]
+transform = Transform3D(0.00455737, -0.398833, -2.34155, -7.63401e-08, -0.873229, 1.06949, -0.959989, -0.00189332, -0.0111162, 149.466, -17.5759, 3.42155)
+
+[node name="wood_beam74" parent="assets/bridge/beams" instance=ExtResource("4_grgy5")]
+transform = Transform3D(0.00455737, -0.398833, -2.34155, -7.63401e-08, -0.873229, 1.06949, -0.959989, -0.00189332, -0.0111162, 149.466, -17.5759, -3.49207)
+
 [node name="wood_beam6" parent="assets/bridge/beams" instance=ExtResource("4_grgy5")]
 transform = Transform3D(-4.18121e-08, 0.398837, 2.38066, 3.55443e-09, -0.873229, 1.08734, 0.96, 2.06042e-08, 9.96622e-08, 49.8783, -17.608, -3.25191)
 
@@ -954,6 +1162,102 @@ transform = Transform3D(0.498835, 0.343774, 0, -0.182617, 0.939052, 0, 0, 0, 1, 
 [node name="platform4" parent="assets/bridge/platforms" instance=ExtResource("5_mbj4m")]
 transform = Transform3D(0.850569, 0, 0, 0, 0.950086, -0.194211, 0, 0.311987, 0.591427, 60.5123, -3.91226, -1.5711)
 
+[node name="rails" type="Node3D" parent="assets/bridge"]
+
+[node name="rail" parent="assets/bridge/rails" instance=ExtResource("10_76hjp")]
+transform = Transform3D(0.999941, -0.0108383, 0, 0.0108383, 0.999941, 0, 0, 0, 1, 27.7631, 0.529248, -1.06649)
+
+[node name="rail2" parent="assets/bridge/rails" instance=ExtResource("10_76hjp")]
+transform = Transform3D(0.999941, -0.0108383, 0, 0.0108383, 0.999941, 0, 0, 0, 1, 27.7631, 0.529248, 1.07589)
+
+[node name="b1" type="Node3D" parent="assets/bridge/rails"]
+transform = Transform3D(34.8365, 0, 0, 0, 0.865915, 0, 0, 0, 1, 111.448, 0.84507, -27.6729)
+
+[node name="rail" type="Node3D" parent="assets/bridge/rails/b1"]
+
+[node name="Cube" type="MeshInstance3D" parent="assets/bridge/rails/b1/rail"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 0.8, 0, -1, 0, -4.37114e-08, 0, -0.115, 0)
+mesh = SubResource("ArrayMesh_88a0w")
+surface_material_override/0 = ExtResource("12_1gpri")
+
+[node name="b2" type="Node3D" parent="assets/bridge/rails"]
+transform = Transform3D(34.8365, 0, 0, 0, 0.865915, 0, 0, 0, 1, 111.448, 0.84507, -25.5305)
+
+[node name="rail" type="Node3D" parent="assets/bridge/rails/b2"]
+
+[node name="Cube" type="MeshInstance3D" parent="assets/bridge/rails/b2/rail"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 0.8, 0, -1, 0, -4.37114e-08, 0, -0.115, 0)
+mesh = SubResource("ArrayMesh_88a0w")
+surface_material_override/0 = ExtResource("12_1gpri")
+
+[node name="b3" type="Node3D" parent="assets/bridge/rails"]
+transform = Transform3D(34.8365, 0, 0, 0, 0.865915, 0, 0, 0, 1, 111.448, 0.84507, -39.8877)
+
+[node name="rail" type="Node3D" parent="assets/bridge/rails/b3"]
+
+[node name="Cube" type="MeshInstance3D" parent="assets/bridge/rails/b3/rail"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 0.8, 0, -1, 0, -4.37114e-08, 0, -0.115, 0)
+material_override = ExtResource("12_1gpri")
+mesh = SubResource("ArrayMesh_88a0w")
+
+[node name="b4" type="Node3D" parent="assets/bridge/rails"]
+transform = Transform3D(34.8365, 0, 0, 0, 0.865915, 0, 0, 0, 1, 111.448, 0.84507, -37.7453)
+
+[node name="rail" type="Node3D" parent="assets/bridge/rails/b4"]
+
+[node name="Cube" type="MeshInstance3D" parent="assets/bridge/rails/b4/rail"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 0.8, 0, -1, 0, -4.37114e-08, 0, -0.115, 0)
+mesh = SubResource("ArrayMesh_88a0w")
+surface_material_override/0 = ExtResource("12_1gpri")
+
+[node name="rail3" parent="assets/bridge/rails" instance=ExtResource("10_76hjp")]
+transform = Transform3D(0.859766, 0, 0, 0, 1, 0, 0, 0, 1, 37.0319, 0.575334, -1.06649)
+
+[node name="rail4" parent="assets/bridge/rails" instance=ExtResource("10_76hjp")]
+transform = Transform3D(0.859766, 0, 0, 0, 1, 0, 0, 0, 1, 37.0319, 0.575334, 1.07589)
+
+[node name="rail5" parent="assets/bridge/rails" instance=ExtResource("10_76hjp")]
+transform = Transform3D(0.876192, 0, 0, 0, 1, 0, 0, 0, 1, 48.6625, 0.575334, -1.06649)
+
+[node name="rail6" parent="assets/bridge/rails" instance=ExtResource("10_76hjp")]
+transform = Transform3D(0.876192, 0, 0, 0, 1, 0, 0, 0, 1, 48.6625, 0.575334, 1.07589)
+
+[node name="rail13" parent="assets/bridge/rails" instance=ExtResource("10_76hjp")]
+transform = Transform3D(0.73798, 0, 0, 0, 0.938848, -0.344332, 0, 0.344332, 0.938848, 59.9803, -3.22279, -1.00099)
+
+[node name="rail14" parent="assets/bridge/rails" instance=ExtResource("10_76hjp")]
+transform = Transform3D(0.73798, 0, 0, 0, 0.938848, -0.344332, 0, 0.344332, 0.938848, 59.9803, -3.96048, 1.01038)
+
+[node name="rail7" parent="assets/bridge/rails" instance=ExtResource("10_76hjp")]
+transform = Transform3D(0.876192, 0, 0, 0, 1, 0, 0, 0, 1, 70.2618, 0.575334, -1.06649)
+
+[node name="rail8" parent="assets/bridge/rails" instance=ExtResource("10_76hjp")]
+transform = Transform3D(0.876192, 0, 0, 0, 1, 0, 0, 0, 1, 70.2618, 0.575334, 1.07589)
+
+[node name="rail21" parent="assets/bridge/rails" instance=ExtResource("10_76hjp")]
+transform = Transform3D(0.510018, 0.301986, 0, -0.185067, 0.83223, 0, 0, 0, 1, 85.9957, 0.985455, -1.06649)
+
+[node name="rail22" parent="assets/bridge/rails" instance=ExtResource("10_76hjp")]
+transform = Transform3D(0.510018, 0.301986, 0, -0.185067, 0.83223, 0, 0, 0, 1, 85.9957, 0.985455, 1.07589)
+
+[node name="rail19" parent="assets/bridge/rails" instance=ExtResource("10_76hjp")]
+transform = Transform3D(0.544007, -0.23857, 0, 0.122956, 1.05552, 0, 0, 0, 1, 80.1692, -5.38112, -1.06649)
+
+[node name="rail20" parent="assets/bridge/rails" instance=ExtResource("10_76hjp")]
+transform = Transform3D(0.544007, -0.23857, 0, 0.122956, 1.05552, 0, 0, 0, 1, 80.1692, -5.38112, 1.07589)
+
+[node name="rail9" parent="assets/bridge/rails" instance=ExtResource("10_76hjp")]
+transform = Transform3D(0.890913, 0, 0, 0, 1, 0, 0, 0, 1, 144.311, 0.575334, -1.06649)
+
+[node name="rail10" parent="assets/bridge/rails" instance=ExtResource("10_76hjp")]
+transform = Transform3D(0.890913, 0, 0, 0, 1, 0, 0, 0, 1, 144.311, 0.575334, 1.07589)
+
+[node name="rail11" parent="assets/bridge/rails" instance=ExtResource("10_76hjp")]
+transform = Transform3D(1.61304, 0, 0, 0, 1, 0, 0, 0, 1, 167.189, 0.575334, -1.06649)
+
+[node name="rail12" parent="assets/bridge/rails" instance=ExtResource("10_76hjp")]
+transform = Transform3D(1.61304, 0, 0, 0, 1, 0, 0, 0, 1, 167.189, 0.575334, 1.07589)
+
 [node name="tunnel" type="Node3D" parent="assets"]
 
 [node name="train" type="Node3D" parent="assets/tunnel"]
@@ -974,6 +1278,32 @@ libraries = {
 &"": SubResource("AnimationLibrary_erloq")
 }
 script = ExtResource("5_grgy5")
+
+[node name="train_bridge" type="Node3D" parent="assets/tunnel"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="assets/tunnel/train_bridge"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="assets/tunnel/train_bridge/StaticBody3D"]
+transform = Transform3D(272.214, 0, 0, 0, 1, 0, 0, 0, 7.97217, 112.654, 0, -26.6762)
+mesh = SubResource("BoxMesh_3al1x")
+surface_material_override/0 = SubResource("StandardMaterial3D_xx4wa")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="assets/tunnel/train_bridge/StaticBody3D"]
+transform = Transform3D(272.214, 0, 0, 0, 1, 0, 0, 0, 7.97217, 112.654, 0, -38.9548)
+mesh = SubResource("BoxMesh_3al1x")
+surface_material_override/0 = SubResource("StandardMaterial3D_1gpri")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="assets/tunnel/train_bridge/StaticBody3D"]
+transform = Transform3D(22.165, 0, 0, 0, 7.95179, 0, 0, 0, 7.97217, 101.8, -38.9393, -32.6479)
+mesh = SubResource("BoxMesh_3al1x")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="assets/tunnel/train_bridge/StaticBody3D"]
+transform = Transform3D(-2.11612e-06, -7.95179, 0, 47.6979, -3.42463e-07, 0.540958, -8.27916, 5.9443e-08, 3.11657, 101.8, -24.0094, -36.829)
+mesh = SubResource("BoxMesh_3al1x")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="assets/tunnel/train_bridge/StaticBody3D"]
+transform = Transform3D(1.39575e-06, 7.95179, 2.72498e-07, 47.7047, -3.42512e-07, 0.538401, 8.24003, 6.36006e-07, -3.11701, 101.8, -24.009, -28.371)
+mesh = SubResource("BoxMesh_3al1x")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.0308874, 0, -0.999523, 0, 1, 0, 0.999523, 0, 0.0308874, 0, 2.28964, 0)

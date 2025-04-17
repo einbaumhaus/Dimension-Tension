@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=4 uid="uid://cfh3tu8tfnl3a"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hoajf"]
+load_path = "res://.godot/imported/rusty_metal_04_diff_1k.jpg-b80f5652d8e5b8d2fae59b5f5b5ee169.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ngbsg"]
+resource_name = "Material"
+cull_mode = 2
+albedo_color = Color(0.948728, 0.789142, 0.698222, 1)
+albedo_texture = SubResource("CompressedTexture2D_hoajf")
+roughness = 0.360656
+uv1_scale = Vector3(-0.14, 0.41, 0.045)
+uv1_offset = Vector3(5.805, 4.215, 0.52)
+uv1_triplanar = true
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_c6qml"]
+_surfaces = [{
+"aabb": AABB(-0.250271, -0.34226, -5.02749, 0.500543, 0.406562, 10.0552),
+"format": 34359742465,
+"index_count": 60,
+"index_data": PackedByteArray("CAABAAIAAgABAAUAAgAFAAYACQAFAAEACAAJAAEACgAGAAUACQAKAAUACwACAAYACwAIAAIACgALAAYACAADAAkACgAEAAsACwAAAAgACAAAAAMACwAEAAAACQADAAcACQAHAAoABwADAAAACgAHAAQABwAAAAQA"),
+"lods": [0.111637, PackedByteArray("AAABAAIAAAADAAEABAAAAAIAAwAFAAEAAgABAAUABAACAAYAAgAFAAYABwAAAAQABwADAAAABwAEAAYAAwAHAAUABwAGAAUA")],
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("lSOAvr48r77U4qBAM0LLPX+wgz3U4qBAM0LLvX+wgz3U4qBAlSOAPr48r77U4qBAlSOAvr48r7424aDAM0LLPX+wgz024aDAM0LLvX+wgz024aDAlSOAPr48r7424aDAM0LLvUbigL7U4qBAM0LLPUbigL7U4qBAM0LLPUbigL424aDAM0LLvUbigL424aDA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_7jij8"]
+resource_name = "rail_Cube"
+_surfaces = [{
+"aabb": AABB(-0.250271, -0.34226, -5.02749, 0.500543, 0.406562, 10.0552),
+"attribute_data": PackedByteArray("AADAPgAAgD4AACA/AAAAAAAAID8AAIA+AADAPgAAAAAAAMA+AACAPwAAID8AAEA/AAAgPwAAgD8AAMA+AABAPwAAwD4AAAA/AAAgPwAAgD4AACA/AAAAPwAAwD4AAIA+AADAPgAAQD8AACA/AAAAPwAAID8AAEA/AADAPgAAAD8AAAA+AAAAPwAAwD4AAIA+AADAPgAAAD8AAAA+AACAPgAAID8AAIA+AAAgPwAAQD8AACA/AAAAPwAAID8AAIA/AADAPgAAgD4AAMA+AAAAAAAAwD4AAIA/AADAPgAAQD8AAMA+AACAPwAAwD4AAEA/AADAPgAAAD8AAMA+AACAPgAAwD4AAEA/AADAPgAAAD8AAMA+AAAAPwAAwD4AAIA+"),
+"format": 34359742487,
+"index_count": 60,
+"index_data": PackedByteArray("GAABAAIAGAAZAAEAGAADABkAGAAAAAMAGgAFAAYAGgAbAAUAHAAHAB0AHAAEAAcAHgAJAAoAHgAfAAkAIAANAA4AIAAhAA0AIAAPACEAIAAMAA8AEAARABIAEAATABEAIgALACMAIgAIAAsAFAAVABYAFAAXABUA"),
+"lods": [0.111637, PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA")],
+"material": SubResource("StandardMaterial3D_ngbsg"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 36,
+"vertex_data": PackedByteArray("lSOAvr48r77U4qBAM0LLPX+wgz3U4qBAM0LLvX+wgz3U4qBAlSOAPr48r77U4qBAlSOAPr48r77U4qBAM0LLPX+wgz024aDAM0LLPX+wgz3U4qBAlSOAPr48r7424aDAlSOAvr48r7424aDAM0LLvX+wgz3U4qBAM0LLvX+wgz024aDAlSOAvr48r77U4qBAlSOAPr48r7424aDAM0LLvX+wgz024aDAM0LLPX+wgz024aDAlSOAvr48r7424aDAlSOAPr48r7424aDAlSOAvr48r77U4qBAlSOAvr48r7424aDAlSOAPr48r77U4qBAM0LLvX+wgz3U4qBAM0LLPX+wgz024aDAM0LLvX+wgz024aDAM0LLPX+wgz3U4qBAM0LLvUbigL7U4qBAM0LLPUbigL7U4qBAM0LLPUbigL7U4qBAM0LLPUbigL424aDAM0LLPUbigL7U4qBAM0LLPUbigL424aDAM0LLvUbigL424aDAM0LLvUbigL7U4qBAM0LLPUbigL424aDAM0LLvUbigL424aDAM0LLvUbigL424aDAM0LLvUbigL7U4qBA/////////7///////3//////////f////////////78FUPkv////vwAA/3//f///AAD/f/9///8FUPkv////v/mv+S////+/////f/9///////9//3////mv+S////+//3//f////z//f/9//3////9//3//f////3//f////z//f///AAD/v/9///8AAP+//3///wAA/7//f///AAD/v/9/AAD///+//38AAP///7//fwAA////v/9/AAD///+///////9//////////3///wAA/3//f///AAD/f/9///8FUPkv////vwVQ+S////+/////f/9///////9//3////9//3//f////3//f/9////5r/kv////v/mv+S////+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_c6qml")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hoajf"]
+size = Vector3(10.0859, 0.139465, 1)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="Cube" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 0.8, 0, -1, 0, -4.37114e-08, 0, -0.115, 0)
+mesh = SubResource("ArrayMesh_7jij8")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.325875, 0)
+shape = SubResource("BoxShape3D_hoajf")

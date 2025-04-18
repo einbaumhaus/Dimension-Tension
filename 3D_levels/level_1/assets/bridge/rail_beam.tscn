@@ -48,7 +48,7 @@ uv1_triplanar = true
 uv1_triplanar_sharpness = 10.5561
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ag7mf"]
-size = Vector3(8.78223, 0.889648, 8.51733)
+size = Vector3(0.749023, 0.181641, 4.48047)
 
 [node name="rail_beam" type="Node3D"]
 
@@ -61,5 +61,4 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_ovjvo")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-visible = false
 shape = SubResource("BoxShape3D_ag7mf")

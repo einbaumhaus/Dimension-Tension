@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dg4ik6vutt505"]
+
+[ext_resource type="PackedScene" uid="uid://daqiuxg2bylpk" path="res://3D_levels/level_1/assets/castle/tunnel.glb" id="1_g1koy"]
+
+[node name="tunnel" type="Node3D"]
+
+[node name="tunnel" parent="." instance=ExtResource("1_g1koy")]

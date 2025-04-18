@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var train_player: AnimationPlayer = $elements/train_player
+@onready var train_player: AnimationPlayer = $env/background/train/train_player
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

@@ -1,0 +1,125 @@
+[gd_scene load_steps=18 format=3 uid="uid://bc8o18yhooq2a"]
+
+[ext_resource type="Texture2D" uid="uid://b0tcav73m32db" path="res://2D_levels/level_1/assets/enemies/sugus_idle.png" id="1_43ktd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_854da"]
+atlas = ExtResource("1_43ktd")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hpt2x"]
+atlas = ExtResource("1_43ktd")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjsa1"]
+atlas = ExtResource("1_43ktd")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vyepn"]
+atlas = ExtResource("1_43ktd")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fotd0"]
+atlas = ExtResource("1_43ktd")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3i1fv"]
+atlas = ExtResource("1_43ktd")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2gsu"]
+atlas = ExtResource("1_43ktd")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8dkq4"]
+atlas = ExtResource("1_43ktd")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o3mam"]
+atlas = ExtResource("1_43ktd")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_63apq"]
+atlas = ExtResource("1_43ktd")
+region = Rect2(144, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y7ljt"]
+atlas = ExtResource("1_43ktd")
+region = Rect2(160, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n4p6b"]
+atlas = ExtResource("1_43ktd")
+region = Rect2(176, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kn82k"]
+atlas = ExtResource("1_43ktd")
+region = Rect2(192, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vq0fs"]
+atlas = ExtResource("1_43ktd")
+region = Rect2(208, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b77e6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_854da")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hpt2x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fjsa1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vyepn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fotd0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3i1fv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2gsu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8dkq4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o3mam")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_63apq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y7ljt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n4p6b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kn82k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vq0fs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cqr05"]
+size = Vector2(38, 54)
+
+[node name="enemy" type="RigidBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(3.375, 3.375)
+sprite_frames = SubResource("SpriteFrames_b77e6")
+autoplay = "default"
+frame_progress = 0.734305
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 0)
+shape = SubResource("RectangleShape2D_cqr05")

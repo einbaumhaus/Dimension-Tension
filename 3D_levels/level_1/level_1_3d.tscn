@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=4 uid="uid://dlb7qukr5wfbb"]
+[gd_scene load_steps=39 format=4 uid="uid://dlb7qukr5wfbb"]
 
 [ext_resource type="PackedScene" uid="uid://cj7d18ek4ria6" path="res://3D_levels/Player3D/character_body_3d.tscn" id="1_y7tgq"]
 [ext_resource type="Texture2D" uid="uid://cjllvahxg6keb" path="res://3D_levels/level_1/assets/overcast_soil_puresky_4k.hdr" id="2_irmad"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" uid="uid://bwo2cr7ysf7j1" path="res://3D_levels/level_1/water.gd" id="10_xx4wa"]
 [ext_resource type="Texture2D" uid="uid://lxud5fbogolq" path="res://3D_levels/level_1/assets/bridge/materials/rusty_metal_04_diff_1k.jpg" id="11_76hjp"]
 [ext_resource type="Material" uid="uid://ci77x44h1n1ho" path="res://3D_levels/level_1/assets/bridge/materials/clean_rail.material" id="12_1gpri"]
+[ext_resource type="PackedScene" uid="uid://dagwa47n0fu2" path="res://3D_levels/level_1/assets/bridge/rail_beam.tscn" id="13_2il8e"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_3dv5j"]
 panorama = ExtResource("2_irmad")
@@ -112,7 +113,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("tunnel/train:position")
+tracks/0/path = NodePath("trains/train:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -124,7 +125,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("tunnel/train2:position")
+tracks/1/path = NodePath("trains/train2:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -140,7 +141,7 @@ length = 12.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("tunnel/train:position")
+tracks/0/path = NodePath("trains/train:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -152,7 +153,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("tunnel/train2:position")
+tracks/1/path = NodePath("trains/train2:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -188,7 +189,6 @@ transform = Transform3D(1, 0, 0, 0, 0.0802861, 0.996772, 0, -0.996772, 0.0802861
 environment = SubResource("Environment_i53j8")
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
-visible = false
 material_override = SubResource("StandardMaterial3D_erloq")
 
 [node name="rail_right" type="CSGBox3D" parent="CSGCombiner3D"]
@@ -1044,7 +1044,7 @@ transform = Transform3D(-0.0880075, 0.877916, -0.228393, 0.912607, 0.00834731, -
 transform = Transform3D(9.09027e-08, 0.94, 9.40108e-09, 0.686599, -5.72827e-08, -0.45226, -0.642014, 7.18338e-08, -0.483668, 116.253, -8.78502, 0.571411)
 
 [node name="wood_beam49" parent="assets/bridge/beams" instance=ExtResource("4_grgy5")]
-transform = Transform3D(9.09027e-08, 0.94, 9.40108e-09, 0.400678, -2.66752e-08, -0.599005, -0.850328, 8.79195e-08, -0.282254, 116.253, -4.45286, 1.35822)
+transform = Transform3D(9.09027e-08, 0.94, 9.40108e-09, 0.400678, -2.66752e-08, -0.599005, -0.850328, 8.79195e-08, -0.282254, 116.253, -4.28093, 1.68127)
 
 [node name="wood_beam9" parent="assets/bridge/beams" instance=ExtResource("4_grgy5")]
 transform = Transform3D(-4.19629e-08, 0.96, 3.28736e-08, 0, -4.19629e-08, 0.752059, 0.96, 4.19629e-08, 1.43695e-15, 60.0695, -5.20115, 3.4377)
@@ -1246,62 +1246,145 @@ transform = Transform3D(0.544007, -0.23857, 0, 0.122956, 1.05552, 0, 0, 0, 1, 80
 [node name="rail20" parent="assets/bridge/rails" instance=ExtResource("10_76hjp")]
 transform = Transform3D(0.544007, -0.23857, 0, 0.122956, 1.05552, 0, 0, 0, 1, 80.1692, -5.38112, 1.07589)
 
+[node name="rail23" parent="assets/bridge/rails" instance=ExtResource("10_76hjp")]
+transform = Transform3D(0.590489, -0.00377789, 5.65151e-11, 0.00200878, 1.05466, 0.223046, -0.000459629, -0.241317, 0.974808, 91.3933, -5.66113, -1.70942)
+
+[node name="rail24" parent="assets/bridge/rails" instance=ExtResource("10_76hjp")]
+transform = Transform3D(0.590489, -0.00377789, 5.65151e-11, 0.00200878, 1.05466, 0.223046, -0.000459629, -0.241317, 0.974808, 91.3933, -5.18328, 0.378989)
+
+[node name="rail25" parent="assets/bridge/rails" instance=ExtResource("10_76hjp")]
+transform = Transform3D(0.639487, -0.0037768, 7.80639e-11, 0.00215484, 1.04436, -0.260151, 0.000580573, 0.28138, 0.965568, 101.702, -5.31968, -0.222125)
+
+[node name="rail27" parent="assets/bridge/rails" instance=ExtResource("10_76hjp")]
+transform = Transform3D(0.52659, -0.00377912, 5.55364e-11, 0.00181539, 1.06914, -0.155314, 0.000285419, 0.168091, 0.987865, 107.55, -5.29563, -0.2389)
+
+[node name="rail29" parent="assets/bridge/rails" instance=ExtResource("10_76hjp")]
+transform = Transform3D(0.515794, -0.216538, 0.0237239, 0.105837, 1.04124, -0.184383, 0.00740701, 0.200622, 0.982568, 107.139, -5.35667, 1.86939)
+
+[node name="rail30" parent="assets/bridge/rails" instance=ExtResource("10_76hjp")]
+transform = Transform3D(0.509567, -0.231268, 0.134002, 0.117793, 1.05254, -0.0645056, -0.0613673, 0.0999971, 0.988879, 112.243, -4.24125, 1.58879)
+
+[node name="rail31" parent="assets/bridge/rails" instance=ExtResource("10_76hjp")]
+transform = Transform3D(0.328064, -0.22868, -0.137741, 0.0758363, 0.504993, 0.855713, -0.0395088, -0.929521, 0.498781, 116.428, -3.33428, 0.791988)
+
+[node name="rail33" parent="assets/bridge/rails" instance=ExtResource("10_76hjp")]
+transform = Transform3D(0.331351, -0.22868, 0.0108626, 0.0308839, 0.504993, 0.879763, -0.0647392, -0.929521, 0.475288, 119.639, -2.81219, 0.285537)
+
+[node name="rail34" parent="assets/bridge/rails" instance=ExtResource("10_76hjp")]
+transform = Transform3D(0.168509, -0.22868, 0.241699, -0.0212715, 0.504993, 0.87635, -0.0530126, -0.929521, 0.416643, 122.083, -2.76212, -0.288491)
+
+[node name="rail28" parent="assets/bridge/rails" instance=ExtResource("10_76hjp")]
+transform = Transform3D(0.451969, -0.22574, 0.0972176, 0.100107, 1.07209, -0.137285, -0.0307539, 0.172251, 0.981868, 112.343, -4.78382, -0.38674)
+
+[node name="rail32" parent="assets/bridge/rails" instance=ExtResource("10_76hjp")]
+transform = Transform3D(0.349081, -0.366579, 0.0972176, 0.127051, 1.03105, -0.137285, -0.0167992, 0.180457, 0.981868, 116.304, -3.65032, -0.620445)
+
+[node name="rail35" parent="assets/bridge/rails" instance=ExtResource("10_76hjp")]
+transform = Transform3D(0.263861, -0.327042, 0.0972176, 0.0850392, 1.04461, -0.137285, -0.0142354, 0.178439, 0.981868, 119.32, -2.60457, -0.772826)
+
+[node name="rail36" parent="assets/bridge/rails" instance=ExtResource("10_76hjp")]
+transform = Transform3D(0.339871, -0.278423, 0.0450984, 0.0891288, 1.07052, -0.0629075, -0.00978766, 0.0804504, 0.993163, 122.197, -1.75224, -0.907427)
+
+[node name="rail26" parent="assets/bridge/rails" instance=ExtResource("10_76hjp")]
+transform = Transform3D(0.639487, -0.0037768, 7.80639e-11, 0.00215484, 1.04436, -0.260151, 0.000580573, 0.28138, 0.965568, 101.702, -5.87702, 1.84649)
+
 [node name="rail9" parent="assets/bridge/rails" instance=ExtResource("10_76hjp")]
-transform = Transform3D(0.890913, 0, 0, 0, 1, 0, 0, 0, 1, 144.311, 0.575334, -1.06649)
+transform = Transform3D(0.969676, 0, 0, 0, 1, 0, 0, 0, 1, 144.676, 0.575334, -1.06649)
 
 [node name="rail10" parent="assets/bridge/rails" instance=ExtResource("10_76hjp")]
-transform = Transform3D(0.890913, 0, 0, 0, 1, 0, 0, 0, 1, 144.311, 0.575334, 1.07589)
+transform = Transform3D(0.969676, 0, 0, 0, 1, 0, 0, 0, 1, 144.676, 0.575334, 1.07589)
+
+[node name="rail17" parent="assets/bridge/rails" instance=ExtResource("10_76hjp")]
+transform = Transform3D(0.37276, 0, 0, 0, 1, 0, 0, 0, 1, 137.94, 0.575334, 1.07589)
+
+[node name="rail37" parent="assets/bridge/rails" instance=ExtResource("10_76hjp")]
+transform = Transform3D(0.363038, 0, 0, 0, 1, 0, 0, 0, 1, 137.99, 0.575334, -1.06813)
+
+[node name="rail18" parent="assets/bridge/rails" instance=ExtResource("10_76hjp")]
+transform = Transform3D(0.503061, -0.0709752, 0, 0.0357951, 0.997478, 0, 0, 0, 1, 133.617, 0.403799, 1.07589)
+
+[node name="rail38" parent="assets/bridge/rails" instance=ExtResource("10_76hjp")]
+transform = Transform3D(0.496636, -0.174043, 0, 0.0877759, 0.984738, 0, 0, 0, 1, 133.672, 0.131778, -1.06977)
+
+[node name="rail15" parent="assets/bridge/rails" instance=ExtResource("10_76hjp")]
+transform = Transform3D(0.79178, -0.132755, -0.0325365, 0.109249, 0.962139, 0.235808, 2.03588e-09, -0.238042, 0.971255, 127.905, -0.762038, -1.06649)
+
+[node name="rail16" parent="assets/bridge/rails" instance=ExtResource("10_76hjp")]
+transform = Transform3D(0.799744, -0.132496, -0.0144052, 0.10639, 0.958862, 0.251399, -0.0157329, -0.251056, 0.967776, 127.062, -0.307331, 1.12054)
 
 [node name="rail11" parent="assets/bridge/rails" instance=ExtResource("10_76hjp")]
-transform = Transform3D(1.61304, 0, 0, 0, 1, 0, 0, 0, 1, 167.189, 0.575334, -1.06649)
+transform = Transform3D(1.61304, 0, 0, 0, 1, 0, 0, 0, 1, 166.597, 0.575334, -1.06649)
 
 [node name="rail12" parent="assets/bridge/rails" instance=ExtResource("10_76hjp")]
-transform = Transform3D(1.61304, 0, 0, 0, 1, 0, 0, 0, 1, 167.189, 0.575334, 1.07589)
+transform = Transform3D(1.61304, 0, 0, 0, 1, 0, 0, 0, 1, 166.597, 0.575334, 1.07589)
 
-[node name="tunnel" type="Node3D" parent="assets"]
+[node name="rail_beams" type="Node3D" parent="assets/bridge"]
 
-[node name="train" type="Node3D" parent="assets/tunnel"]
+[node name="rail_beam6" parent="assets/bridge/rail_beams" instance=ExtResource("13_2il8e")]
+transform = Transform3D(0.990382, -0.137479, -0.0155913, 0.138311, 0.98075, 0.137836, -0.0036583, -0.138667, 0.990332, 133.49, -0.135454, 0.123589)
+
+[node name="rail_beam7" parent="assets/bridge/rail_beams" instance=ExtResource("13_2il8e")]
+transform = Transform3D(0.996504, -0.0832976, -0.00650861, 0.0834522, 0.996092, 0.0289289, 0.00407346, -0.029371, 0.99956, 136.782, 0.21488, 0.111706)
+
+[node name="rail_beam2" parent="assets/bridge/rail_beams" instance=ExtResource("13_2il8e")]
+transform = Transform3D(0.961075, -0.271802, -0.0495928, 0.272722, 0.90451, 0.32785, -0.0442531, -0.328613, 0.943427, 112.594, -4.91695, 0.472705)
+
+[node name="rail_beam3" parent="assets/bridge/rail_beams" instance=ExtResource("13_2il8e")]
+transform = Transform3D(0.961075, -0.266617, 0.0724662, 0.272722, 0.957465, -0.0942577, -0.0442531, 0.110352, 0.992907, 115.107, -4.62255, 0.317228)
+
+[node name="rail_beam4" parent="assets/bridge/rail_beams" instance=ExtResource("13_2il8e")]
+transform = Transform3D(0.972573, -0.183254, -0.143249, 0.218568, 0.509353, 0.832339, -0.0795651, -0.84082, 0.535436, 117.931, -4.1826, 0.37716)
+
+[node name="rail_beam5" parent="assets/bridge/rail_beams" instance=ExtResource("13_2il8e")]
+transform = Transform3D(0.939218, -0.33234, 0.0861448, 0.0980867, 0.500205, 0.860334, -0.329013, -0.799591, 0.502399, 121.104, -3.82131, -0.340082)
+
+[node name="rail_beam" parent="assets/bridge/rail_beams" instance=ExtResource("13_2il8e")]
+transform = Transform3D(0.988058, -0.151385, -0.0287039, 0.153842, 0.958857, 0.238592, -0.00859638, -0.240159, 0.970696, 109.758, -5.48963, 0.745981)
+
+[node name="trains" type="Node3D" parent="assets"]
+
+[node name="train" type="Node3D" parent="assets/trains"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.5006, 0.667439, -38.8145)
 
-[node name="train" parent="assets/tunnel/train" instance=ExtResource("4_mbj4m")]
+[node name="train" parent="assets/trains/train" instance=ExtResource("4_mbj4m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.04707, 0, 0)
 
-[node name="train2" type="Node3D" parent="assets/tunnel"]
+[node name="train2" type="Node3D" parent="assets/trains"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.6296, 0.667439, -26.679)
 
-[node name="train" parent="assets/tunnel/train2" instance=ExtResource("4_mbj4m")]
+[node name="train" parent="assets/trains/train2" instance=ExtResource("4_mbj4m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.9482, 0, 0.0669327)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="assets/tunnel"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="assets/trains"]
 root_node = NodePath("../..")
 libraries = {
 &"": SubResource("AnimationLibrary_erloq")
 }
 script = ExtResource("5_grgy5")
 
-[node name="train_bridge" type="Node3D" parent="assets/tunnel"]
+[node name="train_bridge" type="Node3D" parent="assets/trains"]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="assets/tunnel/train_bridge"]
+[node name="StaticBody3D" type="StaticBody3D" parent="assets/trains/train_bridge"]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="assets/tunnel/train_bridge/StaticBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="assets/trains/train_bridge/StaticBody3D"]
 transform = Transform3D(272.214, 0, 0, 0, 1, 0, 0, 0, 7.97217, 112.654, 0, -26.6762)
 mesh = SubResource("BoxMesh_3al1x")
 surface_material_override/0 = SubResource("StandardMaterial3D_xx4wa")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="assets/tunnel/train_bridge/StaticBody3D"]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="assets/trains/train_bridge/StaticBody3D"]
 transform = Transform3D(272.214, 0, 0, 0, 1, 0, 0, 0, 7.97217, 112.654, 0, -38.9548)
 mesh = SubResource("BoxMesh_3al1x")
 surface_material_override/0 = SubResource("StandardMaterial3D_1gpri")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="assets/tunnel/train_bridge/StaticBody3D"]
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="assets/trains/train_bridge/StaticBody3D"]
 transform = Transform3D(22.165, 0, 0, 0, 7.95179, 0, 0, 0, 7.97217, 101.8, -38.9393, -32.6479)
 mesh = SubResource("BoxMesh_3al1x")
 
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="assets/tunnel/train_bridge/StaticBody3D"]
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="assets/trains/train_bridge/StaticBody3D"]
 transform = Transform3D(-2.11612e-06, -7.95179, 0, 47.6979, -3.42463e-07, 0.540958, -8.27916, 5.9443e-08, 3.11657, 101.8, -24.0094, -36.829)
 mesh = SubResource("BoxMesh_3al1x")
 
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="assets/tunnel/train_bridge/StaticBody3D"]
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="assets/trains/train_bridge/StaticBody3D"]
 transform = Transform3D(1.39575e-06, 7.95179, 2.72498e-07, 47.7047, -3.42512e-07, 0.538401, 8.24003, 6.36006e-07, -3.11701, 101.8, -24.009, -28.371)
 mesh = SubResource("BoxMesh_3al1x")
 

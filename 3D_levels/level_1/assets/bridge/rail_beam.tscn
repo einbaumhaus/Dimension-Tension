@@ -1,11 +1,11 @@
-[gd_scene load_steps=8 format=4 uid="uid://d3tva3v3fe2vx"]
+[gd_scene load_steps=8 format=4 uid="uid://dagwa47n0fu2"]
 
-[ext_resource type="Texture2D" uid="uid://bwg4g2mfe4lui" path="res://3D_levels/level_1/assets/bridge/materials/wood_planks_dirt_diff_1k.jpg" id="1_i5nbj"]
-[ext_resource type="Texture2D" uid="uid://djxs0si2vd3sd" path="res://3D_levels/level_1/assets/bridge/materials/wood_planks_dirt_nor_gl_1k.jpg" id="2_nlueo"]
+[ext_resource type="Texture2D" uid="uid://bwg4g2mfe4lui" path="res://3D_levels/level_1/assets/bridge/materials/wood_planks_dirt_diff_1k.jpg" id="1_kel41"]
+[ext_resource type="Texture2D" uid="uid://djxs0si2vd3sd" path="res://3D_levels/level_1/assets/bridge/materials/wood_planks_dirt_nor_gl_1k.jpg" id="2_vb34m"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1xisg"]
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_i5nbj"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_p513a"]
 _surfaces = [{
 "aabb": AABB(-1, -1, -9.90981, 2, 2, 19.8196),
 "format": 34896613377,
@@ -19,7 +19,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_ifyry"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_8o7rs"]
 resource_name = "wooden_beam_Cube"
 _surfaces = [{
 "aabb": AABB(-1, -1, -9.90981, 2, 2, 19.8196),
@@ -35,30 +35,31 @@ _surfaces = [{
 "vertex_data": PackedByteArray("AADuKgAA/MX//+4q///8xf//7ioAAPzFAADuKv///MUAAO4q//9U1QAAENUAAFTVAAAQ1f//VNUAAO4qAABU1QAA7ir///+///8Q1f///7///+4q////vwAAENX///+///8Q1QAAqukAABDV//+q6QAAENUAAKrp//8Q1f//qun//+4qAABU1f//ENX//1TV//8Q1QAAVNX//+4q//9U1f//7ioAAP//AAAQ1QAA//8AAO4qAAD/////ENUAAP//7ioAAAAA/78Q1QAA////vxDVAAAAAP+/7ioAAP///7/uKgAA////vxDVAAD///+/ENX//////7/uKv//////vxDV//8AAP//7ir////////uKv//AAD//xDV////////7ioAAAAA/MXuKgAA///8xRDV//8AAKrpENX/////qunuKv////+q6e4q//8AAKrpENUAAP///MUQ1QAAAAD8xRDVAAAAAP//7ioAAAAA///uKv//AAD//xDV//8AAP///jn+nP8cAUb/HAFG/jn+nFTVVNVU1VTVVNVU1VTVVNX/////////////////////BDX2FQlqBLUJagS1BDX2FaoqqiqqKqoqqiqqKqoqqir/v/+//7//v/+//7//v/+/AAD/fwAA/38AAP9/AAD/f///////////////////////f/+//3//v/9//7//f/+//jn+nP45/pwENfYVBDX2FQlqBLUJagS1/xwBRv8cAUb/v/+//7//v/+//7//v/+/")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_i5nbj")
+shadow_mesh = SubResource("ArrayMesh_p513a")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cotn6"]
-albedo_color = Color(0.707967, 0.707967, 0.707967, 1)
-albedo_texture = ExtResource("1_i5nbj")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ovjvo"]
+albedo_color = Color(0.36283, 0.362829, 0.362829, 1)
+albedo_texture = ExtResource("1_kel41")
 normal_enabled = true
-normal_texture = ExtResource("2_nlueo")
-uv1_scale = Vector3(-0.98, 0.11, -0.105)
+normal_texture = ExtResource("2_vb34m")
+uv1_scale = Vector3(0.115, 0.215, -0.095)
 uv1_offset = Vector3(-0.055, -1.685, 0.6)
 uv1_triplanar = true
 uv1_triplanar_sharpness = 10.5561
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_i5nbj"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_ag7mf"]
 size = Vector3(8.78223, 0.889648, 8.51733)
 
-[node name="platform" type="Node3D"]
+[node name="rail_beam" type="Node3D"]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
 [node name="wooden_beam" type="MeshInstance3D" parent="StaticBody3D"]
-transform = Transform3D(-1.86036e-07, 0, -0.443, 0, 0.443, 0, 4.256, 0, -1.93641e-08, 0, 0, 0)
-mesh = SubResource("ArrayMesh_ifyry")
+transform = Transform3D(-0.375, 0, -1.97575e-08, 0, 0.094, 0, 3.27835e-08, 0, -0.226, 0, 0, 0)
+mesh = SubResource("ArrayMesh_8o7rs")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_cotn6")
+surface_material_override/0 = SubResource("StandardMaterial3D_ovjvo")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-shape = SubResource("BoxShape3D_i5nbj")
+visible = false
+shape = SubResource("BoxShape3D_ag7mf")

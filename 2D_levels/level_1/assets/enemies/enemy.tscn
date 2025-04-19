@@ -1,6 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://bc8o18yhooq2a"]
+[gd_scene load_steps=20 format=3 uid="uid://bc8o18yhooq2a"]
 
 [ext_resource type="Texture2D" uid="uid://b0tcav73m32db" path="res://2D_levels/level_1/assets/enemies/sugus_idle.png" id="1_43ktd"]
+[ext_resource type="Script" uid="uid://bp07pw2m6ch0v" path="res://2D_levels/level_1/assets/enemies/enemy.gd" id="1_854da"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_854da"]
 atlas = ExtResource("1_43ktd")
@@ -111,7 +112,11 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cqr05"]
 size = Vector2(38, 54)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hpt2x"]
+size = Vector2(40, 55)
+
 [node name="enemy" type="RigidBody2D"]
+script = ExtResource("1_854da")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -123,3 +128,11 @@ frame_progress = 0.734305
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, 0)
 shape = SubResource("RectangleShape2D_cqr05")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-2, -0.5)
+shape = SubResource("RectangleShape2D_hpt2x")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

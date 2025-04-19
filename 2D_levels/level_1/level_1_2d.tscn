@@ -1,8 +1,10 @@
-[gd_scene load_steps=27 format=4 uid="uid://bfqm7gkurwapv"]
+[gd_scene load_steps=28 format=4 uid="uid://bfqm7gkurwapv"]
 
 [ext_resource type="Script" uid="uid://bbbduv557mftv" path="res://2D_levels/level_1/level_1.gd" id="1_1nd73"]
+[ext_resource type="Script" uid="uid://lljku4eo3lxo" path="res://2D_levels/level_1/game_manager.gd" id="2_a5wrx"]
 [ext_resource type="Script" uid="uid://bb1wjhu534dq3" path="res://2D_levels/Player2D/fps.gd" id="2_b0sjd"]
 [ext_resource type="Texture2D" uid="uid://dleupj1lna3ib" path="res://2D_levels/level_1/assets/env/tilesettrain.png" id="3_insjc"]
+[ext_resource type="Texture2D" uid="uid://p62jpfk7yowr" path="res://2D_levels/level_1/assets/env/sky.aseprite" id="3_uch6n"]
 [ext_resource type="Texture2D" uid="uid://crn37xjn5jqi7" path="res://2D_levels/level_1/assets/env/tilesetgrass1.png" id="4_il0pf"]
 [ext_resource type="Texture2D" uid="uid://byxfewxlviuo2" path="res://2D_levels/level_1/assets/env/rbsnext.png" id="5_a5wrx"]
 [ext_resource type="PackedScene" uid="uid://c7b3wf077ipnc" path="res://2D_levels/Player2D/player.tscn" id="6_uch6n"]
@@ -11,10 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://bc8o18yhooq2a" path="res://2D_levels/level_1/assets/enemies/enemy.tscn" id="8_insjc"]
 [ext_resource type="PackedScene" uid="uid://bnp7vdu3nrbe8" path="res://menus/pause_menu.tscn" id="8_rodf1"]
 [ext_resource type="Texture2D" uid="uid://clbutouj7ccjo" path="res://2D_levels/level_1/assets/UI/heart.png" id="9_b0sjd"]
-
-[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_h61m7"]
-_data = PackedByteArray("AAADAAUAAAABAAAAjAAAAFAAAAAaAgAAUklGRhICAABXRUJQVlA4TAYCAAAvi8ATAB9AIEDR/41hihsCAcJ/mwIzBCSE/0udkPkP4J9mCXJc23br5oLOuSI8h9erzCUrBR58JYJzEMzOQbEU/hRIKD3cURguf607Dyd2H7jFu3yPzqGK6P8E8J9idpiUHaaVeYorcytrBxzgE1YqeKO8N5pDJXcCB3hrhqqzyFuNwDPTypD7iOrMcHJhaN3A82NUwJFRYNJYBaYB00dVz5vBywHI1NiUM4MfEzGXaIBJG8xUl9sge4XcMvchEJwHjuiQw1ISXkMmPaZB5L5gIWquYcr8nSxHZRS2Cdn75cOokd0h/967Q3aHI/i4IueVPI26BBDgU7LJWdymoEaXcjvJ4w56NLgwHB0aTgAf9VlV1fpQ5xYm6AIi4zERkTduAR8UqHDBzK5GG8RSA3QWjKLBNCHDm4FNQIL1BucJJQBcBAeAXrCjGlhM2AfQG5+h5LlAA0zauLmqvvCGEjPPIBDci8uIqOXwMXGgCgA+Kt0R1YB8G2b+CPTf7LGqfjMmIrYdHY4VWyD/Zo/XIf5bfQTkYoAOx3FvAOksh4Vx1gR4M7AG8aOUAkwGypEImAD3DAc03QhuApM8MxeCapQakBpAF2Ay4ChKQwAXzDxDhQuj6NsIplBVDa17b2zKvRiTiDwzO5q/YLMUUEpk1hoOmMCPNegmwLergf6bqap+KyYi4v/YAQ==")
-size_override = Vector2(140, 80)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oehl0"]
 texture = ExtResource("3_insjc")
@@ -219,6 +217,11 @@ distance = -811.0
 [node name="level_1" type="Node2D"]
 script = ExtResource("1_1nd73")
 
+[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("hearts")]
+unique_name_in_owner = true
+script = ExtResource("2_a5wrx")
+hearts = [NodePath("../CanvasLayer/hearts/HBoxContainer/heart"), NodePath("../CanvasLayer/hearts/HBoxContainer/heart2"), NodePath("../CanvasLayer/hearts/HBoxContainer/heart3")]
+
 [node name="env" type="Node2D" parent="."]
 
 [node name="sky" type="Parallax2D" parent="env"]
@@ -229,7 +232,7 @@ repeat_size = Vector2(1152, 648)
 texture_filter = 1
 position = Vector2(576, 324)
 scale = Vector2(8.22857, 8.1)
-texture = SubResource("PortableCompressedTexture2D_h61m7")
+texture = ExtResource("3_uch6n")
 metadata/_aseprite_wizard_interface_config_ = {
 "layer_section": true,
 "output_section": true,
@@ -371,6 +374,21 @@ layout_mode = 2
 size_flags_horizontal = 4
 texture = ExtResource("9_b0sjd")
 expand_mode = 2
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+offset_right = 162.0
+offset_bottom = 43.0
+
+[node name="FoodLabel" type="Label" parent="CanvasLayer/Panel"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 158.0
+offset_bottom = 41.0
+theme_override_font_sizes/font_size = 31
+text = "FOOD x0"
+
+[node name="enemy" parent="." instance=ExtResource("8_insjc")]
+position = Vector2(1492, 300)
 
 [connection signal="area_entered" from="objects/perspective_changer" to="objects/perspective_changer" method="_on_area_entered"]
 [connection signal="body_entered" from="objects/perspective_changer" to="objects/perspective_changer" method="_on_body_entered"]

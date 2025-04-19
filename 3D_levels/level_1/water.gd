@@ -10,3 +10,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	var mat = get_active_material(0)
 	mat.uv1_offset += Vector3(0,0.2,0)*delta
+
+
+func _on_boundary_body_entered(body: Node3D) -> void:
+	get_tree().reload_current_scene()

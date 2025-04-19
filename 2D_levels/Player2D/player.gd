@@ -5,6 +5,12 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
+func jump():
+	velocity.y = JUMP_VELOCITY
+	
+func jump_side(x):
+	velocity.y = JUMP_VELOCITY
+	velocity.x += x
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -13,15 +19,16 @@ func _physics_process(delta: float) -> void:
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor() or Input.is_action_just_pressed("up") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+		jump()
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("left", "right")
+	var acceleration := SPEED * delta * 8
 	if direction:
-		velocity.x = direction * SPEED
+		velocity.x = move_toward(velocity.x, direction * SPEED, acceleration)
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, acceleration)
 	
 	if Input.is_action_just_pressed("ui_down"):
 		camera_2d.zoom = Vector2(0.5,0.5)

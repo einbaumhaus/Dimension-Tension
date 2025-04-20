@@ -14,3 +14,8 @@ func _process(delta: float) -> void:
 
 func _on_boundary_body_entered(body: Node3D) -> void:
 	get_tree().reload_current_scene()
+
+
+func _on_secret_boundary_body_entered(body: Node3D) -> void:
+	if body.name == "Player":
+		get_tree().change_scene_to_file("res://3D_levels/lvl1_ocean/easter egg1.tscn")

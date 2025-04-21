@@ -4,6 +4,7 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
+var double_jump = false
 
 func jump():
 	velocity.y = JUMP_VELOCITY
@@ -18,7 +19,7 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor() or Input.is_action_just_pressed("up") and is_on_floor():
+	if Input.is_action_just_pressed("ui_accept") and is_on_floor() or Input.is_action_just_pressed("up") and is_on_floor() and double_jump == false:
 		jump()
 
 	# Get the input direction and handle the movement/deceleration.
@@ -34,3 +35,7 @@ func _physics_process(delta: float) -> void:
 		camera_2d.zoom = Vector2(0.5,0.5)
 	
 	move_and_slide()
+
+
+func _on_double_jump_body_entered(body: Node2D) -> void:
+	pass

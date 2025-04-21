@@ -49,6 +49,81 @@ _data = {
 &"swim": SubResource("Animation_ph2v1")
 }
 
+[sub_resource type="Animation" id="Animation_86nmy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fish:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-10.772, -1.685, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("fish:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0.216421)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("fish2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.637, -6.445, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("fish2:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 1.51669)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("fish3:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.783, 5.475, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("fish3:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 3.89907)]
+}
+
 [sub_resource type="Animation" id="Animation_kb6iq"]
 resource_name = "fish swim"
 length = 20.0
@@ -125,81 +200,6 @@ tracks/5/keys = {
 "values": [Vector3(0, 0, 3.89907), Vector3(-0.218166, 0.867429, 3.89907), Vector3(-0.218166, 0.867429, 3.89907), Vector3(3.24806, 0.651008, -2.38412), Vector3(3.24806, 0.651008, -2.38412)]
 }
 
-[sub_resource type="Animation" id="Animation_86nmy"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("fish:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-10.772, -1.685, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("fish:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0.216421)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("fish2:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-0.637, -6.445, 0)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("fish2:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 1.51669)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("fish3:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(1.783, 5.475, 0)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("fish3:rotation")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 3.89907)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8437i"]
 _data = {
 &"RESET": SubResource("Animation_86nmy"),
@@ -239,19 +239,19 @@ libraries = {
 script = ExtResource("4_1jbjt")
 
 [node name="fish" type="Sprite3D" parent="."]
-transform = Transform3D(4.54153, -0.998519, 0, 0.998519, 4.54153, 0, 0, 0, 4.65, -10.772, -1.685, 0)
+transform = Transform3D(4.54153, -0.998521, 0, 0.998521, 4.54153, 0, 0, 0, 4.65, -10.772, -1.685, 0)
 modulate = Color(0.552941, 1, 1, 1)
 texture_filter = 0
 texture = ExtResource("4_yu7my")
 
 [node name="fish2" type="Sprite3D" parent="."]
-transform = Transform3D(0.251467, -4.6432, 0, 4.6432, 0.251467, 0, 0, 0, 4.65, -0.637, -6.445, 0)
+transform = Transform3D(0.251472, -4.6432, 0, 4.6432, 0.251472, 0, 0, 0, 4.65, -0.637, -6.445, 0)
 modulate = Color(0.552941, 1, 1, 1)
 texture_filter = 0
 texture = ExtResource("4_yu7my")
 
 [node name="fish3" type="Sprite3D" parent="."]
-transform = Transform3D(-3.37857, 3.19496, 0, -3.19496, -3.37857, 0, 0, 0, 4.65, 1.783, 5.475, 0)
+transform = Transform3D(-3.37856, 3.19497, 0, -3.19497, -3.37856, 0, 0, 0, 4.65, 1.783, 5.475, 0)
 modulate = Color(0.552941, 1, 1, 1)
 texture_filter = 0
 texture = ExtResource("4_yu7my")

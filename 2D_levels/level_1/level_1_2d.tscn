@@ -1,10 +1,10 @@
-[gd_scene load_steps=28 format=4 uid="uid://bfqm7gkurwapv"]
+[gd_scene load_steps=30 format=4 uid="uid://bfqm7gkurwapv"]
 
 [ext_resource type="Script" uid="uid://bbbduv557mftv" path="res://2D_levels/level_1/level_1.gd" id="1_1nd73"]
 [ext_resource type="Script" uid="uid://lljku4eo3lxo" path="res://2D_levels/level_1/game_manager.gd" id="2_a5wrx"]
 [ext_resource type="Script" uid="uid://bb1wjhu534dq3" path="res://2D_levels/Player2D/fps.gd" id="2_b0sjd"]
 [ext_resource type="Texture2D" uid="uid://dleupj1lna3ib" path="res://2D_levels/level_1/assets/env/tilesettrain.png" id="3_insjc"]
-[ext_resource type="Texture2D" uid="uid://p62jpfk7yowr" path="res://2D_levels/level_1/assets/env/sky.aseprite" id="3_uch6n"]
+[ext_resource type="Texture2D" uid="uid://blx1xna7vwbp5" path="res://2D_levels/level_1/assets/env/sky.png" id="3_uch6n"]
 [ext_resource type="Texture2D" uid="uid://crn37xjn5jqi7" path="res://2D_levels/level_1/assets/env/tilesetgrass1.png" id="4_il0pf"]
 [ext_resource type="Texture2D" uid="uid://byxfewxlviuo2" path="res://2D_levels/level_1/assets/env/rbsnext.png" id="5_a5wrx"]
 [ext_resource type="PackedScene" uid="uid://c7b3wf077ipnc" path="res://2D_levels/Player2D/player.tscn" id="6_uch6n"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bc8o18yhooq2a" path="res://2D_levels/level_1/assets/enemies/enemy.tscn" id="8_insjc"]
 [ext_resource type="PackedScene" uid="uid://bnp7vdu3nrbe8" path="res://menus/pause_menu.tscn" id="8_rodf1"]
 [ext_resource type="Texture2D" uid="uid://clbutouj7ccjo" path="res://2D_levels/level_1/assets/UI/heart.png" id="9_b0sjd"]
+[ext_resource type="Texture2D" uid="uid://b78neine84swn" path="res://icon.svg" id="10_5wj1c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oehl0"]
 texture = ExtResource("3_insjc")
@@ -214,6 +215,9 @@ size = Vector2(69, 183)
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_a5wrx"]
 distance = -811.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rodf1"]
+size = Vector2(54, 51)
+
 [node name="level_1" type="Node2D"]
 script = ExtResource("1_1nd73")
 
@@ -252,23 +256,6 @@ metadata/_aseprite_wizard_config_ = {
 "source": "res://2D_levels/level_1/assets/sky.aseprite"
 }
 metadata/_aseprite_wizard_source_file_hash_ = "53fa796b495c92cb2ed6834bf157d0f3"
-
-[node name="Label" type="Label" parent="env/sky"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 502.0
-offset_top = 315.0
-offset_right = 718.0
-offset_bottom = 372.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 41
-script = ExtResource("2_b0sjd")
 
 [node name="background" type="Node2D" parent="env"]
 position = Vector2(523, 0)
@@ -325,6 +312,25 @@ script = ExtResource("8_il0pf")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="objects/fall_limit"]
 position = Vector2(1844, -49)
 shape = SubResource("WorldBoundaryShape2D_a5wrx")
+
+[node name="double_jump" type="Area2D" parent="objects"]
+position = Vector2(1580, -452)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="objects/double_jump"]
+position = Vector2(27, 25.5)
+shape = SubResource("RectangleShape2D_rodf1")
+
+[node name="Sprite2D" type="Sprite2D" parent="objects/double_jump"]
+position = Vector2(27, 26)
+scale = Vector2(0.4375, 0.421875)
+texture = ExtResource("10_5wj1c")
+
+[node name="Label" type="Label" parent="objects/double_jump"]
+offset_left = -20.0
+offset_top = -1.0
+offset_right = 74.0
+offset_bottom = 22.0
+text = "doublejump"
 
 [node name="enemies" type="Node" parent="."]
 
@@ -384,6 +390,19 @@ size_flags_horizontal = 4
 texture = ExtResource("9_b0sjd")
 expand_mode = 2
 
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -57.0
+offset_right = 216.0
+grow_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 41
+script = ExtResource("2_b0sjd")
+
 [node name="Panel" type="Panel" parent="CanvasLayer"]
 offset_right = 162.0
 offset_bottom = 43.0
@@ -402,3 +421,4 @@ position = Vector2(1492, 300)
 [connection signal="area_entered" from="objects/perspective_changer" to="objects/perspective_changer" method="_on_area_entered"]
 [connection signal="body_entered" from="objects/perspective_changer" to="objects/perspective_changer" method="_on_body_entered"]
 [connection signal="body_entered" from="objects/fall_limit" to="objects/fall_limit" method="_on_body_entered"]
+[connection signal="body_entered" from="objects/double_jump" to="Player" method="_on_double_jump_body_entered"]

@@ -13,4 +13,4 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: CharacterBody2D) -> void:
 	print("entered")
-	get_tree().change_scene_to_file("res://3D_levels/level_1/level_1_3d.tscn")
+	get_tree().change_scene_to_file.call_deferred("res://3D_levels/level_1/level_1_3d.tscn")

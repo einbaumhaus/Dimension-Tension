@@ -528,6 +528,74 @@ tracks/15/keys = {
 "values": [Vector3(-3.3392e-08, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_urnuh"]
+resource_name = "draw_holster"
+length = 0.24
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("launcher:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.233333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 1.43384, 2.14488), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("launcher:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.233333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.459877, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_wb4fr"]
+resource_name = "launch"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("launcher/trigger:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -0.682192, 1.11455), Vector3(0, -0.59842, 1.14515), Vector3(0, -0.682192, 1.11455)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("launcher/trigger:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-3.3392e-08, 0, 0), Vector3(-0.271922, 0, 0), Vector3(-3.3392e-08, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("launcher:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.026, 0.011), Vector3(0, 0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_ms8px"]
 resource_name = "reload"
 length = 2.56
@@ -700,74 +768,6 @@ tracks/13/keys = {
 "values": [Vector3(0.0335184, -0.38594, -0.10169), Vector3(-0.00500956, -0.749892, -0.106936), Vector3(-0.00500956, -0.749892, -0.106936), Vector3(-0.0409219, -1.09414, -0.0989509), Vector3(-0.0409219, -1.09414, -0.0989509)]
 }
 
-[sub_resource type="Animation" id="Animation_wb4fr"]
-resource_name = "launch"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("launcher/trigger:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0, -0.682192, 1.11455), Vector3(0, -0.59842, 1.14515), Vector3(0, -0.682192, 1.11455)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("launcher/trigger:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(-3.3392e-08, 0, 0), Vector3(-0.271922, 0, 0), Vector3(-3.3392e-08, 0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("launcher:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0.026, 0.011), Vector3(0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_urnuh"]
-resource_name = "draw_holster"
-length = 0.24
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("launcher:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.233333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 1.43384, 2.14488), Vector3(0, 0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("launcher:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.233333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-0.459877, 0, 0), Vector3(0, 0, 0)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_texhx"]
 _data = {
 &"RESET": SubResource("Animation_a4s7t"),
@@ -781,7 +781,6 @@ transform = Transform3D(1, 0, 0, 0, 0.343152, -0.93928, 0, 0.93928, 0.343152, 0,
 
 [node name="tape" type="Node3D" parent="."]
 transform = Transform3D(0.46, 0, 0, 0, 0.422802, -0.181213, 0, 0.181213, 0.422803, 0, 0, 0)
-visible = false
 
 [node name="roll" type="MeshInstance3D" parent="tape"]
 transform = Transform3D(3.435, 0, 0, 0, 3.435, 0, 0, 0, 3.435, 0, 0, 0)
@@ -790,7 +789,7 @@ mesh = SubResource("ArrayMesh_druu6")
 skeleton = NodePath("")
 
 [node name="roll_tape" type="MeshInstance3D" parent="tape"]
-transform = Transform3D(2.71344, 0.239604, -1.10608, -0.298285, 2.92317, -0.0985253, 1.09172, 0.203154, 2.72221, -0.341648, -0.304953, 0.975829)
+transform = Transform3D(2.71344, 0.239605, -1.10608, -0.298286, 2.92317, -0.0985253, 1.09172, 0.203154, 2.72221, -0.341648, -0.304953, 0.975829)
 material_override = SubResource("StandardMaterial3D_tbp8d")
 mesh = SubResource("ArrayMesh_x3gi2")
 skeleton = NodePath("")
@@ -821,7 +820,7 @@ mesh = SubResource("ArrayMesh_f78cu")
 skeleton = NodePath("")
 
 [node name="trigger" type="MeshInstance3D" parent="launcher"]
-transform = Transform3D(0.223125, 0, 0, 0, 0.223125, 7.45058e-09, 0, -7.45058e-09, 0.223125, 0, -0.682192, 1.11455)
+transform = Transform3D(0.223125, 0, 0, 0, 0.223125, 7.45059e-09, 0, -7.45059e-09, 0.223125, 0, -0.682192, 1.11455)
 material_override = SubResource("StandardMaterial3D_a1et8")
 mesh = SubResource("ArrayMesh_wav5u")
 skeleton = NodePath("")

@@ -1,12 +1,12 @@
 [gd_scene load_steps=15 format=3 uid="uid://bmbq163w6ks1y"]
 
-[ext_resource type="Script" uid="uid://y736yjqolh2x" path="res://3D_levels/lvl1_ocean/easter_egg_1.gd" id="1_86nmy"]
+[ext_resource type="Script" uid="uid://y736yjqolh2x" path="res://3D_levels/level1_ocean/easter_egg_1.gd" id="1_86nmy"]
 [ext_resource type="PackedScene" uid="uid://bgnmns87reyps" path="res://3D_levels/level_1/assets/train.tscn" id="1_qyrxi"]
-[ext_resource type="Script" uid="uid://cros484fblxdk" path="res://3D_levels/lvl1_ocean/animation_player.gd" id="2_xe2aj"]
+[ext_resource type="Script" uid="uid://cros484fblxdk" path="res://3D_levels/level1_ocean/animation_player.gd" id="2_xe2aj"]
 [ext_resource type="FontFile" uid="uid://dn3yd17i4df0q" path="res://assets/fonts/OCRAEXT.TTF" id="3_xe2aj"]
-[ext_resource type="Script" uid="uid://dl7mbitg7qqwi" path="res://3D_levels/lvl1_ocean/fish_anim.gd" id="4_1jbjt"]
-[ext_resource type="Texture2D" uid="uid://m7ljoy6ob6xs" path="res://3D_levels/lvl1_ocean/fish1.png" id="4_yu7my"]
-[ext_resource type="Script" uid="uid://57c03dj6ashx" path="res://3D_levels/lvl1_ocean/retart.gd" id="6_kb6iq"]
+[ext_resource type="Script" uid="uid://dl7mbitg7qqwi" path="res://3D_levels/level1_ocean/fish_anim.gd" id="4_1jbjt"]
+[ext_resource type="Texture2D" uid="uid://m7ljoy6ob6xs" path="res://3D_levels/level1_ocean/fish1.png" id="4_yu7my"]
+[ext_resource type="Script" uid="uid://57c03dj6ashx" path="res://3D_levels/level1_ocean/retart.gd" id="6_kb6iq"]
 
 [sub_resource type="Environment" id="Environment_hh0ho"]
 background_mode = 1

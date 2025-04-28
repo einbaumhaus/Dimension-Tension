@@ -1,0 +1,57 @@
+[gd_scene load_steps=3 format=3 uid="uid://blnffj14qys1k"]
+
+[ext_resource type="PackedScene" uid="uid://cj7d18ek4ria6" path="res://3D_levels/Player3D/character_body_3d.tscn" id="1_sajq6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sajq6"]
+
+[node name="level_2_3d_2" type="Node3D"]
+
+[node name="placeholder" type="Node3D" parent="."]
+transform = Transform3D(0.465, 0, 0, 0, 0.465, 0, 0, 0, 0.465, 0, 0, 0)
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="placeholder"]
+material_override = SubResource("StandardMaterial3D_sajq6")
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="placeholder/CSGCombiner3D"]
+transform = Transform3D(0.999999, 0, 0, 0, 0.999999, -5.23598e-05, 0, 5.23598e-05, 0.999999, -0.3508, 0.000301524, 4.22562)
+size = Vector3(23.9358, 0.21582, 67.3692)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="placeholder/CSGCombiner3D"]
+transform = Transform3D(0.999999, 0, 0, 0, 0.999999, -5.23598e-05, 0, 5.23598e-05, 0.999999, -0.3508, -0.00371484, 80.9324)
+size = Vector3(51.2129, 0.21582, 85.6562)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="placeholder/CSGCombiner3D"]
+transform = Transform3D(0.999999, 0, 0, 0, 0.999999, -5.23598e-05, 0, 5.23598e-05, 0.999999, -0.3508, 33.3149, 80.9342)
+size = Vector3(51.2129, 0.21582, 85.6562)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="placeholder/CSGCombiner3D"]
+transform = Transform3D(-4.37113e-08, 0.999998, 0, -0.999998, -4.37113e-08, 0, 0, 0, 0.999999, 25.1386, 16.4922, 80.9342)
+size = Vector3(33.8248, 0.21582, 85.6562)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="placeholder/CSGCombiner3D"]
+transform = Transform3D(-4.37113e-08, 0.999998, 0, -0.999998, -4.37113e-08, 0, 0, 0, 0.999999, -26.0517, 16.4922, 80.9342)
+size = Vector3(33.8248, 0.21582, 85.6562)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="placeholder/CSGCombiner3D"]
+transform = Transform3D(0.999999, 0, 0, 0, 0.999999, -5.23598e-05, 0, 5.23598e-05, 0.999999, -0.3508, 15.0283, 6.2711)
+size = Vector3(23.9358, 0.21582, 62.3318)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="placeholder/CSGCombiner3D"]
+transform = Transform3D(1.91068e-15, -4.37113e-08, 0.999999, -0.999999, -4.37113e-08, 0, 4.37113e-08, -0.999999, -4.37113e-08, -5.98714e-06, 8.1875, -23.8375)
+size = Vector3(25.7002, 0.21582, 27.8086)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="placeholder/CSGCombiner3D"]
+transform = Transform3D(-4.37113e-08, 0.999999, 0, -0.999999, -4.37113e-08, 0, 0, 0, 0.999999, 11.4354, 7.55959, 6.5027)
+size = Vector3(15.3553, 0.21582, 62.6361)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="placeholder/CSGCombiner3D"]
+transform = Transform3D(-4.37113e-08, 0.999999, 0, -0.999999, -4.37113e-08, 0, 0, 0, 0.999999, -12.1801, 7.55959, 5.34725)
+size = Vector3(15.3553, 0.21582, 65.1027)
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="placeholder/CSGCombiner3D"]
+transform = Transform3D(1.91068e-15, -4.37113e-08, -0.999998, -0.999999, -4.37113e-08, 0, -4.37113e-08, 0.999998, -4.37113e-08, -0.613562, 1.8667, -22.0194)
+size = Vector3(13.6694, 1.98779, 13.0527)
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("1_sajq6")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.275192, 1.38879, 2.91732)

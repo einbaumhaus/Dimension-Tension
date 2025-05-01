@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://b1ns66tqnt8ew"]
+
+[ext_resource type="Script" uid="uid://cx67cjhhc7emi" path="res://3D_levels/level_2/assets/sticker_launcher/sticker/sticker.gd" id="1_m034n"]
+[ext_resource type="FontFile" uid="uid://dn3yd17i4df0q" path="res://assets/fonts/OCRAEXT.TTF" id="2_8f38u"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hc74w"]
+albedo_color = Color(1, 1, 0.733333, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_m034n"]
+size = Vector3(0.4, 0.175, 0.001)
+
+[node name="sticker" type="Node3D"]
+script = ExtResource("1_m034n")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0311853)
+target_position = Vector3(0, 0, -0.5)
+
+[node name="skin" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="skin"]
+transform = Transform3D(1.16, 0, 0, 0, 1.16, 0, 0, 0, 1.16, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_hc74w")
+mesh = SubResource("BoxMesh_m034n")
+skeleton = NodePath("../..")
+
+[node name="Label3D" type="Label3D" parent="skin"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0754034, 0.0296669)
+text = "BEST BEFORE"
+font = ExtResource("2_8f38u")
+font_size = 12
+outline_size = 3
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

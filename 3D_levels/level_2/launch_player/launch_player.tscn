@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://f8i8svg7k032"]
+
+[ext_resource type="Script" uid="uid://bnkqjcuyxgj5q" path="res://3D_levels/level_2/launch_player/launch_player.gd" id="1_tj2to"]
+[ext_resource type="PackedScene" uid="uid://c23ra3wdhjla6" path="res://3D_levels/level_2/assets/sticker_launcher/sticker_launcher.tscn" id="2_1lfnn"]
+[ext_resource type="Script" uid="uid://bb1wjhu534dq3" path="res://2D_levels/Player2D/fps.gd" id="2_sh8oe"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_b1m74"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_a7qx7"]
+
+[node name="launch_player" type="CharacterBody3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+script = ExtResource("1_tj2to")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_b1m74")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_a7qx7")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.756173, 0)
+
+[node name="sticker_launcher" parent="Camera3D" instance=ExtResource("2_1lfnn")]
+transform = Transform3D(0.285, 0, 0, 0, 0.097943, -0.267642, 0, 0.267642, 0.097943, 0.606, -0.284, -0.904)
+
+[node name="fps" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -570.0
+offset_top = -321.0
+offset_right = -354.0
+offset_bottom = -264.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 41
+script = ExtResource("2_sh8oe")

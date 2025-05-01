@@ -1,4 +1,6 @@
-[gd_scene load_steps=42 format=4 uid="uid://c23ra3wdhjla6"]
+[gd_scene load_steps=43 format=4 uid="uid://c23ra3wdhjla6"]
+
+[ext_resource type="Script" uid="uid://bsv120bvuw84b" path="res://3D_levels/level_2/assets/sticker_launcher/sticker_launcher.gd" id="1_urnuh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_urnuh"]
 albedo_color = Color(1, 1, 0.733333, 1)
@@ -414,10 +416,10 @@ tracks/6/path = NodePath("launcher/flippy1:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.001),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0.00695826, -3.36289, -1.47767)]
+"values": [Vector3(0.007, 0, 0), Vector3(0, 0, 0)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -426,10 +428,10 @@ tracks/7/path = NodePath("launcher/flippy1:rotation")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.001),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(1.08163, 3.14159, 3.14159)]
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0)]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
@@ -527,6 +529,18 @@ tracks/15/keys = {
 "update": 0,
 "values": [Vector3(-3.3392e-08, 0, 0)]
 }
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("tape:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_urnuh"]
 resource_name = "draw_holster"
@@ -555,10 +569,34 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector3(-0.459877, 0, 0), Vector3(0, 0, 0)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("launcher/flippy1:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("launcher/flippy1:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_wb4fr"]
 resource_name = "launch"
-length = 0.2
+length = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -566,7 +604,7 @@ tracks/0/path = NodePath("launcher/trigger:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
+"times": PackedFloat32Array(0, 0.0496131, 0.1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(0, -0.682192, 1.11455), Vector3(0, -0.59842, 1.14515), Vector3(0, -0.682192, 1.11455)]
@@ -578,7 +616,7 @@ tracks/1/path = NodePath("launcher/trigger:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
+"times": PackedFloat32Array(0, 0.0496131, 0.1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(-3.3392e-08, 0, 0), Vector3(-0.271922, 0, 0), Vector3(-3.3392e-08, 0, 0)]
@@ -590,10 +628,10 @@ tracks/2/path = NodePath("launcher:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
+"times": PackedFloat32Array(0, 0.0496131, 0.1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0.026, 0.011), Vector3(0, 0, 0)]
+"values": [Vector3(0, 0, 0), Vector3(0, 0.251, 0.101), Vector3(0, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_ms8px"]
@@ -767,6 +805,18 @@ tracks/13/keys = {
 "update": 0,
 "values": [Vector3(0.0335184, -0.38594, -0.10169), Vector3(-0.00500956, -0.749892, -0.106936), Vector3(-0.00500956, -0.749892, -0.106936), Vector3(-0.0409219, -1.09414, -0.0989509), Vector3(-0.0409219, -1.09414, -0.0989509)]
 }
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("tape:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(1.1, 2.53333, 2.55127),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_texhx"]
 _data = {
@@ -778,9 +828,11 @@ _data = {
 
 [node name="sticker_launcher" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 0.343152, -0.93928, 0, 0.93928, 0.343152, 0, 0, 0)
+script = ExtResource("1_urnuh")
 
 [node name="tape" type="Node3D" parent="."]
 transform = Transform3D(0.46, 0, 0, 0, 0.422802, -0.181213, 0, 0.181213, 0.422803, 0, 0, 0)
+visible = false
 
 [node name="roll" type="MeshInstance3D" parent="tape"]
 transform = Transform3D(3.435, 0, 0, 0, 3.435, 0, 0, 0, 3.435, 0, 0, 0)
@@ -808,7 +860,7 @@ mesh = SubResource("ArrayMesh_jm3c0")
 skeleton = NodePath("")
 
 [node name="flippy1" type="MeshInstance3D" parent="launcher"]
-transform = Transform3D(1, 2.97314e-07, 1.19126e-06, 1.19126e-06, -0.46989, -0.882725, 2.97314e-07, 0.882725, -0.46989, 0.00695826, -3.36289, -1.47767)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.007, 0, 0)
 material_override = SubResource("StandardMaterial3D_jwsh2")
 mesh = SubResource("ArrayMesh_pd7fk")
 skeleton = NodePath("")
@@ -847,5 +899,6 @@ libraries = {
 
 [node name="spin_date" type="AnimationPlayer" parent="animations"]
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.378858, 0.925455, 0, -0.925455, 0.378858, -2.17, 2.776, 0.405)
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.329641, 0.944107, 0, -0.944107, 0.329641, 0, -0.60386, -0.869883)
+target_position = Vector3(0, 0, -1)

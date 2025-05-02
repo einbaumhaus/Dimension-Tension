@@ -15,7 +15,11 @@ func _process(delta: float) -> void:
 	position += transform.basis * Vector3(0,0,-SPEED)*delta
 	if ray.is_colliding():
 		skin.visible = false
+		ray.enabled = false
+		if ray.get_collider().is_in_group("enemy"):
+			ray.get_collider().hit()
 		await get_tree().create_timer(1.0).timeout
+		print("gone")
 		queue_free()
 
 

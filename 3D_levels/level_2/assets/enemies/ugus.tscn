@@ -1,10 +1,10 @@
-[gd_scene load_steps=16 format=4 uid="uid://bxiy8xy0d6pfa"]
+[gd_scene load_steps=18 format=4 uid="uid://bxiy8xy0d6pfa"]
 
+[ext_resource type="Script" uid="uid://dxc2tkrd0vsey" path="res://3D_levels/level_2/assets/enemies/ugus.gd" id="1_pn1rq"]
 [ext_resource type="Material" uid="uid://bh2dbkumx5fbe" path="res://3D_levels/level_2/assets/enemies/ugus_mat.material" id="1_unlre"]
 [ext_resource type="Texture2D" uid="uid://dfej67dhoisfu" path="res://3D_levels/level_2/assets/enemies/Untitled-1.jpg" id="2_pn1rq"]
 [ext_resource type="FontFile" uid="uid://dn3yd17i4df0q" path="res://assets/fonts/OCRAEXT.TTF" id="3_ps2b7"]
-
-[sub_resource type="GDScript" id="GDScript_unlre"]
+[ext_resource type="Script" uid="uid://ca2qdd0itpadv" path="res://3D_levels/level_2/assets/enemies/launch_col.gd" id="5_ps2b7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_unfxb"]
 resource_name = "Material"
@@ -135,8 +135,12 @@ shadow_mesh = SubResource("ArrayMesh_6bac5")
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pn1rq"]
 radius = 0.436714
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ps2b7"]
+radius = 1.05005
+height = 3.46074
+
 [node name="ugus" type="CharacterBody3D"]
-script = SubResource("GDScript_unlre")
+script = ExtResource("1_pn1rq")
 
 [node name="main_body" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.555, 0, 0, 0, 0.555, 0, 0, 0, 0.555, 0, 1.17793, 0)
@@ -144,23 +148,40 @@ material_override = ExtResource("1_unlre")
 mesh = SubResource("ArrayMesh_rsa4e")
 skeleton = NodePath("")
 
-[node name="foot_bottom" type="MeshInstance3D" parent="."]
+[node name="foot" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="foot_bottom" type="MeshInstance3D" parent="foot"]
 transform = Transform3D(-2.42598e-08, 0, 0.555, 0, 0.555, 0, -0.555, 0, -2.42598e-08, 0, 1.17793, 0)
 material_override = SubResource("StandardMaterial3D_tm7vk")
 mesh = SubResource("ArrayMesh_pnoy6")
 skeleton = NodePath("")
 
-[node name="foot_top" type="MeshInstance3D" parent="."]
-transform = Transform3D(2.42598e-08, 0, -0.555, 0, -0.555, 0, 0.555, 0, 2.42598e-08, 0, 2.2629, 0)
+[node name="head" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="foot_top" type="MeshInstance3D" parent="head"]
+transform = Transform3D(2.42598e-08, 0, 0.555, 0, -0.555, 0, -0.555, 0, 2.42598e-08, 0, 2.2629, 0)
 material_override = SubResource("StandardMaterial3D_pbqlv")
 mesh = SubResource("ArrayMesh_rgsi5")
 skeleton = NodePath("")
 
-[node name="Label3D" type="Label3D" parent="."]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.00430721, 2.40126, -0.567638)
+[node name="Label3D" type="Label3D" parent="head"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.00245757, 3.34466, -0.00344664)
 text = "¯\\_(ツ)_/¯"
 font = ExtResource("3_ps2b7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1.74, 0, 0, 0, 1.74, 0, 0, 0, 1.74, 0, 1.71153, 0)
 shape = SubResource("CapsuleShape3D_pn1rq")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="Launch_col" type="Area3D" parent="." groups=["enemy"]]
+script = ExtResource("5_ps2b7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Launch_col"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.71272, 0)
+shape = SubResource("CapsuleShape3D_ps2b7")
+
+[connection signal="body_part_hit" from="Launch_col" to="." method="_on_launch_col_body_part_hit"]

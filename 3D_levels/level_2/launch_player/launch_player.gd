@@ -60,6 +60,7 @@ func _physics_process(delta: float) -> void:
 	_camera.rotation.y -= _camera_input_direction.x * delta
 	_camera.rotation.x = clamp(_camera.rotation.x, -PI / 3.0, PI / 3.5)
 	_camera_input_direction = Vector2.ZERO
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta

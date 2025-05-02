@@ -122,8 +122,8 @@ transform = Transform3D(1, 0, 0, 0, 0.946119, 0.323818, 0, -0.323818, 0.946119, 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_sbv4a")
 
-[node name="launch_player" parent="." instance=ExtResource("3_qoep0")]
+[node name="launch_player" parent="." groups=["player"] instance=ExtResource("3_qoep0")]
 transform = Transform3D(-0.99297, 0, -0.118369, 0, 1, 0, 0.118369, 0, -0.99297, 0.390236, 1.05018, 2.17863)
 
 [node name="ugus" parent="." instance=ExtResource("4_f4pvx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.34145, 0.0591992, 21.3885)
+transform = Transform3D(0.63, 0, 0, 0, 0.63, 0, 0, 0, 0.63, 3.34145, 0.0591992, 21.3885)

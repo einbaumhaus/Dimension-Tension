@@ -13,9 +13,10 @@ func _process(delta: float) -> void:
 
 
 func _on_boundary_body_entered(body: Node3D) -> void:
-	get_tree().reload_current_scene.call_deferred()
+	if body.name == "Player":
+		get_tree().reload_current_scene.call_deferred()
 
 
 func _on_secret_boundary_body_entered(body: Node3D) -> void:
 	if body.name == "Player":
-		get_tree().change_scene_to_file.call_deferred("res://3D_levels/lvl1_ocean/easter egg1.tscn")
+		get_tree().change_scene_to_file.call_deferred("res://3D_levels/level1_ocean/easter_egg1.tscn")

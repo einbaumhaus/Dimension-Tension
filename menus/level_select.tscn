@@ -25,56 +25,56 @@ offset_bottom = 136.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer"]
+[node name="lvl1" type="VBoxContainer" parent="BoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="BoxContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="BoxContainer/lvl1"]
 layout_mode = 2
 text = "Level1"
 
-[node name="lvl_1_2d" type="Button" parent="BoxContainer/VBoxContainer"]
+[node name="lvl_1_2d" type="Button" parent="BoxContainer/lvl1"]
 layout_mode = 2
 size_flags_vertical = 3
 text = "2D"
 
-[node name="lvl_1_3d" type="Button" parent="BoxContainer/VBoxContainer"]
+[node name="lvl_1_3d" type="Button" parent="BoxContainer/lvl1"]
 layout_mode = 2
 size_flags_vertical = 3
 text = "3D"
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="BoxContainer"]
+[node name="lvl2" type="VBoxContainer" parent="BoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="BoxContainer/VBoxContainer2"]
+[node name="Label" type="Label" parent="BoxContainer/lvl2"]
 layout_mode = 2
 text = "Level2"
 
-[node name="Button" type="Button" parent="BoxContainer/VBoxContainer2"]
+[node name="lvl_2_2d" type="Button" parent="BoxContainer/lvl2"]
 layout_mode = 2
 size_flags_vertical = 3
 text = "2D"
 
-[node name="Button2" type="Button" parent="BoxContainer/VBoxContainer2"]
+[node name="lvl_2_3d" type="Button" parent="BoxContainer/lvl2"]
 layout_mode = 2
 size_flags_vertical = 3
 text = "3D"
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="BoxContainer"]
+[node name="lvl3" type="VBoxContainer" parent="BoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="BoxContainer/VBoxContainer3"]
+[node name="Label" type="Label" parent="BoxContainer/lvl3"]
 layout_mode = 2
 text = "Level3"
 
-[node name="Button" type="Button" parent="BoxContainer/VBoxContainer3"]
+[node name="lvl_3_2d" type="Button" parent="BoxContainer/lvl3"]
 layout_mode = 2
 size_flags_vertical = 3
 text = "2D"
 
-[node name="Button2" type="Button" parent="BoxContainer/VBoxContainer3"]
+[node name="lvl_3_3d" type="Button" parent="BoxContainer/lvl3"]
 layout_mode = 2
 size_flags_vertical = 3
 text = "3D"
@@ -94,6 +94,8 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Back"
 
-[connection signal="pressed" from="BoxContainer/VBoxContainer/lvl_1_2d" to="." method="_on_lvl_1_2d_pressed"]
-[connection signal="pressed" from="BoxContainer/VBoxContainer/lvl_1_3d" to="." method="_on_lvl_1_3d_pressed"]
+[connection signal="pressed" from="BoxContainer/lvl1/lvl_1_2d" to="." method="_on_lvl_1_2d_pressed"]
+[connection signal="pressed" from="BoxContainer/lvl1/lvl_1_3d" to="." method="_on_lvl_1_3d_pressed"]
+[connection signal="pressed" from="BoxContainer/lvl2/lvl_2_2d" to="." method="_on_lvl_2_2d_pressed"]
+[connection signal="pressed" from="BoxContainer/lvl2/lvl_2_3d" to="." method="_on_lvl_2_3d_pressed"]
 [connection signal="pressed" from="back_b" to="." method="_on_back_b_pressed"]

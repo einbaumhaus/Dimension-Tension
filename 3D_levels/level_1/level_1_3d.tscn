@@ -923,11 +923,7 @@ _data = {
 script = ExtResource("1_ljo6s")
 
 [node name="Player" parent="." instance=ExtResource("1_y7tgq")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 25.5008, 1.54495, -0.0765932)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
-
-[node name="wand" type="Node3D" parent="Player"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 21.0749, 1.54495, -0.0765932)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.0802861, 0.996772, 0, -0.996772, 0.0802861, 2675.55, 278.05, 1901.11)
@@ -2159,10 +2155,10 @@ transform = Transform3D(0.850569, 0, 0, 0, 0.950086, -0.194211, 0, 0.311987, 0.5
 [node name="rails" type="Node3D" parent="assets/bridge"]
 
 [node name="rail" parent="assets/bridge/rails" instance=ExtResource("10_76hjp")]
-transform = Transform3D(0.999941, -0.0108383, 0, 0.0108383, 0.999941, 0, 0, 0, 1, 27.7631, 0.529248, -1.06649)
+transform = Transform3D(0.999605, -0.0280961, 0, 0.0280961, 0.999605, 0, 0, 0, 1, 27.7631, 0.438123, -1.06649)
 
 [node name="rail2" parent="assets/bridge/rails" instance=ExtResource("10_76hjp")]
-transform = Transform3D(0.999941, -0.0108383, 0, 0.0108383, 0.999941, 0, 0, 0, 1, 27.7631, 0.529248, 1.07589)
+transform = Transform3D(0.999605, -0.0280961, 0, 0.0280961, 0.999605, 0, 0, 0, 1, 27.7631, 0.438123, 1.07589)
 
 [node name="b1" type="Node3D" parent="assets/bridge/rails"]
 transform = Transform3D(34.8365, 0, 0, 0, 0.865915, 0, 0, 0, 1, 111.448, 0.84507, -27.6729)

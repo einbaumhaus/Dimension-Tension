@@ -10,6 +10,7 @@ var _camera_input_direction := Vector2.ZERO
 var _last_movement_direction := Vector3.BACK
 @export var mouse_sensitivity := 0.25
 @onready var _camera: Camera3D = $Camera3D
+@onready var anim: AnimationPlayer = $AnimationPlayer
 
 func _ready() -> void:
 	pass # Replace with function body.

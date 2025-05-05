@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cq7korabfngil"]
+
+[ext_resource type="Script" uid="uid://cdlsekulvqos6" path="res://2D_levels/level_2/Player2D_topdown/sticker_launcher/sticker/sticker.gd" id="1_uyi7m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xy4jt"]
+size = Vector2(20, 6)
+
+[node name="sticker" type="Area2D"]
+script = ExtResource("1_uyi7m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_xy4jt")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(1, 1, 0.733333, 1)
+polygon = PackedVector2Array(-10, -3, 10, -3, 10, 3, -10, 3)

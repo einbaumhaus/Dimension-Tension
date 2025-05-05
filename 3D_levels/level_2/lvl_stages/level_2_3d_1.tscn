@@ -128,5 +128,14 @@ transform = Transform3D(-0.99297, 0, -0.118369, 0, 1, 0, 0.118369, 0, -0.99297, 
 [node name="ugus2" parent="." instance=ExtResource("4_f4pvx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.67962, 7.46044, 40.19)
 
+[node name="ugus4" parent="." instance=ExtResource("4_f4pvx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.4731, 7.46044, 40.19)
+
+[node name="ugus5" parent="." instance=ExtResource("4_f4pvx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.4865, 7.46044, 40.19)
+
+[node name="ugus6" parent="." instance=ExtResource("4_f4pvx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.14155, 7.46044, 40.19)
+
 [node name="ugus3" parent="." instance=ExtResource("4_f4pvx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.1624, 7.46044, 40.19)

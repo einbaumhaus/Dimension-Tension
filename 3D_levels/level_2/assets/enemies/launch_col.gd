@@ -15,5 +15,4 @@ func _process(delta: float) -> void:
 	pass
 
 func hit():
-	print("hittt")
 	emit_signal("body_part_hit", damage)

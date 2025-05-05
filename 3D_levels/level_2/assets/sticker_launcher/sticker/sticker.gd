@@ -1,6 +1,6 @@
 extends Node3D
 
-const SPEED = 80.0
+const SPEED = 100
 
 @onready var skin = $skin
 @onready var ray = $RayCast3D
@@ -16,8 +16,9 @@ func _process(delta: float) -> void:
 	if ray.is_colliding():
 		skin.visible = false
 		ray.enabled = false
-		if ray.get_collider().is_in_group("enemy"):
-			ray.get_collider().hit()
+		var collider = ray.get_collider()
+		if collider.has_method("hit"):
+			collider.hit()
 		await get_tree().create_timer(1.0).timeout
 		print("gone")
 		queue_free()

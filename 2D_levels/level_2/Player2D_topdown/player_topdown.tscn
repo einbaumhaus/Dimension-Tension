@@ -185,3 +185,5 @@ animation = &"right"
 
 [node name="Marker2D" type="Marker2D" parent="launcher_pivot"]
 position = Vector2(20.9243, -2.69576)
+
+[node name="Camera2D" type="Camera2D" parent="."]

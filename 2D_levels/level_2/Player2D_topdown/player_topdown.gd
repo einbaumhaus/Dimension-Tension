@@ -42,7 +42,7 @@ func launcher_rotation():
 		sticker_launcher.play("left")
 	else:
 		sticker_launcher.play("right")
-	print(rot)
+	#print(rot)
 
 func state_machine():
 	if velocity.x == SPEED:

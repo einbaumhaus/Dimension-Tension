@@ -1,10 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://dfb1n5ot367os"]
+[gd_scene load_steps=4 format=3 uid="uid://dfb1n5ot367os"]
 
 [ext_resource type="PackedScene" uid="uid://ccweogu7q7wiw" path="res://2D_levels/level_2/Player2D_topdown/player_topdown.tscn" id="1_bkf0y"]
+[ext_resource type="Texture2D" uid="uid://cajru7pnpcjym" path="res://assets/images/logo/tempplayer.png" id="1_cnydw"]
 
 [sub_resource type="TileSet" id="TileSet_bkf0y"]
 
 [node name="lvl_2" type="Node"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(40, 40)
+texture = ExtResource("1_cnydw")
 
 [node name="player_topdown" parent="." instance=ExtResource("1_bkf0y")]
 position = Vector2(229, 246)

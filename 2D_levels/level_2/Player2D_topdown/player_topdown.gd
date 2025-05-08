@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var sticker_scene = preload("res://2D_levels/level_2/Player2D_topdown/sticker_launcher/sticker/sticker.tscn")
 var new_vel = Vector2.ZERO
-const SPEED = 300
+const SPEED = 220
 const JUMP_VELOCITY = -400.0
 var facing_state = 1
 #records what direction play is facing, 1=front, 2=back, 3=left, 4= right
@@ -14,8 +14,9 @@ func _physics_process(delta: float) -> void:
 	launcher_rotation()
 	state_machine()
 	#movement logic
-	velocity.x = Input.get_axis("left", "right")*SPEED
-	velocity.y = Input.get_axis("up", "down")*SPEED
+	velocity.x = Input.get_axis("left", "right")
+	velocity.y = Input.get_axis("up", "down")
+	velocity = velocity.normalized()*SPEED
 	
 	#launcher logic
 	if Input.is_action_just_pressed("left_click") or Input.is_action_just_pressed("ui_accept"):

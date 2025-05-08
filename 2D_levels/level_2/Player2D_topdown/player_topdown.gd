@@ -10,6 +10,10 @@ var facing_state = 1
 @onready var sticker_launcher: AnimatedSprite2D = $launcher_pivot/sticker_launcher
 @onready var anim: AnimatedSprite2D = $player
 
+#launcher delay
+var last_launch_time = 0.0
+var cooldown = 0.2  # seconds between sticker launches
+
 func _physics_process(delta: float) -> void:
 	launcher_rotation()
 	state_machine()
@@ -19,13 +23,15 @@ func _physics_process(delta: float) -> void:
 	velocity = velocity.normalized()*SPEED
 	
 	#launcher logic
-	if Input.is_action_just_pressed("left_click") or Input.is_action_just_pressed("ui_accept"):
-		var sticker = sticker_scene.instantiate()
-		var marker_2d: Marker2D = $launcher_pivot/Marker2D
-		sticker.global_position = marker_2d.global_position
-		sticker.direction = (get_global_mouse_position() - global_position).normalized()
-		
-		get_parent().add_child(sticker)
+	if Input.is_action_pressed("left_click") or Input.is_action_pressed("ui_accept"):
+		var current_time = Time.get_ticks_msec() / 1000.0
+		if current_time - last_launch_time >= cooldown:
+			var sticker = sticker_scene.instantiate()
+			var marker_2d: Marker2D = $launcher_pivot/Marker2D
+			sticker.global_position = marker_2d.global_position
+			sticker.direction = (get_global_mouse_position() - global_position).normalized()
+			get_parent().add_child(sticker)
+			last_launch_time = current_time
 	
 	velocity = lerp(velocity, velocity, 0.1)
 	#print(velocity)

@@ -184,6 +184,6 @@ sprite_frames = SubResource("SpriteFrames_eodm7")
 animation = &"right"
 
 [node name="Marker2D" type="Marker2D" parent="launcher_pivot"]
-position = Vector2(20.9243, -2.69576)
+position = Vector2(22.208, -0.12837)
 
 [node name="Camera2D" type="Camera2D" parent="."]

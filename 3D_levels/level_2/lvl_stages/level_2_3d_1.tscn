@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://bt1oojjskfoa2"]
+[gd_scene load_steps=13 format=3 uid="uid://bt1oojjskfoa2"]
 
+[ext_resource type="Script" uid="uid://baup6tmbd45j4" path="res://3D_levels/level_2/lvl_stages/level_2_3d_1.gd" id="1_ijkd5"]
 [ext_resource type="Texture2D" uid="uid://dcjfetld4q5y7" path="res://3D_levels/level_1/assets/bridge/materials/Ice002_1K-JPG_Color.jpg" id="1_yp75m"]
 [ext_resource type="Texture2D" uid="uid://cjllvahxg6keb" path="res://3D_levels/level_1/assets/overcast_soil_puresky_4k.hdr" id="2_ijkd5"]
 [ext_resource type="PackedScene" uid="uid://f8i8svg7k032" path="res://3D_levels/level_2/launch_player/launch_player.tscn" id="3_qoep0"]
@@ -32,6 +33,7 @@ ambient_light_source = 3
 reflected_light_source = 2
 
 [node name="level_2_3d_1" type="Node3D"]
+script = ExtResource("1_ijkd5")
 
 [node name="placeholder" type="Node3D" parent="."]
 transform = Transform3D(0.465, 0, 0, 0, 0.465, 0, 0, 0, 0.465, 0, 0, 0)

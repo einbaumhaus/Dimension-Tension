@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://ccukn4115cq7p" path="res://2D_levels/level_2/Player2D_topdown/sticker_launcher/expry.png" id="3_6tqqb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6tqqb"]
-size = Vector2(13.0937, 18.7291)
+size = Vector2(11.81, 17.715)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6tqqb"]
 atlas = ExtResource("1_lyvt4")
@@ -166,7 +166,7 @@ scale = Vector2(7.79, 7.79)
 script = ExtResource("1_ka1lk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -0.63543)
+position = Vector2(0, -0.12838)
 shape = SubResource("RectangleShape2D_6tqqb")
 
 [node name="player" type="AnimatedSprite2D" parent="."]

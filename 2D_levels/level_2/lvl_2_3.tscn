@@ -1,0 +1,100 @@
+[gd_scene load_steps=8 format=4 uid="uid://3ggfpcmbr8lx"]
+
+[ext_resource type="Texture2D" uid="uid://drd4sxov2x8e3" path="res://2D_levels/level_2/assets/tile_map/tilemaptd1.png" id="1_wg46k"]
+[ext_resource type="PackedScene" uid="uid://ccweogu7q7wiw" path="res://2D_levels/level_2/Player2D_topdown/player_topdown.tscn" id="2_guxk4"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gpxfa"]
+texture = ExtResource("1_wg46k")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+7:1/0 = 0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:4/0 = 0
+0:4/0 = 0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:4/0 = 0
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+11:0/0 = 0
+9:0/0 = 0
+6:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+11:1/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+0:6/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+7:4/0 = 0
+6:4/0 = 0
+7:5/0 = 0
+8:4/0 = 0
+8:5/0 = 0
+6:5/0 = 0
+5:3/0 = 0
+4:3/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+4:4/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_pqlkt"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_gpxfa")
+
+[sub_resource type="Gradient" id="Gradient_wg46k"]
+colors = PackedColorArray(0.173247, 0.114451, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2210x"]
+gradient = SubResource("Gradient_wg46k")
+
+[sub_resource type="Environment" id="Environment_guxk4"]
+background_mode = 3
+adjustment_enabled = true
+adjustment_color_correction = SubResource("GradientTexture2D_2210x")
+
+[node name="lvl_2_3" type="Node"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+z_index = -1
+texture_filter = 1
+scale = Vector2(5, 5)
+tile_map_data = PackedByteArray("AAD1/wAAAAAEAAEAAAD2/wAAAAAEAAEAAAD3/wAAAAAEAAEAAAD4/wAAAAAEAAEAAAD5/wAAAAAEAAEAAAD6/wAAAAAEAAEAAAD7/wAAAAAEAAEAAAD8/wAAAAAEAAEAAAD1////AAABAAIAAAD2////AAABAAIAAAD3////AAABAAIAAAD4////AAABAAIAAAD5////AAABAAIAAAD6////AAABAAIAAAD7////AAABAAIAAAD8////AAABAAIAAAD1/wEAAAABAAAAAAD2/wEAAAABAAAAAAD3/wEAAAABAAAAAAD4/wEAAAABAAAAAAD5/wEAAAABAAAAAAD6/wEAAAABAAAAAAD7/wEAAAABAAAAAAD8/wEAAAABAAAAAAD9/wEAAAABAAAAAAD+/wEAAAABAAAAAAD//wEAAAABAAAAAAAAAAEAAAABAAAAAAABAAEAAAABAAAAAAACAAEAAAABAAAAAAADAAEAAAABAAAAAAAEAAEAAAABAAAAAAAFAAEAAAABAAAAAAD9/wAAAAAEAAEAAAD+/wAAAAAEAAEAAAD//wAAAAAEAAEAAAAAAAAAAAAEAAEAAAABAAAAAAAEAAEAAAACAAAAAAAEAAEAAAADAAAAAAAEAAEAAAAEAAAAAAAEAAEAAAAFAAAAAAAEAAEAAAD9////AAABAAIAAAD+////AAABAAIAAAD/////AAABAAIAAAAAAP//AAABAAIAAAABAP//AAABAAIAAAACAP//AAABAAIAAAADAP//AAABAAIAAAAEAP//AAABAAIAAAAFAP//AAABAAIAAAA=")
+tile_set = SubResource("TileSet_pqlkt")
+
+[node name="player_topdown" parent="." instance=ExtResource("2_guxk4")]
+position = Vector2(-829, 11.0001)
+scale = Vector2(5, 5)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_guxk4")

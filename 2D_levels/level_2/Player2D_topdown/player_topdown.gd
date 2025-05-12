@@ -1,10 +1,16 @@
 extends CharacterBody2D
 
+@onready var collision: CollisionShape2D = $CollisionShape2D
 var sticker_scene = preload("res://2D_levels/level_2/Player2D_topdown/sticker_launcher/sticker/sticker.tscn")
 var new_vel = Vector2.ZERO
 const SPEED = 220
 const JUMP_VELOCITY = -400.0
 var facing_state = 1
+#taking damage
+var can_take_damage = true
+var damage_cooldown = 1.0
+var damage_timer = 0.0
+var health = 20
 #records what direction play is facing, 1=front, 2=back, 3=left, 4= right
 @onready var launcher_pivot: Node2D = $launcher_pivot
 @onready var sticker_launcher: AnimatedSprite2D = $launcher_pivot/sticker_launcher
@@ -21,7 +27,7 @@ func _physics_process(delta: float) -> void:
 	velocity.x = Input.get_axis("left", "right")
 	velocity.y = Input.get_axis("up", "down")
 	velocity = velocity.normalized()*SPEED
-	
+
 	#launcher logic
 	if Input.is_action_pressed("left_click") or Input.is_action_pressed("ui_accept"):
 		var current_time = Time.get_ticks_msec() / 1000.0
@@ -35,11 +41,13 @@ func _physics_process(delta: float) -> void:
 	
 	velocity = lerp(velocity, velocity, 0.1)
 	#print(velocity)
-	
-	
-	
 	move_and_slide()
-	
+	if not can_take_damage:
+		damage_timer += delta
+		if damage_timer >= damage_cooldown:
+			can_take_damage = true
+			anim.set_modulate(Color(1,1,1,1))
+			damage_timer = 0.0
 
 func launcher_rotation():
 	var rot = launcher_pivot.rotation_degrees
@@ -50,6 +58,14 @@ func launcher_rotation():
 	else:
 		sticker_launcher.play("right")
 	#print(rot)
+func take_damage():
+	if can_take_damage:
+		health -= 1
+		print(health)
+		can_take_damage = false
+		anim.set_modulate(Color(0.86,0.14,0,1))
+		
+	
 
 func state_machine():
 	if velocity.x == SPEED:

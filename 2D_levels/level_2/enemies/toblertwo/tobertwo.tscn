@@ -1,15 +1,31 @@
-[gd_scene load_steps=7 format=3 uid="uid://cgge8ca74twyt"]
+[gd_scene load_steps=11 format=3 uid="uid://cgge8ca74twyt"]
 
 [ext_resource type="Texture2D" uid="uid://cbxyvw8riiyua" path="res://2D_levels/level_2/enemies/toblertwo/tobllertwo.png" id="1_4jlmw"]
 [ext_resource type="Script" uid="uid://cytob56b2f2cj" path="res://2D_levels/level_2/enemies/toblertwo/tobertwo.gd" id="1_o4wxf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o4wxf"]
 atlas = ExtResource("1_4jlmw")
-region = Rect2(0, 0, 16, 16)
+region = Rect2(80, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_08urg"]
 atlas = ExtResource("1_4jlmw")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mx84d"]
+atlas = ExtResource("1_4jlmw")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_euraw"]
+atlas = ExtResource("1_4jlmw")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pidhh"]
+atlas = ExtResource("1_4jlmw")
 region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_05md6"]
+atlas = ExtResource("1_4jlmw")
+region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mx84d"]
 animations = [{
@@ -18,12 +34,44 @@ animations = [{
 "texture": SubResource("AtlasTexture_o4wxf")
 }],
 "loop": true,
-"name": &"attack",
+"name": &"1",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_08urg")
+}],
+"loop": true,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mx84d")
+}],
+"loop": true,
+"name": &"3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_euraw")
+}],
+"loop": true,
+"name": &"4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pidhh")
+}],
+"loop": true,
+"name": &"5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_05md6")
 }],
 "loop": true,
 "name": &"default",
@@ -33,7 +81,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_o4wxf"]
 radius = 8.0
 
-[node name="tobertwo" type="CharacterBody2D"]
+[node name="tobertwo" type="CharacterBody2D" groups=["enemy"]]
 script = ExtResource("1_o4wxf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

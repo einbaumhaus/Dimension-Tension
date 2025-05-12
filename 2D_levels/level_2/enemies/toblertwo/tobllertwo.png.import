@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8m76oovtkivs"
-path="res://.godot/imported/tobler2.png-0750863e0265e49384ccb963704ce199.ctex"
+uid="uid://cbxyvw8riiyua"
+path="res://.godot/imported/tobllertwo.png-a5205f895def89ecda1c4559e5a4a8e5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://3D_levels/level_2/assets/enemies/toblertwo/tobler2.png"
-dest_files=["res://.godot/imported/tobler2.png-0750863e0265e49384ccb963704ce199.ctex"]
+source_file="res://2D_levels/level_2/enemies/toblertwo/tobllertwo.png"
+dest_files=["res://.godot/imported/tobllertwo.png-a5205f895def89ecda1c4559e5a4a8e5.ctex"]
 
 [params]
 

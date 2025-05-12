@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://cgge8ca74twyt"]
+
+[ext_resource type="Texture2D" uid="uid://cbxyvw8riiyua" path="res://2D_levels/level_2/enemies/toblertwo/tobllertwo.png" id="1_4jlmw"]
+[ext_resource type="Script" uid="uid://cytob56b2f2cj" path="res://2D_levels/level_2/enemies/toblertwo/tobertwo.gd" id="1_o4wxf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o4wxf"]
+atlas = ExtResource("1_4jlmw")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_08urg"]
+atlas = ExtResource("1_4jlmw")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mx84d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o4wxf")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_08urg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o4wxf"]
+radius = 8.0
+
+[node name="tobertwo" type="CharacterBody2D"]
+script = ExtResource("1_o4wxf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(1.21875, 1.21875)
+sprite_frames = SubResource("SpriteFrames_mx84d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_o4wxf")

@@ -161,7 +161,7 @@ animations = [{
 "speed": 1.0
 }]
 
-[node name="player_topdown" type="CharacterBody2D"]
+[node name="player_topdown" type="CharacterBody2D" groups=["player"]]
 scale = Vector2(7.79, 7.79)
 script = ExtResource("1_ka1lk")
 

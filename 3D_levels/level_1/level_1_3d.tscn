@@ -577,18 +577,6 @@ tracks/27/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0)]
 }
-tracks/28/type = "value"
-tracks/28/imported = false
-tracks/28/enabled = true
-tracks/28/path = NodePath("../../WorldEnvironment:environment:adjustment_enabled")
-tracks/28/interp = 1
-tracks/28/loop_wrap = true
-tracks/28/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
 
 [sub_resource type="Animation" id="Animation_v3kjf"]
 resource_name = "magic change"
@@ -959,7 +947,7 @@ size = Vector3(41.5786, 1, 34.1491)
 script = ExtResource("1_ljo6s")
 
 [node name="Player" parent="." instance=ExtResource("1_y7tgq")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 160.475, 1.54495, -0.0765932)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.80167, 1.54495, -0.0765932)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.0802861, 0.996772, 0, -0.996772, 0.0802861, 2675.55, 278.05, 1901.11)

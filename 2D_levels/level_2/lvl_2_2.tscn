@@ -114,6 +114,7 @@ position = Vector2(-463, -83.5)
 shape = SubResource("RectangleShape2D_g0bk8")
 
 [node name="toblertwo_package2" type="StaticBody2D" parent="."]
+position = Vector2(-241, 54)
 
 [node name="Sprite2D" type="Sprite2D" parent="toblertwo_package2"]
 texture_filter = 1

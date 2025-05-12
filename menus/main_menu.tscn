@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bcs8aqgp6fvs6"]
+[gd_scene load_steps=4 format=3 uid="uid://bcs8aqgp6fvs6"]
 
 [ext_resource type="Script" uid="uid://nvghij2p6sow" path="res://menus/main_menu.gd" id="1_8gy84"]
 [ext_resource type="Texture2D" uid="uid://7w3wqmyb4i8s" path="res://menus/assets/title1.png" id="2_ij7vn"]
+[ext_resource type="FontFile" uid="uid://dn3yd17i4df0q" path="res://assets/fonts/OCRAEXT.TTF" id="3_yjgyn"]
 
 [node name="main_menu" type="Control"]
 layout_mode = 3
@@ -64,6 +65,22 @@ stretch_mode = 5
 
 [node name="future rotating background" type="Node3D" parent="."]
 visible = false
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.5
+offset_top = -54.0
+offset_right = 200.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_yjgyn")
+theme_override_font_sizes/font_size = 51
+text = "version 0.0.6"
 
 [connection signal="pressed" from="VBoxContainer/play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/settings" to="." method="_on_settings_pressed"]

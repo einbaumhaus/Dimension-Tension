@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=4 uid="uid://ctog1hc5e7u1a"]
+[gd_scene load_steps=18 format=4 uid="uid://ctog1hc5e7u1a"]
 
 [ext_resource type="Script" uid="uid://c0iybt6giquyy" path="res://2D_levels/level_2/easteregg2/easteregg_2.gd" id="1_b68rg"]
 [ext_resource type="Texture2D" uid="uid://drd4sxov2x8e3" path="res://2D_levels/level_2/assets/tile_map/tilemaptd1.png" id="2_gqpqt"]
 [ext_resource type="PackedScene" uid="uid://ccweogu7q7wiw" path="res://2D_levels/level_2/Player2D_topdown/player_topdown.tscn" id="3_dc7fx"]
 [ext_resource type="PackedScene" uid="uid://cgge8ca74twyt" path="res://2D_levels/level_2/enemies/toblertwo/tobertwo.tscn" id="4_dc7fx"]
 [ext_resource type="Script" uid="uid://d1n7a121y4cto" path="res://2D_levels/level_2/easteregg2/area_2d.gd" id="5_dqbnx"]
+[ext_resource type="Texture2D" uid="uid://cibg7uoqi45e" path="res://2D_levels/level_2/easteregg2/question mark.png" id="5_f53u8"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_2210x"]
 tile_data = PackedInt32Array(0, 262144, 5, 65536, 262144, 6, 1, 327680, 5, 65537, 327680, 6)
@@ -102,11 +103,69 @@ size = Vector2(8.125, 565.125)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f53u8"]
 size = Vector2(159, 78)
 
+[sub_resource type="Animation" id="Animation_rp11q"]
+resource_name = "intro"
+length = 4.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.48, 1.5, 2, 2.5, 3, 3.5, 4, 4.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-40, 202), Vector2(-40, 202), Vector2(-302, -160), Vector2(-302, -160), Vector2(-28, -286), Vector2(-28, -286), Vector2(234, -130), Vector2(234, -130), Vector2(-38, -37.26)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera2D:zoom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4, 4.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(4.325, 4.325), Vector2(4.325, 4.325), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_f53u8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-40, 202)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera2D:zoom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4.325, 4.325)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bptf4"]
+_data = {
+&"RESET": SubResource("Animation_f53u8"),
+&"intro": SubResource("Animation_rp11q")
+}
+
 [node name="easteregg2" type="Node"]
 script = ExtResource("1_b68rg")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-40, -39)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 z_index = -1
@@ -124,7 +183,12 @@ scale = Vector2(5, 5)
 tile_map_data = PackedByteArray("AAD+//3/AAAGAAoAAAD///3/AAAHAAoAAAAAAP3/AAAIAAoAAAA=")
 tile_set = SubResource("TileSet_f53u8")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-40, 202)
+zoom = Vector2(4.325, 4.325)
+
 [node name="player_topdown" parent="." instance=ExtResource("3_dc7fx")]
+process_mode = 4
 position = Vector2(-40, 202)
 scale = Vector2(4.54, 4.54)
 
@@ -149,7 +213,8 @@ shape = SubResource("RectangleShape2D_dqbnx")
 position = Vector2(328, -32)
 shape = SubResource("RectangleShape2D_dqbnx")
 
-[node name="enemikes" type="Node" parent="."]
+[node name="enemikes" type="Node2D" parent="."]
+process_mode = 4
 
 [node name="tobertwo" parent="enemikes" instance=ExtResource("4_dc7fx")]
 position = Vector2(-34, -282)
@@ -163,6 +228,26 @@ scale = Vector2(4.54, 4.54)
 position = Vector2(234, -116)
 scale = Vector2(4.54, 4.54)
 
+[node name="bubbles" type="Node2D" parent="enemikes"]
+
+[node name="Sprite2D2" type="Sprite2D" parent="enemikes/bubbles"]
+texture_filter = 1
+position = Vector2(-252, -201)
+scale = Vector2(4.54, 4.54)
+texture = ExtResource("5_f53u8")
+
+[node name="Sprite2D3" type="Sprite2D" parent="enemikes/bubbles"]
+texture_filter = 1
+position = Vector2(294, -165)
+scale = Vector2(4.54, 4.54)
+texture = ExtResource("5_f53u8")
+
+[node name="Sprite2D" type="Sprite2D" parent="enemikes/bubbles"]
+texture_filter = 1
+position = Vector2(36, -322)
+scale = Vector2(4.54, 4.54)
+texture = ExtResource("5_f53u8")
+
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(188, -421)
 script = ExtResource("5_dqbnx")
@@ -171,4 +256,10 @@ script = ExtResource("5_dqbnx")
 position = Vector2(55.5, 144)
 shape = SubResource("RectangleShape2D_f53u8")
 
+[node name="cutscene" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_bptf4")
+}
+
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="animation_finished" from="cutscene" to="." method="_on_cutscene_animation_finished"]

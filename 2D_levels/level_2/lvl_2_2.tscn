@@ -1,10 +1,11 @@
-[gd_scene load_steps=22 format=4 uid="uid://byglmfq2n7msk"]
+[gd_scene load_steps=23 format=4 uid="uid://byglmfq2n7msk"]
 
 [ext_resource type="Texture2D" uid="uid://drd4sxov2x8e3" path="res://2D_levels/level_2/assets/tile_map/tilemaptd1.png" id="1_gry7t"]
 [ext_resource type="PackedScene" uid="uid://ccweogu7q7wiw" path="res://2D_levels/level_2/Player2D_topdown/player_topdown.tscn" id="2_kepxu"]
 [ext_resource type="Script" uid="uid://d3r51r52nkylm" path="res://2D_levels/level_2/area_2d.gd" id="3_2ntar"]
 [ext_resource type="Texture2D" uid="uid://clblg2pv1ayah" path="res://2D_levels/level_2/enemies/toblertwo/tobler2.png" id="4_g0bk8"]
 [ext_resource type="PackedScene" uid="uid://cgge8ca74twyt" path="res://2D_levels/level_2/enemies/toblertwo/tobertwo.tscn" id="4_q77w5"]
+[ext_resource type="PackedScene" uid="uid://bpmq6uacs60yv" path="res://2D_levels/level_2/elim_scene/elim_scene.tscn" id="6_ed122"]
 [ext_resource type="Script" uid="uid://bh4y20njh5ckm" path="res://2D_levels/level_2/easteregg_2_enter.gd" id="6_sevxt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kepxu"]
@@ -238,6 +239,14 @@ script = ExtResource("6_sevxt")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="easteregg2enter"]
 position = Vector2(-28, 41)
 shape = SubResource("RectangleShape2D_kewfn")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 4
+visible = false
+
+[node name="elim_scene" parent="CanvasLayer" instance=ExtResource("6_ed122")]
+position = Vector2(4.76837e-07, 0.00012207)
+scale = Vector2(1, 1)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="easteregg2enter" to="easteregg2enter" method="_on_body_entered"]

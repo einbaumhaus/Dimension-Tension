@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=4 uid="uid://3ggfpcmbr8lx"]
+[gd_scene load_steps=12 format=4 uid="uid://3ggfpcmbr8lx"]
 
 [ext_resource type="Texture2D" uid="uid://drd4sxov2x8e3" path="res://2D_levels/level_2/assets/tile_map/tilemaptd1.png" id="1_wg46k"]
 [ext_resource type="PackedScene" uid="uid://ccweogu7q7wiw" path="res://2D_levels/level_2/Player2D_topdown/player_topdown.tscn" id="2_guxk4"]
 [ext_resource type="Script" uid="uid://de0lrerg1h5is" path="res://2D_levels/level_2/perpsectivechanger2.gd" id="3_guxk4"]
 [ext_resource type="PackedScene" uid="uid://cgge8ca74twyt" path="res://2D_levels/level_2/enemies/toblertwo/tobertwo.tscn" id="4_gpxfa"]
+[ext_resource type="PackedScene" uid="uid://bpmq6uacs60yv" path="res://2D_levels/level_2/elim_scene/elim_scene.tscn" id="5_pqlkt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gpxfa"]
 texture = ExtResource("1_wg46k")
@@ -151,5 +152,13 @@ scale = Vector2(5, 5)
 [node name="tobertwo3" parent="." instance=ExtResource("4_gpxfa")]
 position = Vector2(808, -38)
 scale = Vector2(5, 5)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 4
+visible = false
+
+[node name="elim_scene" parent="CanvasLayer" instance=ExtResource("5_pqlkt")]
+position = Vector2(4.76837e-07, 0.00012207)
+scale = Vector2(1, 1)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

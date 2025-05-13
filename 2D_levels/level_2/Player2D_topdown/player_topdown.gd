@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@onready var canvas_layer: CanvasLayer = $"../CanvasLayer"
+
 @onready var collision: CollisionShape2D = $CollisionShape2D
 var sticker_scene = preload("res://2D_levels/level_2/Player2D_topdown/sticker_launcher/sticker/sticker.tscn")
 var new_vel = Vector2.ZERO
@@ -10,7 +12,7 @@ var facing_state = 1
 var can_take_damage = true
 var damage_cooldown = 1.0
 var damage_timer = 0.0
-var health = 20
+var health = 5
 #records what direction play is facing, 1=front, 2=back, 3=left, 4= right
 @onready var launcher_pivot: Node2D = $launcher_pivot
 @onready var sticker_launcher: AnimatedSprite2D = $launcher_pivot/sticker_launcher
@@ -64,7 +66,11 @@ func take_damage():
 		print(health)
 		can_take_damage = false
 		anim.set_modulate(Color(0.86,0.14,0,1))
-		
+		if health <= 0:
+			canvas_layer.visible = true
+			canvas_layer.process_mode = Node.PROCESS_MODE_ALWAYS
+			if canvas_layer.get_node("elim_scene").done:
+				get_tree().reload_current_scene()
 	
 
 func state_machine():

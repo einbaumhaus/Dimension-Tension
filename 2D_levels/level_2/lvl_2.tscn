@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=4 uid="uid://dfb1n5ot367os"]
+[gd_scene load_steps=14 format=4 uid="uid://dfb1n5ot367os"]
 
 [ext_resource type="Script" uid="uid://dh11uq2isqd2m" path="res://2D_levels/level_2/lvl_2.gd" id="1_0icu8"]
 [ext_resource type="PackedScene" uid="uid://ccweogu7q7wiw" path="res://2D_levels/level_2/Player2D_topdown/player_topdown.tscn" id="1_bkf0y"]
 [ext_resource type="Texture2D" uid="uid://drd4sxov2x8e3" path="res://2D_levels/level_2/assets/tile_map/tilemaptd1.png" id="2_cnydw"]
 [ext_resource type="Script" uid="uid://v2ddgt20xc7a" path="res://2D_levels/level_2/lvl_changer.gd" id="3_rg6l4"]
 [ext_resource type="PackedScene" uid="uid://2eas73r4qdpp" path="res://2D_levels/level_2/enemies/gipfeli/croissant.tscn" id="6_bxttq"]
+[ext_resource type="PackedScene" uid="uid://bpmq6uacs60yv" path="res://2D_levels/level_2/elim_scene/elim_scene.tscn" id="6_x1lie"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_2210x"]
 tile_data = PackedInt32Array(0, 262144, 5, 65536, 262144, 6, 1, 327680, 5, 65537, 327680, 6)
@@ -74,7 +75,7 @@ sources/0 = SubResource("TileSetAtlasSource_2210x")
 pattern_0 = SubResource("TileMapPattern_2210x")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0icu8"]
-size = Vector2(1681, 638)
+size = Vector2(214, 100.5)
 
 [sub_resource type="Gradient" id="Gradient_0icu8"]
 colors = PackedColorArray(0.173247, 0.114451, 0, 1, 1, 1, 1, 1)
@@ -115,8 +116,7 @@ position = Vector2(-943, -138)
 script = ExtResource("3_rg6l4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="lvl_changer/Area2D"]
-visible = false
-position = Vector2(502.5, 378)
+position = Vector2(21, -11)
 shape = SubResource("RectangleShape2D_0icu8")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -134,4 +134,10 @@ scale = Vector2(5, 5)
 position = Vector2(-898, 104)
 scale = Vector2(5, 5)
 
-[connection signal="body_exited" from="lvl_changer/Area2D" to="lvl_changer/Area2D" method="_on_body_exited"]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 4
+visible = false
+
+[node name="elim_scene" parent="CanvasLayer" instance=ExtResource("6_x1lie")]
+
+[connection signal="body_entered" from="lvl_changer/Area2D" to="lvl_changer/Area2D" method="_on_body_entered"]

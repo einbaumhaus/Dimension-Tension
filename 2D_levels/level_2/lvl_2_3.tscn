@@ -159,6 +159,5 @@ visible = false
 
 [node name="elim_scene" parent="CanvasLayer" instance=ExtResource("5_pqlkt")]
 position = Vector2(4.76837e-07, 0.00012207)
-scale = Vector2(1, 1)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

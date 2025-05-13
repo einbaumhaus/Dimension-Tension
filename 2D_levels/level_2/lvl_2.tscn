@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://ccweogu7q7wiw" path="res://2D_levels/level_2/Player2D_topdown/player_topdown.tscn" id="1_bkf0y"]
 [ext_resource type="Texture2D" uid="uid://drd4sxov2x8e3" path="res://2D_levels/level_2/assets/tile_map/tilemaptd1.png" id="2_cnydw"]
 [ext_resource type="Script" uid="uid://v2ddgt20xc7a" path="res://2D_levels/level_2/lvl_changer.gd" id="3_rg6l4"]
-[ext_resource type="PackedScene" uid="uid://cgge8ca74twyt" path="res://2D_levels/level_2/enemies/toblertwo/tobertwo.tscn" id="5_2210x"]
+[ext_resource type="PackedScene" uid="uid://2eas73r4qdpp" path="res://2D_levels/level_2/enemies/gipfeli/croissant.tscn" id="6_bxttq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rg6l4"]
 texture = ExtResource("2_cnydw")
@@ -110,12 +110,16 @@ shape = SubResource("RectangleShape2D_0icu8")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_bxttq")
 
-[node name="tobertwo" parent="." instance=ExtResource("5_2210x")]
-position = Vector2(-575, 32)
+[node name="croissant" parent="." instance=ExtResource("6_bxttq")]
+position = Vector2(-557, 266)
 scale = Vector2(5, 5)
 
-[node name="tobertwo2" parent="." instance=ExtResource("5_2210x")]
-position = Vector2(-934, 291)
+[node name="croissant2" parent="." instance=ExtResource("6_bxttq")]
+position = Vector2(-301, 35)
+scale = Vector2(5, 5)
+
+[node name="croissant3" parent="." instance=ExtResource("6_bxttq")]
+position = Vector2(-898, 104)
 scale = Vector2(5, 5)
 
 [connection signal="body_exited" from="lvl_changer/Area2D" to="lvl_changer/Area2D" method="_on_body_exited"]

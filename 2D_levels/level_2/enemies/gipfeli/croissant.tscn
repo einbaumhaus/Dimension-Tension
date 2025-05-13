@@ -1,0 +1,94 @@
+[gd_scene load_steps=11 format=3 uid="uid://2eas73r4qdpp"]
+
+[ext_resource type="Script" uid="uid://d0k4yvkww8suf" path="res://2D_levels/level_2/enemies/gipfeli/croissant.gd" id="1_pxq0b"]
+[ext_resource type="Texture2D" uid="uid://dhtopcu3sbqbe" path="res://2D_levels/level_2/enemies/gipfeli/croissant.png" id="2_pxq0b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cyv6g"]
+atlas = ExtResource("2_pxq0b")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqvcc"]
+atlas = ExtResource("2_pxq0b")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1xtyh"]
+atlas = ExtResource("2_pxq0b")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aljid"]
+atlas = ExtResource("2_pxq0b")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2eoub"]
+atlas = ExtResource("2_pxq0b")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fvfxk"]
+atlas = ExtResource("2_pxq0b")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pxq0b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cyv6g")
+}],
+"loop": true,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gqvcc")
+}],
+"loop": true,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1xtyh")
+}],
+"loop": true,
+"name": &"3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aljid")
+}],
+"loop": true,
+"name": &"4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2eoub")
+}],
+"loop": true,
+"name": &"5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fvfxk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1xtyh"]
+radius = 8.0
+
+[node name="croissant" type="CharacterBody2D" groups=["enemy"]]
+script = ExtResource("1_pxq0b")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(1.21875, 1.21875)
+sprite_frames = SubResource("SpriteFrames_pxq0b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_1xtyh")

@@ -1,0 +1,174 @@
+[gd_scene load_steps=14 format=4 uid="uid://ctog1hc5e7u1a"]
+
+[ext_resource type="Script" uid="uid://c0iybt6giquyy" path="res://2D_levels/level_2/easteregg2/easteregg_2.gd" id="1_b68rg"]
+[ext_resource type="Texture2D" uid="uid://drd4sxov2x8e3" path="res://2D_levels/level_2/assets/tile_map/tilemaptd1.png" id="2_gqpqt"]
+[ext_resource type="PackedScene" uid="uid://ccweogu7q7wiw" path="res://2D_levels/level_2/Player2D_topdown/player_topdown.tscn" id="3_dc7fx"]
+[ext_resource type="PackedScene" uid="uid://cgge8ca74twyt" path="res://2D_levels/level_2/enemies/toblertwo/tobertwo.tscn" id="4_dc7fx"]
+[ext_resource type="Script" uid="uid://d1n7a121y4cto" path="res://2D_levels/level_2/easteregg2/area_2d.gd" id="5_dqbnx"]
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_2210x"]
+tile_data = PackedInt32Array(0, 262144, 5, 65536, 262144, 6, 1, 327680, 5, 65537, 327680, 6)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dqbnx"]
+texture = ExtResource("2_gqpqt")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+7:1/0 = 0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:4/0 = 0
+0:4/0 = 0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:4/0 = 0
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+11:0/0 = 0
+9:0/0 = 0
+6:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+11:1/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+0:6/0 = 0
+4:6/0 = 0
+4:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:6/0 = 0
+5:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:5/0 = 0
+5:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:5/0 = 0
+4:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:8/0 = 0
+6:10/0 = 0
+6:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -0.5, 0, -4.5, 8, -8, 8, 8, -8, 8)
+7:10/0 = 0
+7:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:10/0 = 0
+8:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 0.5, -4.5, 8, 0, 8, 8, -8, 8)
+7:8/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_f53u8"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_dqbnx")
+pattern_0 = SubResource("TileMapPattern_2210x")
+
+[sub_resource type="Environment" id="Environment_gqpqt"]
+background_mode = 3
+adjustment_enabled = true
+adjustment_brightness = 0.84
+adjustment_contrast = 2.03
+adjustment_saturation = 1.08
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gqpqt"]
+size = Vector2(720, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dc7fx"]
+size = Vector2(733, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dqbnx"]
+size = Vector2(8.125, 565.125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f53u8"]
+size = Vector2(159, 78)
+
+[node name="easteregg2" type="Node"]
+script = ExtResource("1_b68rg")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-40, -39)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+z_index = -1
+texture_filter = 1
+position = Vector2(3, 3)
+scale = Vector2(5, 5)
+tile_map_data = PackedByteArray("AAD9/wEAAAAGAAgAAAD+/wEAAAAGAAgAAAD//wEAAAAGAAgAAAAAAAEAAAAGAAgAAAABAAEAAAAGAAgAAAABAAAAAAAGAAgAAAAAAAAAAAAGAAgAAAD//wAAAAAGAAgAAAD+/wAAAAAGAAgAAAD9/wAAAAAGAAgAAAD9////AAAGAAgAAAD+////AAAGAAgAAAD/////AAAGAAgAAAAAAP//AAAGAAgAAAABAP//AAAGAAgAAAABAP7/AAAGAAgAAAAAAP7/AAAGAAgAAAD///7/AAAGAAgAAAD+//7/AAAGAAgAAAD9//7/AAAGAAgAAAD8//7/AAAGAAgAAAACAP7/AAAGAAgAAAACAP//AAAGAAgAAAACAAAAAAAGAAgAAAACAAEAAAAGAAgAAAD8////AAAGAAgAAAD8/wAAAAAGAAgAAAD8/wEAAAAGAAgAAAADAP7/AAAGAAgAAAADAP//AAAGAAgAAAADAAAAAAAGAAgAAAADAAEAAAAGAAgAAAD8//3/AAAGAAgAAAD9//3/AAAGAAgAAAD+//3/AAAHAAgAAAD///3/AAAHAAgAAAAAAP3/AAAHAAgAAAABAP3/AAAGAAgAAAACAP3/AAAHAAcAAAADAP3/AAAGAAgAAAADAPz/AAAGAAgAAAACAPz/AAAGAAcAAAABAPz/AAAGAAgAAAAAAPz/AAAHAAgAAAD///z/AAAHAAgAAAD+//z/AAAHAAgAAAD9//z/AAAGAAgAAAD8//z/AAAGAAgAAAD8/wIAAAAGAAgAAAD9/wIAAAAGAAgAAAD+/wIAAAAGAAgAAAD//wIAAAAGAAgAAAAAAAIAAAAGAAgAAAABAAIAAAAGAAgAAAACAAIAAAAGAAgAAAADAAIAAAAGAAgAAAD7//z/AAAGAAgAAAD7//3/AAAGAAgAAAD7//7/AAAGAAgAAAD7////AAAGAAgAAAD7/wAAAAAGAAgAAAD7/wEAAAAGAAgAAAD7/wIAAAAGAAgAAAA=")
+tile_set = SubResource("TileSet_f53u8")
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="."]
+z_index = -1
+texture_filter = 1
+position = Vector2(3, 3)
+scale = Vector2(5, 5)
+tile_map_data = PackedByteArray("AAD+//3/AAAGAAoAAAD///3/AAAHAAoAAAAAAP3/AAAIAAoAAAA=")
+tile_set = SubResource("TileSet_f53u8")
+
+[node name="player_topdown" parent="." instance=ExtResource("3_dc7fx")]
+position = Vector2(-40, 202)
+scale = Vector2(4.54, 4.54)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_gqpqt")
+
+[node name="bounds" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bounds"]
+position = Vector2(-39, -339)
+shape = SubResource("RectangleShape2D_gqpqt")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bounds"]
+position = Vector2(-37.5, 251)
+shape = SubResource("RectangleShape2D_dc7fx")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="bounds"]
+position = Vector2(-404.063, -42.5625)
+shape = SubResource("RectangleShape2D_dqbnx")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="bounds"]
+position = Vector2(328, -32)
+shape = SubResource("RectangleShape2D_dqbnx")
+
+[node name="enemikes" type="Node" parent="."]
+
+[node name="tobertwo" parent="enemikes" instance=ExtResource("4_dc7fx")]
+position = Vector2(-34, -282)
+scale = Vector2(4.54, 4.54)
+
+[node name="tobertwo2" parent="enemikes" instance=ExtResource("4_dc7fx")]
+position = Vector2(-308, -151)
+scale = Vector2(4.54, 4.54)
+
+[node name="tobertwo3" parent="enemikes" instance=ExtResource("4_dc7fx")]
+position = Vector2(234, -116)
+scale = Vector2(4.54, 4.54)
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(188, -421)
+script = ExtResource("5_dqbnx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(55.5, 144)
+shape = SubResource("RectangleShape2D_f53u8")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://dfb1n5ot367os"]
+[gd_scene load_steps=15 format=4 uid="uid://dfb1n5ot367os"]
 
 [ext_resource type="Script" uid="uid://dh11uq2isqd2m" path="res://2D_levels/level_2/lvl_2.gd" id="1_0icu8"]
 [ext_resource type="PackedScene" uid="uid://ccweogu7q7wiw" path="res://2D_levels/level_2/Player2D_topdown/player_topdown.tscn" id="1_bkf0y"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://v2ddgt20xc7a" path="res://2D_levels/level_2/lvl_changer.gd" id="3_rg6l4"]
 [ext_resource type="PackedScene" uid="uid://2eas73r4qdpp" path="res://2D_levels/level_2/enemies/gipfeli/croissant.tscn" id="6_bxttq"]
 [ext_resource type="PackedScene" uid="uid://bpmq6uacs60yv" path="res://2D_levels/level_2/elim_scene/elim_scene.tscn" id="6_x1lie"]
+[ext_resource type="FontFile" uid="uid://nv7xw0gdt65u" path="res://assets/fonts/joystix monospace.otf" id="7_x1lie"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_2210x"]
 tile_data = PackedInt32Array(0, 262144, 5, 65536, 262144, 6, 1, 327680, 5, 65537, 327680, 6)
@@ -139,5 +140,28 @@ process_mode = 4
 visible = false
 
 [node name="elim_scene" parent="CanvasLayer" instance=ExtResource("6_x1lie")]
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+offset_left = 119.0
+offset_top = -194.0
+offset_right = 350.0
+offset_bottom = -156.0
+theme_override_colors/font_color = Color(1, 0.151344, 0.108333, 1)
+theme_override_fonts/font = ExtResource("7_x1lie")
+theme_override_font_sizes/font_size = 31
+text = "JUMP DOWN"
+
+[node name="Label2" type="Label" parent="."]
+texture_filter = 1
+offset_left = 52.0
+offset_top = -104.0
+offset_right = 283.0
+offset_bottom = -36.0
+rotation = -1.5708
+theme_override_colors/font_color = Color(1, 0.151344, 0.108333, 1)
+theme_override_fonts/font = ExtResource("7_x1lie")
+theme_override_font_sizes/font_size = 56
+text = "<-"
 
 [connection signal="body_entered" from="lvl_changer/Area2D" to="lvl_changer/Area2D" method="_on_body_entered"]

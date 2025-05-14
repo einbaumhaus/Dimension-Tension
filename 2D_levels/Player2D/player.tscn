@@ -1,7 +1,72 @@
-[gd_scene load_steps=4 format=3 uid="uid://c7b3wf077ipnc"]
+[gd_scene load_steps=11 format=3 uid="uid://c7b3wf077ipnc"]
 
 [ext_resource type="Script" uid="uid://c7w8pvr0wlgml" path="res://2D_levels/Player2D/player.gd" id="1_tia48"]
-[ext_resource type="Texture2D" uid="uid://dg76crss4sty7" path="res://2D_levels/Player2D/skin/tempplayer.png" id="2_tia48"]
+[ext_resource type="Texture2D" uid="uid://bgw2w26elh5b5" path="res://2D_levels/level_2/Player2D_topdown/player.png" id="2_tia48"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p44oq"]
+atlas = ExtResource("2_tia48")
+region = Rect2(0, 40, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7yq53"]
+atlas = ExtResource("2_tia48")
+region = Rect2(40, 40, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lefud"]
+atlas = ExtResource("2_tia48")
+region = Rect2(0, 60, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s4cxv"]
+atlas = ExtResource("2_tia48")
+region = Rect2(40, 60, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vcx2i"]
+atlas = ExtResource("2_tia48")
+region = Rect2(20, 40, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1vpip"]
+atlas = ExtResource("2_tia48")
+region = Rect2(20, 60, 20, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_buvmc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p44oq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7yq53")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lefud")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s4cxv")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vcx2i")
+}],
+"loop": true,
+"name": &"still_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1vpip")
+}],
+"loop": true,
+"name": &"still_right",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p44oq"]
 radius = 35.0
@@ -9,11 +74,12 @@ radius = 35.0
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_tia48")
 
-[node name="WIP skin" type="Sprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(7.62939e-06, 0)
-scale = Vector2(8.88, 8.88)
-texture = ExtResource("2_tia48")
+scale = Vector2(3.96, 3.96)
+sprite_frames = SubResource("SpriteFrames_buvmc")
+animation = &"still_right"
+frame_progress = 0.806591
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_p44oq")

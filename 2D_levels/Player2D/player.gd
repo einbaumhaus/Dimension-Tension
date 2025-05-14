@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var camera_2d: Camera2D = $Camera2D
+@onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
@@ -33,9 +34,15 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("ui_down"):
 		camera_2d.zoom = Vector2(0.5,0.5)
-	
+	state_machine()
 	move_and_slide()
 
 
 func _on_double_jump_body_entered(body: Node2D) -> void:
 	pass
+
+func state_machine():
+	if velocity.x <= 0:
+		anim.play("left")
+	if velocity.x >= 0:
+		anim.play("right")

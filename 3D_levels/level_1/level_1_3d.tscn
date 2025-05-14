@@ -935,7 +935,7 @@ size = Vector3(41.5786, 1, 34.1491)
 script = ExtResource("1_ljo6s")
 
 [node name="Player" parent="." instance=ExtResource("1_y7tgq")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 162.644, 1.54495, -0.0765932)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -38.0109, 8.53419, -0.0765932)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.0802861, 0.996772, 0, -0.996772, 0.0802861, 2675.55, 278.05, 1901.11)
@@ -1750,6 +1750,10 @@ surface_material_override/0 = SubResource("StandardMaterial3D_3al1x")
 transform = Transform3D(24.6204, 0, 0, 0, 1, 0, 0, 0, 48.6877, 9.8002, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_erloq")
 
+[node name="ramp" type="CollisionShape3D" parent="assets/env/forest/StaticBody3D"]
+transform = Transform3D(23.8174, 0.253319, 0, -6.23681, 0.967383, 0, 0, 0, 12.1266, -36.661, 6.01643, 0)
+shape = SubResource("ConvexPolygonShape3D_erloq")
+
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="assets/env/forest/StaticBody3D"]
 transform = Transform3D(24.62, 0, 0, 0, 1, 0, 0, 0, 26.553, 191.629, -0.0420871, 9.51654)
 shape = SubResource("ConvexPolygonShape3D_erloq")
@@ -1851,7 +1855,7 @@ transform = Transform3D(-0.60433, 0, -5.03889, 0, 5.075, 0, 5.03889, 0, -0.60433
 texture = ExtResource("10_2bi32")
 
 [node name="trees3" type="Sprite3D" parent="assets/env/trees/Node3D3"]
-transform = Transform3D(-5.05842, 0, -0.409923, 0, 5.075, 0, 0.409923, 0, -5.05842, 13.0988, 9.61528, 54.7517)
+transform = Transform3D(-5.05842, 0, -0.409923, 0, 5.075, 0, 0.409923, 0, -5.05842, 11.7364, 9.61528, 64.3139)
 texture = ExtResource("10_2bi32")
 
 [node name="trees5" type="Sprite3D" parent="assets/env/trees/Node3D3"]
@@ -2129,7 +2133,7 @@ transform = Transform3D(-4.18121e-08, 0.398837, 2.38066, 3.55443e-09, -0.873229,
 [node name="platforms" type="Node3D" parent="assets/bridge"]
 
 [node name="platform" parent="assets/bridge/platforms" instance=ExtResource("5_mbj4m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.3825, -0.269164, 0.00156856)
+transform = Transform3D(0.999807, -0.0196511, 0, 0.0196511, 0.999807, 0, 0, 0, 1, 36.3825, -0.269164, 0.00156856)
 
 [node name="platform2" parent="assets/bridge/platforms" instance=ExtResource("5_mbj4m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.682, -0.269164, 0.00156856)
@@ -2538,7 +2542,7 @@ transform = Transform3D(-3.47519e-06, 0, 0.752059, 0, 0.96, 0, -0.96, 0, -2.7224
 transform = Transform3D(0.936067, 0, 0, 0, 1, 0, 0, 0, 1, 174.137, 0.413567, 8.55712)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.0308874, 0, -0.999523, 0, 1, 0, 0.999523, 0, 0.0308874, 161.554, 1.98999, 0)
+transform = Transform3D(0.0308874, 0, -0.999523, 0, 1, 0, 0.999523, 0, 0.0308874, 121.541, 1.98999, 0)
 
 [node name="LightmapGI" type="LightmapGI" parent="."]
 

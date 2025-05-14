@@ -45,6 +45,7 @@ shadow_mesh = SubResource("ArrayMesh_pu5if")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wmrao"]
 cull_mode = 2
+albedo_color = Color(0.321728, 0.321728, 0.321728, 1)
 albedo_texture = ExtResource("1_k6ytd")
 uv1_scale = Vector3(0.11, -0.07, 0.075)
 uv1_offset = Vector3(-1.68, 2.54, -1.28)

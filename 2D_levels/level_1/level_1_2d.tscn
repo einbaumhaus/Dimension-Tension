@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://bfqm7gkurwapv"]
+[gd_scene load_steps=27 format=4 uid="uid://bfqm7gkurwapv"]
 
 [ext_resource type="Script" uid="uid://bbbduv557mftv" path="res://2D_levels/level_1/level_1.gd" id="1_1nd73"]
 [ext_resource type="Script" uid="uid://lljku4eo3lxo" path="res://2D_levels/level_1/game_manager.gd" id="2_a5wrx"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://c7b3wf077ipnc" path="res://2D_levels/Player2D/player.tscn" id="6_uch6n"]
 [ext_resource type="Script" uid="uid://bf0iiaoh2vpau" path="res://2D_levels/level_1/perspective_changer.gd" id="7_5wj1c"]
 [ext_resource type="Script" uid="uid://qfy7p3tjlp0j" path="res://2D_levels/level_1/fall_limit.gd" id="8_il0pf"]
-[ext_resource type="PackedScene" uid="uid://bc8o18yhooq2a" path="res://2D_levels/level_1/assets/enemies/enemy.tscn" id="8_insjc"]
 [ext_resource type="PackedScene" uid="uid://bnp7vdu3nrbe8" path="res://menus/pause_menu.tscn" id="8_rodf1"]
 [ext_resource type="Texture2D" uid="uid://clbutouj7ccjo" path="res://2D_levels/level_1/assets/UI/heart.png" id="9_b0sjd"]
 
@@ -309,7 +308,7 @@ position = Vector2(5515, 0)
 script = ExtResource("7_5wj1c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="objects/perspective_changer"]
-position = Vector2(-2349, -131)
+position = Vector2(-2316, -213)
 shape = SubResource("RectangleShape2D_mj3iu")
 
 [node name="fall_limit" type="Area2D" parent="objects"]
@@ -318,18 +317,6 @@ script = ExtResource("8_il0pf")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="objects/fall_limit"]
 position = Vector2(1313, 49)
 shape = SubResource("WorldBoundaryShape2D_a5wrx")
-
-[node name="enemies" type="Node2D" parent="."]
-visible = false
-
-[node name="enemy" parent="enemies" instance=ExtResource("8_insjc")]
-position = Vector2(1375, 460)
-
-[node name="enemy2" parent="enemies" instance=ExtResource("8_insjc")]
-position = Vector2(516, 460)
-
-[node name="enemy3" parent="enemies" instance=ExtResource("8_insjc")]
-position = Vector2(1492, 300)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 visible = false

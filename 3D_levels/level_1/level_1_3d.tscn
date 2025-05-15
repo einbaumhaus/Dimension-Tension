@@ -2458,6 +2458,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 290.073, 48.1291, -45.6396)
 [node name="tunnel_parkour_1" type="Node3D" parent="assets"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="assets/tunnel_parkour_1"]
+visible = false
 
 [node name="Label" type="Label" parent="assets/tunnel_parkour_1/CanvasLayer"]
 anchors_preset = 8

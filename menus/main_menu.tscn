@@ -80,7 +80,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("3_yjgyn")
 theme_override_font_sizes/font_size = 51
-text = "version 0.0.6"
+text = "version 0.0.7"
 
 [connection signal="pressed" from="VBoxContainer/play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/settings" to="." method="_on_settings_pressed"]

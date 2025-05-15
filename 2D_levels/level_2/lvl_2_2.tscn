@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://byglmfq2n7msk"]
+[gd_scene load_steps=28 format=4 uid="uid://byglmfq2n7msk"]
 
 [ext_resource type="Texture2D" uid="uid://drd4sxov2x8e3" path="res://2D_levels/level_2/assets/tile_map/tilemaptd1.png" id="1_gry7t"]
 [ext_resource type="PackedScene" uid="uid://ccweogu7q7wiw" path="res://2D_levels/level_2/Player2D_topdown/player_topdown.tscn" id="2_kepxu"]
@@ -7,6 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://cgge8ca74twyt" path="res://2D_levels/level_2/enemies/toblertwo/tobertwo.tscn" id="4_q77w5"]
 [ext_resource type="PackedScene" uid="uid://bpmq6uacs60yv" path="res://2D_levels/level_2/elim_scene/elim_scene.tscn" id="6_ed122"]
 [ext_resource type="Script" uid="uid://bh4y20njh5ckm" path="res://2D_levels/level_2/easteregg_2_enter.gd" id="6_sevxt"]
+[ext_resource type="PackedScene" uid="uid://bnp7vdu3nrbe8" path="res://menus/pause_menu.tscn" id="8_jhduy"]
+[ext_resource type="Texture2D" uid="uid://clbutouj7ccjo" path="res://2D_levels/level_1/assets/UI/heart.png" id="9_jdbya"]
+[ext_resource type="Script" uid="uid://bb1wjhu534dq3" path="res://2D_levels/Player2D/fps.gd" id="10_0m430"]
+[ext_resource type="Script" uid="uid://lljku4eo3lxo" path="res://2D_levels/level_1/game_manager.gd" id="11_jdbya"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kepxu"]
 texture = ExtResource("1_gry7t")
@@ -118,6 +122,8 @@ size = Vector2(78, 267)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kewfn"]
 size = Vector2(86, 24)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kewfn"]
 
 [node name="lvl_2_2" type="Node"]
 
@@ -246,6 +252,86 @@ visible = false
 
 [node name="elim_scene" parent="CanvasLayer" instance=ExtResource("6_ed122")]
 position = Vector2(4.76837e-07, 0.00012207)
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer2" instance=ExtResource("8_jhduy")]
+visible = false
+
+[node name="hearts" type="Panel" parent="CanvasLayer2"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -284.0
+offset_bottom = 60.0
+grow_horizontal = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_kewfn")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer2/hearts"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -76.0
+offset_top = -24.0
+offset_right = 76.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="heart" type="TextureRect" parent="CanvasLayer2/hearts/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("9_jdbya")
+expand_mode = 2
+
+[node name="heart2" type="TextureRect" parent="CanvasLayer2/hearts/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("9_jdbya")
+expand_mode = 2
+
+[node name="heart3" type="TextureRect" parent="CanvasLayer2/hearts/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("9_jdbya")
+expand_mode = 2
+
+[node name="heart4" type="TextureRect" parent="CanvasLayer2/hearts/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("9_jdbya")
+expand_mode = 2
+
+[node name="heart5" type="TextureRect" parent="CanvasLayer2/hearts/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("9_jdbya")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer2"]
+offset_right = 216.0
+offset_bottom = 57.0
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 41
+text = "FPS:"
+script = ExtResource("10_0m430")
+
+[node name="LifeManager" type="Node" parent="." node_paths=PackedStringArray("hearts")]
+unique_name_in_owner = true
+script = ExtResource("11_jdbya")
+hearts = [NodePath("../CanvasLayer2/hearts/HBoxContainer/heart"), NodePath("../CanvasLayer2/hearts/HBoxContainer/heart2"), NodePath("../CanvasLayer2/hearts/HBoxContainer/heart3"), NodePath("../CanvasLayer2/hearts/HBoxContainer/heart4"), NodePath("../CanvasLayer2/hearts/HBoxContainer/heart5")]
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="easteregg2enter" to="easteregg2enter" method="_on_body_entered"]

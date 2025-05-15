@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var canvas_layer: CanvasLayer = $"../CanvasLayer"
+@onready var game_manager: Node = %LifeManager
 
 @onready var collision: CollisionShape2D = $CollisionShape2D
 var sticker_scene = preload("res://2D_levels/level_2/Player2D_topdown/sticker_launcher/sticker/sticker.tscn")
@@ -66,6 +67,7 @@ func take_damage():
 		print(health)
 		can_take_damage = false
 		anim.set_modulate(Color(0.86,0.14,0,1))
+		game_manager.decrease_health()
 		if health <= 0:
 			canvas_layer.visible = true
 			canvas_layer.process_mode = Node.PROCESS_MODE_ALWAYS

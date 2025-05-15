@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=4 uid="uid://bac2uhb337o7s"]
+
+[ext_resource type="Texture2D" uid="uid://bsuaof7o8fr32" path="res://3D_levels/level_1/assets/castle/materials/castle_wall_slates_diff_1k.jpg" id="1_o7xu5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_51msi"]
+cull_mode = 2
+albedo_color = Color(0.325441, 0.325441, 0.325441, 1)
+albedo_texture = ExtResource("1_o7xu5")
+uv1_scale = Vector3(-0.865, 0.149, -0.145)
+uv1_offset = Vector3(-1.68, 2.54, -1.28)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_elmu6"]
+resource_name = "Material"
+cull_mode = 2
+albedo_color = Color(0.906332, 0.906332, 0.906332, 1)
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_pqwdr"]
+_surfaces = [{
+"aabb": AABB(0.71434, 0.0982956, -10.9933, 0.926989, 8.26447, 22.9966),
+"format": 34359742465,
+"index_count": 18,
+"index_data": PackedByteArray("AAABAAIAAAADAAEAAwAEAAEAAwAFAAQABQAGAAQABQAHAAYA"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AN82PzhPyT2QDUBBAN82Pw+U7EBf5C/BAN82PzhPyT1f5C/BAN82Pw+U7ECQDUBBERfSPw+U7EBf5C/BERfSPw+U7ECQDUBBERfSP+jNBUFf5C/BERfSP+jNBUGQDUBB")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_d82lx"]
+resource_name = "wall_Cube"
+_surfaces = [{
+"aabb": AABB(0.71434, 0.0982956, -10.9933, 0.926989, 8.26447, 22.9966),
+"attribute_data": PackedByteArray("AAAgPwAAgD4AACA/AAAAPwAAID8AAAA/AAAgPwAAgD4AACA/AACAPgAAID8AAAA/AAAgPwAAAD8AACA/AACAPgAAID8AAIA+AAAgPwAAAD8AACA/AAAAPwAAID8AAIA+"),
+"format": 34359742487,
+"index_count": 18,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkA"),
+"material": SubResource("StandardMaterial3D_elmu6"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("AN82PzhPyT2QDUBBAN82Pw+U7EBf5C/BAN82PzhPyT1f5C/BAN82Pw+U7ECQDUBBAN82Pw+U7ECQDUBBERfSPw+U7EBf5C/BAN82Pw+U7EBf5C/BERfSPw+U7ECQDUBBERfSPw+U7ECQDUBBERfSP+jNBUFf5C/BERfSPw+U7EBf5C/BERfSP+jNBUGQDUBB////f////7////9/////v////3////+/////f////7//fwAA////v/9/AAD///+//38AAP///7//fwAA////v////3////+/////f////7////9/////v////3////+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_pqwdr")
+
+[node name="wall piece" type="Node3D"]
+
+[node name="Cube" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.718603, 0, -0.29218)
+material_override = SubResource("StandardMaterial3D_51msi")
+mesh = SubResource("ArrayMesh_d82lx")
+skeleton = NodePath("")

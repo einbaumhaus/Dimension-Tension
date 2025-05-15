@@ -1,7 +1,6 @@
-[gd_scene load_steps=27 format=4 uid="uid://bfqm7gkurwapv"]
+[gd_scene load_steps=25 format=4 uid="uid://bfqm7gkurwapv"]
 
 [ext_resource type="Script" uid="uid://bbbduv557mftv" path="res://2D_levels/level_1/level_1.gd" id="1_1nd73"]
-[ext_resource type="Script" uid="uid://lljku4eo3lxo" path="res://2D_levels/level_1/game_manager.gd" id="2_a5wrx"]
 [ext_resource type="Script" uid="uid://bb1wjhu534dq3" path="res://2D_levels/Player2D/fps.gd" id="2_b0sjd"]
 [ext_resource type="Texture2D" uid="uid://dleupj1lna3ib" path="res://2D_levels/level_1/assets/env/tilesettrain.png" id="3_insjc"]
 [ext_resource type="Texture2D" uid="uid://blx1xna7vwbp5" path="res://2D_levels/level_1/assets/env/sky.png" id="3_uch6n"]
@@ -11,18 +10,25 @@
 [ext_resource type="Script" uid="uid://bf0iiaoh2vpau" path="res://2D_levels/level_1/perspective_changer.gd" id="7_5wj1c"]
 [ext_resource type="Script" uid="uid://qfy7p3tjlp0j" path="res://2D_levels/level_1/fall_limit.gd" id="8_il0pf"]
 [ext_resource type="PackedScene" uid="uid://bnp7vdu3nrbe8" path="res://menus/pause_menu.tscn" id="8_rodf1"]
-[ext_resource type="Texture2D" uid="uid://clbutouj7ccjo" path="res://2D_levels/level_1/assets/UI/heart.png" id="9_b0sjd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oehl0"]
 texture = ExtResource("3_insjc")
 0:0/0 = 0
+0:0/0/modulate = Color(0.581033, 0.581033, 0.581033, 1)
 1:0/0 = 0
+1:0/0/modulate = Color(0.581033, 0.581033, 0.581033, 1)
 2:0/0 = 0
+2:0/0/modulate = Color(0.581033, 0.581033, 0.581033, 1)
 0:1/0 = 0
+0:1/0/modulate = Color(0.581033, 0.581033, 0.581033, 1)
 1:1/0 = 0
+1:1/0/modulate = Color(0.581033, 0.581033, 0.581033, 1)
 2:1/0 = 0
+2:1/0/modulate = Color(0.581033, 0.581033, 0.581033, 1)
 0:2/0 = 0
+0:2/0/modulate = Color(0.581033, 0.581033, 0.581033, 1)
 1:2/0 = 0
+1:2/0/modulate = Color(0.581033, 0.581033, 0.581033, 1)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h61m7"]
 texture = ExtResource("4_il0pf")
@@ -224,11 +230,6 @@ distance = -811.0
 [node name="level_1" type="Node2D"]
 script = ExtResource("1_1nd73")
 
-[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("hearts")]
-unique_name_in_owner = true
-script = ExtResource("2_a5wrx")
-hearts = [NodePath("../CanvasLayer/hearts/HBoxContainer/heart"), NodePath("../CanvasLayer/hearts/HBoxContainer/heart2"), NodePath("../CanvasLayer/hearts/HBoxContainer/heart3")]
-
 [node name="env" type="Node2D" parent="."]
 
 [node name="sky" type="Parallax2D" parent="env"]
@@ -319,57 +320,12 @@ position = Vector2(1313, 49)
 shape = SubResource("WorldBoundaryShape2D_a5wrx")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("8_rodf1")]
 visible = false
 
-[node name="hearts" type="Panel" parent="CanvasLayer"]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -176.0
-offset_bottom = 57.0
-grow_horizontal = 0
-mouse_filter = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/hearts"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -76.0
-offset_top = -24.0
-offset_right = 76.0
-offset_bottom = 24.0
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
-
-[node name="heart" type="TextureRect" parent="CanvasLayer/hearts/HBoxContainer"]
-texture_filter = 1
-layout_mode = 2
-size_flags_horizontal = 4
-texture = ExtResource("9_b0sjd")
-expand_mode = 2
-
-[node name="heart2" type="TextureRect" parent="CanvasLayer/hearts/HBoxContainer"]
-texture_filter = 1
-layout_mode = 2
-size_flags_horizontal = 4
-texture = ExtResource("9_b0sjd")
-expand_mode = 2
-
-[node name="heart3" type="TextureRect" parent="CanvasLayer/hearts/HBoxContainer"]
-texture_filter = 1
-layout_mode = 2
-size_flags_horizontal = 4
-texture = ExtResource("9_b0sjd")
-expand_mode = 2
-
 [node name="Label" type="Label" parent="CanvasLayer"]
+visible = false
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -381,18 +337,6 @@ size_flags_vertical = 8
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 41
 script = ExtResource("2_b0sjd")
-
-[node name="Panel" type="Panel" parent="CanvasLayer"]
-offset_right = 162.0
-offset_bottom = 43.0
-
-[node name="FoodLabel" type="Label" parent="CanvasLayer/Panel"]
-unique_name_in_owner = true
-layout_mode = 0
-offset_right = 158.0
-offset_bottom = 41.0
-theme_override_font_sizes/font_size = 31
-text = "FOOD x0"
 
 [connection signal="area_entered" from="objects/perspective_changer" to="objects/perspective_changer" method="_on_area_entered"]
 [connection signal="body_entered" from="objects/perspective_changer" to="objects/perspective_changer" method="_on_body_entered"]

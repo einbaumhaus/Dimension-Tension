@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://bxiy8xy0d6pfa"]
+[gd_scene load_steps=19 format=4 uid="uid://bxiy8xy0d6pfa"]
 
 [ext_resource type="Script" uid="uid://dxc2tkrd0vsey" path="res://3D_levels/level_2/assets/enemies/ugus.gd" id="1_pn1rq"]
 [ext_resource type="Texture2D" uid="uid://dfej67dhoisfu" path="res://3D_levels/level_2/assets/enemies/Untitled-1.jpg" id="2_pn1rq"]
@@ -148,14 +148,6 @@ shadow_mesh = SubResource("ArrayMesh_6bac5")
 [sub_resource type="BoxShape3D" id="BoxShape3D_ps2b7"]
 size = Vector3(1.20215, 2.25885, 1.2771)
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ps2b7"]
-velocity_pivot = Vector3(0, -1, 0)
-initial_velocity_min = 3.0
-initial_velocity_max = 3.0
-
-[sub_resource type="BoxMesh" id="BoxMesh_tm7vk"]
-size = Vector3(0.5, 0.5, 0.5)
-
 [node name="ugus" type="CharacterBody3D"]
 script = ExtResource("1_pn1rq")
 
@@ -200,14 +192,5 @@ script = ExtResource("5_ps2b7")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Launch_col"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, 1.74504, 0.00119019)
 shape = SubResource("BoxShape3D_ps2b7")
-
-[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.72446, 0)
-emitting = false
-amount = 6
-one_shot = true
-explosiveness = 1.0
-process_material = SubResource("ParticleProcessMaterial_ps2b7")
-draw_pass_1 = SubResource("BoxMesh_tm7vk")
 
 [connection signal="body_part_hit" from="Launch_col" to="." method="_on_launch_col_body_part_hit"]

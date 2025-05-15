@@ -1525,6 +1525,7 @@ size = Vector3(1.07764, 18.2507, 1)
 
 [node name="pause_menu" type="CanvasLayer" parent="."]
 layer = 2
+visible = false
 
 [node name="PauseMenu" parent="pause_menu" instance=ExtResource("3_grgy5")]
 
@@ -2457,7 +2458,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 290.073, 48.1291, -45.6396)
 [node name="tunnel_parkour_1" type="Node3D" parent="assets"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="assets/tunnel_parkour_1"]
-visible = false
 
 [node name="Label" type="Label" parent="assets/tunnel_parkour_1/CanvasLayer"]
 anchors_preset = 8
@@ -2465,10 +2465,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -555.0
-offset_top = -24.5
-offset_right = 555.0
-offset_bottom = 24.5
+offset_left = -374.5
+offset_top = 218.0
+offset_right = 374.5
+offset_bottom = 267.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
@@ -2476,7 +2476,7 @@ theme_override_colors/font_color = Color(1, 0.968627, 0.968627, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("23_5du43")
 theme_override_font_sizes/font_size = 46
-text = "PRESS \"E\" OR \"SPACE BUTTON\" TO USE MAGIC"
+text = "PRESS \"E\" OR \"SPACE BUTTON\""
 
 [node name="magic" type="Area3D" parent="assets/tunnel_parkour_1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 167.236, 0, 0)

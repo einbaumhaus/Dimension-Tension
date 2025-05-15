@@ -11,6 +11,7 @@ func resume():
 	
 func pause():
 	get_tree().paused = true
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	$AnimationPlayer.play("blur")
 	
 func testEsc():
@@ -23,7 +24,11 @@ func testEsc():
 
 
 func _on_resume_pressed() -> void:
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	var current_scene = get_tree().current_scene
+	if current_scene.name == "lvl_2" or current_scene.name == "lvl_2_2" or current_scene.name == "lvl_2_3" or current_scene.name == "level_1_2d":
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	else:
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	hide()
 	resume()
 

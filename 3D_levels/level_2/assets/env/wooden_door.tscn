@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=4 uid="uid://ifb6pbvsjtkj"]
+
+[ext_resource type="Texture2D" uid="uid://bhphjg822c1n7" path="res://3D_levels/level_2/assets/env/rough_wood_diff_1k.jpg" id="1_2kj4m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gro8o"]
+albedo_color = Color(0.737774, 0.647836, 0.581278, 1)
+albedo_texture = ExtResource("1_2kj4m")
+uv1_scale = Vector3(-0.59, 1.675, 1.105)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vlcl6"]
+resource_name = "Material"
+cull_mode = 2
+albedo_color = Color(0.906332, 0.906332, 0.906332, 1)
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_p8kdp"]
+_surfaces = [{
+"aabb": AABB(-0.137599, -0.0736071, -0.717773, 0.141594, 1.50753, 1.43555),
+"format": 34896613377,
+"index_count": 42,
+"index_data": PackedByteArray("AAABAAoAAAADAAEAAgAKAAEAAgAAAAoAAgABAAQABQACAAQABQAEAAcACwAAAAIACwACAAUABwALAAUAAAALAAYABwAJAAsACAAGAAsACAALAAkA"),
+"lods": [0.199303, PackedByteArray("AAABAAIAAAADAAEAAgABAAQABQAAAAIABQACAAQAAAAFAAYABQAEAAcACAAGAAUABwAJAAUACAAFAAkA")],
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("//8AAP//AAAAAAq3//8AAAr6//+RvwAAAAAAAP//AAAqAf//kb8AAAr6//9tQAAA//8AAAAAAAAqAf//bUAAAAAAAAAAAAAAAAAKtwAAAAD//wq3//8AAP//CrcAAAAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_y2fc0"]
+resource_name = "door_Cube"
+_surfaces = [{
+"aabb": AABB(-0.137599, -0.0736071, -0.717773, 0.141594, 1.50753, 1.43555),
+"attribute_data": PackedByteArray("/1//P8yMAAD/n/8//58AAP9fAAD/n2dr/9+XVP/fZ2v/n5dU/1//P/+fZ2v/X/9//5+XVP+f/7/MjP+//5//f/9f/7//X/9/zIz/P8yM/3/MjP8/zIwAAMyM/z/MjP9/zIz/v8yM/38="),
+"format": 34896613399,
+"index_count": 42,
+"index_data": PackedByteArray("AAABABIAAAAEAAEABQAGAAcABQAIAAYACQATAAsAEwAJAAwADAAJABQAEwAMAAoAAgAVAAMAAgAWABUADQAXAA8ADQAYABcAEAAZAA4AEAARABkA"),
+"lods": [0.199303, PackedByteArray("AAABAAIAAgABAAMAAAAEAAEABQAGAAcABQAIAAYACQAKAAsACgAJAAwADQAOAA8AEAAPAA4AEAARAA8A")],
+"material": SubResource("StandardMaterial3D_vlcl6"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 26,
+"vertex_data": PackedByteArray("//8AAP///78AAAq3////vwr6//+Rv8nEKgH//5G/v8QAAAAA////vwr6//9tQP//KgH//5G///8qAf//bUD//wr6//+Rv/////8AAP//RtYK+v//bUBLyf//AAAAAF/VCvr//5G/dtQqAf//bUAc7AAACrcAAP//Cvr//21AH+wAAAAAAAD/////AAAAAP////8Kt////7///wq3AACX0///Crf//1/VAAAKt///9sT//wq3//8Axf//CrcAAA/sAAAKtwAADez//wq3AAD/////////////AuX8GgTlAhv//////3//v/9//7//f/+//3//v50pJyuUPSchsSqdKs4rDir7tT22/7//v/K1Q7b/v/+//7//v//////mLIIpsSqdKvvk4hr55NwaIbYgtiq2Grb/v/+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_p8kdp")
+
+[node name="wooden_door" type="Node3D"]
+
+[node name="Cube" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_gro8o")
+mesh = SubResource("ArrayMesh_y2fc0")
+skeleton = NodePath("")

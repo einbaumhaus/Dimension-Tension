@@ -2,20 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgw2w26elh5b5"
-path="res://.godot/imported/player.png-169d5ebc77e93f56f45ba8276a64ee33.ctex"
+uid="uid://bhphjg822c1n7"
+path.s3tc="res://.godot/imported/rough_wood_diff_1k.jpg-037fbb3a8d59d7d78c2eaa2e5bb24ea4.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
-source_file="res://2D_levels/level_2/Player2D_topdown/player.png"
-dest_files=["res://.godot/imported/player.png-169d5ebc77e93f56f45ba8276a64ee33.ctex"]
+source_file="res://3D_levels/level_2/assets/env/rough_wood_diff_1k.jpg"
+dest_files=["res://.godot/imported/rough_wood_diff_1k.jpg-037fbb3a8d59d7d78c2eaa2e5bb24ea4.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

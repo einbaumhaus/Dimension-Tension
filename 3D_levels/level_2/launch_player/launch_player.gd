@@ -18,6 +18,10 @@ var sticker = load("res://3D_levels/level_2/assets/sticker_launcher/sticker/stic
 var instance
 var mag_size = 20
 
+#launcher delay
+var last_launch_time = 0.0
+var cooldown = 0.25  # seconds between sticker launches
+
 func _ready() -> void:
 	pass # Replace with function body.
 
@@ -38,18 +42,22 @@ func _unhandled_input(event: InputEvent) -> void:
 func _physics_process(delta: float) -> void:
 	
 	#launch&reload
-	if Input.is_action_just_pressed("left_click"):
-		if (mag_size == 0):
-			launch_anim.play("reload")
-			mag_size = 20
-		elif !launch_anim.is_playing():
-			launch_anim.play("launch")
-			instance = sticker.instantiate()
-			instance.position = sticker_output.global_position
-			instance.transform.basis = sticker_output.global_transform.basis
-			get_parent().add_child(instance)
-			mag_size -= 1
-			print(mag_size)
+	
+	if Input.is_action_pressed("left_click"):
+		var current_time = Time.get_ticks_msec() / 1000.0
+		if current_time - last_launch_time >= cooldown:
+			if (mag_size == 0):
+				launch_anim.play("reload")
+				mag_size = 20
+			elif !launch_anim.is_playing():
+				launch_anim.play("launch")
+				instance = sticker.instantiate()
+				instance.position = sticker_output.global_position
+				instance.transform.basis = sticker_output.global_transform.basis
+				get_parent().add_child(instance)
+				mag_size -= 1
+				print(mag_size)
+				last_launch_time = current_time
 	
 	#Navigation
 	Global.player_current_pos = global_position

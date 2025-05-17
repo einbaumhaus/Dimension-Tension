@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://f8i8svg7k032"]
+[gd_scene load_steps=7 format=3 uid="uid://f8i8svg7k032"]
 
 [ext_resource type="Script" uid="uid://bnkqjcuyxgj5q" path="res://3D_levels/level_2/launch_player/launch_player.gd" id="1_tj2to"]
 [ext_resource type="PackedScene" uid="uid://c23ra3wdhjla6" path="res://3D_levels/level_2/assets/sticker_launcher/sticker_launcher.tscn" id="2_1lfnn"]
 [ext_resource type="Script" uid="uid://bb1wjhu534dq3" path="res://2D_levels/Player2D/fps.gd" id="2_sh8oe"]
+[ext_resource type="PackedScene" uid="uid://bpmq6uacs60yv" path="res://2D_levels/level_2/elim_scene/elim_scene.tscn" id="4_1lfnn"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_b1m74"]
 
@@ -40,3 +41,10 @@ size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 41
 script = ExtResource("2_sh8oe")
+
+[node name="elim" type="CanvasLayer" parent="."]
+process_mode = 4
+visible = false
+
+[node name="elim_scene" parent="elim" instance=ExtResource("4_1lfnn")]
+position = Vector2(4.76837e-07, 0.00012207)

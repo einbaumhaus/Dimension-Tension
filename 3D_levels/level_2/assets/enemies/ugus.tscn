@@ -193,4 +193,7 @@ script = ExtResource("5_ps2b7")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, 1.74504, 0.00119019)
 shape = SubResource("BoxShape3D_ps2b7")
 
+[node name="AttackTimer" type="Timer" parent="."]
+
 [connection signal="body_part_hit" from="Launch_col" to="." method="_on_launch_col_body_part_hit"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]

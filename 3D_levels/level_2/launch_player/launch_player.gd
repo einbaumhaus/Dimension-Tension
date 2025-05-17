@@ -4,12 +4,15 @@ extends CharacterBody3D
 const SPEED = 7.0
 const JUMP_VELOCITY = 14
 #variables
+var health := 10
 var acceleration = 30
 var _gravity := -30.0
 var _camera_input_direction := Vector2.ZERO
 var _last_movement_direction := Vector3.BACK
 @export var mouse_sensitivity := 0.25
 @onready var _camera: Camera3D = $Camera3D
+@onready var elim: CanvasLayer = $elim
+@onready var mission: CanvasLayer = $"../mission"
 
 #launch stuff
 @onready var launch_anim = $Camera3D/sticker_launcher/animations/AnimationPlayer
@@ -38,6 +41,16 @@ func _unhandled_input(event: InputEvent) -> void:
 	)
 	if is_camera_motion:
 		_camera_input_direction = event.screen_relative * mouse_sensitivity
+
+func take_damage(amount: int) -> void:
+	health -= amount
+	print("Player was hit! Health:", health)
+	if health <= 0:
+		elim.visible = true
+		elim.process_mode = Node.PROCESS_MODE_ALWAYS
+		mission.visible = false
+		if elim.get_node("elim_scene").done:
+			get_tree().reload_current_scene()
 
 func _physics_process(delta: float) -> void:
 	

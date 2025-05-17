@@ -2,4 +2,4 @@ extends Node
 
 
 var player_current_pos
-var storymode = true
+var storymode = false

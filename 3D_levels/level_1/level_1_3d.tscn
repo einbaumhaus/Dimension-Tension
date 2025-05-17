@@ -1525,7 +1525,6 @@ size = Vector3(1.07764, 18.2507, 1)
 
 [node name="pause_menu" type="CanvasLayer" parent="."]
 layer = 2
-visible = false
 
 [node name="PauseMenu" parent="pause_menu" instance=ExtResource("3_grgy5")]
 
@@ -2458,6 +2457,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 290.073, 48.1291, -45.6396)
 [node name="tunnel_parkour_1" type="Node3D" parent="assets"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="assets/tunnel_parkour_1"]
+visible = false
 
 [node name="Label" type="Label" parent="assets/tunnel_parkour_1/CanvasLayer"]
 anchors_preset = 8

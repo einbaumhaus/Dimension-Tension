@@ -765,10 +765,10 @@ tracks/10/path = NodePath("tape/roll_tape:visible")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(1.8, 1.86667, 2, 2.36098),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(1.8, 1.86667, 2, 2.36098, 2.56),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [true, false, true, false]
+"values": [true, false, true, false, true]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
@@ -777,10 +777,10 @@ tracks/11/path = NodePath("tape/roll:visible")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(1.8, 1.86667),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(1.8, 1.86667, 2.56),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [true, false]
+"values": [true, false, true]
 }
 tracks/12/type = "value"
 tracks/12/imported = false
@@ -856,7 +856,7 @@ mesh = SubResource("ArrayMesh_nxw72")
 skeleton = NodePath("")
 
 [node name="Sprite3D" type="Sprite3D" parent="launcher/base"]
-transform = Transform3D(0.000193772, -0.000373892, -0.0999991, 0.0924447, 0.0381307, 3.65649e-05, 0.0381302, -0.0924441, 0.00041953, 0.381071, 0.161674, -0.261258)
+transform = Transform3D(0.000193772, -0.000373892, -0.0999991, 0.0924447, 0.0381307, 3.65649e-05, 0.0381302, -0.0924441, 0.00041953, 0.381071, 0.141811, -0.206889)
 texture = ExtResource("2_tbp8d")
 
 [node name="roll_holder" type="MeshInstance3D" parent="launcher"]

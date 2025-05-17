@@ -19,9 +19,12 @@ func _process(delta: float) -> void:
 		var collider = ray.get_collider()
 		if collider.has_method("hit"):
 			collider.hit()
-		await get_tree().create_timer(1.0).timeout
+		await get_tree().create_timer(0.3).timeout
 		print("gone")
 		queue_free()
+	await get_tree().create_timer(1.0).timeout
+	print("gone")
+	queue_free()
 
 
 func _on_timer_timeout() -> void:

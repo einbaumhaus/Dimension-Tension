@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://blnffj14qys1k"]
 
-[ext_resource type="PackedScene" uid="uid://cj7d18ek4ria6" path="res://3D_levels/Player3D/character_body_3d.tscn" id="1_sajq6"]
+[ext_resource type="PackedScene" uid="uid://f8i8svg7k032" path="res://3D_levels/level_2/launch_player/launch_player.tscn" id="1_4kesc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sajq6"]
 
@@ -19,10 +19,6 @@ size = Vector3(23.9358, 0.21582, 67.3692)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="placeholder/CSGCombiner3D"]
 transform = Transform3D(0.999999, 0, 0, 0, 0.999999, -5.23598e-05, 0, 5.23598e-05, 0.999999, -0.3508, -0.00371484, 80.9324)
-size = Vector3(51.2129, 0.21582, 85.6562)
-
-[node name="CSGBox3D4" type="CSGBox3D" parent="placeholder/CSGCombiner3D"]
-transform = Transform3D(0.999999, 0, 0, 0, 0.999999, -5.23598e-05, 0, 5.23598e-05, 0.999999, -0.3508, 33.3149, 80.9342)
 size = Vector3(51.2129, 0.21582, 85.6562)
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="placeholder/CSGCombiner3D"]
@@ -53,5 +49,5 @@ size = Vector3(15.3553, 0.21582, 65.1027)
 transform = Transform3D(1.91068e-15, -4.37113e-08, -0.999998, -0.999999, -4.37113e-08, 0, -4.37113e-08, 0.999998, -4.37113e-08, -0.613562, 1.8667, -22.0194)
 size = Vector3(13.6694, 1.98779, 13.0527)
 
-[node name="CharacterBody3D" parent="." instance=ExtResource("1_sajq6")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.275192, 1.38879, 2.91732)
+[node name="launch_player" parent="." instance=ExtResource("1_4kesc")]
+transform = Transform3D(-0.996606, 0, -0.0823212, 0, 1, 0, 0.0823212, 0, -0.996606, -0.491585, 1.0505, -5.54942)

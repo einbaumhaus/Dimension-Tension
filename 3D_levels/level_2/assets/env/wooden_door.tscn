@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=4 uid="uid://ifb6pbvsjtkj"]
+[gd_scene load_steps=7 format=4 uid="uid://ifb6pbvsjtkj"]
 
 [ext_resource type="Texture2D" uid="uid://bhphjg822c1n7" path="res://3D_levels/level_2/assets/env/rough_wood_diff_1k.jpg" id="1_2kj4m"]
 
@@ -48,9 +48,18 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_p8kdp")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_2kj4m"]
+size = Vector3(0.0887451, 1.08337, 1.43359)
+
 [node name="wooden_door" type="Node3D"]
 
-[node name="Cube" type="MeshInstance3D" parent="."]
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="Cube" type="MeshInstance3D" parent="StaticBody3D"]
 material_override = SubResource("StandardMaterial3D_gro8o")
 mesh = SubResource("ArrayMesh_y2fc0")
 skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0365601, 0.468445, 0)
+shape = SubResource("BoxShape3D_2kj4m")

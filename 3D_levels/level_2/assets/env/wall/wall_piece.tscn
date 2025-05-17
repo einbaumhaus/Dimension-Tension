@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=4 uid="uid://bac2uhb337o7s"]
+[gd_scene load_steps=7 format=4 uid="uid://bac2uhb337o7s"]
 
 [ext_resource type="Texture2D" uid="uid://bsuaof7o8fr32" path="res://3D_levels/level_1/assets/castle/materials/castle_wall_slates_diff_1k.jpg" id="1_o7xu5"]
 
@@ -48,10 +48,19 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_pqwdr")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_o7xu5"]
+size = Vector3(0.11554, 6.94601, 22.9805)
+
 [node name="wall piece" type="Node3D"]
 
-[node name="Cube" type="MeshInstance3D" parent="."]
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="Cube" type="MeshInstance3D" parent="StaticBody3D"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.718603, 0, -0.29218)
 material_override = SubResource("StandardMaterial3D_51msi")
 mesh = SubResource("ArrayMesh_d82lx")
 skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0586243, 3.56981, -0.785156)
+shape = SubResource("BoxShape3D_o7xu5")

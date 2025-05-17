@@ -20,7 +20,7 @@ var mag_size = 20
 
 #launcher delay
 var last_launch_time = 0.0
-var cooldown = 0.25  # seconds between sticker launches
+var cooldown = 0.2  # seconds between sticker launches
 
 func _ready() -> void:
 	pass # Replace with function body.

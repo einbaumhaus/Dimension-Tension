@@ -1,6 +1,7 @@
-[gd_scene load_steps=43 format=4 uid="uid://c23ra3wdhjla6"]
+[gd_scene load_steps=44 format=4 uid="uid://c23ra3wdhjla6"]
 
 [ext_resource type="Script" uid="uid://bsv120bvuw84b" path="res://3D_levels/level_2/assets/sticker_launcher/sticker_launcher.gd" id="1_urnuh"]
+[ext_resource type="Texture2D" uid="uid://begd56ib3oous" path="res://3D_levels/level_2/assets/sticker_launcher/decal.png" id="2_tbp8d"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_urnuh"]
 albedo_color = Color(1, 1, 0.733333, 1)
@@ -853,6 +854,10 @@ transform = Transform3D(0.46, 0, 0, 0, 0.46, 0, 0, 0, 0.46, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_m5xvb")
 mesh = SubResource("ArrayMesh_nxw72")
 skeleton = NodePath("")
+
+[node name="Sprite3D" type="Sprite3D" parent="launcher/base"]
+transform = Transform3D(0.000193772, -0.000373892, -0.0999991, 0.0924447, 0.0381307, 3.65649e-05, 0.0381302, -0.0924441, 0.00041953, 0.381071, 0.161674, -0.261258)
+texture = ExtResource("2_tbp8d")
 
 [node name="roll_holder" type="MeshInstance3D" parent="launcher"]
 material_override = SubResource("StandardMaterial3D_wb4fr")

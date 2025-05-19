@@ -12,7 +12,7 @@
 [ext_resource type="Script" uid="uid://bb1wjhu534dq3" path="res://2D_levels/Player2D/fps.gd" id="10_0m430"]
 [ext_resource type="Script" uid="uid://lljku4eo3lxo" path="res://2D_levels/level_1/game_manager.gd" id="11_jdbya"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kepxu"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jdbya"]
 texture = ExtResource("1_gry7t")
 0:0/0 = 0
 1:0/0 = 0
@@ -80,7 +80,7 @@ texture = ExtResource("1_gry7t")
 
 [sub_resource type="TileSet" id="TileSet_2ntar"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_kepxu")
+sources/0 = SubResource("TileSetAtlasSource_jdbya")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sevxt"]
 size = Vector2(1121.5, 18)
@@ -109,13 +109,13 @@ size = Vector2(252, 1)
 [sub_resource type="Gradient" id="Gradient_kepxu"]
 colors = PackedColorArray(0, 0, 0, 1, 0.448199, 0.714686, 0.999995, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_2ntar"]
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jdbya"]
 gradient = SubResource("Gradient_kepxu")
 
 [sub_resource type="Environment" id="Environment_q77w5"]
 background_mode = 3
 adjustment_enabled = true
-adjustment_color_correction = SubResource("GradientTexture2D_2ntar")
+adjustment_color_correction = SubResource("GradientTexture2D_jdbya")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q77w5"]
 size = Vector2(78, 267)

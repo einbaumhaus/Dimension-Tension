@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-@onready var canvas_layer: CanvasLayer = $"../CanvasLayer"
-@onready var game_manager: Node = %LifeManager
+@onready var canvas_layer: CanvasLayer = get_node_or_null("../CanvasLayer")
+@onready var game_manager: Node = get_node_or_null("%LifeManager")
 
 @onready var collision: CollisionShape2D = $CollisionShape2D
 var sticker_scene = preload("res://2D_levels/level_2/Player2D_topdown/sticker_launcher/sticker/sticker.tscn")
@@ -23,6 +23,9 @@ var health = 5
 var last_launch_time = 0.0
 var cooldown = 0.2  # seconds between sticker launches
 
+#disable launcher
+var launcher_active = true
+
 func _physics_process(delta: float) -> void:
 	launcher_rotation()
 	state_machine()
@@ -32,7 +35,7 @@ func _physics_process(delta: float) -> void:
 	velocity = velocity.normalized()*SPEED
 
 	#launcher logic
-	if Input.is_action_pressed("left_click") or Input.is_action_pressed("ui_accept"):
+	if Input.is_action_pressed("left_click") and launcher_active == true or Input.is_action_pressed("ui_accept") and launcher_active == true:
 		var current_time = Time.get_ticks_msec() / 1000.0
 		if current_time - last_launch_time >= cooldown:
 			var sticker = sticker_scene.instantiate()

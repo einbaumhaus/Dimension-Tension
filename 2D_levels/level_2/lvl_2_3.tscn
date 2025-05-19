@@ -110,13 +110,13 @@ sources/0 = SubResource("TileSetAtlasSource_gpxfa")
 [sub_resource type="Gradient" id="Gradient_wg46k"]
 colors = PackedColorArray(0.173247, 0.114451, 0, 1, 1, 1, 1, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_2210x"]
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_c7uih"]
 gradient = SubResource("Gradient_wg46k")
 
 [sub_resource type="Environment" id="Environment_guxk4"]
 background_mode = 3
 adjustment_enabled = true
-adjustment_color_correction = SubResource("GradientTexture2D_2210x")
+adjustment_color_correction = SubResource("GradientTexture2D_c7uih")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gpxfa"]
 size = Vector2(415, 20)

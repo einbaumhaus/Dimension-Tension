@@ -22,8 +22,8 @@ func _physics_process(delta: float) -> void:
 		velocity = to_player.normalized() * SPEED
 	else:
 		velocity = Vector2.ZERO
-	change_animation()
 	move_and_slide()
+	change_animation()
 
 func take_damage():
 	health -= 1

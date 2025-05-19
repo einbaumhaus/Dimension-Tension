@@ -1,0 +1,194 @@
+[gd_scene load_steps=13 format=4 uid="uid://bqjnc8i53gnqk"]
+
+[ext_resource type="Texture2D" uid="uid://drd4sxov2x8e3" path="res://2D_levels/level_2/assets/tile_map/tilemaptd1.png" id="1_svps0"]
+[ext_resource type="Script" uid="uid://c4xav3n1intg1" path="res://2D_levels/level_3/lvl_3_2d.gd" id="1_ujx0b"]
+[ext_resource type="PackedScene" uid="uid://ccweogu7q7wiw" path="res://2D_levels/level_2/Player2D_topdown/player_topdown.tscn" id="2_uleqd"]
+[ext_resource type="PackedScene" uid="uid://bnp7vdu3nrbe8" path="res://menus/pause_menu.tscn" id="3_3h0p8"]
+[ext_resource type="Script" uid="uid://bb1wjhu534dq3" path="res://2D_levels/Player2D/fps.gd" id="4_ujx0b"]
+[ext_resource type="PackedScene" uid="uid://cp3cqrvt6me50" path="res://2D_levels/level_3/assets/notes/note.tscn" id="6_gdawp"]
+[ext_resource type="Script" uid="uid://dvluwe2c0akkt" path="res://2D_levels/level_3/note_manager.gd" id="7_md5rx"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uleqd"]
+texture = ExtResource("1_svps0")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+7:1/0 = 0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:4/0 = 0
+0:4/0 = 0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:4/0 = 0
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+11:0/0 = 0
+9:0/0 = 0
+6:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+11:1/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+0:6/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+7:4/0 = 0
+6:4/0 = 0
+7:5/0 = 0
+8:4/0 = 0
+8:5/0 = 0
+6:5/0 = 0
+5:3/0 = 0
+4:3/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+4:4/0 = 0
+11:6/0 = 0
+13:1/0 = 0
+13:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.5, -6.5, -4.5, -8, 4.67064, -8, 6.5, -6.5, 8, -5, 8, 3.5, 6.5, 5.5, 4.5, 8, -4, 8, -6, 6, -8, 3.77703, -8, -5)
+12:4/0 = 0
+12:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.5, -6.5, -4.5, -8, 4.67064, -8, 6.5, -6.5, 8, -5, 8, 3.5, 6.5, 5.5, 4.5, 8, -4, 8, -6, 6, -8, 3.77703, -8, -5.73085)
+
+[sub_resource type="TileSet" id="TileSet_g3wfo"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_uleqd")
+
+[sub_resource type="Gradient" id="Gradient_uleqd"]
+colors = PackedColorArray(0, 0, 0, 1, 0.429241, 0.687949, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2ntar"]
+gradient = SubResource("Gradient_uleqd")
+
+[sub_resource type="Environment" id="Environment_g3wfo"]
+background_mode = 3
+adjustment_enabled = true
+adjustment_brightness = 0.83
+adjustment_contrast = 0.84
+adjustment_color_correction = SubResource("GradientTexture2D_2ntar")
+
+[node name="lvl3_2d" type="Node"]
+script = ExtResource("1_ujx0b")
+
+[node name="maze" type="Node2D" parent="."]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="maze"]
+z_index = -1
+texture_filter = 1
+scale = Vector2(5.765, 5.765)
+tile_map_data = PackedByteArray("AAD8/wUAAAAMAAQAAAD8/wYAAAAMAAQAAAD8/wcAAAANAAEAAAD6/wUAAAAMAAQAAAD5/wUAAAAMAAQAAAD4/wUAAAAMAAQAAAD3/wUAAAAMAAQAAAD2/wUAAAAMAAQAAAD7/wcAAAANAAEAAAD6/wcAAAANAAEAAAD5/wcAAAANAAEAAAD4/wcAAAANAAEAAAD3/wcAAAANAAEAAAD2/wcAAAANAAEAAAD1/wcAAAANAAEAAAD0/wcAAAANAAEAAAD0/wYAAAAMAAQAAAD0/wUAAAAMAAQAAADz/wUAAAAMAAQAAADy/wUAAAAMAAQAAADx/wUAAAAMAAQAAADw/wUAAAAMAAQAAADv/wUAAAAMAAQAAADu/wUAAAAMAAQAAADz/wcAAAANAAEAAADy/wcAAAANAAEAAADx/wcAAAANAAEAAADw/wcAAAANAAEAAADv/wcAAAANAAEAAADu/wcAAAANAAEAAADt/wcAAAANAAEAAADs/wcAAAANAAEAAADs/wYAAAANAAEAAADs/wUAAAANAAEAAADs/wQAAAANAAEAAADs/wMAAAANAAEAAADs/wIAAAANAAEAAAD+/wcAAAANAAEAAAD+/wYAAAANAAEAAAD+/wUAAAANAAEAAAD+/wQAAAANAAEAAAD+/wMAAAANAAEAAAD+/wIAAAANAAEAAAD+/wEAAAANAAEAAAD+/wAAAAANAAEAAADt/wMAAAAMAAQAAADu/wMAAAAMAAQAAADv/wMAAAAMAAQAAADw/wMAAAAMAAQAAADx/wMAAAAMAAQAAADy/wMAAAAMAAQAAADz/wMAAAAMAAQAAAD0/wMAAAAMAAQAAAD1/wMAAAAMAAQAAAD2/wMAAAAMAAQAAAD3/wMAAAAMAAQAAAD4/wMAAAAMAAQAAAD5/wMAAAAMAAQAAAD6/wMAAAAMAAQAAAD7/wMAAAAMAAQAAAD8/wMAAAAMAAQAAAD8/wEAAAAMAAQAAAD7/wEAAAAMAAQAAAD6/wEAAAAMAAQAAAD5/wEAAAAMAAQAAAD4/wEAAAAMAAQAAAD4/wIAAAAMAAQAAAD+////AAANAAEAAAD9////AAAMAAQAAAD8////AAAMAAQAAAD7////AAAMAAQAAAD6////AAAMAAQAAAD5////AAAMAAQAAAD4////AAAMAAQAAAD3////AAAMAAQAAAD2////AAAMAAQAAAD2/wAAAAAMAAQAAAD2/wEAAAAMAAQAAAD1/wEAAAAMAAQAAAD0/wEAAAAMAAQAAADz/wEAAAAMAAQAAADz/wAAAAAMAAQAAADz////AAAMAAQAAADx/wIAAAAMAAQAAADx/wEAAAAMAAQAAADx/wAAAAAMAAQAAADx////AAAMAAQAAADw////AAAMAAQAAADv////AAAMAAQAAADu////AAAMAAQAAADs////AAANAAEAAADs/wAAAAANAAEAAADs/wEAAAANAAEAAADv/wAAAAAMAAQAAADv/wEAAAAMAAQAAADu/wEAAAAMAAQAAADs//7/AAANAAEAAADs//3/AAANAAEAAADt//3/AAAMAAQAAADu//3/AAAMAAQAAADv//3/AAAMAAQAAADw//3/AAAMAAQAAADx//3/AAAMAAQAAADy//3/AAAMAAQAAADy//z/AAAMAAQAAADy//v/AAAMAAQAAADs//z/AAANAAEAAADs//v/AAANAAEAAADs//r/AAANAAEAAADs//n/AAANAAEAAADs//j/AAANAAEAAADs//f/AAANAAEAAADs//b/AAANAAEAAADx//v/AAAMAAQAAAD+//7/AAANAAEAAAD+//3/AAANAAEAAAD+//z/AAANAAEAAAD+//v/AAANAAEAAAD+//r/AAANAAEAAAD+//n/AAANAAEAAAD+//j/AAANAAEAAAD+//f/AAANAAEAAAD+//b/AAANAAEAAAD8//b/AAANAAEAAAD8//f/AAAMAAQAAAD8//j/AAAMAAQAAAD8//n/AAAMAAQAAAD8//r/AAAMAAQAAAD7//r/AAAMAAQAAAD6//r/AAAMAAQAAAD6//n/AAAMAAQAAAD6//j/AAAMAAQAAAD6//f/AAAMAAQAAAD6//b/AAANAAEAAAD7//b/AAANAAEAAAD8//v/AAAMAAQAAAD8//z/AAAMAAQAAAD8//3/AAAMAAQAAAD7//3/AAAMAAQAAAD6//3/AAAMAAQAAAD6//z/AAAMAAQAAAD5//b/AAANAAEAAAD4//b/AAANAAEAAAD3//b/AAANAAEAAAD2//b/AAANAAEAAAD1//b/AAANAAEAAAD4//n/AAAMAAQAAAD4//j/AAAMAAQAAAD3//j/AAAMAAQAAAD2//j/AAAMAAQAAAD1//j/AAAMAAQAAAD2//v/AAAMAAQAAAD2//z/AAAMAAQAAAD2//3/AAAMAAQAAAD2//7/AAAMAAQAAAD2//r/AAAMAAQAAAD2//n/AAAMAAQAAAD4//v/AAAMAAQAAAD4//z/AAAMAAQAAAD5//z/AAAMAAQAAAD4//3/AAAMAAQAAAD0////AAAMAAQAAAD0//7/AAAMAAQAAAD0//3/AAAMAAQAAAD0//z/AAAMAAQAAAD0//v/AAAMAAQAAADz//j/AAAMAAQAAAD0//j/AAAMAAQAAAD0//b/AAANAAEAAADz//b/AAANAAEAAADy//b/AAANAAEAAADx//b/AAANAAEAAADw//b/AAANAAEAAADv//b/AAANAAEAAADu//b/AAANAAEAAADt//b/AAANAAEAAADy//j/AAAMAAQAAADu//v/AAAMAAQAAADv//v/AAAMAAQAAADy//r/AAAMAAQAAADv//r/AAAMAAQAAADv//n/AAAMAAQAAADw//n/AAAMAAQAAADu//n/AAAMAAQAAADu//j/AAAMAAQAAAA=")
+tile_set = SubResource("TileSet_g3wfo")
+
+[node name="player_topdown" parent="." instance=ExtResource("2_uleqd")]
+position = Vector2(-228, 789)
+scale = Vector2(5, 5)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_g3wfo")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer2" instance=ExtResource("3_3h0p8")]
+visible = false
+
+[node name="Label" type="Label" parent="CanvasLayer2"]
+offset_right = 216.0
+offset_bottom = 57.0
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 41
+text = "FPS:"
+script = ExtResource("4_ujx0b")
+
+[node name="assets" type="Node2D" parent="."]
+
+[node name="notes" type="Node2D" parent="assets"]
+
+[node name="note" parent="assets/notes" instance=ExtResource("6_gdawp")]
+position = Vector2(-1157, 600)
+scale = Vector2(3.395, 3.395)
+
+[node name="note2" parent="assets/notes" instance=ExtResource("6_gdawp")]
+position = Vector2(-413, -324)
+scale = Vector2(3.395, 3.395)
+
+[node name="note3" parent="assets/notes" instance=ExtResource("6_gdawp")]
+position = Vector2(-1068, 48)
+scale = Vector2(3.395, 3.395)
+
+[node name="NoteManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("7_md5rx")
+
+[node name="mission" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="mission"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="mission/Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -341.0
+offset_bottom = 142.0
+grow_horizontal = 0
+
+[node name="Label" type="Label" parent="mission/Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -202.0
+offset_bottom = 129.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 31
+text = "W.I.P MISSION:
+COLLECT ALL 3 NOTES
+TO UNLOCK DOOR"
+
+[node name="note count" type="Label" parent="mission"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -329.0
+offset_top = 142.0
+offset_bottom = 280.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 31
+text = "0/3 notes collected"

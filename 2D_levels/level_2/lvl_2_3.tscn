@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://clbutouj7ccjo" path="res://2D_levels/level_1/assets/UI/heart.png" id="8_3ipvu"]
 [ext_resource type="Script" uid="uid://bb1wjhu534dq3" path="res://2D_levels/Player2D/fps.gd" id="9_2f2jg"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gpxfa"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c7uih"]
 texture = ExtResource("1_wg46k")
 0:0/0 = 0
 1:0/0 = 0
@@ -105,7 +105,7 @@ texture = ExtResource("1_wg46k")
 
 [sub_resource type="TileSet" id="TileSet_pqlkt"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_gpxfa")
+sources/0 = SubResource("TileSetAtlasSource_c7uih")
 
 [sub_resource type="Gradient" id="Gradient_wg46k"]
 colors = PackedColorArray(0.173247, 0.114451, 0, 1, 1, 1, 1, 1)

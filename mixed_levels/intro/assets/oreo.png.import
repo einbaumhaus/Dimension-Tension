@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blx1xna7vwbp5"
-path="res://.godot/imported/sky.png-0e23b747d7c93d2c1a1323b41f093906.ctex"
+uid="uid://b1ebmss4tc83e"
+path="res://.godot/imported/oreo.png-da145e3459ee64b297fd132e864a5255.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://2D_levels/level_1/assets/env/sky.png"
-dest_files=["res://.godot/imported/sky.png-0e23b747d7c93d2c1a1323b41f093906.ctex"]
+source_file="res://mixed_levels/intro/assets/oreo.png"
+dest_files=["res://.godot/imported/oreo.png-da145e3459ee64b297fd132e864a5255.ctex"]
 
 [params]
 
@@ -21,7 +21,7 @@ compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

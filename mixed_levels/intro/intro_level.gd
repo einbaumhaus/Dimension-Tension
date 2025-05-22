@@ -4,6 +4,8 @@ extends Node
 @onready var part_2_player: AnimationPlayer = $part2/part2player
 @onready var part_3_player: AnimationPlayer = $part3/part3player
 @onready var part_4_player: AnimationPlayer = $part1/part4player
+@onready var part_5_player: AnimationPlayer = $part3/part5player
+@onready var part_6_player: AnimationPlayer = $part1/part6player
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -24,3 +26,15 @@ func _on_part_2_player_animation_finished(anim_name: StringName) -> void:
 
 func _on_part_3_player_animation_finished(anim_name: StringName) -> void:
 	part_4_player.play("part4")
+
+
+func _on_part_4_player_animation_finished(anim_name: StringName) -> void:
+	part_5_player.play("part5")
+
+
+func _on_part_5_player_animation_finished(anim_name: StringName) -> void:
+	part_6_player.play("part6")
+
+
+func _on_part_6_player_animation_finished(anim_name: StringName) -> void:
+	get_tree().change_scene_to_file.call_deferred("res://2D_levels/level_1/level_1_2d.tscn")

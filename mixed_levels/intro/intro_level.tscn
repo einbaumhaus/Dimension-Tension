@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=4 uid="uid://b1yl1wr2lv7xd"]
+[gd_scene load_steps=57 format=4 uid="uid://b1yl1wr2lv7xd"]
 
 [ext_resource type="Texture2D" uid="uid://blx1xna7vwbp5" path="res://2D_levels/level_1/assets/env/sky.png" id="1_mna73"]
 [ext_resource type="Script" uid="uid://dpceiuha2o1rl" path="res://mixed_levels/intro/intro_level.gd" id="1_xe5jb"]
@@ -194,10 +194,22 @@ tracks/14/keys = {
 "update": 0,
 "values": [Vector2(66, 19)]
 }
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("part1/player:position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -9.53674e-07)]
+}
 
 [sub_resource type="Animation" id="Animation_hm0gx"]
 resource_name = "intro"
-length = 11.5
+length = 8.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -205,7 +217,7 @@ tracks/0/path = NodePath("part1/player:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.766667, 1.5, 2.25, 3.53333, 7.1219),
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 2, 4.75523),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [&"right_side_idle", &"left_side_idle", &"right_side_idle", &"left_side_idle", &"front_idle", &"right_side_idle"]
@@ -217,7 +229,7 @@ tracks/1/path = NodePath("part1/Buuuble:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 7.10523),
+"times": PackedFloat32Array(0, 4.73856),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -229,7 +241,7 @@ tracks/2/path = NodePath("part1/text:text")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 4.36667, 5.4, 7.10523),
+"times": PackedFloat32Array(0, 2, 3.03333, 4.73856),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": ["...
@@ -243,7 +255,7 @@ tracks/3/path = NodePath("part1/Oreo:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 7.39523),
+"times": PackedFloat32Array(0, 5.02856),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -255,7 +267,7 @@ tracks/4/path = NodePath("part1/text2:text")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 8.08856, 9.06),
+"times": PackedFloat32Array(0, 5.72189, 6.69333),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": ["", "Let's
@@ -268,7 +280,7 @@ tracks/5/path = NodePath("part1/Buuuble2:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 8.08856, 9.06),
+"times": PackedFloat32Array(0, 5.72189, 6.69333),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [false, true, false]
@@ -280,7 +292,7 @@ tracks/6/path = NodePath("part1/Buuuble3:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0.1, 9.56667, 10.47),
+"times": PackedFloat32Array(0.1, 7.2, 8.10333),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [false, true, false]
@@ -292,7 +304,7 @@ tracks/7/path = NodePath("part1/text3:text")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 9.56667, 10.47),
+"times": PackedFloat32Array(0, 7.2, 8.10333),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": ["", "Hey!", ""]
@@ -304,7 +316,7 @@ tracks/8/path = NodePath("part1/part1cam:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0, 9.56, 10.4667),
+"times": PackedFloat32Array(0, 7.19333, 8.10003),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, -107.105)]
@@ -369,6 +381,18 @@ tracks/13/keys = {
 "update": 0,
 "values": [Vector2(66, 19)]
 }
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("part1/player:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -9.53674e-07)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2twkf"]
 _data = {
@@ -426,10 +450,34 @@ tracks/3/keys = {
 "update": 0,
 "values": [Vector2(134, -27)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Buuuble2:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("text2:text")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
 
 [sub_resource type="Animation" id="Animation_dsl33"]
 resource_name = "part4"
-length = 5.0
+length = 3.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -538,11 +586,144 @@ tracks/8/keys = {
 "update": 0,
 "values": [Vector2(66, 19), Vector2(66, 19), Vector2(134, -27), Vector2(381.555, -27)]
 }
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Buuuble2:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0.0333333, 2.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("text2:text")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 2.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["", "!"]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_q8ovt"]
 _data = {
 &"RESET": SubResource("Animation_q8ovt"),
 &"part4": SubResource("Animation_dsl33")
+}
+
+[sub_resource type="Animation" id="Animation_2hc6r"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_8gqv8"]
+resource_name = "part6"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("part1cam:enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../part3/part2cam2:enabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("text2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Buuuble2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("player:animation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"right_side_idle", &"right_side_walk"]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("player:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.2, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-9.53674e-07, -9.53674e-07), Vector2(331.195, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../part3:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../part2/part2cam:enabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_71ms5"]
+_data = {
+&"RESET": SubResource("Animation_2hc6r"),
+&"part6": SubResource("Animation_8gqv8")
 }
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6tqqb"]
@@ -899,7 +1080,7 @@ tracks/5/keys = {
 
 [sub_resource type="Animation" id="Animation_2twkf"]
 resource_name = "part2"
-length = 4.0
+length = 3.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -958,7 +1139,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0, 0.766667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [false, true]
+"values": [true, true]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -970,7 +1151,7 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0, 0.766667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [false, true]
+"values": [true, true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_i7vcb"]
@@ -1085,7 +1266,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_sn7jy"]
 resource_name = "part3"
-length = 3.0
+length = 1.75
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1110,11 +1291,135 @@ tracks/1/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("text5:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("text6:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4fw8x"]
 _data = {
 &"RESET": SubResource("Animation_4fw8x"),
 &"part3": SubResource("Animation_sn7jy")
+}
+
+[sub_resource type="Animation" id="Animation_puteb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("text6:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["i must find
+take it back"]
+}
+
+[sub_resource type="Animation" id="Animation_q7c3b"]
+resource_name = "part5"
+length = 3.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("text5:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("text6:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("text6:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["no, this 
+cannot be!", "i must take
+them back!!"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../part1/part1cam:enabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("part2cam2:enabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8gqv8"]
+_data = {
+&"RESET": SubResource("Animation_puteb"),
+&"part5": SubResource("Animation_q7c3b")
 }
 
 [node name="intro_level" type="Node"]
@@ -1134,6 +1439,11 @@ libraries = {
 &"": SubResource("AnimationLibrary_q8ovt")
 }
 
+[node name="part6player" type="AnimationPlayer" parent="part1"]
+libraries = {
+&"": SubResource("AnimationLibrary_71ms5")
+}
+
 [node name="part1cam" type="Camera2D" parent="part1"]
 position = Vector2(0, -95)
 enabled = false
@@ -1141,10 +1451,11 @@ zoom = Vector2(1.955, 1.955)
 
 [node name="player" type="AnimatedSprite2D" parent="part1"]
 texture_filter = 1
-position = Vector2(-9.53674e-07, -9.53674e-07)
+position = Vector2(0, -9.53674e-07)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_i7vcb")
 animation = &"front_idle"
+frame_progress = 0.0627612
 
 [node name="TileMapLayer" type="TileMapLayer" parent="part1"]
 z_index = -1
@@ -1307,6 +1618,7 @@ scale = Vector2(7.235, -7.235)
 texture = ExtResource("4_hm0gx")
 
 [node name="text5" type="Label" parent="part3"]
+visible = false
 texture_filter = 1
 offset_left = -70.0
 offset_top = -425.0
@@ -1320,13 +1632,34 @@ text = "no."
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="text6" type="Label" parent="part3"]
+texture_filter = 1
+offset_left = -82.0
+offset_top = -427.0
+offset_right = 61.0
+offset_bottom = -360.0
+scale = Vector2(1.205, 1.205)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_6t42f")
+theme_override_font_sizes/font_size = 16
+text = "i must find
+take it back"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="part3player" type="AnimationPlayer" parent="part3"]
 libraries = {
 &"": SubResource("AnimationLibrary_4fw8x")
 }
 
-[node name="part5" type="Node2D" parent="."]
+[node name="part5player" type="AnimationPlayer" parent="part3"]
+libraries = {
+&"": SubResource("AnimationLibrary_8gqv8")
+}
 
 [connection signal="animation_finished" from="part1/part1player" to="." method="_on_part_1_player_animation_finished"]
+[connection signal="animation_finished" from="part1/part4player" to="." method="_on_part_4_player_animation_finished"]
+[connection signal="animation_finished" from="part1/part6player" to="." method="_on_part_6_player_animation_finished"]
 [connection signal="animation_finished" from="part2/part2player" to="." method="_on_part_2_player_animation_finished"]
 [connection signal="animation_finished" from="part3/part3player" to="." method="_on_part_3_player_animation_finished"]
+[connection signal="animation_finished" from="part3/part5player" to="." method="_on_part_5_player_animation_finished"]

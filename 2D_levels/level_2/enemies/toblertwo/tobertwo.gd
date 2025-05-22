@@ -17,7 +17,7 @@ func _physics_process(delta: float) -> void:
 		velocity = (-to_player.normalized()) * PUSH_FORCE
 		player.take_damage()
 		
-	elif distance < 500:
+	elif distance < 600:
 		# Move toward player normally
 		velocity = to_player.normalized() * SPEED
 	else:

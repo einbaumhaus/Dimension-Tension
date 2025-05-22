@@ -37,10 +37,6 @@ func _physics_process(delta: float) -> void:
 	state_machine()
 	move_and_slide()
 
-
-func _on_double_jump_body_entered(body: Node2D) -> void:
-	pass
-
 func state_machine():
 	if velocity.x <= 0:
 		anim.play("left")

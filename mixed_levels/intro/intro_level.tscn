@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=4 uid="uid://b1yl1wr2lv7xd"]
+[gd_scene load_steps=51 format=4 uid="uid://b1yl1wr2lv7xd"]
 
 [ext_resource type="Texture2D" uid="uid://blx1xna7vwbp5" path="res://2D_levels/level_1/assets/env/sky.png" id="1_mna73"]
 [ext_resource type="Script" uid="uid://dpceiuha2o1rl" path="res://mixed_levels/intro/intro_level.gd" id="1_xe5jb"]
@@ -170,6 +170,30 @@ tracks/12/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("part1/AnimatedSprite2D:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(82, -215)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("part1/Oreo:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(66, 19)]
+}
 
 [sub_resource type="Animation" id="Animation_hm0gx"]
 resource_name = "intro"
@@ -321,11 +345,204 @@ tracks/11/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("part1/AnimatedSprite2D:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(82, -215)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("part1/Oreo:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(66, 19)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2twkf"]
 _data = {
 &"RESET": SubResource("Animation_6t42f"),
 &"intro": SubResource("Animation_hm0gx")
+}
+
+[sub_resource type="Animation" id="Animation_q8ovt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"run_front"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(82, -44.025)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Oreo:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(134, -27)]
+}
+
+[sub_resource type="Animation" id="Animation_dsl33"]
+resource_name = "part4"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../part3:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("part1cam:enabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../part3/part2cam2:enabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../part2/part2cam:enabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("part1cam:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -107.105)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AnimatedSprite2D:animation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.3, 1.76667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [&"default", &"run_front", &"run_right"]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AnimatedSprite2D:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.3, 1.76667, 2.96667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(82, -215), Vector2(82, -44.025), Vector2(329.145, -44.025)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Oreo:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 1.73333, 1.8, 2.96667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(66, 19), Vector2(66, 19), Vector2(134, -27), Vector2(381.555, -27)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q8ovt"]
+_data = {
+&"RESET": SubResource("Animation_q8ovt"),
+&"part4": SubResource("Animation_dsl33")
 }
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6tqqb"]
@@ -556,6 +773,22 @@ sources/0 = SubResource("TileSetAtlasSource_jfrht")
 atlas = ExtResource("7_6t42f")
 region = Rect2(20, 0, 20, 20)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_sn7jy"]
+atlas = ExtResource("7_6t42f")
+region = Rect2(0, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4fw8x"]
+atlas = ExtResource("7_6t42f")
+region = Rect2(40, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dsl33"]
+atlas = ExtResource("7_6t42f")
+region = Rect2(0, 60, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q8ovt"]
+atlas = ExtResource("7_6t42f")
+region = Rect2(40, 60, 20, 20)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_jfrht"]
 animations = [{
 "frames": [{
@@ -564,6 +797,28 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sn7jy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4fw8x")
+}],
+"loop": true,
+"name": &"run_front",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dsl33")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q8ovt")
+}],
+"loop": true,
+"name": &"run_right",
 "speed": 5.0
 }]
 
@@ -615,7 +870,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -801,6 +1056,67 @@ pattern_1 = SubResource("TileMapPattern_igigp")
 pattern_2 = SubResource("TileMapPattern_mj3iu")
 pattern_3 = SubResource("TileMapPattern_nu2pv")
 
+[sub_resource type="Animation" id="Animation_4fw8x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../part2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_sn7jy"]
+resource_name = "part3"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../part2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4fw8x"]
+_data = {
+&"RESET": SubResource("Animation_4fw8x"),
+&"part3": SubResource("Animation_sn7jy")
+}
+
 [node name="intro_level" type="Node"]
 script = ExtResource("1_xe5jb")
 
@@ -811,6 +1127,11 @@ visible = false
 root_node = NodePath("../..")
 libraries = {
 &"": SubResource("AnimationLibrary_2twkf")
+}
+
+[node name="part4player" type="AnimationPlayer" parent="part1"]
+libraries = {
+&"": SubResource("AnimationLibrary_q8ovt")
 }
 
 [node name="part1cam" type="Camera2D" parent="part1"]
@@ -890,17 +1211,20 @@ vertical_alignment = 1
 
 [node name="Oreo" type="Sprite2D" parent="part1"]
 texture_filter = 1
-position = Vector2(66, 19)
+position = Vector2(134, -27)
 scale = Vector2(3.29, 3.29)
 texture = ExtResource("6_2twkf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="part1"]
 texture_filter = 1
-position = Vector2(82, -215)
+position = Vector2(82, -44.025)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_jfrht")
+animation = &"run_front"
+autoplay = "default"
 
 [node name="part2" type="Node2D" parent="."]
+visible = false
 
 [node name="Sky" type="Sprite2D" parent="part2"]
 texture_filter = 1
@@ -996,4 +1320,13 @@ text = "no."
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="part3player" type="AnimationPlayer" parent="part3"]
+libraries = {
+&"": SubResource("AnimationLibrary_4fw8x")
+}
+
+[node name="part5" type="Node2D" parent="."]
+
 [connection signal="animation_finished" from="part1/part1player" to="." method="_on_part_1_player_animation_finished"]
+[connection signal="animation_finished" from="part2/part2player" to="." method="_on_part_2_player_animation_finished"]
+[connection signal="animation_finished" from="part3/part3player" to="." method="_on_part_3_player_animation_finished"]

@@ -68,8 +68,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_p44oq"]
-radius = 35.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tia48"]
+height = 72.0
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_tia48")
@@ -82,7 +82,7 @@ animation = &"still_right"
 frame_progress = 0.329905
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_p44oq")
+shape = SubResource("CapsuleShape2D_tia48")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = -50

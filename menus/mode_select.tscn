@@ -50,5 +50,6 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Back"
 
+[connection signal="pressed" from="BoxContainer/storymode_b" to="." method="_on_storymode_b_pressed"]
 [connection signal="pressed" from="BoxContainer/level_select_b" to="." method="_on_level_select_b_pressed"]
 [connection signal="pressed" from="back_b" to="." method="_on_back_b_pressed"]

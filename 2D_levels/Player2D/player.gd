@@ -32,8 +32,8 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, acceleration)
 	
-	if Input.is_action_just_pressed("ui_down"):
-		camera_2d.zoom = Vector2(0.5,0.5)
+	#if Input.is_action_just_pressed("ui_down"):
+		#camera_2d.zoom = Vector2(0.5,0.5)
 	state_machine()
 	move_and_slide()
 
@@ -42,3 +42,5 @@ func state_machine():
 		anim.play("left")
 	if velocity.x >= 0:
 		anim.play("right")
+	if velocity.x == 0:
+		anim.play("still_right")

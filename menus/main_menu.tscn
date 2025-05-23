@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://nvghij2p6sow" path="res://menus/main_menu.gd" id="1_8gy84"]
 [ext_resource type="Texture2D" uid="uid://7w3wqmyb4i8s" path="res://menus/assets/title1.png" id="2_ij7vn"]
-[ext_resource type="Texture2D" uid="uid://cti2pyfd1ha6i" path="res://menus/main menu stuff/background.png" id="2_rqbgu"]
+[ext_resource type="Texture2D" uid="uid://cjllvahxg6keb" path="res://3D_levels/level_1/assets/overcast_soil_puresky_4k.hdr" id="2_oblsv"]
 [ext_resource type="Texture2D" uid="uid://c6dmatt1nxg8i" path="res://menus/main menu stuff/sisine chapel.png" id="3_oblsv"]
 [ext_resource type="FontFile" uid="uid://dn3yd17i4df0q" path="res://assets/fonts/OCRAEXT.TTF" id="3_yjgyn"]
 
@@ -15,9 +15,15 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8gy84")
 
-[node name="Background" type="Sprite2D" parent="."]
-position = Vector2(576, 324)
-texture = ExtResource("2_rqbgu")
+[node name="sky" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.1, 0.1)
+repeat_size = Vector2(1152, 648)
+autoscroll = Vector2(20, 0)
+
+[node name="Background" type="Sprite2D" parent="sky"]
+position = Vector2(576, 324.5)
+scale = Vector2(0.28125, 0.316895)
+texture = ExtResource("2_oblsv")
 
 [node name="SisineChapel" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -80,14 +86,15 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -200.5
-offset_top = -54.0
-offset_right = 200.5
+offset_left = -43.5
+offset_top = -12.0
+offset_right = 43.5
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("3_yjgyn")
-theme_override_font_sizes/font_size = 51
+theme_override_font_sizes/font_size = 11
 text = "version 0.0.7"
+horizontal_alignment = 1
 
 [connection signal="pressed" from="VBoxContainer/play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/settings" to="." method="_on_settings_pressed"]

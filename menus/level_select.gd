@@ -1,5 +1,7 @@
 extends Control
 
+@onready var main_menu: Control = $"../main_menu"
+@onready var mode_select: Control = $"../mode_select"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,7 +14,8 @@ func _process(delta: float) -> void:
 
 
 func _on_back_b_pressed() -> void:
-	get_tree().change_scene_to_file("res://menus/mode_select.tscn")
+	visible = false
+	mode_select.visible = true
 
 
 func _on_lvl_1_2d_pressed() -> void:

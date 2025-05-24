@@ -5,7 +5,10 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
-var double_jump = false
+
+#coyote time so the player can still jump when going down steep parts
+var coyote_time := 0.2
+var coyote_timer := 0.0
 
 func jump():
 	velocity.y = JUMP_VELOCITY
@@ -19,8 +22,12 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
+	if is_on_floor():
+		coyote_timer = coyote_time
+	else:
+		coyote_timer -= delta
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor() or Input.is_action_just_pressed("up") and is_on_floor() and double_jump == false:
+	if (Input.is_action_just_pressed("ui_accept") or Input.is_action_just_pressed("up")) and coyote_timer > 0.0:
 		jump()
 
 	# Get the input direction and handle the movement/deceleration.

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bxau5jmnhxuvp"]
 
 [ext_resource type="Script" uid="uid://v3uoguhlfsqu" path="res://menus/level_select.gd" id="1_x5a0v"]
-[ext_resource type="Texture2D" uid="uid://cjllvahxg6keb" path="res://3D_levels/level_1/assets/overcast_soil_puresky_4k.hdr" id="2_a00cd"]
+[ext_resource type="Theme" uid="uid://3lc7pfe6wvl7" path="res://assets/pixelated_theme.tres" id="2_a00cd"]
 
 [node name="level_select" type="Control"]
 layout_mode = 3
@@ -11,16 +11,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_x5a0v")
-
-[node name="sky" type="Parallax2D" parent="."]
-scroll_scale = Vector2(0.1, 0.1)
-repeat_size = Vector2(1152, 648)
-autoscroll = Vector2(20, 0)
-
-[node name="Background" type="Sprite2D" parent="sky"]
-position = Vector2(576, 324.5)
-scale = Vector2(0.28125, 0.316895)
-texture = ExtResource("2_a00cd")
 
 [node name="BoxContainer" type="BoxContainer" parent="."]
 layout_mode = 1
@@ -35,6 +25,7 @@ offset_right = 420.0
 offset_bottom = 136.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_a00cd")
 
 [node name="lvl1" type="VBoxContainer" parent="BoxContainer"]
 layout_mode = 2
@@ -103,6 +94,7 @@ offset_right = 116.0
 offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 0
+theme = ExtResource("2_a00cd")
 text = "Back"
 
 [connection signal="pressed" from="BoxContainer/lvl1/lvl_1_2d" to="." method="_on_lvl_1_2d_pressed"]

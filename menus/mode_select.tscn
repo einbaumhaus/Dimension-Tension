@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cp6g64mlf8kpi"]
 
 [ext_resource type="Script" uid="uid://b33eav60o2uqn" path="res://menus/mode_select.gd" id="1_5ovjn"]
-[ext_resource type="Texture2D" uid="uid://cjllvahxg6keb" path="res://3D_levels/level_1/assets/overcast_soil_puresky_4k.hdr" id="2_p6y4n"]
+[ext_resource type="Theme" uid="uid://3lc7pfe6wvl7" path="res://assets/pixelated_theme.tres" id="1_p6y4n"]
 
 [node name="mode_select" type="Control"]
 layout_mode = 3
@@ -10,17 +10,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_p6y4n")
 script = ExtResource("1_5ovjn")
-
-[node name="sky" type="Parallax2D" parent="."]
-scroll_scale = Vector2(0.1, 0.1)
-repeat_size = Vector2(1152, 648)
-autoscroll = Vector2(20, 0)
-
-[node name="Background" type="Sprite2D" parent="sky"]
-position = Vector2(576, 324.5)
-scale = Vector2(0.28125, 0.316895)
-texture = ExtResource("2_p6y4n")
 
 [node name="BoxContainer" type="BoxContainer" parent="."]
 layout_mode = 1

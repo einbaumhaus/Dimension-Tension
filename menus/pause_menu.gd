@@ -40,7 +40,7 @@ func _on_restart_pressed() -> void:
 func _on_quit_pressed() -> void:
 	hide()
 	resume()
-	get_tree().change_scene_to_file("res://menus/level_select.tscn")
+	get_tree().change_scene_to_file("res://menus/menu_manager.tscn")
 
 func _process(delta: float) -> void:
 	testEsc()

@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://co2dawhgab6d8"]
+
+[ext_resource type="Texture2D" uid="uid://cjllvahxg6keb" path="res://3D_levels/level_1/assets/overcast_soil_puresky_4k.hdr" id="1_g7wb1"]
+[ext_resource type="PackedScene" uid="uid://bcs8aqgp6fvs6" path="res://menus/main_menu.tscn" id="2_1pii1"]
+[ext_resource type="PackedScene" uid="uid://cp6g64mlf8kpi" path="res://menus/mode_select.tscn" id="3_em31k"]
+[ext_resource type="PackedScene" uid="uid://bxau5jmnhxuvp" path="res://menus/level_select.tscn" id="4_t82j1"]
+
+[node name="menu_manager" type="Node"]
+
+[node name="sky" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.1, 0.1)
+repeat_size = Vector2(1152, 648)
+autoscroll = Vector2(20, 0)
+
+[node name="Background" type="Sprite2D" parent="sky"]
+position = Vector2(576, 324.5)
+scale = Vector2(0.28125, 0.316895)
+texture = ExtResource("1_g7wb1")
+
+[node name="mode_select" parent="." instance=ExtResource("3_em31k")]
+visible = false
+
+[node name="level_select" parent="." instance=ExtResource("4_t82j1")]
+visible = false
+
+[node name="main_menu" parent="." instance=ExtResource("2_1pii1")]

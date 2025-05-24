@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bnp7vdu3nrbe8"]
+[gd_scene load_steps=8 format=3 uid="uid://bnp7vdu3nrbe8"]
 
 [ext_resource type="Script" uid="uid://1y6n04ixy5xr" path="res://menus/pause_menu.gd" id="1_p1qj3"]
 [ext_resource type="Shader" uid="uid://btphiarmoofgh" path="res://menus/pause_menu.gdshader" id="1_s0u37"]
+[ext_resource type="Theme" uid="uid://3lc7pfe6wvl7" path="res://assets/pixelated_theme.tres" id="3_0wv6w"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p1qj3"]
 shader = ExtResource("1_s0u37")
@@ -120,6 +121,7 @@ offset_right = 112.0
 offset_bottom = 124.5
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("3_0wv6w")
 theme_override_constants/separation = 15
 
 [node name="resume" type="Button" parent="VBoxContainer"]
@@ -140,7 +142,7 @@ text = "Settings"
 [node name="quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-text = "Quit to Level Select"
+text = "Quit to main menu"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

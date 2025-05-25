@@ -10,6 +10,8 @@ const JUMP_VELOCITY = -400.0
 var coyote_time := 0.2
 var coyote_timer := 0.0
 
+var pointing_right = false
+
 func jump():
 	velocity.y = JUMP_VELOCITY
 	
@@ -45,9 +47,14 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func state_machine():
-	if velocity.x <= 0:
+	if velocity.x < 0:
 		anim.play("left")
-	if velocity.x >= 0:
+		pointing_right = false
+	elif velocity.x > 0:
 		anim.play("right")
-	if velocity.x == 0:
-		anim.play("still_right")
+		pointing_right = true
+	elif velocity.x == 0:
+		if pointing_right:
+			anim.play("still_right")
+		else:
+			anim.play("still_left")

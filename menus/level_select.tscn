@@ -101,4 +101,6 @@ text = "Back"
 [connection signal="pressed" from="BoxContainer/lvl1/lvl_1_3d" to="." method="_on_lvl_1_3d_pressed"]
 [connection signal="pressed" from="BoxContainer/lvl2/lvl_2_2d" to="." method="_on_lvl_2_2d_pressed"]
 [connection signal="pressed" from="BoxContainer/lvl2/lvl_2_3d" to="." method="_on_lvl_2_3d_pressed"]
+[connection signal="pressed" from="BoxContainer/lvl3/lvl_3_2d" to="." method="_on_lvl_3_2d_pressed"]
+[connection signal="pressed" from="BoxContainer/lvl3/lvl_3_3d" to="." method="_on_lvl_3_3d_pressed"]
 [connection signal="pressed" from="back_b" to="." method="_on_back_b_pressed"]

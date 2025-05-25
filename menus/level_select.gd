@@ -32,3 +32,11 @@ func _on_lvl_2_3d_pressed() -> void:
 
 func _on_lvl_2_2d_pressed() -> void:
 	get_tree().change_scene_to_file("res://2D_levels/level_2/lvl_2.tscn")
+
+
+func _on_lvl_3_2d_pressed() -> void:
+	get_tree().change_scene_to_file("res://2D_levels/level_3/lvl_3_2d.tscn")
+
+
+func _on_lvl_3_3d_pressed() -> void:
+	get_tree().change_scene_to_file("res://3D_levels/level_3/level_3_3d.tscn")

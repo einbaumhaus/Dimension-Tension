@@ -10,3 +10,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+
+func _on_train_player_animation_finished(anim_name: StringName) -> void:
+	train_player.play("rbs_drive")

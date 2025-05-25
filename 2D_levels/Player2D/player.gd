@@ -10,8 +10,8 @@ const JUMP_VELOCITY = -400.0
 var coyote_time := 0.2
 var coyote_timer := 0.0
 
-var pointing_right = false
-
+var pointing_right = true
+	
 func jump():
 	velocity.y = JUMP_VELOCITY
 	

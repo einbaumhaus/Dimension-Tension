@@ -38,12 +38,12 @@ gradient = SubResource("Gradient_ocqxk")
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_3dv5j"]
 panorama = ExtResource("2_irmad")
 
-[sub_resource type="Sky" id="Sky_ljo6s"]
+[sub_resource type="Sky" id="Sky_iokc4"]
 sky_material = SubResource("PanoramaSkyMaterial_3dv5j")
 
 [sub_resource type="Environment" id="Environment_i53j8"]
 background_mode = 2
-sky = SubResource("Sky_ljo6s")
+sky = SubResource("Sky_iokc4")
 ambient_light_source = 3
 reflected_light_source = 2
 adjustment_color_correction = SubResource("GradientTexture2D_bdl7b")

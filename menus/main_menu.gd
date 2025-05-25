@@ -14,7 +14,7 @@ func _process(delta: float) -> void:
 
 
 func _on_credits_pressed() -> void:
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://mixed_levels/end/end_credit_level.tscn")
 
 
 func _on_quit_pressed() -> void:

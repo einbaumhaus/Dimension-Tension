@@ -13,6 +13,7 @@ config_version=5
 config/name="Dimension Tension"
 run/main_scene="uid://co2dawhgab6d8"
 config/features=PackedStringArray("4.4", "GL Compatibility")
+boot_splash/image="uid://v75koa8jb5xb"
 config/icon="uid://cajru7pnpcjym"
 
 [autoload]

@@ -719,6 +719,11 @@ animations = [{
 [node name="level_2_3d_1" type="Node3D"]
 script = ExtResource("1_ijkd5")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("7_f4pvx")]
+visible = false
+
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.898028, -0.122739, -0.422471, 0, 0.960294, -0.278991, 0.439939, 0.250541, 0.86237, -2.048, 0.565, -0.638)
 fov = 96.4
@@ -1014,11 +1019,6 @@ theme_override_font_sizes/font_size = 31
 text = "W.I.P MISSION:
 EXPIRE 4 UGUS
 ENTER COURTYARD"
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("7_f4pvx")]
-visible = false
 
 [connection signal="body_entered" from="assets/elements/lava_death" to="assets/elements/lava_death" method="_on_body_entered"]
 [connection signal="body_entered" from="assets/lvl_part_changer" to="assets/lvl_part_changer" method="_on_body_entered"]

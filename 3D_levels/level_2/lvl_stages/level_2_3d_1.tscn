@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://bt1oojjskfoa2"]
+[gd_scene load_steps=48 format=4 uid="uid://bt1oojjskfoa2"]
 
 [ext_resource type="Script" uid="uid://baup6tmbd45j4" path="res://3D_levels/level_2/lvl_stages/level_2_3d_1.gd" id="1_ijkd5"]
 [ext_resource type="Texture2D" uid="uid://dcjfetld4q5y7" path="res://3D_levels/level_1/assets/bridge/materials/Ice002_1K-JPG_Color.jpg" id="1_yp75m"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://ifb6pbvsjtkj" path="res://3D_levels/level_2/assets/env/wooden_door.tscn" id="7_3rhp0"]
 [ext_resource type="PackedScene" uid="uid://bnp7vdu3nrbe8" path="res://menus/pause_menu.tscn" id="7_f4pvx"]
 [ext_resource type="Texture2D" uid="uid://clde65rir2dv3" path="res://3D_levels/level_2/assets/env/gravelly_sand_diff_1k.jpg" id="8_t7q7q"]
+[ext_resource type="Script" uid="uid://bl1iho76ng8u6" path="res://3D_levels/level_2/lvl_stages/lava_death.gd" id="9_udivp"]
 [ext_resource type="Texture2D" uid="uid://dioi3nboqrcd" path="res://3D_levels/level_2/assets/env/tiger_rock_diff_1k.jpg" id="9_xyv5a"]
 [ext_resource type="PackedScene" uid="uid://dagwa47n0fu2" path="res://3D_levels/level_1/assets/bridge/rail_beam.tscn" id="10_4a715"]
 [ext_resource type="Texture2D" uid="uid://bgw2w26elh5b5" path="res://2D_levels/level_2/Player2D_topdown/player.png" id="10_o33sx"]
@@ -104,6 +105,9 @@ uv1_scale = Vector3(3.295, 1.425, 1)
 uv1_offset = Vector3(0, 0, -0.035)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_63n28"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r2s5x"]
+size = Vector3(41.333, 1, 12.0607)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_udivp"]
 size = Vector3(7.74512, 2.26465, 4.04346)
@@ -831,6 +835,10 @@ mesh = SubResource("PlaneMesh_t7q7q")
 transform = Transform3D(1, 0, 0, 0, 0.975917, 0.218143, 0, -0.218143, 0.975917, 0, 1.29699, 25.067)
 shape = SubResource("BoxShape3D_4a715")
 
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="assets/floor/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0.975917, 0.218143, 0, -0.218143, 0.975917, 0, -4.83633, 34.8326)
+shape = SubResource("BoxShape3D_4a715")
+
 [node name="bridge" type="Node3D" parent="assets"]
 
 [node name="rail_beam" parent="assets/bridge" instance=ExtResource("10_4a715")]
@@ -933,6 +941,14 @@ material_override = SubResource("StandardMaterial3D_sbv4a")
 mesh = SubResource("PlaneMesh_63n28")
 script = ExtResource("15_n8lvr")
 
+[node name="lava_death" type="Area3D" parent="assets/elements"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 47.1093)
+script = ExtResource("9_udivp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="assets/elements/lava_death"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.9482, 2.79385)
+shape = SubResource("BoxShape3D_r2s5x")
+
 [node name="posters" type="Node3D" parent="assets"]
 
 [node name="Sprite3D" type="Sprite3D" parent="assets/posters"]
@@ -954,11 +970,6 @@ script = ExtResource("19_63n28")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="assets/lvl_part_changer"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.158401, 0.0388184, -2.19828)
 shape = SubResource("BoxShape3D_udivp")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("7_f4pvx")]
-visible = false
 
 [node name="cutscene" type="AnimationPlayer" parent="."]
 libraries = {
@@ -1004,5 +1015,11 @@ text = "W.I.P MISSION:
 EXPIRE 4 UGUS
 ENTER COURTYARD"
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("7_f4pvx")]
+visible = false
+
+[connection signal="body_entered" from="assets/elements/lava_death" to="assets/elements/lava_death" method="_on_body_entered"]
 [connection signal="body_entered" from="assets/lvl_part_changer" to="assets/lvl_part_changer" method="_on_body_entered"]
 [connection signal="animation_finished" from="cutscene" to="." method="_on_cutscene_animation_finished"]

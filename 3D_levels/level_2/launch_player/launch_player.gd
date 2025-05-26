@@ -55,7 +55,6 @@ func take_damage(amount: int) -> void:
 func _physics_process(delta: float) -> void:
 	
 	#launch&reload
-	
 	if Input.is_action_pressed("left_click"):
 		var current_time = Time.get_ticks_msec() / 1000.0
 		if current_time - last_launch_time >= cooldown:

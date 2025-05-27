@@ -1,4 +1,4 @@
-[gd_scene load_steps=118 format=4 uid="uid://dlb7qukr5wfbb"]
+[gd_scene load_steps=101 format=4 uid="uid://dlb7qukr5wfbb"]
 
 [ext_resource type="Script" uid="uid://bfjlx34dyngrh" path="res://3D_levels/level_1/level_1_3d.gd" id="1_ljo6s"]
 [ext_resource type="PackedScene" uid="uid://cj7d18ek4ria6" path="res://3D_levels/Player3D/character_body_3d.tscn" id="1_y7tgq"]
@@ -29,12 +29,10 @@
 [ext_resource type="Script" uid="uid://bddgl4h0neakw" path="res://3D_levels/level_1/dimension_changer.gd" id="26_bdl7b"]
 [ext_resource type="Script" uid="uid://bunfmvy4e0lny" path="res://3D_levels/level_1/intermission.gd" id="28_iokc4"]
 [ext_resource type="Texture2D" uid="uid://bgw2w26elh5b5" path="res://2D_levels/level_2/Player2D_topdown/player.png" id="29_v53ed"]
-[ext_resource type="PackedScene" uid="uid://ciwgygnfbyg3g" path="res://3D_levels/Player3D/Staff.glb" id="30_2ovki"]
 [ext_resource type="Script" uid="uid://bmak1ot074r1o" path="res://3D_levels/level_1/camera_3d.gd" id="30_3fnmf"]
-[ext_resource type="Script" uid="uid://bwofrj7busjox" path="res://3D_levels/level_1/parts_code/part_2.gd" id="31_c3uv7"]
+[ext_resource type="Script" uid="uid://b3fjtdlveskud" path="res://3D_levels/level_1/jumppad.gd" id="32_ljui8"]
 [ext_resource type="Texture2D" uid="uid://bwg4g2mfe4lui" path="res://3D_levels/level_1/assets/bridge/materials/wood_planks_dirt_diff_1k.jpg" id="32_wbjlk"]
 [ext_resource type="Texture2D" uid="uid://djxs0si2vd3sd" path="res://3D_levels/level_1/assets/bridge/materials/wood_planks_dirt_nor_gl_1k.jpg" id="33_3yk7c"]
-[ext_resource type="Script" uid="uid://bv7ch4yx1cgpm" path="res://3D_levels/level_1/part_3.gd" id="34_3yk7c"]
 
 [sub_resource type="Gradient" id="Gradient_ocqxk"]
 offsets = PackedFloat32Array(0, 0.559702)
@@ -55,19 +53,6 @@ sky = SubResource("Sky_iokc4")
 ambient_light_source = 3
 reflected_light_source = 2
 adjustment_color_correction = SubResource("GradientTexture2D_bdl7b")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_erloq"]
-transparency = 1
-albedo_color = Color(0.72549, 0.462745, 0.827451, 0.45098)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_joxi0"]
-albedo_color = Color(0.0434569, 0.265612, 1, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_grgy5"]
-albedo_color = Color(0.494345, 0.547775, 0.570348, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_irmad"]
-albedo_color = Color(0.637196, 0.413858, 0.170647, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_erloq"]
 
@@ -185,6 +170,103 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_c6qml")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1xisg"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_i5nbj"]
+_surfaces = [{
+"aabb": AABB(-1, -1, -9.90981, 2, 2, 19.8196),
+"format": 34896613377,
+"index_count": 84,
+"index_data": PackedByteArray("CAAJAAoACAALAAkACQACAAoACQABAAIACwABAAkABgAKAAIAAgABAAQAAgAEAAYAAQAMAAQACwAMAAEADQAGAAQADQAEAAwADgAKAAYADgAGAA0ACgAOAAAACgAAAAgADQAPAA4ADQAMAA8AAAAOAAUADwAFAA4ACAAAAAMAAwAAAAUACAADAAsADwAHAAUADAAHAA8AAwAFAAcADAALAAcABwALAAMA"),
+"lods": [0.262921, PackedByteArray("AAABAAIAAAADAAEAAgABAAQAAwAEAAEAAgAFAAAAAwAAAAUAAgAEAAYABQACAAYABAADAAcAAwAFAAcABgAEAAcABgAHAAUA")],
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("AADuKgAAAAD//+4q//8AAP//7ioAAAAAAADuKv//AAD//xDV//8AAAAAENUAAAAA//8Q1QAAAAAAABDV//8AAO4qAAAAAAAAENUAAP//AAAQ1QAAAAAAAO4qAAD//wAAENX/////AAAQ1f//AAAAAO4q//8AAAAA7ir/////AAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ifyry"]
+resource_name = "wooden_beam_Cube"
+_surfaces = [{
+"aabb": AABB(-1, -1, -9.90981, 2, 2, 19.8196),
+"attribute_data": PackedByteArray("SJL/v5t9HxPatv+fgpX//9q2/7+ClR8TSJL/n5t9///8vP//HxOAkUrV/9///52BStX//x8TnYH8vP/f//+Akfy8/3+bfYCRStX/n4KVnYH8vP+fgpWAkUrV/3+bfZ2BbNv/v4KVHxP///+fm33//////7+bfR8TbNv/n4KV///8vP+///+AkUrV/58fE52BStX/v///nYH8vP+fHxOAkfy8/7+ClYCRStX/35t9nYH8vP/fm32AkUrV/7+ClZ2Bapj/v52BHxO4sP+fgJH//7iw/7+AkR8Tapj/n52B///atl2FnYGCldq2oZqAkYKVbNuhmoCRm31s212FnYGbfY7h/7+AkR8T3Pn/n52B///c+f+/nYEfE47h/5+Akf//apj/v52BHxNqmP+fnYH//47h/7+AkR8TjuH/n4CR///c+f+fnYH//9z5/7+dgR8TuLD/n4CR//+4sP+/gJEfE9q2XcWAkYKV2rah2p2BgpVs26HanYGbfWzbXcWAkZt9"),
+"format": 34896613431,
+"index_count": 84,
+"index_data": PackedByteArray("GAAZABoAGAAbABkABAAFAAYABAAHAAUAHAAKAB0AHAAeAAoACgAeAAkAHgAcAAsACwAcAAgAHgALAB8AIAAhACIAIAAjACEAEAARABIAEAATABEAJAADACUAJAAAAAMAJgAPACcAJgAMAA8AKAAOACkAKAANAA4AKgACACsAKgABAAIALAAWAC0ALAAuABYAFgAuABUALgAsABcAFwAsABQALgAXAC8A"),
+"lods": [0.262921, PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACQAIAAsADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFQAUABcA")],
+"material": SubResource("StandardMaterial3D_1xisg"),
+"primitive": 3,
+"uv_scale": Vector4(1.75, 2, 13.3873, 13.3873),
+"vertex_count": 48,
+"vertex_data": PackedByteArray("AADuKgAA/MX//+4q///8xf//7ioAAPzFAADuKv///MUAAO4q//9U1QAAENUAAFTVAAAQ1f//VNUAAO4qAABU1QAA7ir///+///8Q1f///7///+4q////vwAAENX///+///8Q1QAAqukAABDV//+q6QAAENUAAKrp//8Q1f//qun//+4qAABU1f//ENX//1TV//8Q1QAAVNX//+4q//9U1f//7ioAAP//AAAQ1QAA//8AAO4qAAD/////ENUAAP//7ioAAAAA/78Q1QAA////vxDVAAAAAP+/7ioAAP///7/uKgAA////vxDVAAD///+/ENX//////7/uKv//////vxDV//8AAP//7ir////////uKv//AAD//xDV////////7ioAAAAA/MXuKgAA///8xRDV//8AAKrpENX/////qunuKv////+q6e4q//8AAKrpENUAAP///MUQ1QAAAAD8xRDVAAAAAP//7ioAAAAA///uKv//AAD//xDV//8AAP///jn+nP8cAUb/HAFG/jn+nFTVVNVU1VTVVNVU1VTVVNX/////////////////////BDX2FQlqBLUJagS1BDX2FaoqqiqqKqoqqiqqKqoqqir/v/+//7//v/+//7//v/+/AAD/fwAA/38AAP9/AAD/f///////////////////////f/+//3//v/9//7//f/+//jn+nP45/pwENfYVBDX2FQlqBLUJagS1/xwBRv8cAUb/v/+//7//v/+//7//v/+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_i5nbj")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cotn6"]
+albedo_color = Color(0.707967, 0.707967, 0.707967, 1)
+albedo_texture = ExtResource("32_wbjlk")
+normal_enabled = true
+normal_texture = ExtResource("33_3yk7c")
+uv1_scale = Vector3(-0.98, 0.11, -0.105)
+uv1_offset = Vector3(-0.055, -1.685, 0.6)
+uv1_triplanar = true
+uv1_triplanar_sharpness = 10.5561
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_i5nbj"]
+size = Vector3(8.78223, 0.889648, 8.51733)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hoajf"]
+load_path = "res://.godot/imported/rusty_metal_04_diff_1k.jpg-b80f5652d8e5b8d2fae59b5f5b5ee169.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ngbsg"]
+resource_name = "Material"
+cull_mode = 2
+albedo_color = Color(0.948728, 0.789142, 0.698222, 1)
+albedo_texture = SubResource("CompressedTexture2D_hoajf")
+roughness = 0.360656
+uv1_scale = Vector3(-0.14, 0.41, 0.045)
+uv1_offset = Vector3(5.805, 4.215, 0.52)
+uv1_triplanar = true
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_hoajf"]
+_surfaces = [{
+"aabb": AABB(-0.250271, -0.34226, -5.02749, 0.500543, 0.406562, 10.0552),
+"format": 34359742465,
+"index_count": 60,
+"index_data": PackedByteArray("CAABAAIAAgABAAUAAgAFAAYACQAFAAEACAAJAAEACgAGAAUACQAKAAUACwACAAYACwAIAAIACgALAAYACAADAAkACgAEAAsACwAAAAgACAAAAAMACwAEAAAACQADAAcACQAHAAoABwADAAAACgAHAAQABwAAAAQA"),
+"lods": [0.111637, PackedByteArray("AAABAAIAAAADAAEABAAAAAIAAwAFAAEAAgABAAUABAACAAYAAgAFAAYABwAAAAQABwADAAAABwAEAAYAAwAHAAUABwAGAAUA")],
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("lSOAvr48r77U4qBAM0LLPX+wgz3U4qBAM0LLvX+wgz3U4qBAlSOAPr48r77U4qBAlSOAvr48r7424aDAM0LLPX+wgz024aDAM0LLvX+wgz024aDAlSOAPr48r7424aDAM0LLvUbigL7U4qBAM0LLPUbigL7U4qBAM0LLPUbigL424aDAM0LLvUbigL424aDA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_7jij8"]
+resource_name = "rail_Cube"
+_surfaces = [{
+"aabb": AABB(-0.250271, -0.34226, -5.02749, 0.500543, 0.406562, 10.0552),
+"attribute_data": PackedByteArray("AADAPgAAgD4AACA/AAAAAAAAID8AAIA+AADAPgAAAAAAAMA+AACAPwAAID8AAEA/AAAgPwAAgD8AAMA+AABAPwAAwD4AAAA/AAAgPwAAgD4AACA/AAAAPwAAwD4AAIA+AADAPgAAQD8AACA/AAAAPwAAID8AAEA/AADAPgAAAD8AAAA+AAAAPwAAwD4AAIA+AADAPgAAAD8AAAA+AACAPgAAID8AAIA+AAAgPwAAQD8AACA/AAAAPwAAID8AAIA/AADAPgAAgD4AAMA+AAAAAAAAwD4AAIA/AADAPgAAQD8AAMA+AACAPwAAwD4AAEA/AADAPgAAAD8AAMA+AACAPgAAwD4AAEA/AADAPgAAAD8AAMA+AAAAPwAAwD4AAIA+"),
+"format": 34359742487,
+"index_count": 60,
+"index_data": PackedByteArray("GAABAAIAGAAZAAEAGAADABkAGAAAAAMAGgAFAAYAGgAbAAUAHAAHAB0AHAAEAAcAHgAJAAoAHgAfAAkAIAANAA4AIAAhAA0AIAAPACEAIAAMAA8AEAARABIAEAATABEAIgALACMAIgAIAAsAFAAVABYAFAAXABUA"),
+"lods": [0.111637, PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA")],
+"material": SubResource("StandardMaterial3D_ngbsg"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 36,
+"vertex_data": PackedByteArray("lSOAvr48r77U4qBAM0LLPX+wgz3U4qBAM0LLvX+wgz3U4qBAlSOAPr48r77U4qBAlSOAPr48r77U4qBAM0LLPX+wgz024aDAM0LLPX+wgz3U4qBAlSOAPr48r7424aDAlSOAvr48r7424aDAM0LLvX+wgz3U4qBAM0LLvX+wgz024aDAlSOAvr48r77U4qBAlSOAPr48r7424aDAM0LLvX+wgz024aDAM0LLPX+wgz024aDAlSOAvr48r7424aDAlSOAPr48r7424aDAlSOAvr48r77U4qBAlSOAvr48r7424aDAlSOAPr48r77U4qBAM0LLvX+wgz3U4qBAM0LLPX+wgz024aDAM0LLvX+wgz024aDAM0LLPX+wgz3U4qBAM0LLvUbigL7U4qBAM0LLPUbigL7U4qBAM0LLPUbigL7U4qBAM0LLPUbigL424aDAM0LLPUbigL7U4qBAM0LLPUbigL424aDAM0LLvUbigL424aDAM0LLvUbigL7U4qBAM0LLPUbigL424aDAM0LLvUbigL424aDAM0LLvUbigL424aDAM0LLvUbigL7U4qBA/////////7///////3//////////f////////////78FUPkv////vwAA/3//f///AAD/f/9///8FUPkv////v/mv+S////+/////f/9///////9//3////mv+S////+//3//f////z//f/9//3////9//3//f////3//f////z//f///AAD/v/9///8AAP+//3///wAA/7//f///AAD/v/9/AAD///+//38AAP///7//fwAA////v/9/AAD///+///////9//////////3///wAA/3//f///AAD/f/9///8FUPkv////vwVQ+S////+/////f/9///////9//3////9//3//f////3//f/9////5r/kv////v/mv+S////+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_hoajf")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hoajf"]
+size = Vector3(10.0859, 0.139465, 1)
 
 [sub_resource type="Animation" id="Animation_joxi0"]
 length = 0.001
@@ -951,6 +1033,139 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_iokc4"]
 size = Vector3(41.5786, 1, 34.1491)
 
+[sub_resource type="Animation" id="Animation_c3uv7"]
+resource_name = "floating"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("moving_platforms/part1/AnimatableBody3D2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 3, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(89.893, -42.4593, -0.782), Vector3(89.893, -41.2309, -0.782), Vector3(89.893, -41.2309, -0.782), Vector3(89.893, -42.4593, -0.782)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("moving_platforms/part1/AnimatableBody3D4:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2, 3, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(111.541, -42.415, -10.932), Vector3(111.541, -41.3, -10.932), Vector3(111.541, -41.3, -10.932), Vector3(111.541, -42.415, -10.932)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("moving_platforms/part1/AnimatableBody3D3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 3, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(103.595, -41.2309, -7.31445), Vector3(103.595, -41.2309, -7.31445), Vector3(103.461, -42.6407, -7.59659), Vector3(103.595, -41.2309, -7.31445)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("moving_platforms/part1/AnimatableBody3D5:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2, 3, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(124.223, -42.5866, -16.8771), Vector3(124.223, -41.567, -16.877), Vector3(124.223, -41.567, -16.877), Vector3(124.223, -42.5866, -16.8771)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("moving_platforms/part1/AnimatableBody3D6:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1, 3, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(132.961, -41.2309, -18.4928), Vector3(132.961, -41.2309, -18.4928), Vector3(132.961, -42.7679, -18.4928), Vector3(132.961, -41.2309, -18.4928)]
+}
+
+[sub_resource type="Animation" id="Animation_3yk7c"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("moving_platforms/part1/AnimatableBody3D2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(89.893, -42.4593, -0.782)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("moving_platforms/part1/AnimatableBody3D4:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(113.234, -42.7386, -12.2798)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("moving_platforms/part1/AnimatableBody3D3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(103.595, -41.2309, -7.31445)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("moving_platforms/part1/AnimatableBody3D5:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(124.223, -42.5866, -16.8771)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("moving_platforms/part1/AnimatableBody3D6:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(132.961, -41.2309, -18.4928)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l6t0k"]
+_data = {
+&"RESET": SubResource("Animation_3yk7c"),
+&"floating": SubResource("Animation_c3uv7")
+}
+
 [sub_resource type="Animation" id="Animation_3fnmf"]
 length = 0.001
 tracks/0/type = "value"
@@ -962,7 +1177,7 @@ tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
+"update": 0,
 "values": [false]
 }
 tracks/1/type = "value"
@@ -1028,7 +1243,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("intermission/Camera2:current")
+tracks/6/path = NodePath("Camera2:current")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -1040,7 +1255,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("intermission/AnimatedSprite3D/staff:visible")
+tracks/7/path = NodePath("Player:visible")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -1052,79 +1267,19 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("intermission/Camerathree:current")
+tracks/8/path = NodePath("Player:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("intermission/Camerathree:position")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(76.3293, -21.3079, 5.08348)]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("intermission/Camerathree:rotation")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-0.0916291, -1.39633, 0)]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("Player:visible")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("Player:position")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(80.0006, -3.85275, -0.077)]
-}
-tracks/13/type = "value"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath("intermission/moving_platforms/part1:position")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_v53ed"]
 resource_name = "logbreak"
-length = 7.3
+length = 5.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1132,10 +1287,10 @@ tracks/0/path = NodePath("Camera3D:current")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 3.47333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
+"times": PackedFloat32Array(0, 3.3, 3.36667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [true, true, false]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1156,7 +1311,7 @@ tracks/2/path = NodePath("intermission/AnimatedSprite3D:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 7.23333),
+"times": PackedFloat32Array(0, 5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -1168,10 +1323,10 @@ tracks/3/path = NodePath("intermission/AnimatedSprite3D:animation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.900004, 1.7, 2.7, 5.23333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.900004, 1.7, 2.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [&"front", &"right", &"left", &"front", &"back"]
+"values": [&"front", &"right", &"left", &"front"]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -1180,10 +1335,10 @@ tracks/4/path = NodePath("intermission/break_beam:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 3.23333, 4.95666, 5.06333),
+"times": PackedFloat32Array(0, 3.23333, 4.21, 4.29),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(84.8599, -6.40803, 0.0636299), Vector3(84.8599, -6.40803, 0.0636299), Vector3(84.8599, -24.7517, 0.0636299), Vector3(84.86, -24.247, 0.064)]
+"values": [Vector3(84.8599, -6.40803, 0.0636299), Vector3(84.8599, -6.40803, 0.0636299), Vector3(84.86, -41.583, 0.064), Vector3(84.8599, -40.9186, 0.0636299)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -1192,112 +1347,88 @@ tracks/5/path = NodePath("intermission/AnimatedSprite3D:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 3.23333, 4.96666, 5.07333),
+"times": PackedFloat32Array(0, 3.23333, 4.21, 4.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(84.7404, -4.43696, 0), Vector3(84.7404, -4.43696, 0), Vector3(84.7404, -22.815, 0), Vector3(84.74, -22.22, 0)]
+"values": [Vector3(84.7404, -4.43696, 0), Vector3(84.7404, -4.43696, 0), Vector3(84.7404, -39.658, 0), Vector3(84.7404, -38.9798, 0)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("intermission/Camera2:current")
+tracks/6/path = NodePath("Camera2:current")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 3.47333, 5.4),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0.0666667, 3.33333, 4.99, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [false, true, false]
+"values": [false, true, true, false]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("intermission/AnimatedSprite3D/staff:visible")
+tracks/7/path = NodePath("Player:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 3.97333, 5.38333),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, true, false]
+"times": PackedFloat32Array(5),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(84.189, -39.097, -0.077)]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("intermission/Camerathree:current")
+tracks/8/path = NodePath("Player:visible")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0.0333333, 5.23333, 7.23333),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, true, false]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("intermission/Camerathree:position")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(5.23333, 6.1, 7.23333),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(76.3293, -21.3079, 5.08348), Vector3(76.3293, -21.3079, 5.08348), Vector3(84.906, -21.905, -0.075)]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("intermission/Camerathree:rotation")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(5.23333, 6.1, 7.23333),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(-0.0916291, -1.39633, 0), Vector3(-0.0916291, -1.39633, 0), Vector3(0, -1.5708, 0)]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("Player:position")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(84.9066, -22.6618, -0.0765932)]
-}
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("Player:visible")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(0, 7.23333),
+"times": PackedFloat32Array(0, 5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
-}
-tracks/13/type = "value"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath("intermission/moving_platforms/part1:position")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/keys = {
-"times": PackedFloat32Array(4.23333, 7.23333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(-2.39, -18.272, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2ovki"]
 _data = {
 &"RESET": SubResource("Animation_3fnmf"),
 &"logbreak": SubResource("Animation_v53ed")
+}
+
+[sub_resource type="Animation" id="Animation_ljui8"]
+resource_name = "new_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("break_beam/StaticBody3D2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -0.67, 0), Vector3(0, 0, 0), Vector3(-2.45655, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_wbjlk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("break_beam/StaticBody3D2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3yk7c"]
+_data = {
+&"RESET": SubResource("Animation_wbjlk"),
+&"new_animation": SubResource("Animation_ljui8")
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_c3uv7"]
@@ -1354,332 +1485,18 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1xisg"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_l6t0k"]
+size = Vector3(2.20996, 0.49054, 6.26465)
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_i5nbj"]
-_surfaces = [{
-"aabb": AABB(-1, -1, -9.90981, 2, 2, 19.8196),
-"format": 34896613377,
-"index_count": 84,
-"index_data": PackedByteArray("CAAJAAoACAALAAkACQACAAoACQABAAIACwABAAkABgAKAAIAAgABAAQAAgAEAAYAAQAMAAQACwAMAAEADQAGAAQADQAEAAwADgAKAAYADgAGAA0ACgAOAAAACgAAAAgADQAPAA4ADQAMAA8AAAAOAAUADwAFAA4ACAAAAAMAAwAAAAUACAADAAsADwAHAAUADAAHAA8AAwAFAAcADAALAAcABwALAAMA"),
-"lods": [0.262921, PackedByteArray("AAABAAIAAAADAAEAAgABAAQAAwAEAAEAAgAFAAAAAwAAAAUAAgAEAAYABQACAAYABAADAAcAAwAFAAcABgAEAAcABgAHAAUA")],
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 16,
-"vertex_data": PackedByteArray("AADuKgAAAAD//+4q//8AAP//7ioAAAAAAADuKv//AAD//xDV//8AAAAAENUAAAAA//8Q1QAAAAAAABDV//8AAO4qAAAAAAAAENUAAP//AAAQ1QAAAAAAAO4qAAD//wAAENX/////AAAQ1f//AAAAAO4q//8AAAAA7ir/////AAA=")
-}]
-blend_shape_mode = 0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_ifyry"]
-resource_name = "wooden_beam_Cube"
-_surfaces = [{
-"aabb": AABB(-1, -1, -9.90981, 2, 2, 19.8196),
-"attribute_data": PackedByteArray("SJL/v5t9HxPatv+fgpX//9q2/7+ClR8TSJL/n5t9///8vP//HxOAkUrV/9///52BStX//x8TnYH8vP/f//+Akfy8/3+bfYCRStX/n4KVnYH8vP+fgpWAkUrV/3+bfZ2BbNv/v4KVHxP///+fm33//////7+bfR8TbNv/n4KV///8vP+///+AkUrV/58fE52BStX/v///nYH8vP+fHxOAkfy8/7+ClYCRStX/35t9nYH8vP/fm32AkUrV/7+ClZ2Bapj/v52BHxO4sP+fgJH//7iw/7+AkR8Tapj/n52B///atl2FnYGCldq2oZqAkYKVbNuhmoCRm31s212FnYGbfY7h/7+AkR8T3Pn/n52B///c+f+/nYEfE47h/5+Akf//apj/v52BHxNqmP+fnYH//47h/7+AkR8TjuH/n4CR///c+f+fnYH//9z5/7+dgR8TuLD/n4CR//+4sP+/gJEfE9q2XcWAkYKV2rah2p2BgpVs26HanYGbfWzbXcWAkZt9"),
-"format": 34896613431,
-"index_count": 84,
-"index_data": PackedByteArray("GAAZABoAGAAbABkABAAFAAYABAAHAAUAHAAKAB0AHAAeAAoACgAeAAkAHgAcAAsACwAcAAgAHgALAB8AIAAhACIAIAAjACEAEAARABIAEAATABEAJAADACUAJAAAAAMAJgAPACcAJgAMAA8AKAAOACkAKAANAA4AKgACACsAKgABAAIALAAWAC0ALAAuABYAFgAuABUALgAsABcAFwAsABQALgAXAC8A"),
-"lods": [0.262921, PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACQAIAAsADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFQAUABcA")],
-"material": SubResource("StandardMaterial3D_1xisg"),
-"primitive": 3,
-"uv_scale": Vector4(1.75, 2, 13.3873, 13.3873),
-"vertex_count": 48,
-"vertex_data": PackedByteArray("AADuKgAA/MX//+4q///8xf//7ioAAPzFAADuKv///MUAAO4q//9U1QAAENUAAFTVAAAQ1f//VNUAAO4qAABU1QAA7ir///+///8Q1f///7///+4q////vwAAENX///+///8Q1QAAqukAABDV//+q6QAAENUAAKrp//8Q1f//qun//+4qAABU1f//ENX//1TV//8Q1QAAVNX//+4q//9U1f//7ioAAP//AAAQ1QAA//8AAO4qAAD/////ENUAAP//7ioAAAAA/78Q1QAA////vxDVAAAAAP+/7ioAAP///7/uKgAA////vxDVAAD///+/ENX//////7/uKv//////vxDV//8AAP//7ir////////uKv//AAD//xDV////////7ioAAAAA/MXuKgAA///8xRDV//8AAKrpENX/////qunuKv////+q6e4q//8AAKrpENUAAP///MUQ1QAAAAD8xRDVAAAAAP//7ioAAAAA///uKv//AAD//xDV//8AAP///jn+nP8cAUb/HAFG/jn+nFTVVNVU1VTVVNVU1VTVVNX/////////////////////BDX2FQlqBLUJagS1BDX2FaoqqiqqKqoqqiqqKqoqqir/v/+//7//v/+//7//v/+/AAD/fwAA/38AAP9/AAD/f///////////////////////f/+//3//v/9//7//f/+//jn+nP45/pwENfYVBDX2FQlqBLUJagS1/xwBRv8cAUb/v/+//7//v/+//7//v/+/")
-}]
-blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_i5nbj")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cotn6"]
-albedo_color = Color(0.707967, 0.707967, 0.707967, 1)
-albedo_texture = ExtResource("32_wbjlk")
-normal_enabled = true
-normal_texture = ExtResource("33_3yk7c")
-uv1_scale = Vector3(-0.98, 0.11, -0.105)
-uv1_offset = Vector3(-0.055, -1.685, 0.6)
-uv1_triplanar = true
-uv1_triplanar_sharpness = 10.5561
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_i5nbj"]
-size = Vector3(8.78223, 0.889648, 8.51733)
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hoajf"]
-load_path = "res://.godot/imported/rusty_metal_04_diff_1k.jpg-b80f5652d8e5b8d2fae59b5f5b5ee169.s3tc.ctex"
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ngbsg"]
-resource_name = "Material"
-cull_mode = 2
-albedo_color = Color(0.948728, 0.789142, 0.698222, 1)
-albedo_texture = SubResource("CompressedTexture2D_hoajf")
-roughness = 0.360656
-uv1_scale = Vector3(-0.14, 0.41, 0.045)
-uv1_offset = Vector3(5.805, 4.215, 0.52)
-uv1_triplanar = true
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_hoajf"]
-_surfaces = [{
-"aabb": AABB(-0.250271, -0.34226, -5.02749, 0.500543, 0.406562, 10.0552),
-"format": 34359742465,
-"index_count": 60,
-"index_data": PackedByteArray("CAABAAIAAgABAAUAAgAFAAYACQAFAAEACAAJAAEACgAGAAUACQAKAAUACwACAAYACwAIAAIACgALAAYACAADAAkACgAEAAsACwAAAAgACAAAAAMACwAEAAAACQADAAcACQAHAAoABwADAAAACgAHAAQABwAAAAQA"),
-"lods": [0.111637, PackedByteArray("AAABAAIAAAADAAEABAAAAAIAAwAFAAEAAgABAAUABAACAAYAAgAFAAYABwAAAAQABwADAAAABwAEAAYAAwAHAAUABwAGAAUA")],
-"name": "Material",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 12,
-"vertex_data": PackedByteArray("lSOAvr48r77U4qBAM0LLPX+wgz3U4qBAM0LLvX+wgz3U4qBAlSOAPr48r77U4qBAlSOAvr48r7424aDAM0LLPX+wgz024aDAM0LLvX+wgz024aDAlSOAPr48r7424aDAM0LLvUbigL7U4qBAM0LLPUbigL7U4qBAM0LLPUbigL424aDAM0LLvUbigL424aDA")
-}]
-blend_shape_mode = 0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_7jij8"]
-resource_name = "rail_Cube"
-_surfaces = [{
-"aabb": AABB(-0.250271, -0.34226, -5.02749, 0.500543, 0.406562, 10.0552),
-"attribute_data": PackedByteArray("AADAPgAAgD4AACA/AAAAAAAAID8AAIA+AADAPgAAAAAAAMA+AACAPwAAID8AAEA/AAAgPwAAgD8AAMA+AABAPwAAwD4AAAA/AAAgPwAAgD4AACA/AAAAPwAAwD4AAIA+AADAPgAAQD8AACA/AAAAPwAAID8AAEA/AADAPgAAAD8AAAA+AAAAPwAAwD4AAIA+AADAPgAAAD8AAAA+AACAPgAAID8AAIA+AAAgPwAAQD8AACA/AAAAPwAAID8AAIA/AADAPgAAgD4AAMA+AAAAAAAAwD4AAIA/AADAPgAAQD8AAMA+AACAPwAAwD4AAEA/AADAPgAAAD8AAMA+AACAPgAAwD4AAEA/AADAPgAAAD8AAMA+AAAAPwAAwD4AAIA+"),
-"format": 34359742487,
-"index_count": 60,
-"index_data": PackedByteArray("GAABAAIAGAAZAAEAGAADABkAGAAAAAMAGgAFAAYAGgAbAAUAHAAHAB0AHAAEAAcAHgAJAAoAHgAfAAkAIAANAA4AIAAhAA0AIAAPACEAIAAMAA8AEAARABIAEAATABEAIgALACMAIgAIAAsAFAAVABYAFAAXABUA"),
-"lods": [0.111637, PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA")],
-"material": SubResource("StandardMaterial3D_ngbsg"),
-"name": "Material",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 36,
-"vertex_data": PackedByteArray("lSOAvr48r77U4qBAM0LLPX+wgz3U4qBAM0LLvX+wgz3U4qBAlSOAPr48r77U4qBAlSOAPr48r77U4qBAM0LLPX+wgz024aDAM0LLPX+wgz3U4qBAlSOAPr48r7424aDAlSOAvr48r7424aDAM0LLvX+wgz3U4qBAM0LLvX+wgz024aDAlSOAvr48r77U4qBAlSOAPr48r7424aDAM0LLvX+wgz024aDAM0LLPX+wgz024aDAlSOAvr48r7424aDAlSOAPr48r7424aDAlSOAvr48r77U4qBAlSOAvr48r7424aDAlSOAPr48r77U4qBAM0LLvX+wgz3U4qBAM0LLPX+wgz024aDAM0LLvX+wgz024aDAM0LLPX+wgz3U4qBAM0LLvUbigL7U4qBAM0LLPUbigL7U4qBAM0LLPUbigL7U4qBAM0LLPUbigL424aDAM0LLPUbigL7U4qBAM0LLPUbigL424aDAM0LLvUbigL424aDAM0LLvUbigL7U4qBAM0LLPUbigL424aDAM0LLvUbigL424aDAM0LLvUbigL424aDAM0LLvUbigL7U4qBA/////////7///////3//////////f////////////78FUPkv////vwAA/3//f///AAD/f/9///8FUPkv////v/mv+S////+/////f/9///////9//3////mv+S////+//3//f////z//f/9//3////9//3//f////3//f////z//f///AAD/v/9///8AAP+//3///wAA/7//f///AAD/v/9/AAD///+//38AAP///7//fwAA////v/9/AAD///+///////9//////////3///wAA/3//f///AAD/f/9///8FUPkv////vwVQ+S////+/////f/9///////9//3////9//3//f////3//f/9////5r/kv////v/mv+S////+/")
-}]
-blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_hoajf")
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_hoajf"]
-size = Vector3(10.0859, 0.139465, 1)
-
-[sub_resource type="Animation" id="Animation_c3uv7"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatableBody3D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_2ovki"]
-resource_name = "new_animation"
-length = 4.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatableBody3D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2, 4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, -0.87, 0), Vector3(0, 0, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ljui8"]
+[sub_resource type="Curve3D" id="Curve3D_c3uv7"]
 _data = {
-&"RESET": SubResource("Animation_c3uv7"),
-&"new_animation": SubResource("Animation_2ovki")
+"points": PackedVector3Array(0, 0, 0, 4.71, 0, 0, 0, 0, 0, 32.585, 22.125, -19.725, 0, 0, 0, -43.7432, 35.0986, 20.4713),
+"tilts": PackedFloat32Array(0, 0)
 }
+point_count = 2
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wbjlk"]
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_p513a"]
-_surfaces = [{
-"aabb": AABB(-1, -1, -9.90981, 2, 2, 19.8196),
-"format": 34896613377,
-"index_count": 84,
-"index_data": PackedByteArray("CAAJAAoACAALAAkACQACAAoACQABAAIACwABAAkABgAKAAIAAgABAAQAAgAEAAYAAQAMAAQACwAMAAEADQAGAAQADQAEAAwADgAKAAYADgAGAA0ACgAOAAAACgAAAAgADQAPAA4ADQAMAA8AAAAOAAUADwAFAA4ACAAAAAMAAwAAAAUACAADAAsADwAHAAUADAAHAA8AAwAFAAcADAALAAcABwALAAMA"),
-"lods": [0.262921, PackedByteArray("AAABAAIAAAADAAEAAgABAAQAAwAEAAEAAgAFAAAAAwAAAAUAAgAEAAYABQACAAYABAADAAcAAwAFAAcABgAEAAcABgAHAAUA")],
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 16,
-"vertex_data": PackedByteArray("AADuKgAAAAD//+4q//8AAP//7ioAAAAAAADuKv//AAD//xDV//8AAAAAENUAAAAA//8Q1QAAAAAAABDV//8AAO4qAAAAAAAAENUAAP//AAAQ1QAAAAAAAO4qAAD//wAAENX/////AAAQ1f//AAAAAO4q//8AAAAA7ir/////AAA=")
-}]
-blend_shape_mode = 0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_3yk7c"]
-resource_name = "wooden_beam_Cube"
-_surfaces = [{
-"aabb": AABB(-1, -1, -9.90981, 2, 2, 19.8196),
-"attribute_data": PackedByteArray("SJL/v5t9HxPatv+fgpX//9q2/7+ClR8TSJL/n5t9///8vP//HxOAkUrV/9///52BStX//x8TnYH8vP/f//+Akfy8/3+bfYCRStX/n4KVnYH8vP+fgpWAkUrV/3+bfZ2BbNv/v4KVHxP///+fm33//////7+bfR8TbNv/n4KV///8vP+///+AkUrV/58fE52BStX/v///nYH8vP+fHxOAkfy8/7+ClYCRStX/35t9nYH8vP/fm32AkUrV/7+ClZ2Bapj/v52BHxO4sP+fgJH//7iw/7+AkR8Tapj/n52B///atl2FnYGCldq2oZqAkYKVbNuhmoCRm31s212FnYGbfY7h/7+AkR8T3Pn/n52B///c+f+/nYEfE47h/5+Akf//apj/v52BHxNqmP+fnYH//47h/7+AkR8TjuH/n4CR///c+f+fnYH//9z5/7+dgR8TuLD/n4CR//+4sP+/gJEfE9q2XcWAkYKV2rah2p2BgpVs26HanYGbfWzbXcWAkZt9"),
-"format": 34896613431,
-"index_count": 84,
-"index_data": PackedByteArray("GAAZABoAGAAbABkABAAFAAYABAAHAAUAHAAKAB0AHAAeAAoACgAeAAkAHgAcAAsACwAcAAgAHgALAB8AIAAhACIAIAAjACEAEAARABIAEAATABEAJAADACUAJAAAAAMAJgAPACcAJgAMAA8AKAAOACkAKAANAA4AKgACACsAKgABAAIALAAWAC0ALAAuABYAFgAuABUALgAsABcAFwAsABQALgAXAC8A"),
-"lods": [0.262921, PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACQAIAAsADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFQAUABcA")],
-"material": SubResource("StandardMaterial3D_wbjlk"),
-"primitive": 3,
-"uv_scale": Vector4(1.75, 2, 13.3873, 13.3873),
-"vertex_count": 48,
-"vertex_data": PackedByteArray("AADuKgAA/MX//+4q///8xf//7ioAAPzFAADuKv///MUAAO4q//9U1QAAENUAAFTVAAAQ1f//VNUAAO4qAABU1QAA7ir///+///8Q1f///7///+4q////vwAAENX///+///8Q1QAAqukAABDV//+q6QAAENUAAKrp//8Q1f//qun//+4qAABU1f//ENX//1TV//8Q1QAAVNX//+4q//9U1f//7ioAAP//AAAQ1QAA//8AAO4qAAD/////ENUAAP//7ioAAAAA/78Q1QAA////vxDVAAAAAP+/7ioAAP///7/uKgAA////vxDVAAD///+/ENX//////7/uKv//////vxDV//8AAP//7ir////////uKv//AAD//xDV////////7ioAAAAA/MXuKgAA///8xRDV//8AAKrpENX/////qunuKv////+q6e4q//8AAKrpENUAAP///MUQ1QAAAAD8xRDVAAAAAP//7ioAAAAA///uKv//AAD//xDV//8AAP///jn+nP8cAUb/HAFG/jn+nFTVVNVU1VTVVNVU1VTVVNX/////////////////////BDX2FQlqBLUJagS1BDX2FaoqqiqqKqoqqiqqKqoqqir/v/+//7//v/+//7//v/+/AAD/fwAA/38AAP9/AAD/f///////////////////////f/+//3//v/9//7//f/+//jn+nP45/pwENfYVBDX2FQlqBLUJagS1/xwBRv8cAUb/v/+//7//v/+//7//v/+/")
-}]
-blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_p513a")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ajpbf"]
-albedo_color = Color(0.560955, 0.560955, 0.560955, 1)
-albedo_texture = ExtResource("32_wbjlk")
-normal_enabled = true
-normal_texture = ExtResource("33_3yk7c")
-uv1_scale = Vector3(0.665, 7.025, 0)
-uv1_offset = Vector3(-0.39, -0.235, 0)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_p0857"]
-size = Vector3(2, 1.99219, 19.7478)
-
-[sub_resource type="Animation" id="Animation_wbjlk"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("smallblock:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0.22, 1.035, -2.805)]
-}
-
-[sub_resource type="Animation" id="Animation_ljui8"]
-resource_name = "new_animation"
-length = 1.55
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("smallblock:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.55),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0.22, 1.035, -2.805), Vector3(-2.23075, -11.4221, 0.91731)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("smallblock:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1.55),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(-0.87818, 0, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_3yk7c"]
-_data = {
-&"RESET": SubResource("Animation_wbjlk"),
-&"new_animation": SubResource("Animation_ljui8")
-}
-
-[sub_resource type="Animation" id="Animation_l6t0k"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../smallblock/StaticBody3D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-0.142639, -1.47216, 2.50171)]
-}
-
-[sub_resource type="Animation" id="Animation_3yk7c"]
-resource_name = "new_animation"
-length = 4.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../smallblock/StaticBody3D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2, 4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(-0.142641, 0, 1.28019), Vector3(-0.142639, -1.47216, 2.50171), Vector3(-0.142641, 0, 1.28019)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_l6t0k"]
-_data = {
-&"RESET": SubResource("Animation_l6t0k"),
-&"new_animation": SubResource("Animation_3yk7c")
-}
-
-[sub_resource type="Animation" id="Animation_3t4hw"]
-length = 0.001
-
-[sub_resource type="Animation" id="Animation_dc0v1"]
-resource_name = "new_animation"
-length = 1.55
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("bigblock:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.55),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(6.32, -19.754, -3.68)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_3t4hw"]
-_data = {
-&"RESET": SubResource("Animation_3t4hw"),
-&"new_animation": SubResource("Animation_dc0v1")
-}
-
-[sub_resource type="Animation" id="Animation_nk3pu"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("bigblock/AnimatableBody3D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-8.325, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_if3bc"]
-resource_name = "new_animation"
-length = 5.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("bigblock/AnimatableBody3D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2.5, 5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(-8.325, 0, 0), Vector3(0, 0, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_nk3pu"]
-_data = {
-&"RESET": SubResource("Animation_nk3pu"),
-&"new_animation": SubResource("Animation_if3bc")
-}
+[sub_resource type="BoxShape3D" id="BoxShape3D_ljui8"]
+size = Vector3(2.66736, 1, 2.13513)
 
 [node name="level_1_3d" type="Node3D"]
 script = ExtResource("1_ljo6s")
@@ -1697,586 +1514,6 @@ transform = Transform3D(1, 0, 0, 0, 0.0802861, 0.996772, 0, -0.996772, 0.0802861
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_i53j8")
-
-[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
-visible = false
-material_override = SubResource("StandardMaterial3D_erloq")
-
-[node name="rail_right" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.9058, 0.584507, 1.0787)
-size = Vector3(8.00513, 0.222656, 0.138672)
-
-[node name="rail_left" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.9062, 0.584507, -1.06705)
-size = Vector3(7.99584, 0.222656, 0.138672)
-
-[node name="bridge platform" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.908, 0, 0)
-size = Vector3(8, 1, 7.93726)
-
-[node name="rail_right16" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(41.999, 0, 0, 0, 1, 0, 0, 0, 1, 116.957, 0.584507, -37.7318)
-size = Vector3(8.00513, 0.222656, 0.138672)
-
-[node name="rail_left17" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(41.999, 0, 0, 0, 1, 0, 0, 0, 1, 116.958, 0.584507, -39.8776)
-size = Vector3(7.99584, 0.222656, 0.138672)
-
-[node name="bridge platform27" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(41.999, 0, 0, 0, 1, 0, 0, 0, 1, 119.581, 0, -38.8105)
-size = Vector3(8, 1, 7.93726)
-
-[node name="rail_right17" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(41.999, 0, 0, 0, 1, 0, 0, 0, 1, 116.957, 0.584507, -25.5229)
-size = Vector3(8.00513, 0.222656, 0.138672)
-
-[node name="rail_left18" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(41.999, 0, 0, 0, 1, 0, 0, 0, 1, 116.958, 0.584507, -27.6687)
-size = Vector3(7.99584, 0.222656, 0.138672)
-
-[node name="bridge platform28" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(41.999, 0, 0, 0, 1, 0, 0, 0, 1, 119.581, 0, -26.6016)
-size = Vector3(8, 1, 7.93726)
-
-[node name="rail_right2" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.1827, 0.584507, 1.0787)
-size = Vector3(8.00513, 0.222656, 0.138672)
-
-[node name="rail_left2" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.1831, 0.584507, -1.06705)
-size = Vector3(7.99584, 0.222656, 0.138672)
-
-[node name="bridge platform2" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.7421, 0, 0)
-size = Vector3(8.88574, 1, 7.93726)
-
-[node name="rail_right3" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.3386, 0.584507, 1.0787)
-size = Vector3(8.00513, 0.222656, 0.138672)
-
-[node name="rail_left3" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.339, 0.584507, -1.06705)
-size = Vector3(7.99584, 0.222656, 0.138672)
-
-[node name="bridge platform3" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.3408, 0, 0)
-size = Vector3(8, 1, 7.93726)
-
-[node name="bridge platform10" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.2711, 0, 3.18085)
-size = Vector3(6.42444, 1, 1.57556)
-
-[node name="bridge platform14" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.244, 0, 3.09402)
-size = Vector3(21.2884, 1, 1.74921)
-
-[node name="bridge platform11" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 0.955926, -0.293607, 0, 0.293607, 0.955926, 59.9442, -4.21019, -1.1908)
-size = Vector3(5.07837, 1, 5.22711)
-
-[node name="rail_right4" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.8451, 0.584507, 1.0787)
-size = Vector3(8.00513, 0.222656, 0.138672)
-
-[node name="rail_left4" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.8455, 0.584507, -1.06705)
-size = Vector3(7.99584, 0.222656, 0.138672)
-
-[node name="rail_right10" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 0.945496, -0.325634, 0, 0.325634, 0.945496, 60.0501, -4.29757, 1.02022)
-size = Vector3(8.00513, 0.222656, 0.138672)
-
-[node name="rail_left10" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 0.945496, -0.325634, 0, 0.325634, 0.945496, 60.0505, -3.59884, -1.00858)
-size = Vector3(7.99584, 0.222656, 0.138672)
-
-[node name="bridge platform4" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.8473, 0, 0)
-size = Vector3(8, 1, 7.93726)
-
-[node name="rail_right11" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.498921, -0.234643, 0, 0.10829, 1.08107, 0, 0, 0, 1, 79.567, -5.99876, 1.0787)
-size = Vector3(8.00513, 0.222656, 0.138672)
-
-[node name="rail_left11" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.498921, -0.234643, 0, 0.10829, 1.08107, 0, 0, 0, 1, 79.5672, -5.99868, -1.06705)
-size = Vector3(7.99584, 0.222656, 0.138672)
-
-[node name="bridge platform12" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.498921, -0.234643, 0, 0.10829, 1.08107, 0, 0, 0, 1, 79.63, -6.56949, 0)
-size = Vector3(8, 1, 7.93726)
-
-[node name="rail_right8" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 142.863, 0.584507, 1.0787)
-size = Vector3(10.8791, 0.222656, 0.138672)
-
-[node name="rail_right14" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.99474, -0.100205, -0.0212363, 0.100183, 0.994967, -0.00213876, 0.0213438, -5.82077e-11, 0.999772, 134.376, 0.261901, 1.03822)
-size = Vector3(6.26786, 0.222656, 0.138672)
-
-[node name="rail_right15" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.990637, -0.136382, -0.00619543, 0.136384, 0.990656, -6.79453e-05, 0.00614681, -0.000777647, 0.999981, 134.771, 0.164623, -1.1158)
-size = Vector3(6.20905, 0.222656, 0.138672)
-
-[node name="rail_left8" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 143.057, 0.584507, -1.06705)
-size = Vector3(10.4828, 0.222656, 0.138672)
-
-[node name="bridge platform8" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 144.303, 0, 0)
-size = Vector3(8, 1, 7.93726)
-
-[node name="rail_right9" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 162.975, 0.584507, 1.0787)
-size = Vector3(8.00513, 0.222656, 0.138672)
-
-[node name="rail_left9" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 162.975, 0.584507, -1.06705)
-size = Vector3(7.99584, 0.222656, 0.138672)
-
-[node name="bridge platform9" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 162.977, 0, 0)
-size = Vector3(8, 1, 7.93726)
-
-[node name="rail_right7" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.669246, -0.193635, 0, 0.131117, 0.973848, 0.121142, -0.0160015, -0.118849, 0.992635, 125.983, -1.11428, 1.14272)
-size = Vector3(16.1871, 0.222656, 0.138672)
-
-[node name="rail_left7" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.669246, -0.193635, 0, 0.131117, 0.973848, 0.121142, -0.0160015, -0.118849, 0.992635, 126.116, -1.34824, -0.990404)
-size = Vector3(16.8469, 0.222656, 0.138672)
-
-[node name="rail_left13" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.937282, -0.348572, 0, 0.346047, 0.930494, 0.120137, -0.0418763, -0.112602, 0.992757, 117.444, -3.61064, -0.692389)
-size = Vector3(6.79188, 0.222656, 0.138672)
-
-[node name="rail_left15" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.937282, -0.348572, 0, 0.346047, 0.930494, 0.120137, -0.0418763, -0.112602, 0.992757, 117.472, -3.34581, 1.41096)
-size = Vector3(6.85053, 0.222656, 0.138672)
-
-[node name="rail_left14" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.972529, -0.229046, 0.0415314, 0.222181, 0.966576, 0.127934, -0.069446, -0.115192, 0.990913, 112.166, -5.27041, -0.387638)
-size = Vector3(4.70226, 0.222656, 0.138672)
-
-[node name="rail_left16" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.972529, -0.229046, 0.0415314, 0.222181, 0.966576, 0.127934, -0.069446, -0.115192, 0.990913, 112.161, -4.97516, 1.67173)
-size = Vector3(4.68618, 0.222656, 0.138672)
-
-[node name="bridge platform7" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.669246, -0.193635, 0, 0.131117, 0.973848, 0.121142, -0.0160015, -0.118849, 0.992635, 127.367, -1.56518, 0.11104)
-size = Vector3(9.47314, 1, 7.93726)
-
-[node name="bridge platform15" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.981074, -0.193635, 0, 0.192209, 0.973848, 0.121142, -0.0234573, -0.118849, 0.992635, 122.435, -2.09534, 0.175742)
-size = Vector3(0.612579, 0.137817, 3.66016)
-
-[node name="bridge platform22" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.981074, -0.193635, -0.00046976, 0.192209, 0.973551, 0.123504, -0.0234573, -0.121257, 0.992344, 131.654, -0.261409, -0.0481388)
-size = Vector3(0.612579, 0.137817, 3.66016)
-
-[node name="bridge platform23" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.981074, -0.193435, 0.00880412, 0.192209, 0.978349, 0.0767379, -0.0234573, -0.0735933, 0.997012, 133.355, -0.0290865, -0.0810392)
-size = Vector3(0.612579, 0.137817, 3.66016)
-
-[node name="bridge platform24" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.981074, -0.193243, 0.0123102, 0.192209, 0.97958, 0.0589849, -0.0234573, -0.0555024, 0.998183, 135.156, 0.151504, -0.111342)
-size = Vector3(0.612579, 0.137817, 3.66016)
-
-[node name="bridge platform25" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.984758, -0.172846, 0.0193999, 0.172394, 0.98476, 0.0229642, -0.0230736, -0.0192698, 0.999548, 137.152, 0.397616, -0.15244)
-size = Vector3(0.612579, 0.137817, 3.66016)
-
-[node name="bridge platform26" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.999773, 0.00887052, 0.0193874, -0.00928805, 0.999725, 0.0215509, -0.0191909, -0.0217261, 0.99958, 139.135, 0.463635, -0.192427)
-size = Vector3(0.612579, 0.137817, 3.66016)
-
-[node name="bridge platform16" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.940371, -0.34015, 0, 0.337645, 0.933446, 0.121142, -0.0412063, -0.113918, 0.992635, 119.968, -2.67919, 0.246996)
-size = Vector3(0.612579, 0.137817, 3.66016)
-
-[node name="bridge platform17" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.940371, -0.34015, 0, 0.337645, 0.933446, 0.121142, -0.0412063, -0.113918, 0.992635, 117.832, -3.44639, 0.340624)
-size = Vector3(0.612579, 0.137817, 3.66016)
-
-[node name="bridge platform18" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.940371, -0.34015, 0, 0.337645, 0.933446, 0.121142, -0.0412063, -0.113918, 0.992635, 115.449, -4.3018, 0.445019)
-size = Vector3(0.612579, 0.137817, 3.66016)
-
-[node name="bridge platform19" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.973303, -0.229481, -0.00439424, 0.227833, 0.963639, 0.139616, -0.0278048, -0.13689, 0.990196, 113.609, -4.9652, 0.526032)
-size = Vector3(0.612579, 0.137817, 3.66016)
-
-[node name="bridge platform20" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.973303, -0.229481, -0.00439424, 0.227833, 0.963639, 0.139616, -0.0278048, -0.13689, 0.990196, 110.956, -5.58631, 0.601832)
-size = Vector3(0.612579, 0.137817, 3.66016)
-
-[node name="bridge platform21" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.998597, -0.0525903, 0.00618207, 0.0521846, 0.997196, 0.0536387, -0.00898561, -0.0532408, 0.998541, 109.009, -5.88098, 0.661188)
-size = Vector3(0.612579, 0.137817, 3.66016)
-
-[node name="rail_right5" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.534394, 0.362, 0, -0.194155, 0.996372, 0, 0, 0, 1, 85.7271, 0.752676, 1.0787)
-size = Vector3(8.00513, 0.222656, 0.138672)
-
-[node name="rail_left5" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.534394, 0.362, 0, -0.194155, 0.996372, 0, 0, 0, 1, 85.7276, 0.752676, -1.06705)
-size = Vector3(7.99584, 0.222656, 0.138672)
-
-[node name="bridge platform5" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.534394, 0.362, 0, -0.194155, 0.996372, 0, 0, 0, 1, 85.7298, 0.168169, 0)
-size = Vector3(8, 1, 7.93726)
-
-[node name="rail_right12" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.630571, 0.0230364, -0.042037, -0.0131658, 0.858336, 0.131648, 0.0285142, -0.113115, 0.990404, 90.2454, -5.56479, 1.08847)
-size = Vector3(8.00513, 0.222656, 0.138672)
-
-[node name="rail_left12" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.630571, 0.0230364, -0.042037, -0.0131658, 0.858336, 0.131648, 0.0285142, -0.113115, 0.990404, 90.2355, -5.68904, -1.05366)
-size = Vector3(7.99584, 0.222656, 0.138672)
-
-[node name="bridge platform13" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.630571, 0.0230364, -0.042037, -0.0131658, 0.858336, 0.131648, 0.0285142, -0.113115, 0.990404, 90.3874, -6.19207, 0.0436726)
-size = Vector3(8, 1, 7.93726)
-
-[node name="rail_right6" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.716026, 0, 0, 0, 0.943171, -0.246678, 0, 0.240078, 0.969098, 102.134, -6.30272, 1.81807)
-size = Vector3(8.44006, 0.222656, 0.138672)
-
-[node name="rail_right13" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.705853, -0.158269, 0.0420581, 0.120268, 0.930616, -0.239736, -0.000880707, 0.236882, 0.969927, 107.473, -5.9003, 1.83512)
-size = Vector3(7.10477, 0.222656, 0.138672)
-
-[node name="rail_left6" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.716026, 0, 0, 0, 0.943171, -0.246678, 0, 0.240078, 0.969098, 104.576, -5.77329, -0.261339)
-size = Vector3(15.2498, 0.222656, 0.138672)
-
-[node name="bridge platform6" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.716026, 0, 0, 0, 0.943171, -0.246678, 0, 0.240078, 0.969098, 102.135, -6.34951, -0.241768)
-size = Vector3(8, 1, 6.12537)
-
-[node name="forest path" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.39747, 0, 0)
-size = Vector3(27.223, 1, 4.21899)
-
-[node name="forest path2" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 203.052, 0, 9.05243)
-size = Vector3(72.4518, 1, 55.5844)
-
-[node name="forest path4" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 207.199, 14.5692, -48.8139)
-size = Vector3(27.223, 1, 2.70483)
-
-[node name="forest path28" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 207.199, 28.3981, -101.653)
-size = Vector3(27.223, 1, 46.9003)
-
-[node name="forest path34" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 229.526, 28.3981, -82.0579)
-size = Vector3(17.3994, 1, 7.70993)
-
-[node name="forest path38" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 231.254, 28.3981, -88.088)
-size = Vector3(4.95021, 1, 0.946762)
-
-[node name="forest path39" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 231.254, 28.3981, -92.851)
-size = Vector3(4.95021, 1, 0.946762)
-
-[node name="forest path41" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 231.254, 24.0557, -92.851)
-size = Vector3(11.8984, 1, 25.1953)
-material = SubResource("StandardMaterial3D_joxi0")
-
-[node name="forest path40" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 231.254, 28.3981, -97.1175)
-size = Vector3(4.95021, 1, 0.946762)
-
-[node name="forest path35" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 232.028, 28.3981, -104.835)
-size = Vector3(12.2018, 1, 7.70993)
-
-[node name="forest path37" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 264.111, 41.9227, -104.835)
-size = Vector3(16.11, 1, 7.70993)
-
-[node name="forest path36" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.8034, -0.59544, 0, 0.59544, 0.8034, 0, 0, 0, 1, 247.042, 35.0349, -104.835)
-size = Vector3(23.3881, 1, 7.70993)
-
-[node name="forest path22" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 207.199, 14.5692, -44.0221)
-size = Vector3(27.223, 1, 2.70483)
-
-[node name="forest path23" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 207.199, 14.5692, -38.8854)
-size = Vector3(27.223, 1, 2.70483)
-
-[node name="forest path24" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 207.199, 14.5692, -33.8954)
-size = Vector3(27.223, 1, 2.70483)
-
-[node name="forest path25" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 207.199, 14.5692, -27.9061)
-size = Vector3(27.223, 1, 2.70483)
-
-[node name="forest path26" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 207.199, 14.5692, -23.81)
-size = Vector3(27.223, 1, 2.70483)
-
-[node name="forest path27" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 207.199, 14.5692, -20.193)
-size = Vector3(27.223, 1, 2.70483)
-
-[node name="forest path20" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 276.654, 47.8725, -43.7971)
-size = Vector3(41.5939, 1, 76.3882)
-
-[node name="forest path15" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 0.897035, -0.44196, 0, 0.44196, 0.897035, 207.199, 21.4676, -64.417)
-size = Vector3(27.223, 1, 31.5435)
-
-[node name="forest path5" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 193.865, 6.95675, -19.3251)
-size = Vector3(53.8913, 1, 16.3185)
-
-[node name="forest path16" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(-4.06204e-08, -0.929287, -0.369357, 1.61451e-08, 0.369357, -0.929287, 1, -4.37114e-08, 1.61213e-15, 225.178, 28.7603, -1.60149)
-size = Vector3(151.339, 1, 29.0738)
-material = SubResource("StandardMaterial3D_grgy5")
-
-[node name="forest path32" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(-4.06204e-08, -0.929287, -0.369357, 1.61451e-08, 0.369357, -0.929287, 1, -4.37114e-08, 1.61213e-15, 227.487, 34.5683, -107.821)
-size = Vector3(39.8131, 1, 16.5739)
-material = SubResource("StandardMaterial3D_grgy5")
-
-[node name="forest path33" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(-4.06204e-08, -0.929287, -0.369357, 1.61451e-08, 0.369357, -0.929287, 1, -4.37114e-08, 1.61213e-15, 228.791, 37.8504, -82.9165)
-size = Vector3(12.5244, 1, 9.51011)
-material = SubResource("StandardMaterial3D_grgy5")
-
-[node name="forest path30" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(-4.16107e-08, -0.951943, -0.306277, 1.33878e-08, 0.306277, -0.951943, 1, -4.37114e-08, 1.57352e-15, 188.863, 5.68464, -88.3751)
-size = Vector3(73.9004, 1, 22.6586)
-material = SubResource("StandardMaterial3D_grgy5")
-
-[node name="forest path31" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(-4.16107e-08, -0.951943, -0.306277, 1.33878e-08, 0.306277, -0.951943, 1, -4.37114e-08, 1.57352e-15, 194.425, 22.7938, -98.0962)
-size = Vector3(54.458, 1, 13.2616)
-material = SubResource("StandardMaterial3D_grgy5")
-
-[node name="forest path19" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(-9.46013e-09, -0.216423, -0.9763, 4.26754e-08, 0.9763, -0.216423, 1, -4.37114e-08, 1.61213e-15, 243.218, 44.6956, -67.1428)
-size = Vector3(122.858, 1, 27.3809)
-material = SubResource("StandardMaterial3D_grgy5")
-
-[node name="forest path14" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 194.025, 6.95675, -50.5197)
-size = Vector3(53.5714, 1, 16.3185)
-
-[node name="forest path3" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 190.085, 1.38344, 0.949432)
-size = Vector3(3.6001, 1.91632, 2.56683)
-
-[node name="forest path8" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 194.832, 2.43164, 0.949432)
-size = Vector3(2.35657, 4.01273, 2.56683)
-
-[node name="forest path9" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 199.096, 2.60552, -2.89014)
-size = Vector3(3.6001, 4.36048, 2.56683)
-
-[node name="forest path10" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 202.993, 3.17767, -7.33239)
-size = Vector3(3.6001, 5.50477, 2.56683)
-
-[node name="forest path12" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 209.811, 3.78731, -4.7576)
-size = Vector3(3.6001, 6.72406, 2.56683)
-
-[node name="forest path13" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 215.772, 4.13991, -7.7342)
-size = Vector3(3.6001, 7.42926, 2.56683)
-
-[node name="forest path11" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 0.681168, 0.732127, 0, -0.732127, 0.681168, 218.93, 11.1793, -15.9728)
-size = Vector3(3.6001, 9.24115, 2.56683)
-
-[node name="forest path6" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.59311, 4.02967, 2.62185)
-size = Vector3(1.52051, 7.20877, 40.8825)
-material = SubResource("StandardMaterial3D_irmad")
-
-[node name="forest path17" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 0.88592, -0.463837, 0, 0.463837, 0.88592, 196.655, 23.8678, -63.8284)
-size = Vector3(0.943848, 6.05997, 26.2682)
-material = SubResource("StandardMaterial3D_irmad")
-
-[node name="forest path18" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 0.88592, -0.463837, 0, 0.463837, 0.88592, 216.086, 23.8678, -63.8284)
-size = Vector3(0.943848, 6.05997, 26.2682)
-material = SubResource("StandardMaterial3D_irmad")
-
-[node name="forest path7" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.0173128, 0, -0.99985, 0, 1, 0, 0.99985, 0, 0.0173128, 196.771, 8.09646, 22.0828)
-size = Vector3(3.90625, 15.3423, 55.7142)
-material = SubResource("StandardMaterial3D_irmad")
-
-[node name="forest path29" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.0173128, 0, -0.99985, 0, 1, 0, 0.99985, 0, 0.0173128, 210.722, 29.8024, -86.836)
-size = Vector3(1.00391, 8.2956, 31.6415)
-material = SubResource("StandardMaterial3D_irmad")
-
-[node name="beamvertical" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.3096, -15.3806, -3.3965)
-size = Vector3(1.07764, 31.7612, 1)
-
-[node name="beamvertical3" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.3608, -5.11847, -3.3965)
-size = Vector3(1.07764, 11.2369, 1)
-
-[node name="beamvertical5" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 73.2436, -4.47476, -3.3965)
-size = Vector3(1.07764, 9.94952, 1)
-
-[node name="beamvertical6" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 96.4172, -6.61719, -0.080595)
-size = Vector3(1.07764, 7.92213, 1)
-
-[node name="beamvertical8" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 107.519, -6.61719, -0.080595)
-size = Vector3(1.07764, 7.92213, 1)
-
-[node name="beamvertical7" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 84.7657, -6.61719, 0.00967216)
-size = Vector3(1.07764, 7.71321, 1)
-
-[node name="beamvertical4" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.9295, -7.02586, -3.33999)
-size = Vector3(1.07764, 7.13736, 1)
-
-[node name="beam2v" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.3096, -15.2529, 3.39653)
-size = Vector3(1.07764, 31.5059, 1)
-
-[node name="beam2v3" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.3098, -5.12701, 3.39653)
-size = Vector3(1.07764, 11.254, 1)
-
-[node name="beam2v4" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.9612, -5.58037, 3.39653)
-size = Vector3(1.07764, 10.3473, 1)
-
-[node name="beam2v5" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 73.2773, -4.86219, 3.39653)
-size = Vector3(1.07764, 8.91096, 1)
-
-[node name="beam2v6" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.6206, -3.411, 3.39653)
-size = Vector3(1.07764, 7.34664, 1)
-
-[node name="beam2v11" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.983309, -0.143405, -0.111976, -7.12754e-09, 0.615441, -0.788183, 0.181944, 0.775027, 0.605169, 84.9477, -2.63758, 0.000948042)
-size = Vector3(1.07764, 8.53517, 1)
-
-[node name="beam2v8" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96.1937, -3.411, 3.39653)
-size = Vector3(1.07764, 7.34664, 1)
-
-[node name="beam2v9" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 107.475, -3.411, 3.39653)
-size = Vector3(1.07764, 7.34664, 1)
-
-[node name="beam2v10" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 116.291, -3.411, 3.39653)
-size = Vector3(1.07764, 7.34664, 1)
-
-[node name="beam2v12" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 154.032, -5.04529, 3.39653)
-size = Vector3(1.07764, 10.6152, 1)
-
-[node name="beam2v15" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 154.032, -5.04529, -3.36933)
-size = Vector3(1.07764, 10.6152, 1)
-
-[node name="beam2v16" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 143.383, -5.04529, -3.36933)
-size = Vector3(1.07764, 10.6152, 1)
-
-[node name="beam2v13" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 143.329, -5.04529, 3.39653)
-size = Vector3(1.07764, 10.6152, 1)
-
-[node name="beam2v14" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 128.142, -5.30566, 3.39653)
-size = Vector3(1.07764, 8.42358, 1)
-
-[node name="beam2v17" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.976856, -0.2139, 0, 0.2139, 0.976856, 0, 0, 0, 1, 127.423, -6.83965, -3.37841)
-size = Vector3(1.07764, 8.42358, 1)
-
-[node name="beam2v7" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.949945, 0.312418, 0, -0.312418, 0.949945, 0, 0, 0, 1, 85.6347, -3.68143, -3.52019)
-size = Vector3(1.07764, 7.34664, 1)
-
-[node name="beamvertical2" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 165.215, -15.4006, -3.3965)
-size = Vector3(1.07764, 31.8013, 1)
-
-[node name="beam2v2" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 165.215, -15.1675, 3.39653)
-size = Vector3(1.07764, 31.335, 1)
-
-[node name="beamhorizontal" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 51.0659, -10.2278, 3.39653)
-size = Vector3(1.07764, 32.5814, 1)
-
-[node name="beamhorizontal2" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 149.437, -10.2278, 3.39653)
-size = Vector3(1.07764, 32.5814, 1)
-
-[node name="beamhorizontal3" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 149.437, -10.2278, -3.37583)
-size = Vector3(1.07764, 32.5814, 1)
-
-[node name="beamhorizontal4" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 51.1485, -10.2278, -3.37583)
-size = Vector3(1.07764, 32.5814, 1)
-
-[node name="beamincline" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.396747, 0.917928, 0, -0.917928, 0.396747, 0, 0, 0, 1, 50.8995, -17.2215, -3.37583)
-size = Vector3(1.07764, 35.3561, 1)
-
-[node name="beamincline2" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.396747, 0.917928, 0, -0.917928, 0.396747, 0, 0, 0, 1, 50.8995, -17.2215, 3.36596)
-size = Vector3(1.07764, 35.3561, 1)
-
-[node name="beamincline3" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.204735, 0.978817, 0, -0.978817, 0.204735, 0, 0, 0, 1, 75.5333, -8.54784, 3.35202)
-size = Vector3(1.07764, 18.2507, 1)
-
-[node name="beamincline5" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.000994768, 1, 0, -1, 0.000994768, 0, 0, 0, 1, 100.129, -6.70756, 3.35202)
-size = Vector3(1.07764, 32.011, 1)
-
-[node name="beamincline9" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.000994768, 1, 0, -1, 0.000994768, 0, 0, 0, 1, 101.97, -6.70573, -3.53286)
-size = Vector3(1.07764, 12.1109, 1)
-
-[node name="beamincline8" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(-0.251073, 0.967968, 0, -0.967968, -0.251073, 0, 0, 0, 1, 89.3217, -7.96352, -3.40172)
-size = Vector3(1.07764, 10.3967, 1)
-
-[node name="beamincline4" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.204735, 0.978817, 0, -0.978817, 0.204735, 0, 0, 0, 1, 75.5333, -8.54784, -3.37662)
-size = Vector3(1.07764, 18.2507, 1)
-
-[node name="beamincline6" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(-0.204735, -0.978817, 8.74228e-08, -0.978817, 0.204735, 0, -1.78985e-08, -8.55709e-08, -1, 124.977, -8.54784, 3.35202)
-size = Vector3(1.07764, 18.2507, 1)
-
-[node name="beamincline7" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.206682, -0.978408, 8.0024e-08, -0.978408, -0.206682, 3.51981e-08, -1.78985e-08, -8.55709e-08, -1, 124.977, -12.0154, -3.37662)
-size = Vector3(1.07764, 18.2507, 1)
 
 [node name="assets" type="Node3D" parent="."]
 
@@ -3038,9 +2275,6 @@ transform = Transform3D(0.331351, -0.22868, 0.0108626, 0.0308839, 0.504993, 0.87
 [node name="rail34" parent="assets/bridge/rails" instance=ExtResource("10_76hjp")]
 transform = Transform3D(0.168509, -0.22868, 0.241699, -0.0212715, 0.504993, 0.87635, -0.0530126, -0.929521, 0.416643, 122.083, -2.76212, -0.288491)
 
-[node name="rail28" parent="assets/bridge/rails" instance=ExtResource("10_76hjp")]
-transform = Transform3D(0.451969, -0.22574, 0.0972176, 0.100107, 1.07209, -0.137285, -0.0307539, 0.172251, 0.981868, 112.343, -4.78382, -0.38674)
-
 [node name="rail32" parent="assets/bridge/rails" instance=ExtResource("10_76hjp")]
 transform = Transform3D(0.349081, -0.366579, 0.0972176, 0.127051, 1.03105, -0.137285, -0.0167992, 0.180457, 0.981868, 116.304, -3.65032, -0.620445)
 
@@ -3059,12 +2293,6 @@ transform = Transform3D(0.969676, 0, 0, 0, 1, 0, 0, 0, 1, 144.676, 0.575334, 1.0
 [node name="rail17" parent="assets/bridge/rails" instance=ExtResource("10_76hjp")]
 transform = Transform3D(0.37276, 0, 0, 0, 1, 0, 0, 0, 1, 137.94, 0.575334, 1.07589)
 
-[node name="rail37" parent="assets/bridge/rails" instance=ExtResource("10_76hjp")]
-transform = Transform3D(0.363038, 0, 0, 0, 1, 0, 0, 0, 1, 137.99, 0.575334, -1.06813)
-
-[node name="rail18" parent="assets/bridge/rails" instance=ExtResource("10_76hjp")]
-transform = Transform3D(0.503061, -0.0709752, 0, 0.0357951, 0.997478, 0, 0, 0, 1, 133.617, 0.403799, 1.07589)
-
 [node name="rail38" parent="assets/bridge/rails" instance=ExtResource("10_76hjp")]
 transform = Transform3D(0.496636, -0.174043, 0, 0.0877759, 0.984738, 0, 0, 0, 1, 133.672, 0.131778, -1.06977)
 
@@ -3079,6 +2307,36 @@ transform = Transform3D(1.61304, 0, 0, 0, 1, 0, 0, 0, 1, 166.597, 0.575334, -1.0
 
 [node name="rail12" parent="assets/bridge/rails" instance=ExtResource("10_76hjp")]
 transform = Transform3D(1.61304, 0, 0, 0, 1, 0, 0, 0, 1, 166.597, 0.575334, 1.07589)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="assets/bridge/rails"]
+
+[node name="wooden_beam2" type="MeshInstance3D" parent="assets/bridge/rails/StaticBody3D"]
+transform = Transform3D(-0.104682, -0.00100942, -0.299089, 0.944045, 0.431951, -0.00229771, 4.14866, -0.0983181, -0.00702405, 91.0346, -6.31762, -0.781803)
+mesh = SubResource("ArrayMesh_ifyry")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_cotn6")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="assets/bridge/rails/StaticBody3D"]
+transform = Transform3D(0.675145, -0.00227861, -0.0245964, 0.0051867, 0.975059, 0.221815, 0.0158556, -0.221937, 0.974778, 91.0346, -6.31762, -0.781803)
+shape = SubResource("BoxShape3D_i5nbj")
+
+[node name="Cube3" type="MeshInstance3D" parent="assets/bridge/rails/StaticBody3D"]
+transform = Transform3D(-2.58676e-08, -0.00302231, 0.590489, -0.223046, 0.843728, 0.00200877, -0.974808, -0.193054, -0.000459672, 91.3937, -5.78242, -1.68167)
+mesh = SubResource("ArrayMesh_7jij8")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="assets/bridge/rails/StaticBody3D"]
+transform = Transform3D(0.590489, -0.00377789, 5.65151e-11, 0.00200878, 1.05466, 0.223046, -0.000459629, -0.241317, 0.974808, 91.3945, -6.00482, -1.63078)
+shape = SubResource("BoxShape3D_hoajf")
+
+[node name="Cube4" type="MeshInstance3D" parent="assets/bridge/rails/StaticBody3D"]
+transform = Transform3D(-2.58676e-08, -0.00302231, 0.590489, -0.223046, 0.843728, 0.00200877, -0.974808, -0.193054, -0.000459672, 91.3937, -5.30457, 0.40674)
+mesh = SubResource("ArrayMesh_7jij8")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="assets/bridge/rails/StaticBody3D"]
+transform = Transform3D(0.590489, -0.00377789, 5.65151e-11, 0.00200878, 1.05466, 0.223046, -0.000459629, -0.241317, 0.974808, 91.3945, -5.52697, 0.457628)
+shape = SubResource("BoxShape3D_hoajf")
 
 [node name="rail_beams" type="Node3D" parent="assets/bridge"]
 
@@ -3303,10 +2561,20 @@ transform = Transform3D(0.936067, 0, 0, 0, 1, 0, 0, 0, 1, 174.137, 0.413567, 8.5
 script = ExtResource("28_iokc4")
 camera = NodePath("../Camera3D")
 
+[node name="sunkenwood" type="AnimationPlayer" parent="intermission"]
+libraries = {
+&"": SubResource("AnimationLibrary_l6t0k")
+}
+
 [node name="logbreak" type="AnimationPlayer" parent="intermission"]
 root_node = NodePath("../..")
 libraries = {
 &"": SubResource("AnimationLibrary_2ovki")
+}
+
+[node name="player_holder" type="AnimationPlayer" parent="intermission"]
+libraries = {
+&"": SubResource("AnimationLibrary_3yk7c")
 }
 
 [node name="Area3D" type="Area3D" parent="intermission"]
@@ -3323,102 +2591,197 @@ texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_ljui8")
 animation = &"front"
 
-[node name="staff" parent="intermission/AnimatedSprite3D" instance=ExtResource("30_2ovki")]
-transform = Transform3D(0.0682361, -1.64431e-09, 4.94176e-10, 1.64431e-09, 0.0569307, -0.0376173, 4.94176e-10, 0.0376173, 0.0569307, -0.0564849, -0.00721174, 0.0219026)
-
 [node name="break_beam" parent="intermission" instance=ExtResource("4_grgy5")]
-transform = Transform3D(4.10887e-08, 0.94, 5.78891e-08, 0.94, -4.10887e-08, 0, 3.59209e-15, 8.21774e-08, -0.662174, 84.8599, -6.40803, 0.0636299)
+transform = Transform3D(4.10887e-08, 1.52, 9.99592e-08, 0.94, -6.64413e-08, 1.46782e-21, 6.20422e-15, 2.29514e-07, -0.662, 84.8599, -6.40803, 0.0636299)
 
-[node name="Camera2" type="Camera3D" parent="intermission"]
-transform = Transform3D(0.605386, 0.445081, 0.659856, 0, 0.829036, -0.559195, -0.795932, 0.338529, 0.501887, 96.5643, -28.1069, 7.72719)
+[node name="StaticBody3D2" type="StaticBody3D" parent="intermission/break_beam"]
+transform = Transform3D(1, -3.55271e-15, -2.11758e-22, 3.55271e-15, 1, 0, 0, 1.42109e-14, 1, 0, 0, 0)
 
-[node name="Camerathree" type="Camera3D" parent="intermission"]
-transform = Transform3D(0.173583, 0.0901119, -0.980688, 0, 0.995805, 0.0915009, 0.98482, -0.015883, 0.172854, 76.3293, -21.3079, 5.08348)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="intermission/break_beam/StaticBody3D2"]
+transform = Transform3D(1, -3.19744e-14, -2.96462e-20, 3.19744e-14, 1, 0, 3.38813e-21, 1.42109e-14, 1, 1.03553, 0.957169, 0.125817)
+shape = SubResource("BoxShape3D_l6t0k")
+
+[node name="break_beam2" parent="intermission" instance=ExtResource("4_grgy5")]
+transform = Transform3D(3.79777e-08, 1.40492, -0.252685, 0.94, -6.64413e-08, 1.25344e-21, -1.56835e-08, -0.580183, -0.611878, 95.7912, -41.22, -6.02862)
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="intermission/break_beam2"]
+transform = Transform3D(1, -3.55271e-15, -2.11758e-22, 3.55271e-15, 1, 0, 0, 1.42109e-14, 1, 0, -0.67, 0)
+
+[node name="break_beam3" parent="intermission" instance=ExtResource("4_grgy5")]
+transform = Transform3D(3.79777e-08, 1.49853, -0.110868, 0.94, -6.47907e-08, -6.40995e-09, -1.56835e-08, -0.254561, -0.65265, 117.756, -41.2162, -14.9157)
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="intermission/break_beam3"]
+transform = Transform3D(1, -3.55271e-15, -2.11758e-22, 3.55271e-15, 1, 0, 0, 1.42109e-14, 1, 0, -0.67, 0)
+
+[node name="break_beam4" parent="intermission" instance=ExtResource("4_grgy5")]
+transform = Transform3D(-0.0253964, 0.223285, 0.654574, 0.937506, -0.0956491, 0.0242292, 0.0635419, 1.50047, -0.095863, 144.974, -40.5326, -20.2634)
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="intermission/break_beam4"]
+transform = Transform3D(1, -3.55271e-15, -2.11758e-22, 3.55271e-15, 1, 0, 0, 1.42109e-14, 1, 0, -0.67, 0)
 
 [node name="moving_platforms" type="Node3D" parent="intermission"]
 
 [node name="part1" type="Node3D" parent="intermission/moving_platforms"]
 
-[node name="AnimatableBody3D" type="AnimatableBody3D" parent="intermission/moving_platforms/part1"]
+[node name="AnimatableBody3D2" type="AnimatableBody3D" parent="intermission/moving_platforms/part1"]
+transform = Transform3D(1, 0, 0, 0, 0.976296, -0.21644, 0, 0.21644, 0.976296, 89.893, -42.4593, -0.782)
 
-[node name="wooden_beam" type="MeshInstance3D" parent="intermission/moving_platforms/part1/AnimatableBody3D"]
-transform = Transform3D(-0.104682, -0.00100942, -0.299089, 0.944045, 0.431951, -0.00229771, 4.14866, -0.0983181, -0.00702405, 91.0346, -6.31762, -0.781803)
+[node name="wooden_beam" type="MeshInstance3D" parent="intermission/moving_platforms/part1/AnimatableBody3D2"]
+transform = Transform3D(-0.104682, -0.00100943, -0.299089, 0.944045, 0.431951, -0.00229769, 4.14866, -0.0983177, -0.00702397, 0, 0, 0)
 mesh = SubResource("ArrayMesh_ifyry")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_cotn6")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="intermission/moving_platforms/part1/AnimatableBody3D"]
-transform = Transform3D(0.675145, -0.00227861, -0.0245964, 0.0051867, 0.975059, 0.221815, 0.0158556, -0.221937, 0.974778, 91.0346, -6.31762, -0.781803)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="intermission/moving_platforms/part1/AnimatableBody3D2"]
+transform = Transform3D(0.675145, -0.00227861, -0.0245964, 0.0051867, 0.975059, 0.221815, 0.0158556, -0.221937, 0.974778, 0, 0, 0)
 shape = SubResource("BoxShape3D_i5nbj")
 
-[node name="Cube" type="MeshInstance3D" parent="intermission/moving_platforms/part1/AnimatableBody3D"]
-transform = Transform3D(-2.58676e-08, -0.00302231, 0.590489, -0.223046, 0.843728, 0.00200877, -0.974808, -0.193054, -0.000459672, 91.3937, -5.78242, -1.68167)
+[node name="Cube" type="MeshInstance3D" parent="intermission/moving_platforms/part1/AnimatableBody3D2"]
+transform = Transform3D(-2.58676e-08, -0.00302231, 0.590489, -0.223046, 0.843728, 0.00200877, -0.974808, -0.193054, -0.000459672, 0.3591, 0.5352, -0.899867)
 mesh = SubResource("ArrayMesh_7jij8")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="intermission/moving_platforms/part1/AnimatableBody3D"]
-transform = Transform3D(0.590489, -0.00377789, 5.65151e-11, 0.00200878, 1.05466, 0.223046, -0.000459629, -0.241317, 0.974808, 91.3945, -6.00482, -1.63078)
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="intermission/moving_platforms/part1/AnimatableBody3D2"]
+transform = Transform3D(0.590489, -0.00377789, 5.65151e-11, 0.00200878, 1.05466, 0.223046, -0.000459629, -0.241317, 0.974808, 0.359901, 0.3128, -0.848977)
 shape = SubResource("BoxShape3D_hoajf")
 
-[node name="Cube2" type="MeshInstance3D" parent="intermission/moving_platforms/part1/AnimatableBody3D"]
-transform = Transform3D(-2.58676e-08, -0.00302231, 0.590489, -0.223046, 0.843728, 0.00200877, -0.974808, -0.193054, -0.000459672, 91.3937, -5.30457, 0.40674)
+[node name="Cube2" type="MeshInstance3D" parent="intermission/moving_platforms/part1/AnimatableBody3D2"]
+transform = Transform3D(-2.58676e-08, -0.00302231, 0.590489, -0.223046, 0.843728, 0.00200877, -0.974808, -0.193054, -0.000459672, 0.3591, 1.01305, 1.18854)
 mesh = SubResource("ArrayMesh_7jij8")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="intermission/moving_platforms/part1/AnimatableBody3D"]
-transform = Transform3D(0.590489, -0.00377789, 5.65151e-11, 0.00200878, 1.05466, 0.223046, -0.000459629, -0.241317, 0.974808, 91.3945, -5.52697, 0.457628)
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="intermission/moving_platforms/part1/AnimatableBody3D2"]
+transform = Transform3D(0.590489, -0.00377789, 5.65151e-11, 0.00200878, 1.05466, 0.223046, -0.000459629, -0.241317, 0.974808, 0.359901, 0.79065, 1.23943)
 shape = SubResource("BoxShape3D_hoajf")
 
-[node name="part1continuos" type="AnimationPlayer" parent="intermission/moving_platforms/part1"]
-libraries = {
-&"": SubResource("AnimationLibrary_ljui8")
-}
+[node name="AnimatableBody3D3" type="AnimatableBody3D" parent="intermission/moving_platforms/part1"]
+transform = Transform3D(0.902668, 0.0931422, 0.420137, 0, 0.976296, -0.21644, -0.430338, 0.195373, 0.881271, 103.595, -41.2309, -7.31445)
 
-[node name="part2" type="Node3D" parent="intermission/moving_platforms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96.1417, -12.8971, -4.58192)
-script = ExtResource("31_c3uv7")
-
-[node name="smallblock" type="Node3D" parent="intermission/moving_platforms/part2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22, 1.035, -2.805)
-
-[node name="StaticBody3D" type="AnimatableBody3D" parent="intermission/moving_platforms/part2/smallblock"]
-transform = Transform3D(-3.44533e-06, 0.96, -6.77512e-09, -0.441899, -1.59967e-06, -0.372862, -0.852247, -3.05148e-06, 0.193333, -0.142639, -1.47216, 2.50171)
-
-[node name="wooden_beam" type="MeshInstance3D" parent="intermission/moving_platforms/part2/smallblock/StaticBody3D"]
-transform = Transform3D(0.68, 0, 0, 0, 0.68, 0, 0, 0, 0.68, 0, 0, 0)
-mesh = SubResource("ArrayMesh_3yk7c")
+[node name="wooden_beam" type="MeshInstance3D" parent="intermission/moving_platforms/part1/AnimatableBody3D3"]
+transform = Transform3D(-0.104682, -0.00100943, -0.299089, 0.944045, 0.431951, -0.00229769, 4.14866, -0.0983177, -0.00702397, 0, 0, 0)
+mesh = SubResource("ArrayMesh_ifyry")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_ajpbf")
+surface_material_override/0 = SubResource("StandardMaterial3D_cotn6")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="intermission/moving_platforms/part2/smallblock/StaticBody3D"]
-transform = Transform3D(0.68, 0, 7.45058e-09, -2.84217e-14, 0.68, 2.66454e-15, 0, 7.10543e-15, 0.68, 0, 0, 0)
-shape = SubResource("BoxShape3D_p0857")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="intermission/moving_platforms/part1/AnimatableBody3D3"]
+transform = Transform3D(0.675145, -0.00227861, -0.0245964, 0.0051867, 0.975059, 0.221815, 0.0158556, -0.221937, 0.974778, 0, 0, 0)
+shape = SubResource("BoxShape3D_i5nbj")
 
-[node name="part2fall" type="AnimationPlayer" parent="intermission/moving_platforms/part2"]
-libraries = {
-&"": SubResource("AnimationLibrary_3yk7c")
-}
+[node name="Cube" type="MeshInstance3D" parent="intermission/moving_platforms/part1/AnimatableBody3D3"]
+transform = Transform3D(-2.58676e-08, -0.00302231, 0.590489, -0.223046, 0.843728, 0.00200877, -0.974808, -0.193054, -0.000459672, 0.3591, 0.5352, -0.899867)
+mesh = SubResource("ArrayMesh_7jij8")
+skeleton = NodePath("")
 
-[node name="part2continuous" type="AnimationPlayer" parent="intermission/moving_platforms/part2"]
-root_node = NodePath("../part2fall")
-libraries = {
-&"": SubResource("AnimationLibrary_l6t0k")
-}
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="intermission/moving_platforms/part1/AnimatableBody3D3"]
+transform = Transform3D(0.590489, -0.00377789, 5.65151e-11, 0.00200878, 1.05466, 0.223046, -0.000459629, -0.241317, 0.974808, 0.359901, 0.3128, -0.848977)
+shape = SubResource("BoxShape3D_hoajf")
+
+[node name="Cube2" type="MeshInstance3D" parent="intermission/moving_platforms/part1/AnimatableBody3D3"]
+transform = Transform3D(-2.58676e-08, -0.00302231, 0.590489, -0.223046, 0.843728, 0.00200877, -0.974808, -0.193054, -0.000459672, 0.3591, 1.01305, 1.18854)
+mesh = SubResource("ArrayMesh_7jij8")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="intermission/moving_platforms/part1/AnimatableBody3D3"]
+transform = Transform3D(0.590489, -0.00377789, 5.65151e-11, 0.00200878, 1.05466, 0.223046, -0.000459629, -0.241317, 0.974808, 0.359901, 0.79065, 1.23943)
+shape = SubResource("BoxShape3D_hoajf")
+
+[node name="AnimatableBody3D4" type="AnimatableBody3D" parent="intermission/moving_platforms/part1"]
+transform = Transform3D(0.902668, 0.0931422, 0.420137, 0, 0.976296, -0.21644, -0.430338, 0.195373, 0.881271, 113.234, -42.7386, -12.2798)
+
+[node name="wooden_beam" type="MeshInstance3D" parent="intermission/moving_platforms/part1/AnimatableBody3D4"]
+transform = Transform3D(-0.104682, -0.00100943, -0.299089, 0.944045, 0.431951, -0.00229769, 4.14866, -0.0983177, -0.00702397, 0, 0, 0)
+mesh = SubResource("ArrayMesh_ifyry")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_cotn6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="intermission/moving_platforms/part1/AnimatableBody3D4"]
+transform = Transform3D(0.675145, -0.00227861, -0.0245964, 0.0051867, 0.975059, 0.221815, 0.0158556, -0.221937, 0.974778, 0, 0, 0)
+shape = SubResource("BoxShape3D_i5nbj")
+
+[node name="Cube" type="MeshInstance3D" parent="intermission/moving_platforms/part1/AnimatableBody3D4"]
+transform = Transform3D(-2.58676e-08, -0.00302231, 0.590489, -0.223046, 0.843728, 0.00200877, -0.974808, -0.193054, -0.000459672, 0.3591, 0.5352, -0.899867)
+mesh = SubResource("ArrayMesh_7jij8")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="intermission/moving_platforms/part1/AnimatableBody3D4"]
+transform = Transform3D(0.590489, -0.00377789, 5.65151e-11, 0.00200878, 1.05466, 0.223046, -0.000459629, -0.241317, 0.974808, 0.359901, 0.3128, -0.848977)
+shape = SubResource("BoxShape3D_hoajf")
+
+[node name="Cube2" type="MeshInstance3D" parent="intermission/moving_platforms/part1/AnimatableBody3D4"]
+transform = Transform3D(-2.58676e-08, -0.00302231, 0.590489, -0.223046, 0.843728, 0.00200877, -0.974808, -0.193054, -0.000459672, 0.3591, 1.01305, 1.18854)
+mesh = SubResource("ArrayMesh_7jij8")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="intermission/moving_platforms/part1/AnimatableBody3D4"]
+transform = Transform3D(0.590489, -0.00377789, 5.65151e-11, 0.00200878, 1.05466, 0.223046, -0.000459629, -0.241317, 0.974808, 0.359901, 0.79065, 1.23943)
+shape = SubResource("BoxShape3D_hoajf")
+
+[node name="AnimatableBody3D5" type="AnimatableBody3D" parent="intermission/moving_platforms/part1"]
+transform = Transform3D(0.982664, 0.0931422, 0.160303, -0.0585468, 0.976296, -0.208371, -0.175911, 0.195373, 0.964824, 124.223, -42.5866, -16.8771)
+
+[node name="wooden_beam" type="MeshInstance3D" parent="intermission/moving_platforms/part1/AnimatableBody3D5"]
+transform = Transform3D(-0.104682, -0.00100943, -0.299089, 0.944045, 0.431951, -0.00229769, 4.14866, -0.0983177, -0.00702397, 0, 0, 0)
+mesh = SubResource("ArrayMesh_ifyry")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_cotn6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="intermission/moving_platforms/part1/AnimatableBody3D5"]
+transform = Transform3D(0.675145, -0.00227861, -0.0245964, 0.0051867, 0.975059, 0.221815, 0.0158556, -0.221937, 0.974778, 0, 0, 0)
+shape = SubResource("BoxShape3D_i5nbj")
+
+[node name="Cube" type="MeshInstance3D" parent="intermission/moving_platforms/part1/AnimatableBody3D5"]
+transform = Transform3D(-2.58676e-08, -0.00302231, 0.590489, -0.223046, 0.843728, 0.00200877, -0.974808, -0.193054, -0.000459672, 0.3591, 0.5352, -0.899867)
+mesh = SubResource("ArrayMesh_7jij8")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="intermission/moving_platforms/part1/AnimatableBody3D5"]
+transform = Transform3D(0.590489, -0.00377789, 5.65151e-11, 0.00200878, 1.05466, 0.223046, -0.000459629, -0.241317, 0.974808, 0.359901, 0.3128, -0.848977)
+shape = SubResource("BoxShape3D_hoajf")
+
+[node name="Cube2" type="MeshInstance3D" parent="intermission/moving_platforms/part1/AnimatableBody3D5"]
+transform = Transform3D(-2.58676e-08, -0.00302231, 0.590489, -0.223046, 0.843728, 0.00200877, -0.974808, -0.193054, -0.000459672, 0.3591, 1.01305, 1.18854)
+mesh = SubResource("ArrayMesh_7jij8")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="intermission/moving_platforms/part1/AnimatableBody3D5"]
+transform = Transform3D(0.590489, -0.00377789, 5.65151e-11, 0.00200878, 1.05466, 0.223046, -0.000459629, -0.241317, 0.974808, 0.359901, 0.79065, 1.23943)
+shape = SubResource("BoxShape3D_hoajf")
+
+[node name="AnimatableBody3D6" type="AnimatableBody3D" parent="intermission/moving_platforms/part1"]
+transform = Transform3D(0.98311, -0.0154092, 0.182366, 0.0504966, 0.980608, -0.189363, -0.175911, 0.195373, 0.964824, 132.961, -41.2309, -18.4928)
+
+[node name="wooden_beam" type="MeshInstance3D" parent="intermission/moving_platforms/part1/AnimatableBody3D6"]
+transform = Transform3D(-0.104682, -0.00100943, -0.299089, 0.944045, 0.431951, -0.00229769, 4.14866, -0.0983177, -0.00702397, 0, 0, 0)
+mesh = SubResource("ArrayMesh_ifyry")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_cotn6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="intermission/moving_platforms/part1/AnimatableBody3D6"]
+transform = Transform3D(0.675145, -0.00227861, -0.0245964, 0.0051867, 0.975059, 0.221815, 0.0158556, -0.221937, 0.974778, 0, 0, 0)
+shape = SubResource("BoxShape3D_i5nbj")
+
+[node name="Cube" type="MeshInstance3D" parent="intermission/moving_platforms/part1/AnimatableBody3D6"]
+transform = Transform3D(-2.58676e-08, -0.00302231, 0.590489, -0.223046, 0.843728, 0.00200877, -0.974808, -0.193054, -0.000459672, 0.3591, 0.5352, -0.899867)
+mesh = SubResource("ArrayMesh_7jij8")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="intermission/moving_platforms/part1/AnimatableBody3D6"]
+transform = Transform3D(0.590489, -0.00377789, 5.65151e-11, 0.00200878, 1.05466, 0.223046, -0.000459629, -0.241317, 0.974808, 0.359901, 0.3128, -0.848977)
+shape = SubResource("BoxShape3D_hoajf")
+
+[node name="Cube2" type="MeshInstance3D" parent="intermission/moving_platforms/part1/AnimatableBody3D6"]
+transform = Transform3D(-2.58676e-08, -0.00302231, 0.590489, -0.223046, 0.843728, 0.00200877, -0.974808, -0.193054, -0.000459672, 0.3591, 1.01305, 1.18854)
+mesh = SubResource("ArrayMesh_7jij8")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="intermission/moving_platforms/part1/AnimatableBody3D6"]
+transform = Transform3D(0.590489, -0.00377789, 5.65151e-11, 0.00200878, 1.05466, 0.223046, -0.000459629, -0.241317, 0.974808, 0.359901, 0.79065, 1.23943)
+shape = SubResource("BoxShape3D_hoajf")
 
 [node name="part3" type="Node3D" parent="intermission/moving_platforms"]
-script = ExtResource("34_3yk7c")
-
-[node name="part3fall" type="AnimationPlayer" parent="intermission/moving_platforms/part3"]
-libraries = {
-&"": SubResource("AnimationLibrary_3t4hw")
-}
-
-[node name="part3con" type="AnimationPlayer" parent="intermission/moving_platforms/part3"]
-libraries = {
-&"": SubResource("AnimationLibrary_nk3pu")
-}
 
 [node name="bigblock" type="Node3D" parent="intermission/moving_platforms/part3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.28741, 0, 0)
 
 [node name="AnimatableBody3D" type="AnimatableBody3D" parent="intermission/moving_platforms/part3/bigblock"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.325, 0, 0)
@@ -3451,6 +2814,25 @@ surface_material_override/0 = SubResource("StandardMaterial3D_cotn6")
 transform = Transform3D(0.675145, -0.00352863, -0.0179158, -0.00187894, 0.967362, -0.185679, 0.0165762, 0.253373, 0.708661, 102.072, -6.18881, -0.308329)
 shape = SubResource("BoxShape3D_i5nbj")
 
+[node name="jumppad" type="Area3D" parent="intermission"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 144.764, -38.4183, -20.1837)
+script = ExtResource("32_ljui8")
+
+[node name="Path3D" type="Path3D" parent="intermission/jumppad"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.17233, -0.673611, -0.184387)
+curve = SubResource("Curve3D_c3uv7")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="intermission/jumppad/Path3D"]
+transform = Transform3D(-4.37113e-08, 0, -0.999998, 0, 0.999997, 0, 0.999999, 0, -4.37113e-08, 0, 0, 0)
+loop = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="intermission/jumppad"]
+transform = Transform3D(0.995021, 0, 0.0996671, 0, 1, 0, -0.0996671, 0, 0.995021, -0.234619, -1.18585, 0.0562134)
+shape = SubResource("BoxShape3D_ljui8")
+
+[node name="Camera2" type="Camera3D" parent="."]
+transform = Transform3D(-0.00420884, 0.503771, 0.863827, 0, 0.863835, -0.503775, -0.999991, -0.00212031, -0.00363575, 98.0483, -41.348, -0.551302)
+
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.47726, -0.175195, 0.861121, 0, 0.979925, 0.199365, -0.878762, -0.0951491, 0.467679, 92.4305, -2.23297, 4.55586)
 script = ExtResource("30_3fnmf")
@@ -3463,5 +2845,4 @@ script = ExtResource("30_3fnmf")
 [connection signal="body_entered" from="assets/tunnel_parkour_1/dimension_changer" to="assets/tunnel_parkour_1/dimension_changer" method="_on_body_entered"]
 [connection signal="animation_finished" from="intermission/logbreak" to="intermission" method="_on_logbreak_animation_finished"]
 [connection signal="body_entered" from="intermission/Area3D" to="intermission" method="_on_area_3d_body_entered"]
-[connection signal="animation_finished" from="intermission/moving_platforms/part2/part2fall" to="intermission/moving_platforms/part2" method="_on_part_2_fall_animation_finished"]
-[connection signal="animation_finished" from="intermission/moving_platforms/part3/part3fall" to="intermission/moving_platforms/part3" method="_on_part_3_fall_animation_finished"]
+[connection signal="body_entered" from="intermission/jumppad" to="intermission/jumppad" method="_on_body_entered"]

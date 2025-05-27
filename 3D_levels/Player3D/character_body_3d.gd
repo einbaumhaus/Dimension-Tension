@@ -11,6 +11,7 @@ var _last_movement_direction := Vector3.BACK
 @export var mouse_sensitivity := 0.25
 @onready var _camera: Camera3D = $Camera3D
 @onready var anim: AnimationPlayer = $AnimationPlayer
+@onready var legs: AnimatedSprite3D = $legs
 
 func _ready() -> void:
 	pass # Replace with function body.
@@ -34,6 +35,7 @@ func _physics_process(delta: float) -> void:
 	_camera.rotation.y -= _camera_input_direction.x * delta
 	_camera.rotation.x = clamp(_camera.rotation.x, -PI / 3.0, PI / 3.5)
 	_camera_input_direction = Vector2.ZERO
+	legs.rotation.y = _camera.rotation.y
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta

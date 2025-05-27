@@ -8,7 +8,7 @@ var acceleration = 30
 var _gravity := -30.0
 var _camera_input_direction := Vector2.ZERO
 var _last_movement_direction := Vector3.BACK
-@export var mouse_sensitivity := 0.25
+var mouse_sensitivity = null
 @onready var _camera: Camera3D = $Camera3D
 @onready var anim: AnimationPlayer = $AnimationPlayer
 @onready var legs: AnimatedSprite3D = $legs
@@ -31,6 +31,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		_camera_input_direction = event.screen_relative * mouse_sensitivity
 
 func _physics_process(delta: float) -> void:
+	
+	mouse_sensitivity = GlobalSettings.mouse_sensitivity
+	
 	_camera.rotation.x -= _camera_input_direction.y * delta
 	_camera.rotation.y -= _camera_input_direction.x * delta
 	_camera.rotation.x = clamp(_camera.rotation.x, -PI / 3.0, PI / 3.5)

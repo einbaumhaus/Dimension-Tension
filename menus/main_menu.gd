@@ -2,6 +2,7 @@ extends Control
 @onready var mode_select: Control = $"../mode_select"
 
 @onready var level_select: Control = $"../level_select"
+@onready var settings: Control = $"../settings"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -22,8 +23,8 @@ func _on_quit_pressed() -> void:
 
 
 func _on_settings_pressed() -> void:
-	pass # Replace with function body.
-
+	visible = false
+	settings.visible =true
 
 func _on_play_pressed() -> void:
 	visible = false

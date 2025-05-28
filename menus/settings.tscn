@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://rlxxlqipr1u3"]
+[gd_scene load_steps=10 format=3 uid="uid://rlxxlqipr1u3"]
 
 [ext_resource type="Theme" uid="uid://3lc7pfe6wvl7" path="res://assets/pixelated_theme.tres" id="1_kot5a"]
 [ext_resource type="Script" uid="uid://b7x2f7dxuq4f" path="res://menus/settings.gd" id="1_urrvo"]
+[ext_resource type="Texture2D" uid="uid://brhhr4oafxsrt" path="res://assets/cursor/cursor.png" id="3_hjugb"]
+[ext_resource type="Texture2D" uid="uid://dem08wwb5vmpo" path="res://assets/cursor/cursor_evelius.png" id="4_d8eyj"]
+[ext_resource type="Texture2D" uid="uid://bwh628a065sgu" path="res://assets/cursor/cursor_tobler.png" id="5_d8eyj"]
+[ext_resource type="Texture2D" uid="uid://dmv8a5q5dg7ag" path="res://assets/cursor/cursor_gipfeli.png" id="6_cyvjr"]
+[ext_resource type="Texture2D" uid="uid://b7nfxvd6c5hhx" path="res://assets/cursor/cursor_TDi4.png" id="7_8754g"]
+[ext_resource type="Texture2D" uid="uid://d0p35qwa2q4yb" path="res://assets/cursor/cursor_lukas.png" id="8_ac0sr"]
+[ext_resource type="Texture2D" uid="uid://cd1w2vbg3v2s3" path="res://assets/cursor/cursor_jayk.png" id="9_20nqt"]
 
 [node name="settings" type="Control"]
 layout_mode = 3
@@ -16,7 +23,7 @@ script = ExtResource("1_urrvo")
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
 offset_right = 1153.0
-offset_bottom = 214.0
+offset_bottom = 647.0
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -65,6 +72,36 @@ popup/item_0/id = 0
 popup/item_1/text = "Fullscreen"
 popup/item_1/id = 1
 
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "cursor"
+
+[node name="cursors" type="OptionButton" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+selected = 0
+item_count = 7
+popup/item_0/text = "Leakim"
+popup/item_0/icon = ExtResource("3_hjugb")
+popup/item_0/id = 0
+popup/item_1/text = "evelius"
+popup/item_1/icon = ExtResource("4_d8eyj")
+popup/item_1/id = 1
+popup/item_2/text = "Toblertwo"
+popup/item_2/icon = ExtResource("5_d8eyj")
+popup/item_2/id = 2
+popup/item_3/text = "Gipfeli"
+popup/item_3/icon = ExtResource("6_cyvjr")
+popup/item_3/id = 3
+popup/item_4/text = "TDi4"
+popup/item_4/icon = ExtResource("7_8754g")
+popup/item_4/id = 4
+popup/item_5/text = "lecker_kaffee"
+popup/item_5/icon = ExtResource("8_ac0sr")
+popup/item_5/id = 5
+popup/item_6/text = "jayk"
+popup/item_6/icon = ExtResource("9_20nqt")
+popup/item_6/id = 6
+
 [node name="Button" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 7
@@ -84,4 +121,5 @@ text = "Back"
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/volume" to="." method="_on_volume_value_changed"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/mute" to="." method="_on_check_box_toggled"]
 [connection signal="item_selected" from="MarginContainer/VBoxContainer/window" to="." method="_on_window_item_selected"]
+[connection signal="item_selected" from="MarginContainer/VBoxContainer/cursors" to="." method="_on_option_button_item_selected"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

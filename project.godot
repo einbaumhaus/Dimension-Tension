@@ -11,6 +11,8 @@ config_version=5
 [application]
 
 config/name="Dimension Tension"
+config/description="MA Game Michael"
+config/version="0.0.9"
 run/main_scene="uid://co2dawhgab6d8"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 boot_splash/image="uid://v75koa8jb5xb"
@@ -25,6 +27,7 @@ GlobalSettings="*res://Global_settings.gd"
 
 window/stretch/mode="canvas_items"
 window/vsync/vsync_mode=0
+mouse_cursor/custom_image="uid://brhhr4oafxsrt"
 
 [global_group]
 

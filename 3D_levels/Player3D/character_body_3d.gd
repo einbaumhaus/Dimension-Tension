@@ -27,8 +27,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		event is InputEventMouseMotion and
 		Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED
 	)
-	if is_camera_motion:
-		_camera_input_direction = event.screen_relative * mouse_sensitivity
+	if is_camera_motion and mouse_sensitivity != null:
+		var motion_event := event as InputEventMouseMotion
+		_camera_input_direction = motion_event.screen_relative * mouse_sensitivity
 
 func _physics_process(delta: float) -> void:
 	

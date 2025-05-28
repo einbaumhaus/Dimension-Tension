@@ -12,8 +12,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if inside and (Input.is_action_just_pressed("e") or Input.is_action_just_pressed("ui_accept")):
-		canvas_layer.visible = false
+	if inside:
 		animation_player.play("magic change")
 		player.anim.play("wand")
 		if animation_player.animation_finished:
@@ -22,5 +21,4 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node3D) -> void:
 	if body.name == "Player":
-		canvas_layer.visible = true
 		inside = true

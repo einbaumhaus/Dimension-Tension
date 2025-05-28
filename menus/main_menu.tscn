@@ -84,7 +84,8 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("3_yjgyn")
 theme_override_font_sizes/font_size = 16
-text = "version 0.0.9"
+text = "version 0.1.0
+Michael Schnabel"
 horizontal_alignment = 1
 
 [connection signal="pressed" from="VBoxContainer/play" to="." method="_on_play_pressed"]

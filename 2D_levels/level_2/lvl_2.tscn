@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://clbutouj7ccjo" path="res://2D_levels/level_1/assets/UI/heart.png" id="9_w35f4"]
 [ext_resource type="Script" uid="uid://bb1wjhu534dq3" path="res://2D_levels/Player2D/fps.gd" id="10_jtmxo"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w35f4"]
+
 [sub_resource type="TileMapPattern" id="TileMapPattern_2210x"]
 tile_data = PackedInt32Array(0, 262144, 5, 65536, 262144, 6, 1, 327680, 5, 65537, 327680, 6)
 
@@ -93,10 +95,83 @@ background_mode = 3
 adjustment_enabled = true
 adjustment_color_correction = SubResource("GradientTexture2D_2210x")
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w35f4"]
-
 [node name="lvl_2" type="Node"]
 script = ExtResource("1_0icu8")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer2" instance=ExtResource("8_ka1v0")]
+visible = false
+
+[node name="hearts" type="Panel" parent="CanvasLayer2"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -284.0
+offset_bottom = 60.0
+grow_horizontal = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_w35f4")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer2/hearts"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -76.0
+offset_top = -24.0
+offset_right = 76.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="heart" type="TextureRect" parent="CanvasLayer2/hearts/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("9_w35f4")
+expand_mode = 2
+
+[node name="heart2" type="TextureRect" parent="CanvasLayer2/hearts/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("9_w35f4")
+expand_mode = 2
+
+[node name="heart3" type="TextureRect" parent="CanvasLayer2/hearts/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("9_w35f4")
+expand_mode = 2
+
+[node name="heart4" type="TextureRect" parent="CanvasLayer2/hearts/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("9_w35f4")
+expand_mode = 2
+
+[node name="heart5" type="TextureRect" parent="CanvasLayer2/hearts/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("9_w35f4")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer2"]
+offset_right = 216.0
+offset_bottom = 57.0
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 41
+text = "FPS:"
+script = ExtResource("10_jtmxo")
 
 [node name="player_topdown" parent="." instance=ExtResource("1_bkf0y")]
 position = Vector2(126, 191)
@@ -174,80 +249,5 @@ text = "<-"
 unique_name_in_owner = true
 script = ExtResource("2_w35f4")
 hearts = [NodePath("../CanvasLayer2/hearts/HBoxContainer/heart"), NodePath("../CanvasLayer2/hearts/HBoxContainer/heart2"), NodePath("../CanvasLayer2/hearts/HBoxContainer/heart3"), NodePath("../CanvasLayer2/hearts/HBoxContainer/heart4"), NodePath("../CanvasLayer2/hearts/HBoxContainer/heart5")]
-
-[node name="CanvasLayer2" type="CanvasLayer" parent="."]
-
-[node name="PauseMenu" parent="CanvasLayer2" instance=ExtResource("8_ka1v0")]
-visible = false
-
-[node name="hearts" type="Panel" parent="CanvasLayer2"]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -284.0
-offset_bottom = 60.0
-grow_horizontal = 0
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_w35f4")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer2/hearts"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -76.0
-offset_top = -24.0
-offset_right = 76.0
-offset_bottom = 24.0
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
-
-[node name="heart" type="TextureRect" parent="CanvasLayer2/hearts/HBoxContainer"]
-texture_filter = 1
-layout_mode = 2
-size_flags_horizontal = 4
-texture = ExtResource("9_w35f4")
-expand_mode = 2
-
-[node name="heart2" type="TextureRect" parent="CanvasLayer2/hearts/HBoxContainer"]
-texture_filter = 1
-layout_mode = 2
-size_flags_horizontal = 4
-texture = ExtResource("9_w35f4")
-expand_mode = 2
-
-[node name="heart3" type="TextureRect" parent="CanvasLayer2/hearts/HBoxContainer"]
-texture_filter = 1
-layout_mode = 2
-size_flags_horizontal = 4
-texture = ExtResource("9_w35f4")
-expand_mode = 2
-
-[node name="heart4" type="TextureRect" parent="CanvasLayer2/hearts/HBoxContainer"]
-texture_filter = 1
-layout_mode = 2
-size_flags_horizontal = 4
-texture = ExtResource("9_w35f4")
-expand_mode = 2
-
-[node name="heart5" type="TextureRect" parent="CanvasLayer2/hearts/HBoxContainer"]
-texture_filter = 1
-layout_mode = 2
-size_flags_horizontal = 4
-texture = ExtResource("9_w35f4")
-expand_mode = 2
-
-[node name="Label" type="Label" parent="CanvasLayer2"]
-offset_right = 216.0
-offset_bottom = 57.0
-size_flags_horizontal = 0
-size_flags_vertical = 8
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 41
-text = "FPS:"
-script = ExtResource("10_jtmxo")
 
 [connection signal="body_entered" from="lvl_changer/Area2D" to="lvl_changer/Area2D" method="_on_body_entered"]

@@ -24,9 +24,14 @@ func testEsc():
 	if Input.is_action_just_pressed("escape") and get_tree().paused == false:
 		show()
 		pause()
-	elif  Input.is_action_just_pressed("escape") and get_tree().paused == true:
+	elif  Input.is_action_just_pressed("escape") and get_tree().paused == true and (escape_popup == null or escape_popup.visible == false):
+		var current_scene = get_tree().current_scene
 		hide()
 		resume()
+		if current_scene.name == "lvl_2" or current_scene.name == "lvl_2_2" or current_scene.name == "lvl_2_3" or current_scene.name == "level_1" or current_scene.name == "lvl3_2d":
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		else:
+			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 
 func _on_resume_pressed() -> void:

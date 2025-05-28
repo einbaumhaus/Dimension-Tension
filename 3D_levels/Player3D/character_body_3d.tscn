@@ -382,6 +382,7 @@ script = ExtResource("1_a7qx7")
 shape = SubResource("CapsuleShape3D_b1m74")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("CapsuleMesh_a7qx7")
 
 [node name="legs" type="AnimatedSprite3D" parent="."]

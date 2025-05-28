@@ -1518,6 +1518,10 @@ transform = Transform3D(1, 0, 0, 0, 0.0802861, 0.996772, 0, -0.996772, 0.0802861
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_i53j8")
 
+[node name="transition" type="Node" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="transition"]
+
 [node name="assets" type="Node3D" parent="."]
 
 [node name="env" type="Node3D" parent="assets"]

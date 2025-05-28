@@ -9,6 +9,7 @@ var _gravity := -30.0
 var _camera_input_direction := Vector2.ZERO
 var _last_movement_direction := Vector3.BACK
 var mouse_sensitivity = null
+
 @onready var _camera: Camera3D = $Camera3D
 @onready var anim: AnimationPlayer = $AnimationPlayer
 @onready var legs: AnimatedSprite3D = $legs
@@ -23,23 +24,14 @@ func _input(event: InputEvent) -> void: #add mouse input
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 func _unhandled_input(event: InputEvent) -> void:
-	var is_camera_motion := (
-		event is InputEventMouseMotion and
-		Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED
-	)
-	if is_camera_motion and mouse_sensitivity != null:
-		var motion_event := event as InputEventMouseMotion
-		_camera_input_direction = motion_event.screen_relative * mouse_sensitivity
-
+	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+		var delta_motion = event.relative * clamp(GlobalSettings.mouse_sensitivity, 0.001, 0.5)
+		_camera.rotation_degrees.x -= delta_motion.y
+		_camera.rotation_degrees.y -= delta_motion.x
+		_camera.rotation_degrees.x = clamp(_camera.rotation_degrees.x, -60, 60)
+		
 func _physics_process(delta: float) -> void:
-	
-	mouse_sensitivity = GlobalSettings.mouse_sensitivity
-	
-	_camera.rotation.x -= _camera_input_direction.y * delta
-	_camera.rotation.y -= _camera_input_direction.x * delta
-	_camera.rotation.x = clamp(_camera.rotation.x, -PI / 3.0, PI / 3.5)
-	_camera_input_direction = Vector2.ZERO
-	legs.rotation.y = _camera.rotation.y
+	legs.rotation_degrees.y = _camera.rotation_degrees.y
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta

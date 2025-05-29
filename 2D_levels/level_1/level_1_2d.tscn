@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=4 uid="uid://bfqm7gkurwapv"]
+[gd_scene load_steps=65 format=4 uid="uid://bfqm7gkurwapv"]
 
 [ext_resource type="Script" uid="uid://bbbduv557mftv" path="res://2D_levels/level_1/level_1.gd" id="1_1nd73"]
 [ext_resource type="Script" uid="uid://bb1wjhu534dq3" path="res://2D_levels/Player2D/fps.gd" id="2_b0sjd"]
@@ -20,7 +20,11 @@
 [ext_resource type="Script" uid="uid://d3emujxjl1uh6" path="res://2D_levels/level_1/transition.gd" id="18_t8jsl"]
 [ext_resource type="Texture2D" uid="uid://sbb0bic2bn0h" path="res://mixed_levels/intro/assets/evelius_smoll.png" id="19_rnpel"]
 [ext_resource type="Texture2D" uid="uid://cbxyvw8riiyua" path="res://2D_levels/level_2/enemies/toblertwo/tobllertwo.png" id="20_pxlqo"]
+[ext_resource type="Texture2D" uid="uid://c0lurag5rt7c0" path="res://2D_levels/level_1/assets/chronoscepter/chronoscepter.png" id="21_c2hgb"]
 [ext_resource type="Texture2D" uid="uid://bgw2w26elh5b5" path="res://2D_levels/level_2/Player2D_topdown/player.png" id="21_s8c23"]
+[ext_resource type="FontFile" uid="uid://nv7xw0gdt65u" path="res://assets/fonts/joystix monospace.otf" id="22_pxlqo"]
+[ext_resource type="Texture2D" uid="uid://dqoeak5w11i1e" path="res://mixed_levels/intro/assets/buuuble.png" id="22_s8c23"]
+[ext_resource type="Texture2D" uid="uid://bo3alw0mcbqud" path="res://2D_levels/level_1/assets/chronoscepter/3d_magic.png" id="22_xjifk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oehl0"]
 texture = ExtResource("3_insjc")
@@ -284,34 +288,6 @@ point_count = 3
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vmbrq"]
 size = Vector2(52.6636, 50)
 
-[sub_resource type="Animation" id="Animation_c2hgb"]
-resource_name = "transition"
-length = 10.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Camera2D:enabled")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("scene/evelius pivot:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1.8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(147, -88), Vector2(-2, 11)]
-}
-
 [sub_resource type="Animation" id="Animation_rnpel"]
 length = 0.001
 tracks/0/type = "value"
@@ -338,11 +314,255 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(155, -84)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("scene/text:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("scene/text/text2:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Chasing me is
+futile! you will
+never get your
+cookies back!"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("scene/evelius pivot/evelius_floating/chronoscepter:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("scene/evelius pivot/evelius_floating/chronoscepter:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-35, -5)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("scene/evelius pivot/evelius_floating/chronoscepter:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("scene/evelius pivot/evelius_floating/3d_magic:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("scene/evelius pivot/evelius_floating/3d_magic:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.0846899, 0.0846899, 0.0846899, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("scene/evelius pivot/evelius_floating/3d_magic:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-73, 31)]
+}
+
+[sub_resource type="Animation" id="Animation_c2hgb"]
+resource_name = "transition"
+length = 10.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("scene/evelius pivot:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.26667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(147, -88), Vector2(-2, 11)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("scene/text:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.27, 8.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("scene/text/text2:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.27, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["Chasing me is
+futile! you will
+never get your
+cookies back!", "now face the
+tension of being
+in another
+dimension!"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("scene/evelius pivot/evelius_floating/chronoscepter:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("scene/evelius pivot/evelius_floating/chronoscepter:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(8.5, 9.59),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-35, -5), Vector2(-42.09, 17.79)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("scene/evelius pivot/evelius_floating/chronoscepter:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(8.5, 9.59),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -1.17979]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("scene/evelius pivot/evelius_floating/3d_magic:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(9.59),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("scene/evelius pivot/evelius_floating/3d_magic:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(9.59, 9.91),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.0846899, 0.0846899, 0.0846899, 1), Color(1, 1, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("scene/evelius pivot/evelius_floating/3d_magic:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(9.9, 10.3667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-73, 31), Vector2(-250, 71)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xjifk"]
 _data = {
 &"RESET": SubResource("Animation_rnpel"),
 &"transition": SubResource("Animation_c2hgb")
+}
+
+[sub_resource type="Animation" id="Animation_nvye1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("scene/evelius pivot/evelius_floating:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3465, -286)]
 }
 
 [sub_resource type="Animation" id="Animation_luu4g"]
@@ -359,21 +579,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(3465, -286), Vector2(3465, -290.99), Vector2(3465, -286)]
-}
-
-[sub_resource type="Animation" id="Animation_nvye1"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("scene/evelius pivot/evelius_floating:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(3465, -286)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6qlvf"]
@@ -856,12 +1061,53 @@ rotation = 3.14159
 scale = Vector2(3.39, 3.39)
 sprite_frames = SubResource("SpriteFrames_64kej")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="transition/scene"]
+[node name="chronoscepter" type="Sprite2D" parent="transition/scene/evelius pivot/evelius_floating"]
+visible = false
+texture_filter = 1
+position = Vector2(-35, -5)
+scale = Vector2(2.145, 2.145)
+texture = ExtResource("21_c2hgb")
+
+[node name="3d_magic" type="Sprite2D" parent="transition/scene/evelius pivot/evelius_floating"]
+visible = false
+modulate = Color(0.0846899, 0.0846899, 0.0846899, 1)
+texture_filter = 1
+position = Vector2(-73, 31)
+scale = Vector2(1.375, 1.375)
+texture = ExtResource("22_xjifk")
+
+[node name="leakim" type="AnimatedSprite2D" parent="transition/scene"]
 texture_filter = 1
 position = Vector2(3170, -190)
 scale = Vector2(3.96, 3.96)
 sprite_frames = SubResource("SpriteFrames_6q34n")
 animation = &"still_right"
+
+[node name="text" type="Node2D" parent="transition/scene"]
+visible = false
+
+[node name="Buuuble" type="Sprite2D" parent="transition/scene/text"]
+texture_filter = 1
+position = Vector2(3381, -301)
+scale = Vector2(3.77632, 3.77632)
+texture = ExtResource("22_s8c23")
+
+[node name="text2" type="Label" parent="transition/scene/text"]
+texture_filter = 1
+offset_left = 3331.0
+offset_top = -326.0
+offset_right = 5331.0
+offset_bottom = 411.0
+scale = Vector2(0.05, 0.05)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("22_pxlqo")
+theme_override_font_sizes/font_size = 151
+text = "Chasing me is
+futile! you will
+never get your
+cookies back!"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Camera2D" type="Camera2D" parent="transition"]
 position = Vector2(3330, -224)

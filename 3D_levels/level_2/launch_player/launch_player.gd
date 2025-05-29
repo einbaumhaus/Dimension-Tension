@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 #constants
-const SPEED = 7.0
+var SPEED = 7.0
 const JUMP_VELOCITY = 14
 #variables
 var health := 10
@@ -9,10 +9,11 @@ var acceleration = 30
 var _gravity := -30.0
 var _camera_input_direction := Vector2.ZERO
 var _last_movement_direction := Vector3.BACK
-@export var mouse_sensitivity := 0.25
+var mouse_sensitivity = null
 @onready var _camera: Camera3D = $Camera3D
-@onready var elim: CanvasLayer = $elim
+@onready var elim: CanvasLayer = $"../elim_scene"
 @onready var mission: CanvasLayer = $"../mission"
+@onready var legs: AnimatedSprite3D = $legs
 
 #launch stuff
 @onready var launch_anim = $Camera3D/sticker_launcher/animations/AnimationPlayer
@@ -35,12 +36,11 @@ func _input(event: InputEvent) -> void: #add mouse input
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 func _unhandled_input(event: InputEvent) -> void:
-	var is_camera_motion := (
-		event is InputEventMouseMotion and
-		Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED
-	)
-	if is_camera_motion:
-		_camera_input_direction = event.screen_relative * mouse_sensitivity
+	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+		var delta_motion = event.relative * clamp(GlobalSettings.mouse_sensitivity, 0.001, 0.5)
+		_camera.rotation_degrees.x -= delta_motion.y
+		_camera.rotation_degrees.y -= delta_motion.x
+		_camera.rotation_degrees.x = clamp(_camera.rotation_degrees.x, -60, 60)
 
 func take_damage(amount: int) -> void:
 	health -= amount
@@ -49,8 +49,6 @@ func take_damage(amount: int) -> void:
 		elim.visible = true
 		elim.process_mode = Node.PROCESS_MODE_ALWAYS
 		mission.visible = false
-		if elim.get_node("elim_scene").done:
-			get_tree().reload_current_scene()
 
 func _physics_process(delta: float) -> void:
 	
@@ -75,12 +73,7 @@ func _physics_process(delta: float) -> void:
 	Global.player_current_pos = global_position
 	
 	
-	#camera
-	_camera.rotation.x -= _camera_input_direction.y * delta
-	_camera.rotation.y -= _camera_input_direction.x * delta
-	_camera.rotation.x = clamp(_camera.rotation.x, -PI / 3.0, PI / 3.5)
-	_camera_input_direction = Vector2.ZERO
-	
+	legs.rotation_degrees.y = _camera.rotation_degrees.y
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -88,7 +81,13 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-
+		
+	if Input.is_action_pressed("shift"):
+		SPEED = 10
+		_camera.fov = 80
+	if Input.is_action_just_released("shift"):
+		SPEED = 7
+		_camera.fov = 75
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var raw_input := Input.get_vector("left", "right", "up", "down")
@@ -110,3 +109,7 @@ func _physics_process(delta: float) -> void:
 	
 	
 	move_and_slide()
+	#death
+	if elim.get_node("elim_scene").done:
+		get_tree().reload_current_scene()
+		print("RELOAD SCENE")

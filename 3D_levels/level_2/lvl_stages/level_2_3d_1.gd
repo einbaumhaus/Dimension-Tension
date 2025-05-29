@@ -31,5 +31,5 @@ func _on_cutscene_animation_finished(anim_name: StringName) -> void:
 func activate():
 	player.visible = true
 	hitmarker.visible = true
-	player.process_mode = Node.PROCESS_MODE_ALWAYS
-	enemies.process_mode = Node.PROCESS_MODE_ALWAYS
+	player.process_mode = Node.PROCESS_MODE_INHERIT
+	enemies.process_mode = Node.PROCESS_MODE_INHERIT

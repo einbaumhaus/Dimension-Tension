@@ -13,4 +13,5 @@ func _process(delta: float) -> void:
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	print("ELIM ANIM FIN")
 	done = true

@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://f8i8svg7k032"]
+[gd_scene load_steps=14 format=3 uid="uid://f8i8svg7k032"]
 
 [ext_resource type="Script" uid="uid://bnkqjcuyxgj5q" path="res://3D_levels/level_2/launch_player/launch_player.gd" id="1_tj2to"]
 [ext_resource type="PackedScene" uid="uid://c23ra3wdhjla6" path="res://3D_levels/level_2/assets/sticker_launcher/sticker_launcher.tscn" id="2_1lfnn"]
+[ext_resource type="Texture2D" uid="uid://bgw2w26elh5b5" path="res://2D_levels/level_2/Player2D_topdown/player.png" id="2_7hpc3"]
 [ext_resource type="Script" uid="uid://bb1wjhu534dq3" path="res://2D_levels/Player2D/fps.gd" id="2_sh8oe"]
 [ext_resource type="PackedScene" uid="uid://bpmq6uacs60yv" path="res://2D_levels/level_2/elim_scene/elim_scene.tscn" id="4_1lfnn"]
 [ext_resource type="Texture2D" uid="uid://b4c1xo328undx" path="res://3D_levels/level_2/launch_player/hitmarker.png" id="5_vsolm"]
@@ -9,6 +10,57 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_b1m74"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_a7qx7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ljui8"]
+atlas = ExtResource("2_7hpc3")
+region = Rect2(20, 20, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3fnmf"]
+atlas = ExtResource("2_7hpc3")
+region = Rect2(20, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ovki"]
+atlas = ExtResource("2_7hpc3")
+region = Rect2(20, 40, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c3uv7"]
+atlas = ExtResource("2_7hpc3")
+region = Rect2(20, 60, 20, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mp1qs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ljui8")
+}],
+"loop": true,
+"name": &"back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3fnmf")
+}],
+"loop": true,
+"name": &"front",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ovki")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c3uv7")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}]
 
 [node name="launch_player" type="CharacterBody3D"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
@@ -34,6 +86,12 @@ offset_bottom = 7.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("5_vsolm")
+
+[node name="legs" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(12.895, 3.11137e-07, -1.27854e-07, -3.21057e-07, 12.8464, -1.11894, 1.00373e-07, 1.11894, 12.8464, 0, 0, 0)
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_mp1qs")
+animation = &"front"
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.756173, 0)

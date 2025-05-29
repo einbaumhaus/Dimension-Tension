@@ -1,7 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://bxau5jmnhxuvp"]
+[gd_scene load_steps=9 format=3 uid="uid://bxau5jmnhxuvp"]
 
 [ext_resource type="Script" uid="uid://v3uoguhlfsqu" path="res://menus/level_select.gd" id="1_x5a0v"]
 [ext_resource type="Theme" uid="uid://3lc7pfe6wvl7" path="res://assets/pixelated_theme.tres" id="2_a00cd"]
+[ext_resource type="Texture2D" uid="uid://cue12ylhvmuon" path="res://assets/images/logo/lvl_images/asasdasd.png" id="3_ihgok"]
+[ext_resource type="Texture2D" uid="uid://bpjmbnqwx5jch" path="res://assets/images/logo/lvl_images/lvl1_3d.png" id="4_an5vc"]
+[ext_resource type="Texture2D" uid="uid://fr41ctokr1km" path="res://assets/images/logo/lvl_images/lvl2_2d.png" id="5_opf47"]
+[ext_resource type="Texture2D" uid="uid://bqbqjmlldvh3t" path="res://assets/images/logo/lvl_images/lvl2_3d.png" id="6_6ftm7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a00cd"]
+bg_color = Color(0.152941, 0.152941, 0.811765, 0.745098)
+border_color = Color(0.152941, 0.152941, 0.811765, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qa07t"]
+bg_color = Color(0.788235, 0.196078, 0.196078, 0.745098)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [node name="level_select" type="Control"]
 layout_mode = 3
@@ -10,6 +29,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_a00cd")
 script = ExtResource("1_x5a0v")
 
 [node name="BoxContainer" type="BoxContainer" parent="."]
@@ -33,17 +53,29 @@ size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="BoxContainer/lvl1"]
 layout_mode = 2
-text = "Level1"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "level1"
+horizontal_alignment = 1
 
 [node name="lvl_1_2d" type="Button" parent="BoxContainer/lvl1"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_a00cd")
 text = "2D"
+icon = ExtResource("3_ihgok")
+icon_alignment = 2
+expand_icon = true
 
 [node name="lvl_1_3d" type="Button" parent="BoxContainer/lvl1"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_qa07t")
 text = "3D"
+icon = ExtResource("4_an5vc")
+icon_alignment = 2
+expand_icon = true
 
 [node name="lvl2" type="VBoxContainer" parent="BoxContainer"]
 layout_mode = 2
@@ -51,17 +83,29 @@ size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="BoxContainer/lvl2"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Level2"
+horizontal_alignment = 1
 
 [node name="lvl_2_2d" type="Button" parent="BoxContainer/lvl2"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_a00cd")
 text = "2D"
+icon = ExtResource("5_opf47")
+icon_alignment = 2
+expand_icon = true
 
 [node name="lvl_2_3d" type="Button" parent="BoxContainer/lvl2"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_qa07t")
 text = "3D"
+icon = ExtResource("6_6ftm7")
+icon_alignment = 2
+expand_icon = true
 
 [node name="lvl3" type="VBoxContainer" parent="BoxContainer"]
 layout_mode = 2
@@ -69,16 +113,22 @@ size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="BoxContainer/lvl3"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Level3"
+horizontal_alignment = 1
 
 [node name="lvl_3_2d" type="Button" parent="BoxContainer/lvl3"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_a00cd")
 text = "2D"
 
 [node name="lvl_3_3d" type="Button" parent="BoxContainer/lvl3"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_qa07t")
 text = "3D"
 
 [node name="back_b" type="Button" parent="."]
@@ -96,6 +146,21 @@ grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("2_a00cd")
 text = "Back"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -266.5
+offset_top = 59.0
+offset_right = 266.5
+offset_bottom = 115.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.77084, 0.770839, 0.770839, 1)
+theme_override_font_sizes/font_size = 46
+text = "level selector"
 
 [connection signal="pressed" from="BoxContainer/lvl1/lvl_1_2d" to="." method="_on_lvl_1_2d_pressed"]
 [connection signal="pressed" from="BoxContainer/lvl1/lvl_1_3d" to="." method="_on_lvl_1_3d_pressed"]

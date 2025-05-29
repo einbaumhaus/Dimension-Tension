@@ -1,6 +1,32 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://3lc7pfe6wvl7"]
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://3lc7pfe6wvl7"]
 
 [ext_resource type="FontFile" uid="uid://nv7xw0gdt65u" path="res://assets/fonts/joystix monospace.otf" id="1_xutdr"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xutdr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dbw34"]
+bg_color = Color(0.0923971, 0.0923971, 0.0923971, 0.772549)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xutdr"]
+bg_color = Color(0, 0, 0, 0.513726)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1lh4e"]
+bg_color = Color(0, 0, 0, 0.466667)
+
 [resource]
 default_font = ExtResource("1_xutdr")
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(1, 1, 1, 1)
+Button/font_sizes/font_size = 17
+Button/styles/focus = SubResource("StyleBoxEmpty_xutdr")
+Button/styles/hover = SubResource("StyleBoxFlat_dbw34")
+Button/styles/normal = SubResource("StyleBoxFlat_xutdr")
+Panel/styles/panel = SubResource("StyleBoxFlat_1lh4e")

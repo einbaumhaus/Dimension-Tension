@@ -52,6 +52,22 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Back"
 
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -266.5
+offset_top = 59.0
+offset_right = 266.5
+offset_bottom = 115.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.77084, 0.770839, 0.770839, 1)
+theme_override_font_sizes/font_size = 46
+text = "Mode selector"
+horizontal_alignment = 1
+
 [connection signal="pressed" from="BoxContainer/storymode_b" to="." method="_on_storymode_b_pressed"]
 [connection signal="pressed" from="BoxContainer/level_select_b" to="." method="_on_level_select_b_pressed"]
 [connection signal="pressed" from="back_b" to="." method="_on_back_b_pressed"]

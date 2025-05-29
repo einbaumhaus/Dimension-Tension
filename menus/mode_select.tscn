@@ -30,7 +30,7 @@ grow_vertical = 2
 [node name="storymode_b" type="Button" parent="BoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Storymode"
+text = "Story mode"
 
 [node name="level_select_b" type="Button" parent="BoxContainer"]
 layout_mode = 2

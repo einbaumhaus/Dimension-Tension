@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bxau5jmnhxuvp"]
+[gd_scene load_steps=10 format=3 uid="uid://bxau5jmnhxuvp"]
 
 [ext_resource type="Script" uid="uid://v3uoguhlfsqu" path="res://menus/level_select.gd" id="1_x5a0v"]
 [ext_resource type="Theme" uid="uid://3lc7pfe6wvl7" path="res://assets/pixelated_theme.tres" id="2_a00cd"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bpjmbnqwx5jch" path="res://assets/images/logo/lvl_images/lvl1_3d.png" id="4_an5vc"]
 [ext_resource type="Texture2D" uid="uid://fr41ctokr1km" path="res://assets/images/logo/lvl_images/lvl2_2d.png" id="5_opf47"]
 [ext_resource type="Texture2D" uid="uid://bqbqjmlldvh3t" path="res://assets/images/logo/lvl_images/lvl2_3d.png" id="6_6ftm7"]
+[ext_resource type="Texture2D" uid="uid://cgk13mk1jjyy" path="res://assets/images/logo/lvl_images/lvl3_2d.png" id="7_veylk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a00cd"]
 bg_color = Color(0.152941, 0.152941, 0.811765, 0.745098)
@@ -123,6 +124,9 @@ size_flags_vertical = 3
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_a00cd")
 text = "2D"
+icon = ExtResource("7_veylk")
+icon_alignment = 2
+expand_icon = true
 
 [node name="lvl_3_3d" type="Button" parent="BoxContainer/lvl3"]
 layout_mode = 2

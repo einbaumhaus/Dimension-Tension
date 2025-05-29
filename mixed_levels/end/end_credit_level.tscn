@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=4 uid="uid://cxi3e1151b8v8"]
+[gd_scene load_steps=35 format=4 uid="uid://cxi3e1151b8v8"]
 
 [ext_resource type="Script" uid="uid://25icf1g8w3uk" path="res://mixed_levels/end/end_credit_level.gd" id="1_0r6ml"]
 [ext_resource type="Texture2D" uid="uid://cjllvahxg6keb" path="res://3D_levels/level_1/assets/overcast_soil_puresky_4k.hdr" id="1_8thme"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://byxfewxlviuo2" path="res://2D_levels/level_1/assets/env/rbsnext.png" id="4_1d8kn"]
 [ext_resource type="Script" uid="uid://bb1wjhu534dq3" path="res://2D_levels/Player2D/fps.gd" id="5_r5fi5"]
 [ext_resource type="Texture2D" uid="uid://dcjfetld4q5y7" path="res://3D_levels/level_1/assets/bridge/materials/Ice002_1K-JPG_Color.jpg" id="6_1d8kn"]
+[ext_resource type="Theme" uid="uid://3lc7pfe6wvl7" path="res://assets/pixelated_theme.tres" id="7_0rmko"]
 [ext_resource type="Script" uid="uid://wgh4fvgflupg" path="res://mixed_levels/end/water2.gd" id="7_1d8kn"]
 [ext_resource type="PackedScene" uid="uid://bnp7vdu3nrbe8" path="res://menus/pause_menu.tscn" id="7_kbo2q"]
 
@@ -241,26 +242,6 @@ _data = {
 &"drive3": SubResource("Animation_vmrej")
 }
 
-[sub_resource type="Gradient" id="Gradient_b0qeg"]
-offsets = PackedFloat32Array(0, 0.559702)
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_bdl7b"]
-gradient = SubResource("Gradient_b0qeg")
-
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_c12tj"]
-panorama = ExtResource("1_8thme")
-
-[sub_resource type="Sky" id="Sky_ljo6s"]
-sky_material = SubResource("PanoramaSkyMaterial_c12tj")
-
-[sub_resource type="Environment" id="Environment_2hf4y"]
-background_mode = 2
-sky = SubResource("Sky_ljo6s")
-ambient_light_source = 3
-reflected_light_source = 2
-adjustment_color_correction = SubResource("GradientTexture2D_bdl7b")
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_1d8kn"]
 atlas = ExtResource("2_2hf4y")
 region = Rect2(20, 20, 20, 20)
@@ -343,6 +324,26 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_eloay")
 
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_kbo2q"]
+panorama = ExtResource("1_8thme")
+
+[sub_resource type="Sky" id="Sky_ljui8"]
+sky_material = SubResource("PanoramaSkyMaterial_kbo2q")
+
+[sub_resource type="Environment" id="Environment_0rmko"]
+background_mode = 2
+sky = SubResource("Sky_ljui8")
+ambient_light_source = 3
+reflected_light_source = 2
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.494662, 0.69736, 1, 1)
+fog_density = 0.034
+fog_sky_affect = 0.795
+adjustment_enabled = true
+adjustment_contrast = 0.99
+adjustment_saturation = 1.34
+
 [node name="end_credit_level" type="Node3D"]
 script = ExtResource("1_0r6ml")
 
@@ -363,9 +364,6 @@ libraries = {
 libraries = {
 &"": SubResource("AnimationLibrary_dddrv")
 }
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_2hf4y")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.0802861, 0.996772, 0, -0.996772, 0.0802861, 2675.55, 278.05, 1901.11)
@@ -479,6 +477,21 @@ script = ExtResource("5_r5fi5")
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("7_kbo2q")]
 visible = false
 
+[node name="back" type="Button" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -116.0
+offset_top = -81.0
+offset_right = 116.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("7_0rmko")
+text = "back"
+
 [node name="water2" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.9255, 0, 0)
 
@@ -497,6 +510,10 @@ transform = Transform3D(100, 0, 0, 0, 100, -1.62921e-05, 0, 1.62921e-05, 100, 0,
 mesh = SubResource("ArrayMesh_85bvk")
 skeleton = NodePath("")
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_0rmko")
+
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayer2" to="." method="_on_animation_player_2_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayer3" to="." method="_on_animation_player_3_animation_finished"]
+[connection signal="pressed" from="CanvasLayer/back" to="." method="_on_back_pressed"]

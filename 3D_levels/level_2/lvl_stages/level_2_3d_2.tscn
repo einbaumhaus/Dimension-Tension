@@ -1,10 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://blnffj14qys1k"]
+[gd_scene load_steps=6 format=3 uid="uid://blnffj14qys1k"]
 
 [ext_resource type="PackedScene" uid="uid://f8i8svg7k032" path="res://3D_levels/level_2/launch_player/launch_player.tscn" id="1_4kesc"]
+[ext_resource type="Script" uid="uid://bv2w76gho36d2" path="res://3D_levels/level_2/lvl_stages/level_2_3d_2.gd" id="1_dxfov"]
+[ext_resource type="PackedScene" uid="uid://bnp7vdu3nrbe8" path="res://menus/pause_menu.tscn" id="1_mloyc"]
+[ext_resource type="PackedScene" uid="uid://bpmq6uacs60yv" path="res://2D_levels/level_2/elim_scene/elim_scene.tscn" id="2_m2bdb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sajq6"]
 
 [node name="level_2_3d_2" type="Node3D"]
+script = ExtResource("1_dxfov")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("1_mloyc")]
+visible = false
 
 [node name="placeholder" type="Node3D" parent="."]
 transform = Transform3D(0.465, 0, 0, 0, 0.465, 0, 0, 0, 0.465, 0, 0, 0)
@@ -51,3 +60,9 @@ size = Vector3(13.6694, 1.98779, 13.0527)
 
 [node name="launch_player" parent="." instance=ExtResource("1_4kesc")]
 transform = Transform3D(-0.996606, 0, -0.0823212, 0, 1, 0, 0.0823212, 0, -0.996606, -0.491585, 1.0505, -5.54942)
+
+[node name="elim_scene" type="CanvasLayer" parent="."]
+process_mode = 4
+visible = false
+
+[node name="elim_scene" parent="elim_scene" instance=ExtResource("2_m2bdb")]

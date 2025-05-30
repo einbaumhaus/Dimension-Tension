@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var player = get_tree().get_nodes_in_group("player")[0]
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 
-const SPEED = 40
+const SPEED = 50
 const PUSH_DISTANCE = 150
 const PUSH_FORCE = 300
 

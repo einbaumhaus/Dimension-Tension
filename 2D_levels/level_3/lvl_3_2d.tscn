@@ -642,7 +642,6 @@ texture = ExtResource("10_dtmvc")
 expand_mode = 2
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0.180005, 0.180005, 0.180005, 1)
 
 [node name="NoteManager" type="Node" parent="."]

@@ -99,7 +99,6 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_p513a")
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_udivp"]
-load_path = "res://.godot/imported/wood_planks_dirt_diff_1k.jpg-443b24310b8485575faad1e34692c30a.s3tc.ctex"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6axna"]
 albedo_color = Color(0.733308, 0.738248, 0.740364, 1)

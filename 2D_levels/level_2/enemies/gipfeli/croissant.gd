@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var player = get_tree().get_nodes_in_group("player")[0]
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 
-const SPEED = 40
+const SPEED = 50
 const PUSH_DISTANCE = 150
 const PUSH_FORCE = 300
 
@@ -17,7 +17,7 @@ func _physics_process(delta: float) -> void:
 		velocity = (-to_player.normalized()) * PUSH_FORCE
 		player.take_damage()
 		
-	elif distance < 500:
+	elif distance < 600:
 		# Move toward player normally
 		velocity = to_player.normalized() * SPEED
 	else:

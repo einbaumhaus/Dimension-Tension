@@ -1,4 +1,4 @@
-[gd_scene load_steps=102 format=4 uid="uid://dlb7qukr5wfbb"]
+[gd_scene load_steps=118 format=4 uid="uid://dlb7qukr5wfbb"]
 
 [ext_resource type="Script" uid="uid://bfjlx34dyngrh" path="res://3D_levels/level_1/level_1_3d.gd" id="1_ljo6s"]
 [ext_resource type="PackedScene" uid="uid://cj7d18ek4ria6" path="res://3D_levels/Player3D/character_body_3d.tscn" id="1_y7tgq"]
@@ -7,8 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://dxsy10g4xvwbf" path="res://3D_levels/level_1/assets/castle/materials/gray_rocks_diff_1k.jpg" id="4_2xi58"]
 [ext_resource type="PackedScene" uid="uid://16yya7r5clqq" path="res://3D_levels/level_1/assets/bridge/wood_beam.tscn" id="4_grgy5"]
 [ext_resource type="PackedScene" uid="uid://mfyy5n532t1p" path="res://3D_levels/level_1/assets/train.glb" id="4_mbj4m"]
+[ext_resource type="Texture2D" uid="uid://sbb0bic2bn0h" path="res://mixed_levels/intro/assets/evelius_smoll.png" id="5_dc0v1"]
 [ext_resource type="Script" uid="uid://cwmdpvjr3jcop" path="res://3D_levels/level_1/animation_player.gd" id="5_grgy5"]
 [ext_resource type="PackedScene" uid="uid://d3tva3v3fe2vx" path="res://3D_levels/level_1/assets/bridge/platform.tscn" id="5_mbj4m"]
+[ext_resource type="Texture2D" uid="uid://cbxyvw8riiyua" path="res://2D_levels/level_2/enemies/toblertwo/tobllertwo.png" id="6_3t4hw"]
 [ext_resource type="Texture2D" uid="uid://bfdt00b1204ce" path="res://3D_levels/level_1/assets/bridge/materials/forrest_ground_01_diff_1k.jpg" id="8_joxi0"]
 [ext_resource type="Texture2D" uid="uid://dcjfetld4q5y7" path="res://3D_levels/level_1/assets/bridge/materials/Ice002_1K-JPG_Color.jpg" id="9_3al1x"]
 [ext_resource type="Texture2D" uid="uid://bn18yxl6dcmmu" path="res://3D_levels/level_1/assets/bridge/materials/rocky_terrain_diff_1k.jpg" id="9_erloq"]
@@ -33,17 +35,19 @@
 [ext_resource type="Script" uid="uid://b3fjtdlveskud" path="res://3D_levels/level_1/jumppad.gd" id="32_ljui8"]
 [ext_resource type="Texture2D" uid="uid://bwg4g2mfe4lui" path="res://3D_levels/level_1/assets/bridge/materials/wood_planks_dirt_diff_1k.jpg" id="32_wbjlk"]
 [ext_resource type="Texture2D" uid="uid://djxs0si2vd3sd" path="res://3D_levels/level_1/assets/bridge/materials/wood_planks_dirt_nor_gl_1k.jpg" id="33_3yk7c"]
+[ext_resource type="Texture2D" uid="uid://diw4e3db1ji7i" path="res://3D_levels/level_1/assets/castle/materials/church_bricks_02_diff_png_1k.jpg" id="33_l6t0k"]
 [ext_resource type="Script" uid="uid://73orgg6sivl4" path="res://3D_levels/level_1/checkpoint_1.gd" id="33_wbjlk"]
+[ext_resource type="Script" uid="uid://c7c27a8h1nmb6" path="res://3D_levels/level_1/checkpoint_2.gd" id="34_3yk7c"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_3dv5j"]
 panorama = ExtResource("2_irmad")
 
-[sub_resource type="Sky" id="Sky_ljui8"]
+[sub_resource type="Sky" id="Sky_wbjlk"]
 sky_material = SubResource("PanoramaSkyMaterial_3dv5j")
 
 [sub_resource type="Environment" id="Environment_i53j8"]
 background_mode = 2
-sky = SubResource("Sky_ljui8")
+sky = SubResource("Sky_wbjlk")
 ambient_light_source = 3
 reflected_light_source = 2
 fog_enabled = true
@@ -54,6 +58,73 @@ fog_sky_affect = 0.795
 adjustment_enabled = true
 adjustment_contrast = 0.99
 adjustment_saturation = 1.34
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xalg2"]
+atlas = ExtResource("5_dc0v1")
+region = Rect2(20, 0, 20, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3t4hw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xalg2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nf5gd"]
+atlas = ExtResource("6_3t4hw")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_if3bc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nf5gd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_3t4hw"]
+resource_name = "intro"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("evelius_floating:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.33, 8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-23.4801, 4.6196, -6.05642), Vector3(-23.4801, 4.6196, -6.05642), Vector3(281.591, 58.408, -45.3321)]
+}
+
+[sub_resource type="Animation" id="Animation_if3bc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("evelius_floating:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-23.4801, 4.6196, -6.05642)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nk3pu"]
+_data = {
+&"RESET": SubResource("Animation_if3bc"),
+&"intro": SubResource("Animation_3t4hw")
+}
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_erloq"]
 
@@ -1502,8 +1573,54 @@ point_count = 2
 [sub_resource type="BoxShape3D" id="BoxShape3D_ljui8"]
 size = Vector3(2.66736, 1, 2.13513)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6sace"]
+resource_name = "Material"
+cull_mode = 2
+albedo_color = Color(0.906332, 0.906332, 0.906332, 1)
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_tkhhn"]
+_surfaces = [{
+"aabb": AABB(-1.30349, -1, -1.49625, 2.60288, 0.383231, 3.00316),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAwACAAEAAAAEAAEAAwAFAAIABQAAAAIABgAEAAAABQAGAAAABwABAAQABwADAAEABgAHAAQABQADAAcABQAHAAYA"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("jeL//00qAADZHf//ydQAANkd//9NKgAAAAAAAP//AACN4v//ydQAAAAAAAAAAAAA//8AAAAAAAD//wAA//8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_hkdw0"]
+resource_name = "jumppad_Cube"
+_surfaces = [{
+"aabb": AABB(-1.30349, -1, -1.49625, 2.60288, 0.383231, 3.00316),
+"attribute_data": PackedByteArray("/5//f//f/z//3/9//5//P/9f/z//nwAA/5//P/9fAAD/X////5//v/+f////X/+//x//f/9f/z//X/9//x//P/9f/3//n/8//5//f/9f/z//X/+//5//f/+f/7//X/9/"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": SubResource("StandardMaterial3D_6sace"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("jeL//00q///ZHf//ydT//9kd//9NKv//jeL//8nU/////wAA//9L0Nkd///J1Ee9jeL//8nUPdcAAAAA///8uQAAAAD///bQ2R3//00qY8DZHf//ydSK2AAAAAAAAB3AAAAAAAAA/7///wAA////v///AAAAAP+/AAAAAP///7///wAAAACL843i///J1AzUjeL//00qxPz//wAA//8N0gAAAAAAAAPjjeL//00q/OrZHf//TSrM4P//AAAAAKbs/3//v/9//7//f/+//3//v0LedhoJ49Yo3txHFiTkKyxA8WG7H8MvxYj8+7iOvifGAAD/fwAA/38AAP9/AAD/f2ApMiKvR9AG/yL2JwJLzwNOuw+uPKktuibCeKkKplK8")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_tkhhn")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dc0v1"]
+albedo_color = Color(0, 0.266666, 1, 1)
+albedo_texture = ExtResource("33_l6t0k")
+uv1_scale = Vector3(-0.055, 1, 1)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_3yk7c"]
 size = Vector3(1.84082, 3.19287, 10.2012)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dc0v1"]
+size = Vector3(5.43372, 4.18561, 8.98865)
 
 [node name="level_1_3d" type="Node3D"]
 script = ExtResource("1_ljo6s")
@@ -1522,9 +1639,25 @@ transform = Transform3D(1, 0, 0, 0, 0.0802861, 0.996772, 0, -0.996772, 0.0802861
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_i53j8")
 
-[node name="transition" type="Node" parent="."]
+[node name="intro" type="Node3D" parent="."]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="transition"]
+[node name="evelius_floating" type="Node3D" parent="intro"]
+transform = Transform3D(0.414519, 0, -0.910041, 0, 1, 0, 0.910041, 0, 0.414519, -23.4801, 4.6196, -6.05642)
+
+[node name="evelius" type="AnimatedSprite3D" parent="intro/evelius_floating"]
+transform = Transform3D(14.6, 0, 0, 0, 14.6, 0, 0, 0, 14.6, 0, 4.3402, 0)
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_3t4hw")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="intro/evelius_floating"]
+transform = Transform3D(-14.6, 1.27637e-06, 0, -1.27637e-06, -14.6, 0, 0, 0, 14.6, -1.30443e-08, 1.86387, 0)
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_if3bc")
+
+[node name="intro" type="AnimationPlayer" parent="intro"]
+libraries = {
+&"": SubResource("AnimationLibrary_nk3pu")
+}
 
 [node name="assets" type="Node3D" parent="."]
 
@@ -1715,7 +1848,7 @@ mesh = SubResource("PlaneMesh_erloq")
 surface_material_override/0 = SubResource("StandardMaterial3D_cfip6")
 
 [node name="canyon" type="MeshInstance3D" parent="assets/env/forest/StaticBody3D"]
-transform = Transform3D(-9.65948, -0.919822, 1.37426e-05, -22.6463, 0.392337, 0, -8.44458e-07, -8.04134e-08, -157.197, 157.357, -22.6965, 0)
+transform = Transform3D(-9.65948, -0.919822, 1.37426e-05, -22.6463, 0.392337, 0, -8.44458e-07, -8.04134e-08, -157.197, 157.29, -22.646, 0)
 mesh = SubResource("PlaneMesh_erloq")
 surface_material_override/0 = SubResource("StandardMaterial3D_3al1x")
 
@@ -1767,7 +1900,7 @@ shape = SubResource("ConvexPolygonShape3D_cfip6")
 [node name="water" type="Node3D" parent="assets/env"]
 
 [node name="water" type="MeshInstance3D" parent="assets/env/water"]
-transform = Transform3D(91.5236, 0, 0, 0, 1, 0, 0, 0, 492.585, 56.8487, -41.5195, 0)
+transform = Transform3D(91.5236, 0, 0, 0, 1, 0, 0, 0, 492.585, 59.5039, -41.5195, 0)
 mesh = SubResource("PlaneMesh_erloq")
 skeleton = NodePath("../../forest/StaticBody3D")
 surface_material_override/0 = SubResource("StandardMaterial3D_76hjp")
@@ -2861,6 +2994,12 @@ loop = false
 transform = Transform3D(0.995021, 0, 0.0996671, 0, 1, 0, -0.0996671, 0, 0.995021, -0.234619, -1.18585, 0.0562134)
 shape = SubResource("BoxShape3D_ljui8")
 
+[node name="mesh" type="MeshInstance3D" parent="intermission/jumppad"]
+transform = Transform3D(0.0660261, -0.0141897, -0.989076, -0.0265005, 0.997998, -0.0230538, 0.44434, 0.0616292, 0.145595, -0.000943119, -0.49391, 0.00409619)
+mesh = SubResource("ArrayMesh_hkdw0")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_dc0v1")
+
 [node name="checkpoints" type="Node3D" parent="."]
 
 [node name="checkpoint1" type="Area3D" parent="checkpoints"]
@@ -2872,7 +3011,18 @@ transform = Transform3D(0.915761, 0, 0.401724, 0, 1, 0, -0.401724, 0, 0.915761, 
 shape = SubResource("BoxShape3D_3yk7c")
 
 [node name="Marker3D" type="Marker3D" parent="checkpoints/checkpoint1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.119141, -0.106873, 1.36776)
+transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, -0.295135, -0.106873, 1.45114)
+
+[node name="checkpoint2" type="Area3D" parent="checkpoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 161.396, 0, 0)
+script = ExtResource("34_3yk7c")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="checkpoints/checkpoint2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.182678, 1.5928, 0.118347)
+shape = SubResource("BoxShape3D_dc0v1")
+
+[node name="Marker3D" type="Marker3D" parent="checkpoints/checkpoint2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.04786, 0)
 
 [node name="Camera2" type="Camera3D" parent="."]
 transform = Transform3D(-0.00420884, 0.503771, 0.863827, 0, 0.863835, -0.503775, -0.999991, -0.00212031, -0.00363575, 98.0483, -41.348, -0.551302)
@@ -2891,3 +3041,4 @@ script = ExtResource("30_3fnmf")
 [connection signal="body_entered" from="intermission/Area3D" to="intermission" method="_on_area_3d_body_entered"]
 [connection signal="body_entered" from="intermission/jumppad" to="intermission/jumppad" method="_on_body_entered"]
 [connection signal="body_entered" from="checkpoints/checkpoint1" to="checkpoints/checkpoint1" method="_on_body_entered"]
+[connection signal="body_entered" from="checkpoints/checkpoint2" to="checkpoints/checkpoint2" method="_on_body_entered"]

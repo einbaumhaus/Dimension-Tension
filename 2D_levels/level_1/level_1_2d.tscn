@@ -420,6 +420,18 @@ tracks/9/keys = {
 "update": 0,
 "values": [Vector2(-73, 31)]
 }
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("scene/leakim:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_c2hgb"]
 resource_name = "transition"
@@ -549,6 +561,18 @@ tracks/9/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(-73, 31), Vector2(-250, 71)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("scene/leakim:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xjifk"]
@@ -1101,6 +1125,7 @@ scale = Vector2(1.375, 1.375)
 texture = ExtResource("22_xjifk")
 
 [node name="leakim" type="AnimatedSprite2D" parent="transition/scene"]
+visible = false
 texture_filter = 1
 position = Vector2(3170, -190)
 scale = Vector2(3.96, 3.96)

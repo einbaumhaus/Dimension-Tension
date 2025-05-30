@@ -19,6 +19,9 @@ func _physics_process(delta: float) -> void:
 	if patrolling:
 		velocity = Vector2.ZERO
 	else:
+		if distance < 100:
+			print("attacking")
+			player.take_damage()
 		if distance > 500:
 			patrolling = true
 			velocity = Vector2.ZERO
@@ -28,10 +31,8 @@ func _physics_process(delta: float) -> void:
 		elif distance < 300:
 			# Move toward player normally
 			velocity = to_player.normalized() * SPEED
-			print("chasing")
 		else:
 			velocity = Vector2.ZERO
-			print("idle")
 		change_facing_animation()
 	move_and_slide()
 	

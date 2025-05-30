@@ -97,14 +97,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 439.5
-offset_top = 179.5
-offset_right = 672.5
-offset_bottom = 428.5
+offset_left = 437.0
+offset_top = 157.735
+offset_right = 675.0
+offset_bottom = 471.735
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_0wv6w")
-theme_override_constants/separation = 15
+theme_override_constants/separation = 5
 
 [node name="resume" type="Button" parent="stuff/VBoxContainer"]
 layout_mode = 2
@@ -120,6 +120,12 @@ text = "Restart"
 layout_mode = 2
 size_flags_vertical = 3
 text = "Settings"
+
+[node name="guide" type="Button" parent="stuff/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+disabled = true
+text = "guide"
 
 [node name="quit" type="Button" parent="stuff/VBoxContainer"]
 layout_mode = 2

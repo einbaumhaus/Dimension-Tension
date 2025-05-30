@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://sbb0bic2bn0h"
-path="res://.godot/imported/evelius_smoll.png-27cd42137ce63aad7575ee2143f8195b.ctex"
+uid="uid://bqtsgwg7rm3wn"
+path="res://.godot/imported/crate.png-816a486faee7969738f80352a697cd4e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mixed_levels/intro/assets/evelius_smoll.png"
-dest_files=["res://.godot/imported/evelius_smoll.png-27cd42137ce63aad7575ee2143f8195b.ctex"]
+source_file="res://2D_levels/level_3/assets/crate/crate.png"
+dest_files=["res://.godot/imported/crate.png-816a486faee7969738f80352a697cd4e.ctex"]
 
 [params]
 
@@ -21,7 +21,7 @@ compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

@@ -1,11 +1,32 @@
-[gd_scene load_steps=6 format=3 uid="uid://blnffj14qys1k"]
+[gd_scene load_steps=10 format=3 uid="uid://blnffj14qys1k"]
 
 [ext_resource type="PackedScene" uid="uid://f8i8svg7k032" path="res://3D_levels/level_2/launch_player/launch_player.tscn" id="1_4kesc"]
 [ext_resource type="Script" uid="uid://bv2w76gho36d2" path="res://3D_levels/level_2/lvl_stages/level_2_3d_2.gd" id="1_dxfov"]
 [ext_resource type="PackedScene" uid="uid://bnp7vdu3nrbe8" path="res://menus/pause_menu.tscn" id="1_mloyc"]
 [ext_resource type="PackedScene" uid="uid://bpmq6uacs60yv" path="res://2D_levels/level_2/elim_scene/elim_scene.tscn" id="2_m2bdb"]
+[ext_resource type="Texture2D" uid="uid://cjllvahxg6keb" path="res://3D_levels/level_1/assets/overcast_soil_puresky_4k.hdr" id="5_t7ky0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sajq6"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_4ouxg"]
+panorama = ExtResource("5_t7ky0")
+
+[sub_resource type="Sky" id="Sky_ljui8"]
+sky_material = SubResource("PanoramaSkyMaterial_4ouxg")
+
+[sub_resource type="Environment" id="Environment_7ecmq"]
+background_mode = 2
+sky = SubResource("Sky_ljui8")
+ambient_light_source = 3
+reflected_light_source = 2
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.494662, 0.69736, 1, 1)
+fog_density = 0.034
+fog_sky_affect = 0.795
+adjustment_enabled = true
+adjustment_contrast = 0.99
+adjustment_saturation = 1.34
 
 [node name="level_2_3d_2" type="Node3D"]
 script = ExtResource("1_dxfov")
@@ -66,3 +87,6 @@ process_mode = 4
 visible = false
 
 [node name="elim_scene" parent="elim_scene" instance=ExtResource("2_m2bdb")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_7ecmq")

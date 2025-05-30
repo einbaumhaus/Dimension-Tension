@@ -13,4 +13,4 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node3D) -> void:
 	if body.name == "launch_player":
-		get_tree().change_scene_to_file.call_deferred("res://3D_levels/level_2/lvl_stages/level_2_3d_2.tscn")
+		get_tree().change_scene_to_file.call_deferred("res://2D_levels/level_3/lvl_3_2d.tscn")

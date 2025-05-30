@@ -26,6 +26,10 @@ var cooldown = 0.2  # seconds between sticker launches
 #disable launcher
 var launcher_active = true
 
+#maze logic
+const PUSH_FORCE = 5.0
+const MIN_PUSH_FORCE = 10.0
+
 func _physics_process(delta: float) -> void:
 	launcher_rotation()
 	state_machine()
@@ -48,6 +52,11 @@ func _physics_process(delta: float) -> void:
 	velocity = lerp(velocity, velocity, 0.1)
 	#print(velocity)
 	move_and_slide()
+	for i in get_slide_collision_count():
+		var c = get_slide_collision(i)
+		if c.get_collider() is RigidBody2D:
+			var push_force = (PUSH_FORCE * velocity.length() / SPEED) + MIN_PUSH_FORCE
+			c.get_collider().apply_central_impulse(-c.get_normal() * push_force)
 	if not can_take_damage:
 		damage_timer += delta
 		if damage_timer >= damage_cooldown:

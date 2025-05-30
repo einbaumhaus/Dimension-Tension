@@ -16,14 +16,22 @@ func _process(delta: float) -> void:
 
 func _on_boundary_body_entered(body: Node3D) -> void:
 	if body.name == "Player":
-		if checkpoint_1.checkpoint1_on:
-			checkpoint_1.respawn()
-		elif checkpoint_2.checkpoint2_on:
-			checkpoint_2.respawn()
-		else:
-			get_tree().reload_current_scene.call_deferred()
+		respawn_player()
 
 
 func _on_secret_boundary_body_entered(body: Node3D) -> void:
 	if body.name == "Player":
 		get_tree().change_scene_to_file.call_deferred("res://3D_levels/level1_ocean/easter_egg1.tscn")
+
+func respawn_player():
+	if checkpoint_1.checkpoint1_on:
+		checkpoint_1.respawn()
+	elif checkpoint_2.checkpoint2_on:
+		checkpoint_2.respawn()
+	else:
+		get_tree().reload_current_scene.call_deferred()
+
+
+func _on_respawn_body_entered(body: Node3D) -> void:
+	if body.name == "Player":
+		respawn_player()

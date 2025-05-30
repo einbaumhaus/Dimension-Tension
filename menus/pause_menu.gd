@@ -21,7 +21,7 @@ func pause():
 	animation_player.play("blur")
 	
 func testEsc():
-	if Input.is_action_just_pressed("escape") and get_tree().paused == false:
+	if (Input.is_action_just_pressed("escape") or Input.is_action_just_pressed("p")) and get_tree().paused == false:
 		show()
 		pause()
 	elif  Input.is_action_just_pressed("escape") and get_tree().paused == true and (escape_popup == null or escape_popup.visible == false):

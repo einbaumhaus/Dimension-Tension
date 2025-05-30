@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwg4g2mfe4lui"
-path.s3tc="res://.godot/imported/wood_planks_dirt_diff_1k.jpg-443b24310b8485575faad1e34692c30a.s3tc.ctex"
+uid="uid://cdcjdbqsvl7dg"
+path.s3tc="res://.godot/imported/wood_planks_dirt_diff_1k.png-81418b00acd44727156b4da92ed9fea3.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://3D_levels/level_1/assets/bridge/materials/wood_planks_dirt_diff_1k.jpg"
-dest_files=["res://.godot/imported/wood_planks_dirt_diff_1k.jpg-443b24310b8485575faad1e34692c30a.s3tc.ctex"]
+source_file="res://3D_levels/level_1/assets/bridge/materials/wood_planks_dirt_diff_1k.png"
+dest_files=["res://.godot/imported/wood_planks_dirt_diff_1k.png-81418b00acd44727156b4da92ed9fea3.s3tc.ctex"]
 
 [params]
 

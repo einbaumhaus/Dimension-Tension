@@ -1,7 +1,6 @@
 extends Area3D
 
 @onready var animation_player: AnimationPlayer = $"../AnimationPlayer"
-@onready var canvas_layer: CanvasLayer = $"../CanvasLayer"
 var inside = false
 @onready var player: CharacterBody3D = $"../../../Player"
 

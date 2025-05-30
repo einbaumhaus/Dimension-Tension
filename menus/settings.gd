@@ -68,3 +68,20 @@ func _on_option_button_item_selected(index: int) -> void:
 	match index:
 		6:
 			DisplayServer.cursor_set_custom_image(preload("res://assets/cursor/cursor_jayk.png"))
+
+
+func _on_vsync_toggled(toggled_on: bool) -> void:
+	GlobalSettings.vsync = toggled_on
+	if toggled_on:
+		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED)
+	else:
+		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
+		
+
+
+func _on_performance_m_toggled(toggled_on: bool) -> void:
+	GlobalSettings.performance_mode = toggled_on
+	if toggled_on:
+		Engine.max_fps = 60
+	else:
+		Engine.max_fps = 0

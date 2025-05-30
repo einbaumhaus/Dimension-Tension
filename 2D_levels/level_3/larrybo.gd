@@ -7,7 +7,7 @@ var last_position = Vector2.ZERO
 @onready var path_follow: PathFollow2D = $".."
 var start_pos = null
 
-const SPEED = 150
+const SPEED = 110
 var health = 6
 
 func _ready() -> void:

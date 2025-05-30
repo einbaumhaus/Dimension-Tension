@@ -1,4 +1,4 @@
-[gd_scene load_steps=118 format=4 uid="uid://dlb7qukr5wfbb"]
+[gd_scene load_steps=119 format=4 uid="uid://dlb7qukr5wfbb"]
 
 [ext_resource type="Script" uid="uid://bfjlx34dyngrh" path="res://3D_levels/level_1/level_1_3d.gd" id="1_ljo6s"]
 [ext_resource type="PackedScene" uid="uid://cj7d18ek4ria6" path="res://3D_levels/Player3D/character_body_3d.tscn" id="1_y7tgq"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://o3semav0m6li" path="res://3D_levels/level_1/assets/bridge/sign2.png" id="15_srqku"]
 [ext_resource type="PackedScene" uid="uid://cq6huqbd1bdqh" path="res://3D_levels/level_1/assets/castle/castle.tscn" id="16_6ca6q"]
 [ext_resource type="PackedScene" uid="uid://daqiuxg2bylpk" path="res://3D_levels/level_1/assets/castle/tunnel.glb" id="17_pnu7e"]
+[ext_resource type="Texture2D" uid="uid://cdcjdbqsvl7dg" path="res://3D_levels/level_1/assets/bridge/materials/wood_planks_dirt_diff_1k.png" id="18_3t4hw"]
 [ext_resource type="Texture2D" uid="uid://fvswv17qxfcc" path="res://3D_levels/level_1/assets/bridge/sign1.png" id="19_ljo6s"]
 [ext_resource type="PackedScene" uid="uid://c7dkkh03y5yde" path="res://3D_levels/level_1/assets/tunnel/tunnel_piece.tscn" id="22_ocqxk"]
 [ext_resource type="Script" uid="uid://dmt1i0q0pvnr" path="res://3D_levels/level_1/magic.gd" id="23_02bdi"]
@@ -33,7 +34,6 @@
 [ext_resource type="Texture2D" uid="uid://bgw2w26elh5b5" path="res://2D_levels/level_2/Player2D_topdown/player.png" id="29_v53ed"]
 [ext_resource type="Script" uid="uid://bmak1ot074r1o" path="res://3D_levels/level_1/camera_3d.gd" id="30_3fnmf"]
 [ext_resource type="Script" uid="uid://b3fjtdlveskud" path="res://3D_levels/level_1/jumppad.gd" id="32_ljui8"]
-[ext_resource type="Texture2D" uid="uid://bwg4g2mfe4lui" path="res://3D_levels/level_1/assets/bridge/materials/wood_planks_dirt_diff_1k.jpg" id="32_wbjlk"]
 [ext_resource type="Texture2D" uid="uid://djxs0si2vd3sd" path="res://3D_levels/level_1/assets/bridge/materials/wood_planks_dirt_nor_gl_1k.jpg" id="33_3yk7c"]
 [ext_resource type="Texture2D" uid="uid://diw4e3db1ji7i" path="res://3D_levels/level_1/assets/castle/materials/church_bricks_02_diff_png_1k.jpg" id="33_l6t0k"]
 [ext_resource type="Script" uid="uid://73orgg6sivl4" path="res://3D_levels/level_1/checkpoint_1.gd" id="33_wbjlk"]
@@ -282,7 +282,7 @@ shadow_mesh = SubResource("ArrayMesh_i5nbj")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cotn6"]
 albedo_color = Color(0.707967, 0.707967, 0.707967, 1)
-albedo_texture = ExtResource("32_wbjlk")
+albedo_texture = ExtResource("18_3t4hw")
 normal_enabled = true
 normal_texture = ExtResource("33_3yk7c")
 uv1_scale = Vector3(-0.98, 0.11, -0.105)
@@ -411,6 +411,9 @@ albedo_color = Color(0.340339, 0.340339, 0.340339, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1gpri"]
 albedo_color = Color(0.341176, 0.341176, 0.341176, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3t4hw"]
+size = Vector3(47.2446, 1.17102, 29.0573)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5du43"]
 size = Vector3(8.11505, 5.55359, 6.76074)
@@ -1897,6 +1900,10 @@ shape = SubResource("ConvexPolygonShape3D_cfip6")
 transform = Transform3D(-9.65946, -0.919822, -4.25641e-06, -22.6463, 0.392337, 0, 8.44457e-07, 8.04134e-08, -48.6877, 157.228, -23.008, 0)
 shape = SubResource("ConvexPolygonShape3D_cfip6")
 
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="assets/env/forest/StaticBody3D"]
+transform = Transform3D(-9.65946, -0.919822, -4.25641e-06, -22.6463, 0.392337, 0, 8.44457e-07, 8.04134e-08, -48.6877, 214.743, 9.1495, -36.1526)
+shape = SubResource("ConvexPolygonShape3D_cfip6")
+
 [node name="water" type="Node3D" parent="assets/env"]
 
 [node name="water" type="MeshInstance3D" parent="assets/env/water"]
@@ -2575,29 +2582,32 @@ script = ExtResource("5_grgy5")
 
 [node name="train_bridge" type="Node3D" parent="assets/trains"]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="assets/trains/train_bridge"]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="assets/trains/train_bridge/StaticBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="assets/trains/train_bridge"]
 transform = Transform3D(272.214, 0, 0, 0, 1, 0, 0, 0, 7.97217, 112.654, 0, -26.6762)
 mesh = SubResource("BoxMesh_3al1x")
+skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_xx4wa")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="assets/trains/train_bridge/StaticBody3D"]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="assets/trains/train_bridge"]
 transform = Transform3D(272.214, 0, 0, 0, 1, 0, 0, 0, 7.97217, 112.654, 0, -38.9548)
 mesh = SubResource("BoxMesh_3al1x")
+skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_1gpri")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="assets/trains/train_bridge/StaticBody3D"]
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="assets/trains/train_bridge"]
 transform = Transform3D(22.165, 0, 0, 0, 7.95179, 0, 0, 0, 7.97217, 101.8, -38.9393, -32.6479)
 mesh = SubResource("BoxMesh_3al1x")
+skeleton = NodePath("")
 
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="assets/trains/train_bridge/StaticBody3D"]
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="assets/trains/train_bridge"]
 transform = Transform3D(-2.11612e-06, -7.95179, 0, 47.6979, -3.42463e-07, 0.540958, -8.27916, 5.9443e-08, 3.11657, 101.8, -24.0094, -36.829)
 mesh = SubResource("BoxMesh_3al1x")
+skeleton = NodePath("")
 
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="assets/trains/train_bridge/StaticBody3D"]
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="assets/trains/train_bridge"]
 transform = Transform3D(1.39575e-06, 7.95179, 2.72498e-07, 47.7047, -3.42512e-07, 0.538401, 8.24003, 6.36006e-07, -3.11701, 101.8, -24.009, -28.371)
 mesh = SubResource("BoxMesh_3al1x")
+skeleton = NodePath("")
 
 [node name="train_tunnel" type="Node3D" parent="assets/trains"]
 
@@ -2636,27 +2646,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 290.073, 48.1291, -45.6396)
 
 [node name="tunnel_parkour_1" type="Node3D" parent="assets"]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="assets/tunnel_parkour_1"]
-visible = false
+[node name="respawn" type="Area3D" parent="assets/tunnel_parkour_1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 193.573, 0, -48.8226)
 
-[node name="Label" type="Label" parent="assets/tunnel_parkour_1/CanvasLayer"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -374.5
-offset_top = 218.0
-offset_right = 374.5
-offset_bottom = 267.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
-theme_override_colors/font_color = Color(1, 0.968627, 0.968627, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("23_5du43")
-theme_override_font_sizes/font_size = 46
-text = "PRESS \"E\" OR \"SPACE BUTTON\""
+[node name="CollisionShape3D" type="CollisionShape3D" parent="assets/tunnel_parkour_1/respawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.34648, 0.0855103, 16.086)
+shape = SubResource("BoxShape3D_3t4hw")
 
 [node name="magic" type="Area3D" parent="assets/tunnel_parkour_1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 167.236, 0, 0)
@@ -3035,6 +3030,7 @@ script = ExtResource("30_3fnmf")
 
 [connection signal="body_entered" from="assets/env/water/boundary" to="assets/env/water/water" method="_on_boundary_body_entered"]
 [connection signal="body_entered" from="assets/env/water/secret_boundary" to="assets/env/water/water" method="_on_secret_boundary_body_entered"]
+[connection signal="body_entered" from="assets/tunnel_parkour_1/respawn" to="assets/env/water/water" method="_on_respawn_body_entered"]
 [connection signal="body_entered" from="assets/tunnel_parkour_1/magic" to="assets/tunnel_parkour_1/magic" method="_on_body_entered"]
 [connection signal="body_entered" from="assets/tunnel_parkour_1/dimension_changer" to="assets/tunnel_parkour_1/dimension_changer" method="_on_body_entered"]
 [connection signal="animation_finished" from="intermission/logbreak" to="intermission" method="_on_logbreak_animation_finished"]

@@ -1,5 +1,6 @@
 extends MeshInstance3D
 
+@onready var checkpoint_1: Area3D = $"../../../../checkpoints/checkpoint1"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,6 +15,8 @@ func _process(delta: float) -> void:
 
 func _on_boundary_body_entered(body: Node3D) -> void:
 	if body.name == "Player":
+		if checkpoint_1.checkpoint1_on:
+			checkpoint_1.respawn()
 		get_tree().reload_current_scene.call_deferred()
 
 

@@ -477,18 +477,44 @@ script = ExtResource("5_r5fi5")
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("7_kbo2q")]
 visible = false
 
-[node name="back" type="Button" parent="CanvasLayer"]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -116.0
-offset_top = -81.0
-offset_right = 116.0
-offset_bottom = -20.0
 grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("7_0rmko")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -282.0
+offset_top = -207.0
+offset_right = -24.0
+offset_bottom = -25.0
+grow_horizontal = 0
 grow_vertical = 0
+
+[node name="fragebogen" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+disabled = true
+text = "questionnaire
+(fill out)"
+
+[node name="source_code" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "source code"
+
+[node name="back" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
 theme = ExtResource("7_0rmko")
 text = "back"
 
@@ -516,4 +542,6 @@ environment = SubResource("Environment_0rmko")
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayer2" to="." method="_on_animation_player_2_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayer3" to="." method="_on_animation_player_3_animation_finished"]
-[connection signal="pressed" from="CanvasLayer/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/fragebogen" to="." method="_on_fragebogen_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/source_code" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/back" to="." method="_on_back_pressed"]

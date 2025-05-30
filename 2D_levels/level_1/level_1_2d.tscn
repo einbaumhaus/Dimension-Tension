@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=4 uid="uid://bfqm7gkurwapv"]
+[gd_scene load_steps=68 format=4 uid="uid://bfqm7gkurwapv"]
 
 [ext_resource type="Script" uid="uid://bbbduv557mftv" path="res://2D_levels/level_1/level_1.gd" id="1_1nd73"]
 [ext_resource type="Script" uid="uid://bb1wjhu534dq3" path="res://2D_levels/Player2D/fps.gd" id="2_b0sjd"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dwimbonijkrwq" path="res://2D_levels/level_1/assets/env/movingplatform.png" id="10_a5wrx"]
 [ext_resource type="Script" uid="uid://c0qqlgdexyglw" path="res://2D_levels/level_1/moving_platform.gd" id="10_uch6n"]
 [ext_resource type="Texture2D" uid="uid://c6fde5tuunxki" path="res://2D_levels/level_1/assets/env/movingplatform2.png" id="12_5wj1c"]
+[ext_resource type="Script" uid="uid://bujatxwk1o2a6" path="res://2D_levels/level_1/assets/env/checkpoint.gd" id="13_luu4g"]
 [ext_resource type="Theme" uid="uid://3lc7pfe6wvl7" path="res://assets/pixelated_theme.tres" id="13_rodf1"]
 [ext_resource type="Texture2D" uid="uid://dypdqenhivqxr" path="res://assets/keys/keys_parkour2d.png" id="15_cebkg"]
 [ext_resource type="Script" uid="uid://dddtr3uxv81k8" path="res://2D_levels/level_1/escape_popup.gd" id="17_t8jsl"]
@@ -251,6 +252,12 @@ size = Vector2(69, 183)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_a5wrx"]
 distance = -811.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xjifk"]
+size = Vector2(1364, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iggtc"]
+size = Vector2(66, 138)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_insjc"]
 size = Vector2(26.1629, 77.0746)
@@ -813,6 +820,23 @@ script = ExtResource("8_il0pf")
 position = Vector2(1331, -2.495)
 shape = SubResource("WorldBoundaryShape2D_a5wrx")
 
+[node name="fall_limit2" type="Area2D" parent="objects"]
+position = Vector2(996, -335)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="objects/fall_limit2"]
+position = Vector2(781, 0)
+shape = SubResource("RectangleShape2D_xjifk")
+
+[node name="Checkpoint" type="Area2D" parent="objects"]
+position = Vector2(1037, -551)
+script = ExtResource("13_luu4g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="objects/Checkpoint"]
+position = Vector2(0, -34)
+shape = SubResource("RectangleShape2D_iggtc")
+
+[node name="RespawnPoint" type="Marker2D" parent="objects/Checkpoint"]
+
 [node name="jump_pad2" type="Node2D" parent="objects"]
 
 [node name="jump_pad" type="Area2D" parent="objects/jump_pad2"]
@@ -1118,6 +1142,8 @@ zoom = Vector2(2.42, 2.42)
 [connection signal="animation_finished" from="env/background/train/train_player" to="." method="_on_train_player_animation_finished"]
 [connection signal="body_entered" from="objects/perspective_changer" to="transition" method="_on_perspective_changer_body_entered"]
 [connection signal="body_entered" from="objects/fall_limit" to="objects/fall_limit" method="_on_body_entered"]
+[connection signal="body_entered" from="objects/fall_limit2" to="objects/Checkpoint" method="_on_fall_limit_2_body_entered"]
+[connection signal="body_entered" from="objects/Checkpoint" to="objects/Checkpoint" method="_on_body_entered"]
 [connection signal="body_entered" from="objects/jump_pad2/jump_pad" to="objects/jump_pad2/jump_pad" method="_on_body_entered"]
 [connection signal="body_entered" from="objects/jump_pad3/jump_pad" to="objects/jump_pad3/jump_pad" method="_on_body_entered"]
 [connection signal="animation_finished" from="transition/transi_anim" to="transition" method="_on_transi_anim_animation_finished"]

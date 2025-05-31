@@ -7,7 +7,7 @@ var last_position = Vector2.ZERO
 @onready var path_follow: PathFollow2D = $".."
 var start_pos = null
 
-const SPEED = 110
+const SPEED = 90
 var health = 6
 
 func _ready() -> void:
@@ -19,10 +19,10 @@ func _physics_process(delta: float) -> void:
 	if patrolling:
 		velocity = Vector2.ZERO
 	else:
-		if distance < 100:
+		if distance < 70:
 			print("attacking")
 			player.take_damage()
-		if distance > 500:
+		if distance > 400:
 			patrolling = true
 			velocity = Vector2.ZERO
 			path_follow.progress = 0.0  #Reset patrol path to start

@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=4 uid="uid://bqjnc8i53gnqk"]
+[gd_scene load_steps=42 format=4 uid="uid://bqjnc8i53gnqk"]
 
 [ext_resource type="Texture2D" uid="uid://drd4sxov2x8e3" path="res://2D_levels/level_2/assets/tile_map/tilemaptd1.png" id="1_svps0"]
 [ext_resource type="Script" uid="uid://c4xav3n1intg1" path="res://2D_levels/level_3/lvl_3_2d.gd" id="1_ujx0b"]
@@ -160,7 +160,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j3w6d"]
-size = Vector2(190.09, 162.696)
+size = Vector2(149.893, 139.309)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j3w6d"]
 radius = 28.9788
@@ -170,12 +170,6 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -701, 229, 0, 0, 0, 0, -230, 235, 0, 0, 0, 0, -232, 50, 0, 0, 0, 0, -700, 47, 0, 0, 0, 0, -701, 229)
 }
 point_count = 5
-
-[sub_resource type="Curve2D" id="Curve2D_sy0cr"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, -1613, 233, 0, 0, 0, 0, -983, 232, 0, 0, 0, 0, -1612, 233)
-}
-point_count = 3
 
 [sub_resource type="Curve2D" id="Curve2D_8ml4r"]
 _data = {
@@ -357,7 +351,7 @@ animation = &"right_side"
 [node name="Area2D" type="Area2D" parent="enemies/patrolling_en/Path2D/PathFollow2D/larrybo"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/patrolling_en/Path2D/PathFollow2D/larrybo/Area2D"]
-position = Vector2(3.0495, -0.341248)
+position = Vector2(3.04987, -0.341248)
 shape = SubResource("RectangleShape2D_j3w6d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/patrolling_en/Path2D/PathFollow2D/larrybo"]
@@ -400,41 +394,6 @@ position = Vector2(-0.999994, -0.00358367)
 shape = SubResource("CircleShape2D_j3w6d")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="enemies/patrolling_en2/Path2D/PathFollow2D/larrybo"]
-
-[node name="patrolling_en3" type="Node2D" parent="enemies"]
-
-[node name="Path2D" type="Path2D" parent="enemies/patrolling_en3"]
-curve = SubResource("Curve2D_sy0cr")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="enemies/patrolling_en3/Path2D"]
-position = Vector2(-1613, 233)
-rotation = -0.00358421
-rotates = false
-script = ExtResource("11_dtmvc")
-
-[node name="larrybo" type="CharacterBody2D" parent="enemies/patrolling_en3/Path2D/PathFollow2D"]
-collision_layer = 3
-collision_mask = 3
-script = ExtResource("11_j3w6d")
-
-[node name="Sprite2D" type="AnimatedSprite2D" parent="enemies/patrolling_en3/Path2D/PathFollow2D/larrybo"]
-texture_filter = 1
-position = Vector2(-2, -0.00720215)
-scale = Vector2(5, 5)
-sprite_frames = SubResource("SpriteFrames_tyoke")
-animation = &"right_side"
-
-[node name="Area2D" type="Area2D" parent="enemies/patrolling_en3/Path2D/PathFollow2D/larrybo"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/patrolling_en3/Path2D/PathFollow2D/larrybo/Area2D"]
-position = Vector2(3.0495, -0.341248)
-shape = SubResource("RectangleShape2D_j3w6d")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/patrolling_en3/Path2D/PathFollow2D/larrybo"]
-position = Vector2(-0.999994, -0.00358367)
-shape = SubResource("CircleShape2D_j3w6d")
-
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="enemies/patrolling_en3/Path2D/PathFollow2D/larrybo"]
 
 [node name="patrolling_en4" type="Node2D" parent="enemies"]
 
@@ -565,6 +524,13 @@ color = Color(0.835294, 0, 1, 1)
 energy = 1.35
 texture = ExtResource("4_4wcxj")
 
+[node name="PointLight2D3" type="PointLight2D" parent="assets/map"]
+position = Vector2(-233.786, -39.4175)
+scale = Vector2(0.23301, 0.23301)
+color = Color(3.17663e-06, 0.592228, 0.832829, 1)
+energy = 1.35
+texture = ExtResource("4_4wcxj")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="assets/map"]
 position = Vector2(0, -0.485443)
 shape = SubResource("RectangleShape2D_5h1f0")
@@ -691,6 +657,5 @@ visible = false
 [connection signal="timeout" from="CanvasLayer2/escape_popup/Timer" to="CanvasLayer2/escape_popup" method="_on_timer_timeout"]
 [connection signal="body_entered" from="enemies/patrolling_en/Path2D/PathFollow2D/larrybo/Area2D" to="enemies/patrolling_en/Path2D/PathFollow2D/larrybo" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="enemies/patrolling_en2/Path2D/PathFollow2D/larrybo/Area2D" to="enemies/patrolling_en2/Path2D/PathFollow2D/larrybo" method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="enemies/patrolling_en3/Path2D/PathFollow2D/larrybo/Area2D" to="enemies/patrolling_en3/Path2D/PathFollow2D/larrybo" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="enemies/patrolling_en4/Path2D/PathFollow2D/larrybo/Area2D" to="enemies/patrolling_en4/Path2D/PathFollow2D/larrybo" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="enemies/patrolling_en5/Path2D/PathFollow2D/larrybo/Area2D" to="enemies/patrolling_en5/Path2D/PathFollow2D/larrybo" method="_on_area_2d_body_entered"]

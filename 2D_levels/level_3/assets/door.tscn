@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ckoluy23ot0fm" path="res://2D_levels/level_3/assets/door.png" id="1_lnyah"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5v8yo"]
-size = Vector2(16, 24)
+size = Vector2(16, 20)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8nuyo"]
 atlas = ExtResource("1_lnyah")
@@ -37,10 +37,12 @@ animations = [{
 script = ExtResource("1_5v8yo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 4)
+position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_5v8yo")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_8ul6o")
 animation = &"closed"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

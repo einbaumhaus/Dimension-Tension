@@ -1,6 +1,7 @@
 extends Node
 @onready var note_count: Label = $"../mission/Control/VBoxContainer/note count"
 @onready var mission: Label = $"../mission/Control/VBoxContainer/mission"
+@onready var door_2: Area2D = $"../assets/door/door2"
 
 var notes = 0
 # Called when the node enters the scene tree for the first time.
@@ -20,3 +21,4 @@ func collect():
 	if notes == 5:
 		note_count.set_text("door unlocked")
 		mission.set_text("")
+		door_2.open()

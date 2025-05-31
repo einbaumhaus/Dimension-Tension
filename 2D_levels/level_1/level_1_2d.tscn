@@ -750,6 +750,12 @@ position = Vector2(121.475, 27)
 scale = Vector2(3.375, 3.375)
 texture = ExtResource("17_vmbrq")
 
+[node name="keys2" type="Sprite2D" parent="CanvasLayer/escape_popup"]
+texture_filter = 1
+position = Vector2(1036, 568)
+scale = Vector2(4.84091, 4.84091)
+texture = ExtResource("15_cebkg")
+
 [node name="Timer" type="Timer" parent="CanvasLayer/escape_popup"]
 wait_time = 5.0
 one_shot = true

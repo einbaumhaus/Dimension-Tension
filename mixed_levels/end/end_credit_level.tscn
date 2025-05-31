@@ -518,6 +518,22 @@ size_flags_vertical = 3
 theme = ExtResource("7_0rmko")
 text = "back"
 
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+offset_left = 281.0
+offset_top = 240.0
+offset_right = 887.0
+offset_bottom = 384.0
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 320.0
+offset_top = 260.0
+offset_right = 866.0
+offset_bottom = 361.0
+text = "that's all to see for now, lvl3 in 3D is not finished yet
+thanks for playing the playtest version
+if you have any feedback or fun suggestions, please send them my way
+-Michael"
+
 [node name="water2" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.9255, 0, 0)
 

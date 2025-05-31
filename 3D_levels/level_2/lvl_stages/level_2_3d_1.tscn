@@ -1,9 +1,11 @@
-[gd_scene load_steps=49 format=4 uid="uid://bt1oojjskfoa2"]
+[gd_scene load_steps=51 format=4 uid="uid://bt1oojjskfoa2"]
 
 [ext_resource type="Script" uid="uid://baup6tmbd45j4" path="res://3D_levels/level_2/lvl_stages/level_2_3d_1.gd" id="1_ijkd5"]
 [ext_resource type="Texture2D" uid="uid://dcjfetld4q5y7" path="res://3D_levels/level_1/assets/bridge/materials/Ice002_1K-JPG_Color.jpg" id="1_yp75m"]
 [ext_resource type="Texture2D" uid="uid://cjllvahxg6keb" path="res://3D_levels/level_1/assets/overcast_soil_puresky_4k.hdr" id="2_ijkd5"]
+[ext_resource type="Script" uid="uid://dddtr3uxv81k8" path="res://2D_levels/level_1/escape_popup.gd" id="3_c3odq"]
 [ext_resource type="PackedScene" uid="uid://f8i8svg7k032" path="res://3D_levels/level_2/launch_player/launch_player.tscn" id="3_qoep0"]
+[ext_resource type="Texture2D" uid="uid://c70xionhb5pqy" path="res://assets/keys/keys_launcher3d.png" id="4_50ni7"]
 [ext_resource type="PackedScene" uid="uid://bxiy8xy0d6pfa" path="res://3D_levels/level_2/assets/enemies/ugus.tscn" id="4_f4pvx"]
 [ext_resource type="PackedScene" uid="uid://bac2uhb337o7s" path="res://3D_levels/level_2/assets/env/wall/wall_piece.tscn" id="6_qoep0"]
 [ext_resource type="PackedScene" uid="uid://ifb6pbvsjtkj" path="res://3D_levels/level_2/assets/env/wooden_door.tscn" id="7_3rhp0"]
@@ -15,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://bgw2w26elh5b5" path="res://2D_levels/level_2/Player2D_topdown/player.png" id="10_o33sx"]
 [ext_resource type="PackedScene" uid="uid://16yya7r5clqq" path="res://3D_levels/level_1/assets/bridge/wood_beam.tscn" id="11_aurke"]
 [ext_resource type="Texture2D" uid="uid://djxs0si2vd3sd" path="res://3D_levels/level_1/assets/bridge/materials/wood_planks_dirt_nor_gl_1k.jpg" id="13_avkmx"]
+[ext_resource type="Texture2D" uid="uid://cdcjdbqsvl7dg" path="res://3D_levels/level_1/assets/bridge/materials/wood_planks_dirt_diff_1k.png" id="14_50ni7"]
 [ext_resource type="FontFile" uid="uid://dn3yd17i4df0q" path="res://assets/fonts/OCRAEXT.TTF" id="14_78ux5"]
 [ext_resource type="Texture2D" uid="uid://g4ibmy6ooc7c" path="res://3D_levels/level_2/assets/posters/poster1.jpg" id="15_6axna"]
 [ext_resource type="Script" uid="uid://d0htkpmwtw2yi" path="res://3D_levels/level_2/lvl_stages/lava.gd" id="15_n8lvr"]
@@ -98,15 +101,14 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_p513a")
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_udivp"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6axna"]
-albedo_color = Color(0.733308, 0.738248, 0.740364, 1)
-albedo_texture = SubResource("CompressedTexture2D_udivp")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_50ni7"]
+albedo_color = Color(0.560955, 0.560955, 0.560955, 1)
+albedo_texture = ExtResource("14_50ni7")
 metallic_specular = 0.0
 normal_enabled = true
 normal_texture = ExtResource("13_avkmx")
-uv1_scale = Vector3(4.505, 7.025, 0)
+uv1_scale = Vector3(4.405, 5.805, 0)
+uv1_offset = Vector3(-0.39, -0.235, 0)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sbv4a"]
 albedo_color = Color(1, 0, 0, 1)
@@ -734,6 +736,26 @@ script = ExtResource("1_ijkd5")
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("7_f4pvx")]
 visible = false
 
+[node name="keys3" type="Sprite2D" parent="CanvasLayer/PauseMenu"]
+texture_filter = 1
+position = Vector2(973, 587.438)
+scale = Vector2(3.66288, 3.66288)
+texture = ExtResource("4_50ni7")
+
+[node name="escape_popup" type="Node2D" parent="CanvasLayer"]
+script = ExtResource("3_c3odq")
+
+[node name="keys2" type="Sprite2D" parent="CanvasLayer/escape_popup"]
+texture_filter = 1
+position = Vector2(973, 587.438)
+scale = Vector2(3.66288, 3.66288)
+texture = ExtResource("4_50ni7")
+
+[node name="Timer" type="Timer" parent="CanvasLayer/escape_popup"]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.898028, -0.122739, -0.422471, 0, 0.960294, -0.278991, 0.439939, 0.250541, 0.86237, -2.048, 0.565, -0.638)
 fov = 96.4
@@ -914,7 +936,7 @@ shape = SubResource("BoxShape3D_p0857")
 transform = Transform3D(0.68, 0, 0, 0, 0.68, 0, 0, 0, 0.68, 0, 0, 0)
 mesh = SubResource("ArrayMesh_ifyry")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_6axna")
+surface_material_override/0 = SubResource("StandardMaterial3D_50ni7")
 
 [node name="Label3D" type="Label3D" parent="assets/elements/sign"]
 transform = Transform3D(-2.25, 0, 3.39741e-07, 0, 2.25, 0, -3.39741e-07, 0, -2.25, -0.0840099, 2.06296, -0.282523)
@@ -940,7 +962,7 @@ shape = SubResource("BoxShape3D_p0857")
 transform = Transform3D(0.68, 0, 0, 0, 0.68, 0, 0, 0, 0.68, 0, 0, 0)
 mesh = SubResource("ArrayMesh_ifyry")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_6axna")
+surface_material_override/0 = SubResource("StandardMaterial3D_50ni7")
 
 [node name="Label3D" type="Label3D" parent="assets/elements/sign2"]
 transform = Transform3D(-1.845, 0, 2.78587e-07, 0, 1.845, 0, -2.78587e-07, 0, -1.845, -0.0840099, 2.06296, -0.282523)
@@ -1036,6 +1058,7 @@ visible = false
 
 [node name="elim_scene" parent="elim_scene" instance=ExtResource("23_r2s5x")]
 
+[connection signal="timeout" from="CanvasLayer/escape_popup/Timer" to="CanvasLayer/escape_popup" method="_on_timer_timeout"]
 [connection signal="body_entered" from="assets/elements/lava_death" to="assets/elements/lava_death" method="_on_body_entered"]
 [connection signal="body_entered" from="assets/lvl_part_changer" to="assets/lvl_part_changer" method="_on_body_entered"]
 [connection signal="animation_finished" from="cutscene" to="." method="_on_cutscene_animation_finished"]

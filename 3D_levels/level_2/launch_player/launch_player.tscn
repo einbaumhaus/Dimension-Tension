@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://f8i8svg7k032"]
+[gd_scene load_steps=16 format=3 uid="uid://f8i8svg7k032"]
 
 [ext_resource type="Script" uid="uid://bnkqjcuyxgj5q" path="res://3D_levels/level_2/launch_player/launch_player.gd" id="1_tj2to"]
 [ext_resource type="PackedScene" uid="uid://c23ra3wdhjla6" path="res://3D_levels/level_2/assets/sticker_launcher/sticker_launcher.tscn" id="2_1lfnn"]
 [ext_resource type="Texture2D" uid="uid://bgw2w26elh5b5" path="res://2D_levels/level_2/Player2D_topdown/player.png" id="2_7hpc3"]
 [ext_resource type="Script" uid="uid://bb1wjhu534dq3" path="res://2D_levels/Player2D/fps.gd" id="2_sh8oe"]
 [ext_resource type="PackedScene" uid="uid://bpmq6uacs60yv" path="res://2D_levels/level_2/elim_scene/elim_scene.tscn" id="4_1lfnn"]
+[ext_resource type="Texture2D" uid="uid://dx5hsxo48c6c" path="res://3D_levels/level_2/assets/sticker_launcher/zap overlock.png" id="5_mp1qs"]
 [ext_resource type="Texture2D" uid="uid://b4c1xo328undx" path="res://3D_levels/level_2/launch_player/hitmarker.png" id="5_vsolm"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_b1m74"]
@@ -62,6 +63,10 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7hpc3"]
+cull_mode = 2
+albedo_color = Color(0.78562, 0.0150579, 0, 1)
+
 [node name="launch_player" type="CharacterBody3D"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 script = ExtResource("1_tj2to")
@@ -98,7 +103,27 @@ animation = &"front"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.756173, 0)
 
 [node name="sticker_launcher" parent="Camera3D" instance=ExtResource("2_1lfnn")]
-transform = Transform3D(0.284957, 0.004671, 0.00170934, 5.92913e-05, 0.0947462, -0.26879, -0.00497358, 0.26875, 0.0947308, 0.606, -0.274311, -0.904)
+transform = Transform3D(0.284957, 0.00467099, 0.00170934, 5.92913e-05, 0.0947462, -0.26879, -0.00497358, 0.26875, 0.0947306, 0.606, -0.274311, -0.904)
+
+[node name="sticker_launcher2" parent="Camera3D" instance=ExtResource("2_1lfnn")]
+transform = Transform3D(0.284957, -0.00469154, -0.00165215, 0, 0.0946661, -0.268818, 0.00497394, 0.268778, 0.0946515, -0.606, -0.274, -0.904)
+visible = false
+
+[node name="tape" parent="Camera3D/sticker_launcher2" index="0"]
+transform = Transform3D(0.46, 0, 0, 0, 0.422802, -0.181213, 0, 0.181213, 0.422803, 0, 0, 0)
+
+[node name="roll_tape" parent="Camera3D/sticker_launcher2/tape" index="1"]
+transform = Transform3D(2.71344, 0.239605, -1.10608, -0.298286, 2.92317, -0.0985253, 1.09172, 0.203154, 2.72221, -0.341648, -0.304953, 0.975829)
+
+[node name="base" parent="Camera3D/sticker_launcher2/launcher" index="0"]
+material_override = SubResource("StandardMaterial3D_7hpc3")
+
+[node name="Sprite3D" parent="Camera3D/sticker_launcher2/launcher/base" index="0"]
+transform = Transform3D(0.000236047, 0.00420564, 1.11499, -0.976847, 0.53758, -0.0018209, -0.537583, -0.976839, 0.00379835, 0.381, 0.082, -0.313)
+texture = ExtResource("5_mp1qs")
+
+[node name="trigger" parent="Camera3D/sticker_launcher2/launcher" index="4"]
+transform = Transform3D(0.223125, 0, 0, 0, 0.223125, 7.45059e-09, 0, -7.45059e-09, 0.223125, 0, -0.682192, 1.11455)
 
 [node name="fps" type="Label" parent="."]
 anchors_preset = 8
@@ -123,3 +148,5 @@ visible = false
 
 [node name="elim_scene" parent="elim" instance=ExtResource("4_1lfnn")]
 position = Vector2(4.76837e-07, 0.00012207)
+
+[editable path="Camera3D/sticker_launcher2"]

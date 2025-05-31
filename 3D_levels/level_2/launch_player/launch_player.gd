@@ -18,6 +18,10 @@ var mouse_sensitivity = null
 #launch stuff
 @onready var launch_anim = $Camera3D/sticker_launcher/animations/AnimationPlayer
 @onready var sticker_output = $Camera3D/sticker_launcher/RayCast3D
+
+@onready var launch_anim2 = $Camera3D/sticker_launcher2/animations/AnimationPlayer
+@onready var sticker_output2 = $Camera3D/sticker_launcher2/RayCast3D
+
 var sticker = load("res://3D_levels/level_2/assets/sticker_launcher/sticker/sticker.tscn")
 var instance
 var mag_size = 20
@@ -25,6 +29,9 @@ var mag_size = 20
 #launcher delay
 var last_launch_time = 0.0
 var cooldown = 0.2  # seconds between sticker launches
+
+#2 launchers
+var second_launcher = false
 
 func _ready() -> void:
 	pass # Replace with function body.
@@ -68,7 +75,24 @@ func _physics_process(delta: float) -> void:
 				mag_size -= 1
 				print(mag_size)
 				last_launch_time = current_time
-	
+		if second_launcher:
+			if (mag_size == 0):
+				launch_anim2.play("reload")
+				mag_size = 20
+			elif !launch_anim2.is_playing():
+				launch_anim2.play("launch")
+				instance = sticker.instantiate()
+				instance.position = sticker_output2.global_position
+				instance.transform.basis = sticker_output2.global_transform.basis
+				get_parent().add_child(instance)
+				mag_size -= 1
+				print(mag_size)
+				last_launch_time = current_time
+
+	if Input.is_action_pressed("R"):
+		launch_anim.play("reload")
+		mag_size = 20
+
 	#Navigation
 	Global.player_current_pos = global_position
 	

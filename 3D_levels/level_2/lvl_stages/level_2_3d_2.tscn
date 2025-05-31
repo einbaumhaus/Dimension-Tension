@@ -1,12 +1,18 @@
-[gd_scene load_steps=10 format=3 uid="uid://blnffj14qys1k"]
+[gd_scene load_steps=40 format=4 uid="uid://blnffj14qys1k"]
 
 [ext_resource type="PackedScene" uid="uid://f8i8svg7k032" path="res://3D_levels/level_2/launch_player/launch_player.tscn" id="1_4kesc"]
 [ext_resource type="Script" uid="uid://bv2w76gho36d2" path="res://3D_levels/level_2/lvl_stages/level_2_3d_2.gd" id="1_dxfov"]
 [ext_resource type="PackedScene" uid="uid://bnp7vdu3nrbe8" path="res://menus/pause_menu.tscn" id="1_mloyc"]
 [ext_resource type="PackedScene" uid="uid://bpmq6uacs60yv" path="res://2D_levels/level_2/elim_scene/elim_scene.tscn" id="2_m2bdb"]
 [ext_resource type="Texture2D" uid="uid://cjllvahxg6keb" path="res://3D_levels/level_1/assets/overcast_soil_puresky_4k.hdr" id="5_t7ky0"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sajq6"]
+[ext_resource type="Texture2D" uid="uid://clde65rir2dv3" path="res://3D_levels/level_2/assets/env/gravelly_sand_diff_1k.jpg" id="6_4ouxg"]
+[ext_resource type="Texture2D" uid="uid://bsuaof7o8fr32" path="res://3D_levels/level_1/assets/castle/materials/castle_wall_slates_diff_1k.jpg" id="6_7ecmq"]
+[ext_resource type="PackedScene" uid="uid://ifb6pbvsjtkj" path="res://3D_levels/level_2/assets/env/wooden_door.tscn" id="6_7sgvi"]
+[ext_resource type="PackedScene" uid="uid://bxiy8xy0d6pfa" path="res://3D_levels/level_2/assets/enemies/ugus.tscn" id="6_fxsf8"]
+[ext_resource type="PackedScene" uid="uid://bac2uhb337o7s" path="res://3D_levels/level_2/assets/env/wall/wall_piece.tscn" id="7_cjnvw"]
+[ext_resource type="Texture2D" uid="uid://cvnflcc51kvet" path="res://3D_levels/level_2/assets/part2/windows_castle.png" id="8_mcrfw"]
+[ext_resource type="FontFile" uid="uid://dn3yd17i4df0q" path="res://assets/fonts/OCRAEXT.TTF" id="12_ihhey"]
+[ext_resource type="Script" uid="uid://cr5eu0hte3jpn" path="res://3D_levels/level_2/lvl_stages/wave_manager.gd" id="13_cmtpo"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_4ouxg"]
 panorama = ExtResource("5_t7ky0")
@@ -28,6 +34,427 @@ adjustment_enabled = true
 adjustment_contrast = 0.99
 adjustment_saturation = 1.34
 
+[sub_resource type="Animation" id="Animation_adsja"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.105513, -3.12844, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_kqf0v"]
+resource_name = "wave2start"
+length = 3.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:current")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.01),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.5708, 3.11192, 0), Vector3(-0.122173, 3.11192, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Label:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.63, 0.84, 3, 3.28),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_adsja"]
+_data = {
+&"RESET": SubResource("Animation_adsja"),
+&"wave2start": SubResource("Animation_kqf0v")
+}
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pn1rq"]
+load_path = "res://.godot/imported/Untitled-1.jpg-bffac236435ccc4b82aeb650fc091648.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oajnp"]
+cull_mode = 2
+albedo_color = Color(0, 0.928338, 0.579045, 1)
+albedo_texture = SubResource("CompressedTexture2D_pn1rq")
+normal_scale = 16.0
+uv1_scale = Vector3(5.485, 5.485, 5.485)
+uv1_offset = Vector3(-0.085, 0.65, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_adsja"]
+cull_mode = 2
+albedo_color = Color(0.976471, 0.992157, 0, 1)
+albedo_texture = SubResource("CompressedTexture2D_pn1rq")
+normal_scale = 16.0
+uv1_scale = Vector3(5.485, 5.485, 5.485)
+uv1_offset = Vector3(-0.085, 0.65, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e870u"]
+cull_mode = 2
+albedo_color = Color(0.210182, 0.814646, 0, 1)
+albedo_texture = SubResource("CompressedTexture2D_pn1rq")
+normal_scale = 16.0
+uv1_scale = Vector3(5.485, 5.485, 5.485)
+uv1_offset = Vector3(-0.085, 0.65, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cmtpo"]
+cull_mode = 2
+albedo_color = Color(0.8775, 0.628646, 0, 1)
+albedo_texture = SubResource("CompressedTexture2D_pn1rq")
+normal_scale = 16.0
+uv1_scale = Vector3(5.485, 5.485, 5.485)
+uv1_offset = Vector3(-0.085, 0.65, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cbuk5"]
+cull_mode = 2
+albedo_color = Color(1, 0.582598, 0.789072, 1)
+albedo_texture = SubResource("CompressedTexture2D_pn1rq")
+normal_scale = 16.0
+uv1_scale = Vector3(5.485, 5.485, 5.485)
+uv1_offset = Vector3(-0.085, 0.65, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kqf0v"]
+cull_mode = 2
+albedo_color = Color(0.210182, 0.814646, 0, 1)
+albedo_texture = SubResource("CompressedTexture2D_pn1rq")
+normal_scale = 16.0
+uv1_scale = Vector3(5.485, 5.485, 5.485)
+uv1_offset = Vector3(-0.085, 0.65, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8q03h"]
+resource_name = "Material"
+cull_mode = 2
+albedo_color = Color(0.906332, 0.906332, 0.906332, 1)
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ly24d"]
+_surfaces = [{
+"aabb": AABB(-10.828, -1.28909, -21.7141, 31.7238, 9.36924, 39.0913),
+"format": 34359742465,
+"index_count": 330,
+"index_data": PackedByteArray("AAABAAIAAwABAAIAAwACAAQABAACAAAABQABAAMABAAAAAYAAAAHAAEABQAHAAEABgAAAAcABgAHAAUABgAFAAgABgAIAAkACAAKAAkACQAKAAsACQALAAwACAANAAoACwANAAoADgANAAgADAALAA8ADAAPAA4ACwAPAA0ADgAPAA0AEAARABIAEwARABIAEwASABQAFAASABAAFQARABMAFAAQABYAFQAXABEAEAAXABEAFgAXABUAFgAQABcAGAAZABoAGwAZABoAGwAaABwAHAAaABgAHQAZABsAHAAYAB4AHQAfABkAGAAfABkAHgAfAB0AHgAYAB8AIAAhACIAIwAhACIAIwAiACQAJAAiACAAJQAhACMAJAAgACYAIAAnACEAJQAnACEAJgAgACcAJgAnACUAJgAlACgAJgAoACkAKAAqACkAKQAqACsAKQArACwAKAAtACoAKwAtACoALgAtACgALAArAC8ALAAvAC4AKwAvAC0ALgAvAC0AMAAxADIAMwAxADIAMwAyADQANAAyADAANQAxADMANAAwADYANQA3ADEAMAA3ADEANgA3ADUANgAwADcAOAA5ADoAOAA7ADkAOgA8ADgAOAA8AD0AOgA+ADwAPQA+ADwAPwA+ADoAPQBAAD4APwBAAD4AOAA9AEEAQQA9AEAAQQBAAD8AQgBBAD8AQgBDAEEAQgBEAEMAQwBEAEUAQwBFAEYAQgBHAEQARQBHAEQASABHAEIARQBJAEcASABJAEcARgBFAEkARgBJAEgASABKAEYASABLAEoATABNAE4ATwBNAE4ATwBOAFAAUABOAEwAUQBNAE8AUABMAFIAUQBTAE0ATABTAE0AUgBTAFEAUgBMAFMA"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 84,
+"vertex_data": PackedByteArray("+SEgwegApb9nBItBWj8twegApb8ZjHlB+SEgwegApb8ZjHlBWj8twVBIAUEZjHlB+SEgwVBIAUEZjHlBWj8twVBIAUFnBItB+SEgwVBIAUFnBItBWj8twegApb9nBItBWj8twVBIAUG5ra3B+SEgwVBIAUG5ra3B+SEgwegApb+5ra3B+SEgwegApb9eb5/B+SEgwVBIAUFeb5/BWj8twegApb+5ra3BWj8twVBIAUFeb5/BWj8twegApb9eb5/B+SEgwegApb/qFN5AWj8twegApb+AG6VA+SEgwegApb+AG6VAWj8twVBIAUGAG6VA+SEgwVBIAUGAG6VAWj8twVBIAUHqFN5A+SEgwVBIAUHqFN5AWj8twegApb/qFN5A+SEgwegApb9k4BfBWj8twegApb8ZXTTB+SEgwegApb8ZXTTBWj8twVBIAUEZXTTB+SEgwVBIAUEZXTTBWj8twVBIAUFk4BfB+SEgwVBIAUFk4BfBWj8twegApb9k4BfBqiqnQegApb9nBItB+ZugQegApb8ZjHlBqiqnQegApb8ZjHlB+ZugQVBIAUEZjHlBqiqnQVBIAUEZjHlB+ZugQVBIAUFnBItBqiqnQVBIAUFnBItB+ZugQegApb9nBItB+ZugQVBIAUG5ra3BqiqnQVBIAUG5ra3BqiqnQegApb+5ra3BqiqnQegApb9eb5/BqiqnQVBIAUFeb5/B+ZugQegApb+5ra3B+ZugQVBIAUFeb5/B+ZugQegApb9eb5/BqiqnQegApb/qFN5A+ZugQegApb+AG6VAqiqnQegApb+AG6VA+ZugQVBIAUGAG6VAqiqnQVBIAUGAG6VA+ZugQVBIAUHqFN5AqiqnQVBIAUHqFN5A+ZugQegApb/qFN5AKBXov1BIAUGLtq3B1OsswVBIAUHaJ6fBKBXov1BIAUHaJ6fB1OsswVBIAUGLtq3BKBXov+QApb+Ltq3BgO8FveQApb+Ltq3BKBXov+QApb/aJ6fBgO8FvVBIAUHaJ6fBgO8FveQApb/aJ6fBgO8FvVBIAUGLtq3BuzMgQVBIAUHaJ6fBuzMgQVBIAUGLtq3BuzMgQeQApb+Ltq3BcLA8QeQApb+Ltq3BcLA8QVBIAUGLtq3BuzMgQeQApb/aJ6fBcLA8QVBIAUHaJ6fBcLA8QeQApb/aJ6fBaOemQVBIAUGLtq3BaOemQVBIAUHaJ6fBqiqnQegApb9k4BfB+ZugQegApb8ZXTTBqiqnQegApb8ZXTTB+ZugQVBIAUEZXTTBqiqnQVBIAUEZXTTB+ZugQVBIAUFk4BfBqiqnQVBIAUFk4BfB+ZugQegApb9k4BfB")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_br444"]
+resource_name = "coutryard_Cube"
+_surfaces = [{
+"aabb": AABB(-10.828, -1.28909, -21.7141, 31.7238, 9.36924, 39.0913),
+"attribute_data": PackedByteArray("AAAAAAAAgD8AAAAAAACAPwAAAAAAAIA/AAAAAAAAgD8AACA/AACAPgAAAAAAAIA/AABgPwAAgD4AAAAAAACAPwAAID8gkIY+AAAAAAAAgD8AACA/AACAPgAAAAAAAIA/AABgPx6Qhj4AAAAAAACAPwAAID8gkIY+AAAAAAAAgD8AAGA/AACAPgAAAAAAAIA/AABgPx6Qhj4AAAAAAACAPwAAAAAAAIA/AAAAAAAAgD8AAAAAAACAPwAAAAAAAIA/AAAgPwAAgD4AAAAAAACAPwAAYD8AAIA+AAAAAAAAgD8AACA/IJCGPgAAAAAAAIA/AAAgPwAAgD4AAAAAAACAPwAAYD8ekIY+AAAAAAAAgD8AACA/IJCGPgAAAAAAAIA/AABgPwAAgD4AAAAAAACAPwAAYD8ekIY+AAAAAAAAgD8AAAAAAACAPwAAAAAAAIA/AAAAAAAAgD8AAAAAAACAPwAAID8AAIA+AAAAAAAAgD8AAGA/AACAPgAAAAAAAIA/AAAgPyCQhj4AAAAAAACAPwAAID8AAIA+AAAAAAAAgD8AAGA/HpCGPgAAAAAAAIA/AAAgPyCQhj4AAAAAAACAPwAAYD8AAIA+AAAAAAAAgD8AAGA/HpCGPgAAAAAAAIA/AAAgPwAAgD4AAGA/HpCGPgAAID8gkIY+AABgPwAAgD4AAAAAAACAPwAAAAAAAIA/AAAAAAAAgD8AAAAAAACAPwAAID8AAIA+AAAAAAAAgD8AAGA/AACAPgAAAAAAAIA/AAAgPyCQhj4AAAAAAACAPwAAID8AAIA+AAAAAAAAgD8AAGA/HpCGPgAAAAAAAIA/AAAgPyCQhj4AAAAAAACAPwAAYD8AAIA+AAAAAAAAgD8AAGA/HpCGPgAAAAAAAIA/AAAAAAAAgD8AAAAAAACAPwAAAAAAAIA/AAAAAAAAgD8AACA/AACAPgAAAAAAAIA/AABgPwAAgD4AAAAAAACAPwAAID8gkIY+AAAAAAAAgD8AACA/AACAPgAAAAAAAIA/AABgPx6Qhj4AAAAAAACAPwAAID8gkIY+AAAAAAAAgD8AAGA/AACAPgAAAAAAAIA/AABgPx6Qhj4AAAAAAACAPwAAAAAAAIA/AAAAAAAAgD8AAAAAAACAPwAAAAAAAIA/AAAgPwAAgD4AAAAAAACAPwAAYD8AAIA+AAAAAAAAgD8AACA/IJCGPgAAAAAAAIA/AAAgPwAAgD4AAAAAAACAPwAAYD8ekIY+AAAAAAAAgD8AACA/IJCGPgAAAAAAAIA/AABgPwAAgD4AAAAAAACAPwAAYD8ekIY+AAAAAAAAgD8AACA/IJCGPgAAYD8ekIY+AABgPx6Qhj4AACA/IJCGPgAAAAAAAIA/AAAAAAAAgD8AAAAAAACAPwAAAAAAAIA/AAAgPwAAgD4AAAAAAACAPwAAYD8AAIA+AAAAAAAAgD8AACA/IJCGPgAAAAAAAIA/AAAgPwAAgD4AAAAAAACAPwAAYD8ekIY+AAAAAAAAgD8AACA/IJCGPgAAAAAAAIA/AABgPwAAgD4AAAAAAACAPwAAYD8ekIY+AAAAAAAAgD8AACA/AACAPgAAYD8ekIY+AAAgPyCQhj4AAGA/AACAPgAAAAAAAIA/AAAAAAAAgD8AAAAAAACAPwAAAAAAAIA/AAAgPwAAgD4AAAAAAACAPwAAYD8AAIA+AAAAAAAAgD8AACA/IJCGPgAAAAAAAIA/AAAgPwAAgD4AAAAAAACAPwAAYD8ekIY+AAAAAAAAgD8AACA/IJCGPgAAAAAAAIA/AABgPwAAgD4AAAAAAACAPwAAYD8ekIY+AAAAAAAAgD8AAGA/HpCGPgAAAAAAAIA/AAAgPyCQhj4AAAAAAACAPwAAYD8ekIY+AAAgPwAAgD4AAGA/AACAPgAAID8gkIY+AABgPwAAgD4AAAAAAACAPwAAYD8ekIY+AAAAAAAAgD8AACA/AACAPgAAAAAAAIA/AABgPwAAgD4AAAAAAACAPwAAAAAAAIA/AAAAAAAAgD8AAAAAAACAPwAAAAAAAIA/AAAgPyCQhj4AAAAAAACAPwAAID8AAIA+AAAAAAAAgD8AAAAAAACAPwAAAAAAAIA/AAAAAAAAgD8AAAAAAACAPwAAID8AAIA+AAAAAAAAgD8AAGA/AACAPgAAAAAAAIA/AAAgPyCQhj4AAAAAAACAPwAAID8AAIA+AAAAAAAAgD8AAGA/HpCGPgAAAAAAAIA/AAAgPyCQhj4AAAAAAACAPwAAYD8AAIA+AAAAAAAAgD8AAGA/HpCGPgAAAAAAAIA/AABgPwAAgD4AACA/AACAPgAAID8AAIA+AABgPwAAgD4="),
+"format": 34359742487,
+"index_count": 330,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0AMAAxADIAMAAzADEANAA1ADYANAA3ADUAOAA5ADoAOAA7ADkAPAA9AD4APAA/AD0AQABBAEIAQABDAEEARABFAEYARABHAEUASABJAEoASABLAEkATABNAE4ATABPAE0AUABRAFIAUABTAFEAVABVAFYAVABXAFUAWABZAFoAWABbAFkAXABdAF4AXABfAF0AYABhAGIAYABjAGEAZABlAGYAZABnAGUAaABpAGoAaABrAGkAbABtAG4AbABvAG0AcABxAHIAcABzAHEAdAB1AHYAdAB3AHUAeAB5AHoAeAB7AHkAfAB9AH4AfAB/AH0AgACBAIIAgACDAIEAhACFAIYAhACHAIUAiACJAIoAiACLAIkAjACNAI4AjACPAI0AkACRAJIAkACTAJEAlACVAJYAlACXAJUAmACZAJoAmACbAJkAnACdAJ4AnACfAJ0AoAChAKIAoACjAKEApAClAKYApACnAKUAqACpAKoAqACrAKkArACtAK4ArACvAK0AsACxALIAsACzALEAtAC1ALYAtAC3ALUAuAC5ALoAuAC7ALkAvAC9AL4AvAC/AL0AwADBAMIAwADDAMEAxADFAMYAxADHAMUAyADJAMoAyADLAMkAzADNAM4AzADPAM0A0ADRANIA0ADTANEA1ADVANYA1ADXANUA2ADZANoA2ADbANkA"),
+"material": SubResource("StandardMaterial3D_8q03h"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 220,
+"vertex_data": PackedByteArray("+SEgwegApb9nBItBWj8twegApb8ZjHlB+SEgwegApb8ZjHlBWj8twegApb9nBItB+SEgwVBIAUFnBItBWj8twegApb9nBItBWj8twVBIAUFnBItB+SEgwegApb9nBItB+SEgwVBIAUEZjHlB+SEgwegApb9nBItB+SEgwVBIAUFnBItB+SEgwegApb8ZjHlBWj8twVBIAUEZjHlB+SEgwegApb8ZjHlB+SEgwVBIAUEZjHlBWj8twegApb8ZjHlBWj8twVBIAUFnBItBWj8twegApb8ZjHlBWj8twVBIAUEZjHlBWj8twegApb9nBItB+SEgwegApb/qFN5AWj8twegApb+AG6VA+SEgwegApb+AG6VAWj8twegApb/qFN5A+SEgwVBIAUHqFN5AWj8twegApb/qFN5AWj8twVBIAUHqFN5A+SEgwegApb/qFN5A+SEgwVBIAUGAG6VA+SEgwegApb/qFN5A+SEgwVBIAUHqFN5A+SEgwegApb+AG6VAWj8twVBIAUGAG6VA+SEgwegApb+AG6VA+SEgwVBIAUGAG6VAWj8twegApb+AG6VAWj8twVBIAUHqFN5AWj8twegApb+AG6VAWj8twVBIAUGAG6VAWj8twegApb/qFN5A+SEgwegApb9k4BfBWj8twegApb8ZXTTB+SEgwegApb8ZXTTBWj8twegApb9k4BfB+SEgwVBIAUFk4BfBWj8twegApb9k4BfBWj8twVBIAUFk4BfB+SEgwegApb9k4BfB+SEgwVBIAUEZXTTB+SEgwegApb9k4BfB+SEgwVBIAUFk4BfB+SEgwegApb8ZXTTBWj8twVBIAUEZXTTB+SEgwegApb8ZXTTB+SEgwVBIAUEZXTTBWj8twegApb8ZXTTBWj8twVBIAUFk4BfBWj8twegApb8ZXTTBWj8twVBIAUEZXTTBWj8twegApb9k4BfB+SEgwVBIAUFnBItBWj8twVBIAUG5ra3B+SEgwVBIAUG5ra3BWj8twVBIAUFnBItB+SEgwegApb9eb5/BWj8twegApb+5ra3B+SEgwegApb+5ra3BWj8twegApb9eb5/B+SEgwVBIAUFeb5/BWj8twegApb9eb5/BWj8twVBIAUFeb5/B+SEgwegApb9eb5/B+SEgwVBIAUG5ra3B+SEgwegApb9eb5/B+SEgwVBIAUFeb5/B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////P////39v9f//////f2/1//////9/b/X//////3////+//////wAA/7//////AAD/v/////8AAP+//////////78AAP9/RPUAAAAA/39E9QAAAAD/f0T1AAAAAP9/////v/9///////+//3///////7//f///////v/9///////+//3//fwAA/z//f/9/AAD/P/9//38AAP8//3//f////z////9/b/X//////39v9f//////f2/1//////9/////v/////8AAP+//////wAA/7//////AAD/v/////////+/AAD/f0T1AAAAAP9/RPUAAAAA/39E9QAAAAD/f////7//f///////v/9///////+//3///////7//f///////v/9//38AAP8//3//fwAA/z//f/9/AAD/P/9//3////8/////f2/1//////9/b/X//////39v9f//////f////7//////AAD/v/////8AAP+//////wAA/7//////////vwAA/39E9QAAAAD/f0T1AAAAAP9/RPUAAAAA/3////+//3///wAA/7//f///AAACwP9///8AAALA/3///wAA/7//f///////v/9///////+//3///////7//f///////v/9//38AAP8//3//fwAA/z//f/9/AAD/P/9//3////8/////f2/1//////9/b/X//////39v9f//////f////7//////AAD/v/////8AAP+//////wAA/7//////////vwAA/39E9QAAAAD/f0T1AAAAAP9/RPUAAAAA/3////+//3///////7//f///////v/9///////+//3///////7//f/9/AAD/P/9//38AAP8//3//fwAA/z//f/9/////P////39v9f//////f2/1//////9/b/X//////3////+//////wAA/7//////AAD/v/////8AAP+//////////78AAP9/RPUAAAAA/39E9QAAAAD/f0T1AAAAAP9/////v/9///////+//3///////7//f///////v/9///////+//3//fwAA/z//f/9/AAD/P/9//38AAP8//3//f////z////9/b/X//////39v9f//////f2/1//////9/////v/////8AAP+//////wAA/7//////AAD/v/////////+/AAD/f0T1AAAAAP9/RPUAAAAA/39E9QAAAAD/f////7//fwAA////v/9/AAD///+//38AAP///7//fwAA////v/9///////+//3///////7//f///////v/9///////+//3//fwAA/z//f/9/AAD/P/9//38AAP8//3//f////z////9/b/X//////39v9f//////f2/1//////9/////v/////8AAP+//////wAA/7//////AAD/v/////////+/AAD/f0T1AAAAAP9/RPUAAAAA/39E9QAAAAD/f////7//f///AAD/v/9///8AAALA/3///wAAAsD/f///AAD/v/9///////+//3///////7//f///////v/9///////+//3//fwAA/z//f/9/AAD/P/9//38AAP8//3//f////z////9/b/X//////39v9f//////f2/1//////9/////v/////8AAP+//////wAA/7//////AAD/v/////////+/AAD/f0T1AAAAAP9/RPUAAAAA/39E9QAAAAD/f////78AAP9//3//vwAA/3//f/+/AAD/f/9//78AAP9/////v/9/AAABgP+//38AAP9//7//fwAA/3//v/9/AAABgP+//3//f7oKojr/f/9/ugqiOv9//3+6CqI6/3//f////z////9//3//P////3//f/8/////f/9//z////9/////v/9///////+//3///////7//f///////v/9///////+//////48KR8X/////jwpHxf////+PCkfF/////////7//f///////v/9///////+//3///////7//f///////v////3//f/8/////f/9//z////9//3//P////3////+//////48KR8X/////jwpHxf////+PCkfF/////////78AAP9//3//vwAA/3//f/+/AAD/f/9//78AAP9/////v/9//3+6CqI6/3//f7oKojr/f/9/ugqiOv9//3////8//38AAP///7//fwAA////v/9/AAD///+//38AAP///78=")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_ly24d")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mcrfw"]
+cull_mode = 2
+albedo_color = Color(0.325441, 0.325441, 0.325441, 1)
+albedo_texture = ExtResource("6_7ecmq")
+uv1_scale = Vector3(-0.8, 0.114, -0.355)
+uv1_offset = Vector3(-1.825, 2.77, -1.26)
+uv1_triplanar = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_7ecmq"]
+size = Vector2(47.815, 55.44)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cjnvw"]
+albedo_color = Color(0.529557, 0.707095, 0.942005, 1)
+albedo_texture = ExtResource("6_4ouxg")
+metallic_specular = 0.0
+uv1_scale = Vector3(8.69, 7.98, 0)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cmtpo"]
+size = Vector3(37.9365, 0.001, 55.4152)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mcrfw"]
+size = Vector3(2.65625, 0.001, 55.4152)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oajnp"]
+size = Vector3(2.65625, 0.001, 28.7409)
+
+[sub_resource type="Animation" id="Animation_oajnp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("assets/doors/wooden_door:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(3.01594e-07, 0.247159, -7.25768)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("assets/doors/wooden_door:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -1.5708, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("launch_player:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.491585, 1.0505, -9.26451)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("intro/Camera3D:current")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("intro/Camera3D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-18.5169, 3.44773, 5.77455)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("intro/Camera3D:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.121377, -1.05588, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("intro/Label:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("intro/Label:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_cmtpo"]
+resource_name = "intro"
+length = 4.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("assets/doors/wooden_door:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(3.01594e-07, 0.247159, -7.25768), Vector3(-0.48, 0.247, -6.018), Vector3(3.01594e-07, 0.247159, -7.25768)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("assets/doors/wooden_door:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -1.5708, 0), Vector3(0, -2.1977, 0), Vector3(0, -1.5708, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("launch_player:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.73),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.491585, 1.0505, -9.26451), Vector3(3.86611, 1.0505, -6.15155)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("intro/Camera3D:current")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 4.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("intro/Camera3D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.39, 3.33333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-18.5169, 3.44773, 5.77455), Vector3(-18.5169, 3.44773, 5.77455), Vector3(3.874, 1.807, -6.15)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("intro/Camera3D:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1.39, 3.33333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.121377, -1.05588, 0), Vector3(-0.121377, -1.05588, 0), Vector3(0, -3.07178, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("intro/Label:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("intro/Label:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(1.4, 1.72, 4.1, 4.46667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_e870u"]
+resource_name = "skip"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("launch_player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.492, 1.256, -6.751)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e870u"]
+_data = {
+&"RESET": SubResource("Animation_oajnp"),
+&"intro": SubResource("Animation_cmtpo"),
+&"skip": SubResource("Animation_e870u")
+}
+
 [node name="level_2_3d_2" type="Node3D"]
 script = ExtResource("1_dxfov")
 
@@ -36,51 +463,48 @@ script = ExtResource("1_dxfov")
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("1_mloyc")]
 visible = false
 
-[node name="placeholder" type="Node3D" parent="."]
-transform = Transform3D(0.465, 0, 0, 0, 0.465, 0, 0, 0, 0.465, 0, 0, 0)
+[node name="mission" type="CanvasLayer" parent="."]
 
-[node name="CSGCombiner3D" type="CSGCombiner3D" parent="placeholder"]
-material_override = SubResource("StandardMaterial3D_sajq6")
-use_collision = true
+[node name="Control" type="Control" parent="mission"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
-[node name="CSGBox3D" type="CSGBox3D" parent="placeholder/CSGCombiner3D"]
-transform = Transform3D(0.999999, 0, 0, 0, 0.999999, -5.23598e-05, 0, 5.23598e-05, 0.999999, -0.3508, 0.000301524, 4.22562)
-size = Vector3(23.9358, 0.21582, 67.3692)
+[node name="Panel" type="Panel" parent="mission/Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -305.0
+offset_bottom = 142.0
+grow_horizontal = 0
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="placeholder/CSGCombiner3D"]
-transform = Transform3D(0.999999, 0, 0, 0, 0.999999, -5.23598e-05, 0, 5.23598e-05, 0.999999, -0.3508, -0.00371484, 80.9324)
-size = Vector3(51.2129, 0.21582, 85.6562)
+[node name="Label" type="Label" parent="mission/Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -202.0
+offset_bottom = 129.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 31
+text = "W.I.P MISSION:
+EXPIRE 4 UGUS
+ENTER COURTYARD"
 
-[node name="CSGBox3D7" type="CSGBox3D" parent="placeholder/CSGCombiner3D"]
-transform = Transform3D(-4.37113e-08, 0.999998, 0, -0.999998, -4.37113e-08, 0, 0, 0, 0.999999, 25.1386, 16.4922, 80.9342)
-size = Vector3(33.8248, 0.21582, 85.6562)
+[node name="elim_scene2" type="CanvasLayer" parent="."]
+process_mode = 4
+visible = false
 
-[node name="CSGBox3D8" type="CSGBox3D" parent="placeholder/CSGCombiner3D"]
-transform = Transform3D(-4.37113e-08, 0.999998, 0, -0.999998, -4.37113e-08, 0, 0, 0, 0.999999, -26.0517, 16.4922, 80.9342)
-size = Vector3(33.8248, 0.21582, 85.6562)
+[node name="elim_scene" parent="elim_scene2" instance=ExtResource("2_m2bdb")]
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="placeholder/CSGCombiner3D"]
-transform = Transform3D(0.999999, 0, 0, 0, 0.999999, -5.23598e-05, 0, 5.23598e-05, 0.999999, -0.3508, 15.0283, 6.2711)
-size = Vector3(23.9358, 0.21582, 62.3318)
-
-[node name="CSGBox3D10" type="CSGBox3D" parent="placeholder/CSGCombiner3D"]
-transform = Transform3D(1.91068e-15, -4.37113e-08, 0.999999, -0.999999, -4.37113e-08, 0, 4.37113e-08, -0.999999, -4.37113e-08, -5.98714e-06, 8.1875, -23.8375)
-size = Vector3(25.7002, 0.21582, 27.8086)
-
-[node name="CSGBox3D5" type="CSGBox3D" parent="placeholder/CSGCombiner3D"]
-transform = Transform3D(-4.37113e-08, 0.999999, 0, -0.999999, -4.37113e-08, 0, 0, 0, 0.999999, 11.4354, 7.55959, 6.5027)
-size = Vector3(15.3553, 0.21582, 62.6361)
-
-[node name="CSGBox3D6" type="CSGBox3D" parent="placeholder/CSGCombiner3D"]
-transform = Transform3D(-4.37113e-08, 0.999999, 0, -0.999999, -4.37113e-08, 0, 0, 0, 0.999999, -12.1801, 7.55959, 5.34725)
-size = Vector3(15.3553, 0.21582, 65.1027)
-
-[node name="CSGBox3D13" type="CSGBox3D" parent="placeholder/CSGCombiner3D"]
-transform = Transform3D(1.91068e-15, -4.37113e-08, -0.999998, -0.999999, -4.37113e-08, 0, -4.37113e-08, 0.999998, -4.37113e-08, -0.613562, 1.8667, -22.0194)
-size = Vector3(13.6694, 1.98779, 13.0527)
-
-[node name="launch_player" parent="." instance=ExtResource("1_4kesc")]
-transform = Transform3D(-0.996606, 0, -0.0823212, 0, 1, 0, 0.0823212, 0, -0.996606, -0.491585, 1.0505, -5.54942)
+[node name="launch_player" parent="." groups=["player"] instance=ExtResource("1_4kesc")]
+process_mode = 4
+transform = Transform3D(-0.996606, 0, -0.0823212, 0, 1, 0, 0.0823212, 0, -0.996606, -0.491585, 1.0505, -9.26451)
 
 [node name="elim_scene" type="CanvasLayer" parent="."]
 process_mode = 4
@@ -90,3 +514,397 @@ visible = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_7ecmq")
+
+[node name="wave_manager" type="Node" parent="."]
+script = ExtResource("13_cmtpo")
+
+[node name="wave2_start" type="AnimationPlayer" parent="wave_manager"]
+libraries = {
+&"": SubResource("AnimationLibrary_adsja")
+}
+
+[node name="Camera3D" type="Camera3D" parent="wave_manager"]
+transform = Transform3D(-0.999913, 0.00138517, -0.0130792, 0, 0.994439, 0.105317, 0.0131524, 0.105308, -0.994353, -0.293958, 7.44161, 2.37716)
+current = true
+
+[node name="Label" type="Label" parent="wave_manager"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.5
+offset_top = -64.0
+offset_right = 180.5
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("12_ihhey")
+theme_override_font_sizes/font_size = 96
+text = "WAVE 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="wave_manager"]
+wait_time = 3.0
+one_shot = true
+
+[node name="enemies_wave1" type="Node3D" parent="."]
+process_mode = 4
+
+[node name="ugus7" parent="enemies_wave1" instance=ExtResource("6_fxsf8")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.960217, 50.9149)
+
+[node name="ugus8" parent="enemies_wave1" instance=ExtResource("6_fxsf8")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17.7044, 0.960217, 50.9149)
+
+[node name="ugus9" parent="enemies_wave1" instance=ExtResource("6_fxsf8")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -17.0002, 0.960217, 50.9149)
+
+[node name="ugus10" parent="enemies_wave1" instance=ExtResource("6_fxsf8")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -17.0002, 0.960217, 37.9878)
+
+[node name="ugus11" parent="enemies_wave1" instance=ExtResource("6_fxsf8")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -17.0002, 0.960217, 17.6968)
+
+[node name="ugus12" parent="enemies_wave1" instance=ExtResource("6_fxsf8")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -17.0002, 0.960217, -2.55601)
+
+[node name="ugus13" parent="enemies_wave1" instance=ExtResource("6_fxsf8")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 18.5383, 0.960217, -2.55601)
+
+[node name="ugus14" parent="enemies_wave1" instance=ExtResource("6_fxsf8")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 18.5383, 0.960217, 19.0188)
+
+[node name="ugus15" parent="enemies_wave1" instance=ExtResource("6_fxsf8")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 18.5383, 0.960217, 39.7952)
+
+[node name="enemies_wave2" type="Node3D" parent="."]
+process_mode = 4
+visible = false
+
+[node name="big_ugus" parent="enemies_wave2" instance=ExtResource("6_fxsf8")]
+transform = Transform3D(-1.484e-07, 0, -3.395, 0, 3.395, 0, 3.395, 0, -1.484e-07, 0.282888, 0.00789881, 38.7073)
+health = 50
+material = SubResource("StandardMaterial3D_oajnp")
+
+[node name="ugus7" parent="enemies_wave2" instance=ExtResource("6_fxsf8")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.960217, 50.9149)
+material = SubResource("StandardMaterial3D_adsja")
+
+[node name="ugus8" parent="enemies_wave2" instance=ExtResource("6_fxsf8")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 12.1006, 0.960217, 41.2772)
+material = SubResource("StandardMaterial3D_e870u")
+
+[node name="ugus9" parent="enemies_wave2" instance=ExtResource("6_fxsf8")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -10.6148, 0.960217, 44.1465)
+material = SubResource("StandardMaterial3D_cmtpo")
+
+[node name="ugus10" parent="enemies_wave2" instance=ExtResource("6_fxsf8")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -17.0002, 0.960217, 37.9878)
+
+[node name="ugus11" parent="enemies_wave2" instance=ExtResource("6_fxsf8")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -17.0002, 0.960217, 17.6968)
+material = SubResource("StandardMaterial3D_cbuk5")
+
+[node name="ugus12" parent="enemies_wave2" instance=ExtResource("6_fxsf8")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -17.0002, 0.960217, 28.2646)
+material = SubResource("StandardMaterial3D_kqf0v")
+
+[node name="ugus13" parent="enemies_wave2" instance=ExtResource("6_fxsf8")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 18.5383, 0.960217, 26.686)
+material = SubResource("StandardMaterial3D_adsja")
+
+[node name="ugus14" parent="enemies_wave2" instance=ExtResource("6_fxsf8")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 18.5383, 0.960217, 19.0188)
+material = SubResource("StandardMaterial3D_cmtpo")
+
+[node name="ugus15" parent="enemies_wave2" instance=ExtResource("6_fxsf8")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 18.5383, 0.960217, 39.7952)
+
+[node name="assets" type="Node3D" parent="."]
+
+[node name="doors" type="Node3D" parent="assets"]
+
+[node name="wooden_door" parent="assets/doors" instance=ExtResource("6_7sgvi")]
+transform = Transform3D(-1.48058e-05, 0, -4.09, 0, 4.09, 0, 4.09, 0, -1.48058e-05, 3.01594e-07, 0.247159, -7.25768)
+
+[node name="wooden_door2" parent="assets/doors" instance=ExtResource("6_7sgvi")]
+transform = Transform3D(-1.272e-07, 0, 2.91, 0, 2.91, 0, -2.91, 0, -1.272e-07, 3.01594e-07, 0.962833, 52.4503)
+
+[node name="castle" type="Node3D" parent="assets"]
+
+[node name="Cube" type="MeshInstance3D" parent="assets/castle"]
+transform = Transform3D(-0.935, 0, -2.15169e-07, 0, 0.615, 0, 1.41181e-07, 0, -1.425, 5.301, 0.69, 15.807)
+mesh = SubResource("ArrayMesh_br444")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_mcrfw")
+
+[node name="walls" type="Node3D" parent="assets/castle"]
+
+[node name="wall piece" parent="assets/castle/walls" instance=ExtResource("7_cjnvw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.5955, 0, 2.83125)
+
+[node name="wall piece31" parent="assets/castle/walls" instance=ExtResource("7_cjnvw")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10.7311, -0.92162, -7.75002)
+
+[node name="wall piece32" parent="assets/castle/walls" instance=ExtResource("7_cjnvw")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12.248, -0.922, -7.748)
+
+[node name="wall piece33" parent="assets/castle/walls" instance=ExtResource("7_cjnvw")]
+transform = Transform3D(4.37114e-08, 3.82137e-15, -1, 8.74228e-08, -1, 0, -1, -8.74228e-08, -4.37114e-08, 12.248, 15.796, -7.762)
+
+[node name="wall piece34" parent="assets/castle/walls" instance=ExtResource("7_cjnvw")]
+transform = Transform3D(4.37114e-08, 3.82137e-15, -1, 8.74228e-08, -1, 0, -1, -8.74228e-08, -4.37114e-08, -10.412, 15.796, -7.762)
+
+[node name="wall piece21" parent="assets/castle/walls" instance=ExtResource("7_cjnvw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.595, 0, 25.819)
+
+[node name="wall piece22" parent="assets/castle/walls" instance=ExtResource("7_cjnvw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.595, 0, 48.811)
+
+[node name="wall piece23" parent="assets/castle/walls" instance=ExtResource("7_cjnvw")]
+transform = Transform3D(-5.92058e-07, 0, 1, 0, 1, 0, -1, 0, -5.92058e-07, 12.4684, 0, 52.9316)
+
+[node name="wall piece24" parent="assets/castle/walls" instance=ExtResource("7_cjnvw")]
+transform = Transform3D(-5.92058e-07, 0, 1, 0, 1, 0, -1, 0, -5.92058e-07, -10.5182, 0, 52.9316)
+
+[node name="wall piece18" parent="assets/castle/walls" instance=ExtResource("7_cjnvw")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -20.8136, 0, 2.83125)
+
+[node name="wall piece19" parent="assets/castle/walls" instance=ExtResource("7_cjnvw")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -20.8136, 0, 25.6044)
+
+[node name="wall piece20" parent="assets/castle/walls" instance=ExtResource("7_cjnvw")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -20.8136, 0, 48.5375)
+
+[node name="wall piece3" parent="assets/castle/walls" instance=ExtResource("7_cjnvw")]
+transform = Transform3D(1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, 15.586, 14, 1.719)
+
+[node name="wall piece8" parent="assets/castle/walls" instance=ExtResource("7_cjnvw")]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -14.404, 14, 2.384)
+
+[node name="wall piece9" parent="assets/castle/walls" instance=ExtResource("7_cjnvw")]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -14.404, 14, 25.32)
+
+[node name="wall piece10" parent="assets/castle/walls" instance=ExtResource("7_cjnvw")]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -14.404, 14, 48.278)
+
+[node name="wall piece4" parent="assets/castle/walls" instance=ExtResource("7_cjnvw")]
+transform = Transform3D(1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, 15.586, 14, 24.703)
+
+[node name="wall piece5" parent="assets/castle/walls" instance=ExtResource("7_cjnvw")]
+transform = Transform3D(1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, 15.586, 14, 47.417)
+
+[node name="wall piece6" parent="assets/castle/walls" instance=ExtResource("7_cjnvw")]
+transform = Transform3D(4.37114e-08, -3.82137e-15, 1, -8.74228e-08, -1, 0, 1, -8.74228e-08, -4.37114e-08, 12.372, 14, 46.509)
+
+[node name="wall piece7" parent="assets/castle/walls" instance=ExtResource("7_cjnvw")]
+transform = Transform3D(4.37114e-08, -3.82137e-15, 1, -8.74228e-08, -1, 0, 1, -8.74228e-08, -4.37114e-08, -10.429, 14, 46.509)
+
+[node name="wall piece2" parent="assets/castle/walls" instance=ExtResource("7_cjnvw")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 22.374, 0.780446, 2.83125)
+
+[node name="wall piece25" parent="assets/castle/walls" instance=ExtResource("7_cjnvw")]
+transform = Transform3D(4.37114e-08, 1, 8.74228e-08, 1, -4.37114e-08, 0, 3.82137e-15, 8.74228e-08, -1, 15.1286, 5.768, 2.83125)
+
+[node name="wall piece29" parent="assets/castle/walls" instance=ExtResource("7_cjnvw")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -13.4385, 5.768, 2.83125)
+
+[node name="wall piece30" parent="assets/castle/walls" instance=ExtResource("7_cjnvw")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -13.4385, 5.768, 25.3975)
+
+[node name="wall piece26" parent="assets/castle/walls" instance=ExtResource("7_cjnvw")]
+transform = Transform3D(4.37114e-08, 1, 8.74228e-08, 1, -4.37114e-08, 0, 3.82137e-15, 8.74228e-08, -1, 15.1286, 5.768, 25.5373)
+
+[node name="wall piece27" parent="assets/castle/walls" instance=ExtResource("7_cjnvw")]
+transform = Transform3D(4.50846e-08, 1, -8.7412e-08, 0.999877, -4.3706e-08, 0.0157073, 0.0157073, -8.81094e-08, -0.999877, 15.1286, 5.60033, 48.3035)
+
+[node name="wall piece28" parent="assets/castle/walls" instance=ExtResource("7_cjnvw")]
+transform = Transform3D(-4.37114e-08, -1, 0, 0.999876, -4.3706e-08, -0.0157073, 0.0157073, -6.86589e-10, 0.999877, -14.195, 5.6, 48.304)
+
+[node name="wall piece35" parent="assets/castle/walls" instance=ExtResource("7_cjnvw")]
+transform = Transform3D(0.0157073, 4.30248e-08, 0.999877, 0.999876, -4.3706e-08, -0.0157073, 4.30248e-08, 1, -4.3706e-08, -5.94057, 5.79911, 45.8044)
+
+[node name="wall piece36" parent="assets/castle/walls" instance=ExtResource("7_cjnvw")]
+transform = Transform3D(-0.0220243, 4.4643e-08, 0.999758, 0.999757, -4.20518e-08, 0.0220243, 4.30248e-08, 1, -4.3706e-08, 15.8319, 5.94522, 45.8044)
+
+[node name="wall piece11" parent="assets/castle/walls" instance=ExtResource("7_cjnvw")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 22.374, 0.78, 25.799)
+
+[node name="wall piece16" parent="assets/castle/walls" instance=ExtResource("7_cjnvw")]
+transform = Transform3D(4.37114e-08, 1, -8.74228e-08, 1, -4.37114e-08, 0, -3.82137e-15, -8.74228e-08, -1, -21.283, 0.78, 25.799)
+
+[node name="wall piece17" parent="assets/castle/walls" instance=ExtResource("7_cjnvw")]
+transform = Transform3D(4.37114e-08, 1, -8.74228e-08, 1, -4.37114e-08, 0, -3.82137e-15, -8.74228e-08, -1, -21.283, 0.78, 2.813)
+
+[node name="wall piece14" parent="assets/castle/walls" instance=ExtResource("7_cjnvw")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 22.374, 0.772, 48.701)
+
+[node name="wall piece15" parent="assets/castle/walls" instance=ExtResource("7_cjnvw")]
+transform = Transform3D(4.37114e-08, 1, -8.74228e-08, 1, -4.37114e-08, 0, -3.82137e-15, -8.74228e-08, -1, -21.2802, 0.772, 48.701)
+
+[node name="wall piece12" parent="assets/castle/walls" instance=ExtResource("7_cjnvw")]
+transform = Transform3D(1.91069e-15, 4.37114e-08, -1, 1, -4.37114e-08, 0, -4.37114e-08, -1, -4.37114e-08, 9.73928, 0.78, 53.5626)
+
+[node name="wall piece13" parent="assets/castle/walls" instance=ExtResource("7_cjnvw")]
+transform = Transform3D(1.91069e-15, 4.37114e-08, -1, 1, -4.37114e-08, 0, -4.37114e-08, -1, -4.37114e-08, -13.1243, 0.78, 53.5626)
+
+[node name="windows" type="Node3D" parent="assets/castle"]
+
+[node name="left" type="Node3D" parent="assets/castle/windows"]
+
+[node name="Sprite3D" type="Sprite3D" parent="assets/castle/windows/left"]
+transform = Transform3D(0.0120257, 0, 0.65489, 0, 0.655, 0, -0.65489, 0, 0.0120257, 15.4857, 9.98373, -4.74694)
+modulate = Color(0.529067, 0.529067, 0.529067, 1)
+texture = ExtResource("8_mcrfw")
+
+[node name="Sprite3D2" type="Sprite3D" parent="assets/castle/windows/left"]
+transform = Transform3D(0.0120257, 0, 0.65489, 0, 0.655, 0, -0.65489, 0, 0.0120257, 15.4857, 9.98373, 3.66448)
+modulate = Color(0.529067, 0.529067, 0.529067, 1)
+texture = ExtResource("8_mcrfw")
+
+[node name="Sprite3D3" type="Sprite3D" parent="assets/castle/windows/left"]
+transform = Transform3D(0.0120257, 0, 0.65489, 0, 0.655, 0, -0.65489, 0, 0.0120257, 15.4857, 9.98373, 11.1934)
+modulate = Color(0.529067, 0.529067, 0.529067, 1)
+texture = ExtResource("8_mcrfw")
+
+[node name="Sprite3D4" type="Sprite3D" parent="assets/castle/windows/left"]
+transform = Transform3D(0.0120257, 0, 0.65489, 0, 0.655, 0, -0.65489, 0, 0.0120257, 15.4857, 9.98373, 19.2424)
+modulate = Color(0.529067, 0.529067, 0.529067, 1)
+texture = ExtResource("8_mcrfw")
+
+[node name="Sprite3D5" type="Sprite3D" parent="assets/castle/windows/left"]
+transform = Transform3D(0.0120257, 0, 0.65489, 0, 0.655, 0, -0.65489, 0, 0.0120257, 15.4857, 9.98373, 27.2187)
+modulate = Color(0.529067, 0.529067, 0.529067, 1)
+texture = ExtResource("8_mcrfw")
+
+[node name="Sprite3D6" type="Sprite3D" parent="assets/castle/windows/left"]
+transform = Transform3D(0.0120257, 0, 0.65489, 0, 0.655, 0, -0.65489, 0, 0.0120257, 15.4857, 9.98373, 34.4352)
+modulate = Color(0.529067, 0.529067, 0.529067, 1)
+texture = ExtResource("8_mcrfw")
+
+[node name="Sprite3D7" type="Sprite3D" parent="assets/castle/windows/left"]
+transform = Transform3D(0.0120257, 0, 0.65489, 0, 0.655, 0, -0.65489, 0, 0.0120257, 15.4857, 9.98373, 41.8013)
+modulate = Color(0.529067, 0.529067, 0.529067, 1)
+texture = ExtResource("8_mcrfw")
+
+[node name="Sprite3D8" type="Sprite3D" parent="assets/castle/windows/left"]
+transform = Transform3D(0.655, 0, 0, 0, 0.655, 0, 0, 0, 0.655, 0, 9.984, 46.505)
+modulate = Color(0.529067, 0.529067, 0.529067, 1)
+texture = ExtResource("8_mcrfw")
+
+[node name="Sprite3D9" type="Sprite3D" parent="assets/castle/windows/left"]
+transform = Transform3D(0.655, 0, 0, 0, 0.655, 0, 0, 0, 0.655, 10.7925, 9.984, 46.505)
+modulate = Color(0.529067, 0.529067, 0.529067, 1)
+texture = ExtResource("8_mcrfw")
+
+[node name="Sprite3D10" type="Sprite3D" parent="assets/castle/windows/left"]
+transform = Transform3D(0.655, 0, 0, 0, 0.655, 0, 0, 0, 0.655, -10.001, 9.984, 46.505)
+modulate = Color(0.529067, 0.529067, 0.529067, 1)
+texture = ExtResource("8_mcrfw")
+
+[node name="right" type="Node3D" parent="assets/castle/windows"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 1.14, 0, 36.455)
+
+[node name="Sprite3D" type="Sprite3D" parent="assets/castle/windows/right"]
+transform = Transform3D(0.0120257, 0, 0.65489, 0, 0.655, 0, -0.65489, 0, 0.0120257, 15.4857, 9.98373, -4.74694)
+modulate = Color(0.529067, 0.529067, 0.529067, 1)
+texture = ExtResource("8_mcrfw")
+
+[node name="Sprite3D2" type="Sprite3D" parent="assets/castle/windows/right"]
+transform = Transform3D(0.0120257, 0, 0.65489, 0, 0.655, 0, -0.65489, 0, 0.0120257, 15.4857, 9.98373, 3.66448)
+modulate = Color(0.529067, 0.529067, 0.529067, 1)
+texture = ExtResource("8_mcrfw")
+
+[node name="Sprite3D3" type="Sprite3D" parent="assets/castle/windows/right"]
+transform = Transform3D(0.0120257, 0, 0.65489, 0, 0.655, 0, -0.65489, 0, 0.0120257, 15.4857, 9.98373, 11.1934)
+modulate = Color(0.529067, 0.529067, 0.529067, 1)
+texture = ExtResource("8_mcrfw")
+
+[node name="Sprite3D4" type="Sprite3D" parent="assets/castle/windows/right"]
+transform = Transform3D(0.0120257, 0, 0.65489, 0, 0.655, 0, -0.65489, 0, 0.0120257, 15.4857, 9.98373, 19.2424)
+modulate = Color(0.529067, 0.529067, 0.529067, 1)
+texture = ExtResource("8_mcrfw")
+
+[node name="Sprite3D5" type="Sprite3D" parent="assets/castle/windows/right"]
+transform = Transform3D(0.0120257, 0, 0.65489, 0, 0.655, 0, -0.65489, 0, 0.0120257, 15.4857, 9.98373, 27.2187)
+modulate = Color(0.529067, 0.529067, 0.529067, 1)
+texture = ExtResource("8_mcrfw")
+
+[node name="Sprite3D6" type="Sprite3D" parent="assets/castle/windows/right"]
+transform = Transform3D(0.0120257, 0, 0.65489, 0, 0.655, 0, -0.65489, 0, 0.0120257, 15.4857, 9.98373, 34.4352)
+modulate = Color(0.529067, 0.529067, 0.529067, 1)
+texture = ExtResource("8_mcrfw")
+
+[node name="Sprite3D7" type="Sprite3D" parent="assets/castle/windows/right"]
+transform = Transform3D(0.0120257, 0, 0.65489, 0, 0.655, 0, -0.65489, 0, 0.0120257, 15.4857, 9.98373, 41.8013)
+modulate = Color(0.529067, 0.529067, 0.529067, 1)
+texture = ExtResource("8_mcrfw")
+
+[node name="floor" type="Node3D" parent="assets"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="assets/floor"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="assets/floor/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.85927, 0, 18.5386)
+mesh = SubResource("PlaneMesh_7ecmq")
+surface_material_override/0 = SubResource("StandardMaterial3D_cjnvw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="assets/floor/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.096, -0.005, 18.382)
+shape = SubResource("BoxShape3D_cmtpo")
+
+[node name="ugus_stairs" type="StaticBody3D" parent="assets/floor"]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="assets/floor/ugus_stairs"]
+transform = Transform3D(0.955309, -0.295608, 0, 0.295608, 0.955309, 0, 0, 0, 1, 13.6333, 0.363288, 18.382)
+shape = SubResource("BoxShape3D_mcrfw")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="assets/floor/ugus_stairs"]
+transform = Transform3D(-0.955278, 0.295708, 8.74228e-08, 0.295708, 0.955278, 0, -8.35131e-08, 2.58516e-08, -1, -12.673, 0.363288, 18.382)
+shape = SubResource("BoxShape3D_mcrfw")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="assets/floor/ugus_stairs"]
+transform = Transform3D(-4.17565e-08, 1.29258e-08, -1, 0.295708, 0.955278, 0, 0.955278, -0.295708, -4.37114e-08, 0.664161, 0.363288, 44.9063)
+shape = SubResource("BoxShape3D_oajnp")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.00286237, -0.718852, -0.695158, 0, -0.69516, 0.718855, -0.999996, 0.00205763, 0.00198981, -34.738, 17.4287, 0)
+
+[node name="intro" type="Node3D" parent="."]
+
+[node name="intro_anim" type="AnimationPlayer" parent="intro"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_e870u")
+}
+
+[node name="Camera3D" type="Camera3D" parent="intro"]
+transform = Transform3D(0.492462, 0.105379, -0.863931, 0, 0.992643, 0.121079, 0.870334, -0.0596269, 0.488839, -18.5169, 3.44773, 5.77455)
+
+[node name="Label" type="Label" parent="intro"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.5
+offset_top = -64.0
+offset_right = 180.5
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("12_ihhey")
+theme_override_font_sizes/font_size = 96
+text = "WAVE 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="animation_finished" from="wave_manager/wave2_start" to="wave_manager" method="_on_wave_2_start_animation_finished"]
+[connection signal="animation_finished" from="intro/intro_anim" to="." method="_on_intro_anim_animation_finished"]

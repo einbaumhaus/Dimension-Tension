@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=4 uid="uid://bt1oojjskfoa2"]
+[gd_scene load_steps=55 format=4 uid="uid://bt1oojjskfoa2"]
 
 [ext_resource type="Script" uid="uid://baup6tmbd45j4" path="res://3D_levels/level_2/lvl_stages/level_2_3d_1.gd" id="1_ijkd5"]
 [ext_resource type="Texture2D" uid="uid://dcjfetld4q5y7" path="res://3D_levels/level_1/assets/bridge/materials/Ice002_1K-JPG_Color.jpg" id="1_yp75m"]
@@ -45,6 +45,33 @@ fog_sky_affect = 0.795
 adjustment_enabled = true
 adjustment_contrast = 0.99
 adjustment_saturation = 1.34
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pn1rq"]
+load_path = "res://.godot/imported/Untitled-1.jpg-bffac236435ccc4b82aeb650fc091648.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gb2bx"]
+cull_mode = 2
+albedo_color = Color(0.210182, 0.814646, 0, 1)
+albedo_texture = SubResource("CompressedTexture2D_pn1rq")
+normal_scale = 16.0
+uv1_scale = Vector3(5.485, 5.485, 5.485)
+uv1_offset = Vector3(-0.085, 0.65, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sw3ia"]
+cull_mode = 2
+albedo_color = Color(1, 0.582598, 0.789072, 1)
+albedo_texture = SubResource("CompressedTexture2D_pn1rq")
+normal_scale = 16.0
+uv1_scale = Vector3(5.485, 5.485, 5.485)
+uv1_offset = Vector3(-0.085, 0.65, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hvelu"]
+cull_mode = 2
+albedo_color = Color(0.976471, 0.992157, 0, 1)
+albedo_texture = SubResource("CompressedTexture2D_pn1rq")
+normal_scale = 16.0
+uv1_scale = Vector3(5.485, 5.485, 5.485)
+uv1_offset = Vector3(-0.085, 0.65, 0)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o33sx"]
 size = Vector3(41.9102, 0.593628, 45.5186)
@@ -757,7 +784,7 @@ one_shot = true
 autostart = true
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.898028, -0.122739, -0.422471, 0, 0.960294, -0.278991, 0.439939, 0.250541, 0.86237, -2.048, 0.565, -0.638)
+transform = Transform3D(0.898028, -0.122739, -0.422471, 0, 0.960293, -0.278991, 0.439939, 0.250541, 0.86237, -2.048, 0.565, -0.638)
 fov = 96.4
 
 [node name="launch_player" parent="." groups=["player"] instance=ExtResource("3_qoep0")]
@@ -776,15 +803,18 @@ process_mode = 4
 
 [node name="ugus5" parent="enemies" instance=ExtResource("4_f4pvx")]
 transform = Transform3D(0.867097, 0, 0.49814, 0, 1, 0, -0.49814, 0, 0.867097, 23.4901, 0.127203, 21.1254)
+material = SubResource("StandardMaterial3D_gb2bx")
 
 [node name="ugus8" parent="enemies" instance=ExtResource("4_f4pvx")]
 transform = Transform3D(0.867097, 0, 0.49814, 0, 1, 0, -0.49814, 0, 0.867097, 26.8952, 0.127203, 19.1692)
+material = SubResource("StandardMaterial3D_sw3ia")
 
 [node name="ugus3" parent="enemies" instance=ExtResource("4_f4pvx")]
 transform = Transform3D(0.739702, 0, -0.672935, 0, 1, 0, 0.672935, 0, 0.739702, -23.0069, 0.144438, 21.2884)
 
 [node name="ugus7" parent="enemies" instance=ExtResource("4_f4pvx")]
 transform = Transform3D(0.845607, 0, -0.533807, 0, 1, 0, 0.533807, 0, 0.845607, -23.2347, 0.171005, 20.3791)
+material = SubResource("StandardMaterial3D_hvelu")
 
 [node name="assets" type="Node3D" parent="."]
 

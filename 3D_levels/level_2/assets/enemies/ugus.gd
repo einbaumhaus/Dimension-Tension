@@ -4,21 +4,27 @@ const SPEED = 4.0
 const STOP_DISTANCE = 2
 var _gravity := -30.0
 
-var health = 5
+@export var health = 5
+@export var material: Material
 #damage
 const DAMAGE = 1
 const ATTACK_INTERVAL = 1.0 # seconds between attacks
 var attack_timer := 0.0
 const ATTACK_RANGE = 2.5
+@onready var foot_top: MeshInstance3D = $head/foot_top
+@onready var foot_bottom: MeshInstance3D = $foot/foot_bottom
 
 @onready var main_body: MeshInstance3D = $main_body
+
+@onready var wave_manager: Node = get_node_or_null("../../wave_manager")
 
 func _ready() -> void:
 	var hitbox = $Launch_col
 	hitbox.connect("body_part_hit", Callable(self, "hit"))
-	var mat = main_body.get_active_material(0)
-	if mat:
-		main_body.set_surface_override_material(0, mat.duplicate())
+	if material:
+		main_body.set_surface_override_material(0, material.duplicate())
+		foot_top.set_surface_override_material(0, material.duplicate())
+		foot_bottom.set_surface_override_material(0, material.duplicate())
 func _physics_process(delta: float) -> void:
 	#check for player
 	var players = get_tree().get_nodes_in_group("player")
@@ -61,6 +67,8 @@ func hit(damage: int) -> void:
 	var mat = main_body.get_active_material(0)
 	mat.albedo_color += Color(0.3, 0, 0, 0)
 	if health <= 0:
+		if wave_manager != null:
+			wave_manager.enemy_killed()
 		queue_free()
 
 

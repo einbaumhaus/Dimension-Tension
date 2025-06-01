@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://bpciitjqt6cct"]
+[gd_scene load_steps=12 format=4 uid="uid://bpciitjqt6cct"]
 
 [ext_resource type="Texture2D" uid="uid://6omtbg1ao85f" path="res://3D_levels/level_3/enemies/cone_texture.jpg" id="1_76lxe"]
 [ext_resource type="Texture2D" uid="uid://capm2jpi1tbhb" path="res://3D_levels/level_3/enemies/ice_cream_texture.jpg" id="2_ggij6"]
@@ -88,6 +88,9 @@ uv1_scale = Vector3(-0.951, 0.72, 1)
 uv1_offset = Vector3(0, -0.68, 0)
 uv1_triplanar = true
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_76lxe"]
+size = Vector3(3.48726, 1, 1)
+
 [node name="mitzi" type="CharacterBody3D"]
 
 [node name="cone" type="MeshInstance3D" parent="."]
@@ -101,3 +104,7 @@ transform = Transform3D(1.01, 0, 0, 0, 1.01, 0, 0, 0, 1.01, -0.00145972, 1.16823
 mesh = SubResource("ArrayMesh_7n47q")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_mvlwt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.394496, -0.177998, 0.901493, 0.411276, 0.911511, 0, -0.821721, 0.370762, 0.432794, 0.533454, 0.549872, -1.06412)
+shape = SubResource("BoxShape3D_76lxe")

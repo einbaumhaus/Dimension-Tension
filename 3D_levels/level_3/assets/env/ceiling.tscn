@@ -17,7 +17,7 @@ uv1_offset = Vector3(-1.68, 2.54, -1.28)
 uv1_triplanar = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w4j1a"]
-size = Vector3(20.3474, 6.00903, 1)
+size = Vector3(20.3474, 6.00903, 0.988678)
 
 [node name="ceiling" type="StaticBody3D"]
 transform = Transform3D(-1.62943e-08, 0.875215, -4.37114e-08, 0, -3.82568e-08, -1, -0.372771, -3.82568e-08, 1.91069e-15, 0, 0, 0)

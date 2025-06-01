@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://bilmxsoacd24r"]
+[gd_scene load_steps=28 format=4 uid="uid://bilmxsoacd24r"]
 
 [ext_resource type="PackedScene" uid="uid://bnp7vdu3nrbe8" path="res://menus/pause_menu.tscn" id="1_1dhyw"]
 [ext_resource type="Script" uid="uid://mvotmqlsvjqe" path="res://3D_levels/level_3/level_3_3d.gd" id="1_n6v2l"]
@@ -7,9 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://bq67fcnbkrbwb" path="res://3D_levels/level_3/assets/env/wall_2.tscn" id="4_5xwyq"]
 [ext_resource type="Texture2D" uid="uid://bn18yxl6dcmmu" path="res://3D_levels/level_1/assets/bridge/materials/rocky_terrain_diff_1k.jpg" id="5_5xwyq"]
 [ext_resource type="Texture2D" uid="uid://df5uqri58pjnt" path="res://3D_levels/level_1/assets/bridge/materials/rocky_terrain_nor_gl_1k.jpg" id="6_oh7ax"]
-[ext_resource type="PackedScene" uid="uid://ceg22hvdhyxy1" path="res://3D_levels/level_3/assets/env/ceiling.tscn" id="8_ra5be"]
+[ext_resource type="Texture2D" uid="uid://bsuaof7o8fr32" path="res://3D_levels/level_1/assets/castle/materials/castle_wall_slates_diff_1k.jpg" id="8_tp8k4"]
 [ext_resource type="PackedScene" uid="uid://bpciitjqt6cct" path="res://3D_levels/level_3/enemies/mitzi.tscn" id="9_8ddrv"]
 [ext_resource type="Script" uid="uid://djaup6jp5wq1q" path="res://3D_levels/level_3/mitzi_1.gd" id="9_nmhoi"]
+[ext_resource type="Texture2D" uid="uid://c8n7rx0rslbmi" path="res://3D_levels/level_1/assets/castle/materials/castle_wall_slates_nor_gl_1k.jpg" id="9_pwwvo"]
+[ext_resource type="Script" uid="uid://dxku6kxxgfywk" path="res://3D_levels/level_3/cone_detector.gd" id="10_pwwvo"]
 
 [sub_resource type="Environment" id="Environment_b82s5"]
 fog_enabled = true
@@ -71,12 +73,40 @@ uv1_scale = Vector3(9.325, 7.21, 0)
 [sub_resource type="BoxShape3D" id="BoxShape3D_oh7ax"]
 size = Vector3(31.7184, 0.001, 53.9854)
 
+[sub_resource type="BoxMesh" id="BoxMesh_b82s5"]
+size = Vector3(20.345, 6.12, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ekoys"]
+cull_mode = 2
+albedo_color = Color(0.325441, 0.325441, 0.325441, 1)
+albedo_texture = ExtResource("8_tp8k4")
+normal_enabled = true
+normal_texture = ExtResource("9_pwwvo")
+uv1_scale = Vector3(0.055, 0.114, -0.145)
+uv1_offset = Vector3(-1.68, 2.54, -1.28)
+uv1_triplanar = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w4j1a"]
+size = Vector3(20.3474, 6.00903, 0.988678)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pif3k"]
+size = Vector3(20.3474, 6.00903, 3.08811)
+
 [sub_resource type="Curve3D" id="Curve3D_8ddrv"]
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, 42.4407, 9.1244, -22.0937, 0, 0, 0, 0, 0, 0, 42.516, 9.1, 16.7734, 0, 0, 0, 0, 0, 0, 42.4437, 9.14038, -22.0909),
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_nmhoi"]
+offsets = PackedFloat32Array(0, 0.551948)
+colors = PackedColorArray(1, 1, 1, 0.882353, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tp8k4"]
+gradient = SubResource("Gradient_nmhoi")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
 
 [node name="level_3_3d" type="Node3D"]
 script = ExtResource("1_n6v2l")
@@ -150,7 +180,7 @@ transform = Transform3D(0.914551, 0, 0.404471, 0, 1, 0, -0.404471, 0, 0.914551, 
 transform = Transform3D(0.514239, 0, 0.404471, 0, 1, 0, -0.227428, 0, 0.914551, 17.9034, 0, 20.93)
 
 [node name="wall4" parent="assets/walls" instance=ExtResource("4_5xwyq")]
-transform = Transform3D(-3.87727e-08, 0, 1, 0, 1, 0, -0.887016, 0, -4.37114e-08, 45.1299, 0, 8.58689)
+transform = Transform3D(-3.87727e-08, 0, 1, 0, 1, 0, -0.887016, 0, -4.37114e-08, 45.15, 0, 8.587)
 
 [node name="wall9" parent="assets/walls" instance=ExtResource("4_5xwyq")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 63.263, 0, 26.8301)
@@ -171,7 +201,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 19.446
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 13.1915, 0, -12.5678)
 
 [node name="wall15" parent="assets/walls" instance=ExtResource("4_5xwyq")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 44.9911, 0, -15.0616)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 45.156, 0, -15.137)
 
 [node name="wall3" parent="assets/walls" instance=ExtResource("4_5xwyq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.825, 0, -5.457)
@@ -235,8 +265,25 @@ shape = SubResource("BoxShape3D_oh7ax")
 
 [node name="ceiling" type="Node3D" parent="assets"]
 
-[node name="ceiling" parent="assets/ceiling" instance=ExtResource("8_ra5be")]
-transform = Transform3D(-1.62943e-08, 0.875215, -4.37114e-08, 0, -3.82568e-08, -1, -0.372771, -3.82568e-08, 1.91069e-15, 39.6683, 5.527, -2.46823)
+[node name="ceiling" type="StaticBody3D" parent="assets/ceiling"]
+transform = Transform3D(-1.12037e-08, 0.875215, -4.37114e-08, 0, -3.82568e-08, -1, -0.256312, -3.82568e-08, 1.91069e-15, 39.6683, 5.527, -3.09072)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="assets/ceiling/ceiling"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.98354, 0)
+mesh = SubResource("BoxMesh_b82s5")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ekoys")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="assets/ceiling/ceiling"]
+transform = Transform3D(1, 0, -6.60686e-20, 0, 1, -9.54277e-23, -3.75871e-21, 2.52243e-13, 1, 0, 3.00281, 0.0201874)
+shape = SubResource("BoxShape3D_w4j1a")
+
+[node name="cone_detector" type="Area3D" parent="assets/ceiling/ceiling"]
+script = ExtResource("10_pwwvo")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="assets/ceiling/ceiling/cone_detector"]
+transform = Transform3D(1, 0, -9.61382e-20, 0, 1, -9.54283e-23, -3.75871e-21, 2.52243e-13, 1, 0, 3.00281, -2.02346)
+shape = SubResource("BoxShape3D_pif3k")
 
 [node name="enemies" type="Node3D" parent="."]
 
@@ -245,16 +292,16 @@ curve = SubResource("Curve3D_8ddrv")
 script = ExtResource("9_nmhoi")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="enemies/mitzi1"]
-transform = Transform3D(-0.99999, 0, -0.00193682, 0, 0.999992, 0, 0.00193681, 0, -0.999998, 42.4407, 9.1244, -22.0937)
+transform = Transform3D(-0.99999, 0, -0.0019373, 0, 0.999992, 0, 0.00193728, 0, -0.999998, 42.4407, 9.1244, -22.0937)
 rotation_mode = 1
 
 [node name="mitzi" parent="enemies/mitzi1/PathFollow3D" instance=ExtResource("9_8ddrv")]
 transform = Transform3D(-0.941264, -0.00174049, -0.337667, 0.0585598, -0.985676, -0.158158, -0.332555, -0.168642, 0.927883, 0.00164032, 0.000538826, -0.842066)
 
-[node name="SpotLight3D" type="SpotLight3D" parent="enemies/mitzi1/PathFollow3D/mitzi"]
-transform = Transform3D(0.997709, -0.0567786, 0.0369585, 0.0289359, -0.136132, -0.990276, 0.0612575, 0.989063, -0.134177, 0, 2.15387, -0.129616)
-light_color = Color(1, 0, 0, 1)
-light_energy = 117.645
-shadow_enabled = true
-spot_range = 9.78322
-spot_angle = 28.8705
+[node name="beam" type="Sprite3D" parent="enemies/mitzi1/PathFollow3D/mitzi"]
+transform = Transform3D(11.2751, 2.61396, -0.605833, 0.152874, 1.98678, 11.4174, 2.67889, -11.1152, 1.89833, -0.344421, 8.99621, 0.911201)
+modulate = Color(1, 0, 0, 1)
+texture = SubResource("GradientTexture2D_tp8k4")
+
+[connection signal="body_entered" from="assets/ceiling/ceiling/cone_detector" to="assets/ceiling/ceiling/cone_detector" method="_on_body_entered"]
+[connection signal="body_exited" from="assets/ceiling/ceiling/cone_detector" to="assets/ceiling/ceiling/cone_detector" method="_on_body_exited"]

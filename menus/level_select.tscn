@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bxau5jmnhxuvp"]
+[gd_scene load_steps=11 format=3 uid="uid://bxau5jmnhxuvp"]
 
 [ext_resource type="Script" uid="uid://v3uoguhlfsqu" path="res://menus/level_select.gd" id="1_x5a0v"]
 [ext_resource type="Theme" uid="uid://3lc7pfe6wvl7" path="res://assets/pixelated_theme.tres" id="2_a00cd"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://fr41ctokr1km" path="res://assets/images/logo/lvl_images/lvl2_2d.png" id="5_opf47"]
 [ext_resource type="Texture2D" uid="uid://bqbqjmlldvh3t" path="res://assets/images/logo/lvl_images/lvl2_3d.png" id="6_6ftm7"]
 [ext_resource type="Texture2D" uid="uid://cgk13mk1jjyy" path="res://assets/images/logo/lvl_images/lvl3_2d.png" id="7_veylk"]
+[ext_resource type="Texture2D" uid="uid://du3fd65hmht52" path="res://assets/images/logo/lvl_images/lvl3_3d.png" id="8_qa07t"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a00cd"]
 bg_color = Color(0.152941, 0.152941, 0.811765, 0.745098)
@@ -59,6 +60,7 @@ text = "level1"
 horizontal_alignment = 1
 
 [node name="lvl_1_2d" type="Button" parent="BoxContainer/lvl1"]
+texture_filter = 1
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 50
@@ -69,6 +71,7 @@ icon_alignment = 2
 expand_icon = true
 
 [node name="lvl_1_3d" type="Button" parent="BoxContainer/lvl1"]
+texture_filter = 1
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 50
@@ -89,6 +92,7 @@ text = "Level2"
 horizontal_alignment = 1
 
 [node name="lvl_2_2d" type="Button" parent="BoxContainer/lvl2"]
+texture_filter = 1
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 50
@@ -99,6 +103,7 @@ icon_alignment = 2
 expand_icon = true
 
 [node name="lvl_2_3d" type="Button" parent="BoxContainer/lvl2"]
+texture_filter = 1
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 50
@@ -119,6 +124,7 @@ text = "Level3"
 horizontal_alignment = 1
 
 [node name="lvl_3_2d" type="Button" parent="BoxContainer/lvl3"]
+texture_filter = 1
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 50
@@ -129,11 +135,15 @@ icon_alignment = 2
 expand_icon = true
 
 [node name="lvl_3_3d" type="Button" parent="BoxContainer/lvl3"]
+texture_filter = 1
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_qa07t")
 text = "3D"
+icon = ExtResource("8_qa07t")
+icon_alignment = 2
+expand_icon = true
 
 [node name="back_b" type="Button" parent="."]
 layout_mode = 1

@@ -33,6 +33,8 @@ var cooldown = 0.2  # seconds between sticker launches
 #2 launchers
 var second_launcher = false
 
+@onready var wave_manager: Node = get_node_or_null("../wave_manager")
+
 func _ready() -> void:
 	pass # Replace with function body.
 
@@ -133,7 +135,15 @@ func _physics_process(delta: float) -> void:
 	
 	
 	move_and_slide()
+	
 	#death
 	if elim.get_node("elim_scene").done:
-		get_tree().reload_current_scene()
-		print("RELOAD SCENE")
+		if wave_manager != null:
+			if wave_manager.wave2:
+				wave_manager.start_w2()
+				print("restartwave2")
+				elim.visible = false
+				elim.get_node("elim_scene").reset()
+		else:
+			get_tree().reload_current_scene()
+			print("RELOAD SCENE")

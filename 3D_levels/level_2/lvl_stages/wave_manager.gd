@@ -2,6 +2,7 @@ extends Node
 @onready var enemies_wave_2: Node3D = $"../enemies_wave2"
 @onready var wave_2_start: AnimationPlayer = $wave2_start
 @onready var timer: Timer = $Timer
+@onready var launch_player: CharacterBody3D = $"../launch_player"
 
 var eliminations = 0
 var wave1 = true
@@ -35,3 +36,12 @@ func _on_wave_2_start_animation_finished(anim_name: StringName) -> void:
 	wave2 = true
 	eliminations = 0
 	enemies_wave_2.process_mode = Node.PROCESS_MODE_PAUSABLE
+
+func start_w2():
+	enemies_wave_2.reset_enemies()
+	enemies_wave_2.process_mode = Node.PROCESS_MODE_DISABLED
+	wave_2_start.play("wave2start")
+	eliminations = 0
+	launch_player.health = 10
+	print("restarting")
+	wave2 = false

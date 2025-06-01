@@ -3,6 +3,7 @@ extends Node
 @onready var wave_2_start: AnimationPlayer = $wave2_start
 @onready var timer: Timer = $Timer
 @onready var launch_player: CharacterBody3D = $"../launch_player"
+@onready var mission: CanvasLayer = $"../mission"
 
 var eliminations = 0
 var wave1 = true
@@ -42,6 +43,7 @@ func start_w2():
 	enemies_wave_2.process_mode = Node.PROCESS_MODE_DISABLED
 	wave_2_start.play("wave2start")
 	eliminations = 0
-	launch_player.health = 10
+	launch_player.health = 100
+	mission.visible = true
 	print("restarting")
 	wave2 = false

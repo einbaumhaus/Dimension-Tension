@@ -9,13 +9,13 @@ var _gravity := -30.0
 var _camera_input_direction := Vector2.ZERO
 var _last_movement_direction := Vector3.BACK
 var mouse_sensitivity = null
-
 @onready var _camera: Camera3D = $Camera3D
 @onready var anim: AnimationPlayer = $AnimationPlayer
 @onready var legs: AnimatedSprite3D = $legs
 
+
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
 
 func _input(event: InputEvent) -> void: #add mouse input
 	if event.is_action_pressed("left_click"):
@@ -32,6 +32,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		
 func _physics_process(delta: float) -> void:
 	legs.rotation_degrees.y = _camera.rotation_degrees.y
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta

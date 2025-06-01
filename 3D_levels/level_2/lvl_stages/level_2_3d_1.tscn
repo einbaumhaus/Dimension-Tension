@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=4 uid="uid://bt1oojjskfoa2"]
+[gd_scene load_steps=59 format=4 uid="uid://bt1oojjskfoa2"]
 
 [ext_resource type="Script" uid="uid://baup6tmbd45j4" path="res://3D_levels/level_2/lvl_stages/level_2_3d_1.gd" id="1_ijkd5"]
 [ext_resource type="Texture2D" uid="uid://dcjfetld4q5y7" path="res://3D_levels/level_1/assets/bridge/materials/Ice002_1K-JPG_Color.jpg" id="1_yp75m"]
@@ -25,6 +25,8 @@
 [ext_resource type="Texture2D" uid="uid://cxq0c4v82vlxb" path="res://3D_levels/level_2/assets/posters/wanted.jpg" id="17_63n28"]
 [ext_resource type="Script" uid="uid://cfl8cvf1rj4xh" path="res://3D_levels/level_2/lvl_stages/lvl_part_changer.gd" id="19_63n28"]
 [ext_resource type="PackedScene" uid="uid://bpmq6uacs60yv" path="res://2D_levels/level_2/elim_scene/elim_scene.tscn" id="23_r2s5x"]
+[ext_resource type="FontFile" uid="uid://nv7xw0gdt65u" path="res://assets/fonts/joystix monospace.otf" id="25_gb2bx"]
+[ext_resource type="Texture2D" uid="uid://clbutouj7ccjo" path="res://2D_levels/level_1/assets/UI/heart.png" id="26_sw3ia"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_udivp"]
 panorama = ExtResource("2_ijkd5")
@@ -755,6 +757,20 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kmfap"]
+bg_color = Color(0.152941, 0.152941, 0.811765, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yget8"]
+bg_color = Color(0.788235, 0.196078, 0.196078, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
 [node name="level_2_3d_1" type="Node3D"]
 script = ExtResource("1_ijkd5")
 
@@ -1051,36 +1067,37 @@ animation = &"walk"
 
 [node name="mission" type="CanvasLayer" parent="."]
 
-[node name="Control" type="Control" parent="mission"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
+[node name="healthbar" type="ProgressBar" parent="mission"]
+offset_left = 644.0
+offset_top = 3.0
+offset_right = 1153.0
+offset_bottom = 50.0
+theme_override_fonts/font = ExtResource("25_gb2bx")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/background = SubResource("StyleBoxFlat_kmfap")
+theme_override_styles/fill = SubResource("StyleBoxFlat_yget8")
+value = 50.0
+show_percentage = false
 
-[node name="Panel" type="Panel" parent="mission/Control"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -305.0
-offset_bottom = 142.0
-grow_horizontal = 0
+[node name="heart" type="TextureRect" parent="mission"]
+texture_filter = 1
+offset_left = 651.0
+offset_top = 9.0
+offset_right = 658.0
+offset_bottom = 16.0
+scale = Vector2(5.13, 5.13)
+size_flags_horizontal = 4
+texture = ExtResource("26_sw3ia")
 
-[node name="Label" type="Label" parent="mission/Control"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -202.0
+[node name="Label" type="Label" parent="mission"]
+offset_left = 693.0
+offset_top = 13.0
+offset_right = 1160.0
 offset_bottom = 129.0
-grow_horizontal = 0
-theme_override_font_sizes/font_size = 31
-text = "W.I.P MISSION:
-EXPIRE 4 UGUS
-ENTER COURTYARD"
+scale = Vector2(0.225, 0.225)
+theme_override_fonts/font = ExtResource("25_gb2bx")
+theme_override_font_sizes/font_size = 96
+text = "HEALTH"
 
 [node name="elim_scene" type="CanvasLayer" parent="."]
 process_mode = 4

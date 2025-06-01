@@ -1,9 +1,11 @@
-[gd_scene load_steps=41 format=4 uid="uid://blnffj14qys1k"]
+[gd_scene load_steps=53 format=4 uid="uid://blnffj14qys1k"]
 
 [ext_resource type="PackedScene" uid="uid://f8i8svg7k032" path="res://3D_levels/level_2/launch_player/launch_player.tscn" id="1_4kesc"]
 [ext_resource type="Script" uid="uid://bv2w76gho36d2" path="res://3D_levels/level_2/lvl_stages/level_2_3d_2.gd" id="1_dxfov"]
 [ext_resource type="PackedScene" uid="uid://bnp7vdu3nrbe8" path="res://menus/pause_menu.tscn" id="1_mloyc"]
 [ext_resource type="PackedScene" uid="uid://bpmq6uacs60yv" path="res://2D_levels/level_2/elim_scene/elim_scene.tscn" id="2_m2bdb"]
+[ext_resource type="FontFile" uid="uid://nv7xw0gdt65u" path="res://assets/fonts/joystix monospace.otf" id="3_kqf0v"]
+[ext_resource type="Texture2D" uid="uid://clbutouj7ccjo" path="res://2D_levels/level_1/assets/UI/heart.png" id="4_adsja"]
 [ext_resource type="Texture2D" uid="uid://cjllvahxg6keb" path="res://3D_levels/level_1/assets/overcast_soil_puresky_4k.hdr" id="5_t7ky0"]
 [ext_resource type="Texture2D" uid="uid://clde65rir2dv3" path="res://3D_levels/level_2/assets/env/gravelly_sand_diff_1k.jpg" id="6_4ouxg"]
 [ext_resource type="Texture2D" uid="uid://bsuaof7o8fr32" path="res://3D_levels/level_1/assets/castle/materials/castle_wall_slates_diff_1k.jpg" id="6_7ecmq"]
@@ -14,6 +16,22 @@
 [ext_resource type="Script" uid="uid://yu8nw8ofjipq" path="res://3D_levels/level_2/lvl_stages/enemies_wave_2.gd" id="9_oajnp"]
 [ext_resource type="FontFile" uid="uid://dn3yd17i4df0q" path="res://assets/fonts/OCRAEXT.TTF" id="12_ihhey"]
 [ext_resource type="Script" uid="uid://cr5eu0hte3jpn" path="res://3D_levels/level_2/lvl_stages/wave_manager.gd" id="13_cmtpo"]
+[ext_resource type="Texture2D" uid="uid://c8n7rx0rslbmi" path="res://3D_levels/level_1/assets/castle/materials/castle_wall_slates_nor_gl_1k.jpg" id="14_cbuk5"]
+[ext_resource type="Texture2D" uid="uid://diw4e3db1ji7i" path="res://3D_levels/level_1/assets/castle/materials/church_bricks_02_diff_png_1k.jpg" id="14_e870u"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_adsja"]
+bg_color = Color(0.152941, 0.152941, 0.811765, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cbuk5"]
+bg_color = Color(0.788235, 0.196078, 0.196078, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_4ouxg"]
 panorama = ExtResource("5_t7ky0")
@@ -159,9 +177,17 @@ _data = {
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pn1rq"]
 load_path = "res://.godot/imported/Untitled-1.jpg-bffac236435ccc4b82aeb650fc091648.s3tc.ctex"
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oajnp"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cbuk5"]
 cull_mode = 2
-albedo_color = Color(0, 0.928338, 0.579045, 1)
+albedo_color = Color(1, 0.582598, 0.789072, 1)
+albedo_texture = SubResource("CompressedTexture2D_pn1rq")
+normal_scale = 16.0
+uv1_scale = Vector3(5.485, 5.485, 5.485)
+uv1_offset = Vector3(-0.085, 0.65, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kqf0v"]
+cull_mode = 2
+albedo_color = Color(0.210182, 0.814646, 0, 1)
 albedo_texture = SubResource("CompressedTexture2D_pn1rq")
 normal_scale = 16.0
 uv1_scale = Vector3(5.485, 5.485, 5.485)
@@ -175,14 +201,6 @@ normal_scale = 16.0
 uv1_scale = Vector3(5.485, 5.485, 5.485)
 uv1_offset = Vector3(-0.085, 0.65, 0)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e870u"]
-cull_mode = 2
-albedo_color = Color(0.210182, 0.814646, 0, 1)
-albedo_texture = SubResource("CompressedTexture2D_pn1rq")
-normal_scale = 16.0
-uv1_scale = Vector3(5.485, 5.485, 5.485)
-uv1_offset = Vector3(-0.085, 0.65, 0)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cmtpo"]
 cull_mode = 2
 albedo_color = Color(0.8775, 0.628646, 0, 1)
@@ -191,15 +209,15 @@ normal_scale = 16.0
 uv1_scale = Vector3(5.485, 5.485, 5.485)
 uv1_offset = Vector3(-0.085, 0.65, 0)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cbuk5"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oajnp"]
 cull_mode = 2
-albedo_color = Color(1, 0.582598, 0.789072, 1)
+albedo_color = Color(0, 0.928338, 0.579045, 1)
 albedo_texture = SubResource("CompressedTexture2D_pn1rq")
 normal_scale = 16.0
 uv1_scale = Vector3(5.485, 5.485, 5.485)
 uv1_offset = Vector3(-0.085, 0.65, 0)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kqf0v"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e870u"]
 cull_mode = 2
 albedo_color = Color(0.210182, 0.814646, 0, 1)
 albedo_texture = SubResource("CompressedTexture2D_pn1rq")
@@ -249,9 +267,62 @@ shadow_mesh = SubResource("ArrayMesh_ly24d")
 cull_mode = 2
 albedo_color = Color(0.325441, 0.325441, 0.325441, 1)
 albedo_texture = ExtResource("6_7ecmq")
+normal_enabled = true
+normal_texture = ExtResource("14_cbuk5")
 uv1_scale = Vector3(-0.8, 0.114, -0.355)
 uv1_offset = Vector3(-1.825, 2.77, -1.26)
 uv1_triplanar = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e870u"]
+size = Vector3(0.775146, 4.91302, 2.52994)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kqf0v"]
+size = Vector3(1.14996, 4.91302, 1.67505)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eki41"]
+resource_name = "Material"
+cull_mode = 2
+albedo_color = Color(0.906332, 0.906332, 0.906332, 1)
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_suh4h"]
+_surfaces = [{
+"aabb": AABB(-356.992, 32.5784, -175.294, 175.426, 258.653, 317.121),
+"format": 34896613377,
+"index_count": 192,
+"index_data": PackedByteArray("AAABAAIAAwAAAAIAAwAEAAAABAAFAAAAAAAFAAEABAAGAAUABgABAAUABgAHAAEACAAJAAoACAALAAkACQAMAAoACwANAAkACQANAAwACwAOAA0ADgAMAA0ADgAPAAwAEAARABIAEwASABEAEwARABQAEQAVABQAEAAWABUAEQAXABUAEAAVABcAEAAXABEAGAAZABoAGAAbABkAGQAcABoAGwAdABkAGQAdABwAGwAeAB0AHgAcAB0AHgAfABwAIAAhACIAIAAjACEAIQAkACIAIwAlACEAIQAlACQAIwAmACUAJgAkACUAJgAnACQAKAApACoAKAArACkAKQAsACoAKwAtACkAKQAtACwAKwAuAC0ALgAsAC0ALgAvACwAMAAxADIAMAAzADEAMQA0ADIAMwA1ADEAMQA1ADQAMwA2ADUANgA0ADUANgA3ADQAOAA5ADoAOAA7ADkAOQA8ADoAOwA9ADkAOQA9ADwAOwA+AD0APgA8AD0APgA/ADwA"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 64,
+"vertex_data": PackedByteArray("B0sEq7zIAAAAAASrt9wAAAAABKu8yAAAAAAvCPm9AAAHSy8I+b0AAAdLBKu33AAAB0svCHrnAAAAAC8IeucAAFXY8iF1oQAA//8SeCanAABV2BJ4JqcAAP//8iF1oQAAVdgSeLaxAAD//xJ4trEAAP//8iFmtwAAVdjyIWa3AADRWZYWLsEAANFZ//9wogAA0VmWFq2XAADKDpYWrZcAAMoO//9wogAAyg7//2y2AADKDpYWLsEAANFZ//9stgAAyg4eE/NuAADRWVfatnkAAMoOV9q2eQAA0VkeE/NuAADKDlfaso0AANFZV9qyjQAA0VkeE3WYAADKDh4TdZgAADmdnRGyOQAAQOgs53REAAA5nSzndEQAAEDonRGyOQAAOZ0s53BYAABA6CzncFgAAEDonREzYwAAOZ2dETNjAACkkAAAfdYAAKvblLVA4QAApJCUtUDhAACr2wAAfdYAAKSQlLU89QAAq9uUtTz1AACr2wAA//8AAKSQAAD//wAAD3SzDgAAAAAXv5S1wgoAAA90lLXCCgAAF7+zDgAAAAAPdJS1vh4AABe/lLW+HgAAF7+zDoEpAAAPdLMOgSkAAHLCpxfHYwAAHOoSeHdpAABywhJ4d2kAABzqpxfHYwAAcsISeAh0AAAc6hJ4CHQAABzqpxe4eQAAcsKnF7h5AAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_kqf0v"]
+resource_name = "factory_Cube"
+_surfaces = [{
+"aabb": AABB(-356.992, 32.5784, -175.294, 175.426, 258.653, 317.121),
+"attribute_data": PackedByteArray("/5//f//f/z//3/9//5//P/9f/z//nwAA/5//P/9fAAD/X/9//5//P/+f/3//X/8//1//v/+f/3//n/+//1//f/9f/7//n/9//5//v/9f/3//X/9//5//P/+f/3//X/8//1//P/+fAAD/n/8//18AAP+f/3//3/8//9//f/+f/z//X/8//5//f/9f/3//n/8//1//v/+f/3//n/+//1//f/9f/z//nwAA/5//P/9fAAD/n/9//9//P//f/3//n/8//1//v/+f/3//n/+//1//f/9f/3//n/8//5//f/9f/z//X/8//58AAP+f/z//XwAA/5//f//f/z//3/9//5//P/9f/7//n/9//5//v/9f/3//X/9//5//P/+f/3//X/8//1//P/+fAAD/n/8//18AAP+f/3//3/8//9//f/+f/z//X/+//5//f/+f/7//X/9//1//f/+f/z//n/9//1//P/9f/z//nwAA/5//P/9fAAD/n/9//9//P//f/3//n/8//1//v/+f/3//n/+//1//f/9f/3//n/8//5//f/9f/z//X/8//58AAP+f/z//XwAA/5//f//f/z//3/9//5//P/9f/7//n/9//5//v/9f/3//X/9//5//P/+f/3//X/8//1//P/+fAAD/n/8//18AAP+f/3//3/8//9//f/+f/z8="),
+"format": 34896613399,
+"index_count": 192,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0AMAAxADIAMAAzADEANAA1ADYANAA3ADUAOAA5ADoAOAA7ADkAPAA9AD4APAA/AD0AQABBAEIAQABDAEEARABFAEYARABHAEUASABJAEoASABLAEkATABNAE4ATABPAE0AUABRAFIAUABTAFEAVABVAFYAVABXAFUAWABZAFoAWABbAFkAXABdAF4AXABfAF0AYABhAGIAYABjAGEAZABlAGYAZABnAGUAaABpAGoAaABrAGkAbABtAG4AbABvAG0AcABxAHIAcABzAHEAdAB1AHYAdAB3AHUAeAB5AHoAeAB7AHkAfAB9AH4AfAB/AH0A"),
+"material": SubResource("StandardMaterial3D_eki41"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 128,
+"vertex_data": PackedByteArray("B0sEq7zI//8AAASrt9z//wAABKu8yP//B0sEq7fc//8HSy8IeucQwAAABKu33BDAB0sEq7fcEMAAAC8IeucQwAdLLwj5vdHTB0sEq7fciNYHSwSrvMhB1wdLLwh653TTAAAvCPm9qv0HSwSrvMiq/QAABKu8yKr9B0svCPm9qv1V2PIhdaGr/f//Engmp6v9VdgSeCanq/3///IhdaGr/f//8iF1odHT//8SeLaxiNb//xJ4JqdB1///8iFmt3TT///yIWa3EMBV2BJ4trEQwP//Eni2sRDAVdjyIWa3EMD//xJ4Jqf//1XYEni2sf//VdgSeCan/////xJ4trH//9FZlhYuwXzW0Vn//3CiXNTRWZYWrZer1tFZ//9stgPUyg6WFq2XXv7RWf//cKJe/soO//9wol7+0VmWFq2XXv7RWZYWLsEHwMoO//9stgfA0Vn//2y2B8DKDpYWLsEHwNFZ//9wov//yg7//2y2///KDv//cKL//9FZ//9stv//yg4eE/NuF/7RWVfatnkX/soOV9q2eRf+0VkeE/NuF/7RWR4T824J1NFZV9qyjWnW0VlX2rZ55tbRWR4TdZjK09FZHhN1mArAyg5X2rKNCsDRWVfaso0KwMoOHhN1mArA0VlX2rZ5///KDlfaso3//8oOV9q2ef//0VlX2rKN//85nZ0Rsjk3/kDoLOd0RDf+OZ0s53REN/5A6J0Rsjk3/kDonRGyORvUQOgs53BYXtZA6CzndETL1kDonREzY+TTQOidETNjCcA5nSzncFgJwEDoLOdwWAnAOZ2dETNjCcBA6CzndET//zmdLOdwWP//OZ0s53RE//9A6CzncFj//6SQAAB91uf9q9uUtUDh5/2kkJS1QOHn/avbAAB91uf9q9sAAH3W8NOr25S1PPV41qvblLVA4Q7Xq9sAAP//pdOr2wAA//8MwKSQlLU89QzAq9uUtTz1DMCkkAAA//8MwKvblLVA4f//pJCUtTz1//+kkJS1QOH//6vblLU89f//D3SzDgAAuf0Xv5S1wgq5/Q90lLXCCrn9F7+zDgAAuf0Xv7MOAADY0xe/lLW+HoXWF7+UtcIKNdcXv7MOgSl/0xe/sw6BKQ/AD3SUtb4eD8AXv5S1vh4PwA90sw6BKQ/AF7+UtcIK//8PdJS1vh7//w90lLXCCv//F7+Utb4e//9ywqcXx2Pq/RzqEnh3aer9csISeHdp6v0c6qcXx2Pq/RzqpxfHY/HTHOoSeAh0d9Yc6hJ4d2kM1xzqpxe4eafTHOqnF7h5DMBywhJ4CHQMwBzqEngIdAzAcsKnF7h5DMAc6hJ4d2n//3LCEngIdP//csISeHdp//8c6hJ4CHT///9//7//f/+//3//v/9//780+8oENPvKBDT7ygQ0+8oEiSy7KTwpYStlKM0r/yx/Kbq+ur66vrq+ur66vrq+ur66vrq+ur66vrq+ur66vrq+iCy7KTwpYStlKMwr/yyAKTX7yQQ1+8kENfvJBDX7yQT/f/+//3//v/9//7//f/+/SilaK9orEioTKXYrSSzaKRu/G78bvxu/G78bvxu/G7+T/GsDk/xrA5P8awOT/GsD/3//v/9//7//f/+//3//v/S+9L70vvS+9L70vvS+9L5CLN4pYClPK84omCuRLLYpBvz4Awb8+AMG/PgDBvz4A/9//7//f/+//3//v/9//78Gvwa/Br8Gvwa/Br8Gvwa/LCzpKW0pSSvtKIgrcCzHKUb8uANG/LgDRvy4A0b8uAP/f/+//3//v/9//7//f/+/277bvtu+277bvtu+277bvmIszilOKVgroCivK8Esnymq+1QEqvtUBKr7VASq+1QE/3//v/9//7//f/+//3//v8K+wr7CvsK+wr7CvsK+wr6ALL8pQClfK3MoxivwLIcpUPuuBFD7rgRQ+64EUPuuBP9//7//f/+//3//v/9//7/cvty+3L7cvty+3L7cvty+YCzPKU8pVyuiKK4rviygKa/7TwSv+08Er/tPBK/7TwT/f/+//3//v/9//7//f/+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_suh4h")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ne6qt"]
+cull_mode = 2
+albedo_color = Color(1, 0.740156, 0.411277, 1)
+albedo_texture = ExtResource("14_e870u")
+uv1_scale = Vector3(3.64, 0.365, 1)
+uv1_triplanar_sharpness = 0.287174
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_7ecmq"]
 size = Vector2(47.815, 55.44)
@@ -502,36 +573,37 @@ visible = false
 
 [node name="mission" type="CanvasLayer" parent="."]
 
-[node name="Control" type="Control" parent="mission"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
+[node name="healthbar" type="ProgressBar" parent="mission"]
+offset_left = 644.0
+offset_top = 3.0
+offset_right = 1153.0
+offset_bottom = 50.0
+theme_override_fonts/font = ExtResource("3_kqf0v")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/background = SubResource("StyleBoxFlat_adsja")
+theme_override_styles/fill = SubResource("StyleBoxFlat_cbuk5")
+value = 50.0
+show_percentage = false
 
-[node name="Panel" type="Panel" parent="mission/Control"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -305.0
-offset_bottom = 142.0
-grow_horizontal = 0
+[node name="heart" type="TextureRect" parent="mission"]
+texture_filter = 1
+offset_left = 651.0
+offset_top = 9.0
+offset_right = 658.0
+offset_bottom = 16.0
+scale = Vector2(5.13, 5.13)
+size_flags_horizontal = 4
+texture = ExtResource("4_adsja")
 
-[node name="Label" type="Label" parent="mission/Control"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -202.0
+[node name="Label" type="Label" parent="mission"]
+offset_left = 693.0
+offset_top = 13.0
+offset_right = 1160.0
 offset_bottom = 129.0
-grow_horizontal = 0
-theme_override_font_sizes/font_size = 31
-text = "W.I.P MISSION:
-EXPIRE 4 UGUS
-ENTER COURTYARD"
+scale = Vector2(0.225, 0.225)
+theme_override_fonts/font = ExtResource("3_kqf0v")
+theme_override_font_sizes/font_size = 96
+text = "HEALTH"
 
 [node name="elim_scene2" type="CanvasLayer" parent="."]
 process_mode = 4
@@ -591,47 +663,59 @@ process_mode = 4
 
 [node name="ugus7" parent="enemies_wave1" instance=ExtResource("6_fxsf8")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.960217, 50.9149)
+material = SubResource("StandardMaterial3D_cbuk5")
 
 [node name="ugus8" parent="enemies_wave1" instance=ExtResource("6_fxsf8")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17.7044, 0.960217, 50.9149)
 
-[node name="ugus9" parent="enemies_wave1" instance=ExtResource("6_fxsf8")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -17.0002, 0.960217, 50.9149)
+[node name="mini_ullu2" parent="enemies_wave1" instance=ExtResource("6_fxsf8")]
+transform = Transform3D(-2.62268e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.62268e-08, -17.0002, 0.960217, 50.9149)
+material = SubResource("StandardMaterial3D_kqf0v")
 
 [node name="ugus10" parent="enemies_wave1" instance=ExtResource("6_fxsf8")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -17.0002, 0.960217, 37.9878)
+material = SubResource("StandardMaterial3D_cbuk5")
 
 [node name="ugus11" parent="enemies_wave1" instance=ExtResource("6_fxsf8")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -17.0002, 0.960217, 17.6968)
 
-[node name="ugus12" parent="enemies_wave1" instance=ExtResource("6_fxsf8")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -17.0002, 0.960217, -2.55601)
+[node name="mini_ullu" parent="enemies_wave1" instance=ExtResource("6_fxsf8")]
+transform = Transform3D(-2.62268e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.62268e-08, -17.0002, 0.960217, -2.55601)
+material = SubResource("StandardMaterial3D_kqf0v")
 
 [node name="ugus13" parent="enemies_wave1" instance=ExtResource("6_fxsf8")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 18.5383, 0.960217, -2.55601)
+material = SubResource("StandardMaterial3D_cbuk5")
 
-[node name="ugus14" parent="enemies_wave1" instance=ExtResource("6_fxsf8")]
+[node name="lighting_ullu" parent="enemies_wave1" instance=ExtResource("6_fxsf8")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 18.5383, 0.960217, 19.0188)
+SPEED = 30.0
+material = SubResource("StandardMaterial3D_adsja")
+DAMAGE = 1
 
 [node name="ugus15" parent="enemies_wave1" instance=ExtResource("6_fxsf8")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 18.5383, 0.960217, 39.7952)
+material = SubResource("StandardMaterial3D_cmtpo")
 
 [node name="enemies_wave2" type="Node3D" parent="."]
 process_mode = 4
 visible = false
 script = ExtResource("9_oajnp")
 
-[node name="big_ugus" parent="enemies_wave2" instance=ExtResource("6_fxsf8")]
+[node name="big_ullu" parent="enemies_wave2" instance=ExtResource("6_fxsf8")]
 transform = Transform3D(-1.484e-07, 0, -3.395, 0, 3.395, 0, 3.395, 0, -1.484e-07, 0.282888, 0.00789881, 38.7073)
+SPEED = 3.0
 health = 50
 material = SubResource("StandardMaterial3D_oajnp")
 
-[node name="ugus7" parent="enemies_wave2" instance=ExtResource("6_fxsf8")]
+[node name="lightning_ullu" parent="enemies_wave2" instance=ExtResource("6_fxsf8")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.960217, 50.9149)
+SPEED = 30.0
 material = SubResource("StandardMaterial3D_adsja")
+DAMAGE = 1
 
-[node name="ugus8" parent="enemies_wave2" instance=ExtResource("6_fxsf8")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 12.1006, 0.960217, 41.2772)
+[node name="mini_ullu" parent="enemies_wave2" instance=ExtResource("6_fxsf8")]
+transform = Transform3D(-2.62268e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.62268e-08, 12.1006, 0.960217, 41.2772)
 material = SubResource("StandardMaterial3D_e870u")
 
 [node name="ugus9" parent="enemies_wave2" instance=ExtResource("6_fxsf8")]
@@ -645,13 +729,15 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -17.00
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -17.0002, 0.960217, 17.6968)
 material = SubResource("StandardMaterial3D_cbuk5")
 
-[node name="ugus12" parent="enemies_wave2" instance=ExtResource("6_fxsf8")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -17.0002, 0.960217, 28.2646)
+[node name="mini_ullu2" parent="enemies_wave2" instance=ExtResource("6_fxsf8")]
+transform = Transform3D(-2.62268e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.62268e-08, -17.0002, 0.960217, 28.2646)
 material = SubResource("StandardMaterial3D_kqf0v")
 
-[node name="ugus13" parent="enemies_wave2" instance=ExtResource("6_fxsf8")]
+[node name="lightning_ullu2" parent="enemies_wave2" instance=ExtResource("6_fxsf8")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 18.5383, 0.960217, 26.686)
+SPEED = 30.0
 material = SubResource("StandardMaterial3D_adsja")
+DAMAGE = 1
 
 [node name="ugus14" parent="enemies_wave2" instance=ExtResource("6_fxsf8")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 18.5383, 0.960217, 19.0188)
@@ -672,11 +758,53 @@ transform = Transform3D(-1.272e-07, 0, 2.91, 0, 2.91, 0, -2.91, 0, -1.272e-07, 3
 
 [node name="castle" type="Node3D" parent="assets"]
 
-[node name="Cube" type="MeshInstance3D" parent="assets/castle"]
+[node name="StaticBody3D" type="StaticBody3D" parent="assets/castle"]
+
+[node name="Cube" type="MeshInstance3D" parent="assets/castle/StaticBody3D"]
 transform = Transform3D(-0.935, 0, -2.15169e-07, 0, 0.615, 0, 1.41181e-07, 0, -1.425, 5.301, 0.69, 15.807)
 mesh = SubResource("ArrayMesh_br444")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_mcrfw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="assets/castle/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.0408, 1.95651, 7.18716)
+shape = SubResource("BoxShape3D_e870u")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="assets/castle/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.0408, 1.95651, -7.69664)
+shape = SubResource("BoxShape3D_e870u")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="assets/castle/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.0408, 1.95651, 30.5722)
+shape = SubResource("BoxShape3D_e870u")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="assets/castle/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.0408, 1.95651, 45.4527)
+shape = SubResource("BoxShape3D_e870u")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="assets/castle/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8502, 1.95651, 45.4527)
+shape = SubResource("BoxShape3D_e870u")
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="assets/castle/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8502, 1.95651, 30.6263)
+shape = SubResource("BoxShape3D_e870u")
+
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="assets/castle/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8502, 1.95651, 7.18259)
+shape = SubResource("BoxShape3D_e870u")
+
+[node name="CollisionShape3D10" type="CollisionShape3D" parent="assets/castle/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8502, 1.95651, -7.64197)
+shape = SubResource("BoxShape3D_e870u")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="assets/castle/StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.16566, 1.95651, 46.1722)
+shape = SubResource("BoxShape3D_kqf0v")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="assets/castle/StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.90455, 1.95651, 46.1722)
+shape = SubResource("BoxShape3D_kqf0v")
 
 [node name="walls" type="Node3D" parent="assets/castle"]
 
@@ -880,6 +1008,12 @@ transform = Transform3D(0.0120257, 0, 0.65489, 0, 0.655, 0, -0.65489, 0, 0.01202
 modulate = Color(0.529067, 0.529067, 0.529067, 1)
 texture = ExtResource("8_mcrfw")
 
+[node name="factory" type="MeshInstance3D" parent="assets/castle"]
+transform = Transform3D(-1.8506e-08, 0, 0.423368, 0, 0.423368, 0, -0.423368, 0, -1.8506e-08, 4.01947, -0.159304, 66.9185)
+mesh = SubResource("ArrayMesh_kqf0v")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ne6qt")
+
 [node name="floor" type="Node3D" parent="assets"]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="assets/floor"]
@@ -891,6 +1025,10 @@ surface_material_override/0 = SubResource("StandardMaterial3D_cjnvw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="assets/floor/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.096, -0.005, 18.382)
+shape = SubResource("BoxShape3D_cmtpo")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="assets/floor/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.096, 13.9189, 18.382)
 shape = SubResource("BoxShape3D_cmtpo")
 
 [node name="ugus_stairs" type="StaticBody3D" parent="assets/floor"]

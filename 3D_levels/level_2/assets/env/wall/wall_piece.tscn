@@ -1,11 +1,14 @@
-[gd_scene load_steps=7 format=4 uid="uid://bac2uhb337o7s"]
+[gd_scene load_steps=8 format=4 uid="uid://bac2uhb337o7s"]
 
 [ext_resource type="Texture2D" uid="uid://bsuaof7o8fr32" path="res://3D_levels/level_1/assets/castle/materials/castle_wall_slates_diff_1k.jpg" id="1_o7xu5"]
+[ext_resource type="Texture2D" uid="uid://c8n7rx0rslbmi" path="res://3D_levels/level_1/assets/castle/materials/castle_wall_slates_nor_gl_1k.jpg" id="2_51msi"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_51msi"]
 cull_mode = 2
 albedo_color = Color(0.325441, 0.325441, 0.325441, 1)
 albedo_texture = ExtResource("1_o7xu5")
+normal_enabled = true
+normal_texture = ExtResource("2_51msi")
 uv1_scale = Vector3(-0.865, 0.149, -0.145)
 uv1_offset = Vector3(-1.68, 2.54, -1.28)
 uv1_triplanar = true

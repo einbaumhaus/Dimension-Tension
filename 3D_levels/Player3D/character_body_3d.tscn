@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://cj7d18ek4ria6"]
+[gd_scene load_steps=26 format=4 uid="uid://cj7d18ek4ria6"]
 
 [ext_resource type="Script" uid="uid://bcgnt5ssu3drk" path="res://3D_levels/Player3D/character_body_3d.gd" id="1_a7qx7"]
 [ext_resource type="Script" uid="uid://bb1wjhu534dq3" path="res://2D_levels/Player2D/fps.gd" id="2_wrout"]
@@ -58,6 +58,49 @@ animations = [{
 "name": &"right",
 "speed": 5.0
 }]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ajg85"]
+resource_name = "Material"
+cull_mode = 2
+albedo_color = Color(0.906332, 0.906332, 0.906332, 1)
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_a4gwv"]
+_surfaces = [{
+"aabb": AABB(-3.165, -0.866025, -1, 8.78401, 1.73205, 2),
+"format": 34896613377,
+"index_count": 60,
+"index_data": PackedByteArray("AAABAAIAAAAGAAEAAwACAAEABgADAAEABwAAAAIABwAGAAAABwACAAgABgAJAAMACgAHAAgABgAHAAQABAAHAAoABgAEAAkACQAFAAMACQAEAAUAAgADAAsAAgALAAgACwADAAUACgAIAAsABAALAAUABAAKAAsA"),
+"lods": [1.18013, PackedByteArray("AAABAAIAAwACAAEAAAAEAAEABAADAAEABAAAAAIAAgADAAUABAAFAAMABAACAAUA")],
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("////fwAAAAAAAP7//z8AAAAA/38AAAAAAAD+//+/AAD///9///8AAAAA/3///wAA//////8/AAD//wAA/z8AAAAAAAD/PwAA//////+/AAD//wAA/78AAAAAAAD/vwAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_i25xe"]
+resource_name = "flashlight_Cube"
+_surfaces = [{
+"aabb": AABB(-3.165, -0.866025, -1, 8.78401, 1.73205, 2),
+"attribute_data": PackedByteArray("//+kwKnq/3////9//7+kwFTV/3//v/9//7+kwP9//3//v/9//3+kwJm6e/D/n+/Bmbpz0f+f//+p6qTAqeqkwFTV/3+p6v9/VNWkwFTVpMCpqv9/qaqkwGSFe/BkhXPRqaqkwFSV/3+pqv9/VJWkwFSVpMBUlf9/ZMVz0Zn6c9H/3+/B/9///2TFe/CZ+nvw"),
+"format": 34896613399,
+"index_count": 60,
+"index_data": PackedByteArray("AAABAAIAAAAOAAEADwAQABEADwASABAAEwAFAAQAEwADAAUABgAUAAgABgAVABQACgALAAwACwAKABYAFgAKAA0ACwAWABcAGAAZABoAGAAbABkAHAAHAB0AHAAJAAcAHgAfACAAHwAeACEAIQAeACIAHwAhACMA"),
+"lods": [1.18013, PackedByteArray("AAABAAIAAAADAAEAAwAEAAEAAwAFAAQABgAHAAgABgAJAAcACgALAAwACwAKAA0A")],
+"material": SubResource("StandardMaterial3D_ajg85"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(2, 1.98, 0, 0),
+"vertex_count": 36,
+"vertex_data": PackedByteArray("////fwAA//AAAP7//z//8AAA/38AAP/w////f///usIAAP7//7+6wgAA/3///7rC////f///usIAAP9/AAD/8AAA/3///7rC////fwAA//AAAP7//79U1QAA/38AAFTVAAD+//8/VNUAAP9///9U1f//////P//w//////8/VNUAAP7//79U1QAA/v//P1TV//////+/VNX//////7+6wgAAAAD/v7rC//8AAP+/usIAAAAA/79U1QAAAAD/P1TV//8AAP+/VNUAAAAA/z9U1QAAAAD/v1TV//8AAP8/VNX//wAA/z//8AAAAAD/P//w//8AAP8/qir//////z+qKv///38AAKoq////f///qir//wAA/7+qKv//////v6oqjsdwOI7HcDiOx3A4qulUFqrpVBaq6VQWVBaq6XA4jsdUFqrpcDiOx1TVVNVU1VTVVNVU1VTVVNWOx3A4VNWqKlTVqipU1aoqVNWqKqrpVBZUFqrpVBaq6VTVVNVU1VTVqipU1aoqVNWqKlTVqipU1XA4jsdwOI7HqiqqKqoqqiqqKqoqqiqqKqoqqiqqKqoq")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_a4gwv")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vp22m"]
+albedo_color = Color(0.0728426, 0.0728426, 0.0728426, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_em8rj"]
 resource_name = "Wood.001"
@@ -394,6 +437,24 @@ animation = &"front"
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.756173, 0)
 
+[node name="flashlight" type="Node3D" parent="Camera3D"]
+transform = Transform3D(0.99998, 0, -0.00633557, 0, 1, 0, 0.00633557, 0, 0.99998, 0, -0.010346, 0)
+visible = false
+
+[node name="flashlight2" type="MeshInstance3D" parent="Camera3D/flashlight"]
+transform = Transform3D(-2.18557e-09, 0, -0.07, 0, 0.07, 0, 0.05, 0, -3.0598e-09, 0.631, -0.422173, -1.004)
+mesh = SubResource("ArrayMesh_i25xe")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_vp22m")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Camera3D/flashlight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.641317, -0.397328, -1.1742)
+light_color = Color(0.999999, 0.919064, 0.712301, 1)
+light_energy = 20.0
+distance_fade_enabled = true
+spot_range = 6.4524
+spot_angle = 80.1381
+
 [node name="Node3D" type="Node3D" parent="Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.702, 0)
 
@@ -422,8 +483,9 @@ offset_bottom = -264.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 41
+text = "FPS:"
 script = ExtResource("2_wrout")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

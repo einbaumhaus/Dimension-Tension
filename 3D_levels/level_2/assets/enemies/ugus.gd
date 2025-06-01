@@ -1,13 +1,13 @@
 extends CharacterBody3D
 #constants
-const SPEED = 4.0
+@export var SPEED = 4.0
 const STOP_DISTANCE = 2
 var _gravity := -30.0
 
 @export var health = 5
 @export var material: Material
 #damage
-const DAMAGE = 1
+@export var DAMAGE = 10
 const ATTACK_INTERVAL = 1.0 # seconds between attacks
 var attack_timer := 0.0
 const ATTACK_RANGE = 2.5

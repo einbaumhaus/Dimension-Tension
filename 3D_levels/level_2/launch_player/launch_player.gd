@@ -4,7 +4,9 @@ extends CharacterBody3D
 var SPEED = 7.0
 const JUMP_VELOCITY = 14
 #variables
-var health := 10
+var health := 100
+@onready var healthbar: ProgressBar = $"../mission/healthbar"
+
 var acceleration = 30
 var _gravity := -30.0
 var _camera_input_direction := Vector2.ZERO
@@ -25,10 +27,13 @@ var mouse_sensitivity = null
 var sticker = load("res://3D_levels/level_2/assets/sticker_launcher/sticker/sticker.tscn")
 var instance
 var mag_size = 20
+var mag_size2 = 20
 
 #launcher delay
 var last_launch_time = 0.0
-var cooldown = 0.2  # seconds between sticker launches
+var last_launch_time2 = 0.0
+var cooldown = 0.2 
+var cooldown2 = 0.1 # seconds between sticker launches
 
 #2 launchers
 var second_launcher = false
@@ -36,7 +41,7 @@ var second_launcher = false
 @onready var wave_manager: Node = get_node_or_null("../wave_manager")
 
 func _ready() -> void:
-	pass # Replace with function body.
+	healthbar.value = health
 
 func _input(event: InputEvent) -> void: #add mouse input
 	if event.is_action_pressed("left_click"):
@@ -61,6 +66,8 @@ func take_damage(amount: int) -> void:
 
 func _physics_process(delta: float) -> void:
 	
+	healthbar.value = health
+	
 	#launch&reload
 	if Input.is_action_pressed("left_click"):
 		var current_time = Time.get_ticks_msec() / 1000.0
@@ -77,19 +84,22 @@ func _physics_process(delta: float) -> void:
 				mag_size -= 1
 				print(mag_size)
 				last_launch_time = current_time
-		if second_launcher:
-			if (mag_size == 0):
-				launch_anim2.play("reload")
-				mag_size = 20
-			elif !launch_anim2.is_playing():
-				launch_anim2.play("launch")
-				instance = sticker.instantiate()
-				instance.position = sticker_output2.global_position
-				instance.transform.basis = sticker_output2.global_transform.basis
-				get_parent().add_child(instance)
-				mag_size -= 1
-				print(mag_size)
-				last_launch_time = current_time
+	if second_launcher:
+		if Input.is_action_pressed("right_click"):
+			var current_time2 = Time.get_ticks_msec() / 1000.0
+			if current_time2 - last_launch_time2 >= cooldown2:
+				if (mag_size2 == 0):
+					launch_anim2.play("reload")
+					mag_size2 = 20
+				elif !launch_anim2.is_playing():
+					launch_anim2.play("launch")
+					instance = sticker.instantiate()
+					instance.position = sticker_output2.global_position
+					instance.transform.basis = sticker_output2.global_transform.basis
+					get_parent().add_child(instance)
+					mag_size2 -= 1
+					print(mag_size)
+					last_launch_time2 = current_time2
 
 	if Input.is_action_pressed("R"):
 		launch_anim.play("reload")
@@ -144,6 +154,8 @@ func _physics_process(delta: float) -> void:
 				print("restartwave2")
 				elim.visible = false
 				elim.get_node("elim_scene").reset()
+			if wave_manager.wave1:
+				get_tree().reload_current_scene()
 		else:
 			get_tree().reload_current_scene()
 			print("RELOAD SCENE")

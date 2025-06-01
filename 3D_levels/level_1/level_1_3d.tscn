@@ -1,4 +1,4 @@
-[gd_scene load_steps=121 format=4 uid="uid://dlb7qukr5wfbb"]
+[gd_scene load_steps=122 format=4 uid="uid://dlb7qukr5wfbb"]
 
 [ext_resource type="Script" uid="uid://bfjlx34dyngrh" path="res://3D_levels/level_1/level_1_3d.gd" id="1_ljo6s"]
 [ext_resource type="PackedScene" uid="uid://cj7d18ek4ria6" path="res://3D_levels/Player3D/character_body_3d.tscn" id="1_y7tgq"]
@@ -40,6 +40,7 @@
 [ext_resource type="Texture2D" uid="uid://diw4e3db1ji7i" path="res://3D_levels/level_1/assets/castle/materials/church_bricks_02_diff_png_1k.jpg" id="33_l6t0k"]
 [ext_resource type="Script" uid="uid://73orgg6sivl4" path="res://3D_levels/level_1/checkpoint_1.gd" id="33_wbjlk"]
 [ext_resource type="Script" uid="uid://c7c27a8h1nmb6" path="res://3D_levels/level_1/checkpoint_2.gd" id="34_3yk7c"]
+[ext_resource type="Script" uid="uid://bwoxn4qww1v7o" path="res://3D_levels/level_1/checkpoint_3.gd" id="40_s8qxt"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_3dv5j"]
 panorama = ExtResource("2_irmad")
@@ -2898,7 +2899,7 @@ transform = Transform3D(0.590489, -0.00377789, 5.65151e-11, 0.00200878, 1.05466,
 shape = SubResource("BoxShape3D_hoajf")
 
 [node name="AnimatableBody3D5" type="AnimatableBody3D" parent="intermission/moving_platforms/part1"]
-transform = Transform3D(0.982664, 0.0931422, 0.160303, -0.0585468, 0.976296, -0.208371, -0.175911, 0.195373, 0.964824, 124.223, -42.5866, -16.8771)
+transform = Transform3D(0.984406, 0.0348895, 0.172417, 2.34794e-05, 0.980108, -0.198464, -0.175911, 0.195373, 0.964824, 124.223, -42.5866, -16.8771)
 
 [node name="wooden_beam" type="MeshInstance3D" parent="intermission/moving_platforms/part1/AnimatableBody3D5"]
 transform = Transform3D(-0.104682, -0.00100943, -0.299089, 0.944045, 0.431951, -0.00229769, 4.14866, -0.0983177, -0.00702397, 0, 0, 0)
@@ -2929,7 +2930,7 @@ transform = Transform3D(0.590489, -0.00377789, 5.65151e-11, 0.00200878, 1.05466,
 shape = SubResource("BoxShape3D_hoajf")
 
 [node name="AnimatableBody3D6" type="AnimatableBody3D" parent="intermission/moving_platforms/part1"]
-transform = Transform3D(0.98311, -0.0154092, 0.182366, 0.0504966, 0.980608, -0.189363, -0.175911, 0.195373, 0.964824, 132.961, -41.2309, -18.4928)
+transform = Transform3D(0.984393, 0.0299454, 0.173416, 0.00498876, 0.980272, -0.197592, -0.175911, 0.195373, 0.964824, 132.961, -41.2309, -18.4928)
 
 [node name="wooden_beam" type="MeshInstance3D" parent="intermission/moving_platforms/part1/AnimatableBody3D6"]
 transform = Transform3D(-0.104682, -0.00100943, -0.299089, 0.944045, 0.431951, -0.00229769, 4.14866, -0.0983177, -0.00702397, 0, 0, 0)
@@ -3041,6 +3042,17 @@ shape = SubResource("BoxShape3D_dc0v1")
 [node name="Marker3D" type="Marker3D" parent="checkpoints/checkpoint2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.04786, 0)
 
+[node name="checkpoint3" type="Area3D" parent="checkpoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.596, -5.16559, 0)
+script = ExtResource("40_s8qxt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="checkpoints/checkpoint3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.182678, 1.5928, 0.118347)
+shape = SubResource("BoxShape3D_dc0v1")
+
+[node name="Marker3D" type="Marker3D" parent="checkpoints/checkpoint3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.242561, 0.879891, 0)
+
 [node name="Camera2" type="Camera3D" parent="."]
 transform = Transform3D(-0.00420884, 0.503771, 0.863827, 0, 0.863835, -0.503775, -0.999991, -0.00212031, -0.00363575, 98.0483, -41.348, -0.551302)
 
@@ -3061,3 +3073,4 @@ script = ExtResource("30_3fnmf")
 [connection signal="body_entered" from="intermission/jumppad" to="intermission/jumppad" method="_on_body_entered"]
 [connection signal="body_entered" from="checkpoints/checkpoint1" to="checkpoints/checkpoint1" method="_on_body_entered"]
 [connection signal="body_entered" from="checkpoints/checkpoint2" to="checkpoints/checkpoint2" method="_on_body_entered"]
+[connection signal="body_entered" from="checkpoints/checkpoint3" to="checkpoints/checkpoint3" method="_on_body_entered"]

@@ -18,4 +18,4 @@ func open():
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "player_topdown" and door_open:
-		get_tree().change_scene_to_file.call_deferred("res://mixed_levels/end/end_credit_level.tscn")
+		get_tree().change_scene_to_file.call_deferred("res://3D_levels/level_3/level_3_3d.tscn")

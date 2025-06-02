@@ -1,9 +1,11 @@
-[gd_scene load_steps=31 format=4 uid="uid://bilmxsoacd24r"]
+[gd_scene load_steps=37 format=4 uid="uid://bilmxsoacd24r"]
 
 [ext_resource type="PackedScene" uid="uid://bnp7vdu3nrbe8" path="res://menus/pause_menu.tscn" id="1_1dhyw"]
 [ext_resource type="Script" uid="uid://mvotmqlsvjqe" path="res://3D_levels/level_3/level_3_3d.gd" id="1_n6v2l"]
+[ext_resource type="Script" uid="uid://c5supflvg18iy" path="res://3D_levels/level_3/lives_manager.gd" id="2_jh1mb"]
 [ext_resource type="PackedScene" uid="uid://bpmq6uacs60yv" path="res://2D_levels/level_2/elim_scene/elim_scene.tscn" id="2_qoidk"]
 [ext_resource type="PackedScene" uid="uid://cj7d18ek4ria6" path="res://3D_levels/Player3D/character_body_3d.tscn" id="3_b82s5"]
+[ext_resource type="Texture2D" uid="uid://clbutouj7ccjo" path="res://2D_levels/level_1/assets/UI/heart.png" id="3_c0jbu"]
 [ext_resource type="PackedScene" uid="uid://bq67fcnbkrbwb" path="res://3D_levels/level_3/assets/env/wall_2.tscn" id="4_5xwyq"]
 [ext_resource type="Texture2D" uid="uid://bn18yxl6dcmmu" path="res://3D_levels/level_1/assets/bridge/materials/rocky_terrain_diff_1k.jpg" id="5_5xwyq"]
 [ext_resource type="Texture2D" uid="uid://df5uqri58pjnt" path="res://3D_levels/level_1/assets/bridge/materials/rocky_terrain_nor_gl_1k.jpg" id="6_oh7ax"]
@@ -12,16 +14,20 @@
 [ext_resource type="Script" uid="uid://djaup6jp5wq1q" path="res://3D_levels/level_3/mitzi_1.gd" id="9_nmhoi"]
 [ext_resource type="Texture2D" uid="uid://c8n7rx0rslbmi" path="res://3D_levels/level_1/assets/castle/materials/castle_wall_slates_nor_gl_1k.jpg" id="9_pwwvo"]
 [ext_resource type="Script" uid="uid://dxku6kxxgfywk" path="res://3D_levels/level_3/cone_detector.gd" id="10_pwwvo"]
+[ext_resource type="Script" uid="uid://dpny48478if3d" path="res://3D_levels/level_3/red_beam.gd" id="13_10ygh"]
 [ext_resource type="Script" uid="uid://cr0yo1p1kllj0" path="res://2D_levels/level_1/fps.gd" id="13_sk4id"]
 [ext_resource type="Script" uid="uid://bb1wjhu534dq3" path="res://2D_levels/Player2D/fps.gd" id="14_ro05h"]
+[ext_resource type="PackedScene" uid="uid://b5n6ovi67qp5m" path="res://3D_levels/level_3/caught.tscn" id="15_ro05h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_di3l7"]
 
 [sub_resource type="Environment" id="Environment_b82s5"]
 fog_enabled = true
 fog_mode = 1
-fog_light_color = Color(0, 0.120271, 0.201418, 1)
+fog_light_color = Color(0, 0, 0, 1)
 fog_density = 1.0
 adjustment_enabled = true
-adjustment_contrast = 1.35
+adjustment_contrast = 1.2
 adjustment_saturation = 0.37
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a8ugm"]
@@ -110,6 +116,9 @@ gradient = SubResource("Gradient_nmhoi")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_sk4id"]
+size = Vector3(3.48492, 2.02002, 3.62317)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_10ygh"]
 bg_color = Color(0.419608, 0.572549, 1, 0.701961)
 corner_radius_top_left = 5
@@ -120,10 +129,74 @@ corner_radius_bottom_left = 5
 [node name="level_3_3d" type="Node3D"]
 script = ExtResource("1_n6v2l")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="LivesManager" type="Node" parent="." node_paths=PackedStringArray("hearts")]
+script = ExtResource("2_jh1mb")
+hearts = [NodePath("../caught_screen/hearts/HBoxContainer/heart"), NodePath("../caught_screen/hearts/HBoxContainer/heart2"), NodePath("../caught_screen/hearts/HBoxContainer/heart3"), NodePath("../caught_screen/hearts/HBoxContainer/heart4"), NodePath("../caught_screen/hearts/HBoxContainer/heart5")]
 
-[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("1_1dhyw")]
+[node name="caught_screen" type="CanvasLayer" parent="."]
+
+[node name="caught" parent="caught_screen" instance=ExtResource("15_ro05h")]
 visible = false
+
+[node name="hearts" type="Panel" parent="caught_screen"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -284.0
+offset_bottom = 60.0
+grow_horizontal = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_di3l7")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="caught_screen/hearts"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -121.0
+offset_top = -23.0
+offset_right = 135.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 2
+
+[node name="heart" type="TextureRect" parent="caught_screen/hearts/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("3_c0jbu")
+expand_mode = 2
+
+[node name="heart2" type="TextureRect" parent="caught_screen/hearts/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("3_c0jbu")
+expand_mode = 2
+
+[node name="heart3" type="TextureRect" parent="caught_screen/hearts/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("3_c0jbu")
+expand_mode = 2
+
+[node name="heart4" type="TextureRect" parent="caught_screen/hearts/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("3_c0jbu")
+expand_mode = 2
+
+[node name="heart5" type="TextureRect" parent="caught_screen/hearts/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("3_c0jbu")
+expand_mode = 2
 
 [node name="elim_scene2" type="CanvasLayer" parent="."]
 process_mode = 4
@@ -134,15 +207,8 @@ visible = false
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_b82s5")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.0691994, -0.997603, 0, 0.997603, 0.0691994, 0, 23.0444, 0)
-visible = false
-light_color = Color(0.870588, 1, 1, 1)
-light_energy = 0.17
-sky_mode = 1
-
 [node name="Player" parent="." instance=ExtResource("3_b82s5")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 60.5949, 1.70002, -3.05605)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 60.5949, 0.999592, -3.05605)
 
 [node name="assets" type="Node3D" parent="."]
 
@@ -307,10 +373,17 @@ rotation_mode = 1
 [node name="mitzi" parent="enemies/mitzi1/PathFollow3D" instance=ExtResource("9_8ddrv")]
 transform = Transform3D(-0.941264, -0.00174049, -0.337667, 0.0585598, -0.985676, -0.158158, -0.332555, -0.168642, 0.927883, 0.00164032, 0.000538826, -0.842066)
 
-[node name="beam" type="Sprite3D" parent="enemies/mitzi1/PathFollow3D/mitzi"]
+[node name="red_beam" type="Area3D" parent="enemies/mitzi1/PathFollow3D/mitzi"]
+script = ExtResource("13_10ygh")
+
+[node name="beam" type="Sprite3D" parent="enemies/mitzi1/PathFollow3D/mitzi/red_beam"]
 transform = Transform3D(11.2751, 2.61396, -0.605833, 0.152874, 1.98678, 11.4174, 2.67889, -11.1152, 1.89833, -0.344421, 8.99621, 0.911201)
 modulate = Color(1, 0, 0, 1)
 texture = SubResource("GradientTexture2D_tp8k4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="enemies/mitzi1/PathFollow3D/mitzi/red_beam"]
+transform = Transform3D(0.945849, -0.0331188, -0.322917, -0.0258627, 0.983928, -0.176667, 0.323579, 0.175453, 0.929792, -0.222965, 8.14535, 0.730049)
+shape = SubResource("BoxShape3D_sk4id")
 
 [node name="FPS" type="CanvasLayer" parent="."]
 script = ExtResource("13_sk4id")
@@ -336,5 +409,11 @@ theme_override_font_sizes/font_size = 41
 text = "FPS:"
 script = ExtResource("14_ro05h")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("1_1dhyw")]
+visible = false
+
 [connection signal="body_entered" from="assets/ceiling/ceiling/cone_detector" to="assets/ceiling/ceiling/cone_detector" method="_on_body_entered"]
 [connection signal="body_exited" from="assets/ceiling/ceiling/cone_detector" to="assets/ceiling/ceiling/cone_detector" method="_on_body_exited"]
+[connection signal="body_entered" from="enemies/mitzi1/PathFollow3D/mitzi/red_beam" to="enemies/mitzi1/PathFollow3D/mitzi/red_beam" method="_on_body_entered"]

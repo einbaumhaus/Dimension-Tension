@@ -2,8 +2,9 @@ extends CharacterBody3D
 
 #constants
 var SPEED = 7.0
-const JUMP_VELOCITY = 14
+var JUMP_VELOCITY = 14
 #variables
+var sprint_enabled = true
 var acceleration = 30
 var _gravity := -30.0
 var _camera_input_direction := Vector2.ZERO
@@ -41,12 +42,13 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		
-	if Input.is_action_pressed("shift"):
-		SPEED = 10
-		_camera.fov = 80
-	if Input.is_action_just_released("shift"):
-		SPEED = 7
-		_camera.fov = 75
+	if sprint_enabled:
+		if Input.is_action_pressed("shift"):
+			SPEED = 10
+			_camera.fov = 80
+		if Input.is_action_just_released("shift"):
+			SPEED = 7
+			_camera.fov = 75
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var raw_input := Input.get_vector("left", "right", "up", "down")

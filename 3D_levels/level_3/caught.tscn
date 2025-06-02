@@ -1,0 +1,80 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5n6ovi67qp5m"]
+
+[ext_resource type="Script" uid="uid://xpl2f1atg0l" path="res://3D_levels/level_3/caught.gd" id="1_pybcy"]
+[ext_resource type="FontFile" uid="uid://dn3yd17i4df0q" path="res://assets/fonts/OCRAEXT.TTF" id="2_uu61d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pybcy"]
+bg_color = Color(0.33, 0.33, 0.33, 0.376471)
+
+[node name="caught" type="Node2D"]
+script = ExtResource("1_pybcy")
+
+[node name="Control2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Panel" type="Panel" parent="Control2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pybcy")
+
+[node name="Label" type="Label" parent="Control2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -277.5
+offset_top = -118.0
+offset_right = 277.5
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_uu61d")
+theme_override_font_sizes/font_size = 51
+text = "YOU'VE BEEN CAUGHT"
+
+[node name="Label2" type="Label" parent="Control2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -277.5
+offset_top = 21.0
+offset_right = 277.5
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_uu61d")
+theme_override_font_sizes/font_size = 51
+text = "SPAM JUMP TO ESCAPE"
+
+[node name="ProgressBar" type="ProgressBar" parent="Control2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -318.0
+offset_top = 129.0
+offset_right = 318.0
+offset_bottom = 232.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_uu61d")
+theme_override_font_sizes/font_size = 56
+max_value = 10.0
+step = 1.0
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(1, 0.22, 0.22, 1)

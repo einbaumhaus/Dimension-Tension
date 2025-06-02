@@ -4,6 +4,11 @@ extends CharacterBody3D
 const STOP_DISTANCE = 2
 var _gravity := -30.0
 
+#short pause if it's a lightning ullu
+@export var is_lightning = false
+@onready var pause_timer: Timer = $PauseTimer
+var old_speed = 0
+
 @export var health = 5
 @export var material: Material
 #damage
@@ -56,6 +61,10 @@ func _physics_process(delta: float) -> void:
 			if player.has_method("take_damage"):
 				player.take_damage(DAMAGE)
 				print("Immediate attack!")
+				if is_lightning:
+					pause_timer.start()
+					old_speed = SPEED
+					SPEED = 0
 			$AttackTimer.start()  # Start timer for repeated attacks
 	else:
 		if not $AttackTimer.is_stopped():
@@ -84,3 +93,7 @@ func _on_attack_timer_timeout() -> void:
 		print("Timer attack! Enemy attacking.")
 		if player_node.has_method("take_damage"):
 			player_node.take_damage(DAMAGE)
+
+
+func _on_pause_timer_timeout() -> void:
+	SPEED = old_speed

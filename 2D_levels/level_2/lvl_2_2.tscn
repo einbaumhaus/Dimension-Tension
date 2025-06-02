@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://byglmfq2n7msk"]
+[gd_scene load_steps=30 format=4 uid="uid://byglmfq2n7msk"]
 
 [ext_resource type="Texture2D" uid="uid://drd4sxov2x8e3" path="res://2D_levels/level_2/assets/tile_map/tilemaptd1.png" id="1_gry7t"]
 [ext_resource type="PackedScene" uid="uid://ccweogu7q7wiw" path="res://2D_levels/level_2/Player2D_topdown/player_topdown.tscn" id="2_kepxu"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bnp7vdu3nrbe8" path="res://menus/pause_menu.tscn" id="8_jhduy"]
 [ext_resource type="Texture2D" uid="uid://clbutouj7ccjo" path="res://2D_levels/level_1/assets/UI/heart.png" id="9_jdbya"]
 [ext_resource type="Script" uid="uid://bb1wjhu534dq3" path="res://2D_levels/Player2D/fps.gd" id="10_0m430"]
+[ext_resource type="Script" uid="uid://cr0yo1p1kllj0" path="res://2D_levels/level_1/fps.gd" id="11_0m430"]
 [ext_resource type="Script" uid="uid://lljku4eo3lxo" path="res://2D_levels/level_1/game_manager.gd" id="11_jdbya"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jdbya"]
@@ -124,6 +125,13 @@ size = Vector2(78, 267)
 size = Vector2(86, 24)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kewfn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kewfn"]
+bg_color = Color(0.419608, 0.572549, 1, 0.701961)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [node name="lvl_2_2" type="Node"]
 
@@ -318,20 +326,34 @@ size_flags_horizontal = 4
 texture = ExtResource("9_jdbya")
 expand_mode = 2
 
-[node name="Label" type="Label" parent="CanvasLayer2"]
+[node name="LifeManager" type="Node" parent="." node_paths=PackedStringArray("hearts")]
+unique_name_in_owner = true
+script = ExtResource("11_jdbya")
+hearts = [NodePath("../CanvasLayer2/hearts/HBoxContainer/heart"), NodePath("../CanvasLayer2/hearts/HBoxContainer/heart2"), NodePath("../CanvasLayer2/hearts/HBoxContainer/heart3"), NodePath("../CanvasLayer2/hearts/HBoxContainer/heart4"), NodePath("../CanvasLayer2/hearts/HBoxContainer/heart5")]
+
+[node name="FPS" type="CanvasLayer" parent="."]
+script = ExtResource("11_0m430")
+
+[node name="Panel" type="Panel" parent="FPS"]
+offset_top = 610.0
+offset_right = 185.0
+offset_bottom = 647.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_kewfn")
+
+[node name="Label" type="Label" parent="FPS"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -47.0
 offset_right = 216.0
-offset_bottom = 57.0
+offset_bottom = 10.0
+grow_vertical = 0
 size_flags_horizontal = 0
 size_flags_vertical = 8
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 41
 text = "FPS:"
 script = ExtResource("10_0m430")
-
-[node name="LifeManager" type="Node" parent="." node_paths=PackedStringArray("hearts")]
-unique_name_in_owner = true
-script = ExtResource("11_jdbya")
-hearts = [NodePath("../CanvasLayer2/hearts/HBoxContainer/heart"), NodePath("../CanvasLayer2/hearts/HBoxContainer/heart2"), NodePath("../CanvasLayer2/hearts/HBoxContainer/heart3"), NodePath("../CanvasLayer2/hearts/HBoxContainer/heart4"), NodePath("../CanvasLayer2/hearts/HBoxContainer/heart5")]
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="easteregg2enter" to="easteregg2enter" method="_on_body_entered"]

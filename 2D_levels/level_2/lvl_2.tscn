@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://dfb1n5ot367os"]
+[gd_scene load_steps=24 format=4 uid="uid://dfb1n5ot367os"]
 
 [ext_resource type="Script" uid="uid://dh11uq2isqd2m" path="res://2D_levels/level_2/lvl_2.gd" id="1_0icu8"]
 [ext_resource type="PackedScene" uid="uid://ccweogu7q7wiw" path="res://2D_levels/level_2/Player2D_topdown/player_topdown.tscn" id="1_bkf0y"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bnp7vdu3nrbe8" path="res://menus/pause_menu.tscn" id="8_ka1v0"]
 [ext_resource type="Texture2D" uid="uid://clbutouj7ccjo" path="res://2D_levels/level_1/assets/UI/heart.png" id="9_w35f4"]
 [ext_resource type="Script" uid="uid://bb1wjhu534dq3" path="res://2D_levels/Player2D/fps.gd" id="10_jtmxo"]
+[ext_resource type="Script" uid="uid://cr0yo1p1kllj0" path="res://2D_levels/level_1/fps.gd" id="13_237ux"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w35f4"]
 
@@ -97,6 +98,13 @@ background_mode = 3
 adjustment_enabled = true
 adjustment_color_correction = SubResource("GradientTexture2D_2210x")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cetlj"]
+bg_color = Color(0.419608, 0.572549, 1, 0.701961)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
 [node name="lvl_2" type="Node"]
 script = ExtResource("1_0icu8")
 
@@ -170,16 +178,6 @@ layout_mode = 2
 size_flags_horizontal = 4
 texture = ExtResource("9_w35f4")
 expand_mode = 2
-
-[node name="Label" type="Label" parent="CanvasLayer2"]
-offset_right = 216.0
-offset_bottom = 57.0
-size_flags_horizontal = 0
-size_flags_vertical = 8
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 41
-text = "FPS:"
-script = ExtResource("10_jtmxo")
 
 [node name="escape_popup" type="Node2D" parent="CanvasLayer2"]
 script = ExtResource("6_237ux")
@@ -271,6 +269,30 @@ text = "<-"
 unique_name_in_owner = true
 script = ExtResource("2_w35f4")
 hearts = [NodePath("../CanvasLayer2/hearts/HBoxContainer/heart"), NodePath("../CanvasLayer2/hearts/HBoxContainer/heart2"), NodePath("../CanvasLayer2/hearts/HBoxContainer/heart3"), NodePath("../CanvasLayer2/hearts/HBoxContainer/heart4"), NodePath("../CanvasLayer2/hearts/HBoxContainer/heart5")]
+
+[node name="FPS" type="CanvasLayer" parent="."]
+script = ExtResource("13_237ux")
+
+[node name="Panel" type="Panel" parent="FPS"]
+offset_top = 610.0
+offset_right = 185.0
+offset_bottom = 647.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_cetlj")
+
+[node name="Label" type="Label" parent="FPS"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -47.0
+offset_right = 216.0
+offset_bottom = 10.0
+grow_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 41
+text = "FPS:"
+script = ExtResource("10_jtmxo")
 
 [connection signal="timeout" from="CanvasLayer2/escape_popup/Timer" to="CanvasLayer2/escape_popup" method="_on_timer_timeout"]
 [connection signal="body_entered" from="lvl_changer/Area2D" to="lvl_changer/Area2D" method="_on_body_entered"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=68 format=4 uid="uid://bfqm7gkurwapv"]
+[gd_scene load_steps=70 format=4 uid="uid://bfqm7gkurwapv"]
 
 [ext_resource type="Script" uid="uid://bbbduv557mftv" path="res://2D_levels/level_1/level_1.gd" id="1_1nd73"]
 [ext_resource type="Script" uid="uid://bb1wjhu534dq3" path="res://2D_levels/Player2D/fps.gd" id="2_b0sjd"]
+[ext_resource type="Script" uid="uid://cr0yo1p1kllj0" path="res://2D_levels/level_1/fps.gd" id="2_nvye1"]
 [ext_resource type="Texture2D" uid="uid://dleupj1lna3ib" path="res://2D_levels/level_1/assets/env/tilesettrain.png" id="3_insjc"]
 [ext_resource type="Texture2D" uid="uid://blx1xna7vwbp5" path="res://2D_levels/level_1/assets/env/sky.png" id="3_uch6n"]
 [ext_resource type="Texture2D" uid="uid://crn37xjn5jqi7" path="res://2D_levels/level_1/assets/env/tilesetgrass1.png" id="4_il0pf"]
@@ -26,6 +27,13 @@
 [ext_resource type="FontFile" uid="uid://nv7xw0gdt65u" path="res://assets/fonts/joystix monospace.otf" id="22_pxlqo"]
 [ext_resource type="Texture2D" uid="uid://dqoeak5w11i1e" path="res://mixed_levels/intro/assets/buuuble.png" id="22_s8c23"]
 [ext_resource type="Texture2D" uid="uid://bo3alw0mcbqud" path="res://2D_levels/level_1/assets/chronoscepter/3d_magic.png" id="22_xjifk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nvye1"]
+bg_color = Color(0.419608, 0.572549, 1, 0.701961)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oehl0"]
 texture = ExtResource("3_insjc")
@@ -144,7 +152,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_oehl0"]
 resource_name = "rbs_drive"
-length = 23.0
+length = 18.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -152,7 +160,7 @@ tracks/0/path = NodePath("env/background/train/Rbsnext:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 23),
+"times": PackedFloat32Array(0, 18.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(-2000, 188.14), Vector2(2713.92, 188.14)]
@@ -716,6 +724,30 @@ animations = [{
 [node name="level_1" type="Node2D"]
 script = ExtResource("1_1nd73")
 
+[node name="FPS" type="CanvasLayer" parent="."]
+script = ExtResource("2_nvye1")
+
+[node name="Panel" type="Panel" parent="FPS"]
+offset_top = 610.0
+offset_right = 185.0
+offset_bottom = 647.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_nvye1")
+
+[node name="Label" type="Label" parent="FPS"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -47.0
+offset_right = 216.0
+offset_bottom = 10.0
+grow_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 41
+text = "FPS:"
+script = ExtResource("2_b0sjd")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("8_rodf1")]
@@ -726,20 +758,6 @@ texture_filter = 1
 position = Vector2(1036, 568)
 scale = Vector2(4.84091, 4.84091)
 texture = ExtResource("15_cebkg")
-
-[node name="Label" type="Label" parent="CanvasLayer"]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -57.0
-offset_right = 216.0
-grow_vertical = 0
-size_flags_horizontal = 0
-size_flags_vertical = 8
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 41
-text = "FPS:"
-script = ExtResource("2_b0sjd")
 
 [node name="escape_popup" type="Node2D" parent="CanvasLayer"]
 script = ExtResource("17_t8jsl")

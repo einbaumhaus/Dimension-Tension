@@ -1,7 +1,6 @@
-[gd_scene load_steps=26 format=4 uid="uid://cj7d18ek4ria6"]
+[gd_scene load_steps=25 format=4 uid="uid://cj7d18ek4ria6"]
 
 [ext_resource type="Script" uid="uid://bcgnt5ssu3drk" path="res://3D_levels/Player3D/character_body_3d.gd" id="1_a7qx7"]
-[ext_resource type="Script" uid="uid://bb1wjhu534dq3" path="res://2D_levels/Player2D/fps.gd" id="2_wrout"]
 [ext_resource type="Texture2D" uid="uid://bgw2w26elh5b5" path="res://2D_levels/level_2/Player2D_topdown/player.png" id="3_i25xe"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_b1m74"]
@@ -469,24 +468,6 @@ transform = Transform3D(97.9575, -13.7135, 14.7059, 0, 73.1354, 68.1999, -20.107
 visible = false
 mesh = SubResource("ArrayMesh_vkgk8")
 skeleton = NodePath("")
-
-[node name="fps" type="Label" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -570.0
-offset_top = -321.0
-offset_right = -354.0
-offset_bottom = -264.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-theme_override_colors/font_color = Color(1, 0, 0, 1)
-theme_override_font_sizes/font_size = 41
-text = "FPS:"
-script = ExtResource("2_wrout")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

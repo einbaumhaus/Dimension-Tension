@@ -28,7 +28,7 @@ func testEsc():
 		var current_scene = get_tree().current_scene
 		hide()
 		resume()
-		if current_scene.name == "lvl_2" or current_scene.name == "lvl_2_2" or current_scene.name == "lvl_2_3" or current_scene.name == "level_1" or current_scene.name == "lvl3_2d":
+		if current_scene.name == "lvl_2" or current_scene.name == "lvl_2_2" or current_scene.name == "lvl_2_3" or current_scene.name == "level_1" or current_scene.name == "lvl3_2d" or current_scene.name == "eg1":
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		else:
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED

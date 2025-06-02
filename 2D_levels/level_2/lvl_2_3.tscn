@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://3ggfpcmbr8lx"]
+[gd_scene load_steps=20 format=4 uid="uid://3ggfpcmbr8lx"]
 
 [ext_resource type="Texture2D" uid="uid://drd4sxov2x8e3" path="res://2D_levels/level_2/assets/tile_map/tilemaptd1.png" id="1_wg46k"]
 [ext_resource type="PackedScene" uid="uid://ccweogu7q7wiw" path="res://2D_levels/level_2/Player2D_topdown/player_topdown.tscn" id="2_guxk4"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bnp7vdu3nrbe8" path="res://menus/pause_menu.tscn" id="7_eo46k"]
 [ext_resource type="Texture2D" uid="uid://clbutouj7ccjo" path="res://2D_levels/level_1/assets/UI/heart.png" id="8_3ipvu"]
 [ext_resource type="Script" uid="uid://bb1wjhu534dq3" path="res://2D_levels/Player2D/fps.gd" id="9_2f2jg"]
+[ext_resource type="Script" uid="uid://cr0yo1p1kllj0" path="res://2D_levels/level_1/fps.gd" id="9_eo46k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c7uih"]
 texture = ExtResource("1_wg46k")
@@ -125,6 +126,13 @@ size = Vector2(415, 20)
 size = Vector2(7, 1123.75)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jn4bv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ipvu"]
+bg_color = Color(0.419608, 0.572549, 1, 0.701961)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [node name="lvl_2_3" type="Node"]
 
@@ -249,9 +257,23 @@ size_flags_horizontal = 4
 texture = ExtResource("8_3ipvu")
 expand_mode = 2
 
-[node name="Label" type="Label" parent="CanvasLayer2"]
+[node name="FPS" type="CanvasLayer" parent="."]
+script = ExtResource("9_eo46k")
+
+[node name="Panel" type="Panel" parent="FPS"]
+offset_top = 610.0
+offset_right = 185.0
+offset_bottom = 647.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3ipvu")
+
+[node name="Label" type="Label" parent="FPS"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -47.0
 offset_right = 216.0
-offset_bottom = 57.0
+offset_bottom = 10.0
+grow_vertical = 0
 size_flags_horizontal = 0
 size_flags_vertical = 8
 theme_override_colors/font_color = Color(0, 0, 0, 1)

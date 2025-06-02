@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://bilmxsoacd24r"]
+[gd_scene load_steps=31 format=4 uid="uid://bilmxsoacd24r"]
 
 [ext_resource type="PackedScene" uid="uid://bnp7vdu3nrbe8" path="res://menus/pause_menu.tscn" id="1_1dhyw"]
 [ext_resource type="Script" uid="uid://mvotmqlsvjqe" path="res://3D_levels/level_3/level_3_3d.gd" id="1_n6v2l"]
@@ -12,6 +12,8 @@
 [ext_resource type="Script" uid="uid://djaup6jp5wq1q" path="res://3D_levels/level_3/mitzi_1.gd" id="9_nmhoi"]
 [ext_resource type="Texture2D" uid="uid://c8n7rx0rslbmi" path="res://3D_levels/level_1/assets/castle/materials/castle_wall_slates_nor_gl_1k.jpg" id="9_pwwvo"]
 [ext_resource type="Script" uid="uid://dxku6kxxgfywk" path="res://3D_levels/level_3/cone_detector.gd" id="10_pwwvo"]
+[ext_resource type="Script" uid="uid://cr0yo1p1kllj0" path="res://2D_levels/level_1/fps.gd" id="13_sk4id"]
+[ext_resource type="Script" uid="uid://bb1wjhu534dq3" path="res://2D_levels/Player2D/fps.gd" id="14_ro05h"]
 
 [sub_resource type="Environment" id="Environment_b82s5"]
 fog_enabled = true
@@ -107,6 +109,13 @@ colors = PackedColorArray(1, 1, 1, 0.882353, 0, 0, 0, 0)
 gradient = SubResource("Gradient_nmhoi")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_10ygh"]
+bg_color = Color(0.419608, 0.572549, 1, 0.701961)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [node name="level_3_3d" type="Node3D"]
 script = ExtResource("1_n6v2l")
@@ -302,6 +311,30 @@ transform = Transform3D(-0.941264, -0.00174049, -0.337667, 0.0585598, -0.985676,
 transform = Transform3D(11.2751, 2.61396, -0.605833, 0.152874, 1.98678, 11.4174, 2.67889, -11.1152, 1.89833, -0.344421, 8.99621, 0.911201)
 modulate = Color(1, 0, 0, 1)
 texture = SubResource("GradientTexture2D_tp8k4")
+
+[node name="FPS" type="CanvasLayer" parent="."]
+script = ExtResource("13_sk4id")
+
+[node name="Panel" type="Panel" parent="FPS"]
+offset_top = 610.0
+offset_right = 185.0
+offset_bottom = 647.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_10ygh")
+
+[node name="Label" type="Label" parent="FPS"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -47.0
+offset_right = 216.0
+offset_bottom = 10.0
+grow_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 41
+text = "FPS:"
+script = ExtResource("14_ro05h")
 
 [connection signal="body_entered" from="assets/ceiling/ceiling/cone_detector" to="assets/ceiling/ceiling/cone_detector" method="_on_body_entered"]
 [connection signal="body_exited" from="assets/ceiling/ceiling/cone_detector" to="assets/ceiling/ceiling/cone_detector" method="_on_body_exited"]

@@ -37,6 +37,7 @@ grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+theme_override_constants/separation = 10
 
 [node name="sens_label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -56,10 +57,6 @@ text = "volume"
 
 [node name="volume" type="HSlider" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-
-[node name="mute" type="CheckBox" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Mute"
 
 [node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -91,10 +88,6 @@ popup/item_6/text = "jayk"
 popup/item_6/icon = ExtResource("9_20nqt")
 popup/item_6/id = 6
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "window mode"
-
 [node name="window" type="OptionButton" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 selected = 0
@@ -103,6 +96,10 @@ popup/item_0/text = "Windowed"
 popup/item_0/id = 0
 popup/item_1/text = "Fullscreen"
 popup/item_1/id = 1
+
+[node name="mute" type="CheckBox" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Mute"
 
 [node name="vsync" type="CheckBox" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -129,9 +126,9 @@ text = "Back"
 
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/mouse_sens" to="." method="_on_mouse_sens_value_changed"]
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/volume" to="." method="_on_volume_value_changed"]
-[connection signal="toggled" from="MarginContainer/VBoxContainer/mute" to="." method="_on_check_box_toggled"]
 [connection signal="item_selected" from="MarginContainer/VBoxContainer/cursors" to="." method="_on_option_button_item_selected"]
 [connection signal="item_selected" from="MarginContainer/VBoxContainer/window" to="." method="_on_window_item_selected"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/mute" to="." method="_on_check_box_toggled"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/vsync" to="." method="_on_vsync_toggled"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/performance_m" to="." method="_on_performance_m_toggled"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

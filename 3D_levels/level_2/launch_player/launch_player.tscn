@@ -1,9 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://f8i8svg7k032"]
+[gd_scene load_steps=15 format=3 uid="uid://f8i8svg7k032"]
 
 [ext_resource type="Script" uid="uid://bnkqjcuyxgj5q" path="res://3D_levels/level_2/launch_player/launch_player.gd" id="1_tj2to"]
 [ext_resource type="PackedScene" uid="uid://c23ra3wdhjla6" path="res://3D_levels/level_2/assets/sticker_launcher/sticker_launcher.tscn" id="2_1lfnn"]
 [ext_resource type="Texture2D" uid="uid://bgw2w26elh5b5" path="res://2D_levels/level_2/Player2D_topdown/player.png" id="2_7hpc3"]
-[ext_resource type="Script" uid="uid://bb1wjhu534dq3" path="res://2D_levels/Player2D/fps.gd" id="2_sh8oe"]
 [ext_resource type="PackedScene" uid="uid://bpmq6uacs60yv" path="res://2D_levels/level_2/elim_scene/elim_scene.tscn" id="4_1lfnn"]
 [ext_resource type="Texture2D" uid="uid://dx5hsxo48c6c" path="res://3D_levels/level_2/assets/sticker_launcher/zap overlock.png" id="5_mp1qs"]
 [ext_resource type="Texture2D" uid="uid://b4c1xo328undx" path="res://3D_levels/level_2/launch_player/hitmarker.png" id="5_vsolm"]
@@ -124,23 +123,6 @@ texture = ExtResource("5_mp1qs")
 
 [node name="trigger" parent="Camera3D/sticker_launcher2/launcher" index="4"]
 transform = Transform3D(0.223125, 0, 0, 0, 0.223125, 7.45059e-09, 0, -7.45059e-09, 0.223125, 0, -0.682192, 1.11455)
-
-[node name="fps" type="Label" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -570.0
-offset_top = -321.0
-offset_right = -354.0
-offset_bottom = -264.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 41
-script = ExtResource("2_sh8oe")
 
 [node name="elim" type="CanvasLayer" parent="."]
 process_mode = 4

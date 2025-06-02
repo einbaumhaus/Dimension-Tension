@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=4 uid="uid://blnffj14qys1k"]
+[gd_scene load_steps=56 format=4 uid="uid://blnffj14qys1k"]
 
 [ext_resource type="PackedScene" uid="uid://f8i8svg7k032" path="res://3D_levels/level_2/launch_player/launch_player.tscn" id="1_4kesc"]
 [ext_resource type="Script" uid="uid://bv2w76gho36d2" path="res://3D_levels/level_2/lvl_stages/level_2_3d_2.gd" id="1_dxfov"]
@@ -18,6 +18,8 @@
 [ext_resource type="Script" uid="uid://cr5eu0hte3jpn" path="res://3D_levels/level_2/lvl_stages/wave_manager.gd" id="13_cmtpo"]
 [ext_resource type="Texture2D" uid="uid://c8n7rx0rslbmi" path="res://3D_levels/level_1/assets/castle/materials/castle_wall_slates_nor_gl_1k.jpg" id="14_cbuk5"]
 [ext_resource type="Texture2D" uid="uid://diw4e3db1ji7i" path="res://3D_levels/level_1/assets/castle/materials/church_bricks_02_diff_png_1k.jpg" id="14_e870u"]
+[ext_resource type="Script" uid="uid://cr0yo1p1kllj0" path="res://2D_levels/level_1/fps.gd" id="19_ya3rk"]
+[ext_resource type="Script" uid="uid://bb1wjhu534dq3" path="res://2D_levels/Player2D/fps.gd" id="20_ux6jj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_adsja"]
 bg_color = Color(0.152941, 0.152941, 0.811765, 1)
@@ -563,6 +565,13 @@ _data = {
 &"skip": SubResource("Animation_e870u")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hr1nj"]
+bg_color = Color(0.419608, 0.572549, 1, 0.701961)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
 [node name="level_2_3d_2" type="Node3D"]
 script = ExtResource("1_dxfov")
 
@@ -690,6 +699,7 @@ material = SubResource("StandardMaterial3D_cbuk5")
 [node name="lighting_ullu" parent="enemies_wave1" instance=ExtResource("6_fxsf8")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 18.5383, 0.960217, 19.0188)
 SPEED = 30.0
+is_lightning = true
 material = SubResource("StandardMaterial3D_adsja")
 DAMAGE = 1
 
@@ -711,6 +721,7 @@ material = SubResource("StandardMaterial3D_oajnp")
 [node name="lightning_ullu" parent="enemies_wave2" instance=ExtResource("6_fxsf8")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.960217, 50.9149)
 SPEED = 30.0
+is_lightning = true
 material = SubResource("StandardMaterial3D_adsja")
 DAMAGE = 1
 
@@ -736,6 +747,7 @@ material = SubResource("StandardMaterial3D_kqf0v")
 [node name="lightning_ullu2" parent="enemies_wave2" instance=ExtResource("6_fxsf8")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 18.5383, 0.960217, 26.686)
 SPEED = 30.0
+is_lightning = true
 material = SubResource("StandardMaterial3D_adsja")
 DAMAGE = 1
 
@@ -1080,6 +1092,30 @@ theme_override_font_sizes/font_size = 96
 text = "WAVE 1"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="FPS" type="CanvasLayer" parent="."]
+script = ExtResource("19_ya3rk")
+
+[node name="Panel" type="Panel" parent="FPS"]
+offset_top = 610.0
+offset_right = 185.0
+offset_bottom = 647.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hr1nj")
+
+[node name="Label" type="Label" parent="FPS"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -47.0
+offset_right = 216.0
+offset_bottom = 10.0
+grow_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 41
+text = "FPS:"
+script = ExtResource("20_ux6jj")
 
 [connection signal="animation_finished" from="wave_manager/wave2_start" to="wave_manager" method="_on_wave_2_start_animation_finished"]
 [connection signal="animation_finished" from="intro/intro_anim" to="." method="_on_intro_anim_animation_finished"]

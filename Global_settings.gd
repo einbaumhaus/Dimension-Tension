@@ -7,3 +7,4 @@ var window_mode: int = 0
 var vsync: bool = false
 var cursor_index: int = 0
 var performance_mode: bool = false
+var fps_enabled: bool = true

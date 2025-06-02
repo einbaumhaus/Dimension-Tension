@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=4 uid="uid://bqjnc8i53gnqk"]
+[gd_scene load_steps=44 format=4 uid="uid://bqjnc8i53gnqk"]
 
 [ext_resource type="Texture2D" uid="uid://drd4sxov2x8e3" path="res://2D_levels/level_2/assets/tile_map/tilemaptd1.png" id="1_svps0"]
 [ext_resource type="Script" uid="uid://c4xav3n1intg1" path="res://2D_levels/level_3/lvl_3_2d.gd" id="1_ujx0b"]
@@ -20,8 +20,11 @@
 [ext_resource type="Texture2D" uid="uid://c3j2vn7mxgo7n" path="res://2D_levels/level_3/assets/lvl3_map.png" id="13_8ml4r"]
 [ext_resource type="Script" uid="uid://lljku4eo3lxo" path="res://2D_levels/level_1/game_manager.gd" id="14_bftwv"]
 [ext_resource type="PackedScene" uid="uid://bpmq6uacs60yv" path="res://2D_levels/level_2/elim_scene/elim_scene.tscn" id="17_sy0cr"]
+[ext_resource type="Script" uid="uid://cr0yo1p1kllj0" path="res://2D_levels/level_1/fps.gd" id="20_ny3qd"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_j3w6d"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bftwv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uleqd"]
 texture = ExtResource("1_svps0")
@@ -201,13 +204,112 @@ size = Vector2(18.6408, 17.6699)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ju0q4"]
 size = Vector2(20, 4.17474)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bftwv"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gva4y"]
+bg_color = Color(0.419608, 0.572549, 1, 0.701961)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [node name="lvl3_2d" type="Node"]
 script = ExtResource("1_ujx0b")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_j3w6d")
+
+[node name="mission" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="mission"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("10_g1g6g")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="mission/Control"]
+layout_mode = 0
+offset_right = 323.0
+offset_bottom = 103.0
+
+[node name="mission" type="Label" parent="mission/Control/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 21
+text = "COLLECT ALL 3 NOTES
+TO UNLOCK DOOR"
+
+[node name="mission2" type="Label" parent="mission/Control/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 21
+text = "crates can be pushed"
+
+[node name="note count" type="Label" parent="mission/Control/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.860053, 0.703867, 0.149345, 1)
+theme_override_font_sizes/font_size = 21
+text = "0/5 notes"
+
+[node name="hearts" type="Panel" parent="mission"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -284.0
+offset_bottom = 60.0
+grow_horizontal = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_bftwv")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="mission/hearts"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -76.0
+offset_top = -24.0
+offset_right = 76.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="heart" type="TextureRect" parent="mission/hearts/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("10_dtmvc")
+expand_mode = 2
+
+[node name="heart2" type="TextureRect" parent="mission/hearts/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("10_dtmvc")
+expand_mode = 2
+
+[node name="heart3" type="TextureRect" parent="mission/hearts/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("10_dtmvc")
+expand_mode = 2
+
+[node name="heart4" type="TextureRect" parent="mission/hearts/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("10_dtmvc")
+expand_mode = 2
+
+[node name="heart5" type="TextureRect" parent="mission/hearts/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("10_dtmvc")
+expand_mode = 2
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
@@ -219,20 +321,6 @@ texture_filter = 1
 position = Vector2(1036, 568)
 scale = Vector2(4.84091, 4.84091)
 texture = ExtResource("3_ju0q4")
-
-[node name="Label" type="Label" parent="CanvasLayer2"]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -57.0
-offset_right = 216.0
-grow_vertical = 0
-size_flags_horizontal = 0
-size_flags_vertical = 8
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 41
-text = "FPS:"
-script = ExtResource("4_ujx0b")
 
 [node name="escape_popup" type="Node2D" parent="CanvasLayer2"]
 script = ExtResource("5_ny3qd")
@@ -542,100 +630,6 @@ texture = ExtResource("13_8ml4r")
 position = Vector2(17.2816, 278.641)
 shape = SubResource("RectangleShape2D_ju0q4")
 
-[node name="mission" type="CanvasLayer" parent="."]
-
-[node name="Control" type="Control" parent="mission"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme = ExtResource("10_g1g6g")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="mission/Control"]
-layout_mode = 0
-offset_right = 323.0
-offset_bottom = 103.0
-
-[node name="mission" type="Label" parent="mission/Control/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 21
-text = "COLLECT ALL 3 NOTES
-TO UNLOCK DOOR"
-
-[node name="mission2" type="Label" parent="mission/Control/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 21
-text = "crates can be pushed"
-
-[node name="note count" type="Label" parent="mission/Control/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.860053, 0.703867, 0.149345, 1)
-theme_override_font_sizes/font_size = 21
-text = "0/5 notes"
-
-[node name="hearts" type="Panel" parent="mission"]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -284.0
-offset_bottom = 60.0
-grow_horizontal = 0
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_bftwv")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="mission/hearts"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -76.0
-offset_top = -24.0
-offset_right = 76.0
-offset_bottom = 24.0
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
-
-[node name="heart" type="TextureRect" parent="mission/hearts/HBoxContainer"]
-texture_filter = 1
-layout_mode = 2
-size_flags_horizontal = 4
-texture = ExtResource("10_dtmvc")
-expand_mode = 2
-
-[node name="heart2" type="TextureRect" parent="mission/hearts/HBoxContainer"]
-texture_filter = 1
-layout_mode = 2
-size_flags_horizontal = 4
-texture = ExtResource("10_dtmvc")
-expand_mode = 2
-
-[node name="heart3" type="TextureRect" parent="mission/hearts/HBoxContainer"]
-texture_filter = 1
-layout_mode = 2
-size_flags_horizontal = 4
-texture = ExtResource("10_dtmvc")
-expand_mode = 2
-
-[node name="heart4" type="TextureRect" parent="mission/hearts/HBoxContainer"]
-texture_filter = 1
-layout_mode = 2
-size_flags_horizontal = 4
-texture = ExtResource("10_dtmvc")
-expand_mode = 2
-
-[node name="heart5" type="TextureRect" parent="mission/hearts/HBoxContainer"]
-texture_filter = 1
-layout_mode = 2
-size_flags_horizontal = 4
-texture = ExtResource("10_dtmvc")
-expand_mode = 2
-
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.180005, 0.180005, 0.180005, 1)
 
@@ -653,6 +647,30 @@ process_mode = 4
 visible = false
 
 [node name="elim_scene" parent="CanvasLayer" instance=ExtResource("17_sy0cr")]
+
+[node name="FPS" type="CanvasLayer" parent="."]
+script = ExtResource("20_ny3qd")
+
+[node name="Panel" type="Panel" parent="FPS"]
+offset_top = 610.0
+offset_right = 185.0
+offset_bottom = 647.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_gva4y")
+
+[node name="Label" type="Label" parent="FPS"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -47.0
+offset_right = 216.0
+offset_bottom = 10.0
+grow_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 41
+text = "FPS:"
+script = ExtResource("4_ujx0b")
 
 [connection signal="timeout" from="CanvasLayer2/escape_popup/Timer" to="CanvasLayer2/escape_popup" method="_on_timer_timeout"]
 [connection signal="body_entered" from="enemies/patrolling_en/Path2D/PathFollow2D/larrybo/Area2D" to="enemies/patrolling_en/Path2D/PathFollow2D/larrybo" method="_on_area_2d_body_entered"]

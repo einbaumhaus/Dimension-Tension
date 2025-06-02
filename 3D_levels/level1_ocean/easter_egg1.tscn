@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bmbq163w6ks1y"]
+[gd_scene load_steps=19 format=3 uid="uid://bmbq163w6ks1y"]
 
 [ext_resource type="Script" uid="uid://y736yjqolh2x" path="res://3D_levels/level1_ocean/easter_egg_1.gd" id="1_86nmy"]
 [ext_resource type="PackedScene" uid="uid://bgnmns87reyps" path="res://3D_levels/level_1/assets/train.tscn" id="1_qyrxi"]
@@ -7,6 +7,9 @@
 [ext_resource type="Script" uid="uid://dl7mbitg7qqwi" path="res://3D_levels/level1_ocean/fish_anim.gd" id="4_1jbjt"]
 [ext_resource type="Texture2D" uid="uid://m7ljoy6ob6xs" path="res://3D_levels/level1_ocean/fish1.png" id="4_yu7my"]
 [ext_resource type="Script" uid="uid://57c03dj6ashx" path="res://3D_levels/level1_ocean/retart.gd" id="6_kb6iq"]
+[ext_resource type="Script" uid="uid://cr0yo1p1kllj0" path="res://2D_levels/level_1/fps.gd" id="8_g23sc"]
+[ext_resource type="Script" uid="uid://bb1wjhu534dq3" path="res://2D_levels/Player2D/fps.gd" id="9_5gs0e"]
+[ext_resource type="PackedScene" uid="uid://bnp7vdu3nrbe8" path="res://menus/pause_menu.tscn" id="10_5gs0e"]
 
 [sub_resource type="Environment" id="Environment_hh0ho"]
 background_mode = 1
@@ -206,6 +209,13 @@ _data = {
 &"fish swim": SubResource("Animation_kb6iq")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ypcyy"]
+bg_color = Color(0.419608, 0.572549, 1, 0.701961)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
 [node name="eg1" type="Node3D"]
 script = ExtResource("1_86nmy")
 
@@ -292,5 +302,35 @@ theme_override_fonts/font = ExtResource("3_xe2aj")
 theme_override_font_sizes/font_size = 41
 text = "RESTART"
 script = ExtResource("6_kb6iq")
+
+[node name="FPS" type="CanvasLayer" parent="."]
+script = ExtResource("8_g23sc")
+
+[node name="Panel" type="Panel" parent="FPS"]
+offset_top = 610.0
+offset_right = 185.0
+offset_bottom = 647.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ypcyy")
+
+[node name="Label" type="Label" parent="FPS"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -47.0
+offset_right = 216.0
+offset_bottom = 10.0
+grow_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 41
+text = "FPS:"
+script = ExtResource("9_5gs0e")
+
+[node name="pause_menu" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="PauseMenu" parent="pause_menu" instance=ExtResource("10_5gs0e")]
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="CanvasLayer/retart" to="CanvasLayer/retart" method="_on_pressed"]

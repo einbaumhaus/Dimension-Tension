@@ -190,5 +190,10 @@ shape = SubResource("BoxShape3D_ps2b7")
 
 [node name="AttackTimer" type="Timer" parent="."]
 
+[node name="PauseTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
 [connection signal="body_part_hit" from="Launch_col" to="." method="_on_launch_col_body_part_hit"]
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
+[connection signal="timeout" from="PauseTimer" to="." method="_on_pause_timer_timeout"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=4 uid="uid://bt1oojjskfoa2"]
+[gd_scene load_steps=62 format=4 uid="uid://bt1oojjskfoa2"]
 
 [ext_resource type="Script" uid="uid://baup6tmbd45j4" path="res://3D_levels/level_2/lvl_stages/level_2_3d_1.gd" id="1_ijkd5"]
 [ext_resource type="Texture2D" uid="uid://dcjfetld4q5y7" path="res://3D_levels/level_1/assets/bridge/materials/Ice002_1K-JPG_Color.jpg" id="1_yp75m"]
@@ -27,6 +27,8 @@
 [ext_resource type="PackedScene" uid="uid://bpmq6uacs60yv" path="res://2D_levels/level_2/elim_scene/elim_scene.tscn" id="23_r2s5x"]
 [ext_resource type="FontFile" uid="uid://nv7xw0gdt65u" path="res://assets/fonts/joystix monospace.otf" id="25_gb2bx"]
 [ext_resource type="Texture2D" uid="uid://clbutouj7ccjo" path="res://2D_levels/level_1/assets/UI/heart.png" id="26_sw3ia"]
+[ext_resource type="Script" uid="uid://cr0yo1p1kllj0" path="res://2D_levels/level_1/fps.gd" id="28_kmfap"]
+[ext_resource type="Script" uid="uid://bb1wjhu534dq3" path="res://2D_levels/Player2D/fps.gd" id="29_yget8"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_udivp"]
 panorama = ExtResource("2_ijkd5")
@@ -771,6 +773,13 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_77ke4"]
+bg_color = Color(0.419608, 0.572549, 1, 0.701961)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
 [node name="level_2_3d_1" type="Node3D"]
 script = ExtResource("1_ijkd5")
 
@@ -1104,6 +1113,30 @@ process_mode = 4
 visible = false
 
 [node name="elim_scene" parent="elim_scene" instance=ExtResource("23_r2s5x")]
+
+[node name="FPS" type="CanvasLayer" parent="."]
+script = ExtResource("28_kmfap")
+
+[node name="Panel" type="Panel" parent="FPS"]
+offset_top = 610.0
+offset_right = 185.0
+offset_bottom = 647.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_77ke4")
+
+[node name="Label" type="Label" parent="FPS"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -47.0
+offset_right = 216.0
+offset_bottom = 10.0
+grow_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 41
+text = "FPS:"
+script = ExtResource("29_yget8")
 
 [connection signal="timeout" from="CanvasLayer/escape_popup/Timer" to="CanvasLayer/escape_popup" method="_on_timer_timeout"]
 [connection signal="body_entered" from="assets/elements/lava_death" to="assets/elements/lava_death" method="_on_body_entered"]

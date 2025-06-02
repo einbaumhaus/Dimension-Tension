@@ -1,3 +1,9 @@
-[gd_scene format=3 uid="uid://bluqdqv0cygct"]
+[gd_scene load_steps=2 format=3 uid="uid://bluqdqv0cygct"]
+
+[ext_resource type="AudioStream" uid="uid://c30yg6dh18qji" path="res://mixed_levels/endboss/music/high_quality unity.mp3" id="1_fa05l"]
 
 [node name="endboss" type="Node3D"]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("1_fa05l")
+autoplay = true

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c30yg6dh18qji"
+path="res://.godot/imported/high_quality unity.mp3-a435edc2e877be84d2272d24f196792f.mp3str"
+
+[deps]
+
+source_file="res://mixed_levels/endboss/music/high_quality unity.mp3"
+dest_files=["res://.godot/imported/high_quality unity.mp3-a435edc2e877be84d2272d24f196792f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

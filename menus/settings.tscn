@@ -112,6 +112,11 @@ text = "VSYNc"
 layout_mode = 2
 text = "performance mode"
 
+[node name="fps" type="CheckBox" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+button_pressed = true
+text = "SHOW FPS"
+
 [node name="Button" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 7
@@ -134,4 +139,5 @@ text = "Back"
 [connection signal="toggled" from="MarginContainer/VBoxContainer/mute" to="." method="_on_check_box_toggled"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/vsync" to="." method="_on_vsync_toggled"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/performance_m" to="." method="_on_performance_m_toggled"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/fps" to="." method="_on_fps_toggled"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

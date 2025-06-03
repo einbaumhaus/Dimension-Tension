@@ -1,0 +1,78 @@
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://cwb8e3psw0xiv"]
+
+[ext_resource type="Texture2D" uid="uid://bgsifklvhvpb3" path="res://2D_levels/level_2/enemies/toblertwo/gamer.png" id="1_05i63"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_myi0v"]
+atlas = ExtResource("1_05i63")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yllq7"]
+atlas = ExtResource("1_05i63")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r2mdl"]
+atlas = ExtResource("1_05i63")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fiyrv"]
+atlas = ExtResource("1_05i63")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gbbol"]
+atlas = ExtResource("1_05i63")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rrrm3"]
+atlas = ExtResource("1_05i63")
+region = Rect2(0, 0, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_myi0v")
+}],
+"loop": true,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yllq7")
+}],
+"loop": true,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r2mdl")
+}],
+"loop": true,
+"name": &"3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fiyrv")
+}],
+"loop": true,
+"name": &"4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gbbol")
+}],
+"loop": true,
+"name": &"5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rrrm3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

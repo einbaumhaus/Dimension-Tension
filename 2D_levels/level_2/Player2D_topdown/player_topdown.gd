@@ -18,10 +18,15 @@ var health = 5
 @onready var launcher_pivot: Node2D = $launcher_pivot
 @onready var sticker_launcher: AnimatedSprite2D = $launcher_pivot/sticker_launcher
 @onready var anim: AnimatedSprite2D = $player
+@onready var reload: Label = $reload
+@onready var reload_timer: Timer = $reload_timer
+
 
 #launcher delay
 var last_launch_time = 0.0
 var cooldown = 0.2  # seconds between sticker launches
+var ammo = 20
+var reload_done = true
 
 #disable launcher
 var launcher_active = true
@@ -39,15 +44,23 @@ func _physics_process(delta: float) -> void:
 	velocity = velocity.normalized()*SPEED
 
 	#launcher logic
-	if Input.is_action_pressed("left_click") and launcher_active == true or Input.is_action_pressed("ui_accept") and launcher_active == true:
-		var current_time = Time.get_ticks_msec() / 1000.0
-		if current_time - last_launch_time >= cooldown:
-			var sticker = sticker_scene.instantiate()
-			var marker_2d: Marker2D = $launcher_pivot/Marker2D
-			sticker.global_position = marker_2d.global_position
-			sticker.direction = (get_global_mouse_position() - global_position).normalized()
-			get_parent().add_child(sticker)
-			last_launch_time = current_time
+	if ammo >= 1:
+		if reload_done:
+			if Input.is_action_pressed("left_click") and launcher_active == true or Input.is_action_pressed("ui_accept") and launcher_active == true:
+				var current_time = Time.get_ticks_msec() / 1000.0
+				if current_time - last_launch_time >= cooldown:
+					var sticker = sticker_scene.instantiate()
+					var marker_2d: Marker2D = $launcher_pivot/Marker2D
+					sticker.global_position = marker_2d.global_position
+					sticker.direction = (get_global_mouse_position() - global_position).normalized()
+					get_parent().add_child(sticker)
+					ammo -=1
+					last_launch_time = current_time
+	else:
+		reload.visible = true
+		reload_timer.start()
+		reload_done = false
+		ammo = 20
 	
 	velocity = lerp(velocity, velocity, 0.1)
 	#print(velocity)
@@ -109,12 +122,8 @@ func state_machine():
 	if facing_state ==4 and velocity == Vector2.ZERO:
 		anim.play("right_side_idle")
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
+func _on_reload_timer_timeout() -> void:
+	print("reload done")
+	ammo = 20
+	reload.visible = false
+	reload_done = true

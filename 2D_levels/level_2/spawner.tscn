@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=3 uid="uid://og2rjjxlmium"]
+
+[ext_resource type="Script" uid="uid://d3d1hxn6nof0k" path="res://2D_levels/level_2/spawner.gd" id="1_vqv1b"]
+[ext_resource type="Texture2D" uid="uid://clblg2pv1ayah" path="res://2D_levels/level_2/enemies/toblertwo/tobler2.png" id="2_skh2e"]
+[ext_resource type="Theme" uid="uid://3lc7pfe6wvl7" path="res://assets/pixelated_theme.tres" id="3_hpfsn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g0bk8"]
+size = Vector2(252, 77.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pxfip"]
+bg_color = Color(0.340122, 0.592189, 1, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_anjed"]
+size = Vector2(802, 710)
+
+[node name="spawner" type="CharacterBody2D" groups=["enemy"]]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_vqv1b")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(5, 5)
+texture = ExtResource("2_skh2e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.75)
+shape = SubResource("RectangleShape2D_g0bk8")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+texture_filter = 1
+offset_left = -113.0
+offset_top = -75.0
+offset_right = 88.0
+offset_bottom = -50.0
+scale = Vector2(1.11, 1.11)
+theme = ExtResource("3_hpfsn")
+theme_override_styles/fill = SubResource("StyleBoxFlat_pxfip")
+max_value = 10.0
+step = 1.0
+value = 10.0
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-124, 12)
+
+[node name="spawn_timer" type="Timer" parent="."]
+wait_time = 1.5
+autostart = true
+
+[node name="detection_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detection_area"]
+position = Vector2(0, 15)
+shape = SubResource("RectangleShape2D_anjed")
+
+[node name="spawn_limit" type="Timer" parent="."]
+wait_time = 5.0
+
+[connection signal="timeout" from="spawn_timer" to="." method="_on_spawn_timer_timeout"]
+[connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
+[connection signal="timeout" from="spawn_limit" to="." method="_on_spawn_limit_timeout"]

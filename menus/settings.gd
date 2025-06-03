@@ -85,3 +85,11 @@ func _on_performance_m_toggled(toggled_on: bool) -> void:
 		Engine.max_fps = 60
 	else:
 		Engine.max_fps = 0
+
+
+func _on_fps_toggled(toggled_on: bool) -> void:
+	GlobalSettings.fps_enabled = toggled_on
+	if toggled_on:
+		GlobalSettings.fps_enabled = true
+	else:
+		GlobalSettings.fps_enabled = false

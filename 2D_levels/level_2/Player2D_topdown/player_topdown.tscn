@@ -1,8 +1,9 @@
-[gd_scene load_steps=21 format=3 uid="uid://ccweogu7q7wiw"]
+[gd_scene load_steps=22 format=3 uid="uid://ccweogu7q7wiw"]
 
 [ext_resource type="Script" uid="uid://dsdt7nkttked4" path="res://2D_levels/level_2/Player2D_topdown/player_topdown.gd" id="1_ka1lk"]
 [ext_resource type="Texture2D" uid="uid://bgw2w26elh5b5" path="res://2D_levels/level_2/Player2D_topdown/player.png" id="1_lyvt4"]
 [ext_resource type="Texture2D" uid="uid://ccukn4115cq7p" path="res://2D_levels/level_2/Player2D_topdown/sticker_launcher/expry.png" id="3_6tqqb"]
+[ext_resource type="Theme" uid="uid://3lc7pfe6wvl7" path="res://assets/pixelated_theme.tres" id="4_h7ayc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6tqqb"]
 radius = 6.29012
@@ -188,3 +189,30 @@ animation = &"right"
 position = Vector2(22.208, -0.12837)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="reload" type="Label" parent="."]
+visible = false
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.6187
+offset_top = 20.154
+offset_right = 2811.38
+offset_bottom = 220.154
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.03, 0.03)
+theme = ExtResource("4_h7ayc")
+theme_override_font_sizes/font_size = 166
+text = "RELOADING STICKERS..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="reload_timer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[connection signal="timeout" from="reload_timer" to="." method="_on_reload_timer_timeout"]

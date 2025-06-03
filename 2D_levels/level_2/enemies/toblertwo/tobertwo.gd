@@ -2,12 +2,16 @@ extends CharacterBody2D
 
 @onready var player = get_tree().get_nodes_in_group("player")[0]
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
+@export var new_frames: SpriteFrames
 
-const SPEED = 50
+const SPEED = 60
 const PUSH_DISTANCE = 150
 const PUSH_FORCE = 300
 
 var health = 6
+
+func _ready() -> void:
+	anim.sprite_frames = new_frames
 
 func _physics_process(delta: float) -> void:
 	var to_player = player.global_position - global_position

@@ -1,16 +1,9 @@
 extends Area3D
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
+var eliminated = 0
+func enemy_gone():
+	eliminated += 1
 
 func _on_body_entered(body: Node3D) -> void:
-	if body.name == "launch_player":
+	if body.name == "launch_player" and eliminated == 4:
 		get_tree().change_scene_to_file.call_deferred("res://3D_levels/level_2/lvl_stages/level_2_3d_2.tscn")

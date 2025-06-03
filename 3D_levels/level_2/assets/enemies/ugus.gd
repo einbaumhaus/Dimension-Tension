@@ -22,6 +22,8 @@ const ATTACK_RANGE = 2.5
 @onready var main_body: MeshInstance3D = $main_body
 
 @onready var wave_manager: Node = get_node_or_null("../../wave_manager")
+@onready var lvl_part_changer: Area3D = get_node_or_null("../../assets/lvl_part_changer")
+
 
 func _ready() -> void:
 	var hitbox = $Launch_col
@@ -78,6 +80,8 @@ func hit(damage: int) -> void:
 	if health <= 0:
 		if wave_manager != null:
 			wave_manager.enemy_killed()
+		if lvl_part_changer != null:
+			lvl_part_changer.enemy_gone()
 		queue_free()
 
 

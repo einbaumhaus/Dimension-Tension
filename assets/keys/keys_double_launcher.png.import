@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blfr7w4hwjing"
-path="res://.godot/imported/rizz_catch.png-31af0c0150bf2f4b6557cc9034fae923.ctex"
+uid="uid://dugl7up5k5fig"
+path="res://.godot/imported/keys_double_launcher.png-b04331471f479810982f5a94a147c3ca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mixed_levels/endboss/eb1/assets/rizz_catch.png"
-dest_files=["res://.godot/imported/rizz_catch.png-31af0c0150bf2f4b6557cc9034fae923.ctex"]
+source_file="res://assets/keys/keys_double_launcher.png"
+dest_files=["res://.godot/imported/keys_double_launcher.png-b04331471f479810982f5a94a147c3ca.ctex"]
 
 [params]
 

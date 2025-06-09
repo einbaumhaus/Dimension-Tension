@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blfr7w4hwjing"
-path="res://.godot/imported/rizz_catch.png-31af0c0150bf2f4b6557cc9034fae923.ctex"
+uid="uid://mkwsudygkvgy"
+path="res://.godot/imported/right_mouse.png-bb1653f9697e493d3c3983af3ed4671c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mixed_levels/endboss/eb1/assets/rizz_catch.png"
-dest_files=["res://.godot/imported/rizz_catch.png-31af0c0150bf2f4b6557cc9034fae923.ctex"]
+source_file="res://assets/keys/right_mouse.png"
+dest_files=["res://.godot/imported/right_mouse.png-bb1653f9697e493d3c3983af3ed4671c.ctex"]
 
 [params]
 

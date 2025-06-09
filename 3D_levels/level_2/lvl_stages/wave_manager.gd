@@ -4,6 +4,7 @@ extends Node
 @onready var timer: Timer = $Timer
 @onready var launch_player: CharacterBody3D = $"../launch_player"
 @onready var mission: CanvasLayer = $"../mission"
+@onready var animation_player: AnimationPlayer = $"../outro/AnimationPlayer"
 
 var eliminations = 0
 var wave1 = true
@@ -24,6 +25,9 @@ func _process(delta: float) -> void:
 		print("wave2done, next level")
 		wave2 = false
 		wave3 = true
+	if wave3:
+		animation_player.play("outro")
+		wave3 = false
 
 func _on_timer_timeout():
 	wave_2_start.play("wave2start")
@@ -47,3 +51,7 @@ func start_w2():
 	mission.visible = true
 	print("restarting")
 	wave2 = false
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	get_tree().change_scene_to_file.call_deferred("res://2D_levels/level_3/lvl_3_2d.tscn")

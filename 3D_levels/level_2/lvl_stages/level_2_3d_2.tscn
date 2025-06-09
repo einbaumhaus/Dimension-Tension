@@ -1,9 +1,10 @@
-[gd_scene load_steps=56 format=4 uid="uid://blnffj14qys1k"]
+[gd_scene load_steps=78 format=4 uid="uid://blnffj14qys1k"]
 
 [ext_resource type="PackedScene" uid="uid://f8i8svg7k032" path="res://3D_levels/level_2/launch_player/launch_player.tscn" id="1_4kesc"]
 [ext_resource type="Script" uid="uid://bv2w76gho36d2" path="res://3D_levels/level_2/lvl_stages/level_2_3d_2.gd" id="1_dxfov"]
 [ext_resource type="PackedScene" uid="uid://bnp7vdu3nrbe8" path="res://menus/pause_menu.tscn" id="1_mloyc"]
 [ext_resource type="PackedScene" uid="uid://bpmq6uacs60yv" path="res://2D_levels/level_2/elim_scene/elim_scene.tscn" id="2_m2bdb"]
+[ext_resource type="Texture2D" uid="uid://dugl7up5k5fig" path="res://assets/keys/keys_double_launcher.png" id="3_cnfns"]
 [ext_resource type="FontFile" uid="uid://nv7xw0gdt65u" path="res://assets/fonts/joystix monospace.otf" id="3_kqf0v"]
 [ext_resource type="Texture2D" uid="uid://clbutouj7ccjo" path="res://2D_levels/level_1/assets/UI/heart.png" id="4_adsja"]
 [ext_resource type="Texture2D" uid="uid://cjllvahxg6keb" path="res://3D_levels/level_1/assets/overcast_soil_puresky_4k.hdr" id="5_t7ky0"]
@@ -11,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://bsuaof7o8fr32" path="res://3D_levels/level_1/assets/castle/materials/castle_wall_slates_diff_1k.jpg" id="6_7ecmq"]
 [ext_resource type="PackedScene" uid="uid://ifb6pbvsjtkj" path="res://3D_levels/level_2/assets/env/wooden_door.tscn" id="6_7sgvi"]
 [ext_resource type="PackedScene" uid="uid://bxiy8xy0d6pfa" path="res://3D_levels/level_2/assets/enemies/ugus.tscn" id="6_fxsf8"]
+[ext_resource type="Texture2D" uid="uid://d1cfxfejn6e3" path="res://assets/keys/left_mouse.png" id="6_hlvmm"]
+[ext_resource type="Texture2D" uid="uid://mkwsudygkvgy" path="res://assets/keys/right_mouse.png" id="7_2uhoi"]
 [ext_resource type="PackedScene" uid="uid://bac2uhb337o7s" path="res://3D_levels/level_2/assets/env/wall/wall_piece.tscn" id="7_cjnvw"]
 [ext_resource type="Texture2D" uid="uid://cvnflcc51kvet" path="res://3D_levels/level_2/assets/part2/windows_castle.png" id="8_mcrfw"]
 [ext_resource type="Script" uid="uid://yu8nw8ofjipq" path="res://3D_levels/level_2/lvl_stages/enemies_wave_2.gd" id="9_oajnp"]
@@ -18,8 +21,14 @@
 [ext_resource type="Script" uid="uid://cr5eu0hte3jpn" path="res://3D_levels/level_2/lvl_stages/wave_manager.gd" id="13_cmtpo"]
 [ext_resource type="Texture2D" uid="uid://c8n7rx0rslbmi" path="res://3D_levels/level_1/assets/castle/materials/castle_wall_slates_nor_gl_1k.jpg" id="14_cbuk5"]
 [ext_resource type="Texture2D" uid="uid://diw4e3db1ji7i" path="res://3D_levels/level_1/assets/castle/materials/church_bricks_02_diff_png_1k.jpg" id="14_e870u"]
+[ext_resource type="Texture2D" uid="uid://bgw2w26elh5b5" path="res://2D_levels/level_2/Player2D_topdown/player.png" id="19_ux6jj"]
 [ext_resource type="Script" uid="uid://cr0yo1p1kllj0" path="res://2D_levels/level_1/fps.gd" id="19_ya3rk"]
 [ext_resource type="Script" uid="uid://bb1wjhu534dq3" path="res://2D_levels/Player2D/fps.gd" id="20_ux6jj"]
+[ext_resource type="Texture2D" uid="uid://sbb0bic2bn0h" path="res://mixed_levels/intro/assets/evelius_smoll.png" id="20_xitdl"]
+[ext_resource type="Texture2D" uid="uid://dqoeak5w11i1e" path="res://mixed_levels/intro/assets/buuuble.png" id="21_ivkre"]
+[ext_resource type="Texture2D" uid="uid://c0lurag5rt7c0" path="res://2D_levels/level_1/assets/chronoscepter/chronoscepter.png" id="22_cnfns"]
+[ext_resource type="Texture2D" uid="uid://bxrrhvfwnrmg" path="res://2D_levels/level_1/assets/chronoscepter/2d_magic.png" id="23_67kco"]
+[ext_resource type="Texture2D" uid="uid://d2xqem5h6muvx" path="res://3D_levels/level_2/assets/part2/black-cracked-background-with-broken-glass-texture.png" id="24_ivkre"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_adsja"]
 bg_color = Color(0.152941, 0.152941, 0.811765, 1)
@@ -125,7 +134,7 @@ tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/path = NodePath("Camera3D:rotation")
-tracks/1/interp = 1
+tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 2.01),
@@ -343,6 +352,422 @@ size = Vector3(2.65625, 0.001, 55.4152)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_oajnp"]
 size = Vector3(2.65625, 0.001, 28.7409)
+
+[sub_resource type="Animation" id="Animation_ux6jj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../assets/doors/wooden_door2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(3.01594e-07, 0.962833, 52.4503)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../assets/doors/wooden_door2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.5708, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("lilguy:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("evelius:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("evelius/speech:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("evelius/speech/Label3D:text")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["No
+turning"]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("evelius/chronoscepter/magic:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("evelius/chronoscepter/magic:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("evelius/chronoscepter/magic:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.174, 0.043, 0.036)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("broken:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("lilguy:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.321, 37.475)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("lilguy:rotation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Camera3D:current")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_ya3rk"]
+resource_name = "outro"
+length = 6.9
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../assets/doors/wooden_door2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.76667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(3.01594e-07, 0.962833, 52.4503), Vector3(0.621233, 0.962833, 51.7615)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../assets/doors/wooden_door2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.76667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 1.5708, 0), Vector3(0, 1.05784, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("lilguy:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("evelius:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("evelius/speech:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.0333334, 1, 4.21532),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("evelius/speech/Label3D:text")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.89, 3.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["There's
+No
+turning", "back
+now"]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("evelius/chronoscepter/magic:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 4.17667, 5.88667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("evelius/chronoscepter/magic:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(4.19667, 4.55667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("evelius/chronoscepter/magic:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(4.76667, 5.4, 5.86667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.174, 0.043, 0.036), Vector3(0.016, -0.242, 0.726), Vector3(0.016, -0.387, 0.481)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("broken:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 5.40667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("lilguy:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(5.85667, 6.83333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 1.321, 37.475), Vector3(-1.3, 2.106, 49.915)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("lilguy:rotation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(5.86667, 6.83333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.0959931, 1.18682, 1.39626)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Camera3D:current")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hr1nj"]
+_data = {
+&"RESET": SubResource("Animation_ux6jj"),
+&"outro": SubResource("Animation_ya3rk")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xyv5a"]
+atlas = ExtResource("19_ux6jj")
+region = Rect2(20, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4a715"]
+atlas = ExtResource("19_ux6jj")
+region = Rect2(0, 60, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aurke"]
+atlas = ExtResource("19_ux6jj")
+region = Rect2(40, 60, 20, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hr1nj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xyv5a")
+}],
+"loop": true,
+"name": &"stop",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4a715")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aurke")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2twkf"]
+atlas = ExtResource("20_xitdl")
+region = Rect2(20, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sn7jy"]
+atlas = ExtResource("20_xitdl")
+region = Rect2(0, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4fw8x"]
+atlas = ExtResource("20_xitdl")
+region = Rect2(40, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dsl33"]
+atlas = ExtResource("20_xitdl")
+region = Rect2(0, 60, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q8ovt"]
+atlas = ExtResource("20_xitdl")
+region = Rect2(40, 60, 20, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hlvmm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2twkf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sn7jy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4fw8x")
+}],
+"loop": true,
+"name": &"run_front",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dsl33")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q8ovt")
+}],
+"loop": true,
+"name": &"run_right",
+"speed": 5.0
+}]
 
 [sub_resource type="Animation" id="Animation_oajnp"]
 length = 0.001
@@ -580,6 +1005,12 @@ script = ExtResource("1_dxfov")
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("1_mloyc")]
 visible = false
 
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/PauseMenu"]
+texture_filter = 1
+position = Vector2(973, 587.438)
+scale = Vector2(3.66288, 3.66288)
+texture = ExtResource("3_cnfns")
+
 [node name="mission" type="CanvasLayer" parent="."]
 
 [node name="healthbar" type="ProgressBar" parent="mission"]
@@ -614,6 +1045,18 @@ theme_override_fonts/font = ExtResource("3_kqf0v")
 theme_override_font_sizes/font_size = 96
 text = "HEALTH"
 
+[node name="Sprite2D" type="Sprite2D" parent="mission"]
+texture_filter = 1
+position = Vector2(1073, 567)
+scale = Vector2(3.66288, 3.66288)
+texture = ExtResource("6_hlvmm")
+
+[node name="Sprite2D2" type="Sprite2D" parent="mission"]
+texture_filter = 1
+position = Vector2(100, 567)
+scale = Vector2(3.66288, 3.66288)
+texture = ExtResource("7_2uhoi")
+
 [node name="elim_scene2" type="CanvasLayer" parent="."]
 process_mode = 4
 visible = false
@@ -643,6 +1086,7 @@ libraries = {
 
 [node name="Camera3D" type="Camera3D" parent="wave_manager"]
 transform = Transform3D(-0.999913, 0.00138517, -0.0130792, 0, 0.994439, 0.105317, 0.0131524, 0.105308, -0.994353, -0.293958, 7.44161, 2.37716)
+current = true
 
 [node name="Label" type="Label" parent="wave_manager"]
 visible = false
@@ -766,7 +1210,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 18.538
 transform = Transform3D(-1.48058e-05, 0, -4.09, 0, 4.09, 0, 4.09, 0, -1.48058e-05, 3.01594e-07, 0.247159, -7.25768)
 
 [node name="wooden_door2" parent="assets/doors" instance=ExtResource("6_7sgvi")]
-transform = Transform3D(-1.272e-07, 0, 2.91, 0, 2.91, 0, -2.91, 0, -1.272e-07, 3.01594e-07, 0.962833, 52.4503)
+transform = Transform3D(-1.05342e-05, 0, 2.91, 0, 2.91, 0, -2.91, 0, -1.05342e-05, 3.01594e-07, 0.962833, 52.4503)
 
 [node name="castle" type="Node3D" parent="assets"]
 
@@ -1062,6 +1506,74 @@ shape = SubResource("BoxShape3D_oajnp")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.00286237, -0.718852, -0.695158, 0, -0.69516, 0.718855, -0.999996, 0.00205763, 0.00198981, -34.738, 17.4287, 0)
 
+[node name="outro" type="Node3D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="outro"]
+libraries = {
+&"": SubResource("AnimationLibrary_hr1nj")
+}
+
+[node name="Camera3D" type="Camera3D" parent="outro"]
+transform = Transform3D(-1, -8.07529e-09, 8.7049e-08, 0, 0.995725, 0.0923706, -8.74228e-08, 0.0923706, -0.995725, 0, 4.031, 32.378)
+
+[node name="lilguy" type="AnimatedSprite3D" parent="outro"]
+transform = Transform3D(11.865, 0, 0, 0, 11.865, 0, 0, 0, 11.865, 0, 1.321, 37.475)
+visible = false
+texture_filter = 2
+sprite_frames = SubResource("SpriteFrames_hr1nj")
+animation = &"stop"
+
+[node name="evelius" type="AnimatedSprite3D" parent="outro"]
+transform = Transform3D(-17.735, 0, 1.55044e-06, 0, 17.735, 0, -1.55044e-06, 0, -17.735, 0.3692, 8.24179, 46.0258)
+visible = false
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_hlvmm")
+autoplay = "default"
+
+[node name="speech" type="Node3D" parent="outro/evelius"]
+transform = Transform3D(0.0563857, 0, 0, 0, 0.0563857, 0, 0, 0, 0.0563857, -0.021, -0.611, 1.415)
+visible = false
+
+[node name="Label3D" type="Label3D" parent="outro/evelius/speech"]
+transform = Transform3D(3.385, 0, 0, 0, 3.385, 0, 0, 0, 3.385, -2.542, 13.508, -24.593)
+double_sided = false
+alpha_cut = 1
+texture_filter = 0
+text = "No
+turning"
+font = ExtResource("3_kqf0v")
+font_size = 27
+
+[node name="bubble" type="Sprite3D" parent="outro/evelius/speech"]
+transform = Transform3D(13, 0, 0, 0, 13, 0, 0, 0, 13, -2.55743, 13.3541, -24.676)
+texture_filter = 2
+texture = ExtResource("21_ivkre")
+
+[node name="chronoscepter" type="Node3D" parent="outro/evelius"]
+
+[node name="chronoscepter" type="Sprite3D" parent="outro/evelius/chronoscepter"]
+transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, -0.114, 0.02, 0.012)
+texture_filter = 0
+texture = ExtResource("22_cnfns")
+
+[node name="magic" type="Sprite3D" parent="outro/evelius/chronoscepter"]
+transform = Transform3D(0.439, 0, 0, 0, 0.439, 0, 0, 0, 0.439, -0.174, 0.043, 0.036)
+visible = false
+modulate = Color(1, 1, 1, 0)
+billboard = 1
+texture_filter = 0
+texture = ExtResource("23_67kco")
+
+[node name="broken" type="CanvasLayer" parent="outro"]
+visible = false
+
+[node name="TextureRect" type="TextureRect" parent="outro/broken"]
+offset_top = 2.0
+offset_right = 1286.0
+offset_bottom = 835.0
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("24_ivkre")
+
 [node name="intro" type="Node3D" parent="."]
 
 [node name="intro_anim" type="AnimationPlayer" parent="intro"]
@@ -1118,4 +1630,5 @@ text = "FPS:"
 script = ExtResource("20_ux6jj")
 
 [connection signal="animation_finished" from="wave_manager/wave2_start" to="wave_manager" method="_on_wave_2_start_animation_finished"]
+[connection signal="animation_finished" from="outro/AnimationPlayer" to="wave_manager" method="_on_animation_player_animation_finished"]
 [connection signal="animation_finished" from="intro/intro_anim" to="." method="_on_intro_anim_animation_finished"]

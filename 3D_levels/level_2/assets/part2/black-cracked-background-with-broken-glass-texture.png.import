@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blfr7w4hwjing"
-path="res://.godot/imported/rizz_catch.png-31af0c0150bf2f4b6557cc9034fae923.ctex"
+uid="uid://d2xqem5h6muvx"
+path="res://.godot/imported/black-cracked-background-with-broken-glass-texture.png-59a176625ddea51995b16ed0b90f7691.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mixed_levels/endboss/eb1/assets/rizz_catch.png"
-dest_files=["res://.godot/imported/rizz_catch.png-31af0c0150bf2f4b6557cc9034fae923.ctex"]
+source_file="res://3D_levels/level_2/assets/part2/black-cracked-background-with-broken-glass-texture.png"
+dest_files=["res://.godot/imported/black-cracked-background-with-broken-glass-texture.png-59a176625ddea51995b16ed0b90f7691.ctex"]
 
 [params]
 

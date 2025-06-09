@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://dmj4o2qbag07v"]
+
+[ext_resource type="Texture2D" uid="uid://bsuaof7o8fr32" path="res://3D_levels/level_1/assets/castle/materials/castle_wall_slates_diff_1k.jpg" id="1_pkcgq"]
+[ext_resource type="Texture2D" uid="uid://c8n7rx0rslbmi" path="res://3D_levels/level_1/assets/castle/materials/castle_wall_slates_nor_gl_1k.jpg" id="2_0c787"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_iokob"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bo021"]
+cull_mode = 2
+albedo_color = Color(0.325441, 0.325441, 0.325441, 1)
+albedo_texture = ExtResource("1_pkcgq")
+normal_enabled = true
+normal_texture = ExtResource("2_0c787")
+uv1_scale = Vector3(-2.264, 0.739, 0)
+uv1_offset = Vector3(-1.68, 2.54, -1.28)
+uv1_triplanar = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pkcgq"]
+size = Vector3(4.01309, 1.77051, 0.001)
+
+[node name="wall_flat" type="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(4.02349, 0, 0, 0, 1.77535, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("QuadMesh_iokob")
+surface_material_override/0 = SubResource("StandardMaterial3D_bo021")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000323355, 0, 0.001)
+shape = SubResource("BoxShape3D_pkcgq")

@@ -2,26 +2,27 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0tcav73m32db"
-path="res://.godot/imported/sugus_idle.png-9980a85066552727e9c657d292e2c55e.ctex"
+uid="uid://rbs1sq7r6ipa"
+path.bptc="res://.godot/imported/NightSkyHDRI003_1K-HDR.exr-1c9de815bcaa5fb30de428b71d0b6e16.bptc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
-source_file="res://2D_levels/level_1/assets/enemies/sugus_idle.png"
-dest_files=["res://.godot/imported/sugus_idle.png-9980a85066552727e9c657d292e2c55e.ctex"]
+source_file="res://mixed_levels/endboss/env/NightSkyHDRI003_1K-HDR.exr"
+dest_files=["res://.godot/imported/NightSkyHDRI003_1K-HDR.exr-1c9de815bcaa5fb30de428b71d0b6e16.bptc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -31,4 +32,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

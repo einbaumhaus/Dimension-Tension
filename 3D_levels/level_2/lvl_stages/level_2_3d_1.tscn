@@ -161,7 +161,7 @@ tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath("Camera3D:rotation")
-tracks/0/interp = 1
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
@@ -173,7 +173,7 @@ tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/path = NodePath("Camera3D:position")
-tracks/1/interp = 1
+tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
@@ -377,7 +377,7 @@ tracks/18/type = "value"
 tracks/18/imported = false
 tracks/18/enabled = true
 tracks/18/path = NodePath("Camera3D:fov")
-tracks/18/interp = 1
+tracks/18/interp = 2
 tracks/18/loop_wrap = true
 tracks/18/keys = {
 "times": PackedFloat32Array(0),
@@ -393,25 +393,25 @@ tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath("Camera3D:rotation")
-tracks/0/interp = 1
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.37667, 2.46667, 3.2, 4.6, 5.34667, 5.79667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(1.37667, 2.46667, 3.2, 4.6, 5.34667, 5.79667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0.282743, -0.455531, 0), Vector3(0.282743, -0.455531, 0), Vector3(-0.0523599, 1.47829, 0), Vector3(-0.0523599, 1.47829, 0), Vector3(-0.612611, 3.37198, -0.0191986), Vector3(-0.612611, 3.37198, -0.0191986), Vector3(0, 2.82569, 0)]
+"values": [Vector3(0.282743, -0.455531, 0), Vector3(-0.0523599, 1.47829, 0), Vector3(-0.0523599, 1.47829, 0), Vector3(-0.612611, 3.37198, -0.0191986), Vector3(-0.612611, 3.37198, -0.0191986), Vector3(0, 2.82569, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/path = NodePath("Camera3D:position")
-tracks/1/interp = 1
+tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1.37667, 2.46667, 3.2, 4.6, 5.34667, 5.79667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(1.37667, 2.46667, 3.2, 4.6, 5.34667, 5.79667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(-2.048, 0.565, -0.638), Vector3(-2.048, 0.565, -0.638), Vector3(6.51435, 2.83526, 1.41214), Vector3(6.51435, 2.83526, 1.41214), Vector3(-7.33932, 9.34378, 7.82996), Vector3(-7.33932, 9.34378, 7.82996), Vector3(3.498, 1.803, -4.261)]
+"values": [Vector3(-2.048, 0.565, -0.638), Vector3(6.51435, 2.83526, 1.41214), Vector3(6.51435, 2.83526, 1.41214), Vector3(-7.33932, 9.34378, 7.82996), Vector3(-7.33932, 9.34378, 7.82996), Vector3(3.498, 1.803, -4.261)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -609,7 +609,7 @@ tracks/18/type = "value"
 tracks/18/imported = false
 tracks/18/enabled = true
 tracks/18/path = NodePath("Camera3D:fov")
-tracks/18/interp = 1
+tracks/18/interp = 2
 tracks/18/loop_wrap = true
 tracks/18/keys = {
 "times": PackedFloat32Array(5.35667, 5.79667),
@@ -852,7 +852,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5417, 0.0501804, 24.0465)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5417, 0.0501804, 46.8772)
 
 [node name="wall piece4" parent="assets/walls" instance=ExtResource("6_qoep0")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -20.5272, 0.0501804, 24.0465)
+transform = Transform3D(-0.996859, 0, 8.71482e-08, 0, 0.996859, 0, -8.71482e-08, 0, -0.996859, -20.5272, 0.0501804, 24.0465)
 
 [node name="wall piece10" parent="assets/walls" instance=ExtResource("6_qoep0")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -20.5272, 0.0501804, 46.7232)

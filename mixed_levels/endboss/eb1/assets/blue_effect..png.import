@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0lurag5rt7c0"
-path="res://.godot/imported/chronoscepter.png-6a044ce78ecb39c7b20373625a5743df.ctex"
+uid="uid://dynkqhgq58v3c"
+path="res://.godot/imported/blue_effect..png-18c3e01c752ac1905b94b5d9b1df1e8d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://2D_levels/level_1/assets/chronoscepter/chronoscepter.png"
-dest_files=["res://.godot/imported/chronoscepter.png-6a044ce78ecb39c7b20373625a5743df.ctex"]
+source_file="res://mixed_levels/endboss/eb1/assets/blue_effect..png"
+dest_files=["res://.godot/imported/blue_effect..png-18c3e01c752ac1905b94b5d9b1df1e8d.ctex"]
 
 [params]
 
@@ -21,7 +21,7 @@ compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

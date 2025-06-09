@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0lurag5rt7c0"
-path="res://.godot/imported/chronoscepter.png-6a044ce78ecb39c7b20373625a5743df.ctex"
+uid="uid://bxrrhvfwnrmg"
+path="res://.godot/imported/2d_magic.png-4a33bd32264b2db330f591a65e9d0d6f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://2D_levels/level_1/assets/chronoscepter/chronoscepter.png"
-dest_files=["res://.godot/imported/chronoscepter.png-6a044ce78ecb39c7b20373625a5743df.ctex"]
+source_file="res://2D_levels/level_1/assets/chronoscepter/2d_magic.png"
+dest_files=["res://.godot/imported/2d_magic.png-4a33bd32264b2db330f591a65e9d0d6f.ctex"]
 
 [params]
 

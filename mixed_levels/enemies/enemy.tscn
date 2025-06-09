@@ -1,7 +1,7 @@
 [gd_scene load_steps=20 format=3 uid="uid://bc8o18yhooq2a"]
 
-[ext_resource type="Texture2D" uid="uid://b0tcav73m32db" path="res://2D_levels/level_1/assets/enemies/sugus_idle.png" id="1_43ktd"]
-[ext_resource type="Script" uid="uid://bp07pw2m6ch0v" path="res://2D_levels/level_1/assets/enemies/enemy.gd" id="1_854da"]
+[ext_resource type="Texture2D" uid="uid://b0tcav73m32db" path="res://mixed_levels/enemies/sugus_idle.png" id="1_43ktd"]
+[ext_resource type="Script" uid="uid://bp07pw2m6ch0v" path="res://mixed_levels/enemies/enemy.gd" id="1_854da"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_854da"]
 atlas = ExtResource("1_43ktd")

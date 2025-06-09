@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=4 uid="uid://bilmxsoacd24r"]
+[gd_scene load_steps=33 format=3 uid="uid://bilmxsoacd24r"]
 
 [ext_resource type="PackedScene" uid="uid://bnp7vdu3nrbe8" path="res://menus/pause_menu.tscn" id="1_1dhyw"]
 [ext_resource type="Script" uid="uid://mvotmqlsvjqe" path="res://3D_levels/level_3/level_3_3d.gd" id="1_n6v2l"]
@@ -29,44 +29,6 @@ fog_density = 1.0
 adjustment_enabled = true
 adjustment_contrast = 1.2
 adjustment_saturation = 0.37
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a8ugm"]
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_ersch"]
-_surfaces = [{
-"aabb": AABB(0, -1, -1, 1, 2, 2),
-"format": 34896613377,
-"index_count": 66,
-"index_data": PackedByteArray("AAAHAAIAAAALAAcABAALAAAAAQACAAcACwABAAcADAALAAQACwAIAAEADAAEAAYACwANAAgACwAMAA0ACAADAAEAAwACAAEACAANAAMAAgAFAAYADAAGAAUAAgADAAUADQAMAAkACQAMAAUADQAKAAMADQAJAAoABQADAAoACQAFAAoA"),
-"lods": [0.133728, PackedByteArray("AAAHAAIAAQACAAcAAAAIAAcACAABAAcABAAIAAAAAwACAAEACAADAAEACAAEAAkACAAJAAMACQAKAAMACQAEAAUACQAFAAoABQADAAoAAgADAAUABAAGAAUAAgAFAAYA"), 0.665369, PackedByteArray("AAABAAIAAAADAAEAAwACAAEAAAAEAAMAAgADAAUABAAFAAMAAgAFAAYABAAGAAUA")],
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 14,
-"vertex_data": PackedByteArray("AAAAAAAAAACy3f///z8AAAAA//8AAAAA//////9/AAAAAAAA//8AAP9////Y7gAAAAD/////AAD/f///JhEAALLdAAD/PwAAst0AAP+/AACy3f///78AAP9/AAAmEQAA/38AANjuAAD//wAA/38AAA==")
-}]
-blend_shape_mode = 0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_wqikr"]
-resource_name = "hall_ceiling_Cylinder"
-_surfaces = [{
-"aabb": AABB(0, -1, -1, 1, 2, 2),
-"attribute_data": PackedByteArray("////f1TVAAD//wAA/78AAP9//39UlQAA/38AAP//AABUlQAA/38AAP+/AABU1QAAqeoAAFTV/3+qqv9/qqoAAP9//39U1f9/////f6qq/3+p6gAAqqoAAKnq/3+p6v9/qeoAAFTV/3//vwAAVNUAAP+//3//v/9/qqoAAKqq/39UlQAAVJX/f1SV/3+p6v9/VJX/f/+//38="),
-"format": 34896613399,
-"index_count": 66,
-"index_data": PackedByteArray("AAAMAAIAAAAWAAwAFwABABgAFwANAAEAGQAaABsAGQAcABoAHQAeAAMAHQAfAB4ADgAgAA8ADgAhACAAIgAGAAUAIgAEAAYAEAAjABIAJAAjABAAIwAkACUAJQAkABMAIwAlABEACwAHABQACgAHAAsABwAKAAgACAAKABUABwAIAAkA"),
-"lods": [0.133728, PackedByteArray("AAAMAAIAAAANAAwADQABAAwADQADAAEADQAOAAMADgAPAAMADgAFAA8ADgAEAAUABAAGAAUAEAARABIAEQAQABMACwAHABQACgAHAAsABwAKAAgACAAKABUABwAIAAkA"), 0.665369, PackedByteArray("AAABAAIAAAADAAEAAAAEAAMABAAFAAMABAAGAAUABwAIAAkABwAKAAgACgAHAAsA")],
-"material": SubResource("StandardMaterial3D_a8ugm"),
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 38,
-"vertex_data": PackedByteArray("AAAAAAAAVPWy3f///z//3wAA//8AAFT1//////9/VLUAAAAA//+qiv9////Y7qqKAAD/////qooAAP//AAD/v/9////Y7v+/AAD//////7///////3//v7Ld////P/+//3///yYRVPWy3QAA/z//37LdAAD/v/+fst3///+//58AAAAA////v7LdAAD/P/+/AAAAAAAA/7+y3QAA/7//v/9///8mEf+/st3///+//7//fwAAJhFU9f9/AAAmEf/f/3///yYR/9+y3QAA/z+pyv//////f6nKst3///8/qcr//wAA/3+pyv//AAD/f1S1st3///+/VLWy3QAA/79Utf9////Y7v+f/38AANju/5//fwAA2O6qiv9/AAAmEf+//38AANju/7///wAA/3//v/9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/AAD///9/////f////3////9/////f/9/AAD/fwAA/38AAP9/AAAAAP9/AAD/fwAA/38AAP9/////f////3//fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/fwAAAAD/fwAA/38AAP9/")
-}]
-blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_ersch")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b82s5"]
-cull_mode = 2
-albedo_color = Color(0.310617, 0.310617, 0.310617, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_5xwyq"]
 size = Vector2(31.77, 54.04)
@@ -211,16 +173,6 @@ environment = SubResource("Environment_b82s5")
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 60.5949, 0.999592, -3.05605)
 
 [node name="assets" type="Node3D" parent="."]
-
-[node name="hall_ceiling" type="Node3D" parent="assets"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.588, 0.037941, -4.27166)
-
-[node name="hall_ceilng" type="MeshInstance3D" parent="assets/hall_ceiling"]
-transform = Transform3D(-2.54641e-06, -58.255, 0, 58.255, -2.54641e-06, 0, 0, 0, 58.255, 0, 0, 0)
-visible = false
-mesh = SubResource("ArrayMesh_wqikr")
-skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_b82s5")
 
 [node name="walls" type="Node3D" parent="assets"]
 

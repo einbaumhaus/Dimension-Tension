@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://bluqdqv0cygct"]
+
+[ext_resource type="AudioStream" uid="uid://c30yg6dh18qji" path="res://mixed_levels/endboss/music/high_quality unity.mp3" id="1_f1jok"]
+[ext_resource type="Texture2D" uid="uid://rbs1sq7r6ipa" path="res://mixed_levels/endboss/env/NightSkyHDRI003_1K-HDR.exr" id="2_s78r0"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_20sdj"]
+panorama = ExtResource("2_s78r0")
+
+[sub_resource type="Sky" id="Sky_5te2e"]
+sky_material = SubResource("PanoramaSkyMaterial_20sdj")
+
+[sub_resource type="Environment" id="Environment_mf2e2"]
+background_mode = 2
+sky = SubResource("Sky_5te2e")
+
+[node name="endboss_3" type="Node3D"]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("1_f1jok")
+autoplay = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_mf2e2")

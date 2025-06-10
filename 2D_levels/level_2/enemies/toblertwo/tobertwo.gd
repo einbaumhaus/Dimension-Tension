@@ -4,14 +4,15 @@ extends CharacterBody2D
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @export var new_frames: SpriteFrames
 
-const SPEED = 60
+@export var SPEED = 60
 const PUSH_DISTANCE = 150
 const PUSH_FORCE = 300
 
-var health = 6
+@export var health = 6
 
 func _ready() -> void:
 	anim.sprite_frames = new_frames
+	anim.play("default")
 
 func _physics_process(delta: float) -> void:
 	var to_player = player.global_position - global_position

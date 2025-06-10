@@ -1,11 +1,19 @@
-[gd_scene load_steps=20 format=4 uid="uid://3ggfpcmbr8lx"]
+[gd_scene load_steps=45 format=4 uid="uid://3ggfpcmbr8lx"]
 
 [ext_resource type="Texture2D" uid="uid://drd4sxov2x8e3" path="res://2D_levels/level_2/assets/tile_map/tilemaptd1.png" id="1_wg46k"]
 [ext_resource type="PackedScene" uid="uid://ccweogu7q7wiw" path="res://2D_levels/level_2/Player2D_topdown/player_topdown.tscn" id="2_guxk4"]
+[ext_resource type="Script" uid="uid://cbhdfpnqnxyod" path="res://2D_levels/level_2/evelius_floating.gd" id="3_16eqf"]
 [ext_resource type="Script" uid="uid://de0lrerg1h5is" path="res://2D_levels/level_2/perpsectivechanger2.gd" id="3_guxk4"]
+[ext_resource type="Texture2D" uid="uid://sbb0bic2bn0h" path="res://mixed_levels/intro/assets/evelius_smoll.png" id="3_la13m"]
+[ext_resource type="Texture2D" uid="uid://bgw2w26elh5b5" path="res://2D_levels/level_2/Player2D_topdown/player.png" id="3_vdthg"]
+[ext_resource type="Texture2D" uid="uid://cbxyvw8riiyua" path="res://2D_levels/level_2/enemies/toblertwo/tobllertwo.png" id="4_16eqf"]
 [ext_resource type="PackedScene" uid="uid://cgge8ca74twyt" path="res://2D_levels/level_2/enemies/toblertwo/tobertwo.tscn" id="4_gpxfa"]
+[ext_resource type="Texture2D" uid="uid://dqoeak5w11i1e" path="res://mixed_levels/intro/assets/buuuble.png" id="4_yvgem"]
+[ext_resource type="Texture2D" uid="uid://c0lurag5rt7c0" path="res://2D_levels/level_1/assets/chronoscepter/chronoscepter.png" id="5_bw0j5"]
 [ext_resource type="PackedScene" uid="uid://bpmq6uacs60yv" path="res://2D_levels/level_2/elim_scene/elim_scene.tscn" id="5_pqlkt"]
+[ext_resource type="FontFile" uid="uid://nv7xw0gdt65u" path="res://assets/fonts/joystix monospace.otf" id="5_vdthg"]
 [ext_resource type="Script" uid="uid://lljku4eo3lxo" path="res://2D_levels/level_1/game_manager.gd" id="6_c7uih"]
+[ext_resource type="Texture2D" uid="uid://bo3alw0mcbqud" path="res://2D_levels/level_1/assets/chronoscepter/3d_magic.png" id="6_yvgem"]
 [ext_resource type="PackedScene" uid="uid://bnp7vdu3nrbe8" path="res://menus/pause_menu.tscn" id="7_eo46k"]
 [ext_resource type="Texture2D" uid="uid://clbutouj7ccjo" path="res://2D_levels/level_1/assets/UI/heart.png" id="8_3ipvu"]
 [ext_resource type="Script" uid="uid://bb1wjhu534dq3" path="res://2D_levels/Player2D/fps.gd" id="9_2f2jg"]
@@ -123,6 +131,391 @@ texture = ExtResource("1_wg46k")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_c7uih")
 
+[sub_resource type="Animation" id="Animation_bw0j5"]
+resource_name = "outro"
+length = 5.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("evelius_floating:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Camera2D:enabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0333333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Camera2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2, 3.04, 4.16, 5.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1941, -397), Vector2(1037, -397), Vector2(939.656, -397), Vector2(1190, -192), Vector2(795, -165.605)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("evelius_floating:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2, 5.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1937, -427), Vector2(1038, -427), Vector2(726, -427)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("evelius_floating/evelius_pivot/Node2D/text2:text")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2.01),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["HAHA", "trickshot"]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("evelius_floating/evelius_pivot/chronoscepter:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 2.02),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 3.12715]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("evelius_floating/evelius_pivot/chronoscepter:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 2.02),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-35, -5), Vector2(-6.71139, 26.8456)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("evelius_floating/evelius_pivot/3d_magic:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(3.03333, 4.16, 5.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(12.5058, 43.6242), Vector2(238.373, 157.718), Vector2(46.3087, 176.51)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("evelius_floating/evelius_pivot/3d_magic:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(2.03, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("leakim:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_16eqf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("evelius_floating:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Camera2D:enabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Camera2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1941, -397)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("evelius_floating:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1937, -427)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("evelius_floating/evelius_pivot/Node2D/text2:text")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["HAHA"]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("evelius_floating/evelius_pivot/chronoscepter:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("evelius_floating/evelius_pivot/chronoscepter:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-35, -5)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("evelius_floating/evelius_pivot/3d_magic:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(12.5058, 43.6242)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("evelius_floating/evelius_pivot/3d_magic:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("leakim:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yvgem"]
+_data = {
+&"RESET": SubResource("Animation_16eqf"),
+&"outro": SubResource("Animation_bw0j5")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p44oq"]
+atlas = ExtResource("3_vdthg")
+region = Rect2(0, 40, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7yq53"]
+atlas = ExtResource("3_vdthg")
+region = Rect2(40, 40, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lefud"]
+atlas = ExtResource("3_vdthg")
+region = Rect2(0, 60, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s4cxv"]
+atlas = ExtResource("3_vdthg")
+region = Rect2(40, 60, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vcx2i"]
+atlas = ExtResource("3_vdthg")
+region = Rect2(20, 40, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1vpip"]
+atlas = ExtResource("3_vdthg")
+region = Rect2(20, 60, 20, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ghmkm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p44oq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7yq53")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lefud")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s4cxv")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vcx2i")
+}],
+"loop": true,
+"name": &"still_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1vpip")
+}],
+"loop": true,
+"name": &"still_right",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xalg2"]
+atlas = ExtResource("3_la13m")
+region = Rect2(20, 0, 20, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vdthg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xalg2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nf5gd"]
+atlas = ExtResource("4_16eqf")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1bn0t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nf5gd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_ghmkm"]
+resource_name = "new_animation"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("evelius_pivot:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -6.76), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_vdthg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("evelius_pivot:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7h8t5"]
+_data = {
+&"RESET": SubResource("Animation_vdthg"),
+&"new_animation": SubResource("Animation_ghmkm")
+}
+
 [sub_resource type="Gradient" id="Gradient_wg46k"]
 colors = PackedColorArray(0.173247, 0.114451, 0, 1, 1, 1, 1, 1)
 
@@ -135,7 +528,7 @@ adjustment_enabled = true
 adjustment_color_correction = SubResource("GradientTexture2D_c7uih")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gpxfa"]
-size = Vector2(415, 20)
+size = Vector2(415, 90)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pqlkt"]
 size = Vector2(7, 1123.75)
@@ -165,9 +558,93 @@ scale = Vector2(5, 5)
 tile_map_data = PackedByteArray("AAAPAP7/AAAEAAYAAAAPAP//AAAEAAUAAAAPAAAAAAAEAAYAAAAPAAEAAAAEAAUAAAAPAAIAAAAEAAYAAAAQAP7/AAAFAAYAAAAQAP//AAAFAAUAAAAQAAAAAAAFAAYAAAAQAAEAAAAFAAUAAAAQAAIAAAAFAAYAAAAPAP3/AAAEAAUAAAAQAP3/AAAFAAUAAADv//3/AAAEAAUAAADv//7/AAAEAAYAAADw//3/AAAFAAUAAADw//7/AAAFAAYAAADt//3/AAAEAAUAAADt//7/AAAEAAYAAADu//3/AAAFAAUAAADu//7/AAAFAAYAAADr//3/AAAEAAUAAADr//7/AAAEAAYAAADs//3/AAAFAAUAAADs//7/AAAFAAYAAADq////AAAEAAUAAADq/wAAAAAEAAYAAADr////AAAFAAUAAADr/wAAAAAFAAYAAADp//3/AAAEAAUAAADp//7/AAAEAAYAAADq//3/AAAFAAUAAADq//7/AAAFAAYAAADv//v/AAAEAAUAAADv//z/AAAEAAYAAADw//v/AAAFAAUAAADw//z/AAAFAAYAAADt//v/AAAEAAUAAADt//z/AAAEAAYAAADu//v/AAAFAAUAAADu//z/AAAFAAYAAADr//v/AAAEAAUAAADr//z/AAAEAAYAAADs//v/AAAFAAUAAADs//z/AAAFAAYAAADp//v/AAAEAAUAAADp//z/AAAEAAYAAADq//v/AAAFAAUAAADq//z/AAAFAAYAAADq/wEAAAAEAAUAAADq/wIAAAAEAAYAAADr/wEAAAAFAAUAAADr/wIAAAAFAAYAAAA=")
 tile_set = SubResource("TileSet_pqlkt")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1941, -397)
+enabled = false
+zoom = Vector2(2.035, 2.035)
+
 [node name="player_topdown" parent="." instance=ExtResource("2_guxk4")]
-position = Vector2(-1534, 69)
+position = Vector2(-1519, 56)
 scale = Vector2(5, 5)
+
+[node name="outro" type="Node" parent="."]
+
+[node name="outro_anim" type="AnimationPlayer" parent="outro"]
+libraries = {
+&"": SubResource("AnimationLibrary_yvgem")
+}
+
+[node name="leakim" type="AnimatedSprite2D" parent="outro"]
+visible = false
+texture_filter = 1
+position = Vector2(749, -153)
+scale = Vector2(4.78, 4.78)
+sprite_frames = SubResource("SpriteFrames_ghmkm")
+animation = &"still_left"
+
+[node name="evelius_floating" type="Node2D" parent="outro"]
+visible = false
+position = Vector2(1937, -427)
+scale = Vector2(1.49, 1.49)
+script = ExtResource("3_16eqf")
+
+[node name="evelius_pivot" type="Node2D" parent="outro/evelius_floating"]
+
+[node name="Node2D" type="Node2D" parent="outro/evelius_floating/evelius_pivot"]
+position = Vector2(-2698.66, 361.745)
+scale = Vector2(0.436, 0.436)
+
+[node name="Buuuble" type="Sprite2D" parent="outro/evelius_floating/evelius_pivot/Node2D"]
+texture_filter = 1
+position = Vector2(6348.13, -885.106)
+scale = Vector2(5.62672, 5.62672)
+texture = ExtResource("4_yvgem")
+flip_h = true
+
+[node name="text2" type="Label" parent="outro/evelius_floating/evelius_pivot/Node2D"]
+texture_filter = 1
+offset_left = 6223.45
+offset_top = -942.06
+offset_right = 8223.45
+offset_bottom = -205.06
+scale = Vector2(0.125, 0.125)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_vdthg")
+theme_override_font_sizes/font_size = 151
+text = "HAHA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="evelius" type="AnimatedSprite2D" parent="outro/evelius_floating/evelius_pivot"]
+texture_filter = 1
+scale = Vector2(3.39, 3.39)
+sprite_frames = SubResource("SpriteFrames_vdthg")
+
+[node name="toblertwo" type="AnimatedSprite2D" parent="outro/evelius_floating/evelius_pivot"]
+texture_filter = 1
+position = Vector2(0, 58)
+rotation = 3.14159
+scale = Vector2(3.39, 3.39)
+sprite_frames = SubResource("SpriteFrames_1bn0t")
+
+[node name="chronoscepter" type="Sprite2D" parent="outro/evelius_floating/evelius_pivot"]
+texture_filter = 1
+position = Vector2(-35, -5)
+scale = Vector2(2.145, 2.145)
+texture = ExtResource("5_bw0j5")
+
+[node name="3d_magic" type="Sprite2D" parent="outro/evelius_floating/evelius_pivot"]
+modulate = Color(1, 1, 1, 0)
+texture_filter = 1
+position = Vector2(12.5058, 43.6242)
+scale = Vector2(1.375, 1.375)
+texture = ExtResource("6_yvgem")
+
+[node name="floating" type="AnimationPlayer" parent="outro/evelius_floating/evelius_pivot"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_7h8t5")
+}
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_guxk4")
@@ -177,20 +654,17 @@ position = Vector2(738, -155)
 script = ExtResource("3_guxk4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(14, -18)
+position = Vector2(14, 17)
 shape = SubResource("RectangleShape2D_gpxfa")
 
 [node name="tobertwo" parent="." instance=ExtResource("4_gpxfa")]
 position = Vector2(-379, -24)
-scale = Vector2(5, 5)
 
 [node name="tobertwo2" parent="." instance=ExtResource("4_gpxfa")]
 position = Vector2(114, 130)
-scale = Vector2(5, 5)
 
 [node name="tobertwo3" parent="." instance=ExtResource("4_gpxfa")]
 position = Vector2(808, -38)
-scale = Vector2(5, 5)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 process_mode = 4
@@ -317,4 +791,6 @@ theme_override_font_sizes/font_size = 41
 text = "FPS:"
 script = ExtResource("9_2f2jg")
 
+[connection signal="animation_finished" from="outro/outro_anim" to="Area2D" method="_on_outro_anim_animation_finished"]
+[connection signal="animation_finished" from="outro/evelius_floating/evelius_pivot/floating" to="outro/evelius_floating" method="_on_floating_animation_finished"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

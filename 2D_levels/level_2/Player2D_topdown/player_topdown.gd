@@ -76,6 +76,9 @@ func _physics_process(delta: float) -> void:
 			can_take_damage = true
 			anim.set_modulate(Color(1,1,1,1))
 			damage_timer = 0.0
+	if canvas_layer.get_node("elim_scene").done:
+		get_tree().reload_current_scene()
+		print("RELOADING")
 
 func launcher_rotation():
 	var rot = launcher_pivot.rotation_degrees
@@ -96,8 +99,6 @@ func take_damage():
 		if health <= 0:
 			canvas_layer.visible = true
 			canvas_layer.process_mode = Node.PROCESS_MODE_ALWAYS
-			if canvas_layer.get_node("elim_scene").done:
-				get_tree().reload_current_scene()
 	
 
 func state_machine():

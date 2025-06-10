@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=4 uid="uid://bqjnc8i53gnqk"]
+[gd_scene load_steps=46 format=4 uid="uid://bqjnc8i53gnqk"]
 
 [ext_resource type="Texture2D" uid="uid://drd4sxov2x8e3" path="res://2D_levels/level_2/assets/tile_map/tilemaptd1.png" id="1_svps0"]
 [ext_resource type="Script" uid="uid://c4xav3n1intg1" path="res://2D_levels/level_3/lvl_3_2d.gd" id="1_ujx0b"]
@@ -21,6 +21,7 @@
 [ext_resource type="Script" uid="uid://lljku4eo3lxo" path="res://2D_levels/level_1/game_manager.gd" id="14_bftwv"]
 [ext_resource type="PackedScene" uid="uid://bpmq6uacs60yv" path="res://2D_levels/level_2/elim_scene/elim_scene.tscn" id="17_sy0cr"]
 [ext_resource type="Script" uid="uid://cr0yo1p1kllj0" path="res://2D_levels/level_1/fps.gd" id="20_ny3qd"]
+[ext_resource type="AudioStream" uid="uid://b3cc2820s8ik7" path="res://music/Bach-Toccata.ogg" id="22_gva4y"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_j3w6d"]
 
@@ -96,6 +97,21 @@ texture = ExtResource("1_svps0")
 12:4/0 = 0
 12:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 9:5/0 = 0
+14:14/0 = 0
+14:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+14:15/0 = 0
+14:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+15:14/0 = 0
+12:15/0 = 0
+12:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+12:14/0 = 0
+12:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+13:14/0 = 0
+11:14/0 = 0
+10:14/0 = 0
+10:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+10:15/0 = 0
+10:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_g3wfo"]
 physics_layer_0/collision_layer = 3
@@ -165,8 +181,11 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j3w6d"]
 size = Vector2(149.893, 139.309)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_j3w6d"]
-radius = 28.9788
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gva4y"]
+size = Vector2(39.9925, 79.9922)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0slso"]
+size = Vector2(42.0063, 81.9989)
 
 [sub_resource type="Curve2D" id="Curve2D_tyoke"]
 _data = {
@@ -352,7 +371,7 @@ collision_enabled = false
 z_index = -1
 texture_filter = 1
 scale = Vector2(5.765, 5.765)
-tile_map_data = PackedByteArray("AAD8/wUAAAAMAAQAAAD8/wYAAAAMAAQAAAD8/wcAAAANAAEAAAD6/wUAAAAMAAQAAAD5/wUAAAAMAAQAAAD4/wUAAAAMAAQAAAD3/wUAAAAMAAQAAAD2/wUAAAAMAAQAAAD7/wcAAAANAAEAAAD6/wcAAAANAAEAAAD5/wcAAAANAAEAAAD4/wcAAAANAAEAAAD3/wcAAAANAAEAAAD2/wcAAAANAAEAAAD1/wcAAAANAAEAAAD0/wcAAAANAAEAAAD0/wYAAAAMAAQAAAD0/wUAAAAMAAQAAADz/wUAAAAMAAQAAADy/wUAAAAMAAQAAADx/wUAAAAMAAQAAADw/wUAAAAMAAQAAADu/wUAAAAMAAQAAADz/wcAAAANAAEAAADy/wcAAAANAAEAAADx/wcAAAANAAEAAADw/wcAAAANAAEAAADv/wcAAAANAAEAAADu/wcAAAANAAEAAADt/wcAAAANAAEAAADs/wcAAAANAAEAAADs/wYAAAANAAEAAADs/wUAAAANAAEAAADs/wQAAAANAAEAAADs/wMAAAANAAEAAADs/wIAAAANAAEAAAD+/wcAAAANAAEAAAD+/wYAAAANAAEAAAD+/wUAAAANAAEAAAD+/wQAAAANAAEAAAD+/wMAAAANAAEAAAD+/wIAAAANAAEAAAD+/wEAAAANAAEAAAD+/wAAAAANAAEAAADu/wMAAAAMAAQAAADv/wMAAAAMAAQAAADw/wMAAAAMAAQAAADx/wMAAAAMAAQAAADy/wMAAAAMAAQAAADz/wMAAAAMAAQAAAD0/wMAAAAMAAQAAAD1/wMAAAAMAAQAAAD2/wMAAAAMAAQAAAD4/wMAAAAMAAQAAAD5/wMAAAAMAAQAAAD6/wMAAAAMAAQAAAD7/wMAAAAMAAQAAAD8/wMAAAAMAAQAAAD+////AAANAAEAAAD9////AAAMAAQAAAD8////AAAMAAQAAAD6////AAAMAAQAAAD5////AAAMAAQAAAD4////AAAMAAQAAAD3////AAAMAAQAAAD2////AAAMAAQAAADv////AAAMAAQAAADu////AAAMAAQAAADs////AAANAAEAAADs/wAAAAANAAEAAADs/wEAAAANAAEAAADv/wAAAAAMAAQAAADv/wEAAAAMAAQAAADu/wEAAAAMAAQAAADs//7/AAANAAEAAADs//3/AAANAAEAAADt//3/AAAMAAQAAADu//3/AAAMAAQAAADv//3/AAAMAAQAAADw//3/AAAMAAQAAADx//3/AAAMAAQAAADy//3/AAAMAAQAAADy//z/AAAMAAQAAADs//z/AAANAAEAAADs//v/AAANAAEAAADs//r/AAANAAEAAADs//n/AAANAAEAAADs//j/AAANAAEAAADs//f/AAANAAEAAADs//b/AAANAAEAAAD+//7/AAANAAEAAAD+//3/AAANAAEAAAD+//z/AAANAAEAAAD+//v/AAANAAEAAAD+//r/AAANAAEAAAD+//n/AAANAAEAAAD+//b/AAANAAEAAAD8//b/AAANAAEAAAD6//b/AAANAAEAAAD7//b/AAANAAEAAAD8//3/AAAMAAQAAAD5//b/AAANAAEAAAD4//b/AAANAAEAAAD3//b/AAANAAEAAAD2//b/AAANAAEAAAD1//b/AAANAAEAAAD0////AAAMAAQAAAD0//7/AAAMAAQAAAD0//3/AAAMAAQAAAD0//z/AAAMAAQAAAD0//b/AAANAAEAAADz//b/AAANAAEAAADy//b/AAANAAEAAADx//b/AAANAAEAAADw//b/AAANAAEAAADu//b/AAANAAEAAADt//b/AAANAAEAAAD9/wMAAAAMAAQAAAD5/wEAAAAMAAQAAAD6/wEAAAAMAAQAAAD7/wEAAAAMAAQAAAD8/wEAAAAMAAQAAAD2/wIAAAAMAAQAAAD8//7/AAAMAAQAAAD6//7/AAAMAAQAAAD8//z/AAAMAAQAAAD9//z/AAAMAAQAAAD9//3/AAAMAAQAAAD9//7/AAAMAAQAAAD5//3/AAAMAAQAAAD5//z/AAAMAAQAAAD5//7/AAAMAAQAAAD6//z/AAAMAAQAAAD2/wAAAAAMAAQAAAD1/wAAAAAMAAQAAAD0/wAAAAAMAAQAAADw/wEAAAAMAAQAAADx/wEAAAAMAAQAAADy/wEAAAAMAAQAAAD9//b/AAANAAEAAADy//v/AAAMAAQAAADw//z/AAAMAAQAAADw//n/AAAMAAQAAADx//n/AAAMAAQAAADy//n/AAAMAAQAAADz//n/AAAMAAQAAADw//v/AAAMAAQAAADu//v/AAAMAAQAAADu//n/AAAMAAQAAADv//n/AAAMAAQAAAD0//n/AAAMAAQAAAD0//r/AAAMAAQAAADt//f/AAAMAAQAAADu//f/AAAMAAQAAADw//f/AAAMAAQAAADy//j/AAAMAAQAAADz//j/AAAMAAQAAAD0//j/AAAMAAQAAAD6//r/AAAMAAQAAAD7//r/AAAMAAQAAAD2//f/AAAMAAQAAAD2//j/AAAMAAQAAAD2//n/AAAMAAQAAAD3//n/AAAMAAQAAAD4//n/AAAMAAQAAAD5//n/AAAMAAQAAAD5//r/AAAMAAQAAAD5//f/AAAMAAQAAAD3//f/AAAMAAQAAAD4//f/AAAMAAQAAAD9//r/AAAMAAQAAAD6//f/AAAMAAQAAAD6//n/AAAMAAQAAAD2//v/AAAMAAQAAAD2//z/AAAMAAQAAAD2//3/AAAMAAQAAAD1////AAAMAAQAAAD4//z/AAAMAAQAAAD4//r/AAAMAAQAAAD+//j/AAANAAEAAAD+//f/AAANAAEAAADv//b/AAAMAAQAAAA=")
+tile_map_data = PackedByteArray("AAD8/wUAAAAMAAQAAAD8/wYAAAAMAAQAAAD8/wcAAAANAAEAAAD6/wUAAAAMAAQAAAD5/wUAAAAMAAQAAAD4/wUAAAAMAAQAAAD3/wUAAAAMAAQAAAD2/wUAAAAMAAQAAAD7/wcAAAANAAEAAAD6/wcAAAANAAEAAAD5/wcAAAANAAEAAAD4/wcAAAANAAEAAAD3/wcAAAANAAEAAAD2/wcAAAANAAEAAAD1/wcAAAANAAEAAAD0/wcAAAAOAA8AAAD0/wYAAAAOAA4AAAD0/wUAAAAOAA4AAADz/wUAAAAOAA4AAADy/wUAAAAOAA4AAADx/wUAAAAOAA4AAADw/wUAAAAOAA4AAADu/wUAAAAOAA4AAADz/wcAAAAOAA8AAADy/wcAAAAOAA8AAADx/wcAAAAOAA8AAADw/wcAAAAOAA8AAADv/wcAAAAOAA8AAADu/wcAAAAOAA8AAADt/wcAAAAOAA8AAADs/wcAAAAOAA8AAADs/wYAAAAOAA8AAADs/wUAAAAOAA8AAADs/wQAAAAOAA8AAADs/wMAAAAOAA8AAADs/wIAAAAOAA8AAAD+/wcAAAANAAEAAAD+/wYAAAANAAEAAAD+/wUAAAANAAEAAAD+/wQAAAANAAEAAAD+/wMAAAANAAEAAAD+/wIAAAANAAEAAAD+/wEAAAANAAEAAAD+/wAAAAANAAEAAADu/wMAAAAOAA4AAADv/wMAAAAOAA4AAADw/wMAAAAOAA4AAADx/wMAAAAOAA4AAADy/wMAAAAOAA4AAADz/wMAAAAOAA4AAAD0/wMAAAAMAAQAAAD1/wMAAAAMAAQAAAD2/wMAAAAMAAQAAAD4/wMAAAAMAAQAAAD5/wMAAAAMAAQAAAD6/wMAAAAMAAQAAAD7/wMAAAAMAAQAAAD8/wMAAAAMAAQAAAD+////AAAMAA8AAAD9////AAAMAA4AAAD8////AAAMAA4AAAD6////AAAMAA4AAAD5////AAAMAA4AAAD4////AAAMAA4AAAD3////AAAMAA4AAAD2////AAAMAA4AAADv////AAAOAA4AAADu////AAAOAA4AAADs////AAAOAA8AAADs/wAAAAAOAA8AAADs/wEAAAAOAA8AAADv/wAAAAAOAA4AAADv/wEAAAAOAA4AAADu/wEAAAAOAA4AAADs//7/AAAKAA8AAADs//3/AAAKAA8AAADt//3/AAAKAA4AAADu//3/AAAKAA4AAADv//3/AAAKAA4AAADw//3/AAAKAA4AAADx//3/AAAKAA4AAADy//3/AAAKAA4AAADy//z/AAAKAA4AAADs//z/AAAKAA8AAADs//v/AAAKAA8AAADs//r/AAAKAA8AAADs//n/AAAKAA8AAADs//j/AAAKAA8AAADs//f/AAAKAA8AAADs//b/AAAKAA8AAAD+//7/AAAMAA8AAAD+//3/AAAMAA8AAAD+//z/AAAMAA8AAAD+//v/AAAMAA8AAAD+//r/AAAMAA8AAAD+//n/AAAMAA8AAAD+//b/AAAMAA8AAAD8//b/AAAMAA8AAAD6//b/AAAMAA8AAAD7//b/AAAMAA8AAAD8//3/AAAMAA4AAAD5//b/AAAMAA8AAAD4//b/AAAMAA8AAAD3//b/AAAMAA8AAAD2//b/AAAKAA8AAAD1//b/AAAKAA8AAAD0////AAAKAA4AAAD0//7/AAAKAA4AAAD0//3/AAAKAA4AAAD0//z/AAAKAA4AAAD0//b/AAAKAA8AAADz//b/AAAKAA8AAADy//b/AAAKAA8AAADx//b/AAAKAA8AAADw//b/AAAKAA8AAADu//b/AAAKAA8AAADt//b/AAAKAA8AAAD9/wMAAAAMAAQAAAD5/wEAAAAMAAQAAAD6/wEAAAAMAAQAAAD7/wEAAAAMAAQAAAD8/wEAAAAMAAQAAAD2/wIAAAAMAAQAAAD8//7/AAAMAA4AAAD6//7/AAAMAA4AAAD8//z/AAAMAA4AAAD9//z/AAAMAA4AAAD9//3/AAAMAA4AAAD9//7/AAAMAA4AAAD5//3/AAAMAA4AAAD5//z/AAAMAA4AAAD5//7/AAAMAA4AAAD6//z/AAAMAA4AAAD2/wAAAAAMAAQAAAD1/wAAAAAMAAQAAAD0/wAAAAAMAAQAAADw/wEAAAAOAA4AAADx/wEAAAAOAA4AAADy/wEAAAAOAA4AAAD9//b/AAAMAA8AAADy//v/AAAKAA4AAADw//z/AAAKAA4AAADw//n/AAAKAA4AAADx//n/AAAKAA4AAADy//n/AAAKAA4AAADz//n/AAAKAA4AAADw//v/AAAKAA4AAADu//v/AAAKAA4AAADu//n/AAAKAA4AAADv//n/AAAKAA4AAAD0//n/AAAKAA4AAAD0//r/AAAKAA4AAADt//f/AAAKAA4AAADu//f/AAAKAA4AAADw//f/AAAKAA4AAADy//j/AAAKAA4AAADz//j/AAAKAA4AAAD0//j/AAAKAA4AAAD6//r/AAAMAA4AAAD7//r/AAAMAA4AAAD2//f/AAAKAA4AAAD2//j/AAAKAA4AAAD2//n/AAAKAA4AAAD3//n/AAAMAA4AAAD4//n/AAAMAA4AAAD5//n/AAAMAA4AAAD5//r/AAAMAA4AAAD5//f/AAAMAA4AAAD3//f/AAAMAA4AAAD4//f/AAAMAA4AAAD9//r/AAAMAA4AAAD6//f/AAAMAA4AAAD6//n/AAAMAA4AAAD2//v/AAAKAA4AAAD2//z/AAAKAA4AAAD2//3/AAAMAA4AAAD1////AAAMAA4AAAD4//z/AAAMAA4AAAD4//r/AAAMAA4AAAD+//j/AAAMAA8AAAD+//f/AAAMAA8AAADv//b/AAAMAAQAAADt/wAAAAAPAA4AAADt/wEAAAAPAA4AAADt/wIAAAAPAA4AAADu/wIAAAAPAA4AAADv/wIAAAAPAA4AAADw/wIAAAAPAA4AAADx/wIAAAAPAA4AAADt/wMAAAAPAA4AAADt/wQAAAAPAA4AAADt/wUAAAAPAA4AAADt/wYAAAAPAA4AAADu/wYAAAAPAA4AAADv/wYAAAAPAA4AAADv/wUAAAAPAA4AAADv/wQAAAAPAA4AAADu/wQAAAAPAA4AAADw/wYAAAAPAA4AAADx/wYAAAAPAA4AAADy/wYAAAAPAA4AAADz/wYAAAAPAA4AAADx/wQAAAAPAA4AAADw/wQAAAAPAA4AAADy/wQAAAAPAA4AAADz/wQAAAAPAA4AAADy/wIAAAAPAA4AAADz/wIAAAAPAA4AAADz/wEAAAAPAA4AAADz/wAAAAAPAA4AAADy/wAAAAAPAA4AAADx/wAAAAAPAA4AAADw/wAAAAAPAA4AAADu/wAAAAAPAA4AAADt////AAAPAA4AAADt//7/AAAPAA4AAADu//7/AAAPAA4AAADv//7/AAAPAA4AAADw////AAAPAA4AAADw//7/AAAPAA4AAADx////AAALAA4AAAD0//v/AAALAA4AAAD1//v/AAALAA4AAAD1//r/AAALAA4AAAD1//n/AAALAA4AAAD1//j/AAALAA4AAAD1//f/AAALAA4AAAD2//r/AAALAA4AAAD3//r/AAANAA4AAAD3//v/AAANAA4AAAD3//z/AAANAA4AAAD3//3/AAANAA4AAAD3//7/AAANAA4AAAD4//7/AAANAA4AAAD4//3/AAANAA4AAAD2//7/AAANAA4AAAD1//7/AAANAA4AAAD1//3/AAANAA4AAAD1//z/AAALAA4AAAD4//v/AAANAA4AAAD5//v/AAANAA4AAAD6//v/AAANAA4AAAD7//v/AAANAA4AAAD8//v/AAANAA4AAAD9//v/AAANAA4AAAD7//z/AAANAA4AAAD7//3/AAANAA4AAAD7//7/AAANAA4AAAD7////AAANAA4AAAD8//r/AAANAA4AAAD8//n/AAANAA4AAAD7//n/AAANAA4AAAD9//n/AAANAA4AAAD9//j/AAANAA4AAAD9//f/AAANAA4AAAD8//f/AAANAA4AAAD7//f/AAANAA4AAAD7//j/AAANAA4AAAD6//j/AAANAA4AAAD5//j/AAANAA4AAAD4//j/AAANAA4AAAD3//j/AAANAA4AAAD8//j/AAANAA4AAADz////AAALAA4AAADy////AAALAA4AAADy//7/AAALAA4AAADx//7/AAALAA4AAADz//7/AAALAA4AAADz//3/AAALAA4AAADz//z/AAALAA4AAADz//v/AAALAA4AAADz//r/AAALAA4AAADy//r/AAALAA4AAADx//r/AAALAA4AAADx//v/AAALAA4AAADx//z/AAALAA4AAADw//r/AAALAA4AAADv//r/AAALAA4AAADv//v/AAALAA4AAADv//z/AAALAA4AAADu//z/AAALAA4AAADt//z/AAALAA4AAADt//v/AAALAA4AAADt//r/AAALAA4AAADu//r/AAALAA4AAADt//n/AAALAA4AAADt//j/AAALAA4AAADu//j/AAALAA4AAADv//j/AAALAA4AAADv//f/AAALAA4AAADw//j/AAALAA4AAADx//j/AAALAA4AAADx//f/AAALAA4AAADy//f/AAALAA4AAADz//f/AAALAA4AAAD0//f/AAALAA4AAAD6//3/AAANAA4AAAA=")
 tile_set = SubResource("TileSet_g3wfo")
 
 [node name="crates" type="Node2D" parent="maze"]
@@ -427,9 +446,12 @@ rotates = false
 script = ExtResource("11_dtmvc")
 
 [node name="larrybo" type="CharacterBody2D" parent="enemies/patrolling_en/Path2D/PathFollow2D"]
+collision_layer = 0
+collision_mask = 4
 script = ExtResource("11_j3w6d")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="enemies/patrolling_en/Path2D/PathFollow2D/larrybo"]
+modulate = Color(1, 1, 1, 0.654902)
 texture_filter = 1
 position = Vector2(-2, -0.00720215)
 scale = Vector2(5, 5)
@@ -443,10 +465,16 @@ position = Vector2(3.04987, -0.341248)
 shape = SubResource("RectangleShape2D_j3w6d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/patrolling_en/Path2D/PathFollow2D/larrybo"]
-position = Vector2(-0.999994, -0.00358367)
-shape = SubResource("CircleShape2D_j3w6d")
+position = Vector2(-1.95667, -0.00360107)
+shape = SubResource("RectangleShape2D_gva4y")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="enemies/patrolling_en/Path2D/PathFollow2D/larrybo"]
+
+[node name="attack_area" type="Area2D" parent="enemies/patrolling_en/Path2D/PathFollow2D/larrybo"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/patrolling_en/Path2D/PathFollow2D/larrybo/attack_area"]
+position = Vector2(-1.99951, -0.00750732)
+shape = SubResource("RectangleShape2D_0slso")
 
 [node name="patrolling_en2" type="Node2D" parent="enemies"]
 
@@ -460,11 +488,12 @@ rotates = false
 script = ExtResource("11_dtmvc")
 
 [node name="larrybo" type="CharacterBody2D" parent="enemies/patrolling_en2/Path2D/PathFollow2D"]
-collision_layer = 3
-collision_mask = 3
+collision_layer = 0
+collision_mask = 4
 script = ExtResource("11_j3w6d")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="enemies/patrolling_en2/Path2D/PathFollow2D/larrybo"]
+modulate = Color(1, 1, 1, 0.654902)
 texture_filter = 1
 position = Vector2(-2, -0.00720215)
 scale = Vector2(5, 5)
@@ -474,14 +503,20 @@ animation = &"right_side"
 [node name="Area2D" type="Area2D" parent="enemies/patrolling_en2/Path2D/PathFollow2D/larrybo"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/patrolling_en2/Path2D/PathFollow2D/larrybo/Area2D"]
-position = Vector2(3.0495, -0.341248)
+position = Vector2(3.04987, -0.341248)
 shape = SubResource("RectangleShape2D_j3w6d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/patrolling_en2/Path2D/PathFollow2D/larrybo"]
-position = Vector2(-0.999994, -0.00358367)
-shape = SubResource("CircleShape2D_j3w6d")
+position = Vector2(-1.95667, -0.00360107)
+shape = SubResource("RectangleShape2D_gva4y")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="enemies/patrolling_en2/Path2D/PathFollow2D/larrybo"]
+
+[node name="attack_area" type="Area2D" parent="enemies/patrolling_en2/Path2D/PathFollow2D/larrybo"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/patrolling_en2/Path2D/PathFollow2D/larrybo/attack_area"]
+position = Vector2(-1.99951, -0.00750732)
+shape = SubResource("RectangleShape2D_0slso")
 
 [node name="patrolling_en4" type="Node2D" parent="enemies"]
 
@@ -496,11 +531,12 @@ rotates = false
 script = ExtResource("11_dtmvc")
 
 [node name="larrybo" type="CharacterBody2D" parent="enemies/patrolling_en4/Path2D/PathFollow2D"]
-collision_layer = 3
-collision_mask = 3
+collision_layer = 0
+collision_mask = 4
 script = ExtResource("11_j3w6d")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="enemies/patrolling_en4/Path2D/PathFollow2D/larrybo"]
+modulate = Color(1, 1, 1, 0.654902)
 texture_filter = 1
 position = Vector2(-2, -0.00720215)
 scale = Vector2(5, 5)
@@ -510,14 +546,20 @@ animation = &"right_side"
 [node name="Area2D" type="Area2D" parent="enemies/patrolling_en4/Path2D/PathFollow2D/larrybo"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/patrolling_en4/Path2D/PathFollow2D/larrybo/Area2D"]
-position = Vector2(3.0495, -0.341248)
+position = Vector2(3.04987, -0.341248)
 shape = SubResource("RectangleShape2D_j3w6d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/patrolling_en4/Path2D/PathFollow2D/larrybo"]
-position = Vector2(-0.999994, -0.00358367)
-shape = SubResource("CircleShape2D_j3w6d")
+position = Vector2(-1.95667, -0.00360107)
+shape = SubResource("RectangleShape2D_gva4y")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="enemies/patrolling_en4/Path2D/PathFollow2D/larrybo"]
+
+[node name="attack_area" type="Area2D" parent="enemies/patrolling_en4/Path2D/PathFollow2D/larrybo"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/patrolling_en4/Path2D/PathFollow2D/larrybo/attack_area"]
+position = Vector2(-1.99951, -0.00750732)
+shape = SubResource("RectangleShape2D_0slso")
 
 [node name="patrolling_en5" type="Node2D" parent="enemies"]
 
@@ -532,11 +574,12 @@ rotates = false
 script = ExtResource("11_dtmvc")
 
 [node name="larrybo" type="CharacterBody2D" parent="enemies/patrolling_en5/Path2D/PathFollow2D"]
-collision_layer = 3
-collision_mask = 3
+collision_layer = 0
+collision_mask = 4
 script = ExtResource("11_j3w6d")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="enemies/patrolling_en5/Path2D/PathFollow2D/larrybo"]
+modulate = Color(1, 1, 1, 0.654902)
 texture_filter = 1
 position = Vector2(-2, -0.00720215)
 scale = Vector2(5, 5)
@@ -546,19 +589,25 @@ animation = &"right_side"
 [node name="Area2D" type="Area2D" parent="enemies/patrolling_en5/Path2D/PathFollow2D/larrybo"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/patrolling_en5/Path2D/PathFollow2D/larrybo/Area2D"]
-position = Vector2(3.0495, -0.341248)
+position = Vector2(3.04987, -0.341248)
 shape = SubResource("RectangleShape2D_j3w6d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/patrolling_en5/Path2D/PathFollow2D/larrybo"]
-position = Vector2(-0.999994, -0.00358367)
-shape = SubResource("CircleShape2D_j3w6d")
+position = Vector2(-1.95667, -0.00360107)
+shape = SubResource("RectangleShape2D_gva4y")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="enemies/patrolling_en5/Path2D/PathFollow2D/larrybo"]
+
+[node name="attack_area" type="Area2D" parent="enemies/patrolling_en5/Path2D/PathFollow2D/larrybo"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/patrolling_en5/Path2D/PathFollow2D/larrybo/attack_area"]
+position = Vector2(-1.99951, -0.00750732)
+shape = SubResource("RectangleShape2D_0slso")
 
 [node name="player_topdown" parent="." instance=ExtResource("2_uleqd")]
 position = Vector2(-227, 682)
 scale = Vector2(5, 5)
-collision_layer = 3
+collision_layer = 7
 collision_mask = 3
 
 [node name="PointLight2D" type="PointLight2D" parent="player_topdown"]
@@ -672,8 +721,15 @@ theme_override_font_sizes/font_size = 41
 text = "FPS:"
 script = ExtResource("4_ujx0b")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_gva4y")
+
 [connection signal="timeout" from="CanvasLayer2/escape_popup/Timer" to="CanvasLayer2/escape_popup" method="_on_timer_timeout"]
 [connection signal="body_entered" from="enemies/patrolling_en/Path2D/PathFollow2D/larrybo/Area2D" to="enemies/patrolling_en/Path2D/PathFollow2D/larrybo" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="enemies/patrolling_en/Path2D/PathFollow2D/larrybo/attack_area" to="enemies/patrolling_en/Path2D/PathFollow2D/larrybo" method="_on_attack_area_body_entered"]
 [connection signal="body_entered" from="enemies/patrolling_en2/Path2D/PathFollow2D/larrybo/Area2D" to="enemies/patrolling_en2/Path2D/PathFollow2D/larrybo" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="enemies/patrolling_en2/Path2D/PathFollow2D/larrybo/attack_area" to="enemies/patrolling_en2/Path2D/PathFollow2D/larrybo" method="_on_attack_area_body_entered"]
 [connection signal="body_entered" from="enemies/patrolling_en4/Path2D/PathFollow2D/larrybo/Area2D" to="enemies/patrolling_en4/Path2D/PathFollow2D/larrybo" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="enemies/patrolling_en4/Path2D/PathFollow2D/larrybo/attack_area" to="enemies/patrolling_en4/Path2D/PathFollow2D/larrybo" method="_on_attack_area_body_entered"]
 [connection signal="body_entered" from="enemies/patrolling_en5/Path2D/PathFollow2D/larrybo/Area2D" to="enemies/patrolling_en5/Path2D/PathFollow2D/larrybo" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="enemies/patrolling_en5/Path2D/PathFollow2D/larrybo/attack_area" to="enemies/patrolling_en5/Path2D/PathFollow2D/larrybo" method="_on_attack_area_body_entered"]

@@ -1,5 +1,4 @@
 extends Area3D
-@onready var launch_player: CharacterBody3D = $"../../../launch_player"
 
 
 # Called when the node enters the scene tree for the first time.
@@ -13,6 +12,5 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node3D) -> void:
-	if body.name == "launch_player":
-		launch_player.take_damage(100)
-		print("lava die")
+	if body.name == "Player":
+		get_tree().change_scene_to_file.call_deferred("res://mixed_levels/endboss/endboss_1.tscn")

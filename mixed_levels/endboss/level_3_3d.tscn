@@ -1,23 +1,26 @@
-[gd_scene load_steps=33 format=3 uid="uid://bilmxsoacd24r"]
+[gd_scene load_steps=37 format=3 uid="uid://bilmxsoacd24r"]
 
-[ext_resource type="PackedScene" uid="uid://bnp7vdu3nrbe8" path="res://menus/pause_menu.tscn" id="1_1dhyw"]
-[ext_resource type="Script" uid="uid://mvotmqlsvjqe" path="res://3D_levels/level_3/level_3_3d.gd" id="1_n6v2l"]
-[ext_resource type="Script" uid="uid://c5supflvg18iy" path="res://3D_levels/level_3/lives_manager.gd" id="2_jh1mb"]
-[ext_resource type="PackedScene" uid="uid://bpmq6uacs60yv" path="res://2D_levels/level_2/elim_scene/elim_scene.tscn" id="2_qoidk"]
-[ext_resource type="PackedScene" uid="uid://cj7d18ek4ria6" path="res://3D_levels/Player3D/character_body_3d.tscn" id="3_b82s5"]
-[ext_resource type="Texture2D" uid="uid://clbutouj7ccjo" path="res://2D_levels/level_1/assets/UI/heart.png" id="3_c0jbu"]
-[ext_resource type="PackedScene" uid="uid://bq67fcnbkrbwb" path="res://3D_levels/level_3/assets/env/wall_2.tscn" id="4_5xwyq"]
-[ext_resource type="Texture2D" uid="uid://bn18yxl6dcmmu" path="res://3D_levels/level_1/assets/bridge/materials/rocky_terrain_diff_1k.jpg" id="5_5xwyq"]
-[ext_resource type="Texture2D" uid="uid://df5uqri58pjnt" path="res://3D_levels/level_1/assets/bridge/materials/rocky_terrain_nor_gl_1k.jpg" id="6_oh7ax"]
-[ext_resource type="Texture2D" uid="uid://bsuaof7o8fr32" path="res://3D_levels/level_1/assets/castle/materials/castle_wall_slates_diff_1k.jpg" id="8_tp8k4"]
-[ext_resource type="PackedScene" uid="uid://bpciitjqt6cct" path="res://3D_levels/level_3/enemies/mitzi.tscn" id="9_8ddrv"]
-[ext_resource type="Script" uid="uid://djaup6jp5wq1q" path="res://3D_levels/level_3/mitzi_1.gd" id="9_nmhoi"]
-[ext_resource type="Texture2D" uid="uid://c8n7rx0rslbmi" path="res://3D_levels/level_1/assets/castle/materials/castle_wall_slates_nor_gl_1k.jpg" id="9_pwwvo"]
-[ext_resource type="Script" uid="uid://dxku6kxxgfywk" path="res://3D_levels/level_3/cone_detector.gd" id="10_pwwvo"]
-[ext_resource type="Script" uid="uid://dpny48478if3d" path="res://3D_levels/level_3/red_beam.gd" id="13_10ygh"]
-[ext_resource type="Script" uid="uid://cr0yo1p1kllj0" path="res://2D_levels/level_1/fps.gd" id="13_sk4id"]
-[ext_resource type="Script" uid="uid://bb1wjhu534dq3" path="res://2D_levels/Player2D/fps.gd" id="14_ro05h"]
-[ext_resource type="PackedScene" uid="uid://b5n6ovi67qp5m" path="res://3D_levels/level_3/caught.tscn" id="15_ro05h"]
+[ext_resource type="Script" uid="uid://mvotmqlsvjqe" path="res://3D_levels/level_3/level_3_3d.gd" id="1_ljq06"]
+[ext_resource type="Script" uid="uid://c5supflvg18iy" path="res://3D_levels/level_3/lives_manager.gd" id="2_7umyc"]
+[ext_resource type="PackedScene" uid="uid://b5n6ovi67qp5m" path="res://3D_levels/level_3/caught.tscn" id="3_hrm7w"]
+[ext_resource type="Texture2D" uid="uid://clbutouj7ccjo" path="res://2D_levels/level_1/assets/UI/heart.png" id="4_fwedg"]
+[ext_resource type="PackedScene" uid="uid://bpmq6uacs60yv" path="res://2D_levels/level_2/elim_scene/elim_scene.tscn" id="5_a428l"]
+[ext_resource type="PackedScene" uid="uid://cj7d18ek4ria6" path="res://3D_levels/Player3D/character_body_3d.tscn" id="6_rt2qt"]
+[ext_resource type="PackedScene" uid="uid://bq67fcnbkrbwb" path="res://3D_levels/level_3/assets/env/wall_2.tscn" id="7_ptg34"]
+[ext_resource type="Texture2D" uid="uid://bn18yxl6dcmmu" path="res://3D_levels/level_1/assets/bridge/materials/rocky_terrain_diff_1k.jpg" id="8_jf7n8"]
+[ext_resource type="Texture2D" uid="uid://df5uqri58pjnt" path="res://3D_levels/level_1/assets/bridge/materials/rocky_terrain_nor_gl_1k.jpg" id="9_dkfr8"]
+[ext_resource type="Texture2D" uid="uid://bsuaof7o8fr32" path="res://3D_levels/level_1/assets/castle/materials/castle_wall_slates_diff_1k.jpg" id="10_4ysyc"]
+[ext_resource type="Texture2D" uid="uid://c8n7rx0rslbmi" path="res://3D_levels/level_1/assets/castle/materials/castle_wall_slates_nor_gl_1k.jpg" id="11_yis1l"]
+[ext_resource type="Script" uid="uid://dxku6kxxgfywk" path="res://3D_levels/level_3/cone_detector.gd" id="12_ksa2i"]
+[ext_resource type="PackedScene" uid="uid://ifb6pbvsjtkj" path="res://3D_levels/level_2/assets/env/wooden_door.tscn" id="13_xv6mp"]
+[ext_resource type="Script" uid="uid://dfw5wyu6l01s8" path="res://3D_levels/level_3/transition.gd" id="14_vgsxo"]
+[ext_resource type="FontFile" uid="uid://dn3yd17i4df0q" path="res://assets/fonts/OCRAEXT.TTF" id="15_7umyc"]
+[ext_resource type="Script" uid="uid://djaup6jp5wq1q" path="res://3D_levels/level_3/mitzi_1.gd" id="15_vxay1"]
+[ext_resource type="PackedScene" uid="uid://bpciitjqt6cct" path="res://3D_levels/level_3/enemies/mitzi.tscn" id="16_4quu3"]
+[ext_resource type="Script" uid="uid://dpny48478if3d" path="res://3D_levels/level_3/red_beam.gd" id="17_owj22"]
+[ext_resource type="Script" uid="uid://cr0yo1p1kllj0" path="res://2D_levels/level_1/fps.gd" id="18_5k8gv"]
+[ext_resource type="Script" uid="uid://bb1wjhu534dq3" path="res://2D_levels/Player2D/fps.gd" id="19_3kyar"]
+[ext_resource type="PackedScene" uid="uid://bnp7vdu3nrbe8" path="res://menus/pause_menu.tscn" id="20_ttujv"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_di3l7"]
 
@@ -35,9 +38,9 @@ size = Vector2(31.77, 54.04)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oh7ax"]
 albedo_color = Color(0.129558, 0.129559, 0.129558, 1)
-albedo_texture = ExtResource("5_5xwyq")
+albedo_texture = ExtResource("8_jf7n8")
 normal_enabled = true
-normal_texture = ExtResource("6_oh7ax")
+normal_texture = ExtResource("9_dkfr8")
 uv1_scale = Vector3(9.325, 7.21, 0)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_oh7ax"]
@@ -49,9 +52,9 @@ size = Vector3(20.345, 6.12, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ekoys"]
 cull_mode = 2
 albedo_color = Color(0.325441, 0.325441, 0.325441, 1)
-albedo_texture = ExtResource("8_tp8k4")
+albedo_texture = ExtResource("10_4ysyc")
 normal_enabled = true
-normal_texture = ExtResource("9_pwwvo")
+normal_texture = ExtResource("11_yis1l")
 uv1_scale = Vector3(0.055, 0.114, -0.145)
 uv1_offset = Vector3(-1.68, 2.54, -1.28)
 uv1_triplanar = true
@@ -61,6 +64,9 @@ size = Vector3(20.3474, 6.00903, 0.988678)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pif3k"]
 size = Vector3(20.3474, 6.00903, 3.08811)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r5umf"]
+size = Vector3(1.10071, 1.99951, 1.60999)
 
 [sub_resource type="Curve3D" id="Curve3D_8ddrv"]
 _data = {
@@ -89,15 +95,15 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [node name="level_3_3d" type="Node3D"]
-script = ExtResource("1_n6v2l")
+script = ExtResource("1_ljq06")
 
 [node name="LivesManager" type="Node" parent="." node_paths=PackedStringArray("hearts")]
-script = ExtResource("2_jh1mb")
+script = ExtResource("2_7umyc")
 hearts = [NodePath("../caught_screen/hearts/HBoxContainer/heart"), NodePath("../caught_screen/hearts/HBoxContainer/heart2"), NodePath("../caught_screen/hearts/HBoxContainer/heart3"), NodePath("../caught_screen/hearts/HBoxContainer/heart4"), NodePath("../caught_screen/hearts/HBoxContainer/heart5")]
 
 [node name="caught_screen" type="CanvasLayer" parent="."]
 
-[node name="caught" parent="caught_screen" instance=ExtResource("15_ro05h")]
+[node name="caught" parent="caught_screen" instance=ExtResource("3_hrm7w")]
 visible = false
 
 [node name="hearts" type="Panel" parent="caught_screen"]
@@ -129,150 +135,150 @@ alignment = 2
 texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 4
-texture = ExtResource("3_c0jbu")
+texture = ExtResource("4_fwedg")
 expand_mode = 2
 
 [node name="heart2" type="TextureRect" parent="caught_screen/hearts/HBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 4
-texture = ExtResource("3_c0jbu")
+texture = ExtResource("4_fwedg")
 expand_mode = 2
 
 [node name="heart3" type="TextureRect" parent="caught_screen/hearts/HBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 4
-texture = ExtResource("3_c0jbu")
+texture = ExtResource("4_fwedg")
 expand_mode = 2
 
 [node name="heart4" type="TextureRect" parent="caught_screen/hearts/HBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 4
-texture = ExtResource("3_c0jbu")
+texture = ExtResource("4_fwedg")
 expand_mode = 2
 
 [node name="heart5" type="TextureRect" parent="caught_screen/hearts/HBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 4
-texture = ExtResource("3_c0jbu")
+texture = ExtResource("4_fwedg")
 expand_mode = 2
 
 [node name="elim_scene2" type="CanvasLayer" parent="."]
 process_mode = 4
 visible = false
 
-[node name="elim_scene" parent="elim_scene2" instance=ExtResource("2_qoidk")]
+[node name="elim_scene" parent="elim_scene2" instance=ExtResource("5_a428l")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_b82s5")
 
-[node name="Player" parent="." instance=ExtResource("3_b82s5")]
+[node name="Player" parent="." instance=ExtResource("6_rt2qt")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 60.5949, 0.999592, -3.05605)
 
 [node name="assets" type="Node3D" parent="."]
 
 [node name="walls" type="Node3D" parent="assets"]
 
-[node name="wall2" parent="assets/walls" instance=ExtResource("4_5xwyq")]
+[node name="wall2" parent="assets/walls" instance=ExtResource("7_ptg34")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.8251, 0, 0)
 
-[node name="wall7" parent="assets/walls" instance=ExtResource("4_5xwyq")]
+[node name="wall7" parent="assets/walls" instance=ExtResource("7_ptg34")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.829, 0, 17.0675)
 
-[node name="wall8" parent="assets/walls" instance=ExtResource("4_5xwyq")]
+[node name="wall8" parent="assets/walls" instance=ExtResource("7_ptg34")]
 transform = Transform3D(0.952145, 0, -0.305645, 0, 1, 0, 0.305645, 0, 0.952145, 49.0932, 0, 22.95)
 
-[node name="wall11" parent="assets/walls" instance=ExtResource("4_5xwyq")]
+[node name="wall11" parent="assets/walls" instance=ExtResource("7_ptg34")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.2418, 0, 30.6337)
 
-[node name="wall12" parent="assets/walls" instance=ExtResource("4_5xwyq")]
+[node name="wall12" parent="assets/walls" instance=ExtResource("7_ptg34")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.6612, 0, 35.9531)
 
-[node name="wall13" parent="assets/walls" instance=ExtResource("4_5xwyq")]
+[node name="wall13" parent="assets/walls" instance=ExtResource("7_ptg34")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.478, 0, 35.953)
 
-[node name="wall29" parent="assets/walls" instance=ExtResource("4_5xwyq")]
+[node name="wall29" parent="assets/walls" instance=ExtResource("7_ptg34")]
 transform = Transform3D(0.892696, 0, -0.450659, 0, 1, 0, 0.450659, 0, 0.892696, 15.9094, 0, 32.0311)
 
-[node name="wall30" parent="assets/walls" instance=ExtResource("4_5xwyq")]
+[node name="wall30" parent="assets/walls" instance=ExtResource("7_ptg34")]
 transform = Transform3D(0.462209, 0, -0.450659, 0, 1, 0, 0.233337, 0, 0.892696, 16.9586, 0, 25.5902)
 
-[node name="wall10" parent="assets/walls" instance=ExtResource("4_5xwyq")]
+[node name="wall10" parent="assets/walls" instance=ExtResource("7_ptg34")]
 transform = Transform3D(0.914551, 0, 0.404471, 0, 1, 0, -0.404471, 0, 0.914551, 30.5528, 0, 23.8485)
 
-[node name="wall34" parent="assets/walls" instance=ExtResource("4_5xwyq")]
+[node name="wall34" parent="assets/walls" instance=ExtResource("7_ptg34")]
 transform = Transform3D(0.514239, 0, 0.404471, 0, 1, 0, -0.227428, 0, 0.914551, 17.9034, 0, 20.93)
 
-[node name="wall4" parent="assets/walls" instance=ExtResource("4_5xwyq")]
+[node name="wall4" parent="assets/walls" instance=ExtResource("7_ptg34")]
 transform = Transform3D(-3.87727e-08, 0, 1, 0, 1, 0, -0.887016, 0, -4.37114e-08, 45.15, 0, 8.587)
 
-[node name="wall9" parent="assets/walls" instance=ExtResource("4_5xwyq")]
+[node name="wall9" parent="assets/walls" instance=ExtResource("7_ptg34")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 63.263, 0, 26.8301)
 
-[node name="wall6" parent="assets/walls" instance=ExtResource("4_5xwyq")]
+[node name="wall6" parent="assets/walls" instance=ExtResource("7_ptg34")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 39.9159, 0, 9.79313)
 
-[node name="wall31" parent="assets/walls" instance=ExtResource("4_5xwyq")]
+[node name="wall31" parent="assets/walls" instance=ExtResource("7_ptg34")]
 transform = Transform3D(-4.96894e-08, 0, 1, 0, 1, 0, -1.13676, 0, -4.37114e-08, 6.95548, 0, 16.1918)
 
-[node name="wall14" parent="assets/walls" instance=ExtResource("4_5xwyq")]
+[node name="wall14" parent="assets/walls" instance=ExtResource("7_ptg34")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 39.916, 0, -10.489)
 
-[node name="wall18" parent="assets/walls" instance=ExtResource("4_5xwyq")]
+[node name="wall18" parent="assets/walls" instance=ExtResource("7_ptg34")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 19.4466, 0, -10.489)
 
-[node name="wall20" parent="assets/walls" instance=ExtResource("4_5xwyq")]
+[node name="wall20" parent="assets/walls" instance=ExtResource("7_ptg34")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 13.1915, 0, -12.5678)
 
-[node name="wall15" parent="assets/walls" instance=ExtResource("4_5xwyq")]
+[node name="wall15" parent="assets/walls" instance=ExtResource("7_ptg34")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 45.156, 0, -15.137)
 
-[node name="wall3" parent="assets/walls" instance=ExtResource("4_5xwyq")]
+[node name="wall3" parent="assets/walls" instance=ExtResource("7_ptg34")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.825, 0, -5.457)
 
-[node name="wall16" parent="assets/walls" instance=ExtResource("4_5xwyq")]
+[node name="wall16" parent="assets/walls" instance=ExtResource("7_ptg34")]
 transform = Transform3D(0.693492, 0, 0, 0, 1, 0, 0, 0, 1, 32.38, 0, -20.185)
 
-[node name="wall17" parent="assets/walls" instance=ExtResource("4_5xwyq")]
+[node name="wall17" parent="assets/walls" instance=ExtResource("7_ptg34")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.366, 0, -22.923)
 
-[node name="wall19" parent="assets/walls" instance=ExtResource("4_5xwyq")]
+[node name="wall19" parent="assets/walls" instance=ExtResource("7_ptg34")]
 transform = Transform3D(0.646307, 0, 0, 0, 1, 0, 0, 0, 1, 18.686, 0, -22.923)
 
-[node name="wall27" parent="assets/walls" instance=ExtResource("4_5xwyq")]
+[node name="wall27" parent="assets/walls" instance=ExtResource("7_ptg34")]
 transform = Transform3D(0.48728, 0, 0, 0, 1, 0, 0, 0, 1, 36.7964, 0, 6.34432)
 
-[node name="wall28" parent="assets/walls" instance=ExtResource("4_5xwyq")]
+[node name="wall28" parent="assets/walls" instance=ExtResource("7_ptg34")]
 transform = Transform3D(0.48728, 0, 0, 0, 1, 0, 0, 0, 1, 47.8875, 0, -16.2457)
 
-[node name="wall35" parent="assets/walls" instance=ExtResource("4_5xwyq")]
+[node name="wall35" parent="assets/walls" instance=ExtResource("7_ptg34")]
 transform = Transform3D(-2.38227e-08, 0, -1, 0, 1, 0, 0.545, 0, -4.37114e-08, 64.7998, 0, -2.2319)
 
-[node name="wall23" parent="assets/walls" instance=ExtResource("4_5xwyq")]
+[node name="wall23" parent="assets/walls" instance=ExtResource("7_ptg34")]
 transform = Transform3D(0.646307, 0, 0, 0, 1, 0, 0, 0, 1, 18.686, 0, 6.97479)
 
-[node name="wall21" parent="assets/walls" instance=ExtResource("4_5xwyq")]
+[node name="wall21" parent="assets/walls" instance=ExtResource("7_ptg34")]
 transform = Transform3D(0.415308, 0, 0.766213, 0, 1, 0, -0.495208, 0, 0.642587, 21.8741, 0, 2.11072)
 
-[node name="wall25" parent="assets/walls" instance=ExtResource("4_5xwyq")]
+[node name="wall25" parent="assets/walls" instance=ExtResource("7_ptg34")]
 transform = Transform3D(0.415308, 0, 0.766213, 0, 1, 0, -0.495208, 0, 0.642587, 30.2918, 0, -7.92636)
 
-[node name="wall24" parent="assets/walls" instance=ExtResource("4_5xwyq")]
+[node name="wall24" parent="assets/walls" instance=ExtResource("7_ptg34")]
 transform = Transform3D(0.415308, 0, 0.766213, 0, 1, 0, -0.495208, 0, 0.642587, 23.776, 0, -5.684)
 
-[node name="wall26" parent="assets/walls" instance=ExtResource("4_5xwyq")]
+[node name="wall26" parent="assets/walls" instance=ExtResource("7_ptg34")]
 transform = Transform3D(-0.500395, 0, 0.632895, 0, 1, 0, -0.409044, 0, -0.774238, 30.7378, 0, -15.9299)
 
-[node name="wall32" parent="assets/walls" instance=ExtResource("4_5xwyq")]
+[node name="wall32" parent="assets/walls" instance=ExtResource("7_ptg34")]
 transform = Transform3D(-0.500395, 0, 0.632895, 0, 1, 0, -0.409044, 0, -0.774238, 34.9407, 0, -3.71365)
 
-[node name="wall33" parent="assets/walls" instance=ExtResource("4_5xwyq")]
+[node name="wall33" parent="assets/walls" instance=ExtResource("7_ptg34")]
 transform = Transform3D(-0.500395, 0, 0.632895, 0, 1, 0, -0.409044, 0, -0.774238, 28.7935, 0, 18.6194)
 
-[node name="wall22" parent="assets/walls" instance=ExtResource("4_5xwyq")]
+[node name="wall22" parent="assets/walls" instance=ExtResource("7_ptg34")]
 transform = Transform3D(0.415308, 0, 0.766213, 0, 1, 0, -0.495208, 0, 0.642587, 9.05456, 0, 2.31529)
 
 [node name="floor" type="Node3D" parent="assets"]
@@ -306,27 +312,79 @@ transform = Transform3D(1, 0, -6.60686e-20, 0, 1, -9.54277e-23, -3.75871e-21, 2.
 shape = SubResource("BoxShape3D_w4j1a")
 
 [node name="cone_detector" type="Area3D" parent="assets/ceiling/ceiling"]
-script = ExtResource("10_pwwvo")
+script = ExtResource("12_ksa2i")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="assets/ceiling/ceiling/cone_detector"]
 transform = Transform3D(1, 0, -9.61382e-20, 0, 1, -9.54283e-23, -3.75871e-21, 2.52243e-13, 1, 0, 3.00281, -2.02346)
 shape = SubResource("BoxShape3D_pif3k")
 
+[node name="wooden_door2" parent="assets" instance=ExtResource("13_xv6mp")]
+transform = Transform3D(-2.23169, 0, -2.72213, 0, 3.52, 0, 2.72213, 0, -2.23169, 34.9048, 0.0141801, -2.56589)
+
+[node name="transition" type="Area3D" parent="assets/wooden_door2"]
+script = ExtResource("14_vgsxo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="assets/wooden_door2/transition"]
+transform = Transform3D(1, 0, -1.19209e-07, 0, 1, 0, 1.19209e-07, 0, 1, 0.050354, 0.499756, 0.0584102)
+shape = SubResource("BoxShape3D_r5umf")
+
+[node name="signs" type="Node3D" parent="assets"]
+
+[node name="Label3D" type="Label3D" parent="assets/signs"]
+transform = Transform3D(-2.56586e-07, 0, 5.87, 0, 5.87, 0, -5.87, 0, -2.56586e-07, 40.4285, 2.8208, -2.90064)
+modulate = Color(1, 0, 0, 1)
+outline_modulate = Color(1, 0.387335, 0.378759, 0.392157)
+text = "<->"
+font = ExtResource("15_7umyc")
+font_size = 82
+
+[node name="Label3D3" type="Label3D" parent="assets/signs"]
+transform = Transform3D(5.86998, 0, 0.0139337, 0, 5.87, 0, -0.0139337, 0, 5.86998, 42.3236, 2.8208, 31.1431)
+modulate = Color(1, 0, 0, 1)
+outline_modulate = Color(1, 0.387335, 0.378759, 0.392157)
+text = "<-"
+font = ExtResource("15_7umyc")
+font_size = 82
+
+[node name="Label3D4" type="Label3D" parent="assets/signs"]
+transform = Transform3D(-5.34292, 0, -2.43108, 0, 5.87, 0, 2.43108, 0, -5.34292, 16.7565, 2.8208, 20.8644)
+modulate = Color(1, 0, 0, 1)
+outline_modulate = Color(1, 0.387335, 0.378759, 0.392157)
+text = "<-"
+font = ExtResource("15_7umyc")
+font_size = 82
+
+[node name="Label3D5" type="Label3D" parent="assets/signs"]
+transform = Transform3D(-5.34292, 0, -2.43108, 0, 5.87, 0, 2.43108, 0, -5.34292, 17.1995, 2.8208, 21.838)
+modulate = Color(1, 0, 0, 1)
+outline_modulate = Color(1, 0.387335, 0.378759, 0.392157)
+text = "<-"
+font = ExtResource("15_7umyc")
+font_size = 82
+
+[node name="Label3D6" type="Label3D" parent="assets/signs"]
+transform = Transform3D(-4.51821, 0, 3.74736, 0, 5.87, 0, -3.74736, 0, -4.51821, 28.3996, 2.8208, -17.1201)
+modulate = Color(1, 0, 0, 1)
+outline_modulate = Color(1, 0.387335, 0.378759, 0.392157)
+text = "<-"
+font = ExtResource("15_7umyc")
+font_size = 82
+
 [node name="enemies" type="Node3D" parent="."]
 
 [node name="mitzi1" type="Path3D" parent="enemies"]
 curve = SubResource("Curve3D_8ddrv")
-script = ExtResource("9_nmhoi")
+script = ExtResource("15_vxay1")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="enemies/mitzi1"]
 transform = Transform3D(-0.99999, 0, -0.0019373, 0, 0.999992, 0, 0.00193728, 0, -0.999998, 42.4407, 9.1244, -22.0937)
 rotation_mode = 1
 
-[node name="mitzi" parent="enemies/mitzi1/PathFollow3D" instance=ExtResource("9_8ddrv")]
+[node name="mitzi" parent="enemies/mitzi1/PathFollow3D" instance=ExtResource("16_4quu3")]
 transform = Transform3D(-0.941264, -0.00174049, -0.337667, 0.0585598, -0.985676, -0.158158, -0.332555, -0.168642, 0.927883, 0.00164032, 0.000538826, -0.842066)
 
 [node name="red_beam" type="Area3D" parent="enemies/mitzi1/PathFollow3D/mitzi"]
-script = ExtResource("13_10ygh")
+script = ExtResource("17_owj22")
 
 [node name="beam" type="Sprite3D" parent="enemies/mitzi1/PathFollow3D/mitzi/red_beam"]
 transform = Transform3D(11.2751, 2.61396, -0.605833, 0.152874, 1.98678, 11.4174, 2.67889, -11.1152, 1.89833, -0.344421, 8.99621, 0.911201)
@@ -338,7 +396,7 @@ transform = Transform3D(0.945849, -0.0331188, -0.322917, -0.0258627, 0.983928, -
 shape = SubResource("BoxShape3D_sk4id")
 
 [node name="FPS" type="CanvasLayer" parent="."]
-script = ExtResource("13_sk4id")
+script = ExtResource("18_5k8gv")
 
 [node name="Panel" type="Panel" parent="FPS"]
 offset_top = 610.0
@@ -359,13 +417,14 @@ size_flags_vertical = 8
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 41
 text = "FPS:"
-script = ExtResource("14_ro05h")
+script = ExtResource("19_3kyar")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("1_1dhyw")]
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("20_ttujv")]
 visible = false
 
 [connection signal="body_entered" from="assets/ceiling/ceiling/cone_detector" to="assets/ceiling/ceiling/cone_detector" method="_on_body_entered"]
 [connection signal="body_exited" from="assets/ceiling/ceiling/cone_detector" to="assets/ceiling/ceiling/cone_detector" method="_on_body_exited"]
+[connection signal="body_entered" from="assets/wooden_door2/transition" to="assets/wooden_door2/transition" method="_on_body_entered"]
 [connection signal="body_entered" from="enemies/mitzi1/PathFollow3D/mitzi/red_beam" to="enemies/mitzi1/PathFollow3D/mitzi/red_beam" method="_on_body_entered"]

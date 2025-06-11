@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://bqjnc8i53gnqk"]
+[gd_scene load_steps=51 format=4 uid="uid://bqjnc8i53gnqk"]
 
 [ext_resource type="Texture2D" uid="uid://drd4sxov2x8e3" path="res://2D_levels/level_2/assets/tile_map/tilemaptd1.png" id="1_svps0"]
 [ext_resource type="Script" uid="uid://c4xav3n1intg1" path="res://2D_levels/level_3/lvl_3_2d.gd" id="1_ujx0b"]
@@ -19,6 +19,8 @@
 [ext_resource type="Script" uid="uid://dkig6m0l0u4kb" path="res://2D_levels/level_3/larrybo.gd" id="11_j3w6d"]
 [ext_resource type="Texture2D" uid="uid://c3j2vn7mxgo7n" path="res://2D_levels/level_3/assets/lvl3_map.png" id="13_8ml4r"]
 [ext_resource type="Script" uid="uid://lljku4eo3lxo" path="res://2D_levels/level_1/game_manager.gd" id="14_bftwv"]
+[ext_resource type="Script" uid="uid://b2nixro3m5bxv" path="res://2D_levels/level_3/map.gd" id="16_sspex"]
+[ext_resource type="Texture2D" uid="uid://bik5q5qwhc5u" path="res://2D_levels/level_3/assets/gummybear very smoll.png" id="17_0slso"]
 [ext_resource type="PackedScene" uid="uid://bpmq6uacs60yv" path="res://2D_levels/level_2/elim_scene/elim_scene.tscn" id="17_sy0cr"]
 [ext_resource type="Script" uid="uid://cr0yo1p1kllj0" path="res://2D_levels/level_1/fps.gd" id="20_ny3qd"]
 [ext_resource type="AudioStream" uid="uid://b3cc2820s8ik7" path="res://music/Bach-Toccata.ogg" id="22_gva4y"]
@@ -223,6 +225,115 @@ size = Vector2(18.6408, 17.6699)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ju0q4"]
 size = Vector2(20, 4.17474)
 
+[sub_resource type="Animation" id="Animation_0slso"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("gummybear_smoll:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-8, -3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("gummybear_smoll4:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(6, 7)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("gummybear_smoll2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, 3)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("gummybear_smoll3:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -1)]
+}
+
+[sub_resource type="Animation" id="Animation_sspex"]
+resource_name = "new_animation"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("gummybear_smoll:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5, 5, 7.5, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-8, -3), Vector2(-8, -5), Vector2(-6, -5), Vector2(-6, -3), Vector2(-8, -3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("gummybear_smoll4:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4, 5, 9.01, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(6, 7), Vector2(1.43051e-06, 7), Vector2(0, 5), Vector2(6, 5), Vector2(6, 7)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("gummybear_smoll2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2, 5, 7, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(3, 3), Vector2(3, 1), Vector2(8, 1), Vector2(8, 3), Vector2(3, 3)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("gummybear_smoll3:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2.8, 5, 7.8, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -1), Vector2(0, -5), Vector2(2, -5), Vector2(2, -1), Vector2(0, -1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4k4p4"]
+_data = {
+&"RESET": SubResource("Animation_0slso"),
+&"new_animation": SubResource("Animation_sspex")
+}
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gva4y"]
 bg_color = Color(0.419608, 0.572549, 1, 0.701961)
 corner_radius_top_left = 5
@@ -256,7 +367,7 @@ offset_bottom = 103.0
 [node name="mission" type="Label" parent="mission/Control/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 21
-text = "COLLECT ALL 3 NOTES
+text = "COLLECT ALL 5 NOTES
 TO UNLOCK DOOR"
 
 [node name="mission2" type="Label" parent="mission/Control/VBoxContainer"]
@@ -627,21 +738,56 @@ environment = SubResource("Environment_g3wfo")
 position = Vector2(-1157, 600)
 scale = Vector2(3.395, 3.395)
 
+[node name="PointLight2D" type="PointLight2D" parent="assets/notes/note"]
+position = Vector2(1.51992e-06, 5.126e-06)
+scale = Vector2(0.24, 0.24)
+color = Color(0.338781, 0.270351, 1.92523e-07, 1)
+energy = 1.35
+texture = ExtResource("4_4wcxj")
+
 [node name="note2" parent="assets/notes" instance=ExtResource("6_gdawp")]
 position = Vector2(-511, -232)
 scale = Vector2(3.395, 3.395)
+
+[node name="PointLight2D" type="PointLight2D" parent="assets/notes/note2"]
+position = Vector2(1.51992e-06, 5.126e-06)
+scale = Vector2(0.24, 0.24)
+color = Color(0.338781, 0.270351, 1.92523e-07, 1)
+energy = 1.35
+texture = ExtResource("4_4wcxj")
 
 [node name="note3" parent="assets/notes" instance=ExtResource("6_gdawp")]
 position = Vector2(-1612, 47)
 scale = Vector2(3.395, 3.395)
 
+[node name="PointLight2D" type="PointLight2D" parent="assets/notes/note3"]
+position = Vector2(1.51992e-06, 5.126e-06)
+scale = Vector2(0.24, 0.24)
+color = Color(0.338781, 0.270351, 1.92523e-07, 1)
+energy = 1.35
+texture = ExtResource("4_4wcxj")
+
 [node name="note4" parent="assets/notes" instance=ExtResource("6_gdawp")]
 position = Vector2(-1341, -321)
 scale = Vector2(3.395, 3.395)
 
+[node name="PointLight2D" type="PointLight2D" parent="assets/notes/note4"]
+position = Vector2(1.51992e-06, 5.126e-06)
+scale = Vector2(0.24, 0.24)
+color = Color(0.338781, 0.270351, 1.92523e-07, 1)
+energy = 1.35
+texture = ExtResource("4_4wcxj")
+
 [node name="note5" parent="assets/notes" instance=ExtResource("6_gdawp")]
 position = Vector2(-791, -694)
 scale = Vector2(3.395, 3.395)
+
+[node name="PointLight2D" type="PointLight2D" parent="assets/notes/note5"]
+position = Vector2(1.51992e-06, 5.126e-06)
+scale = Vector2(0.24, 0.24)
+color = Color(0.338781, 0.270351, 1.92523e-07, 1)
+energy = 1.35
+texture = ExtResource("4_4wcxj")
 
 [node name="door" type="Node2D" parent="assets"]
 
@@ -653,11 +799,12 @@ scale = Vector2(5.765, 5.765)
 texture_filter = 1
 position = Vector2(-323, -689)
 scale = Vector2(5.15, 5.15)
+script = ExtResource("16_sspex")
 
 [node name="PointLight2D2" type="PointLight2D" parent="assets/map"]
 position = Vector2(0, -0.194189)
 scale = Vector2(0.23301, 0.23301)
-color = Color(0.835294, 0, 1, 1)
+color = Color(1, 0.51, 0.51, 1)
 energy = 1.35
 texture = ExtResource("4_4wcxj")
 
@@ -679,8 +826,34 @@ texture = ExtResource("13_8ml4r")
 position = Vector2(17.2816, 278.641)
 shape = SubResource("RectangleShape2D_ju0q4")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="assets/map"]
+libraries = {
+&"": SubResource("AnimationLibrary_4k4p4")
+}
+speed_scale = 0.6
+
+[node name="gummybear_smoll" type="Sprite2D" parent="assets/map"]
+texture_filter = 1
+position = Vector2(-8, -3)
+texture = ExtResource("17_0slso")
+
+[node name="gummybear_smoll2" type="Sprite2D" parent="assets/map"]
+texture_filter = 1
+position = Vector2(2, 3)
+texture = ExtResource("17_0slso")
+
+[node name="gummybear_smoll3" type="Sprite2D" parent="assets/map"]
+texture_filter = 1
+position = Vector2(0, -1)
+texture = ExtResource("17_0slso")
+
+[node name="gummybear_smoll4" type="Sprite2D" parent="assets/map"]
+texture_filter = 1
+position = Vector2(6, 7)
+texture = ExtResource("17_0slso")
+
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.180005, 0.180005, 0.180005, 1)
+color = Color(0.226707, 0.226708, 0.226707, 1)
 
 [node name="NoteManager" type="Node" parent="."]
 unique_name_in_owner = true
@@ -733,3 +906,4 @@ stream = ExtResource("22_gva4y")
 [connection signal="body_entered" from="enemies/patrolling_en4/Path2D/PathFollow2D/larrybo/attack_area" to="enemies/patrolling_en4/Path2D/PathFollow2D/larrybo" method="_on_attack_area_body_entered"]
 [connection signal="body_entered" from="enemies/patrolling_en5/Path2D/PathFollow2D/larrybo/Area2D" to="enemies/patrolling_en5/Path2D/PathFollow2D/larrybo" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="enemies/patrolling_en5/Path2D/PathFollow2D/larrybo/attack_area" to="enemies/patrolling_en5/Path2D/PathFollow2D/larrybo" method="_on_attack_area_body_entered"]
+[connection signal="animation_finished" from="assets/map/AnimationPlayer" to="assets/map" method="_on_animation_player_animation_finished"]

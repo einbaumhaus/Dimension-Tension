@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://3n7ag1my61uo"]
+
+[ext_resource type="Script" uid="uid://b5lcl7v2g8dxi" path="res://mixed_levels/endboss/eb1/magic_ball.gd" id="1_8g1hd"]
+[ext_resource type="Texture2D" uid="uid://bxrrhvfwnrmg" path="res://2D_levels/level_1/assets/chronoscepter/2d_magic.png" id="1_uc1qd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nkut8"]
+size = Vector3(0.0673828, 0.0546875, 0.0751953)
+
+[node name="magic_ball" type="Area3D"]
+transform = Transform3D(20.4, 0, 0, 0, 20.4, 0, 0, 0, 20.4, 0, 0, 0)
+script = ExtResource("1_8g1hd")
+
+[node name="magic" type="Sprite3D" parent="."]
+transform = Transform3D(0.439, 0, 0, 0, 0.439, 0, 0, 0, 0.439, 0, 0, 0)
+billboard = 1
+texture_filter = 0
+texture = ExtResource("1_uc1qd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_nkut8")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0

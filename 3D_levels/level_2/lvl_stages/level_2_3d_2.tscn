@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=4 uid="uid://blnffj14qys1k"]
+[gd_scene load_steps=79 format=4 uid="uid://blnffj14qys1k"]
 
 [ext_resource type="PackedScene" uid="uid://f8i8svg7k032" path="res://3D_levels/level_2/launch_player/launch_player.tscn" id="1_4kesc"]
 [ext_resource type="Script" uid="uid://bv2w76gho36d2" path="res://3D_levels/level_2/lvl_stages/level_2_3d_2.gd" id="1_dxfov"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://d1cfxfejn6e3" path="res://assets/keys/left_mouse.png" id="6_hlvmm"]
 [ext_resource type="Texture2D" uid="uid://mkwsudygkvgy" path="res://assets/keys/right_mouse.png" id="7_2uhoi"]
 [ext_resource type="PackedScene" uid="uid://bac2uhb337o7s" path="res://3D_levels/level_2/assets/env/wall/wall_piece.tscn" id="7_cjnvw"]
+[ext_resource type="Texture2D" uid="uid://b4c1xo328undx" path="res://3D_levels/level_2/launch_player/hitmarker.png" id="8_2uhoi"]
 [ext_resource type="Texture2D" uid="uid://cvnflcc51kvet" path="res://3D_levels/level_2/assets/part2/windows_castle.png" id="8_mcrfw"]
 [ext_resource type="Script" uid="uid://yu8nw8ofjipq" path="res://3D_levels/level_2/lvl_stages/enemies_wave_2.gd" id="9_oajnp"]
 [ext_resource type="FontFile" uid="uid://dn3yd17i4df0q" path="res://assets/fonts/OCRAEXT.TTF" id="12_ihhey"]
@@ -1056,6 +1057,21 @@ texture_filter = 1
 position = Vector2(100, 567)
 scale = Vector2(3.66288, 3.66288)
 texture = ExtResource("7_2uhoi")
+
+[node name="hitmarker" type="TextureRect" parent="mission"]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.0
+offset_top = -7.0
+offset_right = 7.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_2uhoi")
 
 [node name="elim_scene2" type="CanvasLayer" parent="."]
 process_mode = 4

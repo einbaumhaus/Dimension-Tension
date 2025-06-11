@@ -1,5 +1,7 @@
 extends Area3D
+@export var damage := 10
 
+signal body_part_hit(dam)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -10,8 +12,5 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
-func _on_body_entered(body: Node3D) -> void:
-	if body.name == "Player":
-		Global.next_scene = "res://mixed_levels/endboss/endboss_1.tscn"
-		get_tree().change_scene_to_packed(Global.loading_screen)
+func hit():
+	emit_signal("body_part_hit", damage)

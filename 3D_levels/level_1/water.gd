@@ -22,8 +22,8 @@ func _on_boundary_body_entered(body: Node3D) -> void:
 
 func _on_secret_boundary_body_entered(body: Node3D) -> void:
 	if body.name == "Player":
-		get_tree().change_scene_to_file.call_deferred("res://3D_levels/level1_ocean/easter_egg1.tscn")
-
+		Global.next_scene = "res://3D_levels/level1_ocean/easter_egg1.tscn"
+		get_tree().change_scene_to_packed(Global.loading_screen)
 func respawn_player():
 	if checkpoint_1.checkpoint1_on:
 		checkpoint_1.respawn()

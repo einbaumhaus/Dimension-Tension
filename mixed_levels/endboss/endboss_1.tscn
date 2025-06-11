@@ -1,15 +1,18 @@
-[gd_scene load_steps=76 format=4 uid="uid://c1gtoac4wgo34"]
+[gd_scene load_steps=96 format=4 uid="uid://c1gtoac4wgo34"]
 
 [ext_resource type="PackedScene" uid="uid://bnp7vdu3nrbe8" path="res://menus/pause_menu.tscn" id="1_ar2eo"]
 [ext_resource type="Texture2D" uid="uid://rbs1sq7r6ipa" path="res://mixed_levels/endboss/env/NightSkyHDRI003_1K-HDR.exr" id="1_jjl5m"]
 [ext_resource type="Script" uid="uid://du3mg4mxh6lrv" path="res://mixed_levels/endboss/endboss_1.gd" id="1_mx7wb"]
 [ext_resource type="Texture2D" uid="uid://c70xionhb5pqy" path="res://assets/keys/keys_launcher3d.png" id="2_4rnkm"]
+[ext_resource type="Script" uid="uid://brstfdce8mxgc" path="res://mixed_levels/endboss/path_3d.gd" id="2_aape2"]
 [ext_resource type="PackedScene" uid="uid://dmj4o2qbag07v" path="res://mixed_levels/endboss/eb1/assets/wall_flat.tscn" id="2_knndq"]
 [ext_resource type="Texture2D" uid="uid://cdcjdbqsvl7dg" path="res://3D_levels/level_1/assets/bridge/materials/wood_planks_dirt_diff_1k.png" id="3_lrd42"]
+[ext_resource type="Texture2D" uid="uid://clbutouj7ccjo" path="res://2D_levels/level_1/assets/UI/heart.png" id="3_nb3ll"]
 [ext_resource type="Texture2D" uid="uid://djxs0si2vd3sd" path="res://3D_levels/level_1/assets/bridge/materials/wood_planks_dirt_nor_gl_1k.jpg" id="4_ha6t0"]
+[ext_resource type="PackedScene" uid="uid://f8i8svg7k032" path="res://3D_levels/level_2/launch_player/launch_player.tscn" id="5_2rb2n"]
 [ext_resource type="Texture2D" uid="uid://sbb0bic2bn0h" path="res://mixed_levels/intro/assets/evelius_smoll.png" id="5_a6yy6"]
-[ext_resource type="PackedScene" uid="uid://cj7d18ek4ria6" path="res://3D_levels/Player3D/character_body_3d.tscn" id="5_lrd42"]
 [ext_resource type="Script" uid="uid://buu2l07ect7od" path="res://mixed_levels/endboss/room_pivot.gd" id="5_m0fk5"]
+[ext_resource type="Script" uid="uid://b62j1d63a4sd8" path="res://mixed_levels/endboss/evelius.gd" id="6_2rb2n"]
 [ext_resource type="Texture2D" uid="uid://dqoeak5w11i1e" path="res://mixed_levels/intro/assets/buuuble.png" id="6_k81fr"]
 [ext_resource type="FontFile" uid="uid://nv7xw0gdt65u" path="res://assets/fonts/joystix monospace.otf" id="6_npy07"]
 [ext_resource type="Texture2D" uid="uid://6omtbg1ao85f" path="res://3D_levels/level_3/enemies/cone_texture.jpg" id="8_3ics5"]
@@ -20,10 +23,95 @@
 [ext_resource type="Script" uid="uid://dpdx7cmekv154" path="res://mixed_levels/endboss/button.gd" id="10_sao6e"]
 [ext_resource type="Texture2D" uid="uid://bxrrhvfwnrmg" path="res://2D_levels/level_1/assets/chronoscepter/2d_magic.png" id="10_tk51p"]
 [ext_resource type="PackedScene" uid="uid://44daxgq6hmjb" path="res://3D_levels/level_1/assets/rbs brokie/old rbs.tscn" id="11_bhamw"]
+[ext_resource type="Texture2D" uid="uid://b4c1xo328undx" path="res://3D_levels/level_2/launch_player/hitmarker.png" id="11_cakrb"]
+[ext_resource type="Texture2D" uid="uid://cbxyvw8riiyua" path="res://2D_levels/level_2/enemies/toblertwo/tobllertwo.png" id="11_opgpb"]
 [ext_resource type="Texture2D" uid="uid://bgw2w26elh5b5" path="res://2D_levels/level_2/Player2D_topdown/player.png" id="11_uivy5"]
+[ext_resource type="Script" uid="uid://bvchimm4r7rcl" path="res://mixed_levels/endboss/launch_col.gd" id="12_d3hj7"]
 [ext_resource type="Texture2D" uid="uid://dynkqhgq58v3c" path="res://mixed_levels/endboss/eb1/assets/blue_effect..png" id="12_k1hgb"]
 [ext_resource type="Texture2D" uid="uid://blfr7w4hwjing" path="res://mixed_levels/endboss/eb1/assets/rizz_catch.png" id="13_o4hu4"]
 [ext_resource type="PackedScene" uid="uid://ifb6pbvsjtkj" path="res://3D_levels/level_2/assets/env/wooden_door.tscn" id="14_haqan"]
+[ext_resource type="Texture2D" uid="uid://ba0wq4gn6cutk" path="res://2D_levels/level_1/assets/UI/evelius_heart.png" id="25_o4hu4"]
+[ext_resource type="PackedScene" uid="uid://bpmq6uacs60yv" path="res://2D_levels/level_2/elim_scene/elim_scene.tscn" id="28_utk3v"]
+[ext_resource type="Script" uid="uid://brhmf4oiht03a" path="res://mixed_levels/endboss/manager.gd" id="33_sye0t"]
+
+[sub_resource type="Curve3D" id="Curve3D_cakrb"]
+closed = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.00599974, -0.0330391, -0.417671, 0, 0, 0, 0, 0, 0, -0.104876, 11.6379, -0.919113, 0, 0, 0, 0, 0, 0, 19.8378, 1.42897, -25.6711, 0, 0, 0, 0, 0, 0, 19.6973, -3.82451, -46.0304, 0, 0, 0, 0, 0, 0, 1.92212, -1.48347, -45.9602, 0, 0, 0, 0, 0, 0, -27.1137, -3.05684, -35.6119),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0)
+}
+point_count = 6
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2twkf"]
+atlas = ExtResource("5_a6yy6")
+region = Rect2(20, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sn7jy"]
+atlas = ExtResource("5_a6yy6")
+region = Rect2(0, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4fw8x"]
+atlas = ExtResource("5_a6yy6")
+region = Rect2(40, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dsl33"]
+atlas = ExtResource("5_a6yy6")
+region = Rect2(0, 60, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q8ovt"]
+atlas = ExtResource("5_a6yy6")
+region = Rect2(40, 60, 20, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k81fr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2twkf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sn7jy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4fw8x")
+}],
+"loop": true,
+"name": &"run_front",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dsl33")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q8ovt")
+}],
+"loop": true,
+"name": &"run_right",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nf5gd"]
+atlas = ExtResource("11_opgpb")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2rb2n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nf5gd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_utk3v"]
+size = Vector3(2.56934, 5.63428, 1)
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_rc5m8"]
 panorama = ExtResource("1_jjl5m")
@@ -229,6 +317,18 @@ tracks/15/keys = {
 "update": 0,
 "values": [Vector3(-0.124, 0.002, 0.114)]
 }
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("lilguy:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_npy07"]
 resource_name = "intro"
@@ -381,10 +481,10 @@ tracks/11/path = NodePath("evelius/chronoscepter/magic:visible")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(0, 10.36),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 10.36, 14),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [false, true]
+"values": [false, true, false]
 }
 tracks/12/type = "value"
 tracks/12/imported = false
@@ -434,65 +534,24 @@ tracks/15/keys = {
 "update": 0,
 "values": [Vector3(-0.124, 0.002, 0.114), Vector3(-0.021, -0.405, 3.743)]
 }
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("lilguy:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0, 14),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vb2gw"]
 _data = {
 &"RESET": SubResource("Animation_mx7wb"),
 &"intro": SubResource("Animation_npy07")
 }
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2twkf"]
-atlas = ExtResource("5_a6yy6")
-region = Rect2(20, 0, 20, 20)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sn7jy"]
-atlas = ExtResource("5_a6yy6")
-region = Rect2(0, 0, 20, 20)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4fw8x"]
-atlas = ExtResource("5_a6yy6")
-region = Rect2(40, 0, 20, 20)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dsl33"]
-atlas = ExtResource("5_a6yy6")
-region = Rect2(0, 60, 20, 20)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_q8ovt"]
-atlas = ExtResource("5_a6yy6")
-region = Rect2(40, 60, 20, 20)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_k81fr"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2twkf")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_sn7jy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4fw8x")
-}],
-"loop": true,
-"name": &"run_front",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dsl33")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_q8ovt")
-}],
-"loop": true,
-"name": &"run_right",
-"speed": 5.0
-}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xyv5a"]
 atlas = ExtResource("11_uivy5")
@@ -647,7 +706,7 @@ fool", "cheap
 tricks are
 futile", "i'd do
 anything", "for
-my oreo"]
+my woreo"]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -981,6 +1040,191 @@ _data = {
 &"rotate": SubResource("Animation_m0fk5")
 }
 
+[sub_resource type="Animation" id="Animation_smvrd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("outro/evelius/speech:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("outro/evelius/speech/Label3D:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["it's over,
+fool."]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("outro/evelius/chronoscepter/magic:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("outro/evelius/chronoscepter/magic:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.111846, -0.0211316, 0.0793858)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("outro/evelius/chronoscepter/magic:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("outro/lilguy:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -3.14647, 37.8474)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("outro/lilguy:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(12.4529, -5.47161, 4.93928)]
+}
+
+[sub_resource type="Animation" id="Animation_sye0t"]
+resource_name = "outro"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("outro/evelius/speech:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("outro/evelius/speech/Label3D:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.1311),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["it's over,
+fool.", "i have
+the
+highground"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("outro/evelius/chronoscepter/magic:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(3.02, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("outro/evelius/chronoscepter/magic:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(4.01, 4.76667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.111846, -0.0211316, 0.0793858), Vector3(0.023, -0.616, 0.279)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("outro/evelius/chronoscepter/magic:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 4.76),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("outro/lilguy:position")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(4.75, 5.5, 5.93333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -3.14647, 37.8474), Vector3(0, 0.504, 34.517), Vector3(0, -8.471, 30.947)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("outro/lilguy:rotation")
+tracks/6/interp = 2
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(4.75, 5.92),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(12.4529, -5.47161, 4.93928)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_smvrd"]
+_data = {
+&"RESET": SubResource("Animation_smvrd"),
+&"outro": SubResource("Animation_sye0t")
+}
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m0fk5"]
 bg_color = Color(0.419608, 0.572549, 1, 0.701961)
 corner_radius_top_left = 5
@@ -988,8 +1232,98 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aape2"]
+bg_color = Color(0.152941, 0.152941, 0.811765, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cakrb"]
+bg_color = Color(0.788235, 0.196078, 0.196078, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k1hgb"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o4hu4"]
+bg_color = Color(0.756863, 0.0588235, 0.321569, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
 [node name="endboss_1" type="Node3D"]
 script = ExtResource("1_mx7wb")
+
+[node name="Path3D" type="Path3D" parent="."]
+process_mode = 1
+transform = Transform3D(-0.999857, -0.00782716, 0.0149818, -0.00898334, 0.996852, -0.0787278, -0.0143185, -0.078851, -0.996781, 1.36393, 9.67732, -21.8264)
+curve = SubResource("Curve3D_cakrb")
+script = ExtResource("2_aape2")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(0.999989, 0, 0, 0, 0.999998, 0, 0, 0, 0.999989, -0.0210508, 1.74353, -0.494001)
+progress = 1.77854
+rotation_mode = 0
+tilt_enabled = false
+
+[node name="evelius" type="CharacterBody3D" parent="Path3D/PathFollow3D" groups=["enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, -2.98023e-08, 1, 0, 0, 0)
+script = ExtResource("6_2rb2n")
+
+[node name="evelius2" type="AnimatedSprite3D" parent="Path3D/PathFollow3D/evelius"]
+transform = Transform3D(17.735, 0, 0, 0, 17.735, 0, 0, 0, 17.735, 0, 0, 0)
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_k81fr")
+autoplay = "default"
+
+[node name="speech" type="Node3D" parent="Path3D/PathFollow3D/evelius/evelius2"]
+transform = Transform3D(0.0563857, 0, 0, 0, 0.0563857, 0, 0, 0, 0.0563857, -0.165202, 0.14198, 0.0236263)
+visible = false
+
+[node name="Label3D" type="Label3D" parent="Path3D/PathFollow3D/evelius/evelius2/speech"]
+transform = Transform3D(3.385, 0, 0, 0, 3.385, 0, 0, 0, 3.385, 0.01543, 0.1539, 0.0830021)
+double_sided = false
+alpha_cut = 1
+texture_filter = 0
+text = "your end."
+font = ExtResource("6_npy07")
+font_size = 27
+
+[node name="bubble" type="Sprite3D" parent="Path3D/PathFollow3D/evelius/evelius2/speech"]
+transform = Transform3D(13, 0, 0, 0, 13, 0, 0, 0, 13, 0, 0, 0)
+texture_filter = 2
+texture = ExtResource("6_k81fr")
+
+[node name="chronoscepter" type="Node3D" parent="Path3D/PathFollow3D/evelius/evelius2"]
+
+[node name="chronoscepter" type="Sprite3D" parent="Path3D/PathFollow3D/evelius/evelius2/chronoscepter"]
+transform = Transform3D(0.209328, -0.0820346, 0.604547, 0.235345, 0.600531, 0, -0.562867, 0.220585, 0.224828, -0.094, -0.021, 0.021)
+texture_filter = 0
+texture = ExtResource("9_vb2gw")
+
+[node name="toblertwo" type="AnimatedSprite3D" parent="Path3D/PathFollow3D/evelius"]
+transform = Transform3D(-14.6, 1.27637e-06, 0, -1.27637e-06, -14.6, 0, 0, 0, 14.6, 0, -2.759, 0.048)
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_2rb2n")
+
+[node name="AttackTimer" type="Timer" parent="Path3D/PathFollow3D/evelius"]
+wait_time = 1.5
+
+[node name="Launch_col" type="Area3D" parent="Path3D/PathFollow3D/evelius"]
+script = ExtResource("12_d3hj7")
+
+[node name="hitbox" type="CollisionShape3D" parent="Path3D/PathFollow3D/evelius/Launch_col"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0333815, -0.968304, -0.0940666)
+shape = SubResource("BoxShape3D_utk3v")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -1005,8 +1339,10 @@ texture = ExtResource("2_4rnkm")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_dpvly")
 
-[node name="Player" parent="." instance=ExtResource("5_lrd42")]
-transform = Transform3D(1.445, 0, 0, 0, 1.445, 0, 0, 0, 1.445, 0, 1.38671, 44.0961)
+[node name="Player" parent="." groups=["player"] instance=ExtResource("5_2rb2n")]
+transform = Transform3D(1.30433, 0, -0.041674, 0, 1.305, 0, 0.041674, 0, 1.30433, 0.780687, 1.83709, 47.759)
+mag_size = 30
+cooldown = 0.1
 
 [node name="intro" type="Node3D" parent="."]
 
@@ -1251,6 +1587,7 @@ visible = false
 
 [node name="button" type="StaticBody3D" parent="assets/ROOM_PIVOT/env"]
 transform = Transform3D(2.75382e-08, -9.31323e-10, 0.470975, 9.51274e-08, -0.539328, -1.86265e-09, 0.63, 8.14362e-08, -2.0587e-08, -0.0532205, 48.393, 38.2359)
+visible = false
 script = ExtResource("10_sao6e")
 
 [node name="Cube" type="MeshInstance3D" parent="assets/ROOM_PIVOT/env/button"]
@@ -1284,6 +1621,73 @@ libraries = {
 &"": SubResource("AnimationLibrary_54vx1")
 }
 
+[node name="Manager" type="Node" parent="."]
+script = ExtResource("33_sye0t")
+
+[node name="outro" type="Node3D" parent="Manager"]
+visible = false
+
+[node name="evelius" type="AnimatedSprite3D" parent="Manager/outro"]
+transform = Transform3D(-17.735, 0, 1.55044e-06, 0, 17.735, 0, -1.55044e-06, 0, -17.735, 0.369, 8.44399, 43.1101)
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_k81fr")
+autoplay = "default"
+
+[node name="speech" type="Node3D" parent="Manager/outro/evelius"]
+transform = Transform3D(0.0563857, 0, 0, 0, 0.0563857, 0, 0, 0, 0.0563857, -0.021, -0.611, 1.415)
+
+[node name="Label3D" type="Label3D" parent="Manager/outro/evelius/speech"]
+transform = Transform3D(3.385, 0, 0, 0, 3.385, 0, 0, 0, 3.385, -2.542, 13.5976, -24.593)
+double_sided = false
+alpha_cut = 1
+texture_filter = 0
+text = "it's over,
+fool."
+font = ExtResource("6_npy07")
+font_size = 27
+
+[node name="bubble" type="Sprite3D" parent="Manager/outro/evelius/speech"]
+transform = Transform3D(13.841, 0, 0, 0, 13.841, 0, 0, 0, 13.841, -2.55743, 13.3541, -24.676)
+texture_filter = 2
+texture = ExtResource("6_k81fr")
+
+[node name="chronoscepter" type="Node3D" parent="Manager/outro/evelius"]
+
+[node name="chronoscepter" type="Sprite3D" parent="Manager/outro/evelius/chronoscepter"]
+transform = Transform3D(0.209328, -0.0820346, 0.604547, 0.235345, 0.600531, 0, -0.562867, 0.220585, 0.224828, -0.094, -0.021, 0.021)
+texture_filter = 0
+texture = ExtResource("9_vb2gw")
+
+[node name="magic" type="Sprite3D" parent="Manager/outro/evelius/chronoscepter"]
+transform = Transform3D(0.439, 0, 1.42109e-14, 0, 0.439, 0, -1.42109e-14, 0, 0.439, -0.111846, -0.0211316, 0.0793858)
+modulate = Color(1, 1, 1, 0)
+billboard = 1
+texture_filter = 0
+texture = ExtResource("10_tk51p")
+
+[node name="toblertwo" type="AnimatedSprite3D" parent="Manager/outro/evelius"]
+transform = Transform3D(-1, 1.50996e-07, 1.42109e-14, -1.50996e-07, -1, 4.33224e-22, 1.42109e-14, -7.6233e-21, 1, -3.72529e-09, -0.168398, 0.00378895)
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_2rb2n")
+
+[node name="lilguy" type="AnimatedSprite3D" parent="Manager/outro"]
+transform = Transform3D(4.15724, 11.5446, 12.7565, -17.1355, 3.956, 2.00413, -1.54395, -12.8204, 12.1056, 0, -3.14647, 37.8474)
+texture_filter = 2
+sprite_frames = SubResource("SpriteFrames_k1hgb")
+animation = &"stop"
+
+[node name="flip_change_timer" type="Timer" parent="Manager"]
+wait_time = 10.0
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Manager"]
+libraries = {
+&"": SubResource("AnimationLibrary_smvrd")
+}
+
+[node name="Camera3D" type="Camera3D" parent="Manager"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.663, 1.9, 21.055)
+
 [node name="FPS" type="CanvasLayer" parent="."]
 script = ExtResource("8_iivcr")
 
@@ -1308,8 +1712,107 @@ theme_override_font_sizes/font_size = 41
 text = "FPS:"
 script = ExtResource("9_3ics5")
 
+[node name="mission" type="CanvasLayer" parent="."]
+
+[node name="healthbar" type="ProgressBar" parent="mission"]
+offset_left = 639.0
+offset_top = 595.0
+offset_right = 1148.0
+offset_bottom = 642.0
+theme_override_fonts/font = ExtResource("6_npy07")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/background = SubResource("StyleBoxFlat_aape2")
+theme_override_styles/fill = SubResource("StyleBoxFlat_cakrb")
+value = 50.0
+show_percentage = false
+
+[node name="heart" type="TextureRect" parent="mission"]
+texture_filter = 1
+offset_left = 647.0
+offset_top = 602.0
+offset_right = 654.0
+offset_bottom = 609.0
+scale = Vector2(5.13, 5.13)
+size_flags_horizontal = 4
+texture = ExtResource("3_nb3ll")
+
+[node name="Label" type="Label" parent="mission"]
+offset_left = 689.0
+offset_top = 606.0
+offset_right = 1156.0
+offset_bottom = 722.0
+scale = Vector2(0.225, 0.225)
+theme_override_fonts/font = ExtResource("6_npy07")
+theme_override_font_sizes/font_size = 96
+text = "HEALTH"
+
+[node name="hitmarker" type="TextureRect" parent="mission"]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.0
+offset_top = -7.0
+offset_right = 7.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_cakrb")
+
+[node name="bossbar" type="CanvasLayer" parent="."]
+
+[node name="healthbar" type="ProgressBar" parent="bossbar"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -254.5
+offset_top = 35.0
+offset_right = 254.5
+offset_bottom = 82.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("6_npy07")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/background = SubResource("StyleBoxFlat_k1hgb")
+theme_override_styles/fill = SubResource("StyleBoxFlat_o4hu4")
+max_value = 1000.0
+value = 50.0
+show_percentage = false
+
+[node name="heart" type="TextureRect" parent="bossbar"]
+texture_filter = 1
+offset_left = 330.0
+offset_top = 40.0
+offset_right = 337.0
+offset_bottom = 47.0
+scale = Vector2(5.13, 5.13)
+size_flags_horizontal = 4
+texture = ExtResource("25_o4hu4")
+
+[node name="Label" type="Label" parent="bossbar"]
+offset_left = 372.0
+offset_top = 44.0
+offset_right = 839.0
+offset_bottom = 160.0
+scale = Vector2(0.225, 0.225)
+theme_override_fonts/font = ExtResource("6_npy07")
+theme_override_font_sizes/font_size = 96
+text = "evelius"
+
+[node name="elim_scene" type="CanvasLayer" parent="."]
+process_mode = 4
+visible = false
+
+[node name="elim_scene" parent="elim_scene" instance=ExtResource("28_utk3v")]
+
+[connection signal="timeout" from="Path3D/PathFollow3D/evelius/AttackTimer" to="Path3D/PathFollow3D/evelius" method="_on_attack_timer_timeout"]
+[connection signal="body_part_hit" from="Path3D/PathFollow3D/evelius/Launch_col" to="Path3D/PathFollow3D/evelius" method="_on_launch_col_body_part_hit"]
 [connection signal="animation_finished" from="intro/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="animation_finished" from="intro/intro2/anim2" to="." method="_on_anim_2_animation_finished"]
 [connection signal="animation_finished" from="assets/ROOM_PIVOT/env/button/anim" to="assets/ROOM_PIVOT/env/button" method="_on_anim_animation_finished"]
 [connection signal="body_entered" from="assets/ROOM_PIVOT/env/button/Area3D" to="assets/ROOM_PIVOT/env/button" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="assets/ROOM_PIVOT/env/button/Area3D" to="assets/ROOM_PIVOT/env/button" method="_on_area_3d_body_exited"]
+[connection signal="animation_finished" from="assets/ROOM_PIVOT/rotate" to="Manager" method="_on_rotate_animation_finished"]
+[connection signal="timeout" from="Manager/flip_change_timer" to="Manager" method="_on_flip_change_timer_timeout"]
+[connection signal="animation_finished" from="Manager/AnimationPlayer" to="Manager" method="_on_animation_player_animation_finished"]

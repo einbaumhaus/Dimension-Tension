@@ -1,3 +1,17 @@
-[gd_scene format=3 uid="uid://df8krpyjrbxa0"]
+[gd_scene load_steps=3 format=3 uid="uid://df8krpyjrbxa0"]
+
+[ext_resource type="PackedScene" uid="uid://bnp7vdu3nrbe8" path="res://menus/pause_menu.tscn" id="1_1aqxp"]
+[ext_resource type="Texture2D" uid="uid://c70xionhb5pqy" path="res://assets/keys/keys_launcher3d.png" id="2_vplys"]
 
 [node name="endboss_2" type="Node"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("1_1aqxp")]
+visible = false
+
+[node name="keys3" type="Sprite2D" parent="CanvasLayer/PauseMenu"]
+texture_filter = 1
+position = Vector2(973, 587.438)
+scale = Vector2(3.66288, 3.66288)
+texture = ExtResource("2_vplys")

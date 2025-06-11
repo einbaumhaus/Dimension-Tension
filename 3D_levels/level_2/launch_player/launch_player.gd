@@ -5,7 +5,7 @@ var SPEED = 7.0
 const JUMP_VELOCITY = 14
 #variables
 var health := 100
-@onready var healthbar: ProgressBar = $"../mission/healthbar"
+@onready var healthbar: ProgressBar = get_node_or_null("../mission/healthbar")
 
 var acceleration = 30
 var _gravity := -30.0
@@ -26,13 +26,13 @@ var mouse_sensitivity = null
 
 var sticker = load("res://3D_levels/level_2/assets/sticker_launcher/sticker/sticker.tscn")
 var instance
-var mag_size = 20
+@export var mag_size = 20
 var mag_size2 = 20
 
 #launcher delay
 var last_launch_time = 0.0
 var last_launch_time2 = 0.0
-var cooldown = 0.2 
+@export var cooldown = 0.2 
 var cooldown2 = 0.1 # seconds between sticker launches
 
 #2 launchers
@@ -41,7 +41,8 @@ var second_launcher = false
 @onready var wave_manager: Node = get_node_or_null("../wave_manager")
 
 func _ready() -> void:
-	healthbar.value = health
+	if healthbar != null:
+		healthbar.value = health
 
 func _input(event: InputEvent) -> void: #add mouse input
 	if event.is_action_pressed("left_click"):
@@ -65,8 +66,8 @@ func take_damage(amount: int) -> void:
 		mission.visible = false
 
 func _physics_process(delta: float) -> void:
-	
-	healthbar.value = health
+	if healthbar != null:
+		healthbar.value = health
 	
 	#launch&reload
 	if Input.is_action_pressed("left_click"):

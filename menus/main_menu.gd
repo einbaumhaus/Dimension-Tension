@@ -15,7 +15,8 @@ func _process(delta: float) -> void:
 
 
 func _on_credits_pressed() -> void:
-	get_tree().change_scene_to_file("res://mixed_levels/end/end_credit_level.tscn")
+	Global.next_scene = "res://mixed_levels/end/end_credit_level.tscn"
+	get_tree().change_scene_to_packed(Global.loading_screen)
 
 
 func _on_quit_pressed() -> void:

@@ -25,4 +25,5 @@ func _on_body_entered(body: Node2D) -> void:
 
 
 func _on_outro_anim_animation_finished(anim_name: StringName) -> void:
-	get_tree().change_scene_to_file.call_deferred("res://3D_levels/level_2/lvl_stages/level_2_3d_1.tscn")
+	Global.next_scene = "res://3D_levels/level_2/lvl_stages/level_2_3d_1.tscn"
+	get_tree().change_scene_to_packed(Global.loading_screen)

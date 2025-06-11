@@ -38,4 +38,5 @@ func _on_part_5_player_animation_finished(anim_name: StringName) -> void:
 
 
 func _on_part_6_player_animation_finished(anim_name: StringName) -> void:
-	get_tree().change_scene_to_file.call_deferred("res://2D_levels/level_1/level_1_2d.tscn")
+	Global.next_scene = "res://2D_levels/level_1/level_1_2d.tscn"
+	get_tree().change_scene_to_packed(Global.loading_screen)

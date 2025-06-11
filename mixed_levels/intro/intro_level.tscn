@@ -1461,6 +1461,7 @@ position = Vector2(0, -9.53674e-07)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_i7vcb")
 animation = &"front_idle"
+autoplay = "front_idle"
 frame_progress = 0.0627612
 
 [node name="TileMapLayer" type="TileMapLayer" parent="part1"]
@@ -1591,7 +1592,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_6t42f")
 text = "how about
 you give me
-those"
+that"
 horizontal_alignment = 1
 vertical_alignment = 1
 

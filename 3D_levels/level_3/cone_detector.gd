@@ -17,10 +17,10 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node3D) -> void:
 	if body.name == "mitzi":
-		beam.visible = false
-		red_beam.monitoring = false
+		body.get_node("red_beam").visible = false
+		body.get_node("red_beam").monitoring = false
 
 func _on_body_exited(body: Node3D) -> void:
 	if body.name == "mitzi":
-		beam.visible = true
-		red_beam.monitoring = true
+		body.get_node("red_beam").visible = true
+		body.get_node("red_beam").monitoring = true

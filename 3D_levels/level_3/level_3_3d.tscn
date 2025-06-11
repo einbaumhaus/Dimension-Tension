@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://bilmxsoacd24r"]
+[gd_scene load_steps=38 format=3 uid="uid://bilmxsoacd24r"]
 
 [ext_resource type="Script" uid="uid://mvotmqlsvjqe" path="res://3D_levels/level_3/level_3_3d.gd" id="1_ljq06"]
 [ext_resource type="Script" uid="uid://c5supflvg18iy" path="res://3D_levels/level_3/lives_manager.gd" id="2_7umyc"]
@@ -86,6 +86,14 @@ fill_from = Vector2(0.5, 0.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sk4id"]
 size = Vector3(3.48492, 2.02002, 3.62317)
+
+[sub_resource type="Curve3D" id="Curve3D_3f62p"]
+closed = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 21.9462, 7.09907, 11.3754, 0, 0, 0, 0, 0, 0, 56.8522, 7.1086, 12.906, 0, 0, 0, 0, 0, 0, 48.3001, 7, 4.53241),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_10ygh"]
 bg_color = Color(0.419608, 0.572549, 1, 0.701961)
@@ -318,6 +326,46 @@ script = ExtResource("12_ksa2i")
 transform = Transform3D(1, 0, -9.61382e-20, 0, 1, -9.54283e-23, -3.75871e-21, 2.52243e-13, 1, 0, 3.00281, -2.02346)
 shape = SubResource("BoxShape3D_pif3k")
 
+[node name="ceiling2" type="StaticBody3D" parent="assets/ceiling"]
+transform = Transform3D(0.00799283, 0.874789, -4.37114e-08, -3.49379e-10, -3.82382e-08, -1, -0.256187, 0.0272927, 5.27429e-16, 46.1023, 5.527, 33.0456)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="assets/ceiling/ceiling2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.98354, 0)
+mesh = SubResource("BoxMesh_b82s5")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ekoys")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="assets/ceiling/ceiling2"]
+transform = Transform3D(1, 0, -6.60686e-20, 0, 1, -9.54277e-23, -3.75871e-21, 2.52243e-13, 1, 0, 3.00281, 0.0201874)
+shape = SubResource("BoxShape3D_w4j1a")
+
+[node name="cone_detector" type="Area3D" parent="assets/ceiling/ceiling2"]
+script = ExtResource("12_ksa2i")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="assets/ceiling/ceiling2/cone_detector"]
+transform = Transform3D(1, 0, -9.61382e-20, 0, 1, -9.54283e-23, -3.75871e-21, 2.52243e-13, 1, 0, 3.00281, -2.02346)
+shape = SubResource("BoxShape3D_pif3k")
+
+[node name="ceiling3" type="StaticBody3D" parent="assets/ceiling"]
+transform = Transform3D(-0.0918748, 0.854273, -4.37114e-08, 4.01597e-09, -3.73414e-08, -1, -0.41241, -0.190311, 3.15447e-16, 32.3999, 5.527, 27.0664)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="assets/ceiling/ceiling3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.98354, 0)
+mesh = SubResource("BoxMesh_b82s5")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ekoys")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="assets/ceiling/ceiling3"]
+transform = Transform3D(1, 0, -6.60686e-20, 0, 1, -9.54277e-23, -3.75871e-21, 2.52243e-13, 1, 0, 3.00281, 0.0201874)
+shape = SubResource("BoxShape3D_w4j1a")
+
+[node name="cone_detector" type="Area3D" parent="assets/ceiling/ceiling3"]
+script = ExtResource("12_ksa2i")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="assets/ceiling/ceiling3/cone_detector"]
+transform = Transform3D(1, 0, -9.61382e-20, 0, 1, -9.54283e-23, -3.75871e-21, 2.52243e-13, 1, 0, 3.00281, -2.02346)
+shape = SubResource("BoxShape3D_pif3k")
+
 [node name="wooden_door2" parent="assets" instance=ExtResource("13_xv6mp")]
 transform = Transform3D(-2.23169, 0, -2.72213, 0, 3.52, 0, 2.72213, 0, -2.23169, 34.9048, 0.0141801, -2.56589)
 
@@ -340,6 +388,14 @@ font_size = 82
 
 [node name="Label3D3" type="Label3D" parent="assets/signs"]
 transform = Transform3D(5.86998, 0, 0.0139337, 0, 5.87, 0, -0.0139337, 0, 5.86998, 42.3236, 2.8208, 31.1431)
+modulate = Color(1, 0, 0, 1)
+outline_modulate = Color(1, 0.387335, 0.378759, 0.392157)
+text = "<-"
+font = ExtResource("15_7umyc")
+font_size = 82
+
+[node name="Label3D7" type="Label3D" parent="assets/signs"]
+transform = Transform3D(-5.55056, 0, 1.91002, 0, 5.87, 0, -1.91002, 0, -5.55056, 51.8476, 2.8208, 23.2599)
 modulate = Color(1, 0, 0, 1)
 outline_modulate = Color(1, 0.387335, 0.378759, 0.392157)
 text = "<-"
@@ -370,6 +426,14 @@ text = "<-"
 font = ExtResource("15_7umyc")
 font_size = 82
 
+[node name="Label3D8" type="Label3D" parent="assets/signs"]
+transform = Transform3D(-0.102856, 0, 5.8691, 0, 5.87, 0, -5.8691, 0, -0.102856, 13.8775, 2.8208, -11.1987)
+modulate = Color(1, 0, 0, 1)
+outline_modulate = Color(1, 0.387335, 0.378759, 0.392157)
+text = "<-"
+font = ExtResource("15_7umyc")
+font_size = 82
+
 [node name="enemies" type="Node3D" parent="."]
 
 [node name="mitzi1" type="Path3D" parent="enemies"]
@@ -377,7 +441,7 @@ curve = SubResource("Curve3D_8ddrv")
 script = ExtResource("15_vxay1")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="enemies/mitzi1"]
-transform = Transform3D(-0.99999, 0, -0.0019373, 0, 0.999992, 0, 0.00193728, 0, -0.999998, 42.4407, 9.1244, -22.0937)
+transform = Transform3D(-0.999989, 0, -0.0019373, 0, 0.999992, 0, 0.00193728, 0, -0.999998, 42.4407, 9.1244, -22.0937)
 rotation_mode = 1
 
 [node name="mitzi" parent="enemies/mitzi1/PathFollow3D" instance=ExtResource("16_4quu3")]
@@ -392,6 +456,31 @@ modulate = Color(1, 0, 0, 1)
 texture = SubResource("GradientTexture2D_tp8k4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="enemies/mitzi1/PathFollow3D/mitzi/red_beam"]
+transform = Transform3D(0.945849, -0.0331188, -0.322917, -0.0258627, 0.983928, -0.176667, 0.323579, 0.175453, 0.929792, -0.222965, 8.14535, 0.730049)
+shape = SubResource("BoxShape3D_sk4id")
+
+[node name="mitzi2" type="Path3D" parent="enemies"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.07, 20.117)
+curve = SubResource("Curve3D_3f62p")
+script = ExtResource("15_vxay1")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="enemies/mitzi2"]
+transform = Transform3D(-0.251316, 0, 0.967879, 0, 0.999992, 0, -0.967874, 0, -0.251317, 33.1641, 7.0569, 8.46259)
+progress = 62.547
+rotation_mode = 1
+
+[node name="mitzi" parent="enemies/mitzi2/PathFollow3D" instance=ExtResource("16_4quu3")]
+transform = Transform3D(-0.941264, -0.00174049, -0.337667, 0.0585598, -0.985676, -0.158158, -0.332555, -0.168642, 0.927883, 0.00164032, 0.000538826, -0.842066)
+
+[node name="red_beam" type="Area3D" parent="enemies/mitzi2/PathFollow3D/mitzi"]
+script = ExtResource("17_owj22")
+
+[node name="beam" type="Sprite3D" parent="enemies/mitzi2/PathFollow3D/mitzi/red_beam"]
+transform = Transform3D(11.2751, 2.61396, -0.605833, 0.152874, 1.98678, 11.4174, 2.67889, -11.1152, 1.89833, -0.344421, 8.99621, 0.911201)
+modulate = Color(1, 0, 0, 1)
+texture = SubResource("GradientTexture2D_tp8k4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="enemies/mitzi2/PathFollow3D/mitzi/red_beam"]
 transform = Transform3D(0.945849, -0.0331188, -0.322917, -0.0258627, 0.983928, -0.176667, 0.323579, 0.175453, 0.929792, -0.222965, 8.14535, 0.730049)
 shape = SubResource("BoxShape3D_sk4id")
 
@@ -426,5 +515,10 @@ visible = false
 
 [connection signal="body_entered" from="assets/ceiling/ceiling/cone_detector" to="assets/ceiling/ceiling/cone_detector" method="_on_body_entered"]
 [connection signal="body_exited" from="assets/ceiling/ceiling/cone_detector" to="assets/ceiling/ceiling/cone_detector" method="_on_body_exited"]
+[connection signal="body_entered" from="assets/ceiling/ceiling2/cone_detector" to="assets/ceiling/ceiling2/cone_detector" method="_on_body_entered"]
+[connection signal="body_exited" from="assets/ceiling/ceiling2/cone_detector" to="assets/ceiling/ceiling2/cone_detector" method="_on_body_exited"]
+[connection signal="body_entered" from="assets/ceiling/ceiling3/cone_detector" to="assets/ceiling/ceiling3/cone_detector" method="_on_body_entered"]
+[connection signal="body_exited" from="assets/ceiling/ceiling3/cone_detector" to="assets/ceiling/ceiling3/cone_detector" method="_on_body_exited"]
 [connection signal="body_entered" from="assets/wooden_door2/transition" to="assets/wooden_door2/transition" method="_on_body_entered"]
 [connection signal="body_entered" from="enemies/mitzi1/PathFollow3D/mitzi/red_beam" to="enemies/mitzi1/PathFollow3D/mitzi/red_beam" method="_on_body_entered"]
+[connection signal="body_entered" from="enemies/mitzi2/PathFollow3D/mitzi/red_beam" to="enemies/mitzi2/PathFollow3D/mitzi/red_beam" method="_on_body_entered"]

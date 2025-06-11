@@ -24,4 +24,5 @@ func _on_back_b_pressed() -> void:
 
 
 func _on_storymode_b_pressed() -> void:
-	get_tree().change_scene_to_file("res://mixed_levels/intro/intro_level.tscn")
+	Global.next_scene = "res://mixed_levels/intro/intro_level.tscn"
+	get_tree().change_scene_to_packed(Global.loading_screen)

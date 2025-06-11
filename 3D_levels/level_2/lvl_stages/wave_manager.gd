@@ -54,4 +54,5 @@ func start_w2():
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
-	get_tree().change_scene_to_file.call_deferred("res://2D_levels/level_3/lvl_3_2d.tscn")
+	Global.next_scene = "res://2D_levels/level_3/lvl_3_2d.tscn"
+	get_tree().change_scene_to_packed(Global.loading_screen)

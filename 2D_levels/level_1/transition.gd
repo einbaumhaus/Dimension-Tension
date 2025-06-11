@@ -28,4 +28,5 @@ func _on_perspective_changer_body_entered(body: Node2D) -> void:
 
 
 func _on_transi_anim_animation_finished(anim_name: StringName) -> void:
-	get_tree().change_scene_to_file.call_deferred("res://3D_levels/level_1/level_1_3d.tscn")
+	Global.next_scene = "res://3D_levels/level_1/level_1_3d.tscn"
+	get_tree().change_scene_to_packed(Global.loading_screen)

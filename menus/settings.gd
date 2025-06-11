@@ -82,8 +82,10 @@ func _on_vsync_toggled(toggled_on: bool) -> void:
 func _on_performance_m_toggled(toggled_on: bool) -> void:
 	GlobalSettings.performance_mode = toggled_on
 	if toggled_on:
+		GlobalSettings.performance_mode = true
 		Engine.max_fps = 60
 	else:
+		GlobalSettings.performance_mode = false
 		Engine.max_fps = 0
 
 

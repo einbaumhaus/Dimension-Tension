@@ -1671,7 +1671,7 @@ texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_2rb2n")
 
 [node name="lilguy" type="AnimatedSprite3D" parent="Manager/outro"]
-transform = Transform3D(4.15724, 11.5446, 12.7565, -17.1355, 3.956, 2.00413, -1.54395, -12.8204, 12.1056, 0, -3.14647, 37.8474)
+transform = Transform3D(4.15725, 11.5446, 12.7565, -17.1355, 3.956, 2.00413, -1.54395, -12.8204, 12.1056, 0, -3.14647, 37.8474)
 texture_filter = 2
 sprite_frames = SubResource("SpriteFrames_k1hgb")
 animation = &"stop"

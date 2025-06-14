@@ -29,6 +29,10 @@ window/stretch/mode="canvas_items"
 window/vsync/vsync_mode=0
 mouse_cursor/custom_image="uid://brhhr4oafxsrt"
 
+[editor]
+
+movie_writer/movie_file="D:/GODOT GAMES/movie.avi"
+
 [global_group]
 
 player=""

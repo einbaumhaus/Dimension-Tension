@@ -2194,7 +2194,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_pnu7e")
 [node name="StaticBody3D" type="StaticBody3D" parent="assets/env/forest"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="assets/env/forest/StaticBody3D"]
-transform = Transform3D(24.6204, 0, 0, 0, 1, 0, 0, 0, 115.274, 9.8002, 0, 0)
+transform = Transform3D(24.6204, 0, 0, 0, 1, 0, 0, 0, 115.274, 9.8, -0.05, 0)
 mesh = SubResource("PlaneMesh_erloq")
 surface_material_override/0 = SubResource("StandardMaterial3D_ocqxk")
 

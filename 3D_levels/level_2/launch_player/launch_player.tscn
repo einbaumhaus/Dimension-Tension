@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://f8i8svg7k032"]
+[gd_scene load_steps=14 format=3 uid="uid://f8i8svg7k032"]
 
 [ext_resource type="Script" uid="uid://bnkqjcuyxgj5q" path="res://3D_levels/level_2/launch_player/launch_player.gd" id="1_tj2to"]
 [ext_resource type="PackedScene" uid="uid://c23ra3wdhjla6" path="res://3D_levels/level_2/assets/sticker_launcher/sticker_launcher.tscn" id="2_1lfnn"]
 [ext_resource type="Texture2D" uid="uid://yvnnoabn6x3b" path="res://3D_levels/Player3D/legs_player.png" id="3_7hpc3"]
 [ext_resource type="PackedScene" uid="uid://bpmq6uacs60yv" path="res://2D_levels/level_2/elim_scene/elim_scene.tscn" id="4_1lfnn"]
 [ext_resource type="Texture2D" uid="uid://dx5hsxo48c6c" path="res://3D_levels/level_2/assets/sticker_launcher/zap overlock.png" id="5_mp1qs"]
+[ext_resource type="AudioStream" uid="uid://bjpcwd7llk85r" path="res://audio/sfx/footstep.wav" id="6_7hpc3"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_b1m74"]
 
@@ -28,6 +29,29 @@ animations = [{
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7hpc3"]
 cull_mode = 2
 albedo_color = Color(0.78562, 0.0150579, 0, 1)
+
+[sub_resource type="Animation" id="Animation_vp22m"]
+resource_name = "wlaking"
+length = 0.56
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_footstep"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r8qtf"]
+_data = {
+&"wlaking": SubResource("Animation_vp22m")
+}
 
 [node name="launch_player" type="CharacterBody3D"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
@@ -77,5 +101,17 @@ visible = false
 
 [node name="elim_scene" parent="elim" instance=ExtResource("4_1lfnn")]
 position = Vector2(4.76837e-07, 0.00012207)
+
+[node name="Player_Audio" type="Node3D" parent="."]
+
+[node name="footstep" type="AudioStreamPlayer3D" parent="Player_Audio"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0224, 0)
+stream = ExtResource("6_7hpc3")
+volume_db = -20.0
+
+[node name="footstep2" type="AnimationPlayer" parent="Player_Audio"]
+libraries = {
+&"": SubResource("AnimationLibrary_r8qtf")
+}
 
 [editable path="Camera3D/sticker_launcher2"]

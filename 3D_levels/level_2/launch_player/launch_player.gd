@@ -7,6 +7,8 @@ const JUMP_VELOCITY = 14
 var health := 100
 @onready var healthbar: ProgressBar = get_node_or_null("../mission/healthbar")
 
+var sprinting = false
+
 var acceleration = 30
 var _gravity := -30.0
 var _camera_input_direction := Vector2.ZERO
@@ -17,6 +19,8 @@ var mouse_sensitivity = null
 @onready var mission: CanvasLayer = $"../mission"
 @onready var legs: AnimatedSprite3D = $legs
 
+@onready var footstep: AudioStreamPlayer3D = $Player_Audio/footstep
+@onready var footstep_audio: AnimationPlayer = $Player_Audio/footstep2
 #launch stuff
 @onready var launch_anim = $Camera3D/sticker_launcher/animations/AnimationPlayer
 @onready var sticker_output = $Camera3D/sticker_launcher/RayCast3D
@@ -50,6 +54,10 @@ func _input(event: InputEvent) -> void: #add mouse input
 	if event.is_action_pressed("escape"):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
+func play_footstep():
+	footstep.pitch_scale = randf_range(0.8, 1.2)
+	footstep.play()
+	
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		var delta_motion = event.relative * clamp(GlobalSettings.mouse_sensitivity, 0.001, 0.5)
@@ -122,9 +130,11 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("shift"):
 		SPEED = 10
 		_camera.fov = 80
+		sprinting = true
 	if Input.is_action_just_released("shift"):
 		SPEED = 7
 		_camera.fov = 75
+		sprinting = false
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var raw_input := Input.get_vector("left", "right", "up", "down")
@@ -144,7 +154,11 @@ func _physics_process(delta: float) -> void:
 	velocity = velocity.move_toward(move_direction * SPEED, acceleration * delta)
 	velocity.y = y_velocity + _gravity * delta
 	
-	
+	if move_direction != Vector3() and is_on_floor():
+		if sprinting:
+			footstep_audio.play("wlaking", -1, 1.5)
+		else:
+			footstep_audio.play("wlaking")
 	move_and_slide()
 	
 	#death

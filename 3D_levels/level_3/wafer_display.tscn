@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://drc1ffitwsg8i"]
+
+[ext_resource type="PackedScene" uid="uid://c8icgwloohj48" path="res://3D_levels/level_3/assets/wafer_ui.tscn" id="1_a84jp"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_a84jp"]
+viewport_path = NodePath("Control/SubViewport")
+
+[node name="CanvasLayer2" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 2
+
+[node name="SubViewport" type="SubViewport" parent="Control"]
+own_world_3d = true
+transparent_bg = true
+size = Vector2i(128, 128)
+
+[node name="wafer_ui" parent="Control/SubViewport" instance=ExtResource("1_a84jp")]
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1132.0
+offset_top = 21.0
+offset_right = -876.0
+offset_bottom = 277.0
+grow_horizontal = 0
+scale = Vector2(0.34, 0.34)
+texture = SubResource("ViewportTexture_a84jp")

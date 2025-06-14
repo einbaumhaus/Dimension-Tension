@@ -1,7 +1,9 @@
-[gd_scene load_steps=44 format=4 uid="uid://c23ra3wdhjla6"]
+[gd_scene load_steps=46 format=4 uid="uid://c23ra3wdhjla6"]
 
 [ext_resource type="Script" uid="uid://bsv120bvuw84b" path="res://3D_levels/level_2/assets/sticker_launcher/sticker_launcher.gd" id="1_urnuh"]
 [ext_resource type="Texture2D" uid="uid://begd56ib3oous" path="res://3D_levels/level_2/assets/sticker_launcher/decal.png" id="2_tbp8d"]
+[ext_resource type="AudioStream" uid="uid://cu4sj81i1kj54" path="res://3D_levels/level_2/launch_player/reload.wav" id="3_m5xvb"]
+[ext_resource type="AudioStream" uid="uid://bfef6y2fxfnqa" path="res://3D_levels/level_2/launch_player/launch.wav" id="4_jwsh2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_urnuh"]
 albedo_color = Color(1, 1, 0.733333, 1)
@@ -542,6 +544,30 @@ tracks/16/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("reload:playing")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("launch:playing")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_urnuh"]
 resource_name = "draw_holster"
@@ -633,6 +659,18 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 0.251, 0.101), Vector3(0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("launch:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="Animation" id="Animation_ms8px"]
@@ -818,6 +856,18 @@ tracks/14/keys = {
 "update": 1,
 "values": [true, true, false]
 }
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("reload:playing")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0, 2.46667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_texhx"]
 _data = {
@@ -907,3 +957,11 @@ libraries = {
 [node name="RayCast3D" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.329641, 0.944107, 0, -0.944107, 0.329641, 0, -0.60386, -0.869883)
 target_position = Vector3(0, 0, -1)
+
+[node name="reload" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_m5xvb")
+volume_db = -15.0
+
+[node name="launch" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_jwsh2")
+volume_db = -20.0

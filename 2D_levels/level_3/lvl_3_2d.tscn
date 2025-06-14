@@ -23,7 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://bik5q5qwhc5u" path="res://2D_levels/level_3/assets/gummybear very smoll.png" id="17_0slso"]
 [ext_resource type="PackedScene" uid="uid://bpmq6uacs60yv" path="res://2D_levels/level_2/elim_scene/elim_scene.tscn" id="17_sy0cr"]
 [ext_resource type="Script" uid="uid://cr0yo1p1kllj0" path="res://2D_levels/level_1/fps.gd" id="20_ny3qd"]
-[ext_resource type="AudioStream" uid="uid://b3cc2820s8ik7" path="res://music/Bach-Toccata.ogg" id="22_gva4y"]
+[ext_resource type="AudioStream" uid="uid://b3cc2820s8ik7" path="res://audio/Bach-Toccata.ogg" id="22_gva4y"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_j3w6d"]
 

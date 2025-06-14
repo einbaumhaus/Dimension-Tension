@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://bilmxsoacd24r"]
+[gd_scene load_steps=52 format=4 uid="uid://bilmxsoacd24r"]
 
 [ext_resource type="Script" uid="uid://mvotmqlsvjqe" path="res://3D_levels/level_3/level_3_3d.gd" id="1_ljq06"]
 [ext_resource type="Script" uid="uid://c5supflvg18iy" path="res://3D_levels/level_3/lives_manager.gd" id="2_7umyc"]
@@ -6,8 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://clbutouj7ccjo" path="res://2D_levels/level_1/assets/UI/heart.png" id="4_fwedg"]
 [ext_resource type="PackedScene" uid="uid://bpmq6uacs60yv" path="res://2D_levels/level_2/elim_scene/elim_scene.tscn" id="5_a428l"]
 [ext_resource type="PackedScene" uid="uid://cj7d18ek4ria6" path="res://3D_levels/Player3D/character_body_3d.tscn" id="6_rt2qt"]
+[ext_resource type="Script" uid="uid://dwhox8unhypoe" path="res://3D_levels/level_3/wafer.gd" id="7_7yquk"]
 [ext_resource type="PackedScene" uid="uid://bq67fcnbkrbwb" path="res://3D_levels/level_3/assets/env/wall_2.tscn" id="7_ptg34"]
 [ext_resource type="Texture2D" uid="uid://bn18yxl6dcmmu" path="res://3D_levels/level_1/assets/bridge/materials/rocky_terrain_diff_1k.jpg" id="8_jf7n8"]
+[ext_resource type="Texture2D" uid="uid://6omtbg1ao85f" path="res://3D_levels/level_3/enemies/cone_texture.jpg" id="8_yqu74"]
 [ext_resource type="Texture2D" uid="uid://df5uqri58pjnt" path="res://3D_levels/level_1/assets/bridge/materials/rocky_terrain_nor_gl_1k.jpg" id="9_dkfr8"]
 [ext_resource type="Texture2D" uid="uid://bsuaof7o8fr32" path="res://3D_levels/level_1/assets/castle/materials/castle_wall_slates_diff_1k.jpg" id="10_4ysyc"]
 [ext_resource type="Texture2D" uid="uid://c8n7rx0rslbmi" path="res://3D_levels/level_1/assets/castle/materials/castle_wall_slates_nor_gl_1k.jpg" id="11_yis1l"]
@@ -21,6 +23,8 @@
 [ext_resource type="Script" uid="uid://cr0yo1p1kllj0" path="res://2D_levels/level_1/fps.gd" id="18_5k8gv"]
 [ext_resource type="Script" uid="uid://bb1wjhu534dq3" path="res://2D_levels/Player2D/fps.gd" id="19_3kyar"]
 [ext_resource type="PackedScene" uid="uid://bnp7vdu3nrbe8" path="res://menus/pause_menu.tscn" id="20_ttujv"]
+[ext_resource type="Script" uid="uid://bpi20rff2gabb" path="res://3D_levels/level_3/wafer_manager.gd" id="24_yqu74"]
+[ext_resource type="PackedScene" uid="uid://drc1ffitwsg8i" path="res://3D_levels/level_3/wafer_display.tscn" id="25_alkil"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_di3l7"]
 
@@ -28,10 +32,168 @@
 fog_enabled = true
 fog_mode = 1
 fog_light_color = Color(0, 0, 0, 1)
-fog_density = 1.0
 adjustment_enabled = true
 adjustment_contrast = 1.2
 adjustment_saturation = 0.37
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_alkil"]
+size = Vector3(3.34082, 1, 3.01758)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ux3cs"]
+resource_name = "Material"
+cull_mode = 2
+albedo_color = Color(0.906332, 0.906332, 0.906332, 1)
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_yqu74"]
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 1.06099, 5.35728, 2),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAwACAAEAAAAEAAEAAwAFAAIABQAAAAIABgAEAAAABQAGAAAABwABAAQABwADAAEABgAHAAQABQADAAcABQAHAAYA"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("/////wAAAAAAAP////8AAAAA//8AAAAAAAAAAP//AAD///////8AAAAAAAAAAAAA//8AAAAAAAD//wAA//8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_7ijrr"]
+resource_name = "wafer_Cube"
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 1.06099, 5.35728, 2),
+"attribute_data": PackedByteArray("/5//f//f/z//3/9//5//P/9f/z//nwAA/5//P/9fAAD/X////5//v/+f////X/+//x//f/9f/z//X/9//x//P/9f/3//n/8//5//f/9f/z//X/+//5//f/+f/7//X/9/"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": SubResource("StandardMaterial3D_ux3cs"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("/////wAA//8AAP///////wAA//8AAP///////////////wAA////vwAA//////+//////////78AAAAA////vwAAAAD//1TVAAD//wAAVNUAAP////9U1QAAAAAAAFTVAAAAAAAA/7///wAA////v///AAAAAP+/AAAAAP///7///wAAAABU1f///////1TV/////wAAVNX//wAA//9U1QAAAAAAAP///////wAA//8AAP//AAD/////AAAAAP///3//v/9//7//f/+//3//v/////////////////////9U1VTVVNVU1VTVVNVU1VTVAAD/fwAA/38AAP9/AAD/f6oqqiqqKqoqqiqqKqoqqir/v/+//7//v/+//7//v/+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_yqu74")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eprb2"]
+albedo_color = Color(1, 0.767667, 0.18, 0.517647)
+albedo_texture = ExtResource("8_yqu74")
+
+[sub_resource type="Animation" id="Animation_uefdi"]
+resource_name = "spin"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("wafer:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0.462512), Vector3(0, 6.28319, 0.462512)]
+}
+
+[sub_resource type="Animation" id="Animation_h5b5m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("wafer:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0.462512)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("OmniLight3D:light_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.532309, 0.408838, 3.85046e-07, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:monitoring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("wafer:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_cp0nt"]
+resource_name = "pick up"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("OmniLight3D:light_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0.442297, 0.0618516, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:monitoring")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("wafer:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ohy1u"]
+_data = {
+&"RESET": SubResource("Animation_h5b5m"),
+&"pick up": SubResource("Animation_cp0nt"),
+&"spin": SubResource("Animation_uefdi")
+}
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_5xwyq"]
 size = Vector2(31.77, 54.04)
@@ -66,7 +228,7 @@ size = Vector3(20.3474, 6.00903, 0.988678)
 size = Vector3(20.3474, 6.00903, 3.08811)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r5umf"]
-size = Vector3(1.10071, 1.99951, 1.60999)
+size = Vector3(0.781312, 1.99951, 1.60999)
 
 [sub_resource type="Curve3D" id="Curve3D_8ddrv"]
 _data = {
@@ -94,6 +256,14 @@ _data = {
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
+
+[sub_resource type="Curve3D" id="Curve3D_7yquk"]
+closed = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 9.52901, 7.09587, -12.0826, 0, 0, 0, 0, 0, 0, 9.7718, 7, 5.40968),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_10ygh"]
 bg_color = Color(0.419608, 0.572549, 1, 0.701961)
@@ -184,7 +354,95 @@ visible = false
 environment = SubResource("Environment_b82s5")
 
 [node name="Player" parent="." instance=ExtResource("6_rt2qt")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 60.5949, 0.999592, -3.05605)
+transform = Transform3D(-5.07489e-08, 0, 1.161, 0, 1.161, 0, -1.161, 0, -5.07489e-08, 60.5949, 0.999592, -3.05605)
+
+[node name="lights" type="Node3D" parent="."]
+
+[node name="wafer" type="Area3D" parent="lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.8771, 1.2964, -0.599184)
+script = ExtResource("7_7yquk")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="lights/wafer"]
+transform = Transform3D(1, 0, 0, 0, 0.99991, -0.0134386, 0, 0.0134386, 0.99991, 0, 0, 0)
+light_color = Color(0.532309, 0.408838, 3.85046e-07, 1)
+light_energy = 16.0
+light_specular = 7.205
+light_bake_mode = 0
+omni_range = 5.85904
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="lights/wafer"]
+shape = SubResource("BoxShape3D_alkil")
+
+[node name="wafer" type="MeshInstance3D" parent="lights/wafer"]
+transform = Transform3D(0.313227, -0.156169, 0, 0.156169, 0.313227, 0, 0, 0, 0.35, 0, 0, 0)
+mesh = SubResource("ArrayMesh_7ijrr")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_eprb2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="lights/wafer"]
+libraries = {
+&"": SubResource("AnimationLibrary_ohy1u")
+}
+
+[node name="wafer3" type="Area3D" parent="lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.9068, 1.2964, -17.4585)
+script = ExtResource("7_7yquk")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="lights/wafer3"]
+transform = Transform3D(1, 0, 0, 0, 0.99991, -0.0134386, 0, 0.0134386, 0.99991, 0, 0, 0)
+light_color = Color(0.532309, 0.408838, 3.85046e-07, 1)
+light_energy = 16.0
+light_specular = 7.205
+light_bake_mode = 0
+omni_range = 5.85904
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="lights/wafer3"]
+shape = SubResource("BoxShape3D_alkil")
+
+[node name="wafer" type="MeshInstance3D" parent="lights/wafer3"]
+transform = Transform3D(0.313227, -0.156169, 0, 0.156169, 0.313227, 0, 0, 0, 0.35, 0, 0, 0)
+mesh = SubResource("ArrayMesh_7ijrr")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_eprb2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="lights/wafer3"]
+libraries = {
+&"": SubResource("AnimationLibrary_ohy1u")
+}
+
+[node name="wafer2" type="Area3D" parent="lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.5184, 1.2964, 26.9916)
+script = ExtResource("7_7yquk")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="lights/wafer2"]
+transform = Transform3D(1, 0, 0, 0, 0.99991, -0.0134386, 0, 0.0134386, 0.99991, 0, 0, 0)
+light_color = Color(0.532309, 0.408838, 3.85046e-07, 1)
+light_energy = 16.0
+light_specular = 7.205
+light_bake_mode = 0
+omni_range = 5.85904
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="lights/wafer2"]
+shape = SubResource("BoxShape3D_alkil")
+
+[node name="wafer" type="MeshInstance3D" parent="lights/wafer2"]
+transform = Transform3D(0.313227, -0.156169, 0, 0.156169, 0.313227, 0, 0, 0, 0.35, 0, 0, 0)
+mesh = SubResource("ArrayMesh_7ijrr")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_eprb2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="lights/wafer2"]
+libraries = {
+&"": SubResource("AnimationLibrary_ohy1u")
+}
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="lights"]
+transform = Transform3D(1, 0, 0, 0, 0.99991, -0.0134386, 0, 0.0134386, 0.99991, 20.027, 2.23872, 10.7966)
+light_color = Color(0.552158, 0.00101277, 0.685371, 1)
+light_energy = 16.0
+light_specular = 7.205
+light_bake_mode = 0
+omni_range = 3.22056
 
 [node name="assets" type="Node3D" parent="."]
 
@@ -227,7 +485,19 @@ transform = Transform3D(-3.87727e-08, 0, 1, 0, 1, 0, -0.887016, 0, -4.37114e-08,
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 63.263, 0, 26.8301)
 
 [node name="wall6" parent="assets/walls" instance=ExtResource("7_ptg34")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 39.9159, 0, 9.79313)
+transform = Transform3D(-2.57135e-08, 0, 1, 0, 1, 0, -0.588256, 0, -4.37114e-08, 39.9159, 0, 5.25585)
+
+[node name="wall36" parent="assets/walls" instance=ExtResource("7_ptg34")]
+transform = Transform3D(0.588223, 0, 0.0105416, 0, 1, 0, -0.00620116, 0, 0.999944, 34.4856, 0, 11.4283)
+
+[node name="wall37" parent="assets/walls" instance=ExtResource("7_ptg34")]
+transform = Transform3D(0.296264, 0, 0.58835, 0, 1, 0, -0.215565, 0, 0.808607, 28.135, 0, 4.90439)
+
+[node name="wall38" parent="assets/walls" instance=ExtResource("7_ptg34")]
+transform = Transform3D(-0.219609, 0, 0.80046, 0, 1, 0, -0.293279, 0, -0.599387, 26.1775, 0, 2.29019)
+
+[node name="wall41" parent="assets/walls" instance=ExtResource("7_ptg34")]
+transform = Transform3D(-0.219609, 0, 0.80046, 0, 1, 0, -0.293279, 0, -0.599387, 23.9667, 0, -0.703425)
 
 [node name="wall31" parent="assets/walls" instance=ExtResource("7_ptg34")]
 transform = Transform3D(-4.96894e-08, 0, 1, 0, 1, 0, -1.13676, 0, -4.37114e-08, 6.95548, 0, 16.1918)
@@ -236,7 +506,7 @@ transform = Transform3D(-4.96894e-08, 0, 1, 0, 1, 0, -1.13676, 0, -4.37114e-08, 
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 39.916, 0, -10.489)
 
 [node name="wall18" parent="assets/walls" instance=ExtResource("7_ptg34")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 19.4466, 0, -10.489)
+transform = Transform3D(-1.5853e-08, 0, 1, 0, 1, 0, -0.362675, 0, -4.37114e-08, 19.4466, 0, -22.167)
 
 [node name="wall20" parent="assets/walls" instance=ExtResource("7_ptg34")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 13.1915, 0, -12.5678)
@@ -257,7 +527,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.366, 0, -22.923)
 transform = Transform3D(0.646307, 0, 0, 0, 1, 0, 0, 0, 1, 18.686, 0, -22.923)
 
 [node name="wall27" parent="assets/walls" instance=ExtResource("7_ptg34")]
-transform = Transform3D(0.48728, 0, 0, 0, 1, 0, 0, 0, 1, 36.7964, 0, 6.34432)
+transform = Transform3D(-0.0091029, 0, -0.999937, 0, 1, 0, 0.813626, 0, -0.0111874, 22.799, 0, 13.2064)
 
 [node name="wall28" parent="assets/walls" instance=ExtResource("7_ptg34")]
 transform = Transform3D(0.48728, 0, 0, 0, 1, 0, 0, 0, 1, 47.8875, 0, -16.2457)
@@ -268,6 +538,9 @@ transform = Transform3D(-2.38227e-08, 0, -1, 0, 1, 0, 0.545, 0, -4.37114e-08, 64
 [node name="wall23" parent="assets/walls" instance=ExtResource("7_ptg34")]
 transform = Transform3D(0.646307, 0, 0, 0, 1, 0, 0, 0, 1, 18.686, 0, 6.97479)
 
+[node name="wall39" parent="assets/walls" instance=ExtResource("7_ptg34")]
+transform = Transform3D(0.646307, 0, 0, 0, 1, 0, 0, 0, 1, 18.686, 0, 14.2929)
+
 [node name="wall21" parent="assets/walls" instance=ExtResource("7_ptg34")]
 transform = Transform3D(0.415308, 0, 0.766213, 0, 1, 0, -0.495208, 0, 0.642587, 21.8741, 0, 2.11072)
 
@@ -277,6 +550,9 @@ transform = Transform3D(0.415308, 0, 0.766213, 0, 1, 0, -0.495208, 0, 0.642587, 
 [node name="wall24" parent="assets/walls" instance=ExtResource("7_ptg34")]
 transform = Transform3D(0.415308, 0, 0.766213, 0, 1, 0, -0.495208, 0, 0.642587, 23.776, 0, -5.684)
 
+[node name="wall40" parent="assets/walls" instance=ExtResource("7_ptg34")]
+transform = Transform3D(0.415308, 0, 0.766213, 0, 1, 0, -0.495208, 0, 0.642587, 16.3988, 0, -9.03193)
+
 [node name="wall26" parent="assets/walls" instance=ExtResource("7_ptg34")]
 transform = Transform3D(-0.500395, 0, 0.632895, 0, 1, 0, -0.409044, 0, -0.774238, 30.7378, 0, -15.9299)
 
@@ -284,7 +560,7 @@ transform = Transform3D(-0.500395, 0, 0.632895, 0, 1, 0, -0.409044, 0, -0.774238
 transform = Transform3D(-0.500395, 0, 0.632895, 0, 1, 0, -0.409044, 0, -0.774238, 34.9407, 0, -3.71365)
 
 [node name="wall33" parent="assets/walls" instance=ExtResource("7_ptg34")]
-transform = Transform3D(-0.500395, 0, 0.632895, 0, 1, 0, -0.409044, 0, -0.774238, 28.7935, 0, 18.6194)
+transform = Transform3D(-0.630093, 0, 0.222587, 0, 1, 0, -0.143859, 0, -0.974913, 28.349, 0, 20.5263)
 
 [node name="wall22" parent="assets/walls" instance=ExtResource("7_ptg34")]
 transform = Transform3D(0.415308, 0, 0.766213, 0, 1, 0, -0.495208, 0, 0.642587, 9.05456, 0, 2.31529)
@@ -295,14 +571,13 @@ transform = Transform3D(0.415308, 0, 0.766213, 0, 1, 0, -0.495208, 0, 0.642587, 
 transform = Transform3D(4.465, 0, 0, 0, 1.68, 0, 0, 0, 2.72, 0, 0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="assets/floor/floor"]
+transform = Transform3D(0.624201, 0, 0, 0, 1, 0, 0, 0, 0.66304, 5.88909, 0, 0)
 mesh = SubResource("PlaneMesh_5xwyq")
 surface_material_override/0 = SubResource("StandardMaterial3D_oh7ax")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="assets/floor/floor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00192261, 0.022083, 0)
 shape = SubResource("BoxShape3D_oh7ax")
-
-[node name="lights" type="Node3D" parent="assets"]
 
 [node name="ceiling" type="Node3D" parent="assets"]
 
@@ -367,13 +642,14 @@ transform = Transform3D(1, 0, -9.61382e-20, 0, 1, -9.54283e-23, -3.75871e-21, 2.
 shape = SubResource("BoxShape3D_pif3k")
 
 [node name="wooden_door2" parent="assets" instance=ExtResource("13_xv6mp")]
-transform = Transform3D(-2.23169, 0, -2.72213, 0, 3.52, 0, 2.72213, 0, -2.23169, 34.9048, 0.0141801, -2.56589)
+transform = Transform3D(-3.51914, 0, 0.0779558, 0, 3.52, 0, -0.0779558, 0, -3.51914, 21.9621, 0.0141801, 10.9161)
 
 [node name="transition" type="Area3D" parent="assets/wooden_door2"]
+monitoring = false
 script = ExtResource("14_vgsxo")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="assets/wooden_door2/transition"]
-transform = Transform3D(1, 0, -1.19209e-07, 0, 1, 0, 1.19209e-07, 0, 1, 0.050354, 0.499756, 0.0584102)
+transform = Transform3D(1, 0, -1.19209e-07, 0, 1, 0, 1.19209e-07, 0, 1, 0.210053, 0.499756, 0.0584102)
 shape = SubResource("BoxShape3D_r5umf")
 
 [node name="signs" type="Node3D" parent="assets"]
@@ -383,54 +659,6 @@ transform = Transform3D(-2.56586e-07, 0, 5.87, 0, 5.87, 0, -5.87, 0, -2.56586e-0
 modulate = Color(1, 0, 0, 1)
 outline_modulate = Color(1, 0.387335, 0.378759, 0.392157)
 text = "<->"
-font = ExtResource("15_7umyc")
-font_size = 82
-
-[node name="Label3D3" type="Label3D" parent="assets/signs"]
-transform = Transform3D(5.86998, 0, 0.0139337, 0, 5.87, 0, -0.0139337, 0, 5.86998, 42.3236, 2.8208, 31.1431)
-modulate = Color(1, 0, 0, 1)
-outline_modulate = Color(1, 0.387335, 0.378759, 0.392157)
-text = "<-"
-font = ExtResource("15_7umyc")
-font_size = 82
-
-[node name="Label3D7" type="Label3D" parent="assets/signs"]
-transform = Transform3D(-5.55056, 0, 1.91002, 0, 5.87, 0, -1.91002, 0, -5.55056, 51.8476, 2.8208, 23.2599)
-modulate = Color(1, 0, 0, 1)
-outline_modulate = Color(1, 0.387335, 0.378759, 0.392157)
-text = "<-"
-font = ExtResource("15_7umyc")
-font_size = 82
-
-[node name="Label3D4" type="Label3D" parent="assets/signs"]
-transform = Transform3D(-5.34292, 0, -2.43108, 0, 5.87, 0, 2.43108, 0, -5.34292, 16.7565, 2.8208, 20.8644)
-modulate = Color(1, 0, 0, 1)
-outline_modulate = Color(1, 0.387335, 0.378759, 0.392157)
-text = "<-"
-font = ExtResource("15_7umyc")
-font_size = 82
-
-[node name="Label3D5" type="Label3D" parent="assets/signs"]
-transform = Transform3D(-5.34292, 0, -2.43108, 0, 5.87, 0, 2.43108, 0, -5.34292, 17.1995, 2.8208, 21.838)
-modulate = Color(1, 0, 0, 1)
-outline_modulate = Color(1, 0.387335, 0.378759, 0.392157)
-text = "<-"
-font = ExtResource("15_7umyc")
-font_size = 82
-
-[node name="Label3D6" type="Label3D" parent="assets/signs"]
-transform = Transform3D(-4.51821, 0, 3.74736, 0, 5.87, 0, -3.74736, 0, -4.51821, 28.3996, 2.8208, -17.1201)
-modulate = Color(1, 0, 0, 1)
-outline_modulate = Color(1, 0.387335, 0.378759, 0.392157)
-text = "<-"
-font = ExtResource("15_7umyc")
-font_size = 82
-
-[node name="Label3D8" type="Label3D" parent="assets/signs"]
-transform = Transform3D(-0.102856, 0, 5.8691, 0, 5.87, 0, -5.8691, 0, -0.102856, 13.8775, 2.8208, -11.1987)
-modulate = Color(1, 0, 0, 1)
-outline_modulate = Color(1, 0.387335, 0.378759, 0.392157)
-text = "<-"
 font = ExtResource("15_7umyc")
 font_size = 82
 
@@ -484,6 +712,31 @@ texture = SubResource("GradientTexture2D_tp8k4")
 transform = Transform3D(0.945849, -0.0331188, -0.322917, -0.0258627, 0.983928, -0.176667, 0.323579, 0.175453, 0.929792, -0.222965, 8.14535, 0.730049)
 shape = SubResource("BoxShape3D_sk4id")
 
+[node name="mitzi3" type="Path3D" parent="enemies"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.07, 20.117)
+curve = SubResource("Curve3D_7yquk")
+script = ExtResource("15_vxay1")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="enemies/mitzi3"]
+transform = Transform3D(0.999827, 0, 0.0138775, 0, 0.999992, 0, -0.0138775, 0, 0.999828, 9.67161, 7.03956, -1.80847)
+progress = 24.7132
+rotation_mode = 1
+
+[node name="mitzi" parent="enemies/mitzi3/PathFollow3D" instance=ExtResource("16_4quu3")]
+transform = Transform3D(-0.941264, -0.00174049, -0.337667, 0.0585598, -0.985676, -0.158158, -0.332555, -0.168642, 0.927883, 0.00164032, 0.000538826, -0.842066)
+
+[node name="red_beam" type="Area3D" parent="enemies/mitzi3/PathFollow3D/mitzi"]
+script = ExtResource("17_owj22")
+
+[node name="beam" type="Sprite3D" parent="enemies/mitzi3/PathFollow3D/mitzi/red_beam"]
+transform = Transform3D(11.2751, 2.61396, -0.605833, 0.152874, 1.98678, 11.4174, 2.67889, -11.1152, 1.89833, -0.344421, 8.99621, 0.911201)
+modulate = Color(1, 0, 0, 1)
+texture = SubResource("GradientTexture2D_tp8k4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="enemies/mitzi3/PathFollow3D/mitzi/red_beam"]
+transform = Transform3D(0.945849, -0.0331188, -0.322917, -0.0258627, 0.983928, -0.176667, 0.323579, 0.175453, 0.929792, -0.222965, 8.14535, 0.730049)
+shape = SubResource("BoxShape3D_sk4id")
+
 [node name="FPS" type="CanvasLayer" parent="."]
 script = ExtResource("18_5k8gv")
 
@@ -513,6 +766,37 @@ script = ExtResource("19_3kyar")
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("20_ttujv")]
 visible = false
 
+[node name="WaferManager" type="Node" parent="."]
+script = ExtResource("24_yqu74")
+
+[node name="wafer" parent="." instance=ExtResource("25_alkil")]
+
+[node name="mission" type="Label" parent="wafer"]
+offset_left = 13.0
+offset_top = 114.0
+offset_right = 267.0
+offset_bottom = 177.0
+theme_override_fonts/font = ExtResource("15_7umyc")
+theme_override_font_sizes/font_size = 21
+text = "COLLECT ALL 3 WAFERS
+TO UNLOCK DOOR"
+
+[node name="wafer_count" type="Label" parent="wafer"]
+offset_left = 100.0
+offset_top = 31.0
+offset_right = 168.0
+offset_bottom = 100.0
+theme_override_colors/font_color = Color(0.725076, 0.506733, 0, 1)
+theme_override_fonts/font = ExtResource("15_7umyc")
+theme_override_font_sizes/font_size = 56
+text = "0"
+
+[connection signal="body_entered" from="lights/wafer" to="lights/wafer" method="_on_body_entered"]
+[connection signal="animation_finished" from="lights/wafer/AnimationPlayer" to="lights/wafer" method="_on_animation_player_animation_finished"]
+[connection signal="body_entered" from="lights/wafer3" to="lights/wafer3" method="_on_body_entered"]
+[connection signal="animation_finished" from="lights/wafer3/AnimationPlayer" to="lights/wafer3" method="_on_animation_player_animation_finished"]
+[connection signal="body_entered" from="lights/wafer2" to="lights/wafer2" method="_on_body_entered"]
+[connection signal="animation_finished" from="lights/wafer2/AnimationPlayer" to="lights/wafer2" method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="assets/ceiling/ceiling/cone_detector" to="assets/ceiling/ceiling/cone_detector" method="_on_body_entered"]
 [connection signal="body_exited" from="assets/ceiling/ceiling/cone_detector" to="assets/ceiling/ceiling/cone_detector" method="_on_body_exited"]
 [connection signal="body_entered" from="assets/ceiling/ceiling2/cone_detector" to="assets/ceiling/ceiling2/cone_detector" method="_on_body_entered"]
@@ -522,3 +806,4 @@ visible = false
 [connection signal="body_entered" from="assets/wooden_door2/transition" to="assets/wooden_door2/transition" method="_on_body_entered"]
 [connection signal="body_entered" from="enemies/mitzi1/PathFollow3D/mitzi/red_beam" to="enemies/mitzi1/PathFollow3D/mitzi/red_beam" method="_on_body_entered"]
 [connection signal="body_entered" from="enemies/mitzi2/PathFollow3D/mitzi/red_beam" to="enemies/mitzi2/PathFollow3D/mitzi/red_beam" method="_on_body_entered"]
+[connection signal="body_entered" from="enemies/mitzi3/PathFollow3D/mitzi/red_beam" to="enemies/mitzi3/PathFollow3D/mitzi/red_beam" method="_on_body_entered"]

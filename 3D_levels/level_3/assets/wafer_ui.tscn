@@ -1,0 +1,64 @@
+[gd_scene load_steps=7 format=4 uid="uid://c8icgwloohj48"]
+
+[ext_resource type="Script" uid="uid://c1nl7mjlqrem4" path="res://wafer_ui.gd" id="1_iok57"]
+[ext_resource type="Texture2D" uid="uid://6omtbg1ao85f" path="res://3D_levels/level_3/enemies/cone_texture.jpg" id="2_twmva"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ux3cs"]
+resource_name = "Material"
+cull_mode = 2
+albedo_color = Color(0.906332, 0.906332, 0.906332, 1)
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_cu658"]
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 1.06099, 5.35728, 2),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAwACAAEAAAAEAAEAAwAFAAIABQAAAAIABgAEAAAABQAGAAAABwABAAQABwADAAEABgAHAAQABQADAAcABQAHAAYA"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("/////wAAAAAAAP////8AAAAA//8AAAAAAAAAAP//AAD///////8AAAAAAAAAAAAA//8AAAAAAAD//wAA//8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_sqepo"]
+resource_name = "wafer_Cube"
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 1.06099, 5.35728, 2),
+"attribute_data": PackedByteArray("/5//f//f/z//3/9//5//P/9f/z//nwAA/5//P/9fAAD/X////5//v/+f////X/+//x//f/9f/z//X/9//x//P/9f/3//n/8//5//f/9f/z//X/+//5//f/+f/7//X/9/"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": SubResource("StandardMaterial3D_ux3cs"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("/////wAA//8AAP///////wAA//8AAP///////////////wAA////vwAA//////+//////////78AAAAA////vwAAAAD//1TVAAD//wAAVNUAAP////9U1QAAAAAAAFTVAAAAAAAA/7///wAA////v///AAAAAP+/AAAAAP///7///wAAAABU1f///////1TV/////wAAVNX//wAA//9U1QAAAAAAAP///////wAA//8AAP//AAD/////AAAAAP///3//v/9//7//f/+//3//v/////////////////////9U1VTVVNVU1VTVVNVU1VTVAAD/fwAA/38AAP9/AAD/f6oqqiqqKqoqqiqqKqoqqir/v/+//7//v/+//7//v/+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_cu658")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h8t5o"]
+albedo_color = Color(0.913626, 0.757651, 0, 0.517647)
+albedo_texture = ExtResource("2_twmva")
+
+[node name="wafer_ui" type="Node3D"]
+script = ExtResource("1_iok57")
+
+[node name="wafer_pivot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0252079, 0.654542, 0)
+
+[node name="wafer" type="MeshInstance3D" parent="wafer_pivot"]
+transform = Transform3D(0.313227, -0.156169, 0, 0.156169, 0.313227, 0, 0, 0, 0.35, 0.358114, -0.654542, 0)
+mesh = SubResource("ArrayMesh_sqepo")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_h8t5o")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.982729, 0.185049, 0, -0.185049, 0.982729, 0, 1.51763, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.462409, 1.60593)

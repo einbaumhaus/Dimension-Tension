@@ -2,7 +2,7 @@ extends Node
 
 var mouse_sensitivity: float = 0.1
 var volume: float = 0.0
-var muted: bool = false
+var muted: bool = true
 var window_mode: int = 0
 var vsync: bool = false
 var cursor_index: int = 0

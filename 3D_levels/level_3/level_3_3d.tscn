@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=4 uid="uid://bilmxsoacd24r"]
+[gd_scene load_steps=57 format=4 uid="uid://bilmxsoacd24r"]
 
 [ext_resource type="Script" uid="uid://mvotmqlsvjqe" path="res://3D_levels/level_3/level_3_3d.gd" id="1_ljq06"]
 [ext_resource type="Script" uid="uid://c5supflvg18iy" path="res://3D_levels/level_3/lives_manager.gd" id="2_7umyc"]
@@ -32,6 +32,7 @@
 fog_enabled = true
 fog_mode = 1
 fog_light_color = Color(0, 0, 0, 1)
+fog_density = 1.0
 adjustment_enabled = true
 adjustment_contrast = 1.2
 adjustment_saturation = 0.37
@@ -80,22 +81,6 @@ shadow_mesh = SubResource("ArrayMesh_yqu74")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eprb2"]
 albedo_color = Color(1, 0.767667, 0.18, 0.517647)
 albedo_texture = ExtResource("8_yqu74")
-
-[sub_resource type="Animation" id="Animation_uefdi"]
-resource_name = "spin"
-length = 3.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("wafer:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0.462512), Vector3(0, 6.28319, 0.462512)]
-}
 
 [sub_resource type="Animation" id="Animation_h5b5m"]
 length = 0.001
@@ -188,6 +173,22 @@ tracks/2/keys = {
 "values": [false]
 }
 
+[sub_resource type="Animation" id="Animation_uefdi"]
+resource_name = "spin"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("wafer:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0.462512), Vector3(0, 6.28319, 0.462512)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ohy1u"]
 _data = {
 &"RESET": SubResource("Animation_h5b5m"),
@@ -228,7 +229,218 @@ size = Vector3(20.3474, 6.00903, 0.988678)
 size = Vector3(20.3474, 6.00903, 3.08811)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r5umf"]
-size = Vector3(0.781312, 1.99951, 1.60999)
+size = Vector3(1.06632, 1.99951, 1.60999)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_alkil"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uefdi"]
+albedo_color = Color(0, 0, 0, 1)
+metallic_specular = 0.0
+
+[sub_resource type="Animation" id="Animation_ohy1u"]
+resource_name = "outro"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Camera3D:current")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("wafers:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("wafers/wafer2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.008, 0.363, 0.35), Vector3(-1.903, 0.363, 0.35)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("wafers/wafer3:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.008, 0.363, -0.01034), Vector3(-1.89875, 0.363, -0.01034)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("wafers/wafer4:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(2, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.008, 0.363, -0.387), Vector3(-1.89958, 0.363, -0.387)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../../../lights/OmniLight3D2:light_color")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.0333333, 3, 3.05),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.552158, 0.00101277, 0.685371, 1), Color(0.552158, 0.00101277, 0.685371, 1), Color(0.436062, 0.353517, 9.62615e-08, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("..:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(3.14, 4.94),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(21.9621, 0.0141801, 10.9161), Vector3(21.397, 0.014, 10.016)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("..:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(3.14, 4.94),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 3.11944, 0), Vector3(0, 2.70875, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_j1j8r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Camera3D:current")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("wafers:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("wafers/wafer2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.008, 0.363, 0.35)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("wafers/wafer3:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.008, 0.363, -0.01034)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("wafers/wafer4:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.008, 0.363, -0.387)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../../../lights/OmniLight3D2:light_color")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.552158, 0.00101277, 0.685371, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("..:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(21.9621, 0.0141801, 10.9161)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("..:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 3.11944, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_768aj"]
+_data = {
+&"RESET": SubResource("Animation_j1j8r"),
+&"outro": SubResource("Animation_ohy1u")
+}
 
 [sub_resource type="Curve3D" id="Curve3D_8ddrv"]
 _data = {
@@ -385,7 +597,7 @@ libraries = {
 }
 
 [node name="wafer3" type="Area3D" parent="lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.9068, 1.2964, -17.4585)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.9068, 1.2964, -16.5242)
 script = ExtResource("7_7yquk")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="lights/wafer3"]
@@ -437,12 +649,12 @@ libraries = {
 }
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="lights"]
-transform = Transform3D(1, 0, 0, 0, 0.99991, -0.0134386, 0, 0.0134386, 0.99991, 20.027, 2.23872, 10.7966)
+transform = Transform3D(1, 0, 0, 0, 0.99991, -0.0134386, 0, 0.0134386, 0.99991, 20.9415, 2.65031, 10.7966)
 light_color = Color(0.552158, 0.00101277, 0.685371, 1)
 light_energy = 16.0
 light_specular = 7.205
 light_bake_mode = 0
-omni_range = 3.22056
+omni_range = 3.75306
 
 [node name="assets" type="Node3D" parent="."]
 
@@ -488,13 +700,16 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 63.263
 transform = Transform3D(-2.57135e-08, 0, 1, 0, 1, 0, -0.588256, 0, -4.37114e-08, 39.9159, 0, 5.25585)
 
 [node name="wall36" parent="assets/walls" instance=ExtResource("7_ptg34")]
-transform = Transform3D(0.588223, 0, 0.0105416, 0, 1, 0, -0.00620116, 0, 0.999944, 34.4856, 0, 11.4283)
+transform = Transform3D(0.588223, 0, 0.0105416, 0, 1, 0, -0.00620116, 0, 0.999944, 34.4856, 0, 9.19922)
 
 [node name="wall37" parent="assets/walls" instance=ExtResource("7_ptg34")]
 transform = Transform3D(0.296264, 0, 0.58835, 0, 1, 0, -0.215565, 0, 0.808607, 28.135, 0, 4.90439)
 
 [node name="wall38" parent="assets/walls" instance=ExtResource("7_ptg34")]
 transform = Transform3D(-0.219609, 0, 0.80046, 0, 1, 0, -0.293279, 0, -0.599387, 26.1775, 0, 2.29019)
+
+[node name="wall42" parent="assets/walls" instance=ExtResource("7_ptg34")]
+transform = Transform3D(-0.0352446, 0, 0.995363, 0, 1, 0, -0.36469, 0, -0.096193, 32.1765, 0, 19.3471)
 
 [node name="wall41" parent="assets/walls" instance=ExtResource("7_ptg34")]
 transform = Transform3D(-0.219609, 0, 0.80046, 0, 1, 0, -0.293279, 0, -0.599387, 23.9667, 0, -0.703425)
@@ -560,7 +775,7 @@ transform = Transform3D(-0.500395, 0, 0.632895, 0, 1, 0, -0.409044, 0, -0.774238
 transform = Transform3D(-0.500395, 0, 0.632895, 0, 1, 0, -0.409044, 0, -0.774238, 34.9407, 0, -3.71365)
 
 [node name="wall33" parent="assets/walls" instance=ExtResource("7_ptg34")]
-transform = Transform3D(-0.630093, 0, 0.222587, 0, 1, 0, -0.143859, 0, -0.974913, 28.349, 0, 20.5263)
+transform = Transform3D(-0.630093, 0, 0.222587, 0, 1, 0, -0.143859, 0, -0.974913, 31.4211, 0, 15.7043)
 
 [node name="wall22" parent="assets/walls" instance=ExtResource("7_ptg34")]
 transform = Transform3D(0.415308, 0, 0.766213, 0, 1, 0, -0.495208, 0, 0.642587, 9.05456, 0, 2.31529)
@@ -622,7 +837,7 @@ transform = Transform3D(1, 0, -9.61382e-20, 0, 1, -9.54283e-23, -3.75871e-21, 2.
 shape = SubResource("BoxShape3D_pif3k")
 
 [node name="ceiling3" type="StaticBody3D" parent="assets/ceiling"]
-transform = Transform3D(-0.0918748, 0.854273, -4.37114e-08, 4.01597e-09, -3.73414e-08, -1, -0.41241, -0.190311, 3.15447e-16, 32.3999, 5.527, 27.0664)
+transform = Transform3D(0.0434905, 0.870566, -4.14605e-08, 4.01597e-09, -3.73414e-08, -1, -0.420276, 0.090087, -1.3846e-08, 42.2296, 5.527, 25.8388)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="assets/ceiling/ceiling3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.98354, 0)
@@ -641,16 +856,63 @@ script = ExtResource("12_ksa2i")
 transform = Transform3D(1, 0, -9.61382e-20, 0, 1, -9.54283e-23, -3.75871e-21, 2.52243e-13, 1, 0, 3.00281, -2.02346)
 shape = SubResource("BoxShape3D_pif3k")
 
+[node name="Camera3D" type="Camera3D" parent="assets"]
+transform = Transform3D(-0.0554073, 0.0340457, -0.997883, 0, 0.999418, 0.0340981, 0.998464, 0.00188928, -0.0553751, 16.7505, 2.2923, 10.8172)
+
 [node name="wooden_door2" parent="assets" instance=ExtResource("13_xv6mp")]
-transform = Transform3D(-3.51914, 0, 0.0779558, 0, 3.52, 0, -0.0779558, 0, -3.51914, 21.9621, 0.0141801, 10.9161)
+transform = Transform3D(-3.51914, 0, 0.0779557, 0, 3.52, 0, -0.0779557, 0, -3.51914, 21.9621, 0.0141801, 10.9161)
 
 [node name="transition" type="Area3D" parent="assets/wooden_door2"]
 monitoring = false
 script = ExtResource("14_vgsxo")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="assets/wooden_door2/transition"]
-transform = Transform3D(1, 0, -1.19209e-07, 0, 1, 0, 1.19209e-07, 0, 1, 0.210053, 0.499756, 0.0584102)
+transform = Transform3D(1, 0, -1.19209e-07, 0, 0.999994, 0, 1.19209e-07, 0, 1, 0.352555, 0.499756, 0.0584106)
 shape = SubResource("BoxShape3D_r5umf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="assets/wooden_door2"]
+transform = Transform3D(1.19769e-08, 0.792, -1.6531e-08, 0.274, -3.46194e-08, -4.85996e-17, -1.91513e-15, -1.21072e-07, -0.106, 0.00551224, 0.529323, 0.351371)
+mesh = SubResource("PlaneMesh_alkil")
+surface_material_override/0 = SubResource("StandardMaterial3D_uefdi")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="assets/wooden_door2"]
+transform = Transform3D(1.19769e-08, 0.792, -1.6531e-08, 0.274, -3.46194e-08, -4.85996e-17, -1.91513e-15, -1.21072e-07, -0.106, 0.00848771, 0.529322, -0.0101323)
+mesh = SubResource("PlaneMesh_alkil")
+surface_material_override/0 = SubResource("StandardMaterial3D_uefdi")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="assets/wooden_door2"]
+transform = Transform3D(1.19769e-08, 0.792, -1.6531e-08, 0.274, -3.46194e-08, -4.85996e-17, -1.91513e-15, -1.21072e-07, -0.106, 0.00848765, 0.529322, -0.386603)
+mesh = SubResource("PlaneMesh_alkil")
+surface_material_override/0 = SubResource("StandardMaterial3D_uefdi")
+
+[node name="outro" type="Node3D" parent="assets/wooden_door2"]
+
+[node name="wafers" type="Node3D" parent="assets/wooden_door2/outro"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.90711, 0, -3.72529e-09)
+visible = false
+
+[node name="wafer2" type="MeshInstance3D" parent="assets/wooden_door2/outro/wafers"]
+transform = Transform3D(0.0994317, 0, -4.65661e-10, 0, 0.0994317, 0, 0, 0, 0.0994317, 0.008, 0.363, 0.35)
+mesh = SubResource("ArrayMesh_7ijrr")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_eprb2")
+
+[node name="wafer3" type="MeshInstance3D" parent="assets/wooden_door2/outro/wafers"]
+transform = Transform3D(0.0994317, 0, -4.65661e-10, 0, 0.0994317, 0, 0, 0, 0.0994317, 0.008, 0.363, -0.01034)
+mesh = SubResource("ArrayMesh_7ijrr")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_eprb2")
+
+[node name="wafer4" type="MeshInstance3D" parent="assets/wooden_door2/outro/wafers"]
+transform = Transform3D(0.0994317, 0, -4.65661e-10, 0, 0.0994317, 0, 0, 0, 0.0994317, 0.008, 0.363, -0.387)
+mesh = SubResource("ArrayMesh_7ijrr")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_eprb2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="assets/wooden_door2/outro"]
+libraries = {
+&"": SubResource("AnimationLibrary_768aj")
+}
 
 [node name="signs" type="Node3D" parent="assets"]
 
@@ -661,6 +923,9 @@ outline_modulate = Color(1, 0.387335, 0.378759, 0.392157)
 text = "<->"
 font = ExtResource("15_7umyc")
 font_size = 82
+
+[node name="wooden_door" parent="assets" instance=ExtResource("13_xv6mp")]
+transform = Transform3D(-2.766, 0, -4.17654e-07, 0, 3.775, 0, 4.17654e-07, 0, -2.766, 63.986, 0, -2.69895)
 
 [node name="enemies" type="Node3D" parent="."]
 
@@ -718,7 +983,7 @@ curve = SubResource("Curve3D_7yquk")
 script = ExtResource("15_vxay1")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="enemies/mitzi3"]
-transform = Transform3D(0.999827, 0, 0.0138775, 0, 0.999992, 0, -0.0138775, 0, 0.999828, 9.67161, 7.03956, -1.80847)
+transform = Transform3D(0.999827, 0, 0.0138775, 0, 0.999992, 0, -0.0138774, 0, 0.999828, 9.67161, 7.03956, -1.80849)
 progress = 24.7132
 rotation_mode = 1
 
@@ -804,6 +1069,7 @@ text = "0"
 [connection signal="body_entered" from="assets/ceiling/ceiling3/cone_detector" to="assets/ceiling/ceiling3/cone_detector" method="_on_body_entered"]
 [connection signal="body_exited" from="assets/ceiling/ceiling3/cone_detector" to="assets/ceiling/ceiling3/cone_detector" method="_on_body_exited"]
 [connection signal="body_entered" from="assets/wooden_door2/transition" to="assets/wooden_door2/transition" method="_on_body_entered"]
+[connection signal="animation_finished" from="assets/wooden_door2/outro/AnimationPlayer" to="assets/wooden_door2/transition" method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="enemies/mitzi1/PathFollow3D/mitzi/red_beam" to="enemies/mitzi1/PathFollow3D/mitzi/red_beam" method="_on_body_entered"]
 [connection signal="body_entered" from="enemies/mitzi2/PathFollow3D/mitzi/red_beam" to="enemies/mitzi2/PathFollow3D/mitzi/red_beam" method="_on_body_entered"]
 [connection signal="body_entered" from="enemies/mitzi3/PathFollow3D/mitzi/red_beam" to="enemies/mitzi3/PathFollow3D/mitzi/red_beam" method="_on_body_entered"]

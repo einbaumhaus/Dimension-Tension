@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://c7b3wf077ipnc"]
+[gd_scene load_steps=14 format=3 uid="uid://c7b3wf077ipnc"]
 
 [ext_resource type="Script" uid="uid://c7w8pvr0wlgml" path="res://2D_levels/Player2D/player.gd" id="1_tia48"]
 [ext_resource type="Texture2D" uid="uid://bgw2w26elh5b5" path="res://2D_levels/level_2/Player2D_topdown/player.png" id="2_tia48"]
+[ext_resource type="AudioStream" uid="uid://bjpcwd7llk85r" path="res://audio/sfx/footstep.wav" id="3_p44oq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p44oq"]
 atlas = ExtResource("2_tia48")
@@ -71,6 +72,29 @@ animations = [{
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tia48"]
 height = 72.0
 
+[sub_resource type="Animation" id="Animation_p44oq"]
+resource_name = "walking"
+length = 0.56
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_footstep"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7yq53"]
+_data = {
+&"walking": SubResource("Animation_p44oq")
+}
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_tia48")
 
@@ -91,3 +115,14 @@ drag_horizontal_enabled = true
 drag_vertical_enabled = true
 drag_top_margin = 0.15
 editor_draw_limits = true
+
+[node name="PlayerAudio" type="Node2D" parent="."]
+
+[node name="footstep" type="AudioStreamPlayer" parent="PlayerAudio"]
+stream = ExtResource("3_p44oq")
+volume_db = -5.0
+
+[node name="footstep_audio" type="AnimationPlayer" parent="PlayerAudio"]
+libraries = {
+&"": SubResource("AnimationLibrary_7yq53")
+}

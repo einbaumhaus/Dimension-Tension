@@ -28,6 +28,8 @@ func _process(delta: float) -> void:
 	if wave3:
 		animation_player.play("outro")
 		wave3 = false
+		launch_player.visible = false
+		launch_player.process_mode = Node.PROCESS_MODE_DISABLED
 
 func _on_timer_timeout():
 	wave_2_start.play("wave2start")

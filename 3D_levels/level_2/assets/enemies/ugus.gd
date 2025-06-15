@@ -12,7 +12,7 @@ var old_speed = 0
 @export var health = 5
 @export var material: Material
 #damage
-@export var DAMAGE = 10
+@export var DAMAGE = 7
 const ATTACK_INTERVAL = 1.0 # seconds between attacks
 var attack_timer := 0.0
 const ATTACK_RANGE = 2.5
@@ -53,8 +53,15 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-	
-	
+		
+	var collision_count = get_slide_collision_count()
+	for i in collision_count:
+		var collision = get_slide_collision(i)
+		var collider = collision.get_collider()
+		if collider and collider.is_in_group("player"):
+			var push_vector = (global_position - collider.global_position).normalized()
+			velocity += push_vector * 4.0  # Adjust force as needed
+
 	
 	move_and_slide()
 	if distance <= ATTACK_RANGE:

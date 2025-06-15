@@ -1,16 +1,16 @@
-[gd_scene load_steps=51 format=4 uid="uid://bqjnc8i53gnqk"]
+[gd_scene load_steps=61 format=4 uid="uid://bqjnc8i53gnqk"]
 
 [ext_resource type="Texture2D" uid="uid://drd4sxov2x8e3" path="res://2D_levels/level_2/assets/tile_map/tilemaptd1.png" id="1_svps0"]
 [ext_resource type="Script" uid="uid://c4xav3n1intg1" path="res://2D_levels/level_3/lvl_3_2d.gd" id="1_ujx0b"]
 [ext_resource type="PackedScene" uid="uid://ccweogu7q7wiw" path="res://2D_levels/level_2/Player2D_topdown/player_topdown.tscn" id="2_uleqd"]
 [ext_resource type="PackedScene" uid="uid://bnp7vdu3nrbe8" path="res://menus/pause_menu.tscn" id="3_3h0p8"]
+[ext_resource type="Texture2D" uid="uid://bdkp7l3bc0owj" path="res://2D_levels/level_3/assets/notes/10moneyf.png" id="3_4k4p4"]
 [ext_resource type="Texture2D" uid="uid://dypdqenhivqxr" path="res://assets/keys/keys_parkour2d.png" id="3_ju0q4"]
 [ext_resource type="Texture2D" uid="uid://ddryxh0kq1707" path="res://2D_levels/level_3/player/2d_lights_and_shadows_neutral_point_light.webp" id="4_4wcxj"]
 [ext_resource type="Script" uid="uid://bb1wjhu534dq3" path="res://2D_levels/Player2D/fps.gd" id="4_ujx0b"]
 [ext_resource type="Script" uid="uid://dddtr3uxv81k8" path="res://2D_levels/level_1/escape_popup.gd" id="5_ny3qd"]
 [ext_resource type="Texture2D" uid="uid://bqtsgwg7rm3wn" path="res://2D_levels/level_3/assets/crate/crate.png" id="5_tyoke"]
 [ext_resource type="PackedScene" uid="uid://cp3cqrvt6me50" path="res://2D_levels/level_3/assets/notes/note.tscn" id="6_gdawp"]
-[ext_resource type="PackedScene" uid="uid://bthsm4odwhyk8" path="res://2D_levels/level_3/assets/door.tscn" id="7_k787p"]
 [ext_resource type="Script" uid="uid://dvluwe2c0akkt" path="res://2D_levels/level_3/note_manager.gd" id="7_md5rx"]
 [ext_resource type="Texture2D" uid="uid://bc53vqr2cqj3x" path="res://2D_levels/level_3/enemies/larrybo..png" id="10_c5vc7"]
 [ext_resource type="Texture2D" uid="uid://clbutouj7ccjo" path="res://2D_levels/level_1/assets/UI/heart.png" id="10_dtmvc"]
@@ -20,10 +20,13 @@
 [ext_resource type="Texture2D" uid="uid://c3j2vn7mxgo7n" path="res://2D_levels/level_3/assets/lvl3_map.png" id="13_8ml4r"]
 [ext_resource type="Script" uid="uid://lljku4eo3lxo" path="res://2D_levels/level_1/game_manager.gd" id="14_bftwv"]
 [ext_resource type="Script" uid="uid://b2nixro3m5bxv" path="res://2D_levels/level_3/map.gd" id="16_sspex"]
+[ext_resource type="Script" uid="uid://bgubnaw6gmsu6" path="res://2D_levels/level_3/assets/door.gd" id="16_vqhu7"]
 [ext_resource type="Texture2D" uid="uid://bik5q5qwhc5u" path="res://2D_levels/level_3/assets/gummybear very smoll.png" id="17_0slso"]
 [ext_resource type="PackedScene" uid="uid://bpmq6uacs60yv" path="res://2D_levels/level_2/elim_scene/elim_scene.tscn" id="17_sy0cr"]
+[ext_resource type="Texture2D" uid="uid://ckoluy23ot0fm" path="res://2D_levels/level_3/assets/door.png" id="17_w3we1"]
+[ext_resource type="Texture2D" uid="uid://bo3alw0mcbqud" path="res://2D_levels/level_1/assets/chronoscepter/3d_magic.png" id="18_w3we1"]
 [ext_resource type="Script" uid="uid://cr0yo1p1kllj0" path="res://2D_levels/level_1/fps.gd" id="20_ny3qd"]
-[ext_resource type="AudioStream" uid="uid://b3cc2820s8ik7" path="res://audio/Bach-Toccata.ogg" id="22_gva4y"]
+[ext_resource type="AudioStream" uid="uid://b3cc2820s8ik7" path="res://audio/music/Bach-Toccata.ogg" id="22_gva4y"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_j3w6d"]
 
@@ -219,6 +222,97 @@ adjustment_enabled = true
 adjustment_contrast = 1.1
 adjustment_color_correction = SubResource("GradientTexture2D_2ntar")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5v8yo"]
+size = Vector2(16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8nuyo"]
+atlas = ExtResource("17_w3we1")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_udcru"]
+atlas = ExtResource("17_w3we1")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8ul6o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8nuyo")
+}],
+"loop": true,
+"name": &"closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_udcru")
+}],
+"loop": true,
+"name": &"open",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_w3we1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-972, -499)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_rgd7m"]
+resource_name = "outro"
+length = 1.48
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.42, 0.9, 1.06667, 1.3, 1.43333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-972, -149.345), Vector2(-972, -778), Vector2(-1336, -778), Vector2(-1336, -692), Vector2(-1524, -692), Vector2(-1524, -771.9)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8kn33"]
+_data = {
+&"RESET": SubResource("Animation_w3we1"),
+&"outro": SubResource("Animation_rgd7m")
+}
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5h1f0"]
 size = Vector2(18.6408, 17.6699)
 
@@ -361,8 +455,10 @@ theme = ExtResource("10_g1g6g")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="mission/Control"]
 layout_mode = 0
-offset_right = 323.0
-offset_bottom = 103.0
+offset_left = 7.0
+offset_top = 67.0
+offset_right = 354.0
+offset_bottom = 182.0
 
 [node name="mission" type="Label" parent="mission/Control/VBoxContainer"]
 layout_mode = 2
@@ -375,11 +471,24 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 21
 text = "crates can be pushed"
 
-[node name="note count" type="Label" parent="mission/Control/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="mission/Control"]
+texture_filter = 1
+layout_mode = 0
+offset_top = 7.0
+offset_right = 40.0
+offset_bottom = 47.0
+scale = Vector2(1.31, 1.31)
+texture = ExtResource("3_4k4p4")
+
+[node name="note count" type="Label" parent="mission/Control"]
 layout_mode = 2
+offset_left = 48.0
+offset_top = 6.0
+offset_right = 395.0
+offset_bottom = 54.0
 theme_override_colors/font_color = Color(0.860053, 0.703867, 0.149345, 1)
-theme_override_font_sizes/font_size = 21
-text = "0/5 notes"
+theme_override_font_sizes/font_size = 40
+text = "0"
 
 [node name="hearts" type="Panel" parent="mission"]
 anchors_preset = 1
@@ -791,9 +900,40 @@ texture = ExtResource("4_4wcxj")
 
 [node name="door" type="Node2D" parent="assets"]
 
-[node name="door2" parent="assets/door" instance=ExtResource("7_k787p")]
+[node name="door2" type="Area2D" parent="assets/door"]
 position = Vector2(-1522, -876.29)
 scale = Vector2(5.765, 5.765)
+script = ExtResource("16_vqhu7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="assets/door/door2"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_5v8yo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="assets/door/door2"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_8ul6o")
+animation = &"closed"
+
+[node name="outro" type="Node2D" parent="assets/door"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="assets/door/outro"]
+libraries = {
+&"": SubResource("AnimationLibrary_8kn33")
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="assets/door/outro"]
+visible = false
+texture_filter = 1
+position = Vector2(-972, -499)
+scale = Vector2(3.915, 3.915)
+texture = ExtResource("18_w3we1")
+
+[node name="PointLight2D" type="PointLight2D" parent="assets/door/outro/Sprite2D"]
+position = Vector2(1.51992e-06, 5.126e-06)
+scale = Vector2(0.24, 0.24)
+color = Color(1, 0.374959, 0.478056, 1)
+energy = 1.35
+texture = ExtResource("4_4wcxj")
 
 [node name="map" type="StaticBody2D" parent="assets"]
 texture_filter = 1
@@ -906,4 +1046,6 @@ stream = ExtResource("22_gva4y")
 [connection signal="body_entered" from="enemies/patrolling_en4/Path2D/PathFollow2D/larrybo/attack_area" to="enemies/patrolling_en4/Path2D/PathFollow2D/larrybo" method="_on_attack_area_body_entered"]
 [connection signal="body_entered" from="enemies/patrolling_en5/Path2D/PathFollow2D/larrybo/Area2D" to="enemies/patrolling_en5/Path2D/PathFollow2D/larrybo" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="enemies/patrolling_en5/Path2D/PathFollow2D/larrybo/attack_area" to="enemies/patrolling_en5/Path2D/PathFollow2D/larrybo" method="_on_attack_area_body_entered"]
+[connection signal="body_entered" from="assets/door/door2" to="assets/door/door2" method="_on_body_entered"]
+[connection signal="animation_finished" from="assets/door/outro/AnimationPlayer" to="assets/door/door2" method="_on_animation_player_animation_finished"]
 [connection signal="animation_finished" from="assets/map/AnimationPlayer" to="assets/map" method="_on_animation_player_animation_finished"]

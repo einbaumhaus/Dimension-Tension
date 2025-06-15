@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 @onready var camera_2d: Camera2D = $Camera2D
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
+@onready var footstep: AudioStreamPlayer = $PlayerAudio/footstep
+@onready var footstep_audio: AnimationPlayer = $PlayerAudio/footstep_audio
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
@@ -41,10 +43,18 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, acceleration)
 	
+	if velocity != Vector2() and is_on_floor():
+		footstep_audio.play("walking", -1, 1.5)
+		print("playing footstep")
+	
 	#if Input.is_action_just_pressed("ui_down"):
 		#camera_2d.zoom = Vector2(0.5,0.5)
 	state_machine()
 	move_and_slide()
+
+func play_footstep():
+	footstep.pitch_scale = randf_range(0.8, 1.2)
+	footstep.play()
 
 func state_machine():
 	if velocity.x < 0:

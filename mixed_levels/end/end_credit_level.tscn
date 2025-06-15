@@ -1,15 +1,17 @@
-[gd_scene load_steps=35 format=4 uid="uid://cxi3e1151b8v8"]
+[gd_scene load_steps=41 format=4 uid="uid://cxi3e1151b8v8"]
 
 [ext_resource type="Script" uid="uid://25icf1g8w3uk" path="res://mixed_levels/end/end_credit_level.gd" id="1_0r6ml"]
 [ext_resource type="Texture2D" uid="uid://cjllvahxg6keb" path="res://3D_levels/level_1/assets/overcast_soil_puresky_4k.hdr" id="1_8thme"]
 [ext_resource type="Texture2D" uid="uid://bgw2w26elh5b5" path="res://2D_levels/level_2/Player2D_topdown/player.png" id="2_2hf4y"]
+[ext_resource type="Script" uid="uid://renvafy3csmp" path="res://mixed_levels/end/animated_sprite_3d.gd" id="3_dddrv"]
+[ext_resource type="Texture2D" uid="uid://b1ebmss4tc83e" path="res://mixed_levels/intro/assets/oreo.png" id="3_gvd1u"]
 [ext_resource type="PackedScene" uid="uid://mfyy5n532t1p" path="res://3D_levels/level_1/assets/train.glb" id="3_r5fi5"]
 [ext_resource type="Texture2D" uid="uid://byxfewxlviuo2" path="res://2D_levels/level_1/assets/env/rbsnext.png" id="4_1d8kn"]
 [ext_resource type="Script" uid="uid://bb1wjhu534dq3" path="res://2D_levels/Player2D/fps.gd" id="5_r5fi5"]
 [ext_resource type="Texture2D" uid="uid://dcjfetld4q5y7" path="res://3D_levels/level_1/assets/bridge/materials/Ice002_1K-JPG_Color.jpg" id="6_1d8kn"]
 [ext_resource type="Theme" uid="uid://3lc7pfe6wvl7" path="res://assets/pixelated_theme.tres" id="7_0rmko"]
 [ext_resource type="Script" uid="uid://wgh4fvgflupg" path="res://mixed_levels/end/water2.gd" id="7_1d8kn"]
-[ext_resource type="PackedScene" uid="uid://bnp7vdu3nrbe8" path="res://menus/pause_menu.tscn" id="7_kbo2q"]
+[ext_resource type="FontFile" uid="uid://nv7xw0gdt65u" path="res://assets/fonts/joystix monospace.otf" id="8_vmrej"]
 
 [sub_resource type="Animation" id="Animation_0r6ml"]
 length = 0.001
@@ -257,6 +259,43 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_d2b7q"]
+resource_name = "floatng"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-3.481, 3.336, 6.683), Vector3(-3.481, 3.246, 6.683), Vector3(-3.481, 3.336, 6.683)]
+}
+
+[sub_resource type="Animation" id="Animation_ydrjr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-3.481, 3.336, 6.683)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c8diw"]
+_data = {
+&"RESET": SubResource("Animation_ydrjr"),
+&"floatng": SubResource("Animation_d2b7q")
+}
+
 [sub_resource type="BoxMesh" id="BoxMesh_kbo2q"]
 size = Vector3(2.245, 1, 1)
 
@@ -270,6 +309,13 @@ size = Vector3(1.925, 1, 1)
 albedo_color = Color(0.254902, 0.141176, 0.054902, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_dddrv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gvd1u"]
+bg_color = Color(0.24, 0.24, 0.24, 0.6)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_kbo2q"]
 size = Vector2(15.855, 1.68)
@@ -369,15 +415,20 @@ libraries = {
 transform = Transform3D(1, 0, 0, 0, 0.0802861, 0.996772, 0, -0.996772, 0.0802861, 2675.55, 278.05, 1901.11)
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -3.48083, 3.24643, 6.68327)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -3.481, 3.336, 6.683)
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_0r6ml")
+script = ExtResource("3_dddrv")
 
-[node name="placeholder" type="Node3D" parent="."]
+[node name="Sprite3D" type="Sprite3D" parent="AnimatedSprite3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.137736, 0)
+texture_filter = 0
+texture = ExtResource("3_gvd1u")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="placeholder"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6885, 2.5912, 6.75657)
-size = Vector3(4.94009, 0.436829, 3.21494)
+[node name="floating" type="AnimationPlayer" parent="AnimatedSprite3D"]
+libraries = {
+&"": SubResource("AnimationLibrary_c8diw")
+}
 
 [node name="trains" type="Node3D" parent="."]
 transform = Transform3D(0.245, 0, 0, 0, 0.245, 0, 0, 0, 0.245, -18.83, 1.435, 0.097)
@@ -474,9 +525,6 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 41
 script = ExtResource("5_r5fi5")
 
-[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("7_kbo2q")]
-visible = false
-
 [node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 15
@@ -519,26 +567,104 @@ theme = ExtResource("7_0rmko")
 text = "back"
 
 [node name="Panel" type="Panel" parent="CanvasLayer"]
-offset_left = 281.0
-offset_top = 240.0
-offset_right = 887.0
-offset_bottom = 384.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -179.0
+offset_top = -277.0
+offset_right = 180.0
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_gvd1u")
 
-[node name="Label" type="Label" parent="CanvasLayer"]
-offset_left = 320.0
-offset_top = 260.0
-offset_right = 866.0
-offset_bottom = 361.0
-text = "that's all to see for now, lvl3 in 3D is not finished yet
-thanks for playing the playtest version
-if you have any feedback or fun suggestions, please send them my way
--Michael"
+[node name="Label3" type="Label" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -134.0
+offset_top = -197.0
+offset_right = 134.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("8_vmrej")
+text = "MA SUPERVISOR
+lukas gerber
+
+technical support
+jan
+enea
+
+playtesting"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -134.0
+offset_top = 58.0
+offset_right = 134.0
+offset_bottom = 239.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("8_vmrej")
+theme_override_font_sizes/font_size = 46
+text = "credits"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -121.5
+offset_top = -12.0
+offset_right = 121.5
+offset_bottom = 215.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label2" type="Label" parent="CanvasLayer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_vmrej")
+text = "albrecht
+andreas
+damian
+daniel
+diego
+eline
+giovanna
+Jann
+joseph
+kathleen"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_vmrej")
+text = "Lukas
+Matthias
+Matthieu
+maximilian
+mia
+Neil
+nico
+Rafael
+thomas
+Yue"
+horizontal_alignment = 1
 
 [node name="water2" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.9255, 0, 0)
 
 [node name="water" type="MeshInstance3D" parent="water2"]
-transform = Transform3D(91.5236, 0, 0, 0, 1, 0, 0, 0, 492.585, 56.8487, -41.5195, -447.898)
+transform = Transform3D(91.5236, 0, 0, 0, 1, 0, 0, 0, 492.585, 56.8487, -41.5195, -395.213)
 mesh = SubResource("PlaneMesh_kbo2q")
 surface_material_override/0 = SubResource("StandardMaterial3D_vmrej")
 script = ExtResource("7_1d8kn")
@@ -558,6 +684,7 @@ environment = SubResource("Environment_0rmko")
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayer2" to="." method="_on_animation_player_2_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayer3" to="." method="_on_animation_player_3_animation_finished"]
+[connection signal="animation_finished" from="AnimatedSprite3D/floating" to="AnimatedSprite3D" method="_on_floating_animation_finished"]
 [connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/fragebogen" to="." method="_on_fragebogen_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/source_code" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/back" to="." method="_on_back_pressed"]

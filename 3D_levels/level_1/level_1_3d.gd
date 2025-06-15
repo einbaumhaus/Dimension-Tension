@@ -6,6 +6,7 @@ extends Node3D
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	intro.play("intro")
+	MusicPlayer.tonband2()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

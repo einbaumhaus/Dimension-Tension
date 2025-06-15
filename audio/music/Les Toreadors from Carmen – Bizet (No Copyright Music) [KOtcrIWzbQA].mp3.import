@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://da4xuplnj53a5"
+path="res://.godot/imported/Les Toreadors from Carmen – Bizet (No Copyright Music) [KOtcrIWzbQA].mp3-50f4fb21151524fd2fe762fefc0ee6d6.mp3str"
+
+[deps]
+
+source_file="res://audio/music/Les Toreadors from Carmen – Bizet (No Copyright Music) [KOtcrIWzbQA].mp3"
+dest_files=["res://.godot/imported/Les Toreadors from Carmen – Bizet (No Copyright Music) [KOtcrIWzbQA].mp3-50f4fb21151524fd2fe762fefc0ee6d6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

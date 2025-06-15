@@ -8,6 +8,7 @@ var playtimes = 0
 func _ready() -> void:
 	animation_player_2.play("drive2")
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	MusicPlayer.tonband5()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

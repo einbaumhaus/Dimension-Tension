@@ -8,7 +8,7 @@ func _ready() -> void:
 	launcher.visible = false
 	launcher.process_mode = Node.PROCESS_MODE_DISABLED
 	player.launcher_active = false
-
+	MusicPlayer.tonband1()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

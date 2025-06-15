@@ -22,6 +22,7 @@ config/icon="uid://dv0qldiehd4kd"
 
 Global="*res://Global.gd"
 GlobalSettings="*res://Global_settings.gd"
+MusicPlayer="*res://audio/music_player.tscn"
 
 [display]
 

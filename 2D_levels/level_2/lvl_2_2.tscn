@@ -197,10 +197,22 @@ tracks/4/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("INTRO/Camera2D:enabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_dg17u"]
 resource_name = "intro"
-length = 5.8
+length = 4.8
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -208,7 +220,7 @@ tracks/0/path = NodePath("INTRO/Camera2D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 4.73333, 5.57333),
+"times": PackedFloat32Array(0, 3.8, 4.64),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(0, -526), Vector2(0, -526), Vector2(0, 668)]
@@ -220,7 +232,7 @@ tracks/1/path = NodePath("INTRO/Camera2D:enabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 5.59999),
+"times": PackedFloat32Array(0, 4.66666),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -232,7 +244,7 @@ tracks/2/path = NodePath("INTRO/Camera2D:zoom")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 4.73666, 5.57333),
+"times": PackedFloat32Array(0, 3.80333, 4.64),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(0.415, 0.415), Vector2(0.415, 0.415), Vector2(1, 1)]
@@ -244,7 +256,7 @@ tracks/3/path = NodePath("INTRO/CanvasLayer/Text:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 1, 4.08666, 4.81666),
+"times": PackedFloat32Array(0, 1, 3.15333, 3.88333),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -256,7 +268,7 @@ tracks/4/path = NodePath("CanvasLayer2/hearts:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 5.59333),
+"times": PackedFloat32Array(0, 4.66),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -268,7 +280,7 @@ tracks/5/path = NodePath("CanvasLayer2/mission:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 5.8),
+"times": PackedFloat32Array(0, 4.73333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]

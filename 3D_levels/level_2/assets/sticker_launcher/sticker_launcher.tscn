@@ -964,4 +964,4 @@ volume_db = -15.0
 
 [node name="launch" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_jwsh2")
-volume_db = -20.0
+volume_db = -30.0

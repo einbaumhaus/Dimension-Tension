@@ -1,5 +1,8 @@
 extends Node
-@onready var note_count: Label = $"../mission/Control/VBoxContainer/note count"
+
+@onready var note_count: Label = $"../mission/Control/note count"
+@onready var mission_2: Label = $"../mission/Control/VBoxContainer/mission2"
+
 @onready var mission: Label = $"../mission/Control/VBoxContainer/mission"
 @onready var door_2: Area2D = $"../assets/door/door2"
 
@@ -17,8 +20,8 @@ func _process(delta: float) -> void:
 func collect():
 	notes += 1
 	print("note added")
-	note_count.set_text(str(notes) + "/5 notes")
+	note_count.set_text(str(notes))
 	if notes == 5:
-		note_count.set_text("door unlocked")
-		mission.set_text("")
+		mission_2.set_text("")
+		mission.set_text("door unlocked")
 		door_2.open()

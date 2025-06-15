@@ -16,7 +16,7 @@ func _ready() -> void:
 	else:
 		cutscene.play("lvlSEL")
 		activate()
-
+	MusicPlayer.tonband4()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

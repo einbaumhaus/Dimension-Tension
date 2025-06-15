@@ -11,7 +11,7 @@ size = Vector2(252, 77.5)
 bg_color = Color(0.340122, 0.592189, 1, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_anjed"]
-size = Vector2(910, 710)
+size = Vector2(1004, 710)
 
 [node name="spawner" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 4

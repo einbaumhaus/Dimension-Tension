@@ -21,6 +21,7 @@ func _ready() -> void:
 		bossbar.visible = false
 	else:
 		intro.visible = false
+	MusicPlayer.tonband3()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

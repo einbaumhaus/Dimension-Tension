@@ -79,8 +79,11 @@ transform = Transform3D(0.284957, 0.00467099, 0.00170934, 5.92913e-05, 0.0947462
 transform = Transform3D(0.284957, -0.00469154, -0.00165215, 0, 0.0946661, -0.268818, 0.00497394, 0.268778, 0.0946515, -0.606, -0.274, -0.904)
 visible = false
 
+[node name="tape" parent="Camera3D/sticker_launcher2" index="0"]
+transform = Transform3D(0.46, 0, 0, 0, 0.422802, -0.181213, 0, 0.181213, 0.422803, 0, 0, 0)
+
 [node name="roll_tape" parent="Camera3D/sticker_launcher2/tape" index="1"]
-transform = Transform3D(2.71344, 0.239604, -1.10608, -0.298286, 2.92317, -0.0985253, 1.09172, 0.203154, 2.72221, -0.341648, -0.304953, 0.975829)
+transform = Transform3D(2.71344, 0.239605, -1.10608, -0.298286, 2.92317, -0.0985253, 1.09172, 0.203154, 2.72221, -0.341648, -0.304953, 0.975829)
 
 [node name="base" parent="Camera3D/sticker_launcher2/launcher" index="0"]
 material_override = SubResource("StandardMaterial3D_7hpc3")
@@ -88,6 +91,9 @@ material_override = SubResource("StandardMaterial3D_7hpc3")
 [node name="Sprite3D" parent="Camera3D/sticker_launcher2/launcher/base" index="0"]
 transform = Transform3D(0.000236047, 0.00420564, 1.11499, -0.976847, 0.53758, -0.0018209, -0.537583, -0.976839, 0.00379835, 0.381, 0.082, -0.313)
 texture = ExtResource("5_mp1qs")
+
+[node name="trigger" parent="Camera3D/sticker_launcher2/launcher" index="4"]
+transform = Transform3D(0.223125, 0, 0, 0, 0.223125, 7.45059e-09, 0, -7.45059e-09, 0.223125, 0, -0.682192, 1.11455)
 
 [node name="elim" type="CanvasLayer" parent="."]
 process_mode = 4

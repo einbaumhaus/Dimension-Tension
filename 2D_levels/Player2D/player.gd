@@ -45,7 +45,6 @@ func _physics_process(delta: float) -> void:
 	
 	if velocity != Vector2() and is_on_floor():
 		footstep_audio.play("walking", -1, 1.5)
-		print("playing footstep")
 	
 	#if Input.is_action_just_pressed("ui_down"):
 		#camera_2d.zoom = Vector2(0.5,0.5)

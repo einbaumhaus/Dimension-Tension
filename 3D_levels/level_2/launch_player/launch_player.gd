@@ -8,6 +8,10 @@ var health := 100
 @onready var healthbar: ProgressBar = get_node_or_null("../mission/healthbar")
 
 var sprinting = false
+var target_fov := 75.0
+const WALK_FOV := 75.0
+const SPRINT_FOV := 90.0
+const FOV_TRANSITION_SPEED := 5.0
 
 var acceleration = 30
 var _gravity := -30.0
@@ -129,11 +133,11 @@ func _physics_process(delta: float) -> void:
 		
 	if Input.is_action_pressed("shift"):
 		SPEED = 10
-		_camera.fov = 80
+		target_fov = SPRINT_FOV
 		sprinting = true
-	if Input.is_action_just_released("shift"):
+	else:
 		SPEED = 7
-		_camera.fov = 75
+		target_fov = WALK_FOV
 		sprinting = false
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -160,7 +164,7 @@ func _physics_process(delta: float) -> void:
 		else:
 			footstep_audio.play("wlaking")
 	move_and_slide()
-	
+	_camera.fov = lerp(_camera.fov, target_fov, delta * FOV_TRANSITION_SPEED)
 	#death
 	if elim.get_node("elim_scene").done:
 		if wave_manager != null:

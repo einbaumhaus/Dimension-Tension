@@ -107,15 +107,6 @@ animation = &"still_right"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_tia48")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-limit_left = -50
-limit_bottom = 860
-position_smoothing_enabled = true
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
-drag_top_margin = 0.15
-editor_draw_limits = true
-
 [node name="PlayerAudio" type="Node2D" parent="."]
 
 [node name="footstep" type="AudioStreamPlayer" parent="PlayerAudio"]

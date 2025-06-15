@@ -23,7 +23,6 @@
 [ext_resource type="Script" uid="uid://dpdx7cmekv154" path="res://mixed_levels/endboss/button.gd" id="10_sao6e"]
 [ext_resource type="Texture2D" uid="uid://bxrrhvfwnrmg" path="res://2D_levels/level_1/assets/chronoscepter/2d_magic.png" id="10_tk51p"]
 [ext_resource type="PackedScene" uid="uid://44daxgq6hmjb" path="res://3D_levels/level_1/assets/rbs brokie/old rbs.tscn" id="11_bhamw"]
-[ext_resource type="Texture2D" uid="uid://b4c1xo328undx" path="res://3D_levels/level_2/launch_player/hitmarker.png" id="11_cakrb"]
 [ext_resource type="Texture2D" uid="uid://cbxyvw8riiyua" path="res://2D_levels/level_2/enemies/toblertwo/tobllertwo.png" id="11_opgpb"]
 [ext_resource type="Texture2D" uid="uid://bgw2w26elh5b5" path="res://2D_levels/level_2/Player2D_topdown/player.png" id="11_uivy5"]
 [ext_resource type="Script" uid="uid://bvchimm4r7rcl" path="res://mixed_levels/endboss/launch_col.gd" id="12_d3hj7"]
@@ -32,6 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://ifb6pbvsjtkj" path="res://3D_levels/level_2/assets/env/wooden_door.tscn" id="14_haqan"]
 [ext_resource type="Texture2D" uid="uid://ba0wq4gn6cutk" path="res://2D_levels/level_1/assets/UI/evelius_heart.png" id="25_o4hu4"]
 [ext_resource type="PackedScene" uid="uid://bpmq6uacs60yv" path="res://2D_levels/level_2/elim_scene/elim_scene.tscn" id="28_utk3v"]
+[ext_resource type="Texture2D" uid="uid://bkq2vq00r6v7m" path="res://3D_levels/level_2/launch_player/white_hitmarker.png" id="31_sye0t"]
 [ext_resource type="Script" uid="uid://brhmf4oiht03a" path="res://mixed_levels/endboss/manager.gd" id="33_sye0t"]
 
 [sub_resource type="Curve3D" id="Curve3D_cakrb"]
@@ -1759,7 +1759,8 @@ offset_right = 7.0
 offset_bottom = 7.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_cakrb")
+texture = ExtResource("31_sye0t")
+metadata/_edit_use_anchors_ = true
 
 [node name="bossbar" type="CanvasLayer" parent="."]
 

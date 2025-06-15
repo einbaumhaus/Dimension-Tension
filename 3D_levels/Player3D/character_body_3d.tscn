@@ -1,12 +1,10 @@
-[gd_scene load_steps=25 format=4 uid="uid://cj7d18ek4ria6"]
+[gd_scene load_steps=24 format=4 uid="uid://cj7d18ek4ria6"]
 
 [ext_resource type="Script" uid="uid://bcgnt5ssu3drk" path="res://3D_levels/Player3D/character_body_3d.gd" id="1_a7qx7"]
 [ext_resource type="Texture2D" uid="uid://yvnnoabn6x3b" path="res://3D_levels/Player3D/legs_player.png" id="2_wrout"]
 [ext_resource type="AudioStream" uid="uid://bjpcwd7llk85r" path="res://audio/sfx/footstep.wav" id="3_i25xe"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_b1m74"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_a7qx7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i25xe"]
 atlas = ExtResource("2_wrout")
@@ -411,10 +409,6 @@ script = ExtResource("1_a7qx7")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_b1m74")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-visible = false
-mesh = SubResource("CapsuleMesh_a7qx7")
-
 [node name="legs" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(12.895, 3.11137e-07, -1.27854e-07, -3.21057e-07, 12.8464, -1.11894, 1.00373e-07, 1.11894, 12.8464, 0, 0, 0)
 texture_filter = 0
@@ -457,6 +451,7 @@ mesh = SubResource("ArrayMesh_vkgk8")
 skeleton = NodePath("")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+process_mode = 1
 libraries = {
 &"": SubResource("AnimationLibrary_vp22m")
 }

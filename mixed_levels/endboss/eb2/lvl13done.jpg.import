@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bo3alw0mcbqud"
-path="res://.godot/imported/3d_magic.png-722395cebd9d38776e5a1077b67bd762.ctex"
+uid="uid://dwxe6ffqqhh36"
+path="res://.godot/imported/lvl13done.jpg-cabead33d61aa7e74fc2b429dde65b90.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://2D_levels/level_1/assets/chronoscepter/3d_magic.png"
-dest_files=["res://.godot/imported/3d_magic.png-722395cebd9d38776e5a1077b67bd762.ctex"]
+source_file="res://mixed_levels/endboss/eb2/lvl13done.jpg"
+dest_files=["res://.godot/imported/lvl13done.jpg-cabead33d61aa7e74fc2b429dde65b90.ctex"]
 
 [params]
 

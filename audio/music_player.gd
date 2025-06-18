@@ -69,3 +69,15 @@ func tonband5():
 		print("playing carmen bizet")
 	else:
 		pass
+
+func tonband6():
+	if tonband != 6:
+		tonband = 6
+		player.stream = preload("res://audio/music/Peer Gynt Suite no. 1, Op. 46 - IV. In the Hall Of The Mountain King.mp3")
+		player.play()
+		print("playing in the hall of the mountain king")
+	else:
+		pass
+
+func stop():
+	player.stop()

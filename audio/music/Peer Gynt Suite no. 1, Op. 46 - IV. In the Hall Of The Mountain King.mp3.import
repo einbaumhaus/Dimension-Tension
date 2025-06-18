@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://7seox3d21rfv"
+path="res://.godot/imported/Peer Gynt Suite no. 1, Op. 46 - IV. In the Hall Of The Mountain King.mp3-6a732795cd4a8d3f978887411e68db71.mp3str"
+
+[deps]
+
+source_file="res://audio/music/Peer Gynt Suite no. 1, Op. 46 - IV. In the Hall Of The Mountain King.mp3"
+dest_files=["res://.godot/imported/Peer Gynt Suite no. 1, Op. 46 - IV. In the Hall Of The Mountain King.mp3-6a732795cd4a8d3f978887411e68db71.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

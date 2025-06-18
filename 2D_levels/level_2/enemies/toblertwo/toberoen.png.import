@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bo3alw0mcbqud"
-path="res://.godot/imported/3d_magic.png-722395cebd9d38776e5a1077b67bd762.ctex"
+uid="uid://bfwxra8vnjhmx"
+path="res://.godot/imported/toberoen.png-f0310b3a87ccd49b7065d33d5f35cf3e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://2D_levels/level_1/assets/chronoscepter/3d_magic.png"
-dest_files=["res://.godot/imported/3d_magic.png-722395cebd9d38776e5a1077b67bd762.ctex"]
+source_file="res://2D_levels/level_2/enemies/toblertwo/toberoen.png"
+dest_files=["res://.godot/imported/toberoen.png-f0310b3a87ccd49b7065d33d5f35cf3e.ctex"]
 
 [params]
 

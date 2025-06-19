@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://df8krpyjrbxa0"]
+[gd_scene load_steps=59 format=4 uid="uid://df8krpyjrbxa0"]
 
 [ext_resource type="PackedScene" uid="uid://bnp7vdu3nrbe8" path="res://menus/pause_menu.tscn" id="1_1aqxp"]
 [ext_resource type="Script" uid="uid://db6ouim317a7f" path="res://mixed_levels/endboss/endboss_2.gd" id="1_y35jy"]
@@ -18,16 +18,22 @@
 [ext_resource type="Texture2D" uid="uid://dwxe6ffqqhh36" path="res://mixed_levels/endboss/eb2/lvl13done.jpg" id="16_a0ilg"]
 [ext_resource type="Script" uid="uid://cr0yo1p1kllj0" path="res://2D_levels/level_1/fps.gd" id="16_tjx3h"]
 [ext_resource type="Script" uid="uid://bb1wjhu534dq3" path="res://2D_levels/Player2D/fps.gd" id="17_a0ilg"]
+[ext_resource type="PackedScene" uid="uid://dmj4o2qbag07v" path="res://mixed_levels/endboss/eb1/assets/wall_flat.tscn" id="17_aiept"]
+[ext_resource type="Texture2D" uid="uid://cdcjdbqsvl7dg" path="res://3D_levels/level_1/assets/bridge/materials/wood_planks_dirt_diff_1k.png" id="18_obmf6"]
+[ext_resource type="Texture2D" uid="uid://djxs0si2vd3sd" path="res://3D_levels/level_1/assets/bridge/materials/wood_planks_dirt_nor_gl_1k.jpg" id="19_mnxfb"]
+[ext_resource type="Texture2D" uid="uid://bhphjg822c1n7" path="res://3D_levels/level_2/assets/env/rough_wood_diff_1k.jpg" id="20_dcs41"]
+[ext_resource type="Texture2D" uid="uid://c34efocxw53ff" path="res://mixed_levels/endboss/eb2/jan.png" id="21_mnxfb"]
+[ext_resource type="Texture2D" uid="uid://sbb0bic2bn0h" path="res://mixed_levels/intro/assets/evelius_smoll.png" id="22_dcs41"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_20s6x"]
 panorama = ExtResource("5_iv633")
 
-[sub_resource type="Sky" id="Sky_5te2e"]
+[sub_resource type="Sky" id="Sky_a0ilg"]
 sky_material = SubResource("PanoramaSkyMaterial_20s6x")
 
 [sub_resource type="Environment" id="Environment_no5dg"]
 background_mode = 2
-sky = SubResource("Sky_5te2e")
+sky = SubResource("Sky_a0ilg")
 
 [sub_resource type="Animation" id="Animation_iv633"]
 length = 0.001
@@ -90,6 +96,54 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(-8.80228, 3.57434, 2.74224)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Camera3D:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 2.02261, 8.05311)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Camera3D:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Camera3D:fov")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [75.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("3dpart3:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_okq3q"]
@@ -155,11 +209,266 @@ tracks/4/keys = {
 "update": 0,
 "values": [Vector3(-8.80228, 3.57434, 2.74224), Vector3(-1.5543, 3.57434, 2.74224)]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Camera3D:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 2.02261, 8.05311)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Camera3D:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Camera3D:fov")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [75.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("3dpart3:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_u17kq"]
 _data = {
 &"RESET": SubResource("Animation_iv633"),
 &"new_animation": SubResource("Animation_okq3q")
+}
+
+[sub_resource type="Animation" id="Animation_ajp7c"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("3dpart/train:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("fake2dpart:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera3D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 2.02261, 8.05311)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Camera3D:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("3dpart/portal:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(84.9661, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("3dpart/toberltwo/tobelr:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(14.6216, 0.172669, 3.21658)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("3dpart/toberltwo/tobelr2:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(33.815, 0.173, 3.217)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("3dpart/toberltwo/tobelr3:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(32.45, 0.173, 3.217)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("3dpart/toberltwo/tobelr3:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("lilguy:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 4.113, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("lilguy:rotation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, -4.46638e-06)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("lilguy:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("riizz:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("riizz/speech/Label3D:text")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["life is"]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("3dpart:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("3dpart2:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("3dpart/portal:rotation")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -1.5708, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_no5dg"]
@@ -371,217 +680,49 @@ tracks/16/keys = {
 "values": [Vector3(0, -1.5708, 0), Vector3(0, -1.5708, 6.46644)]
 }
 
-[sub_resource type="Animation" id="Animation_ajp7c"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nd3r8"]
+_data = {
+&"RESET": SubResource("Animation_ajp7c"),
+&"new_animation": SubResource("Animation_no5dg")
+}
+
+[sub_resource type="Animation" id="Animation_ijfex"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("3dpart/train:visible")
+tracks/0/path = NodePath("3dpart2/portal2:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Vector3(0, -1.26711, 4.45932)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("fake2dpart:visible")
+tracks/1/path = NodePath("3dpart2/lilguy2:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"update": 0,
+"values": [Vector3(-16.61, 11.896, 50.305)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Camera3D:position")
+tracks/2/path = NodePath("3dpart2/lilguy2:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, 2.02261, 8.05311)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Camera3D:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("3dpart/portal:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(84.9661, 0, 0)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("3dpart/toberltwo/tobelr:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(14.6216, 0.172669, 3.21658)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("3dpart/toberltwo/tobelr2:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(33.815, 0.173, 3.217)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("3dpart/toberltwo/tobelr3:position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(32.45, 0.173, 3.217)]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("3dpart/toberltwo/tobelr3:visible")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("lilguy:position")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 4.113, 0)]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("lilguy:rotation")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, -4.46638e-06)]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("lilguy:visible")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("riizz:visible")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/13/type = "value"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath("riizz/speech/Label3D:text")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["life is"]
-}
-tracks/14/type = "value"
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/path = NodePath("3dpart:visible")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/15/type = "value"
-tracks/15/imported = false
-tracks/15/enabled = true
-tracks/15/path = NodePath("3dpart2:visible")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/16/type = "value"
-tracks/16/imported = false
-tracks/16/enabled = true
-tracks/16/path = NodePath("3dpart/portal:rotation")
-tracks/16/interp = 1
-tracks/16/loop_wrap = true
-tracks/16/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, -1.5708, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_nd3r8"]
-_data = {
-&"RESET": SubResource("Animation_ajp7c"),
-&"new_animation": SubResource("Animation_no5dg")
+"values": [Vector3(-0.244346, 0.15708, 14.0586)]
 }
 
 [sub_resource type="Animation" id="Animation_tjx3h"]
@@ -672,49 +813,299 @@ tracks/6/keys = {
 "values": [false]
 }
 
-[sub_resource type="Animation" id="Animation_ijfex"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a0ilg"]
+_data = {
+&"RESET": SubResource("Animation_ijfex"),
+&"new_animation": SubResource("Animation_tjx3h")
+}
+
+[sub_resource type="Animation" id="Animation_kuy3a"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("3dpart2/portal2:rotation")
+tracks/0/path = NodePath("Camera3D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, -1.26711, 4.45932)]
+"values": [Vector3(-67.8474, 10.7576, -3.07133)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("3dpart2/lilguy2:position")
+tracks/1/path = NodePath("Camera3D:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-16.61, 11.896, 50.305)]
+"values": [Vector3(-0.229471, 2.12751, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("3dpart2/lilguy2:rotation")
+tracks/2/path = NodePath("3dpart3/wooden_door2:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-0.244346, 0.15708, 14.0586)]
+"values": [Vector3(-86.2661, 2.73326, 12.209)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("3dpart3/wooden_door2:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.33583e-15, 1.5708, -1.18988)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("3dpart3/lilguy3:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-85.0012, 7.12505, 8.23882)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("3dpart3/lilguy3:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(2.68651e-15, 1.5708, 0.381721)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Camera3D:fov")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [16.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("3dpart3/jan/evelius/Label3D:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("3dpart3/wooden_door2/StaticBody3D:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("3dpart3/jan:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_a0ilg"]
+[sub_resource type="Animation" id="Animation_76eu7"]
+resource_name = "new_animation"
+length = 20.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.766667, 1.83333, 5.63333, 6.4, 7.5296, 8.83333, 11.5667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-67.8474, 10.7576, -3.07133), Vector3(-67.8474, 10.7576, -3.07133), Vector3(-79.044, 11.603, -5.862), Vector3(-79.044, 11.603, -5.862), Vector3(-72.809, 8.908, -9.032), Vector3(-72.809, 11.748, -21.517), Vector3(-73.824, 6.128, -47.247), Vector3(-79.504, 8.028, -61.947)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.766667, 1.83333, 5.63333, 6.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.229471, 2.12751, 0), Vector3(-0.229471, 2.12751, 0), Vector3(-0.0715585, 0.127409, 0), Vector3(-0.0715585, 0.127409, 0), Vector3(0, 1.27409, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("3dpart3/lilguy3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.343974, 1.16667, 6.33086, 6.9296, 7.5296, 7.83333, 8.11354, 8.37893, 8.83333, 9.13333, 9.53333, 11.5457),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-85.0012, 4.16927, 19.7634), Vector3(-85.0012, 7.12505, 8.23882), Vector3(-85.001, 7.125, -12.201), Vector3(-85.001, 7.125, -12.201), Vector3(-85.001, 16.9, -16.126), Vector3(-85.001, 12.15, -22.396), Vector3(-85.001, 10.701, -22.396), Vector3(-85.001, 10.701, -28.646), Vector3(-85.001, 7.784, -37.581), Vector3(-85.001, 4.054, -49.546), Vector3(-85.001, 5.129, -54.133), Vector3(-85.001, 10.624, -59.264), Vector3(-85.001, 7.91, -65.349)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("3dpart3/lilguy3:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.343974, 7.53333, 7.81354, 8.11354, 8.37893, 8.84943, 9.14358, 11.5457),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 1.5708, 1.5708), Vector3(2.68651e-15, 1.5708, 0.381721), Vector3(2.68651e-15, 1.5708, 0.381721), Vector3(0, 1.5708, 1.63014), Vector3(0, 1.5708, 1.4207), Vector3(0, 1.5708, 1.14319), Vector3(0, 1.5708, 1.14319), Vector3(0, 1.5708, -2.18341), Vector3(0, 1.5708, -10.0374)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("3dpart3/wooden_door2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.341291, 1.16693, 6.33086, 7.5296, 8.35589),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-86.2661, 0.0141801, 17.1199), Vector3(-86.2661, 2.73326, 12.209), Vector3(-86.266, 2.733, -8.231), Vector3(-86.266, 2.733, -8.231), Vector3(-86.266, 8.758, -18.406), Vector3(-86.266, 10.403, -28.256)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("3dpart3/wooden_door2:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.341291, 7.5, 8.35589),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 1.5708, 0), Vector3(-1.33583e-15, 1.5708, -1.18988), Vector3(-1.33583e-15, 1.5708, -1.18988), Vector3(0, 1.5708, -1.97571)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Camera3D:fov")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(1.83333, 2.36667, 5.13912, 5.96667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [75.0, 6.0, 6.0, 75.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("3dpart3/jan/evelius/Label3D:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.0333333, 2.80699, 5.20605),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("3dpart3/wooden_door2/StaticBody3D:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(6.33086, 7.5296),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -3.14159, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("3dpart3:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("3dpart3/jan:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(11.6149, 11.7, 11.7667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("3dpart3/jan:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(11.9535, 14.6333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-84.3028, 8.12207, -66.2553), Vector3(-116.308, 54.537, -162.27)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("3dpart3/jan:rotation")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(11.9535, 14.6333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 6.06007e-15, 0), Vector3(6.11738, 0, 46.1989)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4hria"]
 _data = {
-&"RESET": SubResource("Animation_ijfex"),
-&"new_animation": SubResource("Animation_tjx3h")
+&"RESET": SubResource("Animation_kuy3a"),
+&"new_animation": SubResource("Animation_76eu7")
 }
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xyv5a"]
@@ -748,6 +1139,120 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="QuadMesh" id="QuadMesh_e87wr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v1ktl"]
+albedo_color = Color(0.560955, 0.560955, 0.560955, 1)
+albedo_texture = ExtResource("18_obmf6")
+metallic_specular = 0.0
+normal_enabled = true
+normal_texture = ExtResource("19_mnxfb")
+uv1_scale = Vector3(4.199, 6.531, 0)
+uv1_offset = Vector3(-0.39, -0.235, 0)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_mnxfb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dcs41"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gro8o"]
+albedo_color = Color(0.737774, 0.647836, 0.581278, 1)
+albedo_texture = ExtResource("20_dcs41")
+uv1_scale = Vector3(-0.59, 1.675, 1.105)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vlcl6"]
+resource_name = "Material"
+cull_mode = 2
+albedo_color = Color(0.906332, 0.906332, 0.906332, 1)
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_p8kdp"]
+_surfaces = [{
+"aabb": AABB(-0.137599, -0.0736071, -0.717773, 0.141594, 1.50753, 1.43555),
+"format": 34896613377,
+"index_count": 42,
+"index_data": PackedByteArray("AAABAAoAAAADAAEAAgAKAAEAAgAAAAoAAgABAAQABQACAAQABQAEAAcACwAAAAIACwACAAUABwALAAUAAAALAAYABwAJAAsACAAGAAsACAALAAkA"),
+"lods": [0.199303, PackedByteArray("AAABAAIAAAADAAEAAgABAAQABQAAAAIABQACAAQAAAAFAAYABQAEAAcACAAGAAUABwAJAAUACAAFAAkA")],
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("//8AAP//AAAAAAq3//8AAAr6//+RvwAAAAAAAP//AAAqAf//kb8AAAr6//9tQAAA//8AAAAAAAAqAf//bUAAAAAAAAAAAAAAAAAKtwAAAAD//wq3//8AAP//CrcAAAAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_y2fc0"]
+resource_name = "door_Cube"
+_surfaces = [{
+"aabb": AABB(-0.137599, -0.0736071, -0.717773, 0.141594, 1.50753, 1.43555),
+"attribute_data": PackedByteArray("/1//P8yMAAD/n/8//58AAP9fAAD/n2dr/9+XVP/fZ2v/n5dU/1//P/+fZ2v/X/9//5+XVP+f/7/MjP+//5//f/9f/7//X/9/zIz/P8yM/3/MjP8/zIwAAMyM/z/MjP9/zIz/v8yM/38="),
+"format": 34896613399,
+"index_count": 42,
+"index_data": PackedByteArray("AAABABIAAAAEAAEABQAGAAcABQAIAAYACQATAAsAEwAJAAwADAAJABQAEwAMAAoAAgAVAAMAAgAWABUADQAXAA8ADQAYABcAEAAZAA4AEAARABkA"),
+"lods": [0.199303, PackedByteArray("AAABAAIAAgABAAMAAAAEAAEABQAGAAcABQAIAAYACQAKAAsACgAJAAwADQAOAA8AEAAPAA4AEAARAA8A")],
+"material": SubResource("StandardMaterial3D_vlcl6"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 26,
+"vertex_data": PackedByteArray("//8AAP///78AAAq3////vwr6//+Rv8nEKgH//5G/v8QAAAAA////vwr6//9tQP//KgH//5G///8qAf//bUD//wr6//+Rv/////8AAP//RtYK+v//bUBLyf//AAAAAF/VCvr//5G/dtQqAf//bUAc7AAACrcAAP//Cvr//21AH+wAAAAAAAD/////AAAAAP////8Kt////7///wq3AACX0///Crf//1/VAAAKt///9sT//wq3//8Axf//CrcAAA/sAAAKtwAADez//wq3AAD/////////////AuX8GgTlAhv//////3//v/9//7//f/+//3//v50pJyuUPSchsSqdKs4rDir7tT22/7//v/K1Q7b/v/+//7//v//////mLIIpsSqdKvvk4hr55NwaIbYgtiq2Grb/v/+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_p8kdp")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2twkf"]
+atlas = ExtResource("22_dcs41")
+region = Rect2(20, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sn7jy"]
+atlas = ExtResource("22_dcs41")
+region = Rect2(0, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4fw8x"]
+atlas = ExtResource("22_dcs41")
+region = Rect2(40, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dsl33"]
+atlas = ExtResource("22_dcs41")
+region = Rect2(0, 60, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q8ovt"]
+atlas = ExtResource("22_dcs41")
+region = Rect2(40, 60, 20, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kuy3a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2twkf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sn7jy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4fw8x")
+}],
+"loop": true,
+"name": &"run_front",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dsl33")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q8ovt")
+}],
+"loop": true,
+"name": &"run_right",
 "speed": 5.0
 }]
 
@@ -794,6 +1299,9 @@ libraries = {
 }
 
 [node name="outro4" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_4hria")
+}
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_mtlcq")
@@ -832,7 +1340,8 @@ autoplay = "stop"
 frame_progress = 0.0956994
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.02261, 8.05311)
+transform = Transform3D(-0.528399, -0.193115, 0.826741, 0, 0.973787, 0.227462, -0.848996, 0.120191, -0.514548, -67.8474, 10.7576, -3.07133)
+fov = 16.0
 
 [node name="fake2dpart" type="Node3D" parent="."]
 
@@ -858,7 +1367,7 @@ transform = Transform3D(-1.395, 0, 2.10639e-07, 0, 1.395, 0, -2.10639e-07, 0, -1
 visible = false
 
 [node name="portal" type="Sprite3D" parent="3dpart"]
-transform = Transform3D(-2.2118e-07, 0, -5.06, 0, 5.06, 0, 5.06, 0, -2.2118e-07, 84.9661, 0, 0)
+transform = Transform3D(-1.83172e-05, 0, -5.06, 0, 5.06, 0, 5.06, 0, -1.83172e-05, 84.9661, 0, 0)
 texture = ExtResource("11_nd3r8")
 
 [node name="toberltwo" type="Node3D" parent="3dpart"]
@@ -883,7 +1392,7 @@ texture = ExtResource("13_xomen")
 visible = false
 
 [node name="portal2" type="Sprite3D" parent="3dpart2"]
-transform = Transform3D(-0.302865, 1.17109, -3.8599, -3.91616, -1.01279, 0, -0.966442, 3.73696, 1.20962, 23.721, 6.07, 31.384)
+transform = Transform3D(-0.302859, 1.17109, -3.8599, -3.91616, -1.01277, 0, -0.966428, 3.73696, 1.20962, 23.721, 6.07, 31.384)
 render_priority = 1
 texture = ExtResource("11_nd3r8")
 
@@ -893,13 +1402,104 @@ flip_h = true
 texture = ExtResource("16_a0ilg")
 
 [node name="lilguy2" type="AnimatedSprite3D" parent="3dpart2"]
-transform = Transform3D(0.703838, -17.4807, 2.68664, 17.1213, 1.34747, 4.28202, -4.43351, 2.42853, 16.9628, -16.61, 11.896, 50.305)
+transform = Transform3D(0.704305, -17.4807, 2.68665, 17.1213, 1.34793, 4.28202, -4.43358, 2.42841, 16.9628, -16.61, 11.896, 50.305)
 texture_filter = 2
 render_priority = 2
 sprite_frames = SubResource("SpriteFrames_ajp7c")
 animation = &"stop"
 autoplay = "stop"
 frame_progress = 0.224944
+
+[node name="3dpart3" type="Node3D" parent="."]
+visible = false
+
+[node name="lilguy3" type="AnimatedSprite3D" parent="3dpart3"]
+transform = Transform3D(-5.9462e-05, 2.38686e-05, 17.7, 6.59356, 16.426, -4.75512e-14, -16.426, 6.59355, -6.40738e-05, -85.0012, 7.12505, 8.23882)
+texture_filter = 2
+render_priority = 2
+sprite_frames = SubResource("SpriteFrames_ajp7c")
+animation = &"stop"
+autoplay = "stop"
+frame_progress = 0.224944
+
+[node name="wall_flat21" parent="3dpart3" instance=ExtResource("17_aiept")]
+transform = Transform3D(-4.59363e-07, 0, 2.137, 0, 12.23, 0, -10.509, 0, -9.34112e-08, -104.905, 8.72863, -2.5623)
+
+[node name="wall_flat26" parent="3dpart3" instance=ExtResource("17_aiept")]
+transform = Transform3D(-4.59363e-07, 0, 2.137, 0, 12.23, 0, -10.509, 0, -9.34112e-08, -104.905, 8.72863, -44.64)
+
+[node name="wall_flat23" parent="3dpart3" instance=ExtResource("17_aiept")]
+transform = Transform3D(-10.509, 0, 1.86822e-07, 0, 12.23, 0, -9.18726e-07, 0, -2.137, -85.5989, 8.72863, 18.0802)
+
+[node name="wall_flat24" parent="3dpart3" instance=ExtResource("17_aiept")]
+transform = Transform3D(-10.509, 0, 1.86822e-07, 0, 12.23, 0, -9.18726e-07, 0, -2.137, -85.5989, 29.9664, 18.0802)
+
+[node name="wall_flat22" parent="3dpart3" instance=ExtResource("17_aiept")]
+transform = Transform3D(-3.62579e-07, 7.50917, 1.68675, 2.82047e-07, 9.65325, -1.31211, -10.509, 0, -9.34112e-08, -101.108, 25.4827, -2.5623)
+
+[node name="wall_flat25" parent="3dpart3" instance=ExtResource("17_aiept")]
+transform = Transform3D(-3.62579e-07, 7.50917, 1.68675, 2.82047e-07, 9.65325, -1.31211, -10.509, 0, -9.34112e-08, -101.108, 25.4827, -44.1667)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="3dpart3"]
+transform = Transform3D(41.6472, 0, 0, 0, -2.42729e-06, 1, 0, -55.53, -4.37114e-08, -85.4731, -4.36168e-07, -9.97836)
+mesh = SubResource("QuadMesh_e87wr")
+surface_material_override/0 = SubResource("StandardMaterial3D_v1ktl")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="3dpart3"]
+transform = Transform3D(41.6472, 0, 0, 0, 9.98514, 0.9837, 0, -54.6249, 0.179815, -85.4731, 5.00788, -63.1162)
+mesh = SubResource("QuadMesh_e87wr")
+surface_material_override/0 = SubResource("StandardMaterial3D_v1ktl")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="3dpart3"]
+transform = Transform3D(3.85885, 0, 0, 0, -4.37114e-08, 6.10896, 0, -1, -2.67031e-07, -86.4049, 4.01961, 18.0264)
+mesh = SubResource("PlaneMesh_mnxfb")
+surface_material_override/0 = SubResource("StandardMaterial3D_dcs41")
+
+[node name="wooden_door2" type="Node3D" parent="3dpart3"]
+transform = Transform3D(-1.06453e-05, -2.65817e-05, 7.91, -7.34305, 2.94071, 1.05664e-14, -2.94071, -7.34304, -2.86341e-05, -86.2661, 2.73326, 12.209)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="3dpart3/wooden_door2"]
+
+[node name="Cube" type="MeshInstance3D" parent="3dpart3/wooden_door2/StaticBody3D"]
+material_override = SubResource("StandardMaterial3D_gro8o")
+mesh = SubResource("ArrayMesh_y2fc0")
+skeleton = NodePath("")
+
+[node name="Cube2" type="MeshInstance3D" parent="3dpart3/wooden_door2/StaticBody3D"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.1279, 3.72529e-09, 1.11814e-08)
+material_override = SubResource("StandardMaterial3D_gro8o")
+mesh = SubResource("ArrayMesh_y2fc0")
+skeleton = NodePath("")
+
+[node name="jan" type="Sprite3D" parent="3dpart3"]
+transform = Transform3D(2.345, 0, 1.42109e-14, 0, 2.345, 0, -1.42109e-14, 0, 2.345, -84.3028, 8.12207, -66.2553)
+modulate = Color(0, 0, 0, 1)
+texture_filter = 0
+render_priority = 1
+texture = ExtResource("21_mnxfb")
+
+[node name="evelius" type="AnimatedSprite3D" parent="3dpart3/jan"]
+transform = Transform3D(-7.5629, 0, 6.61168e-07, 0, 7.5629, 0, -6.61168e-07, 0, -7.5629, 0, -0.399919, 0)
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_kuy3a")
+autoplay = "default"
+
+[node name="Label3D" type="Label3D" parent="3dpart3/jan/evelius"]
+transform = Transform3D(-0.14, 0, -2.11394e-08, 0, 0.14, 0, 2.11394e-08, 0, -0.14, 0.18, 0.095, -0.00499988)
+visible = false
+double_sided = false
+alpha_cut = 1
+texture_filter = 0
+text = "oh no,
+he's back
+"
+font = ExtResource("7_xomen")
+font_size = 27
+
+[node name="bubble" type="Sprite3D" parent="3dpart3/jan/evelius/Label3D"]
+transform = Transform3D(4.08892, 0, 2.84217e-14, 0, 4.08892, 0, -2.84217e-14, 0, 4.08892, 0.007267, -0.0674517, -0.0342255)
+texture_filter = 2
+texture = ExtResource("8_8l50x")
 
 [node name="FPS" type="CanvasLayer" parent="."]
 script = ExtResource("16_tjx3h")

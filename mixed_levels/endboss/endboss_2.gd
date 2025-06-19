@@ -17,4 +17,4 @@ func _on_outro_2_animation_finished(anim_name: StringName) -> void:
 
 
 func _on_outro_3_animation_finished(anim_name: StringName) -> void:
-	pass # Replace with function body.
+	outro_4.play("new_animation")

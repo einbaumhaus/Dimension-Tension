@@ -2,6 +2,7 @@ extends Area3D
 
 var checkpoint2_on = false
 @onready var marker_3d: Marker3D = $Marker3D
+@onready var respawn_timer: Timer = $"../../respawnTimer"
 @onready var player: CharacterBody3D = $"../../Player"
 @onready var checkpoint_3: Area3D = $"../checkpoint3"
 
@@ -23,3 +24,5 @@ func _on_body_entered(body: Node3D) -> void:
 
 func respawn():
 	player.global_position = marker_3d.global_position
+	player.get_node("Camera3D").rotation_degrees = Vector3(0,0,0)
+	respawn_timer.start_timer()

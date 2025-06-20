@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-@onready var camera_2d: Camera2D = $Camera2D
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var footstep: AudioStreamPlayer = $PlayerAudio/footstep
 @onready var footstep_audio: AnimationPlayer = $PlayerAudio/footstep_audio

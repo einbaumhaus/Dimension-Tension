@@ -31,6 +31,6 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 
 func _on_logbreak_animation_finished(anim_name: StringName) -> void:
 	player.visible = true
-	player.process_mode = Node.PROCESS_MODE_ALWAYS
+	player.process_mode = Node.PROCESS_MODE_PAUSABLE
 	in_move_mode = true
 	player_holder.play("new_animation")

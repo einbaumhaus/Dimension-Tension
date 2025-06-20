@@ -24,7 +24,8 @@ func _on_perspective_changer_body_entered(body: Node2D) -> void:
 		floatl = true
 		transi_anim.play("transition")
 		floating.play("floating")
-		player.queue_free()
+		player.visible = false
+		player.process_mode = Node.PROCESS_MODE_DISABLED
 
 
 func _on_transi_anim_animation_finished(anim_name: StringName) -> void:

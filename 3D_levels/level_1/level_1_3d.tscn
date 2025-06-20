@@ -1,4 +1,4 @@
-[gd_scene load_steps=137 format=4 uid="uid://dlb7qukr5wfbb"]
+[gd_scene load_steps=138 format=4 uid="uid://dlb7qukr5wfbb"]
 
 [ext_resource type="Script" uid="uid://bfjlx34dyngrh" path="res://3D_levels/level_1/level_1_3d.gd" id="1_ljo6s"]
 [ext_resource type="PackedScene" uid="uid://cj7d18ek4ria6" path="res://3D_levels/Player3D/character_body_3d.tscn" id="1_y7tgq"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://cwmdpvjr3jcop" path="res://3D_levels/level_1/animation_player.gd" id="5_grgy5"]
 [ext_resource type="PackedScene" uid="uid://d3tva3v3fe2vx" path="res://3D_levels/level_1/assets/bridge/platform.tscn" id="5_mbj4m"]
 [ext_resource type="Texture2D" uid="uid://cbxyvw8riiyua" path="res://2D_levels/level_2/enemies/toblertwo/tobllertwo.png" id="6_3t4hw"]
+[ext_resource type="Script" uid="uid://bea0ginilxt2m" path="res://3D_levels/level_1/respawn_timer.gd" id="6_tpo6h"]
 [ext_resource type="Texture2D" uid="uid://bfdt00b1204ce" path="res://3D_levels/level_1/assets/bridge/materials/forrest_ground_01_diff_1k.jpg" id="8_joxi0"]
 [ext_resource type="Texture2D" uid="uid://dcjfetld4q5y7" path="res://3D_levels/level_1/assets/bridge/materials/Ice002_1K-JPG_Color.jpg" id="9_3al1x"]
 [ext_resource type="Texture2D" uid="uid://c0lurag5rt7c0" path="res://2D_levels/level_1/assets/chronoscepter/chronoscepter.png" id="9_3wcnr"]
@@ -67,6 +68,599 @@ fog_sky_affect = 0.795
 adjustment_enabled = true
 adjustment_contrast = 0.99
 adjustment_saturation = 1.34
+
+[sub_resource type="Animation" id="Animation_3yk7c"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("moving_platforms/part1/AnimatableBody3D2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(89.893, -42.4593, -0.782)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("moving_platforms/part1/AnimatableBody3D4:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(113.234, -42.7386, -12.2798)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("moving_platforms/part1/AnimatableBody3D3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(103.595, -41.2309, -7.31445)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("moving_platforms/part1/AnimatableBody3D5:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(124.223, -42.5866, -16.8771)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("moving_platforms/part1/AnimatableBody3D6:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(132.961, -41.2309, -18.4928)]
+}
+
+[sub_resource type="Animation" id="Animation_c3uv7"]
+resource_name = "floating"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("moving_platforms/part1/AnimatableBody3D2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 3, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(89.893, -42.4593, -0.782), Vector3(89.893, -41.2309, -0.782), Vector3(89.893, -41.2309, -0.782), Vector3(89.893, -42.4593, -0.782)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("moving_platforms/part1/AnimatableBody3D4:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2, 3, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(111.541, -42.415, -10.932), Vector3(111.541, -41.3, -10.932), Vector3(111.541, -41.3, -10.932), Vector3(111.541, -42.415, -10.932)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("moving_platforms/part1/AnimatableBody3D3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 3, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(103.595, -41.2309, -7.31445), Vector3(103.595, -41.2309, -7.31445), Vector3(103.461, -42.6407, -7.59659), Vector3(103.595, -41.2309, -7.31445)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("moving_platforms/part1/AnimatableBody3D5:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2, 3, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(124.223, -42.5866, -16.8771), Vector3(124.223, -41.567, -16.877), Vector3(124.223, -41.567, -16.877), Vector3(124.223, -42.5866, -16.8771)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("moving_platforms/part1/AnimatableBody3D6:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1, 3, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(132.961, -41.2309, -18.4928), Vector3(132.961, -41.2309, -18.4928), Vector3(132.961, -42.7679, -18.4928), Vector3(132.961, -41.2309, -18.4928)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l6t0k"]
+_data = {
+&"RESET": SubResource("Animation_3yk7c"),
+&"floating": SubResource("Animation_c3uv7")
+}
+
+[sub_resource type="Animation" id="Animation_3fnmf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:current")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("intermission:play_shake")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("intermission/AnimatedSprite3D:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("intermission/AnimatedSprite3D:animation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"front"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("intermission/break_beam:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(84.8599, -6.40803, 0.0636299)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("intermission/AnimatedSprite3D:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(84.7404, -4.43696, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Player:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Player:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-31.9736, 5.62074, -0.077)]
+}
+
+[sub_resource type="Animation" id="Animation_v53ed"]
+resource_name = "logbreak"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:current")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.63333, 3.66667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [true, true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("intermission:play_shake")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.133334, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("intermission/AnimatedSprite3D:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("intermission/AnimatedSprite3D:animation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.900004, 1.7, 2.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [&"front", &"right", &"left", &"front"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("intermission/break_beam:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 3.23333, 4.21, 4.29),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(84.8599, -6.40803, 0.0636299), Vector3(84.8599, -6.40803, 0.0636299), Vector3(84.86, -41.583, 0.064), Vector3(84.8599, -40.9186, 0.0636299)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("intermission/AnimatedSprite3D:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 3.23333, 4.21, 4.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(84.7404, -4.43696, 0), Vector3(84.7404, -4.43696, 0), Vector3(84.7404, -39.658, 0), Vector3(84.7404, -38.9798, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Camera2:current")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 3.66667, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Player:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(5),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(84.189, -39.097, -0.077)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Player:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2ovki"]
+_data = {
+&"RESET": SubResource("Animation_3fnmf"),
+&"logbreak": SubResource("Animation_v53ed")
+}
+
+[sub_resource type="Animation" id="Animation_wbjlk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("break_beam/StaticBody3D2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ljui8"]
+resource_name = "new_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("break_beam/StaticBody3D2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -0.67, 0), Vector3(0, 0, 0), Vector3(-2.45655, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3yk7c"]
+_data = {
+&"RESET": SubResource("Animation_wbjlk"),
+&"new_animation": SubResource("Animation_ljui8")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c3uv7"]
+size = Vector3(4.29285, 1.78516, 12.5825)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ljui8"]
+atlas = ExtResource("29_v53ed")
+region = Rect2(20, 20, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3fnmf"]
+atlas = ExtResource("29_v53ed")
+region = Rect2(20, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ovki"]
+atlas = ExtResource("29_v53ed")
+region = Rect2(20, 40, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c3uv7"]
+atlas = ExtResource("29_v53ed")
+region = Rect2(20, 60, 20, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ljui8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ljui8")
+}],
+"loop": true,
+"name": &"back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3fnmf")
+}],
+"loop": true,
+"name": &"front",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ovki")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c3uv7")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l6t0k"]
+size = Vector3(2.20996, 0.49054, 6.26465)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1xisg"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_i5nbj"]
+_surfaces = [{
+"aabb": AABB(-1, -1, -9.90981, 2, 2, 19.8196),
+"format": 34896613377,
+"index_count": 84,
+"index_data": PackedByteArray("CAAJAAoACAALAAkACQACAAoACQABAAIACwABAAkABgAKAAIAAgABAAQAAgAEAAYAAQAMAAQACwAMAAEADQAGAAQADQAEAAwADgAKAAYADgAGAA0ACgAOAAAACgAAAAgADQAPAA4ADQAMAA8AAAAOAAUADwAFAA4ACAAAAAMAAwAAAAUACAADAAsADwAHAAUADAAHAA8AAwAFAAcADAALAAcABwALAAMA"),
+"lods": [0.262921, PackedByteArray("AAABAAIAAAADAAEAAgABAAQAAwAEAAEAAgAFAAAAAwAAAAUAAgAEAAYABQACAAYABAADAAcAAwAFAAcABgAEAAcABgAHAAUA")],
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("AADuKgAAAAD//+4q//8AAP//7ioAAAAAAADuKv//AAD//xDV//8AAAAAENUAAAAA//8Q1QAAAAAAABDV//8AAO4qAAAAAAAAENUAAP//AAAQ1QAAAAAAAO4qAAD//wAAENX/////AAAQ1f//AAAAAO4q//8AAAAA7ir/////AAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ifyry"]
+resource_name = "wooden_beam_Cube"
+_surfaces = [{
+"aabb": AABB(-1, -1, -9.90981, 2, 2, 19.8196),
+"attribute_data": PackedByteArray("SJL/v5t9HxPatv+fgpX//9q2/7+ClR8TSJL/n5t9///8vP//HxOAkUrV/9///52BStX//x8TnYH8vP/f//+Akfy8/3+bfYCRStX/n4KVnYH8vP+fgpWAkUrV/3+bfZ2BbNv/v4KVHxP///+fm33//////7+bfR8TbNv/n4KV///8vP+///+AkUrV/58fE52BStX/v///nYH8vP+fHxOAkfy8/7+ClYCRStX/35t9nYH8vP/fm32AkUrV/7+ClZ2Bapj/v52BHxO4sP+fgJH//7iw/7+AkR8Tapj/n52B///atl2FnYGCldq2oZqAkYKVbNuhmoCRm31s212FnYGbfY7h/7+AkR8T3Pn/n52B///c+f+/nYEfE47h/5+Akf//apj/v52BHxNqmP+fnYH//47h/7+AkR8TjuH/n4CR///c+f+fnYH//9z5/7+dgR8TuLD/n4CR//+4sP+/gJEfE9q2XcWAkYKV2rah2p2BgpVs26HanYGbfWzbXcWAkZt9"),
+"format": 34896613431,
+"index_count": 84,
+"index_data": PackedByteArray("GAAZABoAGAAbABkABAAFAAYABAAHAAUAHAAKAB0AHAAeAAoACgAeAAkAHgAcAAsACwAcAAgAHgALAB8AIAAhACIAIAAjACEAEAARABIAEAATABEAJAADACUAJAAAAAMAJgAPACcAJgAMAA8AKAAOACkAKAANAA4AKgACACsAKgABAAIALAAWAC0ALAAuABYAFgAuABUALgAsABcAFwAsABQALgAXAC8A"),
+"lods": [0.262921, PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACQAIAAsADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFQAUABcA")],
+"material": SubResource("StandardMaterial3D_1xisg"),
+"primitive": 3,
+"uv_scale": Vector4(1.75, 2, 13.3873, 13.3873),
+"vertex_count": 48,
+"vertex_data": PackedByteArray("AADuKgAA/MX//+4q///8xf//7ioAAPzFAADuKv///MUAAO4q//9U1QAAENUAAFTVAAAQ1f//VNUAAO4qAABU1QAA7ir///+///8Q1f///7///+4q////vwAAENX///+///8Q1QAAqukAABDV//+q6QAAENUAAKrp//8Q1f//qun//+4qAABU1f//ENX//1TV//8Q1QAAVNX//+4q//9U1f//7ioAAP//AAAQ1QAA//8AAO4qAAD/////ENUAAP//7ioAAAAA/78Q1QAA////vxDVAAAAAP+/7ioAAP///7/uKgAA////vxDVAAD///+/ENX//////7/uKv//////vxDV//8AAP//7ir////////uKv//AAD//xDV////////7ioAAAAA/MXuKgAA///8xRDV//8AAKrpENX/////qunuKv////+q6e4q//8AAKrpENUAAP///MUQ1QAAAAD8xRDVAAAAAP//7ioAAAAA///uKv//AAD//xDV//8AAP///jn+nP8cAUb/HAFG/jn+nFTVVNVU1VTVVNVU1VTVVNX/////////////////////BDX2FQlqBLUJagS1BDX2FaoqqiqqKqoqqiqqKqoqqir/v/+//7//v/+//7//v/+/AAD/fwAA/38AAP9/AAD/f///////////////////////f/+//3//v/9//7//f/+//jn+nP45/pwENfYVBDX2FQlqBLUJagS1/xwBRv8cAUb/v/+//7//v/+//7//v/+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_i5nbj")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cotn6"]
+albedo_color = Color(0.707967, 0.707967, 0.707967, 1)
+albedo_texture = ExtResource("18_3t4hw")
+normal_enabled = true
+normal_texture = ExtResource("33_3yk7c")
+uv1_scale = Vector3(-0.98, 0.11, -0.105)
+uv1_offset = Vector3(-0.055, -1.685, 0.6)
+uv1_triplanar = true
+uv1_triplanar_sharpness = 10.5561
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_i5nbj"]
+size = Vector3(8.78223, 0.889648, 8.51733)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hoajf"]
+load_path = "res://.godot/imported/rusty_metal_04_diff_1k.jpg-b80f5652d8e5b8d2fae59b5f5b5ee169.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ngbsg"]
+resource_name = "Material"
+cull_mode = 2
+albedo_color = Color(0.948728, 0.789142, 0.698222, 1)
+albedo_texture = SubResource("CompressedTexture2D_hoajf")
+roughness = 0.360656
+uv1_scale = Vector3(-0.14, 0.41, 0.045)
+uv1_offset = Vector3(5.805, 4.215, 0.52)
+uv1_triplanar = true
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_hoajf"]
+_surfaces = [{
+"aabb": AABB(-0.250271, -0.34226, -5.02749, 0.500543, 0.406562, 10.0552),
+"format": 34359742465,
+"index_count": 60,
+"index_data": PackedByteArray("CAABAAIAAgABAAUAAgAFAAYACQAFAAEACAAJAAEACgAGAAUACQAKAAUACwACAAYACwAIAAIACgALAAYACAADAAkACgAEAAsACwAAAAgACAAAAAMACwAEAAAACQADAAcACQAHAAoABwADAAAACgAHAAQABwAAAAQA"),
+"lods": [0.111637, PackedByteArray("AAABAAIAAAADAAEABAAAAAIAAwAFAAEAAgABAAUABAACAAYAAgAFAAYABwAAAAQABwADAAAABwAEAAYAAwAHAAUABwAGAAUA")],
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("lSOAvr48r77U4qBAM0LLPX+wgz3U4qBAM0LLvX+wgz3U4qBAlSOAPr48r77U4qBAlSOAvr48r7424aDAM0LLPX+wgz024aDAM0LLvX+wgz024aDAlSOAPr48r7424aDAM0LLvUbigL7U4qBAM0LLPUbigL7U4qBAM0LLPUbigL424aDAM0LLvUbigL424aDA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_7jij8"]
+resource_name = "rail_Cube"
+_surfaces = [{
+"aabb": AABB(-0.250271, -0.34226, -5.02749, 0.500543, 0.406562, 10.0552),
+"attribute_data": PackedByteArray("AADAPgAAgD4AACA/AAAAAAAAID8AAIA+AADAPgAAAAAAAMA+AACAPwAAID8AAEA/AAAgPwAAgD8AAMA+AABAPwAAwD4AAAA/AAAgPwAAgD4AACA/AAAAPwAAwD4AAIA+AADAPgAAQD8AACA/AAAAPwAAID8AAEA/AADAPgAAAD8AAAA+AAAAPwAAwD4AAIA+AADAPgAAAD8AAAA+AACAPgAAID8AAIA+AAAgPwAAQD8AACA/AAAAPwAAID8AAIA/AADAPgAAgD4AAMA+AAAAAAAAwD4AAIA/AADAPgAAQD8AAMA+AACAPwAAwD4AAEA/AADAPgAAAD8AAMA+AACAPgAAwD4AAEA/AADAPgAAAD8AAMA+AAAAPwAAwD4AAIA+"),
+"format": 34359742487,
+"index_count": 60,
+"index_data": PackedByteArray("GAABAAIAGAAZAAEAGAADABkAGAAAAAMAGgAFAAYAGgAbAAUAHAAHAB0AHAAEAAcAHgAJAAoAHgAfAAkAIAANAA4AIAAhAA0AIAAPACEAIAAMAA8AEAARABIAEAATABEAIgALACMAIgAIAAsAFAAVABYAFAAXABUA"),
+"lods": [0.111637, PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA")],
+"material": SubResource("StandardMaterial3D_ngbsg"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 36,
+"vertex_data": PackedByteArray("lSOAvr48r77U4qBAM0LLPX+wgz3U4qBAM0LLvX+wgz3U4qBAlSOAPr48r77U4qBAlSOAPr48r77U4qBAM0LLPX+wgz024aDAM0LLPX+wgz3U4qBAlSOAPr48r7424aDAlSOAvr48r7424aDAM0LLvX+wgz3U4qBAM0LLvX+wgz024aDAlSOAvr48r77U4qBAlSOAPr48r7424aDAM0LLvX+wgz024aDAM0LLPX+wgz024aDAlSOAvr48r7424aDAlSOAPr48r7424aDAlSOAvr48r77U4qBAlSOAvr48r7424aDAlSOAPr48r77U4qBAM0LLvX+wgz3U4qBAM0LLPX+wgz024aDAM0LLvX+wgz024aDAM0LLPX+wgz3U4qBAM0LLvUbigL7U4qBAM0LLPUbigL7U4qBAM0LLPUbigL7U4qBAM0LLPUbigL424aDAM0LLPUbigL7U4qBAM0LLPUbigL424aDAM0LLvUbigL424aDAM0LLvUbigL7U4qBAM0LLPUbigL424aDAM0LLvUbigL424aDAM0LLvUbigL424aDAM0LLvUbigL7U4qBA/////////7///////3//////////f////////////78FUPkv////vwAA/3//f///AAD/f/9///8FUPkv////v/mv+S////+/////f/9///////9//3////mv+S////+//3//f////z//f/9//3////9//3//f////3//f////z//f///AAD/v/9///8AAP+//3///wAA/7//f///AAD/v/9/AAD///+//38AAP///7//fwAA////v/9/AAD///+///////9//////////3///wAA/3//f///AAD/f/9///8FUPkv////vwVQ+S////+/////f/9///////9//3////9//3//f////3//f/9////5r/kv////v/mv+S////+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_hoajf")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hoajf"]
+size = Vector3(10.0859, 0.139465, 1)
+
+[sub_resource type="Curve3D" id="Curve3D_c3uv7"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 4.71, 0, 0, 0, 0, 0, 32.585, 22.125, -19.725, 0, 0, 0, -43.7432, 35.0986, 20.4713),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ljui8"]
+size = Vector3(2.66736, 1, 2.13513)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6sace"]
+resource_name = "Material"
+cull_mode = 2
+albedo_color = Color(0.906332, 0.906332, 0.906332, 1)
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_tkhhn"]
+_surfaces = [{
+"aabb": AABB(-1.30349, -1, -1.49625, 2.60288, 0.383231, 3.00316),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAwACAAEAAAAEAAEAAwAFAAIABQAAAAIABgAEAAAABQAGAAAABwABAAQABwADAAEABgAHAAQABQADAAcABQAHAAYA"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("jeL//00qAADZHf//ydQAANkd//9NKgAAAAAAAP//AACN4v//ydQAAAAAAAAAAAAA//8AAAAAAAD//wAA//8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_hkdw0"]
+resource_name = "jumppad_Cube"
+_surfaces = [{
+"aabb": AABB(-1.30349, -1, -1.49625, 2.60288, 0.383231, 3.00316),
+"attribute_data": PackedByteArray("/5//f//f/z//3/9//5//P/9f/z//nwAA/5//P/9fAAD/X////5//v/+f////X/+//x//f/9f/z//X/9//x//P/9f/3//n/8//5//f/9f/z//X/+//5//f/+f/7//X/9/"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": SubResource("StandardMaterial3D_6sace"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("jeL//00q///ZHf//ydT//9kd//9NKv//jeL//8nU/////wAA//9L0Nkd///J1Ee9jeL//8nUPdcAAAAA///8uQAAAAD///bQ2R3//00qY8DZHf//ydSK2AAAAAAAAB3AAAAAAAAA/7///wAA////v///AAAAAP+/AAAAAP///7///wAAAACL843i///J1AzUjeL//00qxPz//wAA//8N0gAAAAAAAAPjjeL//00q/OrZHf//TSrM4P//AAAAAKbs/3//v/9//7//f/+//3//v0LedhoJ49Yo3txHFiTkKyxA8WG7H8MvxYj8+7iOvifGAAD/fwAA/38AAP9/AAD/f2ApMiKvR9AG/yL2JwJLzwNOuw+uPKktuibCeKkKplK8")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_tkhhn")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dc0v1"]
+albedo_color = Color(0, 0.266666, 1, 1)
+albedo_texture = ExtResource("33_l6t0k")
+uv1_scale = Vector3(-0.055, 1, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xalg2"]
 atlas = ExtResource("5_dc0v1")
@@ -518,103 +1112,6 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_c6qml")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1xisg"]
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_i5nbj"]
-_surfaces = [{
-"aabb": AABB(-1, -1, -9.90981, 2, 2, 19.8196),
-"format": 34896613377,
-"index_count": 84,
-"index_data": PackedByteArray("CAAJAAoACAALAAkACQACAAoACQABAAIACwABAAkABgAKAAIAAgABAAQAAgAEAAYAAQAMAAQACwAMAAEADQAGAAQADQAEAAwADgAKAAYADgAGAA0ACgAOAAAACgAAAAgADQAPAA4ADQAMAA8AAAAOAAUADwAFAA4ACAAAAAMAAwAAAAUACAADAAsADwAHAAUADAAHAA8AAwAFAAcADAALAAcABwALAAMA"),
-"lods": [0.262921, PackedByteArray("AAABAAIAAAADAAEAAgABAAQAAwAEAAEAAgAFAAAAAwAAAAUAAgAEAAYABQACAAYABAADAAcAAwAFAAcABgAEAAcABgAHAAUA")],
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 16,
-"vertex_data": PackedByteArray("AADuKgAAAAD//+4q//8AAP//7ioAAAAAAADuKv//AAD//xDV//8AAAAAENUAAAAA//8Q1QAAAAAAABDV//8AAO4qAAAAAAAAENUAAP//AAAQ1QAAAAAAAO4qAAD//wAAENX/////AAAQ1f//AAAAAO4q//8AAAAA7ir/////AAA=")
-}]
-blend_shape_mode = 0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_ifyry"]
-resource_name = "wooden_beam_Cube"
-_surfaces = [{
-"aabb": AABB(-1, -1, -9.90981, 2, 2, 19.8196),
-"attribute_data": PackedByteArray("SJL/v5t9HxPatv+fgpX//9q2/7+ClR8TSJL/n5t9///8vP//HxOAkUrV/9///52BStX//x8TnYH8vP/f//+Akfy8/3+bfYCRStX/n4KVnYH8vP+fgpWAkUrV/3+bfZ2BbNv/v4KVHxP///+fm33//////7+bfR8TbNv/n4KV///8vP+///+AkUrV/58fE52BStX/v///nYH8vP+fHxOAkfy8/7+ClYCRStX/35t9nYH8vP/fm32AkUrV/7+ClZ2Bapj/v52BHxO4sP+fgJH//7iw/7+AkR8Tapj/n52B///atl2FnYGCldq2oZqAkYKVbNuhmoCRm31s212FnYGbfY7h/7+AkR8T3Pn/n52B///c+f+/nYEfE47h/5+Akf//apj/v52BHxNqmP+fnYH//47h/7+AkR8TjuH/n4CR///c+f+fnYH//9z5/7+dgR8TuLD/n4CR//+4sP+/gJEfE9q2XcWAkYKV2rah2p2BgpVs26HanYGbfWzbXcWAkZt9"),
-"format": 34896613431,
-"index_count": 84,
-"index_data": PackedByteArray("GAAZABoAGAAbABkABAAFAAYABAAHAAUAHAAKAB0AHAAeAAoACgAeAAkAHgAcAAsACwAcAAgAHgALAB8AIAAhACIAIAAjACEAEAARABIAEAATABEAJAADACUAJAAAAAMAJgAPACcAJgAMAA8AKAAOACkAKAANAA4AKgACACsAKgABAAIALAAWAC0ALAAuABYAFgAuABUALgAsABcAFwAsABQALgAXAC8A"),
-"lods": [0.262921, PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACQAIAAsADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFQAUABcA")],
-"material": SubResource("StandardMaterial3D_1xisg"),
-"primitive": 3,
-"uv_scale": Vector4(1.75, 2, 13.3873, 13.3873),
-"vertex_count": 48,
-"vertex_data": PackedByteArray("AADuKgAA/MX//+4q///8xf//7ioAAPzFAADuKv///MUAAO4q//9U1QAAENUAAFTVAAAQ1f//VNUAAO4qAABU1QAA7ir///+///8Q1f///7///+4q////vwAAENX///+///8Q1QAAqukAABDV//+q6QAAENUAAKrp//8Q1f//qun//+4qAABU1f//ENX//1TV//8Q1QAAVNX//+4q//9U1f//7ioAAP//AAAQ1QAA//8AAO4qAAD/////ENUAAP//7ioAAAAA/78Q1QAA////vxDVAAAAAP+/7ioAAP///7/uKgAA////vxDVAAD///+/ENX//////7/uKv//////vxDV//8AAP//7ir////////uKv//AAD//xDV////////7ioAAAAA/MXuKgAA///8xRDV//8AAKrpENX/////qunuKv////+q6e4q//8AAKrpENUAAP///MUQ1QAAAAD8xRDVAAAAAP//7ioAAAAA///uKv//AAD//xDV//8AAP///jn+nP8cAUb/HAFG/jn+nFTVVNVU1VTVVNVU1VTVVNX/////////////////////BDX2FQlqBLUJagS1BDX2FaoqqiqqKqoqqiqqKqoqqir/v/+//7//v/+//7//v/+/AAD/fwAA/38AAP9/AAD/f///////////////////////f/+//3//v/9//7//f/+//jn+nP45/pwENfYVBDX2FQlqBLUJagS1/xwBRv8cAUb/v/+//7//v/+//7//v/+/")
-}]
-blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_i5nbj")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cotn6"]
-albedo_color = Color(0.707967, 0.707967, 0.707967, 1)
-albedo_texture = ExtResource("18_3t4hw")
-normal_enabled = true
-normal_texture = ExtResource("33_3yk7c")
-uv1_scale = Vector3(-0.98, 0.11, -0.105)
-uv1_offset = Vector3(-0.055, -1.685, 0.6)
-uv1_triplanar = true
-uv1_triplanar_sharpness = 10.5561
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_i5nbj"]
-size = Vector3(8.78223, 0.889648, 8.51733)
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hoajf"]
-load_path = "res://.godot/imported/rusty_metal_04_diff_1k.jpg-b80f5652d8e5b8d2fae59b5f5b5ee169.s3tc.ctex"
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ngbsg"]
-resource_name = "Material"
-cull_mode = 2
-albedo_color = Color(0.948728, 0.789142, 0.698222, 1)
-albedo_texture = SubResource("CompressedTexture2D_hoajf")
-roughness = 0.360656
-uv1_scale = Vector3(-0.14, 0.41, 0.045)
-uv1_offset = Vector3(5.805, 4.215, 0.52)
-uv1_triplanar = true
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_hoajf"]
-_surfaces = [{
-"aabb": AABB(-0.250271, -0.34226, -5.02749, 0.500543, 0.406562, 10.0552),
-"format": 34359742465,
-"index_count": 60,
-"index_data": PackedByteArray("CAABAAIAAgABAAUAAgAFAAYACQAFAAEACAAJAAEACgAGAAUACQAKAAUACwACAAYACwAIAAIACgALAAYACAADAAkACgAEAAsACwAAAAgACAAAAAMACwAEAAAACQADAAcACQAHAAoABwADAAAACgAHAAQABwAAAAQA"),
-"lods": [0.111637, PackedByteArray("AAABAAIAAAADAAEABAAAAAIAAwAFAAEAAgABAAUABAACAAYAAgAFAAYABwAAAAQABwADAAAABwAEAAYAAwAHAAUABwAGAAUA")],
-"name": "Material",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 12,
-"vertex_data": PackedByteArray("lSOAvr48r77U4qBAM0LLPX+wgz3U4qBAM0LLvX+wgz3U4qBAlSOAPr48r77U4qBAlSOAvr48r7424aDAM0LLPX+wgz024aDAM0LLvX+wgz024aDAlSOAPr48r7424aDAM0LLvUbigL7U4qBAM0LLPUbigL7U4qBAM0LLPUbigL424aDAM0LLvUbigL424aDA")
-}]
-blend_shape_mode = 0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_7jij8"]
-resource_name = "rail_Cube"
-_surfaces = [{
-"aabb": AABB(-0.250271, -0.34226, -5.02749, 0.500543, 0.406562, 10.0552),
-"attribute_data": PackedByteArray("AADAPgAAgD4AACA/AAAAAAAAID8AAIA+AADAPgAAAAAAAMA+AACAPwAAID8AAEA/AAAgPwAAgD8AAMA+AABAPwAAwD4AAAA/AAAgPwAAgD4AACA/AAAAPwAAwD4AAIA+AADAPgAAQD8AACA/AAAAPwAAID8AAEA/AADAPgAAAD8AAAA+AAAAPwAAwD4AAIA+AADAPgAAAD8AAAA+AACAPgAAID8AAIA+AAAgPwAAQD8AACA/AAAAPwAAID8AAIA/AADAPgAAgD4AAMA+AAAAAAAAwD4AAIA/AADAPgAAQD8AAMA+AACAPwAAwD4AAEA/AADAPgAAAD8AAMA+AACAPgAAwD4AAEA/AADAPgAAAD8AAMA+AAAAPwAAwD4AAIA+"),
-"format": 34359742487,
-"index_count": 60,
-"index_data": PackedByteArray("GAABAAIAGAAZAAEAGAADABkAGAAAAAMAGgAFAAYAGgAbAAUAHAAHAB0AHAAEAAcAHgAJAAoAHgAfAAkAIAANAA4AIAAhAA0AIAAPACEAIAAMAA8AEAARABIAEAATABEAIgALACMAIgAIAAsAFAAVABYAFAAXABUA"),
-"lods": [0.111637, PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA")],
-"material": SubResource("StandardMaterial3D_ngbsg"),
-"name": "Material",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 36,
-"vertex_data": PackedByteArray("lSOAvr48r77U4qBAM0LLPX+wgz3U4qBAM0LLvX+wgz3U4qBAlSOAPr48r77U4qBAlSOAPr48r77U4qBAM0LLPX+wgz024aDAM0LLPX+wgz3U4qBAlSOAPr48r7424aDAlSOAvr48r7424aDAM0LLvX+wgz3U4qBAM0LLvX+wgz024aDAlSOAvr48r77U4qBAlSOAPr48r7424aDAM0LLvX+wgz024aDAM0LLPX+wgz024aDAlSOAvr48r7424aDAlSOAPr48r7424aDAlSOAvr48r77U4qBAlSOAvr48r7424aDAlSOAPr48r77U4qBAM0LLvX+wgz3U4qBAM0LLPX+wgz024aDAM0LLvX+wgz024aDAM0LLPX+wgz3U4qBAM0LLvUbigL7U4qBAM0LLPUbigL7U4qBAM0LLPUbigL7U4qBAM0LLPUbigL424aDAM0LLPUbigL7U4qBAM0LLPUbigL424aDAM0LLvUbigL424aDAM0LLvUbigL7U4qBAM0LLPUbigL424aDAM0LLvUbigL424aDAM0LLvUbigL424aDAM0LLvUbigL7U4qBA/////////7///////3//////////f////////////78FUPkv////vwAA/3//f///AAD/f/9///8FUPkv////v/mv+S////+/////f/9///////9//3////mv+S////+//3//f////z//f/9//3////9//3//f////3//f////z//f///AAD/v/9///8AAP+//3///wAA/7//f///AAD/v/9/AAD///+//38AAP///7//fwAA////v/9/AAD///+///////9//////////3///wAA/3//f///AAD/f/9///8FUPkv////vwVQ+S////+/////f/9///////9//3////9//3//f////3//f/9////5r/kv////v/mv+S////+/")
-}]
-blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_hoajf")
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_hoajf"]
-size = Vector3(10.0859, 0.139465, 1)
 
 [sub_resource type="Animation" id="Animation_joxi0"]
 length = 0.001
@@ -1435,514 +1932,6 @@ size = Vector3(0.184082, 5.34265, 9.93237)
 [sub_resource type="BoxShape3D" id="BoxShape3D_iokc4"]
 size = Vector3(41.5786, 18.7388, 37.6751)
 
-[sub_resource type="Animation" id="Animation_3yk7c"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("moving_platforms/part1/AnimatableBody3D2:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(89.893, -42.4593, -0.782)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("moving_platforms/part1/AnimatableBody3D4:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(113.234, -42.7386, -12.2798)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("moving_platforms/part1/AnimatableBody3D3:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(103.595, -41.2309, -7.31445)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("moving_platforms/part1/AnimatableBody3D5:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(124.223, -42.5866, -16.8771)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("moving_platforms/part1/AnimatableBody3D6:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(132.961, -41.2309, -18.4928)]
-}
-
-[sub_resource type="Animation" id="Animation_c3uv7"]
-resource_name = "floating"
-length = 5.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("moving_platforms/part1/AnimatableBody3D2:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2, 3, 5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(89.893, -42.4593, -0.782), Vector3(89.893, -41.2309, -0.782), Vector3(89.893, -41.2309, -0.782), Vector3(89.893, -42.4593, -0.782)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("moving_platforms/part1/AnimatableBody3D4:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 2, 3, 5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(111.541, -42.415, -10.932), Vector3(111.541, -41.3, -10.932), Vector3(111.541, -41.3, -10.932), Vector3(111.541, -42.415, -10.932)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("moving_platforms/part1/AnimatableBody3D3:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1, 3, 5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(103.595, -41.2309, -7.31445), Vector3(103.595, -41.2309, -7.31445), Vector3(103.461, -42.6407, -7.59659), Vector3(103.595, -41.2309, -7.31445)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("moving_platforms/part1/AnimatableBody3D5:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 2, 3, 5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(124.223, -42.5866, -16.8771), Vector3(124.223, -41.567, -16.877), Vector3(124.223, -41.567, -16.877), Vector3(124.223, -42.5866, -16.8771)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("moving_platforms/part1/AnimatableBody3D6:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 1, 3, 5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(132.961, -41.2309, -18.4928), Vector3(132.961, -41.2309, -18.4928), Vector3(132.961, -42.7679, -18.4928), Vector3(132.961, -41.2309, -18.4928)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_l6t0k"]
-_data = {
-&"RESET": SubResource("Animation_3yk7c"),
-&"floating": SubResource("Animation_c3uv7")
-}
-
-[sub_resource type="Animation" id="Animation_3fnmf"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Camera3D:current")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("intermission:play_shake")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("intermission/AnimatedSprite3D:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("intermission/AnimatedSprite3D:animation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"front"]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("intermission/break_beam:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(84.8599, -6.40803, 0.0636299)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("intermission/AnimatedSprite3D:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(84.7404, -4.43696, 0)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Camera2:current")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Player:visible")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Player:position")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-31.9736, 5.62074, -0.077)]
-}
-
-[sub_resource type="Animation" id="Animation_v53ed"]
-resource_name = "logbreak"
-length = 5.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Camera3D:current")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 3.3, 3.36667),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [true, true, false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("intermission:play_shake")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.133334, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("intermission/AnimatedSprite3D:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("intermission/AnimatedSprite3D:animation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.900004, 1.7, 2.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [&"front", &"right", &"left", &"front"]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("intermission/break_beam:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 3.23333, 4.21, 4.29),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(84.8599, -6.40803, 0.0636299), Vector3(84.8599, -6.40803, 0.0636299), Vector3(84.86, -41.583, 0.064), Vector3(84.8599, -40.9186, 0.0636299)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("intermission/AnimatedSprite3D:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 3.23333, 4.21, 4.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(84.7404, -4.43696, 0), Vector3(84.7404, -4.43696, 0), Vector3(84.7404, -39.658, 0), Vector3(84.7404, -38.9798, 0)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Camera2:current")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0.0666667, 3.33333, 4.99, 5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [false, true, true, false]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Player:position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(5),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(84.189, -39.097, -0.077)]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Player:visible")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_2ovki"]
-_data = {
-&"RESET": SubResource("Animation_3fnmf"),
-&"logbreak": SubResource("Animation_v53ed")
-}
-
-[sub_resource type="Animation" id="Animation_wbjlk"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("break_beam/StaticBody3D2:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_ljui8"]
-resource_name = "new_animation"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("break_beam/StaticBody3D2:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.9, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0, -0.67, 0), Vector3(0, 0, 0), Vector3(-2.45655, 0, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_3yk7c"]
-_data = {
-&"RESET": SubResource("Animation_wbjlk"),
-&"new_animation": SubResource("Animation_ljui8")
-}
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_c3uv7"]
-size = Vector3(4.29285, 1.78516, 12.5825)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ljui8"]
-atlas = ExtResource("29_v53ed")
-region = Rect2(20, 20, 20, 20)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3fnmf"]
-atlas = ExtResource("29_v53ed")
-region = Rect2(20, 0, 20, 20)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2ovki"]
-atlas = ExtResource("29_v53ed")
-region = Rect2(20, 40, 20, 20)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_c3uv7"]
-atlas = ExtResource("29_v53ed")
-region = Rect2(20, 60, 20, 20)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ljui8"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ljui8")
-}],
-"loop": true,
-"name": &"back",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3fnmf")
-}],
-"loop": true,
-"name": &"front",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2ovki")
-}],
-"loop": true,
-"name": &"left",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_c3uv7")
-}],
-"loop": true,
-"name": &"right",
-"speed": 5.0
-}]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_l6t0k"]
-size = Vector3(2.20996, 0.49054, 6.26465)
-
-[sub_resource type="Curve3D" id="Curve3D_c3uv7"]
-_data = {
-"points": PackedVector3Array(0, 0, 0, 4.71, 0, 0, 0, 0, 0, 32.585, 22.125, -19.725, 0, 0, 0, -43.7432, 35.0986, 20.4713),
-"tilts": PackedFloat32Array(0, 0)
-}
-point_count = 2
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ljui8"]
-size = Vector3(2.66736, 1, 2.13513)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6sace"]
-resource_name = "Material"
-cull_mode = 2
-albedo_color = Color(0.906332, 0.906332, 0.906332, 1)
-roughness = 0.5
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_tkhhn"]
-_surfaces = [{
-"aabb": AABB(-1.30349, -1, -1.49625, 2.60288, 0.383231, 3.00316),
-"format": 34896613377,
-"index_count": 36,
-"index_data": PackedByteArray("AAABAAIAAwACAAEAAAAEAAEAAwAFAAIABQAAAAIABgAEAAAABQAGAAAABwABAAQABwADAAEABgAHAAQABQADAAcABQAHAAYA"),
-"name": "Material",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 8,
-"vertex_data": PackedByteArray("jeL//00qAADZHf//ydQAANkd//9NKgAAAAAAAP//AACN4v//ydQAAAAAAAAAAAAA//8AAAAAAAD//wAA//8AAA==")
-}]
-blend_shape_mode = 0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_hkdw0"]
-resource_name = "jumppad_Cube"
-_surfaces = [{
-"aabb": AABB(-1.30349, -1, -1.49625, 2.60288, 0.383231, 3.00316),
-"attribute_data": PackedByteArray("/5//f//f/z//3/9//5//P/9f/z//nwAA/5//P/9fAAD/X////5//v/+f////X/+//x//f/9f/z//X/9//x//P/9f/3//n/8//5//f/9f/z//X/+//5//f/+f/7//X/9/"),
-"format": 34896613399,
-"index_count": 36,
-"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
-"material": SubResource("StandardMaterial3D_6sace"),
-"name": "Material",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 24,
-"vertex_data": PackedByteArray("jeL//00q///ZHf//ydT//9kd//9NKv//jeL//8nU/////wAA//9L0Nkd///J1Ee9jeL//8nUPdcAAAAA///8uQAAAAD///bQ2R3//00qY8DZHf//ydSK2AAAAAAAAB3AAAAAAAAA/7///wAA////v///AAAAAP+/AAAAAP///7///wAAAACL843i///J1AzUjeL//00qxPz//wAA//8N0gAAAAAAAAPjjeL//00q/OrZHf//TSrM4P//AAAAAKbs/3//v/9//7//f/+//3//v0LedhoJ49Yo3txHFiTkKyxA8WG7H8MvxYj8+7iOvifGAAD/fwAA/38AAP9/AAD/f2ApMiKvR9AG/yL2JwJLzwNOuw+uPKktuibCeKkKplK8")
-}]
-blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_tkhhn")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dc0v1"]
-albedo_color = Color(0, 0.266666, 1, 1)
-albedo_texture = ExtResource("33_l6t0k")
-uv1_scale = Vector3(-0.055, 1, 1)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_3yk7c"]
 size = Vector3(1.84082, 3.19287, 10.2012)
 
@@ -1985,14 +1974,297 @@ wait_time = 5.0
 one_shot = true
 autostart = true
 
-[node name="Player" parent="." instance=ExtResource("1_y7tgq")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -31.9736, 5.62074, -0.077)
+[node name="respawnTimer" type="Timer" parent="."]
+one_shot = true
+script = ExtResource("6_tpo6h")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.0802861, 0.996772, 0, -0.996772, 0.0802861, 2675.55, 278.05, 1901.11)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_i53j8")
+
+[node name="intermission" type="Node3D" parent="." node_paths=PackedStringArray("camera")]
+script = ExtResource("28_iokc4")
+camera = NodePath("../Camera3D")
+
+[node name="sunkenwood" type="AnimationPlayer" parent="intermission"]
+libraries = {
+&"": SubResource("AnimationLibrary_l6t0k")
+}
+
+[node name="logbreak" type="AnimationPlayer" parent="intermission"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_2ovki")
+}
+
+[node name="player_holder" type="AnimationPlayer" parent="intermission"]
+libraries = {
+&"": SubResource("AnimationLibrary_3yk7c")
+}
+
+[node name="Area3D" type="Area3D" parent="intermission"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83.016, -6.73854, -0.456007)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="intermission/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.54748, 2.04424, 0.146034)
+shape = SubResource("BoxShape3D_c3uv7")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="intermission"]
+transform = Transform3D(-6.4059e-07, 0, 14.655, 0, 14.655, 0, -14.655, 0, -6.4059e-07, 84.7404, -4.43696, 0)
+visible = false
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_ljui8")
+animation = &"front"
+
+[node name="break_beam" parent="intermission" instance=ExtResource("4_grgy5")]
+transform = Transform3D(4.10887e-08, 1.52, 9.99592e-08, 0.94, -6.64413e-08, 1.46782e-21, 6.20422e-15, 2.29514e-07, -0.662, 84.8599, -6.40803, 0.0636299)
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="intermission/break_beam"]
+transform = Transform3D(1, -3.55271e-15, -2.11758e-22, 3.55271e-15, 1, 0, 0, 1.42109e-14, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="intermission/break_beam/StaticBody3D2"]
+transform = Transform3D(1, -3.19744e-14, -2.96462e-20, 3.19744e-14, 1, 0, 3.38813e-21, 1.42109e-14, 1, 1.03553, 0.957169, 0.125817)
+shape = SubResource("BoxShape3D_l6t0k")
+
+[node name="break_beam2" parent="intermission" instance=ExtResource("4_grgy5")]
+transform = Transform3D(3.79777e-08, 1.40492, -0.252685, 0.94, -6.64413e-08, 1.25344e-21, -1.56835e-08, -0.580183, -0.611878, 95.7912, -41.22, -6.02862)
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="intermission/break_beam2"]
+transform = Transform3D(1, -3.55271e-15, -2.11758e-22, 3.55271e-15, 1, 0, 0, 1.42109e-14, 1, 0, -0.67, 0)
+
+[node name="break_beam3" parent="intermission" instance=ExtResource("4_grgy5")]
+transform = Transform3D(3.79777e-08, 1.49853, -0.110868, 0.94, -6.47907e-08, -6.40995e-09, -1.56835e-08, -0.254561, -0.65265, 117.756, -41.2162, -14.9157)
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="intermission/break_beam3"]
+transform = Transform3D(1, -3.55271e-15, -2.11758e-22, 3.55271e-15, 1, 0, 0, 1.42109e-14, 1, 0, -0.67, 0)
+
+[node name="break_beam4" parent="intermission" instance=ExtResource("4_grgy5")]
+transform = Transform3D(-0.0253964, 0.223285, 0.654574, 0.937506, -0.0956491, 0.0242292, 0.0635419, 1.50047, -0.095863, 144.974, -40.5326, -20.2634)
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="intermission/break_beam4"]
+transform = Transform3D(1, -3.55271e-15, -2.11758e-22, 3.55271e-15, 1, 0, 0, 1.42109e-14, 1, 0, -0.67, 0)
+
+[node name="moving_platforms" type="Node3D" parent="intermission"]
+
+[node name="part1" type="Node3D" parent="intermission/moving_platforms"]
+
+[node name="AnimatableBody3D2" type="AnimatableBody3D" parent="intermission/moving_platforms/part1"]
+transform = Transform3D(1, 0, 0, 0, 0.976296, -0.21644, 0, 0.21644, 0.976296, 89.893, -42.4593, -0.782)
+
+[node name="wooden_beam" type="MeshInstance3D" parent="intermission/moving_platforms/part1/AnimatableBody3D2"]
+transform = Transform3D(-0.104682, -0.00100943, -0.299089, 0.944045, 0.431951, -0.00229769, 4.14866, -0.0983177, -0.00702397, 0, 0, 0)
+mesh = SubResource("ArrayMesh_ifyry")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_cotn6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="intermission/moving_platforms/part1/AnimatableBody3D2"]
+transform = Transform3D(0.675145, -0.00227861, -0.0245964, 0.0051867, 0.975059, 0.221815, 0.0158556, -0.221937, 0.974778, 0, 0, 0)
+shape = SubResource("BoxShape3D_i5nbj")
+
+[node name="Cube" type="MeshInstance3D" parent="intermission/moving_platforms/part1/AnimatableBody3D2"]
+transform = Transform3D(-2.58676e-08, -0.00302231, 0.590489, -0.223046, 0.843728, 0.00200877, -0.974808, -0.193054, -0.000459672, 0.3591, 0.5352, -0.899867)
+mesh = SubResource("ArrayMesh_7jij8")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="intermission/moving_platforms/part1/AnimatableBody3D2"]
+transform = Transform3D(0.590489, -0.00377789, 5.65151e-11, 0.00200878, 1.05466, 0.223046, -0.000459629, -0.241317, 0.974808, 0.359901, 0.3128, -0.848977)
+shape = SubResource("BoxShape3D_hoajf")
+
+[node name="Cube2" type="MeshInstance3D" parent="intermission/moving_platforms/part1/AnimatableBody3D2"]
+transform = Transform3D(-2.58676e-08, -0.00302231, 0.590489, -0.223046, 0.843728, 0.00200877, -0.974808, -0.193054, -0.000459672, 0.3591, 1.01305, 1.18854)
+mesh = SubResource("ArrayMesh_7jij8")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="intermission/moving_platforms/part1/AnimatableBody3D2"]
+transform = Transform3D(0.590489, -0.00377789, 5.65151e-11, 0.00200878, 1.05466, 0.223046, -0.000459629, -0.241317, 0.974808, 0.359901, 0.79065, 1.23943)
+shape = SubResource("BoxShape3D_hoajf")
+
+[node name="AnimatableBody3D3" type="AnimatableBody3D" parent="intermission/moving_platforms/part1"]
+transform = Transform3D(0.902668, 0.0931422, 0.420137, 0, 0.976296, -0.21644, -0.430338, 0.195373, 0.881271, 103.595, -41.2309, -7.31445)
+
+[node name="wooden_beam" type="MeshInstance3D" parent="intermission/moving_platforms/part1/AnimatableBody3D3"]
+transform = Transform3D(-0.104682, -0.00100943, -0.299089, 0.944045, 0.431951, -0.00229769, 4.14866, -0.0983177, -0.00702397, 0, 0, 0)
+mesh = SubResource("ArrayMesh_ifyry")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_cotn6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="intermission/moving_platforms/part1/AnimatableBody3D3"]
+transform = Transform3D(0.675145, -0.00227861, -0.0245964, 0.0051867, 0.975059, 0.221815, 0.0158556, -0.221937, 0.974778, 0, 0, 0)
+shape = SubResource("BoxShape3D_i5nbj")
+
+[node name="Cube" type="MeshInstance3D" parent="intermission/moving_platforms/part1/AnimatableBody3D3"]
+transform = Transform3D(-2.58676e-08, -0.00302231, 0.590489, -0.223046, 0.843728, 0.00200877, -0.974808, -0.193054, -0.000459672, 0.3591, 0.5352, -0.899867)
+mesh = SubResource("ArrayMesh_7jij8")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="intermission/moving_platforms/part1/AnimatableBody3D3"]
+transform = Transform3D(0.590489, -0.00377789, 5.65151e-11, 0.00200878, 1.05466, 0.223046, -0.000459629, -0.241317, 0.974808, 0.359901, 0.3128, -0.848977)
+shape = SubResource("BoxShape3D_hoajf")
+
+[node name="Cube2" type="MeshInstance3D" parent="intermission/moving_platforms/part1/AnimatableBody3D3"]
+transform = Transform3D(-2.58676e-08, -0.00302231, 0.590489, -0.223046, 0.843728, 0.00200877, -0.974808, -0.193054, -0.000459672, 0.3591, 1.01305, 1.18854)
+mesh = SubResource("ArrayMesh_7jij8")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="intermission/moving_platforms/part1/AnimatableBody3D3"]
+transform = Transform3D(0.590489, -0.00377789, 5.65151e-11, 0.00200878, 1.05466, 0.223046, -0.000459629, -0.241317, 0.974808, 0.359901, 0.79065, 1.23943)
+shape = SubResource("BoxShape3D_hoajf")
+
+[node name="AnimatableBody3D4" type="AnimatableBody3D" parent="intermission/moving_platforms/part1"]
+transform = Transform3D(0.902668, 0.0931422, 0.420137, 0, 0.976296, -0.21644, -0.430338, 0.195373, 0.881271, 113.234, -42.7386, -12.2798)
+
+[node name="wooden_beam" type="MeshInstance3D" parent="intermission/moving_platforms/part1/AnimatableBody3D4"]
+transform = Transform3D(-0.104682, -0.00100943, -0.299089, 0.944045, 0.431951, -0.00229769, 4.14866, -0.0983177, -0.00702397, 0, 0, 0)
+mesh = SubResource("ArrayMesh_ifyry")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_cotn6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="intermission/moving_platforms/part1/AnimatableBody3D4"]
+transform = Transform3D(0.675145, -0.00227861, -0.0245964, 0.0051867, 0.975059, 0.221815, 0.0158556, -0.221937, 0.974778, 0, 0, 0)
+shape = SubResource("BoxShape3D_i5nbj")
+
+[node name="Cube" type="MeshInstance3D" parent="intermission/moving_platforms/part1/AnimatableBody3D4"]
+transform = Transform3D(-2.58676e-08, -0.00302231, 0.590489, -0.223046, 0.843728, 0.00200877, -0.974808, -0.193054, -0.000459672, 0.3591, 0.5352, -0.899867)
+mesh = SubResource("ArrayMesh_7jij8")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="intermission/moving_platforms/part1/AnimatableBody3D4"]
+transform = Transform3D(0.590489, -0.00377789, 5.65151e-11, 0.00200878, 1.05466, 0.223046, -0.000459629, -0.241317, 0.974808, 0.359901, 0.3128, -0.848977)
+shape = SubResource("BoxShape3D_hoajf")
+
+[node name="Cube2" type="MeshInstance3D" parent="intermission/moving_platforms/part1/AnimatableBody3D4"]
+transform = Transform3D(-2.58676e-08, -0.00302231, 0.590489, -0.223046, 0.843728, 0.00200877, -0.974808, -0.193054, -0.000459672, 0.3591, 1.01305, 1.18854)
+mesh = SubResource("ArrayMesh_7jij8")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="intermission/moving_platforms/part1/AnimatableBody3D4"]
+transform = Transform3D(0.590489, -0.00377789, 5.65151e-11, 0.00200878, 1.05466, 0.223046, -0.000459629, -0.241317, 0.974808, 0.359901, 0.79065, 1.23943)
+shape = SubResource("BoxShape3D_hoajf")
+
+[node name="AnimatableBody3D5" type="AnimatableBody3D" parent="intermission/moving_platforms/part1"]
+transform = Transform3D(0.984406, 0.0348895, 0.172417, 2.34794e-05, 0.980108, -0.198464, -0.175911, 0.195373, 0.964824, 124.223, -42.5866, -16.8771)
+
+[node name="wooden_beam" type="MeshInstance3D" parent="intermission/moving_platforms/part1/AnimatableBody3D5"]
+transform = Transform3D(-0.104682, -0.00100943, -0.299089, 0.944045, 0.431951, -0.00229769, 4.14866, -0.0983177, -0.00702397, 0, 0, 0)
+mesh = SubResource("ArrayMesh_ifyry")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_cotn6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="intermission/moving_platforms/part1/AnimatableBody3D5"]
+transform = Transform3D(0.675145, -0.00227861, -0.0245964, 0.0051867, 0.975059, 0.221815, 0.0158556, -0.221937, 0.974778, 0, 0, 0)
+shape = SubResource("BoxShape3D_i5nbj")
+
+[node name="Cube" type="MeshInstance3D" parent="intermission/moving_platforms/part1/AnimatableBody3D5"]
+transform = Transform3D(-2.58676e-08, -0.00302231, 0.590489, -0.223046, 0.843728, 0.00200877, -0.974808, -0.193054, -0.000459672, 0.3591, 0.5352, -0.899867)
+mesh = SubResource("ArrayMesh_7jij8")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="intermission/moving_platforms/part1/AnimatableBody3D5"]
+transform = Transform3D(0.590489, -0.00377789, 5.65151e-11, 0.00200878, 1.05466, 0.223046, -0.000459629, -0.241317, 0.974808, 0.359901, 0.3128, -0.848977)
+shape = SubResource("BoxShape3D_hoajf")
+
+[node name="Cube2" type="MeshInstance3D" parent="intermission/moving_platforms/part1/AnimatableBody3D5"]
+transform = Transform3D(-2.58676e-08, -0.00302231, 0.590489, -0.223046, 0.843728, 0.00200877, -0.974808, -0.193054, -0.000459672, 0.3591, 1.01305, 1.18854)
+mesh = SubResource("ArrayMesh_7jij8")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="intermission/moving_platforms/part1/AnimatableBody3D5"]
+transform = Transform3D(0.590489, -0.00377789, 5.65151e-11, 0.00200878, 1.05466, 0.223046, -0.000459629, -0.241317, 0.974808, 0.359901, 0.79065, 1.23943)
+shape = SubResource("BoxShape3D_hoajf")
+
+[node name="AnimatableBody3D6" type="AnimatableBody3D" parent="intermission/moving_platforms/part1"]
+transform = Transform3D(0.984393, 0.0299454, 0.173416, 0.00498876, 0.980272, -0.197592, -0.175911, 0.195373, 0.964824, 132.961, -41.2309, -18.4928)
+
+[node name="wooden_beam" type="MeshInstance3D" parent="intermission/moving_platforms/part1/AnimatableBody3D6"]
+transform = Transform3D(-0.104682, -0.00100943, -0.299089, 0.944045, 0.431951, -0.00229769, 4.14866, -0.0983177, -0.00702397, 0, 0, 0)
+mesh = SubResource("ArrayMesh_ifyry")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_cotn6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="intermission/moving_platforms/part1/AnimatableBody3D6"]
+transform = Transform3D(0.675145, -0.00227861, -0.0245964, 0.0051867, 0.975059, 0.221815, 0.0158556, -0.221937, 0.974778, 0, 0, 0)
+shape = SubResource("BoxShape3D_i5nbj")
+
+[node name="Cube" type="MeshInstance3D" parent="intermission/moving_platforms/part1/AnimatableBody3D6"]
+transform = Transform3D(-2.58676e-08, -0.00302231, 0.590489, -0.223046, 0.843728, 0.00200877, -0.974808, -0.193054, -0.000459672, 0.3591, 0.5352, -0.899867)
+mesh = SubResource("ArrayMesh_7jij8")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="intermission/moving_platforms/part1/AnimatableBody3D6"]
+transform = Transform3D(0.590489, -0.00377789, 5.65151e-11, 0.00200878, 1.05466, 0.223046, -0.000459629, -0.241317, 0.974808, 0.359901, 0.3128, -0.848977)
+shape = SubResource("BoxShape3D_hoajf")
+
+[node name="Cube2" type="MeshInstance3D" parent="intermission/moving_platforms/part1/AnimatableBody3D6"]
+transform = Transform3D(-2.58676e-08, -0.00302231, 0.590489, -0.223046, 0.843728, 0.00200877, -0.974808, -0.193054, -0.000459672, 0.3591, 1.01305, 1.18854)
+mesh = SubResource("ArrayMesh_7jij8")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="intermission/moving_platforms/part1/AnimatableBody3D6"]
+transform = Transform3D(0.590489, -0.00377789, 5.65151e-11, 0.00200878, 1.05466, 0.223046, -0.000459629, -0.241317, 0.974808, 0.359901, 0.79065, 1.23943)
+shape = SubResource("BoxShape3D_hoajf")
+
+[node name="part3" type="Node3D" parent="intermission/moving_platforms"]
+
+[node name="bigblock" type="Node3D" parent="intermission/moving_platforms/part3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.28741, 0, 0)
+
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="intermission/moving_platforms/part3/bigblock"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.325, 0, 0)
+
+[node name="Cube" type="MeshInstance3D" parent="intermission/moving_platforms/part3/bigblock/AnimatableBody3D"]
+transform = Transform3D(-2.80309e-08, -0.00302144, 0.639487, 0.260151, 0.835488, 0.00215485, -0.965568, 0.225104, 0.000580531, 101.702, -5.99712, 1.81413)
+mesh = SubResource("ArrayMesh_7jij8")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="intermission/moving_platforms/part3/bigblock/AnimatableBody3D"]
+transform = Transform3D(0.639487, -0.0037768, 7.80639e-11, 0.00215484, 1.04436, -0.260151, 0.000580573, 0.28138, 0.965568, 101.703, -6.21735, 1.7548)
+shape = SubResource("BoxShape3D_hoajf")
+
+[node name="Cube2" type="MeshInstance3D" parent="intermission/moving_platforms/part3/bigblock/AnimatableBody3D"]
+transform = Transform3D(-2.80309e-08, -0.00302144, 0.639487, 0.260151, 0.835488, 0.00215485, -0.965568, 0.225104, 0.000580531, 101.702, -5.43978, -0.254484)
+mesh = SubResource("ArrayMesh_7jij8")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="intermission/moving_platforms/part3/bigblock/AnimatableBody3D"]
+transform = Transform3D(0.639487, -0.0037768, 7.80639e-11, 0.00215484, 1.04436, -0.260151, 0.000580573, 0.28138, 0.965568, 101.703, -5.66001, -0.31382)
+shape = SubResource("BoxShape3D_hoajf")
+
+[node name="wooden_beam" type="MeshInstance3D" parent="intermission/moving_platforms/part3/bigblock/AnimatableBody3D"]
+transform = Transform3D(-0.0762498, -0.00156318, -0.299089, -0.79025, 0.428541, 0.000832374, 3.01606, 0.112244, -0.00734327, 102.072, -6.18881, -0.308329)
+mesh = SubResource("ArrayMesh_ifyry")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_cotn6")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="intermission/moving_platforms/part3/bigblock/AnimatableBody3D"]
+transform = Transform3D(0.675145, -0.00352863, -0.0179158, -0.00187894, 0.967362, -0.185679, 0.0165762, 0.253373, 0.708661, 102.072, -6.18881, -0.308329)
+shape = SubResource("BoxShape3D_i5nbj")
+
+[node name="jumppad" type="Area3D" parent="intermission"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 144.764, -38.4183, -20.1837)
+script = ExtResource("32_ljui8")
+
+[node name="Path3D" type="Path3D" parent="intermission/jumppad"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.17233, -0.673611, -0.184387)
+curve = SubResource("Curve3D_c3uv7")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="intermission/jumppad/Path3D"]
+transform = Transform3D(-4.37113e-08, 0, -0.999998, 0, 0.999997, 0, 0.999999, 0, -4.37113e-08, 0, 0, 0)
+loop = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="intermission/jumppad"]
+transform = Transform3D(0.995021, 0, 0.0996671, 0, 1, 0, -0.0996671, 0, 0.995021, -0.234619, -1.18585, 0.0562134)
+shape = SubResource("BoxShape3D_ljui8")
+
+[node name="mesh" type="MeshInstance3D" parent="intermission/jumppad"]
+transform = Transform3D(0.0660261, -0.0141897, -0.989076, -0.0265005, 0.997998, -0.0230538, 0.44434, 0.0616292, 0.145595, -0.000943119, -0.49391, 0.00409619)
+mesh = SubResource("ArrayMesh_hkdw0")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_dc0v1")
+
+[node name="Player" parent="." instance=ExtResource("1_y7tgq")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -31.9736, 5.62074, -0.077)
 
 [node name="intro" type="Node3D" parent="."]
 
@@ -3150,285 +3422,6 @@ transform = Transform3D(-3.47519e-06, 0, 0.752059, 0, 0.96, 0, -0.96, 0, -2.7224
 [node name="platform13" parent="assets/tunnel_parkour_1" instance=ExtResource("5_mbj4m")]
 transform = Transform3D(0.936067, 0, 0, 0, 1, 0, 0, 0, 1, 174.137, 0.413567, 8.55712)
 
-[node name="intermission" type="Node3D" parent="." node_paths=PackedStringArray("camera")]
-script = ExtResource("28_iokc4")
-camera = NodePath("../Camera3D")
-
-[node name="sunkenwood" type="AnimationPlayer" parent="intermission"]
-libraries = {
-&"": SubResource("AnimationLibrary_l6t0k")
-}
-
-[node name="logbreak" type="AnimationPlayer" parent="intermission"]
-root_node = NodePath("../..")
-libraries = {
-&"": SubResource("AnimationLibrary_2ovki")
-}
-
-[node name="player_holder" type="AnimationPlayer" parent="intermission"]
-libraries = {
-&"": SubResource("AnimationLibrary_3yk7c")
-}
-
-[node name="Area3D" type="Area3D" parent="intermission"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83.016, -6.73854, -0.456007)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="intermission/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.54748, 2.04424, 0.146034)
-shape = SubResource("BoxShape3D_c3uv7")
-
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="intermission"]
-transform = Transform3D(-6.4059e-07, 0, 14.655, 0, 14.655, 0, -14.655, 0, -6.4059e-07, 84.7404, -4.43696, 0)
-visible = false
-texture_filter = 0
-sprite_frames = SubResource("SpriteFrames_ljui8")
-animation = &"front"
-
-[node name="break_beam" parent="intermission" instance=ExtResource("4_grgy5")]
-transform = Transform3D(4.10887e-08, 1.52, 9.99592e-08, 0.94, -6.64413e-08, 1.46782e-21, 6.20422e-15, 2.29514e-07, -0.662, 84.8599, -6.40803, 0.0636299)
-
-[node name="StaticBody3D2" type="StaticBody3D" parent="intermission/break_beam"]
-transform = Transform3D(1, -3.55271e-15, -2.11758e-22, 3.55271e-15, 1, 0, 0, 1.42109e-14, 1, 0, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="intermission/break_beam/StaticBody3D2"]
-transform = Transform3D(1, -3.19744e-14, -2.96462e-20, 3.19744e-14, 1, 0, 3.38813e-21, 1.42109e-14, 1, 1.03553, 0.957169, 0.125817)
-shape = SubResource("BoxShape3D_l6t0k")
-
-[node name="break_beam2" parent="intermission" instance=ExtResource("4_grgy5")]
-transform = Transform3D(3.79777e-08, 1.40492, -0.252685, 0.94, -6.64413e-08, 1.25344e-21, -1.56835e-08, -0.580183, -0.611878, 95.7912, -41.22, -6.02862)
-
-[node name="StaticBody3D2" type="StaticBody3D" parent="intermission/break_beam2"]
-transform = Transform3D(1, -3.55271e-15, -2.11758e-22, 3.55271e-15, 1, 0, 0, 1.42109e-14, 1, 0, -0.67, 0)
-
-[node name="break_beam3" parent="intermission" instance=ExtResource("4_grgy5")]
-transform = Transform3D(3.79777e-08, 1.49853, -0.110868, 0.94, -6.47907e-08, -6.40995e-09, -1.56835e-08, -0.254561, -0.65265, 117.756, -41.2162, -14.9157)
-
-[node name="StaticBody3D2" type="StaticBody3D" parent="intermission/break_beam3"]
-transform = Transform3D(1, -3.55271e-15, -2.11758e-22, 3.55271e-15, 1, 0, 0, 1.42109e-14, 1, 0, -0.67, 0)
-
-[node name="break_beam4" parent="intermission" instance=ExtResource("4_grgy5")]
-transform = Transform3D(-0.0253964, 0.223285, 0.654574, 0.937506, -0.0956491, 0.0242292, 0.0635419, 1.50047, -0.095863, 144.974, -40.5326, -20.2634)
-
-[node name="StaticBody3D2" type="StaticBody3D" parent="intermission/break_beam4"]
-transform = Transform3D(1, -3.55271e-15, -2.11758e-22, 3.55271e-15, 1, 0, 0, 1.42109e-14, 1, 0, -0.67, 0)
-
-[node name="moving_platforms" type="Node3D" parent="intermission"]
-
-[node name="part1" type="Node3D" parent="intermission/moving_platforms"]
-
-[node name="AnimatableBody3D2" type="AnimatableBody3D" parent="intermission/moving_platforms/part1"]
-transform = Transform3D(1, 0, 0, 0, 0.976296, -0.21644, 0, 0.21644, 0.976296, 89.893, -42.4593, -0.782)
-
-[node name="wooden_beam" type="MeshInstance3D" parent="intermission/moving_platforms/part1/AnimatableBody3D2"]
-transform = Transform3D(-0.104682, -0.00100943, -0.299089, 0.944045, 0.431951, -0.00229769, 4.14866, -0.0983177, -0.00702397, 0, 0, 0)
-mesh = SubResource("ArrayMesh_ifyry")
-skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_cotn6")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="intermission/moving_platforms/part1/AnimatableBody3D2"]
-transform = Transform3D(0.675145, -0.00227861, -0.0245964, 0.0051867, 0.975059, 0.221815, 0.0158556, -0.221937, 0.974778, 0, 0, 0)
-shape = SubResource("BoxShape3D_i5nbj")
-
-[node name="Cube" type="MeshInstance3D" parent="intermission/moving_platforms/part1/AnimatableBody3D2"]
-transform = Transform3D(-2.58676e-08, -0.00302231, 0.590489, -0.223046, 0.843728, 0.00200877, -0.974808, -0.193054, -0.000459672, 0.3591, 0.5352, -0.899867)
-mesh = SubResource("ArrayMesh_7jij8")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="intermission/moving_platforms/part1/AnimatableBody3D2"]
-transform = Transform3D(0.590489, -0.00377789, 5.65151e-11, 0.00200878, 1.05466, 0.223046, -0.000459629, -0.241317, 0.974808, 0.359901, 0.3128, -0.848977)
-shape = SubResource("BoxShape3D_hoajf")
-
-[node name="Cube2" type="MeshInstance3D" parent="intermission/moving_platforms/part1/AnimatableBody3D2"]
-transform = Transform3D(-2.58676e-08, -0.00302231, 0.590489, -0.223046, 0.843728, 0.00200877, -0.974808, -0.193054, -0.000459672, 0.3591, 1.01305, 1.18854)
-mesh = SubResource("ArrayMesh_7jij8")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="intermission/moving_platforms/part1/AnimatableBody3D2"]
-transform = Transform3D(0.590489, -0.00377789, 5.65151e-11, 0.00200878, 1.05466, 0.223046, -0.000459629, -0.241317, 0.974808, 0.359901, 0.79065, 1.23943)
-shape = SubResource("BoxShape3D_hoajf")
-
-[node name="AnimatableBody3D3" type="AnimatableBody3D" parent="intermission/moving_platforms/part1"]
-transform = Transform3D(0.902668, 0.0931422, 0.420137, 0, 0.976296, -0.21644, -0.430338, 0.195373, 0.881271, 103.595, -41.2309, -7.31445)
-
-[node name="wooden_beam" type="MeshInstance3D" parent="intermission/moving_platforms/part1/AnimatableBody3D3"]
-transform = Transform3D(-0.104682, -0.00100943, -0.299089, 0.944045, 0.431951, -0.00229769, 4.14866, -0.0983177, -0.00702397, 0, 0, 0)
-mesh = SubResource("ArrayMesh_ifyry")
-skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_cotn6")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="intermission/moving_platforms/part1/AnimatableBody3D3"]
-transform = Transform3D(0.675145, -0.00227861, -0.0245964, 0.0051867, 0.975059, 0.221815, 0.0158556, -0.221937, 0.974778, 0, 0, 0)
-shape = SubResource("BoxShape3D_i5nbj")
-
-[node name="Cube" type="MeshInstance3D" parent="intermission/moving_platforms/part1/AnimatableBody3D3"]
-transform = Transform3D(-2.58676e-08, -0.00302231, 0.590489, -0.223046, 0.843728, 0.00200877, -0.974808, -0.193054, -0.000459672, 0.3591, 0.5352, -0.899867)
-mesh = SubResource("ArrayMesh_7jij8")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="intermission/moving_platforms/part1/AnimatableBody3D3"]
-transform = Transform3D(0.590489, -0.00377789, 5.65151e-11, 0.00200878, 1.05466, 0.223046, -0.000459629, -0.241317, 0.974808, 0.359901, 0.3128, -0.848977)
-shape = SubResource("BoxShape3D_hoajf")
-
-[node name="Cube2" type="MeshInstance3D" parent="intermission/moving_platforms/part1/AnimatableBody3D3"]
-transform = Transform3D(-2.58676e-08, -0.00302231, 0.590489, -0.223046, 0.843728, 0.00200877, -0.974808, -0.193054, -0.000459672, 0.3591, 1.01305, 1.18854)
-mesh = SubResource("ArrayMesh_7jij8")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="intermission/moving_platforms/part1/AnimatableBody3D3"]
-transform = Transform3D(0.590489, -0.00377789, 5.65151e-11, 0.00200878, 1.05466, 0.223046, -0.000459629, -0.241317, 0.974808, 0.359901, 0.79065, 1.23943)
-shape = SubResource("BoxShape3D_hoajf")
-
-[node name="AnimatableBody3D4" type="AnimatableBody3D" parent="intermission/moving_platforms/part1"]
-transform = Transform3D(0.902668, 0.0931422, 0.420137, 0, 0.976296, -0.21644, -0.430338, 0.195373, 0.881271, 113.234, -42.7386, -12.2798)
-
-[node name="wooden_beam" type="MeshInstance3D" parent="intermission/moving_platforms/part1/AnimatableBody3D4"]
-transform = Transform3D(-0.104682, -0.00100943, -0.299089, 0.944045, 0.431951, -0.00229769, 4.14866, -0.0983177, -0.00702397, 0, 0, 0)
-mesh = SubResource("ArrayMesh_ifyry")
-skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_cotn6")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="intermission/moving_platforms/part1/AnimatableBody3D4"]
-transform = Transform3D(0.675145, -0.00227861, -0.0245964, 0.0051867, 0.975059, 0.221815, 0.0158556, -0.221937, 0.974778, 0, 0, 0)
-shape = SubResource("BoxShape3D_i5nbj")
-
-[node name="Cube" type="MeshInstance3D" parent="intermission/moving_platforms/part1/AnimatableBody3D4"]
-transform = Transform3D(-2.58676e-08, -0.00302231, 0.590489, -0.223046, 0.843728, 0.00200877, -0.974808, -0.193054, -0.000459672, 0.3591, 0.5352, -0.899867)
-mesh = SubResource("ArrayMesh_7jij8")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="intermission/moving_platforms/part1/AnimatableBody3D4"]
-transform = Transform3D(0.590489, -0.00377789, 5.65151e-11, 0.00200878, 1.05466, 0.223046, -0.000459629, -0.241317, 0.974808, 0.359901, 0.3128, -0.848977)
-shape = SubResource("BoxShape3D_hoajf")
-
-[node name="Cube2" type="MeshInstance3D" parent="intermission/moving_platforms/part1/AnimatableBody3D4"]
-transform = Transform3D(-2.58676e-08, -0.00302231, 0.590489, -0.223046, 0.843728, 0.00200877, -0.974808, -0.193054, -0.000459672, 0.3591, 1.01305, 1.18854)
-mesh = SubResource("ArrayMesh_7jij8")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="intermission/moving_platforms/part1/AnimatableBody3D4"]
-transform = Transform3D(0.590489, -0.00377789, 5.65151e-11, 0.00200878, 1.05466, 0.223046, -0.000459629, -0.241317, 0.974808, 0.359901, 0.79065, 1.23943)
-shape = SubResource("BoxShape3D_hoajf")
-
-[node name="AnimatableBody3D5" type="AnimatableBody3D" parent="intermission/moving_platforms/part1"]
-transform = Transform3D(0.984406, 0.0348895, 0.172417, 2.34794e-05, 0.980108, -0.198464, -0.175911, 0.195373, 0.964824, 124.223, -42.5866, -16.8771)
-
-[node name="wooden_beam" type="MeshInstance3D" parent="intermission/moving_platforms/part1/AnimatableBody3D5"]
-transform = Transform3D(-0.104682, -0.00100943, -0.299089, 0.944045, 0.431951, -0.00229769, 4.14866, -0.0983177, -0.00702397, 0, 0, 0)
-mesh = SubResource("ArrayMesh_ifyry")
-skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_cotn6")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="intermission/moving_platforms/part1/AnimatableBody3D5"]
-transform = Transform3D(0.675145, -0.00227861, -0.0245964, 0.0051867, 0.975059, 0.221815, 0.0158556, -0.221937, 0.974778, 0, 0, 0)
-shape = SubResource("BoxShape3D_i5nbj")
-
-[node name="Cube" type="MeshInstance3D" parent="intermission/moving_platforms/part1/AnimatableBody3D5"]
-transform = Transform3D(-2.58676e-08, -0.00302231, 0.590489, -0.223046, 0.843728, 0.00200877, -0.974808, -0.193054, -0.000459672, 0.3591, 0.5352, -0.899867)
-mesh = SubResource("ArrayMesh_7jij8")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="intermission/moving_platforms/part1/AnimatableBody3D5"]
-transform = Transform3D(0.590489, -0.00377789, 5.65151e-11, 0.00200878, 1.05466, 0.223046, -0.000459629, -0.241317, 0.974808, 0.359901, 0.3128, -0.848977)
-shape = SubResource("BoxShape3D_hoajf")
-
-[node name="Cube2" type="MeshInstance3D" parent="intermission/moving_platforms/part1/AnimatableBody3D5"]
-transform = Transform3D(-2.58676e-08, -0.00302231, 0.590489, -0.223046, 0.843728, 0.00200877, -0.974808, -0.193054, -0.000459672, 0.3591, 1.01305, 1.18854)
-mesh = SubResource("ArrayMesh_7jij8")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="intermission/moving_platforms/part1/AnimatableBody3D5"]
-transform = Transform3D(0.590489, -0.00377789, 5.65151e-11, 0.00200878, 1.05466, 0.223046, -0.000459629, -0.241317, 0.974808, 0.359901, 0.79065, 1.23943)
-shape = SubResource("BoxShape3D_hoajf")
-
-[node name="AnimatableBody3D6" type="AnimatableBody3D" parent="intermission/moving_platforms/part1"]
-transform = Transform3D(0.984393, 0.0299454, 0.173416, 0.00498876, 0.980272, -0.197592, -0.175911, 0.195373, 0.964824, 132.961, -41.2309, -18.4928)
-
-[node name="wooden_beam" type="MeshInstance3D" parent="intermission/moving_platforms/part1/AnimatableBody3D6"]
-transform = Transform3D(-0.104682, -0.00100943, -0.299089, 0.944045, 0.431951, -0.00229769, 4.14866, -0.0983177, -0.00702397, 0, 0, 0)
-mesh = SubResource("ArrayMesh_ifyry")
-skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_cotn6")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="intermission/moving_platforms/part1/AnimatableBody3D6"]
-transform = Transform3D(0.675145, -0.00227861, -0.0245964, 0.0051867, 0.975059, 0.221815, 0.0158556, -0.221937, 0.974778, 0, 0, 0)
-shape = SubResource("BoxShape3D_i5nbj")
-
-[node name="Cube" type="MeshInstance3D" parent="intermission/moving_platforms/part1/AnimatableBody3D6"]
-transform = Transform3D(-2.58676e-08, -0.00302231, 0.590489, -0.223046, 0.843728, 0.00200877, -0.974808, -0.193054, -0.000459672, 0.3591, 0.5352, -0.899867)
-mesh = SubResource("ArrayMesh_7jij8")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="intermission/moving_platforms/part1/AnimatableBody3D6"]
-transform = Transform3D(0.590489, -0.00377789, 5.65151e-11, 0.00200878, 1.05466, 0.223046, -0.000459629, -0.241317, 0.974808, 0.359901, 0.3128, -0.848977)
-shape = SubResource("BoxShape3D_hoajf")
-
-[node name="Cube2" type="MeshInstance3D" parent="intermission/moving_platforms/part1/AnimatableBody3D6"]
-transform = Transform3D(-2.58676e-08, -0.00302231, 0.590489, -0.223046, 0.843728, 0.00200877, -0.974808, -0.193054, -0.000459672, 0.3591, 1.01305, 1.18854)
-mesh = SubResource("ArrayMesh_7jij8")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="intermission/moving_platforms/part1/AnimatableBody3D6"]
-transform = Transform3D(0.590489, -0.00377789, 5.65151e-11, 0.00200878, 1.05466, 0.223046, -0.000459629, -0.241317, 0.974808, 0.359901, 0.79065, 1.23943)
-shape = SubResource("BoxShape3D_hoajf")
-
-[node name="part3" type="Node3D" parent="intermission/moving_platforms"]
-
-[node name="bigblock" type="Node3D" parent="intermission/moving_platforms/part3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.28741, 0, 0)
-
-[node name="AnimatableBody3D" type="AnimatableBody3D" parent="intermission/moving_platforms/part3/bigblock"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.325, 0, 0)
-
-[node name="Cube" type="MeshInstance3D" parent="intermission/moving_platforms/part3/bigblock/AnimatableBody3D"]
-transform = Transform3D(-2.80309e-08, -0.00302144, 0.639487, 0.260151, 0.835488, 0.00215485, -0.965568, 0.225104, 0.000580531, 101.702, -5.99712, 1.81413)
-mesh = SubResource("ArrayMesh_7jij8")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="intermission/moving_platforms/part3/bigblock/AnimatableBody3D"]
-transform = Transform3D(0.639487, -0.0037768, 7.80639e-11, 0.00215484, 1.04436, -0.260151, 0.000580573, 0.28138, 0.965568, 101.703, -6.21735, 1.7548)
-shape = SubResource("BoxShape3D_hoajf")
-
-[node name="Cube2" type="MeshInstance3D" parent="intermission/moving_platforms/part3/bigblock/AnimatableBody3D"]
-transform = Transform3D(-2.80309e-08, -0.00302144, 0.639487, 0.260151, 0.835488, 0.00215485, -0.965568, 0.225104, 0.000580531, 101.702, -5.43978, -0.254484)
-mesh = SubResource("ArrayMesh_7jij8")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="intermission/moving_platforms/part3/bigblock/AnimatableBody3D"]
-transform = Transform3D(0.639487, -0.0037768, 7.80639e-11, 0.00215484, 1.04436, -0.260151, 0.000580573, 0.28138, 0.965568, 101.703, -5.66001, -0.31382)
-shape = SubResource("BoxShape3D_hoajf")
-
-[node name="wooden_beam" type="MeshInstance3D" parent="intermission/moving_platforms/part3/bigblock/AnimatableBody3D"]
-transform = Transform3D(-0.0762498, -0.00156318, -0.299089, -0.79025, 0.428541, 0.000832374, 3.01606, 0.112244, -0.00734327, 102.072, -6.18881, -0.308329)
-mesh = SubResource("ArrayMesh_ifyry")
-skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_cotn6")
-
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="intermission/moving_platforms/part3/bigblock/AnimatableBody3D"]
-transform = Transform3D(0.675145, -0.00352863, -0.0179158, -0.00187894, 0.967362, -0.185679, 0.0165762, 0.253373, 0.708661, 102.072, -6.18881, -0.308329)
-shape = SubResource("BoxShape3D_i5nbj")
-
-[node name="jumppad" type="Area3D" parent="intermission"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 144.764, -38.4183, -20.1837)
-script = ExtResource("32_ljui8")
-
-[node name="Path3D" type="Path3D" parent="intermission/jumppad"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.17233, -0.673611, -0.184387)
-curve = SubResource("Curve3D_c3uv7")
-
-[node name="PathFollow3D" type="PathFollow3D" parent="intermission/jumppad/Path3D"]
-transform = Transform3D(-4.37113e-08, 0, -0.999998, 0, 0.999997, 0, 0.999999, 0, -4.37113e-08, 0, 0, 0)
-loop = false
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="intermission/jumppad"]
-transform = Transform3D(0.995021, 0, 0.0996671, 0, 1, 0, -0.0996671, 0, 0.995021, -0.234619, -1.18585, 0.0562134)
-shape = SubResource("BoxShape3D_ljui8")
-
-[node name="mesh" type="MeshInstance3D" parent="intermission/jumppad"]
-transform = Transform3D(0.0660261, -0.0141897, -0.989076, -0.0265005, 0.997998, -0.0230538, 0.44434, 0.0616292, 0.145595, -0.000943119, -0.49391, 0.00409619)
-mesh = SubResource("ArrayMesh_hkdw0")
-skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_dc0v1")
-
 [node name="checkpoints" type="Node3D" parent="."]
 
 [node name="checkpoint1" type="Area3D" parent="checkpoints"]
@@ -3465,10 +3458,10 @@ shape = SubResource("BoxShape3D_dc0v1")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.242561, 0.879891, 0)
 
 [node name="Camera2" type="Camera3D" parent="."]
-transform = Transform3D(-0.00420884, 0.503771, 0.863827, 0, 0.863835, -0.503775, -0.999991, -0.00212031, -0.00363575, 98.0483, -41.348, -0.551302)
+transform = Transform3D(-0.00420884, 0.503771, 0.863827, 0, 0.863835, -0.503775, -0.999991, -0.00212031, -0.00363574, 98.0483, -41.348, -0.551302)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.47726, -0.175195, 0.861121, 0, 0.979925, 0.199365, -0.878762, -0.0951491, 0.467679, 92.4305, -2.23297, 4.55586)
+transform = Transform3D(0.47726, -0.175195, 0.861121, 0, 0.979925, 0.199366, -0.878762, -0.0951493, 0.467679, 92.4305, -2.23297, 4.55586)
 script = ExtResource("30_3fnmf")
 
 [node name="LightmapGI" type="LightmapGI" parent="."]
@@ -3498,15 +3491,16 @@ text = "FPS:"
 script = ExtResource("43_hh1ly")
 
 [connection signal="timeout" from="pause_menu/escape_popup/Timer" to="pause_menu/escape_popup" method="_on_timer_timeout"]
+[connection signal="timeout" from="respawnTimer" to="respawnTimer" method="_on_timeout"]
+[connection signal="animation_finished" from="intermission/logbreak" to="intermission" method="_on_logbreak_animation_finished"]
+[connection signal="body_entered" from="intermission/Area3D" to="intermission" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="intermission/jumppad" to="intermission/jumppad" method="_on_body_entered"]
 [connection signal="animation_finished" from="outro/outro" to="assets/tunnel_parkour_1/dimension_changer" method="_on_outro_animation_finished"]
 [connection signal="body_entered" from="assets/env/water/boundary" to="assets/env/water/water" method="_on_boundary_body_entered"]
 [connection signal="body_entered" from="assets/env/water/secret_boundary" to="assets/env/water/water" method="_on_secret_boundary_body_entered"]
 [connection signal="body_entered" from="assets/tunnel_parkour_1/respawn" to="assets/env/water/water" method="_on_respawn_body_entered"]
 [connection signal="body_entered" from="assets/tunnel_parkour_1/magic" to="assets/tunnel_parkour_1/magic" method="_on_body_entered"]
 [connection signal="body_entered" from="assets/tunnel_parkour_1/dimension_changer" to="assets/tunnel_parkour_1/dimension_changer" method="_on_body_entered"]
-[connection signal="animation_finished" from="intermission/logbreak" to="intermission" method="_on_logbreak_animation_finished"]
-[connection signal="body_entered" from="intermission/Area3D" to="intermission" method="_on_area_3d_body_entered"]
-[connection signal="body_entered" from="intermission/jumppad" to="intermission/jumppad" method="_on_body_entered"]
 [connection signal="body_entered" from="checkpoints/checkpoint1" to="checkpoints/checkpoint1" method="_on_body_entered"]
 [connection signal="body_entered" from="checkpoints/checkpoint2" to="checkpoints/checkpoint2" method="_on_body_entered"]
 [connection signal="body_entered" from="checkpoints/checkpoint3" to="checkpoints/checkpoint3" method="_on_body_entered"]

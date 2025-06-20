@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1ebmss4tc83e"
-path="res://.godot/imported/oreo.png-da145e3459ee64b297fd132e864a5255.ctex"
+uid="uid://daejdd6x3v33v"
+path="res://.godot/imported/light_flare.png-4d28c04b8c98002d1a2d33ab7eeef3e8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mixed_levels/intro/assets/oreo.png"
-dest_files=["res://.godot/imported/oreo.png-da145e3459ee64b297fd132e864a5255.ctex"]
+source_file="res://mixed_levels/endboss/eb2/light_flare.png"
+dest_files=["res://.godot/imported/light_flare.png-4d28c04b8c98002d1a2d33ab7eeef3e8.ctex"]
 
 [params]
 

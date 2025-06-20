@@ -1,10 +1,9 @@
-[gd_scene load_steps=59 format=4 uid="uid://df8krpyjrbxa0"]
+[gd_scene load_steps=63 format=4 uid="uid://df8krpyjrbxa0"]
 
 [ext_resource type="PackedScene" uid="uid://bnp7vdu3nrbe8" path="res://menus/pause_menu.tscn" id="1_1aqxp"]
 [ext_resource type="Script" uid="uid://db6ouim317a7f" path="res://mixed_levels/endboss/endboss_2.gd" id="1_y35jy"]
 [ext_resource type="Texture2D" uid="uid://c70xionhb5pqy" path="res://assets/keys/keys_launcher3d.png" id="2_vplys"]
 [ext_resource type="Texture2D" uid="uid://rbs1sq7r6ipa" path="res://mixed_levels/endboss/env/NightSkyHDRI003_1K-HDR.exr" id="5_iv633"]
-[ext_resource type="AudioStream" uid="uid://dl4gpflk2g71y" path="res://audio/music/TheFatRat - Xenogenesis (Outro Song).mp3" id="5_mnxfb"]
 [ext_resource type="Texture2D" uid="uid://d4hxnny30p60n" path="res://mixed_levels/endboss/eb1/assets/awdwadwda.png" id="6_nd3r8"]
 [ext_resource type="Texture2D" uid="uid://bgw2w26elh5b5" path="res://2D_levels/level_2/Player2D_topdown/player.png" id="6_u17kq"]
 [ext_resource type="Texture2D" uid="uid://byxfewxlviuo2" path="res://2D_levels/level_1/assets/env/rbsnext.png" id="7_ejeck"]
@@ -19,11 +18,13 @@
 [ext_resource type="Script" uid="uid://cr0yo1p1kllj0" path="res://2D_levels/level_1/fps.gd" id="16_tjx3h"]
 [ext_resource type="Script" uid="uid://bb1wjhu534dq3" path="res://2D_levels/Player2D/fps.gd" id="17_a0ilg"]
 [ext_resource type="PackedScene" uid="uid://dmj4o2qbag07v" path="res://mixed_levels/endboss/eb1/assets/wall_flat.tscn" id="17_aiept"]
+[ext_resource type="Texture2D" uid="uid://b1ebmss4tc83e" path="res://mixed_levels/intro/assets/oreo.png" id="17_kuy3a"]
 [ext_resource type="Texture2D" uid="uid://cdcjdbqsvl7dg" path="res://3D_levels/level_1/assets/bridge/materials/wood_planks_dirt_diff_1k.png" id="18_obmf6"]
 [ext_resource type="Texture2D" uid="uid://djxs0si2vd3sd" path="res://3D_levels/level_1/assets/bridge/materials/wood_planks_dirt_nor_gl_1k.jpg" id="19_mnxfb"]
 [ext_resource type="Texture2D" uid="uid://bhphjg822c1n7" path="res://3D_levels/level_2/assets/env/rough_wood_diff_1k.jpg" id="20_dcs41"]
 [ext_resource type="Texture2D" uid="uid://c34efocxw53ff" path="res://mixed_levels/endboss/eb2/jan.png" id="21_mnxfb"]
 [ext_resource type="Texture2D" uid="uid://sbb0bic2bn0h" path="res://mixed_levels/intro/assets/evelius_smoll.png" id="22_dcs41"]
+[ext_resource type="Texture2D" uid="uid://daejdd6x3v33v" path="res://mixed_levels/endboss/eb2/light_flare.png" id="23_dcs41"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_20s6x"]
 panorama = ExtResource("5_iv633")
@@ -941,10 +942,34 @@ tracks/9/keys = {
 "update": 0,
 "values": [Color(0, 0, 0, 1)]
 }
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("3dpart3/flare:scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.42, 0.42, 0.42)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("3dpart3/jan:scale")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(2.345, 2.345, 2.345)]
+}
 
 [sub_resource type="Animation" id="Animation_76eu7"]
 resource_name = "new_animation"
-length = 20.0
+length = 15.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -952,7 +977,7 @@ tracks/0/path = NodePath("Camera3D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.766667, 1.83333, 5.63333, 6.4, 7.5296, 8.83333, 11.5667),
+"times": PackedFloat32Array(0, 0.766667, 1.83333, 5.63333, 6.4, 7.5296, 8.83333, 11.3333),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(-67.8474, 10.7576, -3.07133), Vector3(-67.8474, 10.7576, -3.07133), Vector3(-79.044, 11.603, -5.862), Vector3(-79.044, 11.603, -5.862), Vector3(-72.809, 8.908, -9.032), Vector3(-72.809, 11.748, -21.517), Vector3(-73.824, 6.128, -47.247), Vector3(-79.504, 8.028, -61.947)]
@@ -976,7 +1001,7 @@ tracks/2/path = NodePath("3dpart3/lilguy3:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.343974, 1.16667, 6.33086, 6.9296, 7.5296, 7.83333, 8.11354, 8.37893, 8.83333, 9.13333, 9.53333, 11.5457),
+"times": PackedFloat32Array(0, 0.343974, 1.16667, 6.33086, 6.9296, 7.5296, 7.83333, 8.11354, 8.37893, 8.83333, 9.13333, 9.53333, 11.3123),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(-85.0012, 4.16927, 19.7634), Vector3(-85.0012, 7.12505, 8.23882), Vector3(-85.001, 7.125, -12.201), Vector3(-85.001, 7.125, -12.201), Vector3(-85.001, 16.9, -16.126), Vector3(-85.001, 12.15, -22.396), Vector3(-85.001, 10.701, -22.396), Vector3(-85.001, 10.701, -28.646), Vector3(-85.001, 7.784, -37.581), Vector3(-85.001, 4.054, -49.546), Vector3(-85.001, 5.129, -54.133), Vector3(-85.001, 10.624, -59.264), Vector3(-85.001, 7.91, -65.349)]
@@ -988,7 +1013,7 @@ tracks/3/path = NodePath("3dpart3/lilguy3:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.343974, 7.53333, 7.81354, 8.11354, 8.37893, 8.84943, 9.14358, 11.5457),
+"times": PackedFloat32Array(0, 0.343974, 7.53333, 7.81354, 8.11354, 8.37893, 8.84943, 9.14358, 11.3123),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 1.5708, 1.5708), Vector3(2.68651e-15, 1.5708, 0.381721), Vector3(2.68651e-15, 1.5708, 0.381721), Vector3(0, 1.5708, 1.63014), Vector3(0, 1.5708, 1.4207), Vector3(0, 1.5708, 1.14319), Vector3(0, 1.5708, 1.14319), Vector3(0, 1.5708, -2.18341), Vector3(0, 1.5708, -10.0374)]
@@ -1072,7 +1097,7 @@ tracks/10/path = NodePath("3dpart3/jan:modulate")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(11.6149, 11.7, 11.7667),
+"times": PackedFloat32Array(11.3815, 11.4666, 11.5333),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
@@ -1084,10 +1109,10 @@ tracks/11/path = NodePath("3dpart3/jan:position")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(11.9535, 14.6333),
+"times": PackedFloat32Array(11.6667, 14.0333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(-84.3028, 8.12207, -66.2553), Vector3(-111.148, 54.537, -162.27)]
+"values": [Vector3(-84.3028, 8.12207, -66.2553), Vector3(-117.517, 49.773, -161.289)]
 }
 tracks/12/type = "value"
 tracks/12/imported = false
@@ -1096,16 +1121,185 @@ tracks/12/path = NodePath("3dpart3/jan:rotation")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
-"times": PackedFloat32Array(11.9535, 14.6333),
+"times": PackedFloat32Array(11.6667, 14.0333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, 6.06007e-15, 0), Vector3(0.610865, 0, 46.1989)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("3dpart3/flare:scale")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(14, 14.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.42, 0.42, 0.42), Vector3(59.94, 59.94, 59.94)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("3dpart3/jan:scale")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(13.6837, 13.8333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(2.345, 2.345, 2.345), Vector3(0.23, 0.23, 0.23)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4hria"]
 _data = {
 &"RESET": SubResource("Animation_kuy3a"),
 &"new_animation": SubResource("Animation_76eu7")
+}
+
+[sub_resource type="Animation" id="Animation_e87wr"]
+resource_name = "new_animation"
+length = 7.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-84.9737, 7.31704, -60.0916)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.251327, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("3dpart3/lilguy3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.14386, 1.47551, 4.00012, 7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-85.001, 7.00005, -65.349), Vector3(-85.001, 7.00005, -65.349), Vector3(-85.001, 9.375, -65.349), Vector3(-85.001, 9.375, -65.349), Vector3(-85.001, 18.729, -90.277)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("3dpart3/lilguy3:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("3dpart3/oreo:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.00676835, 1.16667, 4, 7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-85.001, 15.413, -65.349), Vector3(-85.001, 6.89385, -65.349), Vector3(-85.001, 6.89385, -65.349), Vector3(-85.001, 16.773, -92.305)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("3dpart3/oreo:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("3dpart3/lilguy3/Label3D:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1.9, 4.00689),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_v1ktl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("3dpart3/oreo:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.189, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("3dpart3/oreo:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("3dpart3/lilguy3/Label3D:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("3dpart3/lilguy3:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-85.001, 18.729, -90.277)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v1ktl"]
+_data = {
+&"RESET": SubResource("Animation_v1ktl"),
+&"new_animation": SubResource("Animation_e87wr")
 }
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xyv5a"]
@@ -1303,9 +1497,10 @@ libraries = {
 &"": SubResource("AnimationLibrary_4hria")
 }
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_mnxfb")
-autoplay = true
+[node name="outro5" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_v1ktl")
+}
 
 [node name="riizz" type="Sprite3D" parent="."]
 transform = Transform3D(0.281908, 0.102606, 0, -0.102606, 0.281908, 0, 0, 0, 0.3, 7.215, 3.698, 3.355)
@@ -1413,8 +1608,15 @@ frame_progress = 0.224944
 [node name="3dpart3" type="Node3D" parent="."]
 visible = false
 
+[node name="oreo" type="Sprite3D" parent="3dpart3"]
+transform = Transform3D(17.7, 0, 0, 0, 17.7, 0, 0, 0, 17.7, 0, 0.189, 0)
+visible = false
+texture_filter = 0
+render_priority = 3
+texture = ExtResource("17_kuy3a")
+
 [node name="lilguy3" type="AnimatedSprite3D" parent="3dpart3"]
-transform = Transform3D(-5.9462e-05, 2.38686e-05, 17.7, 6.59356, 16.426, -4.75512e-14, -16.426, 6.59355, -6.40738e-05, -85.0012, 7.12505, 8.23882)
+transform = Transform3D(-5.9462e-05, 2.38686e-05, 17.7, 6.59356, 16.426, -4.75512e-14, -16.426, 6.59355, -6.40738e-05, -85.001, 18.729, -90.277)
 texture_filter = 2
 render_priority = 2
 sprite_frames = SubResource("SpriteFrames_ajp7c")
@@ -1422,11 +1624,34 @@ animation = &"stop"
 autoplay = "stop"
 frame_progress = 0.224944
 
+[node name="Label3D" type="Label3D" parent="3dpart3/lilguy3"]
+transform = Transform3D(0.14, 0, 0, 0, 0.138802, -0.0182737, 0, 0.0182737, 0.138802, 0.161, 0.095, -0.006)
+visible = false
+double_sided = false
+alpha_cut = 1
+texture_filter = 0
+text = "welcome
+back
+"
+font = ExtResource("7_xomen")
+font_size = 37
+
+[node name="bubble" type="Sprite3D" parent="3dpart3/lilguy3/Label3D"]
+transform = Transform3D(-4.08892, 0, -6.1741e-07, 0, 4.08892, 0, 6.17409e-07, 0, -4.08892, -0.007267, -0.067452, -0.00568962)
+texture_filter = 2
+texture = ExtResource("8_8l50x")
+
 [node name="wall_flat21" parent="3dpart3" instance=ExtResource("17_aiept")]
 transform = Transform3D(-4.59363e-07, 0, 2.137, 0, 12.23, 0, -10.509, 0, -9.34112e-08, -104.905, 8.72863, -2.5623)
 
 [node name="wall_flat26" parent="3dpart3" instance=ExtResource("17_aiept")]
 transform = Transform3D(-4.59363e-07, 0, 2.137, 0, 12.23, 0, -10.509, 0, -9.34112e-08, -104.905, 8.72863, -44.64)
+
+[node name="wall_flat30" parent="3dpart3" instance=ExtResource("17_aiept")]
+transform = Transform3D(-4.59363e-07, 0, 2.137, 0, 12.23, 0, -10.509, 0, -9.34112e-08, -64.6721, 8.72863, -44.64)
+
+[node name="wall_flat31" parent="3dpart3" instance=ExtResource("17_aiept")]
+transform = Transform3D(-4.59363e-07, 0, 2.137, 0, 12.23, 0, -10.509, 0, -9.34112e-08, -64.6721, 8.72863, -86.6924)
 
 [node name="wall_flat27" parent="3dpart3" instance=ExtResource("17_aiept")]
 transform = Transform3D(-4.59363e-07, 0, 2.137, 0, 12.23, 0, -10.509, 0, -9.34112e-08, -104.905, 8.72863, -86.4744)
@@ -1448,6 +1673,12 @@ transform = Transform3D(-3.62579e-07, 7.50917, 1.68675, 2.82047e-07, 9.65325, -1
 
 [node name="wall_flat28" parent="3dpart3" instance=ExtResource("17_aiept")]
 transform = Transform3D(-3.62579e-07, 7.50917, 1.68675, 2.82047e-07, 9.65325, -1.31211, -10.509, 0, -9.34112e-08, -101.108, 25.4827, -86.4158)
+
+[node name="wall_flat32" parent="3dpart3" instance=ExtResource("17_aiept")]
+transform = Transform3D(-0.0909731, -7.50889, -1.68669, 2.82047e-07, 9.65325, -1.31211, 10.5086, -0.0650048, -0.0146016, -69.2687, 25.4827, -86.4158)
+
+[node name="wall_flat33" parent="3dpart3" instance=ExtResource("17_aiept")]
+transform = Transform3D(-0.0909731, -7.50889, -1.68669, 2.82047e-07, 9.65325, -1.31211, 10.5086, -0.0650048, -0.0146016, -69.2687, 25.4827, -46.5666)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="3dpart3"]
 transform = Transform3D(41.6472, 0, 0, 0, -2.42729e-06, 1, 0, -55.53, -4.37114e-08, -85.4731, -4.36168e-07, -9.97836)
@@ -1481,7 +1712,7 @@ mesh = SubResource("ArrayMesh_y2fc0")
 skeleton = NodePath("")
 
 [node name="jan" type="Sprite3D" parent="3dpart3"]
-transform = Transform3D(-1.41125, -1.8728, 0, 1.53411, -1.15603, -1.34504, 1.0742, -0.809462, 1.92091, -111.148, 54.537, -162.27)
+transform = Transform3D(-1.41132, -1.87275, 0, 1.53407, -1.15608, -1.34504, 1.07417, -0.809498, 1.92091, -117.517, 49.773, -161.289)
 modulate = Color(0, 0, 0, 1)
 texture_filter = 0
 render_priority = 1
@@ -1510,6 +1741,13 @@ transform = Transform3D(4.08892, 0, 2.84217e-14, 0, 4.08892, 0, -2.84217e-14, 0,
 texture_filter = 2
 texture = ExtResource("8_8l50x")
 
+[node name="flare" type="Sprite3D" parent="3dpart3"]
+transform = Transform3D(0.42, 0, 0, 0, 0.42, 0, 0, 0, 0.42, -112.395, 44.715, -147.972)
+billboard = 1
+texture_filter = 0
+render_priority = 1
+texture = ExtResource("23_dcs41")
+
 [node name="FPS" type="CanvasLayer" parent="."]
 script = ExtResource("16_tjx3h")
 
@@ -1537,3 +1775,5 @@ script = ExtResource("17_a0ilg")
 [connection signal="animation_finished" from="outro1" to="." method="_on_outro_1_animation_finished"]
 [connection signal="animation_finished" from="outro2" to="." method="_on_outro_2_animation_finished"]
 [connection signal="animation_finished" from="outro3" to="." method="_on_outro_3_animation_finished"]
+[connection signal="animation_finished" from="outro4" to="." method="_on_outro_4_animation_finished"]
+[connection signal="animation_finished" from="outro5" to="." method="_on_outro_5_animation_finished"]

@@ -572,66 +572,120 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -179.0
-offset_top = -277.0
-offset_right = 180.0
-offset_bottom = 240.0
+offset_left = -179.5
+offset_top = -304.0
+offset_right = 179.5
+offset_bottom = 304.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_gvd1u")
 
-[node name="Label3" type="Label" parent="CanvasLayer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -134.0
-offset_top = -197.0
-offset_right = 134.0
-offset_bottom = -16.0
+offset_left = -155.5
+offset_top = -300.0
+offset_right = 155.5
+offset_bottom = 294.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("8_vmrej")
-text = "MA SUPERVISOR
-lukas gerber
 
-technical support
-jan
-enea
-
-playtesting"
-horizontal_alignment = 1
-
-[node name="Label4" type="Label" parent="CanvasLayer"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -134.0
-offset_top = 58.0
-offset_right = 134.0
-offset_bottom = 239.0
-grow_horizontal = 2
+[node name="Label10" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
 theme_override_fonts/font = ExtResource("8_vmrej")
 theme_override_font_sizes/font_size = 46
 text = "credits"
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -121.5
-offset_top = -12.0
-offset_right = 121.5
-offset_bottom = 215.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label2" type="Label" parent="CanvasLayer/HBoxContainer"]
+[node name="Label11" type="Label" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.0664221, 0.289826, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("8_vmrej")
+theme_override_font_sizes/font_size = 19
+text = "programming, art
+and design by"
+horizontal_alignment = 1
+
+[node name="Label12" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_vmrej")
+theme_override_font_sizes/font_size = 22
+text = "michael schnabel"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.0664221, 0.289826, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("8_vmrej")
+theme_override_font_sizes/font_size = 19
+text = "MA SUPERVISOR"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_vmrej")
+theme_override_font_sizes/font_size = 22
+text = "lukas gerber"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.0664221, 0.289826, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("8_vmrej")
+theme_override_font_sizes/font_size = 19
+text = "voice acting"
+horizontal_alignment = 1
+
+[node name="Label7" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_vmrej")
+theme_override_font_sizes/font_size = 22
+text = "evelius by Jan z."
+horizontal_alignment = 1
+
+[node name="Label8" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.0664221, 0.289826, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("8_vmrej")
+theme_override_font_sizes/font_size = 19
+text = "technical support"
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_vmrej")
+theme_override_font_sizes/font_size = 19
+text = "jan z.
+enea"
+horizontal_alignment = 1
+
+[node name="Label9" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.0664221, 0.289826, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("8_vmrej")
+theme_override_font_sizes/font_size = 19
+text = "playtesting"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("8_vmrej")
 text = "albrecht
 andreas
@@ -645,8 +699,9 @@ joseph
 kathleen"
 horizontal_alignment = 1
 
-[node name="Label" type="Label" parent="CanvasLayer/HBoxContainer"]
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("8_vmrej")
 text = "Lukas
 Matthias

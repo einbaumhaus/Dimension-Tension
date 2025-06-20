@@ -11,6 +11,7 @@ extends Node
 func _ready() -> void:
 	animation_player.play("intro")
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	MusicPlayer.tonband2()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

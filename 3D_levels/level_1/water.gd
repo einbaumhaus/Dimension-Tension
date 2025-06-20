@@ -18,6 +18,8 @@ func _process(delta: float) -> void:
 func _on_boundary_body_entered(body: Node3D) -> void:
 	if body.name == "Player":
 		respawn_player()
+	else:
+		print("not player")
 
 
 func _on_secret_boundary_body_entered(body: Node3D) -> void:
@@ -27,10 +29,13 @@ func _on_secret_boundary_body_entered(body: Node3D) -> void:
 func respawn_player():
 	if checkpoint_1.checkpoint1_on:
 		checkpoint_1.respawn()
+		print("respawn1")
 	elif checkpoint_2.checkpoint2_on:
 		checkpoint_2.respawn()
+		print("respawn2")
 	elif checkpoint_3.checkpoint3_on:
 		checkpoint_3.respawn()
+		print("respawn3")
 	else:
 		get_tree().reload_current_scene.call_deferred()
 

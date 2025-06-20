@@ -1462,7 +1462,6 @@ scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_i7vcb")
 animation = &"front_idle"
 autoplay = "front_idle"
-frame_progress = 0.0627612
 
 [node name="TileMapLayer" type="TileMapLayer" parent="part1"]
 z_index = -1

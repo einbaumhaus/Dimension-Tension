@@ -81,3 +81,6 @@ func tonband6():
 
 func stop():
 	player.stop()
+
+func play():
+	player.play()

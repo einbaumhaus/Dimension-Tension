@@ -463,7 +463,7 @@ offset_bottom = 182.0
 [node name="mission" type="Label" parent="mission/Control/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 21
-text = "COLLECT ALL 5 NOTES
+text = "COLLECT ALL 5 BANKNOTES
 TO UNLOCK DOOR"
 
 [node name="mission2" type="Label" parent="mission/Control/VBoxContainer"]

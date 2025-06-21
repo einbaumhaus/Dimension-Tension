@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=4 uid="uid://df8krpyjrbxa0"]
+[gd_scene load_steps=65 format=4 uid="uid://df8krpyjrbxa0"]
 
 [ext_resource type="PackedScene" uid="uid://bnp7vdu3nrbe8" path="res://menus/pause_menu.tscn" id="1_1aqxp"]
 [ext_resource type="Script" uid="uid://db6ouim317a7f" path="res://mixed_levels/endboss/endboss_2.gd" id="1_y35jy"]
@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://c34efocxw53ff" path="res://mixed_levels/endboss/eb2/jan.png" id="21_mnxfb"]
 [ext_resource type="Texture2D" uid="uid://sbb0bic2bn0h" path="res://mixed_levels/intro/assets/evelius_smoll.png" id="22_dcs41"]
 [ext_resource type="Texture2D" uid="uid://daejdd6x3v33v" path="res://mixed_levels/endboss/eb2/light_flare.png" id="23_dcs41"]
+[ext_resource type="Script" uid="uid://sypikgiblwvu" path="res://mixed_levels/endboss/endboss_2_audio.gd" id="26_kuy3a"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_20s6x"]
 panorama = ExtResource("5_iv633")
@@ -638,7 +639,7 @@ tracks/13/path = NodePath("riizz/speech/Label3D:text")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
-"times": PackedFloat32Array(4.37036, 5.55163, 6.53653, 7.4106),
+"times": PackedFloat32Array(4.37036, 5.3, 6.16667, 7.06667),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": ["life is", "meaning-
@@ -679,6 +680,20 @@ tracks/16/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, -1.5708, 0), Vector3(0, -1.5708, 6.46644)]
+}
+tracks/17/type = "method"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("ENDBOSS2Audio")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(4.36667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"meaningless"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nd3r8"]
@@ -1150,6 +1165,23 @@ tracks/14/keys = {
 "update": 0,
 "values": [Vector3(2.345, 2.345, 2.345), Vector3(0.23, 0.23, 0.23)]
 }
+tracks/15/type = "method"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("ENDBOSS2Audio")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(2.8, 11.7),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"ohno"
+}, {
+"args": [],
+"method": &"noooo"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4hria"]
 _data = {
@@ -1306,6 +1338,20 @@ tracks/7/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [&"stop", &"back"]
+}
+tracks/8/type = "method"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("ENDBOSS2Audio")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(1.9),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"welcome"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_v1ktl"]
@@ -1734,7 +1780,7 @@ mesh = SubResource("ArrayMesh_y2fc0")
 skeleton = NodePath("")
 
 [node name="jan" type="Sprite3D" parent="3dpart3"]
-transform = Transform3D(-1.41132, -1.87275, -2.05989e-09, 1.53407, -1.15608, -1.34504, 1.07417, -0.8095, 1.92091, -117.517, 49.773, -161.289)
+transform = Transform3D(2.345, 0, 1.42109e-14, 0, 2.345, 0, -1.42109e-14, 0, 2.345, -84.3028, 8.12207, -66.2553)
 modulate = Color(0, 0, 0, 1)
 texture_filter = 0
 render_priority = 1
@@ -1793,6 +1839,10 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 41
 text = "FPS:"
 script = ExtResource("17_a0ilg")
+
+[node name="ENDBOSS2Audio" type="AudioStreamPlayer" parent="."]
+volume_db = -4.0
+script = ExtResource("26_kuy3a")
 
 [connection signal="animation_finished" from="outro1" to="." method="_on_outro_1_animation_finished"]
 [connection signal="animation_finished" from="outro2" to="." method="_on_outro_2_animation_finished"]

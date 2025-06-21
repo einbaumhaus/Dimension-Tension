@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=4 uid="uid://bilmxsoacd24r"]
+[gd_scene load_steps=59 format=4 uid="uid://bilmxsoacd24r"]
 
 [ext_resource type="Script" uid="uid://mvotmqlsvjqe" path="res://3D_levels/level_3/level_3_3d.gd" id="1_ljq06"]
 [ext_resource type="Script" uid="uid://c5supflvg18iy" path="res://3D_levels/level_3/lives_manager.gd" id="2_7umyc"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bpmq6uacs60yv" path="res://2D_levels/level_2/elim_scene/elim_scene.tscn" id="5_a428l"]
 [ext_resource type="PackedScene" uid="uid://cj7d18ek4ria6" path="res://3D_levels/Player3D/character_body_3d.tscn" id="6_rt2qt"]
 [ext_resource type="Script" uid="uid://dwhox8unhypoe" path="res://3D_levels/level_3/wafer.gd" id="7_7yquk"]
+[ext_resource type="Texture2D" uid="uid://c2uxy830j0o8b" path="res://mixed_levels/end/arrow.png" id="7_eprb2"]
 [ext_resource type="PackedScene" uid="uid://bq67fcnbkrbwb" path="res://3D_levels/level_3/assets/env/wall_2.tscn" id="7_ptg34"]
 [ext_resource type="Texture2D" uid="uid://bn18yxl6dcmmu" path="res://3D_levels/level_1/assets/bridge/materials/rocky_terrain_diff_1k.jpg" id="8_jf7n8"]
 [ext_resource type="Texture2D" uid="uid://6omtbg1ao85f" path="res://3D_levels/level_3/enemies/cone_texture.jpg" id="8_yqu74"]
@@ -25,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://bnp7vdu3nrbe8" path="res://menus/pause_menu.tscn" id="20_ttujv"]
 [ext_resource type="Script" uid="uid://bpi20rff2gabb" path="res://3D_levels/level_3/wafer_manager.gd" id="24_yqu74"]
 [ext_resource type="PackedScene" uid="uid://drc1ffitwsg8i" path="res://3D_levels/level_3/wafer_display.tscn" id="25_alkil"]
+[ext_resource type="Script" uid="uid://bhm25iv3jrnhq" path="res://3D_levels/level_3/compass_needle.gd" id="27_uefdi"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_di3l7"]
 
@@ -570,7 +572,7 @@ transform = Transform3D(-5.07489e-08, 0, 1.161, 0, 1.161, 0, -1.161, 0, -5.07489
 
 [node name="lights" type="Node3D" parent="."]
 
-[node name="wafer" type="Area3D" parent="lights"]
+[node name="wafer" type="Area3D" parent="lights" groups=["wafers"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.8771, 1.2964, -0.599184)
 script = ExtResource("7_7yquk")
 
@@ -596,7 +598,7 @@ libraries = {
 &"": SubResource("AnimationLibrary_ohy1u")
 }
 
-[node name="wafer3" type="Area3D" parent="lights"]
+[node name="wafer3" type="Area3D" parent="lights" groups=["wafers"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.9068, 1.2964, -16.5242)
 script = ExtResource("7_7yquk")
 
@@ -622,7 +624,7 @@ libraries = {
 &"": SubResource("AnimationLibrary_ohy1u")
 }
 
-[node name="wafer2" type="Area3D" parent="lights"]
+[node name="wafer2" type="Area3D" parent="lights" groups=["wafers"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.5184, 1.2964, 26.9916)
 script = ExtResource("7_7yquk")
 
@@ -649,12 +651,12 @@ libraries = {
 }
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="lights"]
-transform = Transform3D(1, 0, 0, 0, 0.99991, -0.0134386, 0, 0.0134386, 0.99991, 17.6439, 2.65031, 10.7966)
+transform = Transform3D(1, 0, 0, 0, 0.99991, -0.0134386, 0, 0.0134386, 0.99991, 17.186, 2.65031, 10.7966)
 light_color = Color(0.552158, 0.00101277, 0.685371, 1)
 light_energy = 16.0
 light_specular = 7.205
 light_bake_mode = 0
-omni_range = 5.80292
+omni_range = 6.87283
 
 [node name="assets" type="Node3D" parent="."]
 
@@ -1046,6 +1048,15 @@ theme_override_font_sizes/font_size = 21
 text = "COLLECT ALL 3 WAFERS
 TO UNLOCK DOOR"
 
+[node name="mission2" type="Label" parent="wafer"]
+offset_left = 16.0
+offset_top = 567.0
+offset_right = 270.0
+offset_bottom = 630.0
+theme_override_fonts/font = ExtResource("15_7umyc")
+theme_override_font_sizes/font_size = 21
+text = "WAFER COMPASS"
+
 [node name="wafer_count" type="Label" parent="wafer"]
 offset_left = 100.0
 offset_top = 31.0
@@ -1055,6 +1066,16 @@ theme_override_colors/font_color = Color(0.725076, 0.506733, 0, 1)
 theme_override_fonts/font = ExtResource("15_7umyc")
 theme_override_font_sizes/font_size = 56
 text = "0"
+
+[node name="compass_needle" type="TextureRect" parent="wafer"]
+texture_filter = 1
+offset_left = 82.0
+offset_top = 504.0
+offset_right = 116.0
+offset_bottom = 560.0
+pivot_offset = Vector2(16.26, 22.465)
+texture = ExtResource("7_eprb2")
+script = ExtResource("27_uefdi")
 
 [connection signal="body_entered" from="lights/wafer" to="lights/wafer" method="_on_body_entered"]
 [connection signal="animation_finished" from="lights/wafer/AnimationPlayer" to="lights/wafer" method="_on_animation_player_animation_finished"]

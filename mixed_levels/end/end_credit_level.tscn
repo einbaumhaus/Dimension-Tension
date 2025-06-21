@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=4 uid="uid://cxi3e1151b8v8"]
+[gd_scene load_steps=44 format=4 uid="uid://cxi3e1151b8v8"]
 
 [ext_resource type="Script" uid="uid://25icf1g8w3uk" path="res://mixed_levels/end/end_credit_level.gd" id="1_0r6ml"]
 [ext_resource type="Texture2D" uid="uid://cjllvahxg6keb" path="res://3D_levels/level_1/assets/overcast_soil_puresky_4k.hdr" id="1_8thme"]
@@ -311,6 +311,13 @@ albedo_color = Color(0.254902, 0.141176, 0.054902, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_dddrv"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d2b7q"]
+bg_color = Color(0.750159, 0.545891, 5.77569e-07, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dddrv"]
 bg_color = Color(0.962652, 0.704475, 0, 1)
 corner_radius_top_left = 5
@@ -550,7 +557,7 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -282.0
-offset_top = -227.0
+offset_top = -235.0
 offset_right = -24.0
 offset_bottom = -25.0
 grow_horizontal = 0
@@ -559,9 +566,10 @@ grow_vertical = 0
 [node name="fragebogen" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_styles/hover = SubResource("StyleBoxFlat_d2b7q")
 theme_override_styles/normal = SubResource("StyleBoxFlat_dddrv")
 text = "questionnaire
-(fill out)"
+(please fill out)"
 
 [node name="music credit" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
 layout_mode = 2
@@ -662,7 +670,8 @@ horizontal_alignment = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("8_vmrej")
 theme_override_font_sizes/font_size = 22
-text = "evelius by Jan z."
+text = "villain by Jan z.
+MC by Michael S."
 horizontal_alignment = 1
 
 [node name="Label8" type="Label" parent="CanvasLayer/credits"]
@@ -866,7 +875,7 @@ horizontal_alignment = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
 texture_filter = 1
-position = Vector2(1031, 395)
+position = Vector2(1031, 390)
 rotation = 0.781907
 scale = Vector2(3.601, 3.601)
 texture = ExtResource("10_dddrv")

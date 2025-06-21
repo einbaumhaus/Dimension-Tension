@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=4 uid="uid://b1yl1wr2lv7xd"]
+[gd_scene load_steps=59 format=4 uid="uid://b1yl1wr2lv7xd"]
 
 [ext_resource type="Texture2D" uid="uid://blx1xna7vwbp5" path="res://2D_levels/level_1/assets/env/sky.png" id="1_mna73"]
 [ext_resource type="Script" uid="uid://dpceiuha2o1rl" path="res://mixed_levels/intro/intro_level.gd" id="1_xe5jb"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://crn37xjn5jqi7" path="res://2D_levels/level_1/assets/env/tilesetgrass1.png" id="9_jfrht"]
 [ext_resource type="Texture2D" uid="uid://d3e5p1l6jrcls" path="res://mixed_levels/intro/assets/Evelius.png" id="10_sn7jy"]
 [ext_resource type="Texture2D" uid="uid://dv4xtxl3favpe" path="res://mixed_levels/intro/assets/giga_player.png" id="11_sn7jy"]
+[ext_resource type="Script" uid="uid://cds6juo57xpo6" path="res://mixed_levels/intro/intro_audio_stream_player.gd" id="13_dsl33"]
 
 [sub_resource type="Animation" id="Animation_6t42f"]
 length = 0.001
@@ -218,7 +219,7 @@ tracks/0/path = NodePath("part1/player:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 2, 4.75523),
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 2, 3.86667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [&"right_side_idle", &"left_side_idle", &"right_side_idle", &"left_side_idle", &"front_idle", &"right_side_idle"]
@@ -393,6 +394,26 @@ tracks/14/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0, -9.53674e-07)]
+}
+tracks/15/type = "method"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("IntroAudioStreamPlayer")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(2.23333, 5.66667, 7.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [],
+"method": &"finally"
+}, {
+"args": [],
+"method": &"digin"
+}, {
+"args": [],
+"method": &"hey"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2twkf"]
@@ -610,6 +631,20 @@ tracks/10/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": ["", "!"]
+}
+tracks/11/type = "method"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("../IntroAudioStreamPlayer")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(2.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"damnit"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_q8ovt"]
@@ -1154,6 +1189,20 @@ tracks/5/keys = {
 "update": 1,
 "values": [true, true]
 }
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../IntroAudioStreamPlayer")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"howabout"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_i7vcb"]
 _data = {
@@ -1316,6 +1365,20 @@ tracks/3/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../IntroAudioStreamPlayer")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"no"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4fw8x"]
 _data = {
@@ -1416,6 +1479,23 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../IntroAudioStreamPlayer")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1.66667),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"thiscb"
+}, {
+"args": [],
+"method": &"takeb"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8gqv8"]
@@ -1663,6 +1743,10 @@ libraries = {
 libraries = {
 &"": SubResource("AnimationLibrary_8gqv8")
 }
+
+[node name="IntroAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -4.0
+script = ExtResource("13_dsl33")
 
 [connection signal="animation_finished" from="part1/part1player" to="." method="_on_part_1_player_animation_finished"]
 [connection signal="animation_finished" from="part1/part4player" to="." method="_on_part_4_player_animation_finished"]

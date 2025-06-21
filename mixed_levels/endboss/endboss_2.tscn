@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=4 uid="uid://df8krpyjrbxa0"]
+[gd_scene load_steps=64 format=4 uid="uid://df8krpyjrbxa0"]
 
 [ext_resource type="PackedScene" uid="uid://bnp7vdu3nrbe8" path="res://menus/pause_menu.tscn" id="1_1aqxp"]
 [ext_resource type="Script" uid="uid://db6ouim317a7f" path="res://mixed_levels/endboss/endboss_2.gd" id="1_y35jy"]
@@ -1157,6 +1157,57 @@ _data = {
 &"new_animation": SubResource("Animation_76eu7")
 }
 
+[sub_resource type="Animation" id="Animation_v1ktl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("3dpart3/oreo:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.189, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("3dpart3/oreo:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("3dpart3/lilguy3/Label3D:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("3dpart3/lilguy3:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-85.001, 18.729, -90.277)]
+}
+
 [sub_resource type="Animation" id="Animation_e87wr"]
 resource_name = "new_animation"
 length = 7.0
@@ -1239,61 +1290,22 @@ tracks/6/path = NodePath("3dpart3/lilguy3/Label3D:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 1.9, 4.00689),
+"times": PackedFloat32Array(0, 1.9, 3.83333),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [false, true, false]
 }
-
-[sub_resource type="Animation" id="Animation_v1ktl"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("3dpart3/oreo:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0.189, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("3dpart3/oreo:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("3dpart3/lilguy3:animation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 3.83333),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("3dpart3/lilguy3/Label3D:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("3dpart3/lilguy3:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-85.001, 18.729, -90.277)]
+"values": [&"stop", &"back"]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_v1ktl"]
@@ -1301,6 +1313,10 @@ _data = {
 &"RESET": SubResource("Animation_v1ktl"),
 &"new_animation": SubResource("Animation_e87wr")
 }
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dcs41"]
+atlas = ExtResource("6_u17kq")
+region = Rect2(20, 20, 20, 20)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xyv5a"]
 atlas = ExtResource("6_u17kq")
@@ -1316,6 +1332,14 @@ region = Rect2(40, 60, 20, 20)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ajp7c"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcs41")
+}],
+"loop": true,
+"name": &"back",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xyv5a")
@@ -1532,7 +1556,6 @@ texture_filter = 2
 sprite_frames = SubResource("SpriteFrames_ajp7c")
 animation = &"stop"
 autoplay = "stop"
-frame_progress = 0.0956994
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-0.528399, -0.193115, 0.826741, 0, 0.973787, 0.227462, -0.848996, 0.120191, -0.514548, -67.8474, 10.7576, -3.07133)
@@ -1622,7 +1645,6 @@ render_priority = 2
 sprite_frames = SubResource("SpriteFrames_ajp7c")
 animation = &"stop"
 autoplay = "stop"
-frame_progress = 0.224944
 
 [node name="Label3D" type="Label3D" parent="3dpart3/lilguy3"]
 transform = Transform3D(0.14, 0, 0, 0, 0.138802, -0.0182737, 0, 0.0182737, 0.138802, 0.161, 0.095, -0.006)
@@ -1712,7 +1734,7 @@ mesh = SubResource("ArrayMesh_y2fc0")
 skeleton = NodePath("")
 
 [node name="jan" type="Sprite3D" parent="3dpart3"]
-transform = Transform3D(-1.41132, -1.87275, 0, 1.53407, -1.15608, -1.34504, 1.07417, -0.809498, 1.92091, -117.517, 49.773, -161.289)
+transform = Transform3D(-1.41132, -1.87275, -2.05989e-09, 1.53407, -1.15608, -1.34504, 1.07417, -0.8095, 1.92091, -117.517, 49.773, -161.289)
 modulate = Color(0, 0, 0, 1)
 texture_filter = 0
 render_priority = 1

@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=4 uid="uid://cxi3e1151b8v8"]
+[gd_scene load_steps=43 format=4 uid="uid://cxi3e1151b8v8"]
 
 [ext_resource type="Script" uid="uid://25icf1g8w3uk" path="res://mixed_levels/end/end_credit_level.gd" id="1_0r6ml"]
 [ext_resource type="Texture2D" uid="uid://cjllvahxg6keb" path="res://3D_levels/level_1/assets/overcast_soil_puresky_4k.hdr" id="1_8thme"]
@@ -12,6 +12,7 @@
 [ext_resource type="Theme" uid="uid://3lc7pfe6wvl7" path="res://assets/pixelated_theme.tres" id="7_0rmko"]
 [ext_resource type="Script" uid="uid://wgh4fvgflupg" path="res://mixed_levels/end/water2.gd" id="7_1d8kn"]
 [ext_resource type="FontFile" uid="uid://nv7xw0gdt65u" path="res://assets/fonts/joystix monospace.otf" id="8_vmrej"]
+[ext_resource type="Texture2D" uid="uid://c2uxy830j0o8b" path="res://mixed_levels/end/arrow.png" id="10_dddrv"]
 
 [sub_resource type="Animation" id="Animation_0r6ml"]
 length = 0.001
@@ -310,6 +311,13 @@ albedo_color = Color(0.254902, 0.141176, 0.054902, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_dddrv"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dddrv"]
+bg_color = Color(0.962652, 0.704475, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gvd1u"]
 bg_color = Color(0.24, 0.24, 0.24, 0.6)
 corner_radius_top_left = 20
@@ -542,7 +550,7 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -282.0
-offset_top = -207.0
+offset_top = -227.0
 offset_right = -24.0
 offset_bottom = -25.0
 grow_horizontal = 0
@@ -551,9 +559,14 @@ grow_vertical = 0
 [node name="fragebogen" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-disabled = true
+theme_override_styles/normal = SubResource("StyleBoxFlat_dddrv")
 text = "questionnaire
 (fill out)"
+
+[node name="music credit" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "music credits"
 
 [node name="source_code" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
 layout_mode = 2
@@ -580,7 +593,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_gvd1u")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+[node name="credits" type="VBoxContainer" parent="CanvasLayer"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -593,14 +606,14 @@ offset_bottom = 294.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label10" type="Label" parent="CanvasLayer/VBoxContainer"]
+[node name="Label10" type="Label" parent="CanvasLayer/credits"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("8_vmrej")
 theme_override_font_sizes/font_size = 46
 text = "credits"
 horizontal_alignment = 1
 
-[node name="Label11" type="Label" parent="CanvasLayer/VBoxContainer"]
+[node name="Label11" type="Label" parent="CanvasLayer/credits"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.0664221, 0.289826, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -611,14 +624,14 @@ text = "programming, art
 and design by"
 horizontal_alignment = 1
 
-[node name="Label12" type="Label" parent="CanvasLayer/VBoxContainer"]
+[node name="Label12" type="Label" parent="CanvasLayer/credits"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("8_vmrej")
 theme_override_font_sizes/font_size = 22
 text = "michael schnabel"
 horizontal_alignment = 1
 
-[node name="Label3" type="Label" parent="CanvasLayer/VBoxContainer"]
+[node name="Label3" type="Label" parent="CanvasLayer/credits"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.0664221, 0.289826, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -628,14 +641,14 @@ theme_override_font_sizes/font_size = 19
 text = "MA SUPERVISOR"
 horizontal_alignment = 1
 
-[node name="Label4" type="Label" parent="CanvasLayer/VBoxContainer"]
+[node name="Label4" type="Label" parent="CanvasLayer/credits"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("8_vmrej")
 theme_override_font_sizes/font_size = 22
 text = "lukas gerber"
 horizontal_alignment = 1
 
-[node name="Label5" type="Label" parent="CanvasLayer/VBoxContainer"]
+[node name="Label5" type="Label" parent="CanvasLayer/credits"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.0664221, 0.289826, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -645,14 +658,14 @@ theme_override_font_sizes/font_size = 19
 text = "voice acting"
 horizontal_alignment = 1
 
-[node name="Label7" type="Label" parent="CanvasLayer/VBoxContainer"]
+[node name="Label7" type="Label" parent="CanvasLayer/credits"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("8_vmrej")
 theme_override_font_sizes/font_size = 22
 text = "evelius by Jan z."
 horizontal_alignment = 1
 
-[node name="Label8" type="Label" parent="CanvasLayer/VBoxContainer"]
+[node name="Label8" type="Label" parent="CanvasLayer/credits"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.0664221, 0.289826, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -662,7 +675,7 @@ theme_override_font_sizes/font_size = 19
 text = "technical support"
 horizontal_alignment = 1
 
-[node name="Label6" type="Label" parent="CanvasLayer/VBoxContainer"]
+[node name="Label6" type="Label" parent="CanvasLayer/credits"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("8_vmrej")
 theme_override_font_sizes/font_size = 19
@@ -670,7 +683,7 @@ text = "jan z.
 enea"
 horizontal_alignment = 1
 
-[node name="Label9" type="Label" parent="CanvasLayer/VBoxContainer"]
+[node name="Label9" type="Label" parent="CanvasLayer/credits"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.0664221, 0.289826, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -680,10 +693,10 @@ theme_override_font_sizes/font_size = 19
 text = "playtesting"
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/credits"]
 layout_mode = 2
 
-[node name="Label2" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
+[node name="Label2" type="Label" parent="CanvasLayer/credits/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("8_vmrej")
@@ -699,7 +712,7 @@ joseph
 kathleen"
 horizontal_alignment = 1
 
-[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="CanvasLayer/credits/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("8_vmrej")
@@ -714,6 +727,149 @@ Rafael
 thomas
 Yue"
 horizontal_alignment = 1
+
+[node name="music_credits" type="VBoxContainer" parent="CanvasLayer"]
+visible = false
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -378.0
+offset_top = -277.0
+offset_right = 109.0
+offset_bottom = 149.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.757, 0.757)
+
+[node name="Label13" type="Label" parent="CanvasLayer/music_credits"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.0664221, 0.289826, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("8_vmrej")
+theme_override_font_sizes/font_size = 19
+text = "toccata - johann sebastian bach"
+horizontal_alignment = 1
+
+[node name="Label14" type="Label" parent="CanvasLayer/music_credits"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_vmrej")
+theme_override_font_sizes/font_size = 19
+text = "public domain, cc0"
+horizontal_alignment = 1
+
+[node name="Label15" type="Label" parent="CanvasLayer/music_credits"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.0664221, 0.289826, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("8_vmrej")
+theme_override_font_sizes/font_size = 19
+text = "Eine kleine nachtmusik - mozart"
+horizontal_alignment = 1
+
+[node name="Label16" type="Label" parent="CanvasLayer/music_credits"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_vmrej")
+theme_override_font_sizes/font_size = 19
+text = "public domain, cc0"
+horizontal_alignment = 1
+
+[node name="Label17" type="Label" parent="CanvasLayer/music_credits"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.0664221, 0.289826, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("8_vmrej")
+theme_override_font_sizes/font_size = 19
+text = "moonlight sonata - beethoven"
+horizontal_alignment = 1
+
+[node name="Label18" type="Label" parent="CanvasLayer/music_credits"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_vmrej")
+theme_override_font_sizes/font_size = 19
+text = "public domain, cc0"
+horizontal_alignment = 1
+
+[node name="Label19" type="Label" parent="CanvasLayer/music_credits"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.0664221, 0.289826, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("8_vmrej")
+theme_override_font_sizes/font_size = 19
+text = "symphony no. 5 - beethoven"
+horizontal_alignment = 1
+
+[node name="Label20" type="Label" parent="CanvasLayer/music_credits"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_vmrej")
+theme_override_font_sizes/font_size = 19
+text = "public domain, cc0"
+horizontal_alignment = 1
+
+[node name="Label21" type="Label" parent="CanvasLayer/music_credits"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.0664221, 0.289826, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("8_vmrej")
+theme_override_font_sizes/font_size = 19
+text = "winter - vivaldi"
+horizontal_alignment = 1
+
+[node name="Label22" type="Label" parent="CanvasLayer/music_credits"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_vmrej")
+theme_override_font_sizes/font_size = 19
+text = "public domain, cc0"
+horizontal_alignment = 1
+
+[node name="Label23" type="Label" parent="CanvasLayer/music_credits"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.0664221, 0.289826, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("8_vmrej")
+theme_override_font_sizes/font_size = 19
+text = "les toreadors - bizet"
+horizontal_alignment = 1
+
+[node name="Label24" type="Label" parent="CanvasLayer/music_credits"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_vmrej")
+theme_override_font_sizes/font_size = 19
+text = "public domain, cc0"
+horizontal_alignment = 1
+
+[node name="Label25" type="Label" parent="CanvasLayer/music_credits"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.0664221, 0.289826, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("8_vmrej")
+theme_override_font_sizes/font_size = 19
+text = "xenogenesis - thefatrat"
+horizontal_alignment = 1
+
+[node name="Label26" type="Label" parent="CanvasLayer/music_credits"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_vmrej")
+theme_override_font_sizes/font_size = 19
+text = "thefatrat usage agreements
+for non-commercial
+school projects"
+horizontal_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+texture_filter = 1
+position = Vector2(1031, 395)
+rotation = 0.781907
+scale = Vector2(3.601, 3.601)
+texture = ExtResource("10_dddrv")
 
 [node name="water2" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.9255, 0, 0)
@@ -741,5 +897,6 @@ environment = SubResource("Environment_0rmko")
 [connection signal="animation_finished" from="AnimationPlayer3" to="." method="_on_animation_player_3_animation_finished"]
 [connection signal="animation_finished" from="AnimatedSprite3D/floating" to="AnimatedSprite3D" method="_on_floating_animation_finished"]
 [connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/fragebogen" to="." method="_on_fragebogen_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/music credit" to="." method="_on_music_credit_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/source_code" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/back" to="." method="_on_back_pressed"]

@@ -2,8 +2,10 @@ extends Node3D
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var animation_player_2: AnimationPlayer = $AnimationPlayer2
+@onready var music_credits: VBoxContainer = $CanvasLayer/music_credits
 @onready var animation_player_3: AnimationPlayer = $AnimationPlayer3
 var playtimes = 0
+var button_pres = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	animation_player_2.play("drive2")
@@ -48,3 +50,12 @@ func _on_button_pressed() -> void:
 
 func _on_fragebogen_pressed() -> void:
 	OS.shell_open("https://google.com")
+
+
+func _on_music_credit_pressed() -> void:
+	if button_pres == false:
+		music_credits.visible = true
+		button_pres = true
+	else:
+		music_credits.visible = false
+		button_pres = false

@@ -82,10 +82,13 @@ offset_top = -12.0
 offset_right = 43.5
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
 theme_override_fonts/font = ExtResource("3_yjgyn")
 theme_override_font_sizes/font_size = 16
-text = "version 0.1.6
-Michael Schnabel"
+text = "version 0.1.7
+MA Michael Schnabel
+THIS IS A NON-COMMERCIAL PRODUCT"
 horizontal_alignment = 1
 
 [connection signal="pressed" from="VBoxContainer/play" to="." method="_on_play_pressed"]

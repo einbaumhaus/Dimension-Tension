@@ -649,12 +649,12 @@ libraries = {
 }
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="lights"]
-transform = Transform3D(1, 0, 0, 0, 0.99991, -0.0134386, 0, 0.0134386, 0.99991, 20.9415, 2.65031, 10.7966)
+transform = Transform3D(1, 0, 0, 0, 0.99991, -0.0134386, 0, 0.0134386, 0.99991, 17.6439, 2.65031, 10.7966)
 light_color = Color(0.552158, 0.00101277, 0.685371, 1)
 light_energy = 16.0
 light_specular = 7.205
 light_bake_mode = 0
-omni_range = 3.75306
+omni_range = 5.80292
 
 [node name="assets" type="Node3D" parent="."]
 

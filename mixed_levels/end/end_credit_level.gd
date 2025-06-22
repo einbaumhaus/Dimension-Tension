@@ -49,7 +49,7 @@ func _on_button_pressed() -> void:
 
 
 func _on_fragebogen_pressed() -> void:
-	OS.shell_open("https://google.com")
+	OS.shell_open("https://forms.gle/3RZbk3nRYPhrPsGY6")
 
 
 func _on_music_credit_pressed() -> void:

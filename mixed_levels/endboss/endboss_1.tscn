@@ -1,4 +1,4 @@
-[gd_scene load_steps=96 format=4 uid="uid://c1gtoac4wgo34"]
+[gd_scene load_steps=97 format=4 uid="uid://c1gtoac4wgo34"]
 
 [ext_resource type="PackedScene" uid="uid://bnp7vdu3nrbe8" path="res://menus/pause_menu.tscn" id="1_ar2eo"]
 [ext_resource type="Texture2D" uid="uid://rbs1sq7r6ipa" path="res://mixed_levels/endboss/env/NightSkyHDRI003_1K-HDR.exr" id="1_jjl5m"]
@@ -33,6 +33,7 @@
 [ext_resource type="PackedScene" uid="uid://bpmq6uacs60yv" path="res://2D_levels/level_2/elim_scene/elim_scene.tscn" id="28_utk3v"]
 [ext_resource type="Texture2D" uid="uid://bkq2vq00r6v7m" path="res://3D_levels/level_2/launch_player/white_hitmarker.png" id="31_sye0t"]
 [ext_resource type="Script" uid="uid://brhmf4oiht03a" path="res://mixed_levels/endboss/manager.gd" id="33_sye0t"]
+[ext_resource type="Script" uid="uid://cjwdb84lypqha" path="res://mixed_levels/endboss/endboss_1_player.gd" id="34_smvrd"]
 
 [sub_resource type="Curve3D" id="Curve3D_cakrb"]
 closed = true
@@ -111,7 +112,7 @@ animations = [{
 }]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_utk3v"]
-size = Vector3(2.56934, 5.63428, 1)
+size = Vector3(3.88965, 5.63428, 2.47363)
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_rc5m8"]
 panorama = ExtResource("1_jjl5m")
@@ -546,6 +547,20 @@ tracks/16/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/17/type = "method"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("../ENDBOSS1Player")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(2.16667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"yourend"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vb2gw"]
 _data = {
@@ -719,6 +734,26 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../../ENDBOSS1Player")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1, 3.03333, 4.96667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [],
+"method": &"youfool"
+}, {
+"args": [],
+"method": &"cheaptricks"
+}, {
+"args": [],
+"method": &"anything"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_utk3v"]
@@ -1322,7 +1357,7 @@ wait_time = 1.5
 script = ExtResource("12_d3hj7")
 
 [node name="hitbox" type="CollisionShape3D" parent="Path3D/PathFollow3D/evelius/Launch_col"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0333815, -0.968304, -0.0940666)
+transform = Transform3D(1, 4.48199e-08, -6.0536e-08, 3.49246e-10, 0.999997, 4.69387e-07, 0, -1.49012e-08, 0.999997, -0.033381, -0.968304, -0.0940666)
 shape = SubResource("BoxShape3D_utk3v")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -1806,6 +1841,10 @@ process_mode = 4
 visible = false
 
 [node name="elim_scene" parent="elim_scene" instance=ExtResource("28_utk3v")]
+
+[node name="ENDBOSS1Player" type="AudioStreamPlayer" parent="."]
+volume_db = -2.0
+script = ExtResource("34_smvrd")
 
 [connection signal="timeout" from="Path3D/PathFollow3D/evelius/AttackTimer" to="Path3D/PathFollow3D/evelius" method="_on_attack_timer_timeout"]
 [connection signal="body_part_hit" from="Path3D/PathFollow3D/evelius/Launch_col" to="Path3D/PathFollow3D/evelius" method="_on_launch_col_body_part_hit"]

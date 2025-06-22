@@ -121,12 +121,6 @@ layout_mode = 2
 size_flags_vertical = 3
 text = "Settings"
 
-[node name="guide" type="Button" parent="stuff/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-disabled = true
-text = "guide"
-
 [node name="quit" type="Button" parent="stuff/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3

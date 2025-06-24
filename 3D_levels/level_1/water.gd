@@ -3,6 +3,7 @@ extends MeshInstance3D
 @onready var checkpoint_1: Area3D = $"../../../../checkpoints/checkpoint1"
 @onready var checkpoint_2: Area3D = $"../../../../checkpoints/checkpoint2"
 @onready var checkpoint_3: Area3D = $"../../../../checkpoints/checkpoint3"
+@onready var checkpoint_4: Area3D = $"../../../../checkpoints/checkpoint4"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -35,6 +36,9 @@ func respawn_player():
 		print("respawn2")
 	elif checkpoint_3.checkpoint3_on:
 		checkpoint_3.respawn()
+		print("respawn3")
+	elif checkpoint_4.checkpoint4_on:
+		checkpoint_4.respawn()
 		print("respawn3")
 	else:
 		get_tree().reload_current_scene.call_deferred()

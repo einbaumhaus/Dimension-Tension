@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=4 uid="uid://3ggfpcmbr8lx"]
+[gd_scene load_steps=46 format=4 uid="uid://3ggfpcmbr8lx"]
 
 [ext_resource type="Texture2D" uid="uid://drd4sxov2x8e3" path="res://2D_levels/level_2/assets/tile_map/tilemaptd1.png" id="1_wg46k"]
 [ext_resource type="PackedScene" uid="uid://ccweogu7q7wiw" path="res://2D_levels/level_2/Player2D_topdown/player_topdown.tscn" id="2_guxk4"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://clbutouj7ccjo" path="res://2D_levels/level_1/assets/UI/heart.png" id="8_3ipvu"]
 [ext_resource type="Script" uid="uid://bb1wjhu534dq3" path="res://2D_levels/Player2D/fps.gd" id="9_2f2jg"]
 [ext_resource type="Script" uid="uid://cr0yo1p1kllj0" path="res://2D_levels/level_1/fps.gd" id="9_eo46k"]
+[ext_resource type="Script" uid="uid://p28pcmtdfwj6" path="res://2D_levels/level_2/lvl_2_2d_player.gd" id="19_1bn0t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c7uih"]
 texture = ExtResource("1_wg46k")
@@ -377,6 +378,20 @@ tracks/9/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/10/type = "method"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../LVL2_2DPlayer")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0.566667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"trickshot"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yvgem"]
 _data = {
@@ -564,7 +579,7 @@ enabled = false
 zoom = Vector2(2.035, 2.035)
 
 [node name="player_topdown" parent="." instance=ExtResource("2_guxk4")]
-position = Vector2(-1519, 56)
+position = Vector2(-1516, 59)
 scale = Vector2(5, 5)
 
 [node name="outro" type="Node" parent="."]
@@ -790,6 +805,10 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 41
 text = "FPS:"
 script = ExtResource("9_2f2jg")
+
+[node name="LVL2_2DPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -2.0
+script = ExtResource("19_1bn0t")
 
 [connection signal="animation_finished" from="outro/outro_anim" to="Area2D" method="_on_outro_anim_animation_finished"]
 [connection signal="animation_finished" from="outro/evelius_floating/evelius_pivot/floating" to="outro/evelius_floating" method="_on_floating_animation_finished"]

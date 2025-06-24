@@ -1,6 +1,7 @@
 extends Node
 @onready var flip_change_timer: Timer = $flip_change_timer
 @onready var player: CharacterBody3D = $"../Player"
+@onready var bossbar: CanvasLayer = $"../bossbar"
 
 @onready var rotate: AnimationPlayer = $"../assets/ROOM_PIVOT/rotate"
 var anim_done = false
@@ -37,6 +38,7 @@ func _on_flip_change_timer_timeout() -> void:
 	player.visible = false
 	player.process_mode = Node.PROCESS_MODE_DISABLED
 	animation_player.play("outro")
+	bossbar.visible = false
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:

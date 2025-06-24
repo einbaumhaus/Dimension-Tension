@@ -21,6 +21,7 @@ var health = 5
 @onready var reload: Label = $reload
 @onready var reload_timer: Timer = $reload_timer
 
+@onready var launch: AudioStreamPlayer = $launch
 
 #launcher delay
 var last_launch_time = 0.0
@@ -56,6 +57,7 @@ func _physics_process(delta: float) -> void:
 					get_parent().add_child(sticker)
 					ammo -=1
 					last_launch_time = current_time
+					launch.play()
 	else:
 		reload.visible = true
 		reload_timer.start()

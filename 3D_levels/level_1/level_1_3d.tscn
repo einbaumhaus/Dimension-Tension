@@ -1,4 +1,4 @@
-[gd_scene load_steps=138 format=4 uid="uid://dlb7qukr5wfbb"]
+[gd_scene load_steps=141 format=4 uid="uid://dlb7qukr5wfbb"]
 
 [ext_resource type="Script" uid="uid://bfjlx34dyngrh" path="res://3D_levels/level_1/level_1_3d.gd" id="1_ljo6s"]
 [ext_resource type="PackedScene" uid="uid://cj7d18ek4ria6" path="res://3D_levels/Player3D/character_body_3d.tscn" id="1_y7tgq"]
@@ -48,6 +48,8 @@
 [ext_resource type="Script" uid="uid://bwoxn4qww1v7o" path="res://3D_levels/level_1/checkpoint_3.gd" id="40_s8qxt"]
 [ext_resource type="Script" uid="uid://cr0yo1p1kllj0" path="res://2D_levels/level_1/fps.gd" id="42_lmv0i"]
 [ext_resource type="Script" uid="uid://bb1wjhu534dq3" path="res://2D_levels/Player2D/fps.gd" id="43_hh1ly"]
+[ext_resource type="Script" uid="uid://0sckcqu3nhr2" path="res://3D_levels/level_1/checkpoint_4.gd" id="46_fkst0"]
+[ext_resource type="Script" uid="uid://gjcdmj44oam5" path="res://3D_levels/level_1/lvl_1_3d_stream_player.gd" id="49_fkyo0"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_3dv5j"]
 panorama = ExtResource("2_irmad")
@@ -922,7 +924,7 @@ tracks/6/path = NodePath("speech/Label3D:text")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0.733333, 2.71582),
+"times": PackedFloat32Array(1.03333, 2.71582),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": ["hahaha", "take
@@ -951,6 +953,20 @@ tracks/8/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
+}
+tracks/9/type = "method"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../LVL1_3DStreamPlayer")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(1.36667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"take"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3wcnr"]
@@ -1937,6 +1953,9 @@ size = Vector3(1.84082, 3.19287, 10.2012)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dc0v1"]
 size = Vector3(5.43372, 4.18561, 8.98865)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fkyo0"]
+size = Vector3(20.5225, 5.67142, 6.26343)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3wcnr"]
 bg_color = Color(0.419608, 0.572549, 1, 0.701961)
@@ -3457,6 +3476,17 @@ shape = SubResource("BoxShape3D_dc0v1")
 [node name="Marker3D" type="Marker3D" parent="checkpoints/checkpoint3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.242561, 0.879891, 0)
 
+[node name="checkpoint4" type="Area3D" parent="checkpoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 200.492, 16.3935, -20.4143)
+script = ExtResource("46_fkst0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="checkpoints/checkpoint4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0069, 0.849895, 0.118347)
+shape = SubResource("BoxShape3D_fkyo0")
+
+[node name="Marker3D" type="Marker3D" parent="checkpoints/checkpoint4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.242561, 0.879891, 0)
+
 [node name="Camera2" type="Camera3D" parent="."]
 transform = Transform3D(-0.00420884, 0.503771, 0.863827, 0, 0.863835, -0.503775, -0.999991, -0.00212031, -0.00363574, 98.0483, -41.348, -0.551302)
 
@@ -3490,6 +3520,10 @@ theme_override_font_sizes/font_size = 41
 text = "FPS:"
 script = ExtResource("43_hh1ly")
 
+[node name="LVL1_3DStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -2.0
+script = ExtResource("49_fkyo0")
+
 [connection signal="timeout" from="pause_menu/escape_popup/Timer" to="pause_menu/escape_popup" method="_on_timer_timeout"]
 [connection signal="timeout" from="respawnTimer" to="respawnTimer" method="_on_timeout"]
 [connection signal="animation_finished" from="intermission/logbreak" to="intermission" method="_on_logbreak_animation_finished"]
@@ -3504,3 +3538,4 @@ script = ExtResource("43_hh1ly")
 [connection signal="body_entered" from="checkpoints/checkpoint1" to="checkpoints/checkpoint1" method="_on_body_entered"]
 [connection signal="body_entered" from="checkpoints/checkpoint2" to="checkpoints/checkpoint2" method="_on_body_entered"]
 [connection signal="body_entered" from="checkpoints/checkpoint3" to="checkpoints/checkpoint3" method="_on_body_entered"]
+[connection signal="body_entered" from="checkpoints/checkpoint4" to="checkpoints/checkpoint4" method="_on_body_entered"]

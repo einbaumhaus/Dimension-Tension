@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=4 uid="uid://bfqm7gkurwapv"]
+[gd_scene load_steps=72 format=4 uid="uid://bfqm7gkurwapv"]
 
 [ext_resource type="Script" uid="uid://bbbduv557mftv" path="res://2D_levels/level_1/level_1.gd" id="1_1nd73"]
 [ext_resource type="Script" uid="uid://bb1wjhu534dq3" path="res://2D_levels/Player2D/fps.gd" id="2_b0sjd"]
@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://dqoeak5w11i1e" path="res://mixed_levels/intro/assets/buuuble.png" id="22_s8c23"]
 [ext_resource type="Texture2D" uid="uid://bo3alw0mcbqud" path="res://2D_levels/level_1/assets/chronoscepter/3d_magic.png" id="22_xjifk"]
 [ext_resource type="Script" uid="uid://dm4kdt8j8xdv8" path="res://2D_levels/level_1/camera_2d.gd" id="28_6qlvf"]
+[ext_resource type="Script" uid="uid://cyemssggcotsv" path="res://2D_levels/level_1/lvl_1_2d_player.gd" id="29_xalg2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nvye1"]
 bg_color = Color(0.419608, 0.572549, 1, 0.701961)
@@ -607,6 +608,23 @@ tracks/11/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/12/type = "method"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("../LVL1_2DPlayer")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(1.26667, 5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"futile"
+}, {
+"args": [],
+"method": &"tension"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xjifk"]
 _data = {
@@ -874,7 +892,7 @@ tile_map_data = PackedByteArray("AAAAAAkAAAABAAAAAAABAAkAAAABAAAAAAACAAkAAAABAAA
 tile_set = SubResource("TileSet_mj3iu")
 
 [node name="Player" parent="." instance=ExtResource("6_uch6n")]
-position = Vector2(78, 313)
+position = Vector2(2778, -393)
 
 [node name="objects" type="Node" parent="."]
 
@@ -1221,6 +1239,10 @@ drag_vertical_enabled = true
 drag_top_margin = 0.15
 editor_draw_limits = true
 script = ExtResource("28_6qlvf")
+
+[node name="LVL1_2DPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -2.0
+script = ExtResource("29_xalg2")
 
 [connection signal="timeout" from="CanvasLayer/escape_popup/Timer" to="CanvasLayer/escape_popup" method="_on_timer_timeout"]
 [connection signal="animation_finished" from="env/background/train/train_player" to="." method="_on_train_player_animation_finished"]

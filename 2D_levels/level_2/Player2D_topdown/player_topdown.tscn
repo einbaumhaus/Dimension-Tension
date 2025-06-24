@@ -1,9 +1,10 @@
-[gd_scene load_steps=22 format=3 uid="uid://ccweogu7q7wiw"]
+[gd_scene load_steps=23 format=3 uid="uid://ccweogu7q7wiw"]
 
 [ext_resource type="Script" uid="uid://dsdt7nkttked4" path="res://2D_levels/level_2/Player2D_topdown/player_topdown.gd" id="1_ka1lk"]
 [ext_resource type="Texture2D" uid="uid://bgw2w26elh5b5" path="res://2D_levels/level_2/Player2D_topdown/player.png" id="1_lyvt4"]
 [ext_resource type="Texture2D" uid="uid://ccukn4115cq7p" path="res://2D_levels/level_2/Player2D_topdown/sticker_launcher/expry.png" id="3_6tqqb"]
 [ext_resource type="Theme" uid="uid://3lc7pfe6wvl7" path="res://assets/pixelated_theme.tres" id="4_h7ayc"]
+[ext_resource type="AudioStream" uid="uid://bfef6y2fxfnqa" path="res://3D_levels/level_2/launch_player/launch.wav" id="5_h62fw"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6tqqb"]
 radius = 6.29012
@@ -213,5 +214,9 @@ vertical_alignment = 1
 
 [node name="reload_timer" type="Timer" parent="."]
 one_shot = true
+
+[node name="launch" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_h62fw")
+volume_db = -35.0
 
 [connection signal="timeout" from="reload_timer" to="." method="_on_reload_timer_timeout"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://ctog1hc5e7u1a"]
+[gd_scene load_steps=19 format=4 uid="uid://ctog1hc5e7u1a"]
 
 [ext_resource type="Script" uid="uid://c0iybt6giquyy" path="res://2D_levels/level_2/easteregg2/easteregg_2.gd" id="1_b68rg"]
 [ext_resource type="Texture2D" uid="uid://drd4sxov2x8e3" path="res://2D_levels/level_2/assets/tile_map/tilemaptd1.png" id="2_gqpqt"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cgge8ca74twyt" path="res://2D_levels/level_2/enemies/toblertwo/tobertwo.tscn" id="4_dc7fx"]
 [ext_resource type="Script" uid="uid://d1n7a121y4cto" path="res://2D_levels/level_2/easteregg2/area_2d.gd" id="5_dqbnx"]
 [ext_resource type="Texture2D" uid="uid://cibg7uoqi45e" path="res://2D_levels/level_2/easteregg2/question mark.png" id="5_f53u8"]
+[ext_resource type="PackedScene" uid="uid://bpmq6uacs60yv" path="res://2D_levels/level_2/elim_scene/elim_scene.tscn" id="7_rp11q"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_2210x"]
 tile_data = PackedInt32Array(0, 262144, 5, 65536, 262144, 6, 1, 327680, 5, 65537, 327680, 6)
@@ -260,6 +261,13 @@ shape = SubResource("RectangleShape2D_f53u8")
 libraries = {
 &"": SubResource("AnimationLibrary_bptf4")
 }
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 4
+visible = false
+
+[node name="elim_scene" parent="CanvasLayer" instance=ExtResource("7_rp11q")]
+position = Vector2(4.76837e-07, 0.00012207)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="animation_finished" from="cutscene" to="." method="_on_cutscene_animation_finished"]

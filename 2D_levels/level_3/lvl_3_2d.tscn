@@ -826,13 +826,13 @@ shape = SubResource("RectangleShape2D_0slso")
 
 [node name="player_topdown" parent="." instance=ExtResource("2_uleqd")]
 position = Vector2(-227, 682)
-scale = Vector2(5, 5)
+scale = Vector2(4.125, 4.125)
 collision_layer = 7
 collision_mask = 3
 
 [node name="PointLight2D" type="PointLight2D" parent="player_topdown"]
 position = Vector2(1.51992e-06, 5.126e-06)
-scale = Vector2(0.24, 0.24)
+scale = Vector2(0.308, 0.308)
 energy = 1.35
 texture = ExtResource("4_4wcxj")
 

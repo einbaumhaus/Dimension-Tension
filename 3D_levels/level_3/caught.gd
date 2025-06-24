@@ -16,7 +16,7 @@ func _process(delta: float) -> void:
 		player.sprint_enabled = false
 		if Input.is_action_just_pressed("ui_accept"):
 			progress_bar.value += 1
-		if progress_bar.value == 10:
+		if progress_bar.value == 5:
 			visible = false
 			player.SPEED = 7.0
 			player.JUMP_VELOCITY = 14

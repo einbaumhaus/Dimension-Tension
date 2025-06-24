@@ -34,12 +34,14 @@ func _process(delta: float) -> void:
 func _on_timer_timeout():
 	wave_2_start.play("wave2start")
 	enemies_wave_2.visible = true
+	launch_player.visible = false
 
 func enemy_killed():
 	eliminations += 1
 
 
 func _on_wave_2_start_animation_finished(anim_name: StringName) -> void:
+	launch_player.visible = true
 	wave2 = true
 	eliminations = 0
 	enemies_wave_2.process_mode = Node.PROCESS_MODE_PAUSABLE

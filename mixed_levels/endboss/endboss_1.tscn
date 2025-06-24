@@ -1,4 +1,4 @@
-[gd_scene load_steps=97 format=4 uid="uid://c1gtoac4wgo34"]
+[gd_scene load_steps=79 format=4 uid="uid://c1gtoac4wgo34"]
 
 [ext_resource type="PackedScene" uid="uid://bnp7vdu3nrbe8" path="res://menus/pause_menu.tscn" id="1_ar2eo"]
 [ext_resource type="Texture2D" uid="uid://rbs1sq7r6ipa" path="res://mixed_levels/endboss/env/NightSkyHDRI003_1K-HDR.exr" id="1_jjl5m"]
@@ -19,10 +19,7 @@
 [ext_resource type="Script" uid="uid://cr0yo1p1kllj0" path="res://2D_levels/level_1/fps.gd" id="8_iivcr"]
 [ext_resource type="Script" uid="uid://bb1wjhu534dq3" path="res://2D_levels/Player2D/fps.gd" id="9_3ics5"]
 [ext_resource type="Texture2D" uid="uid://c0lurag5rt7c0" path="res://2D_levels/level_1/assets/chronoscepter/chronoscepter.png" id="9_vb2gw"]
-[ext_resource type="Script" uid="uid://trc7opy3kwk6" path="res://mixed_levels/endboss/train_pop_up.gd" id="10_54vx1"]
-[ext_resource type="Script" uid="uid://dpdx7cmekv154" path="res://mixed_levels/endboss/button.gd" id="10_sao6e"]
 [ext_resource type="Texture2D" uid="uid://bxrrhvfwnrmg" path="res://2D_levels/level_1/assets/chronoscepter/2d_magic.png" id="10_tk51p"]
-[ext_resource type="PackedScene" uid="uid://44daxgq6hmjb" path="res://3D_levels/level_1/assets/rbs brokie/old rbs.tscn" id="11_bhamw"]
 [ext_resource type="Texture2D" uid="uid://cbxyvw8riiyua" path="res://2D_levels/level_2/enemies/toblertwo/tobllertwo.png" id="11_opgpb"]
 [ext_resource type="Texture2D" uid="uid://bgw2w26elh5b5" path="res://2D_levels/level_2/Player2D_topdown/player.png" id="11_uivy5"]
 [ext_resource type="Script" uid="uid://bvchimm4r7rcl" path="res://mixed_levels/endboss/launch_col.gd" id="12_d3hj7"]
@@ -870,186 +867,6 @@ cull_mode = 2
 albedo_texture = ExtResource("8_3ics5")
 uv1_scale = Vector3(1.56, 1.56, 1.56)
 
-[sub_resource type="Animation" id="Animation_k81fr"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("train:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(1.80972, 39.5716, 26.5796)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("train:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
-[sub_resource type="Animation" id="Animation_a6yy6"]
-resource_name = "new_animation"
-length = 0.66
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("train:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.4, 0.633333),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(1.80972, 39.5716, 26.5796), Vector3(1.81, 23.532, 26.58), Vector3(1.81, 23.532, 26.58), Vector3(1.80972, 39.5716, 26.5796)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("train:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.66),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_npy07"]
-_data = {
-&"RESET": SubResource("Animation_k81fr"),
-&"new_animation": SubResource("Animation_a6yy6")
-}
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ukl07"]
-resource_name = "Material"
-cull_mode = 2
-albedo_color = Color(0.906332, 0.906332, 0.906332, 1)
-roughness = 0.5
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_rrepc"]
-_surfaces = [{
-"aabb": AABB(-1, -1, -1, 2, 5.3458, 2),
-"format": 34896613377,
-"index_count": 36,
-"index_data": PackedByteArray("AAABAAIAAwACAAEAAAAEAAEAAwAFAAIABQAAAAIABgAEAAAABQAGAAAABwABAAQABwADAAEABgAHAAQABQADAAcABQAHAAYA"),
-"name": "Material",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 8,
-"vertex_data": PackedByteArray("//+k0AAAAAAAAP////8AAAAA//8AAAAAAAAAAP//AAD//6TQ//8AAAAAAAAAAAAA//8AAAAAAAD//wAA//8AAA==")
-}]
-blend_shape_mode = 0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_u1mbt"]
-resource_name = "button_Cube"
-_surfaces = [{
-"aabb": AABB(-1, -1, -1, 2, 5.3458, 2),
-"attribute_data": PackedByteArray("/5//f//f/z//3/9//5//P/9f/z//nwAA/5//P/9fAAD/X////5//v/+f////X/+//x//f/9f/z//X/9//x//P/9f/3//n/8//5//f/9f/z//X/+//5//f/+f/7//X/9/"),
-"format": 34896613399,
-"index_count": 36,
-"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
-"material": SubResource("StandardMaterial3D_ukl07"),
-"name": "Material",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 24,
-"vertex_data": PackedByteArray("//+k0AAA0/IAAP/////T8gAA//8AANPy//+k0P//0/L//wAA////vwAA//////+///+k0P///78AAAAA////vwAAAAD//1TVAAD//wAAVNUAAP////9U1QAAAAAAAFTVAAAAAAAA/7///wAA////v///AAAAAP+/AAAAAP///7///wAAAABU1f//pND//1TV//+k0AAAVNX//wAA//9U1QAAAAAAAP////+k0AAA//8AAP//AAD/////AAAAAP//TTlkDU05ZA1NOWQNTTlkDf////////////////////9U1VTVVNVU1VTVVNVU1VTVAAD/fwAA/38AAP9/AAD/f6oqqiqqKqoqqiqqKqoqqir/v/+//7//v/+//7//v/+/")
-}]
-blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_rrepc")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bhamw"]
-albedo_color = Color(0.450648, 0.450648, 0.450648, 1)
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_uu37h"]
-_surfaces = [{
-"aabb": AABB(-0.602752, 3.03692, -0.44741, 1.2055, 1.2055, 0.89482),
-"format": 34896613377,
-"index_count": 36,
-"index_data": PackedByteArray("AAABAAIAAAADAAEABAACAAEAAwAEAAEABQAAAAIAAwAAAAUABAAGAAIABQACAAYAAwAHAAQAAwAFAAcABwAGAAQABwAFAAYA"),
-"name": "Material",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 8,
-"vertex_data": PackedByteArray("AAAgV///AAAgV///AAAAACBX/////wAAAAAgVwAAAAD//96oAAAAAN6oAAD//wAA///eqP//AADeqAAAAAAAAA==")
-}]
-blend_shape_mode = 0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_m6sqj"]
-resource_name = "button_Cube_001"
-_surfaces = [{
-"aabb": AABB(-0.602752, 3.03692, -0.44741, 1.2055, 1.2055, 0.89482),
-"attribute_data": PackedByteArray("/1////+f/7//n////1//v/9f/7//n/9//5//v/9f/3//X/9//5//P/+f/3//X/8//1//P/+fAAD/n/8//18AAP8f/3//X/8//1//f/8f/z//n/9//9//P//f/3//n/8/"),
-"format": 34896613399,
-"index_count": 36,
-"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
-"material": SubResource("StandardMaterial3D_ukl07"),
-"name": "Material",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 24,
-"vertex_data": PackedByteArray("AAAgV///KssgV///AAAqyyBX/////yrLAAAgVwAAKssAACBXAAD/////3qgAAP//IFf//wAA///eqAAAAAD//96oAAAAACrL///eqP//Ksv//96oAAAqy96oAAD//yrL3qgAAP//l6wgV/////+XrP//3qj//5esAAAgV///l6wAACBXAABEwt6oAAD//0TC3qgAAAAARMIAACBX//9Ewv//3qgAAFbyIFf/////VvIgV///AABW8v//3qj//1by19xNxtfcTcbX3E3G19xNxojPdbCIz3WwiM91sIjPdbAnI7E5JyOxOScjsTknI7E5/////////////////////9Up6pTVKeqU1SnqlNUp6pQSOdoNEjnaDRI52g0SOdoN")
-}]
-blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_uu37h")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a6yy6"]
-albedo_color = Color(1, 0, 0, 1)
-
-[sub_resource type="Animation" id="Animation_bhamw"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Cube_001:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_54vx1"]
-resource_name = "press"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Cube_001:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(-0.0555725, -0.160885, 1.49012e-08)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_bhamw"]
-_data = {
-&"RESET": SubResource("Animation_bhamw"),
-&"press": SubResource("Animation_54vx1")
-}
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_k81fr"]
-size = Vector3(7.83913, 6.75293, 6.98334)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_npy07"]
-size = Vector3(2.00806, 1.7384, 1.97437)
-
 [sub_resource type="Animation" id="Animation_sao6e"]
 length = 0.001
 
@@ -1486,7 +1303,7 @@ transform = Transform3D(1, 0, 0, 0, 0.489474, 0.872018, 0, -0.872018, 0.489474, 
 [node name="assets" type="Node3D" parent="."]
 
 [node name="ROOM_PIVOT" type="Node3D" parent="assets"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 21.6787, 0)
+transform = Transform3D(-1, -2.53518e-06, 0, 2.53518e-06, -1, 0, 0, 0, 1, 0, 21.6787, 0)
 script = ExtResource("5_m0fk5")
 
 [node name="env" type="Node3D" parent="assets/ROOM_PIVOT"]
@@ -1606,50 +1423,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_sao6e")
 mesh = SubResource("ArrayMesh_3at07")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_54vx1")
-
-[node name="train_pop_up" type="Node3D" parent="assets/ROOM_PIVOT/env"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.207309, 21.6823, 0)
-script = ExtResource("10_54vx1")
-
-[node name="anim" type="AnimationPlayer" parent="assets/ROOM_PIVOT/env/train_pop_up"]
-libraries = {
-&"": SubResource("AnimationLibrary_npy07")
-}
-
-[node name="train" parent="assets/ROOM_PIVOT/env/train_pop_up" instance=ExtResource("11_bhamw")]
-transform = Transform3D(-4.28408e-08, -1, 0, 1, -4.28408e-08, 0, 0, 0, 1, 1.80972, 39.5716, 26.5796)
-visible = false
-
-[node name="button" type="StaticBody3D" parent="assets/ROOM_PIVOT/env"]
-transform = Transform3D(2.75382e-08, -9.31323e-10, 0.470975, 9.51274e-08, -0.539328, -1.86265e-09, 0.63, 8.14362e-08, -2.0587e-08, -0.0532205, 48.393, 38.2359)
-visible = false
-script = ExtResource("10_sao6e")
-
-[node name="Cube" type="MeshInstance3D" parent="assets/ROOM_PIVOT/env/button"]
-mesh = SubResource("ArrayMesh_u1mbt")
-skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_bhamw")
-
-[node name="Cube_001" type="MeshInstance3D" parent="assets/ROOM_PIVOT/env/button"]
-transform = Transform3D(1, 0, 7.10543e-15, 0, 1, 5.05192e-16, -7.10543e-15, 5.05191e-16, 1, 0, 0, 0)
-mesh = SubResource("ArrayMesh_m6sqj")
-skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_a6yy6")
-
-[node name="anim" type="AnimationPlayer" parent="assets/ROOM_PIVOT/env/button"]
-libraries = {
-&"": SubResource("AnimationLibrary_bhamw")
-}
-
-[node name="Area3D" type="Area3D" parent="assets/ROOM_PIVOT/env/button"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="assets/ROOM_PIVOT/env/button/Area3D"]
-transform = Transform3D(1, 0, 6.6791e-13, 0, 1, 5.05292e-16, -8.88178e-14, 5.05191e-16, 1, 0.319504, 2.87647, -0.387298)
-shape = SubResource("BoxShape3D_k81fr")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="assets/ROOM_PIVOT/env/button"]
-transform = Transform3D(1, 0, 5.11591e-13, 0, 1, 5.05268e-16, -8.88178e-14, 5.05191e-16, 1, 0.0094223, 2.4787, -2.08616e-07)
-shape = SubResource("BoxShape3D_npy07")
 
 [node name="rotate" type="AnimationPlayer" parent="assets/ROOM_PIVOT"]
 libraries = {
@@ -1850,9 +1623,6 @@ script = ExtResource("34_smvrd")
 [connection signal="body_part_hit" from="Path3D/PathFollow3D/evelius/Launch_col" to="Path3D/PathFollow3D/evelius" method="_on_launch_col_body_part_hit"]
 [connection signal="animation_finished" from="intro/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="animation_finished" from="intro/intro2/anim2" to="." method="_on_anim_2_animation_finished"]
-[connection signal="animation_finished" from="assets/ROOM_PIVOT/env/button/anim" to="assets/ROOM_PIVOT/env/button" method="_on_anim_animation_finished"]
-[connection signal="body_entered" from="assets/ROOM_PIVOT/env/button/Area3D" to="assets/ROOM_PIVOT/env/button" method="_on_area_3d_body_entered"]
-[connection signal="body_exited" from="assets/ROOM_PIVOT/env/button/Area3D" to="assets/ROOM_PIVOT/env/button" method="_on_area_3d_body_exited"]
 [connection signal="animation_finished" from="assets/ROOM_PIVOT/rotate" to="Manager" method="_on_rotate_animation_finished"]
 [connection signal="timeout" from="Manager/flip_change_timer" to="Manager" method="_on_flip_change_timer_timeout"]
 [connection signal="animation_finished" from="Manager/AnimationPlayer" to="Manager" method="_on_animation_player_animation_finished"]

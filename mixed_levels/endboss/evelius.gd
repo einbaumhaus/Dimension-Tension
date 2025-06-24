@@ -10,7 +10,7 @@ const ATTACK_RANGE = 400.0    # how far he can shoot
 var attack_timer := 0.0
 @onready var healthbar: ProgressBar = $"../../../bossbar/healthbar"
 @onready var manager: Node = $"../../../Manager"
-@export var flip_health = 800
+@export var flip_health = 700
 
 func _ready() -> void:
 	$AttackTimer.wait_time = ATTACK_INTERVAL

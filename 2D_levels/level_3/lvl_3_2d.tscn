@@ -488,7 +488,7 @@ offset_right = 395.0
 offset_bottom = 54.0
 theme_override_colors/font_color = Color(0.860053, 0.703867, 0.149345, 1)
 theme_override_font_sizes/font_size = 40
-text = "0"
+text = "0/5"
 
 [node name="hearts" type="Panel" parent="mission"]
 anchors_preset = 1
@@ -601,6 +601,7 @@ position = Vector2(-1429, 415)
 collision_layer = 2
 collision_mask = 2
 gravity_scale = 0.0
+lock_rotation = true
 
 [node name="Sprite2D" type="Sprite2D" parent="maze/crates/crate"]
 texture_filter = 1
@@ -615,6 +616,7 @@ position = Vector2(-784, 323)
 collision_layer = 2
 collision_mask = 2
 gravity_scale = 0.0
+lock_rotation = true
 
 [node name="Sprite2D" type="Sprite2D" parent="maze/crates/crate2"]
 texture_filter = 1
@@ -629,6 +631,7 @@ position = Vector2(-415, -46)
 collision_layer = 2
 collision_mask = 2
 gravity_scale = 0.0
+lock_rotation = true
 
 [node name="Sprite2D" type="Sprite2D" parent="maze/crates/crate3"]
 texture_filter = 1
@@ -643,6 +646,7 @@ position = Vector2(-1153, -322.855)
 collision_layer = 2
 collision_mask = 2
 gravity_scale = 0.0
+lock_rotation = true
 
 [node name="Sprite2D" type="Sprite2D" parent="maze/crates/crate4"]
 texture_filter = 1
@@ -993,7 +997,7 @@ position = Vector2(6, 7)
 texture = ExtResource("17_0slso")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.226707, 0.226708, 0.226707, 1)
+color = Color(0.270221, 0.270222, 0.270221, 1)
 
 [node name="NoteManager" type="Node" parent="."]
 unique_name_in_owner = true

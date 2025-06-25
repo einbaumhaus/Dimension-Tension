@@ -20,7 +20,7 @@ func _process(delta: float) -> void:
 func collect():
 	notes += 1
 	print("note added")
-	note_count.set_text(str(notes))
+	note_count.set_text(str(notes) + "/5")
 	if notes == 5:
 		mission_2.set_text("")
 		mission.set_text("door unlocked")

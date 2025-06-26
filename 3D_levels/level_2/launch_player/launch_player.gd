@@ -36,7 +36,7 @@ var sticker = load("res://3D_levels/level_2/assets/sticker_launcher/sticker/stic
 var instance
 @export var mag_size = 20
 var mag_size2 = 20
-
+var death_handled = false
 #launcher delay
 var last_launch_time = 0.0
 var last_launch_time2 = 0.0
@@ -71,8 +71,9 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func take_damage(amount: int) -> void:
 	health -= amount
-	print("Player was hit! Health:", health)
-	if health <= 0:
+	print("Player hit! Health:", health)
+	if health <= 0 and not death_handled:
+		death_handled = false  # So the process can run again
 		elim.visible = true
 		elim.process_mode = Node.PROCESS_MODE_ALWAYS
 		mission.visible = false
@@ -98,7 +99,7 @@ func _physics_process(delta: float) -> void:
 				print(mag_size)
 				last_launch_time = current_time
 	if second_launcher:
-		if Input.is_action_pressed("right_click"):
+		if Input.is_action_pressed("left_click"):
 			var current_time2 = Time.get_ticks_msec() / 1000.0
 			if current_time2 - last_launch_time2 >= cooldown2:
 				if (mag_size2 == 0):
@@ -166,15 +167,23 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	_camera.fov = lerp(_camera.fov, target_fov, delta * FOV_TRANSITION_SPEED)
 	#death
-	if elim.get_node("elim_scene").done:
+
+	var es = elim.get_node("elim_scene")
+
+	if es.done and not death_handled:
+		print("RESPAWN STARTING")
+		death_handled = true
+
 		if wave_manager != null:
 			if wave_manager.wave2:
+				es.done = false  # Reset done
+				es.get_node("AnimationPlayer").play("respawn")  # Manually replay
 				wave_manager.start_w2()
-				print("restartwave2")
 				elim.visible = false
-				elim.get_node("elim_scene").reset()
-			if wave_manager.wave1:
+				print("WAVE 2 RESET")
+			elif wave_manager.wave1:
+				print("RELOADING SCENE (wave1)")
 				get_tree().reload_current_scene()
 		else:
+			print("RELOADING SCENE (no wave manager)")
 			get_tree().reload_current_scene()
-			print("RELOAD SCENE")

@@ -4,6 +4,7 @@ extends TextureRect
 @onready var camera: Camera3D = player.get_node("Camera3D")
 @onready var needle: TextureRect = $"."
 @onready var mission_2: Label = $"../mission2"
+var purple: Texture2D = load("res://mixed_levels/end/arrow_door.png")
 
 var time_accum = 0.0
 func _process(delta):
@@ -20,17 +21,26 @@ func _process(delta):
 			mission_2.visible = false
 
 func get_nearest_collectable() -> Node3D:
+	if not is_instance_valid(player):
+		return null
+
 	var nearest: Node3D = null
 	var min_dist := INF
+
 	for c in get_tree().get_nodes_in_group("wafers"):
+		if not is_instance_valid(c):
+			continue
+		if not c.is_inside_tree():
+			continue
 		if not c is Node3D:
 			continue
+
 		var dist = player.global_position.distance_to(c.global_position)
 		if dist < min_dist:
 			min_dist = dist
 			nearest = c
-	return nearest
 
+	return nearest
 func update_needle_rotation(target: Node3D):
 	var from = player.global_position
 	var to = target.global_position
@@ -51,3 +61,6 @@ func update_needle_rotation(target: Node3D):
 
 	var angle = atan2(x, y)
 	needle.rotation = angle + deg_to_rad(-180)
+
+func become_purple():
+	set_texture(purple)

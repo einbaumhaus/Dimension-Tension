@@ -1068,6 +1068,7 @@ scale = Vector2(3.66288, 3.66288)
 texture = ExtResource("6_hlvmm")
 
 [node name="Sprite2D2" type="Sprite2D" parent="mission"]
+visible = false
 texture_filter = 1
 position = Vector2(100, 567)
 scale = Vector2(3.66288, 3.66288)

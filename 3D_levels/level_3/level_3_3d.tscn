@@ -33,9 +33,10 @@
 [sub_resource type="Environment" id="Environment_b82s5"]
 fog_enabled = true
 fog_mode = 1
-fog_light_color = Color(0, 0, 0, 1)
+fog_light_color = Color(0.10748, 0.10748, 0.10748, 1)
 fog_density = 1.0
 adjustment_enabled = true
+adjustment_brightness = 1.17
 adjustment_contrast = 1.2
 adjustment_saturation = 0.37
 

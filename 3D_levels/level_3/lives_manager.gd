@@ -20,4 +20,5 @@ func _process(delta: float) -> void:
 		elim_scene_2.visible = true
 		elim_scene_2.process_mode = Node.PROCESS_MODE_ALWAYS
 		if elim_scene_2.get_node("elim_scene").done:
-			get_tree().reload_current_scene()
+			Global.next_scene = "res://3D_levels/level_3/level_3_3d.tscn"
+			get_tree().change_scene_to_packed(Global.loading_screen)

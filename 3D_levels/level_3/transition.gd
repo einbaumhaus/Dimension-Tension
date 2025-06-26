@@ -2,6 +2,7 @@ extends Area3D
 
 @onready var player: CharacterBody3D = $"../../../Player"
 @onready var animation_player: AnimationPlayer = $"../outro/AnimationPlayer"
+@onready var wooden_door_2: Node3D = $".."
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,6 +16,7 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node3D) -> void:
 	if body.name == "Player":
+		wooden_door_2.remove_from_group("wafers")
 		animation_player.play("outro")
 		player.queue_free()
 

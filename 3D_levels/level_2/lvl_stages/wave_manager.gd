@@ -5,6 +5,7 @@ extends Node
 @onready var launch_player: CharacterBody3D = $"../launch_player"
 @onready var mission: CanvasLayer = $"../mission"
 @onready var animation_player: AnimationPlayer = $"../outro/AnimationPlayer"
+@onready var elim_scene_2: CanvasLayer = $"../elim_scene2"
 
 var eliminations = 0
 var wave1 = true

@@ -14,7 +14,7 @@ config/name="Dimension Tension"
 config/description="MA Game Michael"
 config/version="0.1.2"
 run/main_scene="uid://co2dawhgab6d8"
-config/features=PackedStringArray("4.4", "GL Compatibility")
+config/features=PackedStringArray("4.5", "GL Compatibility")
 boot_splash/image="uid://v75koa8jb5xb"
 config/icon="uid://dv0qldiehd4kd"
 

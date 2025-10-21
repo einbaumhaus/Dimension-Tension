@@ -1241,7 +1241,7 @@ editor_draw_limits = true
 script = ExtResource("28_6qlvf")
 
 [node name="LVL1_2DPlayer" type="AudioStreamPlayer" parent="."]
-volume_db = -2.0
+volume_db = -5.0
 script = ExtResource("29_xalg2")
 
 [connection signal="timeout" from="CanvasLayer/escape_popup/Timer" to="CanvasLayer/escape_popup" method="_on_timer_timeout"]

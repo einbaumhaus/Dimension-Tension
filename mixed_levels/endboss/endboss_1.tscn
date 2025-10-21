@@ -1634,7 +1634,7 @@ visible = false
 [node name="elim_scene" parent="elim_scene" instance=ExtResource("28_utk3v")]
 
 [node name="ENDBOSS1Player" type="AudioStreamPlayer" parent="."]
-volume_db = -2.0
+volume_db = -5.0
 script = ExtResource("34_smvrd")
 
 [connection signal="timeout" from="Path3D/PathFollow3D/evelius/AttackTimer" to="Path3D/PathFollow3D/evelius" method="_on_attack_timer_timeout"]

@@ -1,0 +1,23 @@
+[gd_resource type="Environment" load_steps=4 format=3 uid="uid://kwsmesqn4bmv"]
+
+[ext_resource type="Texture2D" uid="uid://cjllvahxg6keb" path="res://3D_levels/level_1/assets/overcast_soil_puresky_4k.hdr" id="1_n2jww"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_3dv5j"]
+panorama = ExtResource("1_n2jww")
+
+[sub_resource type="Sky" id="Sky_wbjlk"]
+sky_material = SubResource("PanoramaSkyMaterial_3dv5j")
+
+[resource]
+background_mode = 2
+sky = SubResource("Sky_wbjlk")
+ambient_light_source = 3
+reflected_light_source = 2
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.494662, 0.69736, 1, 1)
+fog_density = 0.034
+fog_sky_affect = 0.795
+adjustment_enabled = true
+adjustment_contrast = 0.99
+adjustment_saturation = 1.34

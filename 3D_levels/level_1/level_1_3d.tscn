@@ -1,8 +1,7 @@
-[gd_scene load_steps=142 format=4 uid="uid://dlb7qukr5wfbb"]
+[gd_scene load_steps=143 format=4 uid="uid://dlb7qukr5wfbb"]
 
 [ext_resource type="Script" uid="uid://bfjlx34dyngrh" path="res://3D_levels/level_1/level_1_3d.gd" id="1_ljo6s"]
 [ext_resource type="PackedScene" uid="uid://cj7d18ek4ria6" path="res://3D_levels/Player3D/character_body_3d.tscn" id="1_y7tgq"]
-[ext_resource type="Texture2D" uid="uid://cjllvahxg6keb" path="res://3D_levels/level_1/assets/overcast_soil_puresky_4k.hdr" id="2_irmad"]
 [ext_resource type="PackedScene" uid="uid://bnp7vdu3nrbe8" path="res://menus/pause_menu.tscn" id="3_grgy5"]
 [ext_resource type="Script" uid="uid://dddtr3uxv81k8" path="res://2D_levels/level_1/escape_popup.gd" id="3_s8qxt"]
 [ext_resource type="Texture2D" uid="uid://dxsy10g4xvwbf" path="res://3D_levels/level_1/assets/castle/materials/gray_rocks_diff_1k.jpg" id="4_2xi58"]
@@ -13,6 +12,7 @@
 [ext_resource type="Script" uid="uid://cwmdpvjr3jcop" path="res://3D_levels/level_1/animation_player.gd" id="5_grgy5"]
 [ext_resource type="PackedScene" uid="uid://d3tva3v3fe2vx" path="res://3D_levels/level_1/assets/bridge/platform.tscn" id="5_mbj4m"]
 [ext_resource type="Texture2D" uid="uid://cbxyvw8riiyua" path="res://2D_levels/level_2/enemies/toblertwo/tobllertwo.png" id="6_3t4hw"]
+[ext_resource type="Environment" uid="uid://kwsmesqn4bmv" path="res://3D_levels/level_1/world_env.tres" id="6_fkst0"]
 [ext_resource type="Script" uid="uid://bea0ginilxt2m" path="res://3D_levels/level_1/respawn_timer.gd" id="6_tpo6h"]
 [ext_resource type="Texture2D" uid="uid://bfdt00b1204ce" path="res://3D_levels/level_1/assets/bridge/materials/forrest_ground_01_diff_1k.jpg" id="8_joxi0"]
 [ext_resource type="Texture2D" uid="uid://dcjfetld4q5y7" path="res://3D_levels/level_1/assets/bridge/materials/Ice002_1K-JPG_Color.jpg" id="9_3al1x"]
@@ -50,26 +50,6 @@
 [ext_resource type="Script" uid="uid://bb1wjhu534dq3" path="res://2D_levels/Player2D/fps.gd" id="43_hh1ly"]
 [ext_resource type="Script" uid="uid://0sckcqu3nhr2" path="res://3D_levels/level_1/checkpoint_4.gd" id="46_fkst0"]
 [ext_resource type="Script" uid="uid://gjcdmj44oam5" path="res://3D_levels/level_1/lvl_1_3d_stream_player.gd" id="49_fkyo0"]
-
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_3dv5j"]
-panorama = ExtResource("2_irmad")
-
-[sub_resource type="Sky" id="Sky_wbjlk"]
-sky_material = SubResource("PanoramaSkyMaterial_3dv5j")
-
-[sub_resource type="Environment" id="Environment_i53j8"]
-background_mode = 2
-sky = SubResource("Sky_wbjlk")
-ambient_light_source = 3
-reflected_light_source = 2
-fog_enabled = true
-fog_mode = 1
-fog_light_color = Color(0.494662, 0.69736, 1, 1)
-fog_density = 0.034
-fog_sky_affect = 0.795
-adjustment_enabled = true
-adjustment_contrast = 0.99
-adjustment_saturation = 1.34
 
 [sub_resource type="Animation" id="Animation_3yk7c"]
 length = 0.001
@@ -1967,6 +1947,40 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_fkst0"]
+atlas = ExtResource("29_v53ed")
+region = Rect2(20, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bx2m4"]
+atlas = ExtResource("29_v53ed")
+region = Rect2(0, 60, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6b1gi"]
+atlas = ExtResource("29_v53ed")
+region = Rect2(40, 60, 20, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ygnfk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fkst0")
+}],
+"loop": true,
+"name": &"stop",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bx2m4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6b1gi")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
 [node name="level_1_3d" type="Node3D"]
 script = ExtResource("1_ljo6s")
 
@@ -2004,7 +2018,7 @@ script = ExtResource("6_tpo6h")
 transform = Transform3D(1, 0, 0, 0, 0.0802861, 0.996772, 0, -0.996772, 0.0802861, 2675.55, 278.05, 1901.11)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_i53j8")
+environment = ExtResource("6_fkst0")
 
 [node name="intermission" type="Node3D" parent="." node_paths=PackedStringArray("camera")]
 script = ExtResource("28_iokc4")
@@ -2272,7 +2286,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.17233, -0.673611, -0.184387
 curve = SubResource("Curve3D_c3uv7")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="intermission/jumppad/Path3D"]
-transform = Transform3D(-4.37113e-08, 0, -0.999998, 0, 0.999997, 0, 0.999999, 0, -4.37113e-08, 0, 0, 0)
+transform = Transform3D(-4.3711346e-08, 0, -0.999998, 0, 0.999997, 0, 0.999999, 0, -4.37113e-08, 0, 0, 0)
 loop = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="intermission/jumppad"]
@@ -3403,7 +3417,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0532, 8.86938, -1.87025)
 shape = SubResource("BoxShape3D_iokc4")
 
 [node name="train_brokie" parent="assets/tunnel_parkour_1" instance=ExtResource("23_v3kjf")]
-transform = Transform3D(-1.165, 0, -2.95349e-06, 0, 1.165, 0, 2.95349e-06, 0, -1.165, 199.877, 0.209, -13.557)
+transform = Transform3D(-1.165, 0, -2.9534865e-06, 0, 1.165, 0, 2.9534865e-06, 0, -1.165, 199.877, 0.209, -13.557)
 
 [node name="train_brokie2" parent="assets/tunnel_parkour_1" instance=ExtResource("23_v3kjf")]
 transform = Transform3D(1.165, 0, 0, 0, 1.165, 0, 0, 0, 1.165, 173.367, 0.236, -13.586)
@@ -3433,13 +3447,13 @@ transform = Transform3D(0.146407, 0, 0, 0, 0.787547, 0, 0, 0, 0.813029, 191.246,
 transform = Transform3D(0.146407, 0, 0, 0, 0.787547, 0, 0, 0, 0.813029, 205.543, 0.517413, -14.6555)
 
 [node name="wood_beam76" parent="assets/tunnel_parkour_1" instance=ExtResource("4_grgy5")]
-transform = Transform3D(-3.47519e-06, 0, 0.752059, 0, 0.96, 0, -0.96, 0, -2.72245e-06, 174.178, 1.49786, 8.0554)
+transform = Transform3D(-3.4751904e-06, 0, 0.752059, 0, 0.96, 0, -0.96, 0, -2.7224462e-06, 174.178, 1.49786, 8.0554)
 
 [node name="wood_beam78" parent="assets/tunnel_parkour_1" instance=ExtResource("4_grgy5")]
-transform = Transform3D(-3.60781e-06, 0, 0.950903, 0, 0.85909, 0, -0.996635, 0, -3.44226e-06, 175.106, 2.73605, 7.47301)
+transform = Transform3D(-3.607809e-06, 0, 0.950903, 0, 0.85909, 0, -0.996635, 0, -3.4422594e-06, 175.106, 2.73605, 7.47301)
 
 [node name="wood_beam77" parent="assets/tunnel_parkour_1" instance=ExtResource("4_grgy5")]
-transform = Transform3D(-3.47519e-06, 0, 0.752059, 0, 0.96, 0, -0.96, 0, -2.72245e-06, 174.394, 1.52552, 6.70745)
+transform = Transform3D(-3.4751904e-06, 0, 0.752059, 0, 0.96, 0, -0.96, 0, -2.7224462e-06, 174.394, 1.52552, 6.70745)
 
 [node name="platform13" parent="assets/tunnel_parkour_1" instance=ExtResource("5_mbj4m")]
 transform = Transform3D(0.936067, 0, 0, 0, 1, 0, 0, 0, 1, 174.137, 0.413567, 8.55712)
@@ -3524,8 +3538,37 @@ text = "FPS:"
 script = ExtResource("43_hh1ly")
 
 [node name="LVL1_3DStreamPlayer" type="AudioStreamPlayer" parent="."]
-volume_db = -2.0
+volume_db = -5.0
 script = ExtResource("49_fkyo0")
+
+[node name="MA-stuff" type="Node3D" parent="."]
+
+[node name="lilguy" type="AnimatedSprite3D" parent="MA-stuff"]
+transform = Transform3D(-0.30751696, 0, -7.04329, 0, 7.05, 0, 7.04329, 0, -0.30751696, 48.10885, 1.2032776, -23.28731)
+texture_filter = 2
+sprite_frames = SubResource("SpriteFrames_ygnfk")
+animation = &"stop"
+
+[node name="evelius" type="AnimatedSprite3D" parent="MA-stuff"]
+transform = Transform3D(-0.30769143, 0, -7.047286, 0, 7.054, 0, 7.047286, 0, -0.30769143, 47.85816, 1.2032776, -24.20491)
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_3t4hw")
+
+[node name="Camera3D2" type="Camera3D" parent="MA-stuff"]
+transform = Transform3D(0.16504757, -0.04989909, -0.98502254, 0, 0.99871933, -0.05059294, 0.9862856, 0.008350242, 0.1648362, 42.799767, 1.6335611, -22.49463)
+fov = 37.0
+
+[node name="Label3D" type="Label3D" parent="MA-stuff"]
+transform = Transform3D(0.19349813, 0, -0.9811006, 0, 1, 0, 0.9811006, 0, 0.19349813, 47.84731, 2.0383625, -24.162462)
+billboard = 1
+text = "Evelius"
+font = ExtResource("11_srw00")
+
+[node name="Label3D2" type="Label3D" parent="MA-stuff"]
+transform = Transform3D(0.19349813, 0, -0.9811006, 0, 1, 0, 0.9811006, 0, 0.19349813, 48.242023, 2.0383625, -23.225943)
+billboard = 1
+text = "PLAYER"
+font = ExtResource("11_srw00")
 
 [connection signal="timeout" from="pause_menu/escape_popup/Timer" to="pause_menu/escape_popup" method="_on_timer_timeout"]
 [connection signal="timeout" from="respawnTimer" to="respawnTimer" method="_on_timeout"]

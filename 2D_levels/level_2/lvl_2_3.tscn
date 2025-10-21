@@ -807,7 +807,7 @@ text = "FPS:"
 script = ExtResource("9_2f2jg")
 
 [node name="LVL2_2DPlayer" type="AudioStreamPlayer" parent="."]
-volume_db = -2.0
+volume_db = -5.0
 script = ExtResource("19_1bn0t")
 
 [connection signal="animation_finished" from="outro/outro_anim" to="Area2D" method="_on_outro_anim_animation_finished"]
